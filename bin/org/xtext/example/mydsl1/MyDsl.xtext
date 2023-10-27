@@ -1,0 +1,50 @@
+grammar org.xtext.example.mydsl1.MyDsl with org.eclipse.xtext.common.Terminals
+
+generate myDsl "http://www.xtext.org/example/mydsl1/MyDsl"
+
+Model:
+    commands+=Command*;
+
+Command:
+    OpenBrowserCommand |
+    NavigateToCommand |
+    ClickCommand |
+    FillCommand |
+    SelectCommand |
+    VerifyCommand |
+    ReadCommand;
+
+OpenBrowserCommand:
+    {OpenBrowser}'open' 'a' 'browser' 'window';
+
+NavigateToCommand:
+    'go' 'to' 'the' 'url' url=STRING;
+
+ClickCommand:
+    'click' 'on' 'the' 'element' elementText=STRING;
+
+FillCommand:
+    'fill' 'the' 'field' fieldName=STRING 'with' fieldValue=STRING;
+
+SelectCommand:
+    'select' 'the' 'checkbox' 'named' checkboxName=STRING;
+
+VerifyCommand:
+    'verify' 'that' 'the' 'page' 'contains' 'the' 'string' verifyString=STRING;
+
+ReadCommand:
+    'read' 'the' 'element' 'with' 'text' elementText=STRING 'and' 'store' 'it' 'in' 'variable' variableName=ID;
+
+terminal STRING:
+    '"' ( '\\' . | !('\\' | '"') )* '"';
+
+terminal ID:
+    ('a'..'z' | 'A'..'Z') ('a'..'z' | 'A'..'Z' | '0'..'9' | '_')*;
+
+// Define whitespace and comments
+terminal WS:
+    (' ' | '\t' | '\r' | '\n')+;
+
+// Ignore comments
+//terminal COMMENT:
+//    '//' !('\n' | '\r')* ('\r'? '\n')?;
