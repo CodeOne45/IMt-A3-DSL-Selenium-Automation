@@ -20,6 +20,7 @@ import org.xtext.example.mydsl1.myDsl.Model;
 import org.xtext.example.mydsl1.myDsl.NavigateToCommand;
 import org.xtext.example.mydsl1.myDsl.OpenBrowserCommand;
 import org.xtext.example.mydsl1.myDsl.SelectCommand;
+import org.xtext.example.mydsl1.myDsl.VerifyCommand;
 
 /**
  * Generates code from your model files on save.
@@ -34,12 +35,23 @@ public class MyDslGenerator extends AbstractGenerator {
     if (_notEquals) {
       EObject _head = IterableExtensions.<EObject>head(resource.getContents());
       final Model model = ((Model) _head);
-      final String driverCode = this.generateWebDriverCode(model);
-      fsa.generateFile("src/generated/AutomationTest.java", driverCode);
+      final String inputFileName = resource.getURI().lastSegment().toString();
+      String name = inputFileName.replaceFirst(".dmodel", ".java");
+      String className = resource.getURI().lastSegment().toString().replaceFirst(".dmodel", "");
+      char _upperCase = Character.toUpperCase(className.charAt(0));
+      String _substring = className.substring(1);
+      String _plus = (Character.valueOf(_upperCase) + _substring);
+      className = _plus;
+      final String seleniumCode = this.generateWebDriverCode(model, className);
+      char _upperCase_1 = Character.toUpperCase(name.charAt(0));
+      String _substring_1 = name.substring(1);
+      String _plus_1 = (Character.valueOf(_upperCase_1) + _substring_1);
+      name = _plus_1;
+      fsa.generateFile(name, seleniumCode);
     }
   }
 
-  public String generateWebDriverCode(final Model model) {
+  public String generateWebDriverCode(final Model model, final String className) {
     String _xblockexpression = null;
     {
       final Function1<Command, CharSequence> _function = (Command it) -> {
@@ -47,8 +59,6 @@ public class MyDslGenerator extends AbstractGenerator {
       };
       final String commandsCode = IterableExtensions.join(ListExtensions.<Command, CharSequence>map(model.getCommands(), _function), "\n\n");
       StringConcatenation _builder = new StringConcatenation();
-      _builder.append("package src.generated; // Update the package declaration");
-      _builder.newLine();
       _builder.append("import org.openqa.selenium.By;");
       _builder.newLine();
       _builder.append("import org.openqa.selenium.WebDriver;");
@@ -59,23 +69,27 @@ public class MyDslGenerator extends AbstractGenerator {
       _builder.newLine();
       _builder.append("import org.openqa.selenium.WebElement;");
       _builder.newLine();
-      _builder.append("\t  ");
       _builder.newLine();
-      _builder.append("public class AutomationTest {");
-      _builder.newLine();
-      _builder.append("  ");
-      _builder.append("public static void main(String[] args) {\t  ");
-      _builder.newLine();
-      _builder.append("    ");
-      _builder.newLine();
-      String _plus = (_builder.toString() + commandsCode);
+      _builder.append("public class  ");
+      String _plus = (_builder.toString() + className);
       StringConcatenation _builder_1 = new StringConcatenation();
-      _builder_1.append("  ");
-      _builder_1.append("}");
+      _builder_1.append(" ");
+      _builder_1.append("{");
       _builder_1.newLine();
-      _builder_1.append("}");
+      _builder_1.append("\t      ");
+      _builder_1.append("public static void main(String[] args) {\t  ");
       _builder_1.newLine();
-      _xblockexpression = (_plus + _builder_1);
+      _builder_1.append("\t        ");
+      _builder_1.newLine();
+      String _plus_1 = (_plus + _builder_1);
+      String _plus_2 = (_plus_1 + commandsCode);
+      StringConcatenation _builder_2 = new StringConcatenation();
+      _builder_2.append("  ");
+      _builder_2.append("}");
+      _builder_2.newLine();
+      _builder_2.append("}");
+      _builder_2.newLine();
+      _xblockexpression = (_plus_2 + _builder_2);
     }
     return _xblockexpression;
   }
@@ -107,14 +121,23 @@ public class MyDslGenerator extends AbstractGenerator {
       if (command instanceof ClickCommand) {
         _matched=true;
         StringConcatenation _builder = new StringConcatenation();
-        _builder.append("WebElement element = driver.findElement(By.linkText(\"");
+        _builder.append("WebElement acceptButton = driver.findElement(By.xpath(\"//*[@id=\\\"popup-buttons\\\"]/button[1]\"));");
+        _builder.newLine();
+        _builder.append("            ");
+        _builder.append("if (acceptButton.isDisplayed()) {");
+        _builder.newLine();
+        _builder.append("              ");
+        _builder.append("acceptButton.click();");
+        _builder.newLine();
+        _builder.append("            ");
+        _builder.append("}");
+        _builder.newLine();
+        _builder.append("\t        ");
+        _builder.append("driver.findElement(By.linkText(\"");
         String _elementText = ((ClickCommand)command).getElementText();
         String _plus = (_builder.toString() + _elementText);
         StringConcatenation _builder_1 = new StringConcatenation();
-        _builder_1.append("\"));");
-        _builder_1.newLine();
-        _builder_1.append("\t        ");
-        _builder_1.append("element.click();");
+        _builder_1.append("\")).click();");
         _builder_1.newLine();
         _switchResult = (_plus + _builder_1);
       }
@@ -154,6 +177,44 @@ public class MyDslGenerator extends AbstractGenerator {
         _builder_1.append("element.click();");
         _builder_1.newLine();
         _switchResult = (_plus + _builder_1);
+      }
+    }
+    if (!_matched) {
+      if (command instanceof VerifyCommand) {
+        _matched=true;
+        StringConcatenation _builder = new StringConcatenation();
+        _builder.append("WebElement linkElement = driver.findElement(By.linkText(\"");
+        String _verifyString = ((VerifyCommand)command).getVerifyString();
+        String _plus = (_builder.toString() + _verifyString);
+        StringConcatenation _builder_1 = new StringConcatenation();
+        _builder_1.append("\"));");
+        _builder_1.newLine();
+        _builder_1.append("\t\t      ");
+        _builder_1.append("if (linkElement.getTagName().equalsIgnoreCase(\"a\")) {");
+        _builder_1.newLine();
+        _builder_1.append("\t\t        ");
+        _builder_1.append("System.out.println(\"Verification successful: Page contains \" + \"");
+        String _plus_1 = (_plus + _builder_1);
+        String _verifyString_1 = ((VerifyCommand)command).getVerifyString();
+        String _plus_2 = (_plus_1 + _verifyString_1);
+        StringConcatenation _builder_2 = new StringConcatenation();
+        _builder_2.append("\");");
+        _builder_2.newLine();
+        _builder_2.append("\t\t      ");
+        _builder_2.append("} else {");
+        _builder_2.newLine();
+        _builder_2.append("\t\t        ");
+        _builder_2.append("System.out.println(\"Verification failed: Page does not contain \" + \"");
+        String _plus_3 = (_plus_2 + _builder_2);
+        String _verifyString_2 = ((VerifyCommand)command).getVerifyString();
+        String _plus_4 = (_plus_3 + _verifyString_2);
+        StringConcatenation _builder_3 = new StringConcatenation();
+        _builder_3.append("\");");
+        _builder_3.newLine();
+        _builder_3.append("\t\t      ");
+        _builder_3.append("}");
+        _builder_3.newLine();
+        _switchResult = (_plus_4 + _builder_3);
       }
     }
     if (!_matched) {

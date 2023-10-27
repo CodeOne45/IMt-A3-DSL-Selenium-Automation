@@ -158,37 +158,73 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	public class ClickCommandElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl1.MyDsl.ClickCommand");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cClickKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cOnKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cTheKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Keyword cElementKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cElementTextAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cElementTextSTRINGTerminalRuleCall_4_0 = (RuleCall)cElementTextAssignment_4.eContents().get(0);
+		private final Alternatives cAlternatives_0 = (Alternatives)cGroup.eContents().get(0);
+		private final Group cGroup_0_0 = (Group)cAlternatives_0.eContents().get(0);
+		private final Keyword cClickKeyword_0_0_0 = (Keyword)cGroup_0_0.eContents().get(0);
+		private final Keyword cOnKeyword_0_0_1 = (Keyword)cGroup_0_0.eContents().get(1);
+		private final Keyword cTheKeyword_0_0_2 = (Keyword)cGroup_0_0.eContents().get(2);
+		private final Keyword cLinkKeyword_0_0_3 = (Keyword)cGroup_0_0.eContents().get(3);
+		private final Group cGroup_0_1 = (Group)cAlternatives_0.eContents().get(1);
+		private final Keyword cClickKeyword_0_1_0 = (Keyword)cGroup_0_1.eContents().get(0);
+		private final Keyword cOnKeyword_0_1_1 = (Keyword)cGroup_0_1.eContents().get(1);
+		private final Keyword cTheKeyword_0_1_2 = (Keyword)cGroup_0_1.eContents().get(2);
+		private final Keyword cButtonKeyword_0_1_3 = (Keyword)cGroup_0_1.eContents().get(3);
+		private final Keyword cWithKeyword_0_1_4 = (Keyword)cGroup_0_1.eContents().get(4);
+		private final Keyword cTextKeyword_0_1_5 = (Keyword)cGroup_0_1.eContents().get(5);
+		private final Assignment cElementTextAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cElementTextSTRINGTerminalRuleCall_1_0 = (RuleCall)cElementTextAssignment_1.eContents().get(0);
 		
 		//ClickCommand:
-		//    'click' 'on' 'the' 'element' elementText=STRING;
+		//    ('click' 'on' 'the' 'link' | 'click' 'on' 'the' 'button' 'with' 'text') elementText=STRING;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'click' 'on' 'the' 'element' elementText=STRING
+		//('click' 'on' 'the' 'link' | 'click' 'on' 'the' 'button' 'with' 'text') elementText=STRING
 		public Group getGroup() { return cGroup; }
 		
+		//('click' 'on' 'the' 'link' | 'click' 'on' 'the' 'button' 'with' 'text')
+		public Alternatives getAlternatives_0() { return cAlternatives_0; }
+		
+		//'click' 'on' 'the' 'link'
+		public Group getGroup_0_0() { return cGroup_0_0; }
+		
 		//'click'
-		public Keyword getClickKeyword_0() { return cClickKeyword_0; }
+		public Keyword getClickKeyword_0_0_0() { return cClickKeyword_0_0_0; }
 		
 		//'on'
-		public Keyword getOnKeyword_1() { return cOnKeyword_1; }
+		public Keyword getOnKeyword_0_0_1() { return cOnKeyword_0_0_1; }
 		
 		//'the'
-		public Keyword getTheKeyword_2() { return cTheKeyword_2; }
+		public Keyword getTheKeyword_0_0_2() { return cTheKeyword_0_0_2; }
 		
-		//'element'
-		public Keyword getElementKeyword_3() { return cElementKeyword_3; }
+		//'link'
+		public Keyword getLinkKeyword_0_0_3() { return cLinkKeyword_0_0_3; }
+		
+		//'click' 'on' 'the' 'button' 'with' 'text'
+		public Group getGroup_0_1() { return cGroup_0_1; }
+		
+		//'click'
+		public Keyword getClickKeyword_0_1_0() { return cClickKeyword_0_1_0; }
+		
+		//'on'
+		public Keyword getOnKeyword_0_1_1() { return cOnKeyword_0_1_1; }
+		
+		//'the'
+		public Keyword getTheKeyword_0_1_2() { return cTheKeyword_0_1_2; }
+		
+		//'button'
+		public Keyword getButtonKeyword_0_1_3() { return cButtonKeyword_0_1_3; }
+		
+		//'with'
+		public Keyword getWithKeyword_0_1_4() { return cWithKeyword_0_1_4; }
+		
+		//'text'
+		public Keyword getTextKeyword_0_1_5() { return cTextKeyword_0_1_5; }
 		
 		//elementText=STRING
-		public Assignment getElementTextAssignment_4() { return cElementTextAssignment_4; }
+		public Assignment getElementTextAssignment_1() { return cElementTextAssignment_1; }
 		
 		//STRING
-		public RuleCall getElementTextSTRINGTerminalRuleCall_4_0() { return cElementTextSTRINGTerminalRuleCall_4_0; }
+		public RuleCall getElementTextSTRINGTerminalRuleCall_1_0() { return cElementTextSTRINGTerminalRuleCall_1_0; }
 	}
 	public class FillCommandElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl1.MyDsl.FillCommand");
@@ -276,16 +312,21 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final Keyword cTheKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Keyword cPageKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Keyword cContainsKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Keyword cTheKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Keyword cStringKeyword_6 = (Keyword)cGroup.eContents().get(6);
-		private final Assignment cVerifyStringAssignment_7 = (Assignment)cGroup.eContents().get(7);
-		private final RuleCall cVerifyStringSTRINGTerminalRuleCall_7_0 = (RuleCall)cVerifyStringAssignment_7.eContents().get(0);
+		private final Alternatives cAlternatives_5 = (Alternatives)cGroup.eContents().get(5);
+		private final Group cGroup_5_0 = (Group)cAlternatives_5.eContents().get(0);
+		private final Keyword cAKeyword_5_0_0 = (Keyword)cGroup_5_0.eContents().get(0);
+		private final Keyword cLinkKeyword_5_0_1 = (Keyword)cGroup_5_0.eContents().get(1);
+		private final Group cGroup_5_1 = (Group)cAlternatives_5.eContents().get(1);
+		private final Keyword cTheKeyword_5_1_0 = (Keyword)cGroup_5_1.eContents().get(0);
+		private final Keyword cStringKeyword_5_1_1 = (Keyword)cGroup_5_1.eContents().get(1);
+		private final Assignment cVerifyStringAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cVerifyStringSTRINGTerminalRuleCall_6_0 = (RuleCall)cVerifyStringAssignment_6.eContents().get(0);
 		
 		//VerifyCommand:
-		//    'verify' 'that' 'the' 'page' 'contains' 'the' 'string' verifyString=STRING;
+		//    'verify' 'that' 'the' 'page' 'contains' ( ('a'?) 'link' | 'the' 'string' ) verifyString=STRING;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'verify' 'that' 'the' 'page' 'contains' 'the' 'string' verifyString=STRING
+		//'verify' 'that' 'the' 'page' 'contains' ( ('a'?) 'link' | 'the' 'string' ) verifyString=STRING
 		public Group getGroup() { return cGroup; }
 		
 		//'verify'
@@ -303,17 +344,32 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//'contains'
 		public Keyword getContainsKeyword_4() { return cContainsKeyword_4; }
 		
+		//( ('a'?) 'link' | 'the' 'string' )
+		public Alternatives getAlternatives_5() { return cAlternatives_5; }
+		
+		//('a'?) 'link'
+		public Group getGroup_5_0() { return cGroup_5_0; }
+		
+		//('a'?)
+		public Keyword getAKeyword_5_0_0() { return cAKeyword_5_0_0; }
+		
+		//'link'
+		public Keyword getLinkKeyword_5_0_1() { return cLinkKeyword_5_0_1; }
+		
+		//'the' 'string'
+		public Group getGroup_5_1() { return cGroup_5_1; }
+		
 		//'the'
-		public Keyword getTheKeyword_5() { return cTheKeyword_5; }
+		public Keyword getTheKeyword_5_1_0() { return cTheKeyword_5_1_0; }
 		
 		//'string'
-		public Keyword getStringKeyword_6() { return cStringKeyword_6; }
+		public Keyword getStringKeyword_5_1_1() { return cStringKeyword_5_1_1; }
 		
 		//verifyString=STRING
-		public Assignment getVerifyStringAssignment_7() { return cVerifyStringAssignment_7; }
+		public Assignment getVerifyStringAssignment_6() { return cVerifyStringAssignment_6; }
 		
 		//STRING
-		public RuleCall getVerifyStringSTRINGTerminalRuleCall_7_0() { return cVerifyStringSTRINGTerminalRuleCall_7_0; }
+		public RuleCall getVerifyStringSTRINGTerminalRuleCall_6_0() { return cVerifyStringSTRINGTerminalRuleCall_6_0; }
 	}
 	public class ReadCommandElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl1.MyDsl.ReadCommand");
@@ -494,7 +550,7 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	}
 	
 	//ClickCommand:
-	//    'click' 'on' 'the' 'element' elementText=STRING;
+	//    ('click' 'on' 'the' 'link' | 'click' 'on' 'the' 'button' 'with' 'text') elementText=STRING;
 	public ClickCommandElements getClickCommandAccess() {
 		return pClickCommand;
 	}
@@ -524,7 +580,7 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	}
 	
 	//VerifyCommand:
-	//    'verify' 'that' 'the' 'page' 'contains' 'the' 'string' verifyString=STRING;
+	//    'verify' 'that' 'the' 'page' 'contains' ( ('a'?) 'link' | 'the' 'string' ) verifyString=STRING;
 	public VerifyCommandElements getVerifyCommandAccess() {
 		return pVerifyCommand;
 	}

@@ -84,7 +84,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.CLICK_COMMAND__ELEMENT_TEXT));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getClickCommandAccess().getElementTextSTRINGTerminalRuleCall_4_0(), semanticObject.getElementText());
+		feeder.accept(grammarAccess.getClickCommandAccess().getElementTextSTRINGTerminalRuleCall_1_0(), semanticObject.getElementText());
 		feeder.finish();
 	}
 	
@@ -224,7 +224,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.VERIFY_COMMAND__VERIFY_STRING));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getVerifyCommandAccess().getVerifyStringSTRINGTerminalRuleCall_7_0(), semanticObject.getVerifyString());
+		feeder.accept(grammarAccess.getVerifyCommandAccess().getVerifyStringSTRINGTerminalRuleCall_6_0(), semanticObject.getVerifyString());
 		feeder.finish();
 	}
 	

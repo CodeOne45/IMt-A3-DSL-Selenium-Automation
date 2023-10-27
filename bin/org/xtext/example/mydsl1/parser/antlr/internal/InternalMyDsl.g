@@ -288,27 +288,58 @@ ruleClickCommand returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='click'
-		{
-			newLeafNode(otherlv_0, grammarAccess.getClickCommandAccess().getClickKeyword_0());
-		}
-		otherlv_1='on'
-		{
-			newLeafNode(otherlv_1, grammarAccess.getClickCommandAccess().getOnKeyword_1());
-		}
-		otherlv_2='the'
-		{
-			newLeafNode(otherlv_2, grammarAccess.getClickCommandAccess().getTheKeyword_2());
-		}
-		otherlv_3='element'
-		{
-			newLeafNode(otherlv_3, grammarAccess.getClickCommandAccess().getElementKeyword_3());
-		}
 		(
 			(
-				lv_elementText_4_0=RULE_STRING
+				otherlv_0='click'
 				{
-					newLeafNode(lv_elementText_4_0, grammarAccess.getClickCommandAccess().getElementTextSTRINGTerminalRuleCall_4_0());
+					newLeafNode(otherlv_0, grammarAccess.getClickCommandAccess().getClickKeyword_0_0_0());
+				}
+				otherlv_1='on'
+				{
+					newLeafNode(otherlv_1, grammarAccess.getClickCommandAccess().getOnKeyword_0_0_1());
+				}
+				otherlv_2='the'
+				{
+					newLeafNode(otherlv_2, grammarAccess.getClickCommandAccess().getTheKeyword_0_0_2());
+				}
+				otherlv_3='link'
+				{
+					newLeafNode(otherlv_3, grammarAccess.getClickCommandAccess().getLinkKeyword_0_0_3());
+				}
+			)
+			    |
+			(
+				otherlv_4='click'
+				{
+					newLeafNode(otherlv_4, grammarAccess.getClickCommandAccess().getClickKeyword_0_1_0());
+				}
+				otherlv_5='on'
+				{
+					newLeafNode(otherlv_5, grammarAccess.getClickCommandAccess().getOnKeyword_0_1_1());
+				}
+				otherlv_6='the'
+				{
+					newLeafNode(otherlv_6, grammarAccess.getClickCommandAccess().getTheKeyword_0_1_2());
+				}
+				otherlv_7='button'
+				{
+					newLeafNode(otherlv_7, grammarAccess.getClickCommandAccess().getButtonKeyword_0_1_3());
+				}
+				otherlv_8='with'
+				{
+					newLeafNode(otherlv_8, grammarAccess.getClickCommandAccess().getWithKeyword_0_1_4());
+				}
+				otherlv_9='text'
+				{
+					newLeafNode(otherlv_9, grammarAccess.getClickCommandAccess().getTextKeyword_0_1_5());
+				}
+			)
+		)
+		(
+			(
+				lv_elementText_10_0=RULE_STRING
+				{
+					newLeafNode(lv_elementText_10_0, grammarAccess.getClickCommandAccess().getElementTextSTRINGTerminalRuleCall_1_0());
 				}
 				{
 					if ($current==null) {
@@ -317,7 +348,7 @@ ruleClickCommand returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"elementText",
-						lv_elementText_4_0,
+						lv_elementText_10_0,
 						"org.xtext.example.mydsl1.MyDsl.STRING");
 				}
 			)
@@ -485,19 +516,36 @@ ruleVerifyCommand returns [EObject current=null]
 		{
 			newLeafNode(otherlv_4, grammarAccess.getVerifyCommandAccess().getContainsKeyword_4());
 		}
-		otherlv_5='the'
-		{
-			newLeafNode(otherlv_5, grammarAccess.getVerifyCommandAccess().getTheKeyword_5());
-		}
-		otherlv_6='string'
-		{
-			newLeafNode(otherlv_6, grammarAccess.getVerifyCommandAccess().getStringKeyword_6());
-		}
 		(
 			(
-				lv_verifyString_7_0=RULE_STRING
+				(
+					otherlv_5='a'
+					{
+						newLeafNode(otherlv_5, grammarAccess.getVerifyCommandAccess().getAKeyword_5_0_0());
+					}
+				)?
+				otherlv_6='link'
 				{
-					newLeafNode(lv_verifyString_7_0, grammarAccess.getVerifyCommandAccess().getVerifyStringSTRINGTerminalRuleCall_7_0());
+					newLeafNode(otherlv_6, grammarAccess.getVerifyCommandAccess().getLinkKeyword_5_0_1());
+				}
+			)
+			    |
+			(
+				otherlv_7='the'
+				{
+					newLeafNode(otherlv_7, grammarAccess.getVerifyCommandAccess().getTheKeyword_5_1_0());
+				}
+				otherlv_8='string'
+				{
+					newLeafNode(otherlv_8, grammarAccess.getVerifyCommandAccess().getStringKeyword_5_1_1());
+				}
+			)
+		)
+		(
+			(
+				lv_verifyString_9_0=RULE_STRING
+				{
+					newLeafNode(lv_verifyString_9_0, grammarAccess.getVerifyCommandAccess().getVerifyStringSTRINGTerminalRuleCall_6_0());
 				}
 				{
 					if ($current==null) {
@@ -506,7 +554,7 @@ ruleVerifyCommand returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"verifyString",
-						lv_verifyString_7_0,
+						lv_verifyString_9_0,
 						"org.xtext.example.mydsl1.MyDsl.STRING");
 				}
 			)

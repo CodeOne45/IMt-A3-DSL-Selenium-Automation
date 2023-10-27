@@ -15,6 +15,7 @@ import org.xtext.example.mydsl1.myDsl.NavigateToCommand
 import org.xtext.example.mydsl1.myDsl.ClickCommand
 import org.xtext.example.mydsl1.myDsl.FillCommand
 import org.xtext.example.mydsl1.myDsl.SelectCommand
+import org.xtext.example.mydsl1.myDsl.VerifyCommand
 
 /**
  * Generates code from your model files on save.
@@ -26,22 +27,33 @@ class MyDslGenerator extends AbstractGenerator {
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
 		if (resource != null) {
 			val model = resource.contents.head as Model
-			val driverCode = generateWebDriverCode(model)
-			fsa.generateFile("src/generated/AutomationTest.java", driverCode)
+			
+        	
+        	val inputFileName = resource.URI.lastSegment.toString();
+		    var name = inputFileName.replaceFirst(".dmodel", ".java");
+		    		    
+		    var className = resource.URI.lastSegment.toString().replaceFirst(".dmodel", "")
+		    
+		    className = Character.toUpperCase(className.charAt(0)) + className.substring(1);
+		    val seleniumCode = generateWebDriverCode(model, className)
+		    
+		    name = Character.toUpperCase(name.charAt(0)) + name.substring(1) ;
+		
+		    fsa.generateFile(name, seleniumCode);
+        	
 		}
 	}
 	
-	def generateWebDriverCode(Model model) {
+	def generateWebDriverCode(Model model, String className) {
 		val commandsCode = model.commands.map[generateCommandCode(it)].join('\n\n')
 	    '''
-	    package src.generated; // Update the package declaration
 	    import org.openqa.selenium.By;
 	    import org.openqa.selenium.WebDriver;
 	    import org.openqa.selenium.chrome.ChromeDriver;
 	    import org.openqa.selenium.chrome.ChromeOptions;
 	    import org.openqa.selenium.WebElement;
-	  
-	    public class AutomationTest {
+	    
+	    public class  ''' + className + ''' {
 	      public static void main(String[] args) {	  
 	        
 	          ''' + commandsCode + '''
@@ -60,8 +72,11 @@ class MyDslGenerator extends AbstractGenerator {
 	        driver.get("''' + command.url + '''");
 	      '''
 	      ClickCommand: '''
-	        WebElement element = driver.findElement(By.linkText("''' + command.elementText + '''"));
-	        element.click();
+	      	WebElement acceptButton = driver.findElement(By.xpath("//*[@id=\"popup-buttons\"]/button[1]"));
+            if (acceptButton.isDisplayed()) {
+              acceptButton.click();
+            }
+	        driver.findElement(By.linkText("''' + command.elementText + '''")).click();
 	      '''
 	      FillCommand: '''
 	        WebElement element = driver.findElement(By.name("''' + command.fieldName + '''"));
@@ -71,14 +86,25 @@ class MyDslGenerator extends AbstractGenerator {
 	        WebElement element = driver.findElement(By.name("''' + command.checkboxName + '''"));
 	        element.click();
 	      '''
+	      VerifyCommand: '''
+	      	  WebElement linkElement = driver.findElement(By.linkText("'''+ command.verifyString +'''"));
+		      if (linkElement.getTagName().equalsIgnoreCase("a")) {
+		        System.out.println("Verification successful: Page contains " + "''' + command.verifyString + '''");
+		      } else {
+		        System.out.println("Verification failed: Page does not contain " + "''' + command.verifyString + '''");
+		      }
+		  '''
+	      
 	      default: ''
 	    }  		
   	}
+  	
+  	
 }
 
-
-
-
-	
+//WebElement languageDropdown = driver.findElement(By.id("langmenu0")); // Replace with the correct ID or XPath
+//languageDropdown.click();
+//WebElement englishOption = driver.findElement(By.xpath("//*[@id=\"dropdownlangmenu0\"]/li[3]")); // Replace with the correct XPath for English
+//englishOption.click();
 
 	

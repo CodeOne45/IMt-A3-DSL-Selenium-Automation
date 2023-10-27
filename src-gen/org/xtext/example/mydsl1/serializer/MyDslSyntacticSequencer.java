@@ -10,6 +10,10 @@ import org.eclipse.xtext.IGrammarAccess;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.AbstractElementAlias;
+import org.eclipse.xtext.serializer.analysis.GrammarAlias.AlternativeAlias;
+import org.eclipse.xtext.serializer.analysis.GrammarAlias.GroupAlias;
+import org.eclipse.xtext.serializer.analysis.GrammarAlias.TokenAlias;
+import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynNavigable;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynTransition;
 import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 import org.xtext.example.mydsl1.services.MyDslGrammarAccess;
@@ -18,10 +22,14 @@ import org.xtext.example.mydsl1.services.MyDslGrammarAccess;
 public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected MyDslGrammarAccess grammarAccess;
+	protected AbstractElementAlias match_ClickCommand___ClickKeyword_0_0_0_OnKeyword_0_0_1_TheKeyword_0_0_2_LinkKeyword_0_0_3___or___ClickKeyword_0_1_0_OnKeyword_0_1_1_TheKeyword_0_1_2_ButtonKeyword_0_1_3_WithKeyword_0_1_4_TextKeyword_0_1_5__;
+	protected AbstractElementAlias match_VerifyCommand___AKeyword_5_0_0_q_LinkKeyword_5_0_1___or___TheKeyword_5_1_0_StringKeyword_5_1_1__;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (MyDslGrammarAccess) access;
+		match_ClickCommand___ClickKeyword_0_0_0_OnKeyword_0_0_1_TheKeyword_0_0_2_LinkKeyword_0_0_3___or___ClickKeyword_0_1_0_OnKeyword_0_1_1_TheKeyword_0_1_2_ButtonKeyword_0_1_3_WithKeyword_0_1_4_TextKeyword_0_1_5__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getClickCommandAccess().getClickKeyword_0_0_0()), new TokenAlias(false, false, grammarAccess.getClickCommandAccess().getOnKeyword_0_0_1()), new TokenAlias(false, false, grammarAccess.getClickCommandAccess().getTheKeyword_0_0_2()), new TokenAlias(false, false, grammarAccess.getClickCommandAccess().getLinkKeyword_0_0_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getClickCommandAccess().getClickKeyword_0_1_0()), new TokenAlias(false, false, grammarAccess.getClickCommandAccess().getOnKeyword_0_1_1()), new TokenAlias(false, false, grammarAccess.getClickCommandAccess().getTheKeyword_0_1_2()), new TokenAlias(false, false, grammarAccess.getClickCommandAccess().getButtonKeyword_0_1_3()), new TokenAlias(false, false, grammarAccess.getClickCommandAccess().getWithKeyword_0_1_4()), new TokenAlias(false, false, grammarAccess.getClickCommandAccess().getTextKeyword_0_1_5())));
+		match_VerifyCommand___AKeyword_5_0_0_q_LinkKeyword_5_0_1___or___TheKeyword_5_1_0_StringKeyword_5_1_1__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getVerifyCommandAccess().getTheKeyword_5_1_0()), new TokenAlias(false, false, grammarAccess.getVerifyCommandAccess().getStringKeyword_5_1_1())), new GroupAlias(false, false, new TokenAlias(false, true, grammarAccess.getVerifyCommandAccess().getAKeyword_5_0_0()), new TokenAlias(false, false, grammarAccess.getVerifyCommandAccess().getLinkKeyword_5_0_1())));
 	}
 	
 	@Override
@@ -36,8 +44,50 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			acceptNodes(getLastNavigableState(), syntaxNodes);
+			if (match_ClickCommand___ClickKeyword_0_0_0_OnKeyword_0_0_1_TheKeyword_0_0_2_LinkKeyword_0_0_3___or___ClickKeyword_0_1_0_OnKeyword_0_1_1_TheKeyword_0_1_2_ButtonKeyword_0_1_3_WithKeyword_0_1_4_TextKeyword_0_1_5__.equals(syntax))
+				emit_ClickCommand___ClickKeyword_0_0_0_OnKeyword_0_0_1_TheKeyword_0_0_2_LinkKeyword_0_0_3___or___ClickKeyword_0_1_0_OnKeyword_0_1_1_TheKeyword_0_1_2_ButtonKeyword_0_1_3_WithKeyword_0_1_4_TextKeyword_0_1_5__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_VerifyCommand___AKeyword_5_0_0_q_LinkKeyword_5_0_1___or___TheKeyword_5_1_0_StringKeyword_5_1_1__.equals(syntax))
+				emit_VerifyCommand___AKeyword_5_0_0_q_LinkKeyword_5_0_1___or___TheKeyword_5_1_0_StringKeyword_5_1_1__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
 
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     (
+	  *         ('click' 'on' 'the' 'link') | 
+	  *         (
+	  *             'click' 
+	  *             'on' 
+	  *             'the' 
+	  *             'button' 
+	  *             'with' 
+	  *             'text'
+	  *         )
+	  *     )
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) (ambiguity) elementText=STRING
+	 
+	 * </pre>
+	 */
+	protected void emit_ClickCommand___ClickKeyword_0_0_0_OnKeyword_0_0_1_TheKeyword_0_0_2_LinkKeyword_0_0_3___or___ClickKeyword_0_1_0_OnKeyword_0_1_1_TheKeyword_0_1_2_ButtonKeyword_0_1_3_WithKeyword_0_1_4_TextKeyword_0_1_5__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ('a'? 'link') | ('the' 'string')
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) 'verify' 'that' 'the' 'page' 'contains' (ambiguity) verifyString=STRING
+	 
+	 * </pre>
+	 */
+	protected void emit_VerifyCommand___AKeyword_5_0_0_q_LinkKeyword_5_0_1___or___TheKeyword_5_1_0_StringKeyword_5_1_1__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
 }

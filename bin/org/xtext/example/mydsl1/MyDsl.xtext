@@ -21,7 +21,7 @@ NavigateToCommand:
     'go' 'to' 'the' 'url' url=STRING;
 
 ClickCommand:
-    'click' 'on' 'the' 'element' elementText=STRING;
+    ('click' 'on' 'the' 'link' | 'click' 'on' 'the' 'button' 'with' 'text') elementText=STRING; 
 
 FillCommand:
     'fill' 'the' 'field' fieldName=STRING 'with' fieldValue=STRING;
@@ -30,7 +30,7 @@ SelectCommand:
     'select' 'the' 'checkbox' 'named' checkboxName=STRING;
 
 VerifyCommand:
-    'verify' 'that' 'the' 'page' 'contains' 'the' 'string' verifyString=STRING;
+    'verify' 'that' 'the' 'page' 'contains' ( ('a'?) 'link' | 'the' 'string' ) verifyString=STRING;
 
 ReadCommand:
     'read' 'the' 'element' 'with' 'text' elementText=STRING 'and' 'store' 'it' 'in' 'variable' variableName=ID;
