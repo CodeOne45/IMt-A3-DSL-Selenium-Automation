@@ -6,31 +6,78 @@
     copyrightFields="false" runtimeVersion="2.29">
   <genPackages prefix="MyDsl" basePackage="org.xtext.example.mydsl1" disposableProviderFactory="true"
       fileExtensions="dmodel" ecorePackage="MyDsl.ecore#/">
-    <genClasses ecoreClass="MyDsl.ecore#//Model">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Model/commands"/>
+    <genClasses ecoreClass="MyDsl.ecore#//BrowserDsl">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//BrowserDsl/cases"/>
+    </genClasses>
+    <genClasses ecoreClass="MyDsl.ecore#//TestCase">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//TestCase/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//TestCase/commands"/>
     </genClasses>
     <genClasses ecoreClass="MyDsl.ecore#//Command"/>
-    <genClasses ecoreClass="MyDsl.ecore#//OpenBrowserCommand"/>
-    <genClasses ecoreClass="MyDsl.ecore#//NavigateToCommand">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//NavigateToCommand/url"/>
-    </genClasses>
-    <genClasses ecoreClass="MyDsl.ecore#//ClickCommand">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//ClickCommand/elementText"/>
-    </genClasses>
-    <genClasses ecoreClass="MyDsl.ecore#//FillCommand">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//FillCommand/fieldName"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//FillCommand/fieldValue"/>
-    </genClasses>
-    <genClasses ecoreClass="MyDsl.ecore#//SelectCommand">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//SelectCommand/checkboxName"/>
-    </genClasses>
-    <genClasses ecoreClass="MyDsl.ecore#//VerifyCommand">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//VerifyCommand/verifyString"/>
-    </genClasses>
-    <genClasses ecoreClass="MyDsl.ecore#//ReadCommand">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//ReadCommand/elementText"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//ReadCommand/variableName"/>
-    </genClasses>
     <genClasses ecoreClass="MyDsl.ecore#//OpenBrowser"/>
+    <genClasses ecoreClass="MyDsl.ecore#//DOMCommand"/>
+    <genClasses ecoreClass="MyDsl.ecore#//GoTo">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//GoTo/url"/>
+    </genClasses>
+    <genClasses ecoreClass="MyDsl.ecore#//Click">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Click/element"/>
+    </genClasses>
+    <genClasses ecoreClass="MyDsl.ecore#//Copy">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//Copy/property"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Copy/element"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//Copy/key"/>
+    </genClasses>
+    <genClasses ecoreClass="MyDsl.ecore#//Paste">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Paste/element"/>
+    </genClasses>
+    <genClasses ecoreClass="MyDsl.ecore#//Insert">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Insert/element"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Insert/content"/>
+    </genClasses>
+    <genClasses ecoreClass="MyDsl.ecore#//Selector">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Selector/predicate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//Selector/domType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Selector/attributes"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//Selector/label"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Selector/properties"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Selector/parent"/>
+    </genClasses>
+    <genClasses ecoreClass="MyDsl.ecore#//Attributes">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Attributes/attributes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Attributes/properties"/>
+    </genClasses>
+    <genClasses ecoreClass="MyDsl.ecore#//ElementAttribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//ElementAttribute/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//ElementAttribute/matcher"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//ElementAttribute/value"/>
+    </genClasses>
+    <genClasses ecoreClass="MyDsl.ecore#//Content"/>
+    <genClasses ecoreClass="MyDsl.ecore#//ClipboardContent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//ClipboardContent/key"/>
+    </genClasses>
+    <genClasses ecoreClass="MyDsl.ecore#//StringContent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//StringContent/value"/>
+    </genClasses>
+    <genClasses ecoreClass="MyDsl.ecore#//Properties">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Properties/properties"/>
+    </genClasses>
+    <genClasses ecoreClass="MyDsl.ecore#//ElementProperty">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//ElementProperty/negated"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//ElementProperty/property"/>
+    </genClasses>
+    <genClasses ecoreClass="MyDsl.ecore#//SelectorPredicate"/>
+    <genClasses ecoreClass="MyDsl.ecore#//AllPredicate"/>
+    <genClasses ecoreClass="MyDsl.ecore#//OrdinalPredicate">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//OrdinalPredicate/ordinal"/>
+    </genClasses>
+    <genClasses ecoreClass="MyDsl.ecore#//LastPredicate"/>
+    <genClasses ecoreClass="MyDsl.ecore#//DefaultFirstPredicate"/>
+    <genClasses ecoreClass="MyDsl.ecore#//Verify">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Verify/selector"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Verify/properties"/>
+    </genClasses>
+    <genClasses ecoreClass="MyDsl.ecore#//OrdinalInteger">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//OrdinalInteger/value"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

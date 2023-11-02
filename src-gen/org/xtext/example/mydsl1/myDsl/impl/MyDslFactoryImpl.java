@@ -65,16 +65,31 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
   {
     switch (eClass.getClassifierID())
     {
-      case MyDslPackage.MODEL: return createModel();
+      case MyDslPackage.BROWSER_DSL: return createBrowserDsl();
+      case MyDslPackage.TEST_CASE: return createTestCase();
       case MyDslPackage.COMMAND: return createCommand();
-      case MyDslPackage.OPEN_BROWSER_COMMAND: return createOpenBrowserCommand();
-      case MyDslPackage.NAVIGATE_TO_COMMAND: return createNavigateToCommand();
-      case MyDslPackage.CLICK_COMMAND: return createClickCommand();
-      case MyDslPackage.FILL_COMMAND: return createFillCommand();
-      case MyDslPackage.SELECT_COMMAND: return createSelectCommand();
-      case MyDslPackage.VERIFY_COMMAND: return createVerifyCommand();
-      case MyDslPackage.READ_COMMAND: return createReadCommand();
       case MyDslPackage.OPEN_BROWSER: return createOpenBrowser();
+      case MyDslPackage.DOM_COMMAND: return createDOMCommand();
+      case MyDslPackage.GO_TO: return createGoTo();
+      case MyDslPackage.CLICK: return createClick();
+      case MyDslPackage.COPY: return createCopy();
+      case MyDslPackage.PASTE: return createPaste();
+      case MyDslPackage.INSERT: return createInsert();
+      case MyDslPackage.SELECTOR: return createSelector();
+      case MyDslPackage.ATTRIBUTES: return createAttributes();
+      case MyDslPackage.ELEMENT_ATTRIBUTE: return createElementAttribute();
+      case MyDslPackage.CONTENT: return createContent();
+      case MyDslPackage.CLIPBOARD_CONTENT: return createClipboardContent();
+      case MyDslPackage.STRING_CONTENT: return createStringContent();
+      case MyDslPackage.PROPERTIES: return createProperties();
+      case MyDslPackage.ELEMENT_PROPERTY: return createElementProperty();
+      case MyDslPackage.SELECTOR_PREDICATE: return createSelectorPredicate();
+      case MyDslPackage.ALL_PREDICATE: return createAllPredicate();
+      case MyDslPackage.ORDINAL_PREDICATE: return createOrdinalPredicate();
+      case MyDslPackage.LAST_PREDICATE: return createLastPredicate();
+      case MyDslPackage.DEFAULT_FIRST_PREDICATE: return createDefaultFirstPredicate();
+      case MyDslPackage.VERIFY: return createVerify();
+      case MyDslPackage.ORDINAL_INTEGER: return createOrdinalInteger();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -86,10 +101,22 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
    * @generated
    */
   @Override
-  public Model createModel()
+  public BrowserDsl createBrowserDsl()
   {
-    ModelImpl model = new ModelImpl();
-    return model;
+    BrowserDslImpl browserDsl = new BrowserDslImpl();
+    return browserDsl;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public TestCase createTestCase()
+  {
+    TestCaseImpl testCase = new TestCaseImpl();
+    return testCase;
   }
 
   /**
@@ -110,94 +137,262 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
    * @generated
    */
   @Override
-  public OpenBrowserCommand createOpenBrowserCommand()
-  {
-    OpenBrowserCommandImpl openBrowserCommand = new OpenBrowserCommandImpl();
-    return openBrowserCommand;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public NavigateToCommand createNavigateToCommand()
-  {
-    NavigateToCommandImpl navigateToCommand = new NavigateToCommandImpl();
-    return navigateToCommand;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public ClickCommand createClickCommand()
-  {
-    ClickCommandImpl clickCommand = new ClickCommandImpl();
-    return clickCommand;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public FillCommand createFillCommand()
-  {
-    FillCommandImpl fillCommand = new FillCommandImpl();
-    return fillCommand;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public SelectCommand createSelectCommand()
-  {
-    SelectCommandImpl selectCommand = new SelectCommandImpl();
-    return selectCommand;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public VerifyCommand createVerifyCommand()
-  {
-    VerifyCommandImpl verifyCommand = new VerifyCommandImpl();
-    return verifyCommand;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public ReadCommand createReadCommand()
-  {
-    ReadCommandImpl readCommand = new ReadCommandImpl();
-    return readCommand;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public OpenBrowser createOpenBrowser()
   {
     OpenBrowserImpl openBrowser = new OpenBrowserImpl();
     return openBrowser;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public DOMCommand createDOMCommand()
+  {
+    DOMCommandImpl domCommand = new DOMCommandImpl();
+    return domCommand;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public GoTo createGoTo()
+  {
+    GoToImpl goTo = new GoToImpl();
+    return goTo;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Click createClick()
+  {
+    ClickImpl click = new ClickImpl();
+    return click;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Copy createCopy()
+  {
+    CopyImpl copy = new CopyImpl();
+    return copy;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Paste createPaste()
+  {
+    PasteImpl paste = new PasteImpl();
+    return paste;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Insert createInsert()
+  {
+    InsertImpl insert = new InsertImpl();
+    return insert;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Selector createSelector()
+  {
+    SelectorImpl selector = new SelectorImpl();
+    return selector;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Attributes createAttributes()
+  {
+    AttributesImpl attributes = new AttributesImpl();
+    return attributes;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ElementAttribute createElementAttribute()
+  {
+    ElementAttributeImpl elementAttribute = new ElementAttributeImpl();
+    return elementAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Content createContent()
+  {
+    ContentImpl content = new ContentImpl();
+    return content;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ClipboardContent createClipboardContent()
+  {
+    ClipboardContentImpl clipboardContent = new ClipboardContentImpl();
+    return clipboardContent;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public StringContent createStringContent()
+  {
+    StringContentImpl stringContent = new StringContentImpl();
+    return stringContent;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Properties createProperties()
+  {
+    PropertiesImpl properties = new PropertiesImpl();
+    return properties;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ElementProperty createElementProperty()
+  {
+    ElementPropertyImpl elementProperty = new ElementPropertyImpl();
+    return elementProperty;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public SelectorPredicate createSelectorPredicate()
+  {
+    SelectorPredicateImpl selectorPredicate = new SelectorPredicateImpl();
+    return selectorPredicate;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public AllPredicate createAllPredicate()
+  {
+    AllPredicateImpl allPredicate = new AllPredicateImpl();
+    return allPredicate;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public OrdinalPredicate createOrdinalPredicate()
+  {
+    OrdinalPredicateImpl ordinalPredicate = new OrdinalPredicateImpl();
+    return ordinalPredicate;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public LastPredicate createLastPredicate()
+  {
+    LastPredicateImpl lastPredicate = new LastPredicateImpl();
+    return lastPredicate;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public DefaultFirstPredicate createDefaultFirstPredicate()
+  {
+    DefaultFirstPredicateImpl defaultFirstPredicate = new DefaultFirstPredicateImpl();
+    return defaultFirstPredicate;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Verify createVerify()
+  {
+    VerifyImpl verify = new VerifyImpl();
+    return verify;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public OrdinalInteger createOrdinalInteger()
+  {
+    OrdinalIntegerImpl ordinalInteger = new OrdinalIntegerImpl();
+    return ordinalInteger;
   }
 
   /**

@@ -15,7 +15,7 @@ import org.xtext.example.mydsl1.myDsl.OpenBrowser;
  *
  * @generated
  */
-public class OpenBrowserImpl extends OpenBrowserCommandImpl implements OpenBrowser
+public class OpenBrowserImpl extends CommandImpl implements OpenBrowser
 {
   /**
    * <!-- begin-user-doc -->

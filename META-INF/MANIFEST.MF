@@ -25,5 +25,16 @@ Export-Package: org.xtext.example.mydsl1.serializer,
  org.xtext.example.mydsl1.myDsl.impl,
  org.xtext.example.mydsl1.myDsl,
  org.xtext.example.mydsl1,
- org.xtext.example.mydsl1.parser.antlr.internal
+ org.xtext.example.mydsl1.parser.antlr.internal,
+ fr.imta.browserautomation,
+ fr.imta.browserautomation.browserDsl,
+ fr.imta.browserautomation.generator,
+ fr.imta.browserautomation.validation,
+ fr.imta.browserautomation.browserDsl.impl,
+ fr.imta.browserautomation.serializer,
+ fr.imta.browserautomation.parser.antlr.internal,
+ fr.imta.browserautomation.parser.antlr,
+ fr.imta.browserautomation.browserDsl.util,
+ fr.imta.browserautomation.scoping,
+ fr.imta.browserautomation.services
 Import-Package: org.apache.log4j

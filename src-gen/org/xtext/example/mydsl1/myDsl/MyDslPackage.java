@@ -58,14 +58,51 @@ public interface MyDslPackage extends EPackage
   MyDslPackage eINSTANCE = org.xtext.example.mydsl1.myDsl.impl.MyDslPackageImpl.init();
 
   /**
-   * The meta object id for the '{@link org.xtext.example.mydsl1.myDsl.impl.ModelImpl <em>Model</em>}' class.
+   * The meta object id for the '{@link org.xtext.example.mydsl1.myDsl.impl.BrowserDslImpl <em>Browser Dsl</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.xtext.example.mydsl1.myDsl.impl.ModelImpl
-   * @see org.xtext.example.mydsl1.myDsl.impl.MyDslPackageImpl#getModel()
+   * @see org.xtext.example.mydsl1.myDsl.impl.BrowserDslImpl
+   * @see org.xtext.example.mydsl1.myDsl.impl.MyDslPackageImpl#getBrowserDsl()
    * @generated
    */
-  int MODEL = 0;
+  int BROWSER_DSL = 0;
+
+  /**
+   * The feature id for the '<em><b>Cases</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BROWSER_DSL__CASES = 0;
+
+  /**
+   * The number of structural features of the '<em>Browser Dsl</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BROWSER_DSL_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl1.myDsl.impl.TestCaseImpl <em>Test Case</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl1.myDsl.impl.TestCaseImpl
+   * @see org.xtext.example.mydsl1.myDsl.impl.MyDslPackageImpl#getTestCase()
+   * @generated
+   */
+  int TEST_CASE = 1;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TEST_CASE__NAME = 0;
 
   /**
    * The feature id for the '<em><b>Commands</b></em>' containment reference list.
@@ -74,16 +111,16 @@ public interface MyDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MODEL__COMMANDS = 0;
+  int TEST_CASE__COMMANDS = 1;
 
   /**
-   * The number of structural features of the '<em>Model</em>' class.
+   * The number of structural features of the '<em>Test Case</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MODEL_FEATURE_COUNT = 1;
+  int TEST_CASE_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link org.xtext.example.mydsl1.myDsl.impl.CommandImpl <em>Command</em>}' class.
@@ -93,7 +130,7 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.mydsl1.myDsl.impl.MyDslPackageImpl#getCommand()
    * @generated
    */
-  int COMMAND = 1;
+  int COMMAND = 2;
 
   /**
    * The number of structural features of the '<em>Command</em>' class.
@@ -105,211 +142,6 @@ public interface MyDslPackage extends EPackage
   int COMMAND_FEATURE_COUNT = 0;
 
   /**
-   * The meta object id for the '{@link org.xtext.example.mydsl1.myDsl.impl.OpenBrowserCommandImpl <em>Open Browser Command</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.example.mydsl1.myDsl.impl.OpenBrowserCommandImpl
-   * @see org.xtext.example.mydsl1.myDsl.impl.MyDslPackageImpl#getOpenBrowserCommand()
-   * @generated
-   */
-  int OPEN_BROWSER_COMMAND = 2;
-
-  /**
-   * The number of structural features of the '<em>Open Browser Command</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OPEN_BROWSER_COMMAND_FEATURE_COUNT = COMMAND_FEATURE_COUNT + 0;
-
-  /**
-   * The meta object id for the '{@link org.xtext.example.mydsl1.myDsl.impl.NavigateToCommandImpl <em>Navigate To Command</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.example.mydsl1.myDsl.impl.NavigateToCommandImpl
-   * @see org.xtext.example.mydsl1.myDsl.impl.MyDslPackageImpl#getNavigateToCommand()
-   * @generated
-   */
-  int NAVIGATE_TO_COMMAND = 3;
-
-  /**
-   * The feature id for the '<em><b>Url</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NAVIGATE_TO_COMMAND__URL = COMMAND_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Navigate To Command</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NAVIGATE_TO_COMMAND_FEATURE_COUNT = COMMAND_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link org.xtext.example.mydsl1.myDsl.impl.ClickCommandImpl <em>Click Command</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.example.mydsl1.myDsl.impl.ClickCommandImpl
-   * @see org.xtext.example.mydsl1.myDsl.impl.MyDslPackageImpl#getClickCommand()
-   * @generated
-   */
-  int CLICK_COMMAND = 4;
-
-  /**
-   * The feature id for the '<em><b>Element Text</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CLICK_COMMAND__ELEMENT_TEXT = COMMAND_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Click Command</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CLICK_COMMAND_FEATURE_COUNT = COMMAND_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link org.xtext.example.mydsl1.myDsl.impl.FillCommandImpl <em>Fill Command</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.example.mydsl1.myDsl.impl.FillCommandImpl
-   * @see org.xtext.example.mydsl1.myDsl.impl.MyDslPackageImpl#getFillCommand()
-   * @generated
-   */
-  int FILL_COMMAND = 5;
-
-  /**
-   * The feature id for the '<em><b>Field Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FILL_COMMAND__FIELD_NAME = COMMAND_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Field Value</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FILL_COMMAND__FIELD_VALUE = COMMAND_FEATURE_COUNT + 1;
-
-  /**
-   * The number of structural features of the '<em>Fill Command</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FILL_COMMAND_FEATURE_COUNT = COMMAND_FEATURE_COUNT + 2;
-
-  /**
-   * The meta object id for the '{@link org.xtext.example.mydsl1.myDsl.impl.SelectCommandImpl <em>Select Command</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.example.mydsl1.myDsl.impl.SelectCommandImpl
-   * @see org.xtext.example.mydsl1.myDsl.impl.MyDslPackageImpl#getSelectCommand()
-   * @generated
-   */
-  int SELECT_COMMAND = 6;
-
-  /**
-   * The feature id for the '<em><b>Checkbox Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SELECT_COMMAND__CHECKBOX_NAME = COMMAND_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Select Command</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SELECT_COMMAND_FEATURE_COUNT = COMMAND_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link org.xtext.example.mydsl1.myDsl.impl.VerifyCommandImpl <em>Verify Command</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.example.mydsl1.myDsl.impl.VerifyCommandImpl
-   * @see org.xtext.example.mydsl1.myDsl.impl.MyDslPackageImpl#getVerifyCommand()
-   * @generated
-   */
-  int VERIFY_COMMAND = 7;
-
-  /**
-   * The feature id for the '<em><b>Verify String</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int VERIFY_COMMAND__VERIFY_STRING = COMMAND_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Verify Command</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int VERIFY_COMMAND_FEATURE_COUNT = COMMAND_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link org.xtext.example.mydsl1.myDsl.impl.ReadCommandImpl <em>Read Command</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.example.mydsl1.myDsl.impl.ReadCommandImpl
-   * @see org.xtext.example.mydsl1.myDsl.impl.MyDslPackageImpl#getReadCommand()
-   * @generated
-   */
-  int READ_COMMAND = 8;
-
-  /**
-   * The feature id for the '<em><b>Element Text</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int READ_COMMAND__ELEMENT_TEXT = COMMAND_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Variable Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int READ_COMMAND__VARIABLE_NAME = COMMAND_FEATURE_COUNT + 1;
-
-  /**
-   * The number of structural features of the '<em>Read Command</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int READ_COMMAND_FEATURE_COUNT = COMMAND_FEATURE_COUNT + 2;
-
-  /**
    * The meta object id for the '{@link org.xtext.example.mydsl1.myDsl.impl.OpenBrowserImpl <em>Open Browser</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -317,7 +149,7 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.mydsl1.myDsl.impl.MyDslPackageImpl#getOpenBrowser()
    * @generated
    */
-  int OPEN_BROWSER = 9;
+  int OPEN_BROWSER = 3;
 
   /**
    * The number of structural features of the '<em>Open Browser</em>' class.
@@ -326,29 +158,712 @@ public interface MyDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int OPEN_BROWSER_FEATURE_COUNT = OPEN_BROWSER_COMMAND_FEATURE_COUNT + 0;
-
+  int OPEN_BROWSER_FEATURE_COUNT = COMMAND_FEATURE_COUNT + 0;
 
   /**
-   * Returns the meta object for class '{@link org.xtext.example.mydsl1.myDsl.Model <em>Model</em>}'.
+   * The meta object id for the '{@link org.xtext.example.mydsl1.myDsl.impl.DOMCommandImpl <em>DOM Command</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Model</em>'.
-   * @see org.xtext.example.mydsl1.myDsl.Model
+   * @see org.xtext.example.mydsl1.myDsl.impl.DOMCommandImpl
+   * @see org.xtext.example.mydsl1.myDsl.impl.MyDslPackageImpl#getDOMCommand()
    * @generated
    */
-  EClass getModel();
+  int DOM_COMMAND = 4;
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl1.myDsl.Model#getCommands <em>Commands</em>}'.
+   * The number of structural features of the '<em>DOM Command</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DOM_COMMAND_FEATURE_COUNT = COMMAND_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl1.myDsl.impl.GoToImpl <em>Go To</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl1.myDsl.impl.GoToImpl
+   * @see org.xtext.example.mydsl1.myDsl.impl.MyDslPackageImpl#getGoTo()
+   * @generated
+   */
+  int GO_TO = 5;
+
+  /**
+   * The feature id for the '<em><b>Url</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GO_TO__URL = COMMAND_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Go To</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GO_TO_FEATURE_COUNT = COMMAND_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl1.myDsl.impl.ClickImpl <em>Click</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl1.myDsl.impl.ClickImpl
+   * @see org.xtext.example.mydsl1.myDsl.impl.MyDslPackageImpl#getClick()
+   * @generated
+   */
+  int CLICK = 6;
+
+  /**
+   * The feature id for the '<em><b>Element</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLICK__ELEMENT = DOM_COMMAND_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Click</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLICK_FEATURE_COUNT = DOM_COMMAND_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl1.myDsl.impl.CopyImpl <em>Copy</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl1.myDsl.impl.CopyImpl
+   * @see org.xtext.example.mydsl1.myDsl.impl.MyDslPackageImpl#getCopy()
+   * @generated
+   */
+  int COPY = 7;
+
+  /**
+   * The feature id for the '<em><b>Property</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COPY__PROPERTY = DOM_COMMAND_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Element</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COPY__ELEMENT = DOM_COMMAND_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Key</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COPY__KEY = DOM_COMMAND_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>Copy</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COPY_FEATURE_COUNT = DOM_COMMAND_FEATURE_COUNT + 3;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl1.myDsl.impl.PasteImpl <em>Paste</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl1.myDsl.impl.PasteImpl
+   * @see org.xtext.example.mydsl1.myDsl.impl.MyDslPackageImpl#getPaste()
+   * @generated
+   */
+  int PASTE = 8;
+
+  /**
+   * The feature id for the '<em><b>Element</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PASTE__ELEMENT = DOM_COMMAND_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Paste</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PASTE_FEATURE_COUNT = DOM_COMMAND_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl1.myDsl.impl.InsertImpl <em>Insert</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl1.myDsl.impl.InsertImpl
+   * @see org.xtext.example.mydsl1.myDsl.impl.MyDslPackageImpl#getInsert()
+   * @generated
+   */
+  int INSERT = 9;
+
+  /**
+   * The feature id for the '<em><b>Element</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INSERT__ELEMENT = DOM_COMMAND_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Content</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INSERT__CONTENT = DOM_COMMAND_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Insert</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INSERT_FEATURE_COUNT = DOM_COMMAND_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl1.myDsl.impl.SelectorImpl <em>Selector</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl1.myDsl.impl.SelectorImpl
+   * @see org.xtext.example.mydsl1.myDsl.impl.MyDslPackageImpl#getSelector()
+   * @generated
+   */
+  int SELECTOR = 10;
+
+  /**
+   * The feature id for the '<em><b>Predicate</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SELECTOR__PREDICATE = 0;
+
+  /**
+   * The feature id for the '<em><b>Dom Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SELECTOR__DOM_TYPE = 1;
+
+  /**
+   * The feature id for the '<em><b>Attributes</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SELECTOR__ATTRIBUTES = 2;
+
+  /**
+   * The feature id for the '<em><b>Label</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SELECTOR__LABEL = 3;
+
+  /**
+   * The feature id for the '<em><b>Properties</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SELECTOR__PROPERTIES = 4;
+
+  /**
+   * The feature id for the '<em><b>Parent</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SELECTOR__PARENT = 5;
+
+  /**
+   * The number of structural features of the '<em>Selector</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SELECTOR_FEATURE_COUNT = 6;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl1.myDsl.impl.AttributesImpl <em>Attributes</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl1.myDsl.impl.AttributesImpl
+   * @see org.xtext.example.mydsl1.myDsl.impl.MyDslPackageImpl#getAttributes()
+   * @generated
+   */
+  int ATTRIBUTES = 11;
+
+  /**
+   * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ATTRIBUTES__ATTRIBUTES = 0;
+
+  /**
+   * The feature id for the '<em><b>Properties</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ATTRIBUTES__PROPERTIES = 1;
+
+  /**
+   * The number of structural features of the '<em>Attributes</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ATTRIBUTES_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl1.myDsl.impl.ElementAttributeImpl <em>Element Attribute</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl1.myDsl.impl.ElementAttributeImpl
+   * @see org.xtext.example.mydsl1.myDsl.impl.MyDslPackageImpl#getElementAttribute()
+   * @generated
+   */
+  int ELEMENT_ATTRIBUTE = 12;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENT_ATTRIBUTE__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Matcher</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENT_ATTRIBUTE__MATCHER = 1;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENT_ATTRIBUTE__VALUE = 2;
+
+  /**
+   * The number of structural features of the '<em>Element Attribute</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENT_ATTRIBUTE_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl1.myDsl.impl.ContentImpl <em>Content</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl1.myDsl.impl.ContentImpl
+   * @see org.xtext.example.mydsl1.myDsl.impl.MyDslPackageImpl#getContent()
+   * @generated
+   */
+  int CONTENT = 13;
+
+  /**
+   * The number of structural features of the '<em>Content</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONTENT_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl1.myDsl.impl.ClipboardContentImpl <em>Clipboard Content</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl1.myDsl.impl.ClipboardContentImpl
+   * @see org.xtext.example.mydsl1.myDsl.impl.MyDslPackageImpl#getClipboardContent()
+   * @generated
+   */
+  int CLIPBOARD_CONTENT = 14;
+
+  /**
+   * The feature id for the '<em><b>Key</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLIPBOARD_CONTENT__KEY = CONTENT_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Clipboard Content</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLIPBOARD_CONTENT_FEATURE_COUNT = CONTENT_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl1.myDsl.impl.StringContentImpl <em>String Content</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl1.myDsl.impl.StringContentImpl
+   * @see org.xtext.example.mydsl1.myDsl.impl.MyDslPackageImpl#getStringContent()
+   * @generated
+   */
+  int STRING_CONTENT = 15;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRING_CONTENT__VALUE = CONTENT_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>String Content</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRING_CONTENT_FEATURE_COUNT = CONTENT_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl1.myDsl.impl.PropertiesImpl <em>Properties</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl1.myDsl.impl.PropertiesImpl
+   * @see org.xtext.example.mydsl1.myDsl.impl.MyDslPackageImpl#getProperties()
+   * @generated
+   */
+  int PROPERTIES = 16;
+
+  /**
+   * The feature id for the '<em><b>Properties</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PROPERTIES__PROPERTIES = 0;
+
+  /**
+   * The number of structural features of the '<em>Properties</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PROPERTIES_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl1.myDsl.impl.ElementPropertyImpl <em>Element Property</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl1.myDsl.impl.ElementPropertyImpl
+   * @see org.xtext.example.mydsl1.myDsl.impl.MyDslPackageImpl#getElementProperty()
+   * @generated
+   */
+  int ELEMENT_PROPERTY = 17;
+
+  /**
+   * The feature id for the '<em><b>Negated</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENT_PROPERTY__NEGATED = 0;
+
+  /**
+   * The feature id for the '<em><b>Property</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENT_PROPERTY__PROPERTY = 1;
+
+  /**
+   * The number of structural features of the '<em>Element Property</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENT_PROPERTY_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl1.myDsl.impl.SelectorPredicateImpl <em>Selector Predicate</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl1.myDsl.impl.SelectorPredicateImpl
+   * @see org.xtext.example.mydsl1.myDsl.impl.MyDslPackageImpl#getSelectorPredicate()
+   * @generated
+   */
+  int SELECTOR_PREDICATE = 18;
+
+  /**
+   * The number of structural features of the '<em>Selector Predicate</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SELECTOR_PREDICATE_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl1.myDsl.impl.AllPredicateImpl <em>All Predicate</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl1.myDsl.impl.AllPredicateImpl
+   * @see org.xtext.example.mydsl1.myDsl.impl.MyDslPackageImpl#getAllPredicate()
+   * @generated
+   */
+  int ALL_PREDICATE = 19;
+
+  /**
+   * The number of structural features of the '<em>All Predicate</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ALL_PREDICATE_FEATURE_COUNT = SELECTOR_PREDICATE_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl1.myDsl.impl.OrdinalPredicateImpl <em>Ordinal Predicate</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl1.myDsl.impl.OrdinalPredicateImpl
+   * @see org.xtext.example.mydsl1.myDsl.impl.MyDslPackageImpl#getOrdinalPredicate()
+   * @generated
+   */
+  int ORDINAL_PREDICATE = 20;
+
+  /**
+   * The feature id for the '<em><b>Ordinal</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ORDINAL_PREDICATE__ORDINAL = SELECTOR_PREDICATE_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Ordinal Predicate</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ORDINAL_PREDICATE_FEATURE_COUNT = SELECTOR_PREDICATE_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl1.myDsl.impl.LastPredicateImpl <em>Last Predicate</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl1.myDsl.impl.LastPredicateImpl
+   * @see org.xtext.example.mydsl1.myDsl.impl.MyDslPackageImpl#getLastPredicate()
+   * @generated
+   */
+  int LAST_PREDICATE = 21;
+
+  /**
+   * The number of structural features of the '<em>Last Predicate</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LAST_PREDICATE_FEATURE_COUNT = SELECTOR_PREDICATE_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl1.myDsl.impl.DefaultFirstPredicateImpl <em>Default First Predicate</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl1.myDsl.impl.DefaultFirstPredicateImpl
+   * @see org.xtext.example.mydsl1.myDsl.impl.MyDslPackageImpl#getDefaultFirstPredicate()
+   * @generated
+   */
+  int DEFAULT_FIRST_PREDICATE = 22;
+
+  /**
+   * The number of structural features of the '<em>Default First Predicate</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DEFAULT_FIRST_PREDICATE_FEATURE_COUNT = SELECTOR_PREDICATE_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl1.myDsl.impl.VerifyImpl <em>Verify</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl1.myDsl.impl.VerifyImpl
+   * @see org.xtext.example.mydsl1.myDsl.impl.MyDslPackageImpl#getVerify()
+   * @generated
+   */
+  int VERIFY = 23;
+
+  /**
+   * The feature id for the '<em><b>Selector</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VERIFY__SELECTOR = DOM_COMMAND_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Properties</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VERIFY__PROPERTIES = DOM_COMMAND_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Verify</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VERIFY_FEATURE_COUNT = DOM_COMMAND_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl1.myDsl.impl.OrdinalIntegerImpl <em>Ordinal Integer</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl1.myDsl.impl.OrdinalIntegerImpl
+   * @see org.xtext.example.mydsl1.myDsl.impl.MyDslPackageImpl#getOrdinalInteger()
+   * @generated
+   */
+  int ORDINAL_INTEGER = 24;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ORDINAL_INTEGER__VALUE = 0;
+
+  /**
+   * The number of structural features of the '<em>Ordinal Integer</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ORDINAL_INTEGER_FEATURE_COUNT = 1;
+
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl1.myDsl.BrowserDsl <em>Browser Dsl</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Browser Dsl</em>'.
+   * @see org.xtext.example.mydsl1.myDsl.BrowserDsl
+   * @generated
+   */
+  EClass getBrowserDsl();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl1.myDsl.BrowserDsl#getCases <em>Cases</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Cases</em>'.
+   * @see org.xtext.example.mydsl1.myDsl.BrowserDsl#getCases()
+   * @see #getBrowserDsl()
+   * @generated
+   */
+  EReference getBrowserDsl_Cases();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl1.myDsl.TestCase <em>Test Case</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Test Case</em>'.
+   * @see org.xtext.example.mydsl1.myDsl.TestCase
+   * @generated
+   */
+  EClass getTestCase();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl1.myDsl.TestCase#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.xtext.example.mydsl1.myDsl.TestCase#getName()
+   * @see #getTestCase()
+   * @generated
+   */
+  EAttribute getTestCase_Name();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl1.myDsl.TestCase#getCommands <em>Commands</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Commands</em>'.
-   * @see org.xtext.example.mydsl1.myDsl.Model#getCommands()
-   * @see #getModel()
+   * @see org.xtext.example.mydsl1.myDsl.TestCase#getCommands()
+   * @see #getTestCase()
    * @generated
    */
-  EReference getModel_Commands();
+  EReference getTestCase_Commands();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.mydsl1.myDsl.Command <em>Command</em>}'.
@@ -361,164 +876,6 @@ public interface MyDslPackage extends EPackage
   EClass getCommand();
 
   /**
-   * Returns the meta object for class '{@link org.xtext.example.mydsl1.myDsl.OpenBrowserCommand <em>Open Browser Command</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Open Browser Command</em>'.
-   * @see org.xtext.example.mydsl1.myDsl.OpenBrowserCommand
-   * @generated
-   */
-  EClass getOpenBrowserCommand();
-
-  /**
-   * Returns the meta object for class '{@link org.xtext.example.mydsl1.myDsl.NavigateToCommand <em>Navigate To Command</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Navigate To Command</em>'.
-   * @see org.xtext.example.mydsl1.myDsl.NavigateToCommand
-   * @generated
-   */
-  EClass getNavigateToCommand();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl1.myDsl.NavigateToCommand#getUrl <em>Url</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Url</em>'.
-   * @see org.xtext.example.mydsl1.myDsl.NavigateToCommand#getUrl()
-   * @see #getNavigateToCommand()
-   * @generated
-   */
-  EAttribute getNavigateToCommand_Url();
-
-  /**
-   * Returns the meta object for class '{@link org.xtext.example.mydsl1.myDsl.ClickCommand <em>Click Command</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Click Command</em>'.
-   * @see org.xtext.example.mydsl1.myDsl.ClickCommand
-   * @generated
-   */
-  EClass getClickCommand();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl1.myDsl.ClickCommand#getElementText <em>Element Text</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Element Text</em>'.
-   * @see org.xtext.example.mydsl1.myDsl.ClickCommand#getElementText()
-   * @see #getClickCommand()
-   * @generated
-   */
-  EAttribute getClickCommand_ElementText();
-
-  /**
-   * Returns the meta object for class '{@link org.xtext.example.mydsl1.myDsl.FillCommand <em>Fill Command</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Fill Command</em>'.
-   * @see org.xtext.example.mydsl1.myDsl.FillCommand
-   * @generated
-   */
-  EClass getFillCommand();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl1.myDsl.FillCommand#getFieldName <em>Field Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Field Name</em>'.
-   * @see org.xtext.example.mydsl1.myDsl.FillCommand#getFieldName()
-   * @see #getFillCommand()
-   * @generated
-   */
-  EAttribute getFillCommand_FieldName();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl1.myDsl.FillCommand#getFieldValue <em>Field Value</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Field Value</em>'.
-   * @see org.xtext.example.mydsl1.myDsl.FillCommand#getFieldValue()
-   * @see #getFillCommand()
-   * @generated
-   */
-  EAttribute getFillCommand_FieldValue();
-
-  /**
-   * Returns the meta object for class '{@link org.xtext.example.mydsl1.myDsl.SelectCommand <em>Select Command</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Select Command</em>'.
-   * @see org.xtext.example.mydsl1.myDsl.SelectCommand
-   * @generated
-   */
-  EClass getSelectCommand();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl1.myDsl.SelectCommand#getCheckboxName <em>Checkbox Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Checkbox Name</em>'.
-   * @see org.xtext.example.mydsl1.myDsl.SelectCommand#getCheckboxName()
-   * @see #getSelectCommand()
-   * @generated
-   */
-  EAttribute getSelectCommand_CheckboxName();
-
-  /**
-   * Returns the meta object for class '{@link org.xtext.example.mydsl1.myDsl.VerifyCommand <em>Verify Command</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Verify Command</em>'.
-   * @see org.xtext.example.mydsl1.myDsl.VerifyCommand
-   * @generated
-   */
-  EClass getVerifyCommand();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl1.myDsl.VerifyCommand#getVerifyString <em>Verify String</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Verify String</em>'.
-   * @see org.xtext.example.mydsl1.myDsl.VerifyCommand#getVerifyString()
-   * @see #getVerifyCommand()
-   * @generated
-   */
-  EAttribute getVerifyCommand_VerifyString();
-
-  /**
-   * Returns the meta object for class '{@link org.xtext.example.mydsl1.myDsl.ReadCommand <em>Read Command</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Read Command</em>'.
-   * @see org.xtext.example.mydsl1.myDsl.ReadCommand
-   * @generated
-   */
-  EClass getReadCommand();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl1.myDsl.ReadCommand#getElementText <em>Element Text</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Element Text</em>'.
-   * @see org.xtext.example.mydsl1.myDsl.ReadCommand#getElementText()
-   * @see #getReadCommand()
-   * @generated
-   */
-  EAttribute getReadCommand_ElementText();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl1.myDsl.ReadCommand#getVariableName <em>Variable Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Variable Name</em>'.
-   * @see org.xtext.example.mydsl1.myDsl.ReadCommand#getVariableName()
-   * @see #getReadCommand()
-   * @generated
-   */
-  EAttribute getReadCommand_VariableName();
-
-  /**
    * Returns the meta object for class '{@link org.xtext.example.mydsl1.myDsl.OpenBrowser <em>Open Browser</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -527,6 +884,524 @@ public interface MyDslPackage extends EPackage
    * @generated
    */
   EClass getOpenBrowser();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl1.myDsl.DOMCommand <em>DOM Command</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>DOM Command</em>'.
+   * @see org.xtext.example.mydsl1.myDsl.DOMCommand
+   * @generated
+   */
+  EClass getDOMCommand();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl1.myDsl.GoTo <em>Go To</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Go To</em>'.
+   * @see org.xtext.example.mydsl1.myDsl.GoTo
+   * @generated
+   */
+  EClass getGoTo();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl1.myDsl.GoTo#getUrl <em>Url</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Url</em>'.
+   * @see org.xtext.example.mydsl1.myDsl.GoTo#getUrl()
+   * @see #getGoTo()
+   * @generated
+   */
+  EAttribute getGoTo_Url();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl1.myDsl.Click <em>Click</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Click</em>'.
+   * @see org.xtext.example.mydsl1.myDsl.Click
+   * @generated
+   */
+  EClass getClick();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl1.myDsl.Click#getElement <em>Element</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Element</em>'.
+   * @see org.xtext.example.mydsl1.myDsl.Click#getElement()
+   * @see #getClick()
+   * @generated
+   */
+  EReference getClick_Element();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl1.myDsl.Copy <em>Copy</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Copy</em>'.
+   * @see org.xtext.example.mydsl1.myDsl.Copy
+   * @generated
+   */
+  EClass getCopy();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl1.myDsl.Copy#getProperty <em>Property</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Property</em>'.
+   * @see org.xtext.example.mydsl1.myDsl.Copy#getProperty()
+   * @see #getCopy()
+   * @generated
+   */
+  EAttribute getCopy_Property();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl1.myDsl.Copy#getElement <em>Element</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Element</em>'.
+   * @see org.xtext.example.mydsl1.myDsl.Copy#getElement()
+   * @see #getCopy()
+   * @generated
+   */
+  EReference getCopy_Element();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl1.myDsl.Copy#getKey <em>Key</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Key</em>'.
+   * @see org.xtext.example.mydsl1.myDsl.Copy#getKey()
+   * @see #getCopy()
+   * @generated
+   */
+  EAttribute getCopy_Key();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl1.myDsl.Paste <em>Paste</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Paste</em>'.
+   * @see org.xtext.example.mydsl1.myDsl.Paste
+   * @generated
+   */
+  EClass getPaste();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl1.myDsl.Paste#getElement <em>Element</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Element</em>'.
+   * @see org.xtext.example.mydsl1.myDsl.Paste#getElement()
+   * @see #getPaste()
+   * @generated
+   */
+  EReference getPaste_Element();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl1.myDsl.Insert <em>Insert</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Insert</em>'.
+   * @see org.xtext.example.mydsl1.myDsl.Insert
+   * @generated
+   */
+  EClass getInsert();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl1.myDsl.Insert#getElement <em>Element</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Element</em>'.
+   * @see org.xtext.example.mydsl1.myDsl.Insert#getElement()
+   * @see #getInsert()
+   * @generated
+   */
+  EReference getInsert_Element();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl1.myDsl.Insert#getContent <em>Content</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Content</em>'.
+   * @see org.xtext.example.mydsl1.myDsl.Insert#getContent()
+   * @see #getInsert()
+   * @generated
+   */
+  EReference getInsert_Content();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl1.myDsl.Selector <em>Selector</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Selector</em>'.
+   * @see org.xtext.example.mydsl1.myDsl.Selector
+   * @generated
+   */
+  EClass getSelector();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl1.myDsl.Selector#getPredicate <em>Predicate</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Predicate</em>'.
+   * @see org.xtext.example.mydsl1.myDsl.Selector#getPredicate()
+   * @see #getSelector()
+   * @generated
+   */
+  EReference getSelector_Predicate();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl1.myDsl.Selector#getDomType <em>Dom Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Dom Type</em>'.
+   * @see org.xtext.example.mydsl1.myDsl.Selector#getDomType()
+   * @see #getSelector()
+   * @generated
+   */
+  EAttribute getSelector_DomType();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl1.myDsl.Selector#getAttributes <em>Attributes</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Attributes</em>'.
+   * @see org.xtext.example.mydsl1.myDsl.Selector#getAttributes()
+   * @see #getSelector()
+   * @generated
+   */
+  EReference getSelector_Attributes();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl1.myDsl.Selector#getLabel <em>Label</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Label</em>'.
+   * @see org.xtext.example.mydsl1.myDsl.Selector#getLabel()
+   * @see #getSelector()
+   * @generated
+   */
+  EAttribute getSelector_Label();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl1.myDsl.Selector#getProperties <em>Properties</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Properties</em>'.
+   * @see org.xtext.example.mydsl1.myDsl.Selector#getProperties()
+   * @see #getSelector()
+   * @generated
+   */
+  EReference getSelector_Properties();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl1.myDsl.Selector#getParent <em>Parent</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Parent</em>'.
+   * @see org.xtext.example.mydsl1.myDsl.Selector#getParent()
+   * @see #getSelector()
+   * @generated
+   */
+  EReference getSelector_Parent();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl1.myDsl.Attributes <em>Attributes</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Attributes</em>'.
+   * @see org.xtext.example.mydsl1.myDsl.Attributes
+   * @generated
+   */
+  EClass getAttributes();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl1.myDsl.Attributes#getAttributes <em>Attributes</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Attributes</em>'.
+   * @see org.xtext.example.mydsl1.myDsl.Attributes#getAttributes()
+   * @see #getAttributes()
+   * @generated
+   */
+  EReference getAttributes_Attributes();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl1.myDsl.Attributes#getProperties <em>Properties</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Properties</em>'.
+   * @see org.xtext.example.mydsl1.myDsl.Attributes#getProperties()
+   * @see #getAttributes()
+   * @generated
+   */
+  EReference getAttributes_Properties();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl1.myDsl.ElementAttribute <em>Element Attribute</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Element Attribute</em>'.
+   * @see org.xtext.example.mydsl1.myDsl.ElementAttribute
+   * @generated
+   */
+  EClass getElementAttribute();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl1.myDsl.ElementAttribute#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.xtext.example.mydsl1.myDsl.ElementAttribute#getName()
+   * @see #getElementAttribute()
+   * @generated
+   */
+  EAttribute getElementAttribute_Name();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl1.myDsl.ElementAttribute#getMatcher <em>Matcher</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Matcher</em>'.
+   * @see org.xtext.example.mydsl1.myDsl.ElementAttribute#getMatcher()
+   * @see #getElementAttribute()
+   * @generated
+   */
+  EAttribute getElementAttribute_Matcher();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl1.myDsl.ElementAttribute#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Value</em>'.
+   * @see org.xtext.example.mydsl1.myDsl.ElementAttribute#getValue()
+   * @see #getElementAttribute()
+   * @generated
+   */
+  EReference getElementAttribute_Value();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl1.myDsl.Content <em>Content</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Content</em>'.
+   * @see org.xtext.example.mydsl1.myDsl.Content
+   * @generated
+   */
+  EClass getContent();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl1.myDsl.ClipboardContent <em>Clipboard Content</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Clipboard Content</em>'.
+   * @see org.xtext.example.mydsl1.myDsl.ClipboardContent
+   * @generated
+   */
+  EClass getClipboardContent();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl1.myDsl.ClipboardContent#getKey <em>Key</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Key</em>'.
+   * @see org.xtext.example.mydsl1.myDsl.ClipboardContent#getKey()
+   * @see #getClipboardContent()
+   * @generated
+   */
+  EAttribute getClipboardContent_Key();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl1.myDsl.StringContent <em>String Content</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>String Content</em>'.
+   * @see org.xtext.example.mydsl1.myDsl.StringContent
+   * @generated
+   */
+  EClass getStringContent();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl1.myDsl.StringContent#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see org.xtext.example.mydsl1.myDsl.StringContent#getValue()
+   * @see #getStringContent()
+   * @generated
+   */
+  EAttribute getStringContent_Value();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl1.myDsl.Properties <em>Properties</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Properties</em>'.
+   * @see org.xtext.example.mydsl1.myDsl.Properties
+   * @generated
+   */
+  EClass getProperties();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl1.myDsl.Properties#getProperties <em>Properties</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Properties</em>'.
+   * @see org.xtext.example.mydsl1.myDsl.Properties#getProperties()
+   * @see #getProperties()
+   * @generated
+   */
+  EReference getProperties_Properties();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl1.myDsl.ElementProperty <em>Element Property</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Element Property</em>'.
+   * @see org.xtext.example.mydsl1.myDsl.ElementProperty
+   * @generated
+   */
+  EClass getElementProperty();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl1.myDsl.ElementProperty#getNegated <em>Negated</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Negated</em>'.
+   * @see org.xtext.example.mydsl1.myDsl.ElementProperty#getNegated()
+   * @see #getElementProperty()
+   * @generated
+   */
+  EAttribute getElementProperty_Negated();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl1.myDsl.ElementProperty#getProperty <em>Property</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Property</em>'.
+   * @see org.xtext.example.mydsl1.myDsl.ElementProperty#getProperty()
+   * @see #getElementProperty()
+   * @generated
+   */
+  EAttribute getElementProperty_Property();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl1.myDsl.SelectorPredicate <em>Selector Predicate</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Selector Predicate</em>'.
+   * @see org.xtext.example.mydsl1.myDsl.SelectorPredicate
+   * @generated
+   */
+  EClass getSelectorPredicate();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl1.myDsl.AllPredicate <em>All Predicate</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>All Predicate</em>'.
+   * @see org.xtext.example.mydsl1.myDsl.AllPredicate
+   * @generated
+   */
+  EClass getAllPredicate();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl1.myDsl.OrdinalPredicate <em>Ordinal Predicate</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Ordinal Predicate</em>'.
+   * @see org.xtext.example.mydsl1.myDsl.OrdinalPredicate
+   * @generated
+   */
+  EClass getOrdinalPredicate();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl1.myDsl.OrdinalPredicate#getOrdinal <em>Ordinal</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Ordinal</em>'.
+   * @see org.xtext.example.mydsl1.myDsl.OrdinalPredicate#getOrdinal()
+   * @see #getOrdinalPredicate()
+   * @generated
+   */
+  EReference getOrdinalPredicate_Ordinal();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl1.myDsl.LastPredicate <em>Last Predicate</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Last Predicate</em>'.
+   * @see org.xtext.example.mydsl1.myDsl.LastPredicate
+   * @generated
+   */
+  EClass getLastPredicate();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl1.myDsl.DefaultFirstPredicate <em>Default First Predicate</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Default First Predicate</em>'.
+   * @see org.xtext.example.mydsl1.myDsl.DefaultFirstPredicate
+   * @generated
+   */
+  EClass getDefaultFirstPredicate();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl1.myDsl.Verify <em>Verify</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Verify</em>'.
+   * @see org.xtext.example.mydsl1.myDsl.Verify
+   * @generated
+   */
+  EClass getVerify();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl1.myDsl.Verify#getSelector <em>Selector</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Selector</em>'.
+   * @see org.xtext.example.mydsl1.myDsl.Verify#getSelector()
+   * @see #getVerify()
+   * @generated
+   */
+  EReference getVerify_Selector();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl1.myDsl.Verify#getProperties <em>Properties</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Properties</em>'.
+   * @see org.xtext.example.mydsl1.myDsl.Verify#getProperties()
+   * @see #getVerify()
+   * @generated
+   */
+  EReference getVerify_Properties();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl1.myDsl.OrdinalInteger <em>Ordinal Integer</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Ordinal Integer</em>'.
+   * @see org.xtext.example.mydsl1.myDsl.OrdinalInteger
+   * @generated
+   */
+  EClass getOrdinalInteger();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl1.myDsl.OrdinalInteger#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see org.xtext.example.mydsl1.myDsl.OrdinalInteger#getValue()
+   * @see #getOrdinalInteger()
+   * @generated
+   */
+  EAttribute getOrdinalInteger_Value();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -552,14 +1427,40 @@ public interface MyDslPackage extends EPackage
   interface Literals
   {
     /**
-     * The meta object literal for the '{@link org.xtext.example.mydsl1.myDsl.impl.ModelImpl <em>Model</em>}' class.
+     * The meta object literal for the '{@link org.xtext.example.mydsl1.myDsl.impl.BrowserDslImpl <em>Browser Dsl</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.xtext.example.mydsl1.myDsl.impl.ModelImpl
-     * @see org.xtext.example.mydsl1.myDsl.impl.MyDslPackageImpl#getModel()
+     * @see org.xtext.example.mydsl1.myDsl.impl.BrowserDslImpl
+     * @see org.xtext.example.mydsl1.myDsl.impl.MyDslPackageImpl#getBrowserDsl()
      * @generated
      */
-    EClass MODEL = eINSTANCE.getModel();
+    EClass BROWSER_DSL = eINSTANCE.getBrowserDsl();
+
+    /**
+     * The meta object literal for the '<em><b>Cases</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference BROWSER_DSL__CASES = eINSTANCE.getBrowserDsl_Cases();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl1.myDsl.impl.TestCaseImpl <em>Test Case</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl1.myDsl.impl.TestCaseImpl
+     * @see org.xtext.example.mydsl1.myDsl.impl.MyDslPackageImpl#getTestCase()
+     * @generated
+     */
+    EClass TEST_CASE = eINSTANCE.getTestCase();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute TEST_CASE__NAME = eINSTANCE.getTestCase_Name();
 
     /**
      * The meta object literal for the '<em><b>Commands</b></em>' containment reference list feature.
@@ -567,7 +1468,7 @@ public interface MyDslPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference MODEL__COMMANDS = eINSTANCE.getModel_Commands();
+    EReference TEST_CASE__COMMANDS = eINSTANCE.getTestCase_Commands();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.mydsl1.myDsl.impl.CommandImpl <em>Command</em>}' class.
@@ -580,140 +1481,6 @@ public interface MyDslPackage extends EPackage
     EClass COMMAND = eINSTANCE.getCommand();
 
     /**
-     * The meta object literal for the '{@link org.xtext.example.mydsl1.myDsl.impl.OpenBrowserCommandImpl <em>Open Browser Command</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.example.mydsl1.myDsl.impl.OpenBrowserCommandImpl
-     * @see org.xtext.example.mydsl1.myDsl.impl.MyDslPackageImpl#getOpenBrowserCommand()
-     * @generated
-     */
-    EClass OPEN_BROWSER_COMMAND = eINSTANCE.getOpenBrowserCommand();
-
-    /**
-     * The meta object literal for the '{@link org.xtext.example.mydsl1.myDsl.impl.NavigateToCommandImpl <em>Navigate To Command</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.example.mydsl1.myDsl.impl.NavigateToCommandImpl
-     * @see org.xtext.example.mydsl1.myDsl.impl.MyDslPackageImpl#getNavigateToCommand()
-     * @generated
-     */
-    EClass NAVIGATE_TO_COMMAND = eINSTANCE.getNavigateToCommand();
-
-    /**
-     * The meta object literal for the '<em><b>Url</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute NAVIGATE_TO_COMMAND__URL = eINSTANCE.getNavigateToCommand_Url();
-
-    /**
-     * The meta object literal for the '{@link org.xtext.example.mydsl1.myDsl.impl.ClickCommandImpl <em>Click Command</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.example.mydsl1.myDsl.impl.ClickCommandImpl
-     * @see org.xtext.example.mydsl1.myDsl.impl.MyDslPackageImpl#getClickCommand()
-     * @generated
-     */
-    EClass CLICK_COMMAND = eINSTANCE.getClickCommand();
-
-    /**
-     * The meta object literal for the '<em><b>Element Text</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute CLICK_COMMAND__ELEMENT_TEXT = eINSTANCE.getClickCommand_ElementText();
-
-    /**
-     * The meta object literal for the '{@link org.xtext.example.mydsl1.myDsl.impl.FillCommandImpl <em>Fill Command</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.example.mydsl1.myDsl.impl.FillCommandImpl
-     * @see org.xtext.example.mydsl1.myDsl.impl.MyDslPackageImpl#getFillCommand()
-     * @generated
-     */
-    EClass FILL_COMMAND = eINSTANCE.getFillCommand();
-
-    /**
-     * The meta object literal for the '<em><b>Field Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute FILL_COMMAND__FIELD_NAME = eINSTANCE.getFillCommand_FieldName();
-
-    /**
-     * The meta object literal for the '<em><b>Field Value</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute FILL_COMMAND__FIELD_VALUE = eINSTANCE.getFillCommand_FieldValue();
-
-    /**
-     * The meta object literal for the '{@link org.xtext.example.mydsl1.myDsl.impl.SelectCommandImpl <em>Select Command</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.example.mydsl1.myDsl.impl.SelectCommandImpl
-     * @see org.xtext.example.mydsl1.myDsl.impl.MyDslPackageImpl#getSelectCommand()
-     * @generated
-     */
-    EClass SELECT_COMMAND = eINSTANCE.getSelectCommand();
-
-    /**
-     * The meta object literal for the '<em><b>Checkbox Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute SELECT_COMMAND__CHECKBOX_NAME = eINSTANCE.getSelectCommand_CheckboxName();
-
-    /**
-     * The meta object literal for the '{@link org.xtext.example.mydsl1.myDsl.impl.VerifyCommandImpl <em>Verify Command</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.example.mydsl1.myDsl.impl.VerifyCommandImpl
-     * @see org.xtext.example.mydsl1.myDsl.impl.MyDslPackageImpl#getVerifyCommand()
-     * @generated
-     */
-    EClass VERIFY_COMMAND = eINSTANCE.getVerifyCommand();
-
-    /**
-     * The meta object literal for the '<em><b>Verify String</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute VERIFY_COMMAND__VERIFY_STRING = eINSTANCE.getVerifyCommand_VerifyString();
-
-    /**
-     * The meta object literal for the '{@link org.xtext.example.mydsl1.myDsl.impl.ReadCommandImpl <em>Read Command</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.example.mydsl1.myDsl.impl.ReadCommandImpl
-     * @see org.xtext.example.mydsl1.myDsl.impl.MyDslPackageImpl#getReadCommand()
-     * @generated
-     */
-    EClass READ_COMMAND = eINSTANCE.getReadCommand();
-
-    /**
-     * The meta object literal for the '<em><b>Element Text</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute READ_COMMAND__ELEMENT_TEXT = eINSTANCE.getReadCommand_ElementText();
-
-    /**
-     * The meta object literal for the '<em><b>Variable Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute READ_COMMAND__VARIABLE_NAME = eINSTANCE.getReadCommand_VariableName();
-
-    /**
      * The meta object literal for the '{@link org.xtext.example.mydsl1.myDsl.impl.OpenBrowserImpl <em>Open Browser</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -722,6 +1489,440 @@ public interface MyDslPackage extends EPackage
      * @generated
      */
     EClass OPEN_BROWSER = eINSTANCE.getOpenBrowser();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl1.myDsl.impl.DOMCommandImpl <em>DOM Command</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl1.myDsl.impl.DOMCommandImpl
+     * @see org.xtext.example.mydsl1.myDsl.impl.MyDslPackageImpl#getDOMCommand()
+     * @generated
+     */
+    EClass DOM_COMMAND = eINSTANCE.getDOMCommand();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl1.myDsl.impl.GoToImpl <em>Go To</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl1.myDsl.impl.GoToImpl
+     * @see org.xtext.example.mydsl1.myDsl.impl.MyDslPackageImpl#getGoTo()
+     * @generated
+     */
+    EClass GO_TO = eINSTANCE.getGoTo();
+
+    /**
+     * The meta object literal for the '<em><b>Url</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute GO_TO__URL = eINSTANCE.getGoTo_Url();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl1.myDsl.impl.ClickImpl <em>Click</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl1.myDsl.impl.ClickImpl
+     * @see org.xtext.example.mydsl1.myDsl.impl.MyDslPackageImpl#getClick()
+     * @generated
+     */
+    EClass CLICK = eINSTANCE.getClick();
+
+    /**
+     * The meta object literal for the '<em><b>Element</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CLICK__ELEMENT = eINSTANCE.getClick_Element();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl1.myDsl.impl.CopyImpl <em>Copy</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl1.myDsl.impl.CopyImpl
+     * @see org.xtext.example.mydsl1.myDsl.impl.MyDslPackageImpl#getCopy()
+     * @generated
+     */
+    EClass COPY = eINSTANCE.getCopy();
+
+    /**
+     * The meta object literal for the '<em><b>Property</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute COPY__PROPERTY = eINSTANCE.getCopy_Property();
+
+    /**
+     * The meta object literal for the '<em><b>Element</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference COPY__ELEMENT = eINSTANCE.getCopy_Element();
+
+    /**
+     * The meta object literal for the '<em><b>Key</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute COPY__KEY = eINSTANCE.getCopy_Key();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl1.myDsl.impl.PasteImpl <em>Paste</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl1.myDsl.impl.PasteImpl
+     * @see org.xtext.example.mydsl1.myDsl.impl.MyDslPackageImpl#getPaste()
+     * @generated
+     */
+    EClass PASTE = eINSTANCE.getPaste();
+
+    /**
+     * The meta object literal for the '<em><b>Element</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PASTE__ELEMENT = eINSTANCE.getPaste_Element();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl1.myDsl.impl.InsertImpl <em>Insert</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl1.myDsl.impl.InsertImpl
+     * @see org.xtext.example.mydsl1.myDsl.impl.MyDslPackageImpl#getInsert()
+     * @generated
+     */
+    EClass INSERT = eINSTANCE.getInsert();
+
+    /**
+     * The meta object literal for the '<em><b>Element</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference INSERT__ELEMENT = eINSTANCE.getInsert_Element();
+
+    /**
+     * The meta object literal for the '<em><b>Content</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference INSERT__CONTENT = eINSTANCE.getInsert_Content();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl1.myDsl.impl.SelectorImpl <em>Selector</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl1.myDsl.impl.SelectorImpl
+     * @see org.xtext.example.mydsl1.myDsl.impl.MyDslPackageImpl#getSelector()
+     * @generated
+     */
+    EClass SELECTOR = eINSTANCE.getSelector();
+
+    /**
+     * The meta object literal for the '<em><b>Predicate</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SELECTOR__PREDICATE = eINSTANCE.getSelector_Predicate();
+
+    /**
+     * The meta object literal for the '<em><b>Dom Type</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SELECTOR__DOM_TYPE = eINSTANCE.getSelector_DomType();
+
+    /**
+     * The meta object literal for the '<em><b>Attributes</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SELECTOR__ATTRIBUTES = eINSTANCE.getSelector_Attributes();
+
+    /**
+     * The meta object literal for the '<em><b>Label</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SELECTOR__LABEL = eINSTANCE.getSelector_Label();
+
+    /**
+     * The meta object literal for the '<em><b>Properties</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SELECTOR__PROPERTIES = eINSTANCE.getSelector_Properties();
+
+    /**
+     * The meta object literal for the '<em><b>Parent</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SELECTOR__PARENT = eINSTANCE.getSelector_Parent();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl1.myDsl.impl.AttributesImpl <em>Attributes</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl1.myDsl.impl.AttributesImpl
+     * @see org.xtext.example.mydsl1.myDsl.impl.MyDslPackageImpl#getAttributes()
+     * @generated
+     */
+    EClass ATTRIBUTES = eINSTANCE.getAttributes();
+
+    /**
+     * The meta object literal for the '<em><b>Attributes</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ATTRIBUTES__ATTRIBUTES = eINSTANCE.getAttributes_Attributes();
+
+    /**
+     * The meta object literal for the '<em><b>Properties</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ATTRIBUTES__PROPERTIES = eINSTANCE.getAttributes_Properties();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl1.myDsl.impl.ElementAttributeImpl <em>Element Attribute</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl1.myDsl.impl.ElementAttributeImpl
+     * @see org.xtext.example.mydsl1.myDsl.impl.MyDslPackageImpl#getElementAttribute()
+     * @generated
+     */
+    EClass ELEMENT_ATTRIBUTE = eINSTANCE.getElementAttribute();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ELEMENT_ATTRIBUTE__NAME = eINSTANCE.getElementAttribute_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Matcher</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ELEMENT_ATTRIBUTE__MATCHER = eINSTANCE.getElementAttribute_Matcher();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ELEMENT_ATTRIBUTE__VALUE = eINSTANCE.getElementAttribute_Value();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl1.myDsl.impl.ContentImpl <em>Content</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl1.myDsl.impl.ContentImpl
+     * @see org.xtext.example.mydsl1.myDsl.impl.MyDslPackageImpl#getContent()
+     * @generated
+     */
+    EClass CONTENT = eINSTANCE.getContent();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl1.myDsl.impl.ClipboardContentImpl <em>Clipboard Content</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl1.myDsl.impl.ClipboardContentImpl
+     * @see org.xtext.example.mydsl1.myDsl.impl.MyDslPackageImpl#getClipboardContent()
+     * @generated
+     */
+    EClass CLIPBOARD_CONTENT = eINSTANCE.getClipboardContent();
+
+    /**
+     * The meta object literal for the '<em><b>Key</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CLIPBOARD_CONTENT__KEY = eINSTANCE.getClipboardContent_Key();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl1.myDsl.impl.StringContentImpl <em>String Content</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl1.myDsl.impl.StringContentImpl
+     * @see org.xtext.example.mydsl1.myDsl.impl.MyDslPackageImpl#getStringContent()
+     * @generated
+     */
+    EClass STRING_CONTENT = eINSTANCE.getStringContent();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute STRING_CONTENT__VALUE = eINSTANCE.getStringContent_Value();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl1.myDsl.impl.PropertiesImpl <em>Properties</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl1.myDsl.impl.PropertiesImpl
+     * @see org.xtext.example.mydsl1.myDsl.impl.MyDslPackageImpl#getProperties()
+     * @generated
+     */
+    EClass PROPERTIES = eINSTANCE.getProperties();
+
+    /**
+     * The meta object literal for the '<em><b>Properties</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PROPERTIES__PROPERTIES = eINSTANCE.getProperties_Properties();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl1.myDsl.impl.ElementPropertyImpl <em>Element Property</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl1.myDsl.impl.ElementPropertyImpl
+     * @see org.xtext.example.mydsl1.myDsl.impl.MyDslPackageImpl#getElementProperty()
+     * @generated
+     */
+    EClass ELEMENT_PROPERTY = eINSTANCE.getElementProperty();
+
+    /**
+     * The meta object literal for the '<em><b>Negated</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ELEMENT_PROPERTY__NEGATED = eINSTANCE.getElementProperty_Negated();
+
+    /**
+     * The meta object literal for the '<em><b>Property</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ELEMENT_PROPERTY__PROPERTY = eINSTANCE.getElementProperty_Property();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl1.myDsl.impl.SelectorPredicateImpl <em>Selector Predicate</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl1.myDsl.impl.SelectorPredicateImpl
+     * @see org.xtext.example.mydsl1.myDsl.impl.MyDslPackageImpl#getSelectorPredicate()
+     * @generated
+     */
+    EClass SELECTOR_PREDICATE = eINSTANCE.getSelectorPredicate();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl1.myDsl.impl.AllPredicateImpl <em>All Predicate</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl1.myDsl.impl.AllPredicateImpl
+     * @see org.xtext.example.mydsl1.myDsl.impl.MyDslPackageImpl#getAllPredicate()
+     * @generated
+     */
+    EClass ALL_PREDICATE = eINSTANCE.getAllPredicate();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl1.myDsl.impl.OrdinalPredicateImpl <em>Ordinal Predicate</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl1.myDsl.impl.OrdinalPredicateImpl
+     * @see org.xtext.example.mydsl1.myDsl.impl.MyDslPackageImpl#getOrdinalPredicate()
+     * @generated
+     */
+    EClass ORDINAL_PREDICATE = eINSTANCE.getOrdinalPredicate();
+
+    /**
+     * The meta object literal for the '<em><b>Ordinal</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ORDINAL_PREDICATE__ORDINAL = eINSTANCE.getOrdinalPredicate_Ordinal();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl1.myDsl.impl.LastPredicateImpl <em>Last Predicate</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl1.myDsl.impl.LastPredicateImpl
+     * @see org.xtext.example.mydsl1.myDsl.impl.MyDslPackageImpl#getLastPredicate()
+     * @generated
+     */
+    EClass LAST_PREDICATE = eINSTANCE.getLastPredicate();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl1.myDsl.impl.DefaultFirstPredicateImpl <em>Default First Predicate</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl1.myDsl.impl.DefaultFirstPredicateImpl
+     * @see org.xtext.example.mydsl1.myDsl.impl.MyDslPackageImpl#getDefaultFirstPredicate()
+     * @generated
+     */
+    EClass DEFAULT_FIRST_PREDICATE = eINSTANCE.getDefaultFirstPredicate();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl1.myDsl.impl.VerifyImpl <em>Verify</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl1.myDsl.impl.VerifyImpl
+     * @see org.xtext.example.mydsl1.myDsl.impl.MyDslPackageImpl#getVerify()
+     * @generated
+     */
+    EClass VERIFY = eINSTANCE.getVerify();
+
+    /**
+     * The meta object literal for the '<em><b>Selector</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference VERIFY__SELECTOR = eINSTANCE.getVerify_Selector();
+
+    /**
+     * The meta object literal for the '<em><b>Properties</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference VERIFY__PROPERTIES = eINSTANCE.getVerify_Properties();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl1.myDsl.impl.OrdinalIntegerImpl <em>Ordinal Integer</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl1.myDsl.impl.OrdinalIntegerImpl
+     * @see org.xtext.example.mydsl1.myDsl.impl.MyDslPackageImpl#getOrdinalInteger()
+     * @generated
+     */
+    EClass ORDINAL_INTEGER = eINSTANCE.getOrdinalInteger();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ORDINAL_INTEGER__VALUE = eINSTANCE.getOrdinalInteger_Value();
 
   }
 

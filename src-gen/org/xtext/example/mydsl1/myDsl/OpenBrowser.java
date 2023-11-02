@@ -14,6 +14,6 @@ package org.xtext.example.mydsl1.myDsl;
  * @model
  * @generated
  */
-public interface OpenBrowser extends OpenBrowserCommand
+public interface OpenBrowser extends Command
 {
 } // OpenBrowser

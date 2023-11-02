@@ -24,13 +24,22 @@ public interface MyDslFactory extends EFactory
   MyDslFactory eINSTANCE = org.xtext.example.mydsl1.myDsl.impl.MyDslFactoryImpl.init();
 
   /**
-   * Returns a new object of class '<em>Model</em>'.
+   * Returns a new object of class '<em>Browser Dsl</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Model</em>'.
+   * @return a new object of class '<em>Browser Dsl</em>'.
    * @generated
    */
-  Model createModel();
+  BrowserDsl createBrowserDsl();
+
+  /**
+   * Returns a new object of class '<em>Test Case</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Test Case</em>'.
+   * @generated
+   */
+  TestCase createTestCase();
 
   /**
    * Returns a new object of class '<em>Command</em>'.
@@ -42,69 +51,6 @@ public interface MyDslFactory extends EFactory
   Command createCommand();
 
   /**
-   * Returns a new object of class '<em>Open Browser Command</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Open Browser Command</em>'.
-   * @generated
-   */
-  OpenBrowserCommand createOpenBrowserCommand();
-
-  /**
-   * Returns a new object of class '<em>Navigate To Command</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Navigate To Command</em>'.
-   * @generated
-   */
-  NavigateToCommand createNavigateToCommand();
-
-  /**
-   * Returns a new object of class '<em>Click Command</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Click Command</em>'.
-   * @generated
-   */
-  ClickCommand createClickCommand();
-
-  /**
-   * Returns a new object of class '<em>Fill Command</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Fill Command</em>'.
-   * @generated
-   */
-  FillCommand createFillCommand();
-
-  /**
-   * Returns a new object of class '<em>Select Command</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Select Command</em>'.
-   * @generated
-   */
-  SelectCommand createSelectCommand();
-
-  /**
-   * Returns a new object of class '<em>Verify Command</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Verify Command</em>'.
-   * @generated
-   */
-  VerifyCommand createVerifyCommand();
-
-  /**
-   * Returns a new object of class '<em>Read Command</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Read Command</em>'.
-   * @generated
-   */
-  ReadCommand createReadCommand();
-
-  /**
    * Returns a new object of class '<em>Open Browser</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -112,6 +58,195 @@ public interface MyDslFactory extends EFactory
    * @generated
    */
   OpenBrowser createOpenBrowser();
+
+  /**
+   * Returns a new object of class '<em>DOM Command</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>DOM Command</em>'.
+   * @generated
+   */
+  DOMCommand createDOMCommand();
+
+  /**
+   * Returns a new object of class '<em>Go To</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Go To</em>'.
+   * @generated
+   */
+  GoTo createGoTo();
+
+  /**
+   * Returns a new object of class '<em>Click</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Click</em>'.
+   * @generated
+   */
+  Click createClick();
+
+  /**
+   * Returns a new object of class '<em>Copy</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Copy</em>'.
+   * @generated
+   */
+  Copy createCopy();
+
+  /**
+   * Returns a new object of class '<em>Paste</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Paste</em>'.
+   * @generated
+   */
+  Paste createPaste();
+
+  /**
+   * Returns a new object of class '<em>Insert</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Insert</em>'.
+   * @generated
+   */
+  Insert createInsert();
+
+  /**
+   * Returns a new object of class '<em>Selector</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Selector</em>'.
+   * @generated
+   */
+  Selector createSelector();
+
+  /**
+   * Returns a new object of class '<em>Attributes</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Attributes</em>'.
+   * @generated
+   */
+  Attributes createAttributes();
+
+  /**
+   * Returns a new object of class '<em>Element Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Element Attribute</em>'.
+   * @generated
+   */
+  ElementAttribute createElementAttribute();
+
+  /**
+   * Returns a new object of class '<em>Content</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Content</em>'.
+   * @generated
+   */
+  Content createContent();
+
+  /**
+   * Returns a new object of class '<em>Clipboard Content</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Clipboard Content</em>'.
+   * @generated
+   */
+  ClipboardContent createClipboardContent();
+
+  /**
+   * Returns a new object of class '<em>String Content</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>String Content</em>'.
+   * @generated
+   */
+  StringContent createStringContent();
+
+  /**
+   * Returns a new object of class '<em>Properties</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Properties</em>'.
+   * @generated
+   */
+  Properties createProperties();
+
+  /**
+   * Returns a new object of class '<em>Element Property</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Element Property</em>'.
+   * @generated
+   */
+  ElementProperty createElementProperty();
+
+  /**
+   * Returns a new object of class '<em>Selector Predicate</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Selector Predicate</em>'.
+   * @generated
+   */
+  SelectorPredicate createSelectorPredicate();
+
+  /**
+   * Returns a new object of class '<em>All Predicate</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>All Predicate</em>'.
+   * @generated
+   */
+  AllPredicate createAllPredicate();
+
+  /**
+   * Returns a new object of class '<em>Ordinal Predicate</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Ordinal Predicate</em>'.
+   * @generated
+   */
+  OrdinalPredicate createOrdinalPredicate();
+
+  /**
+   * Returns a new object of class '<em>Last Predicate</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Last Predicate</em>'.
+   * @generated
+   */
+  LastPredicate createLastPredicate();
+
+  /**
+   * Returns a new object of class '<em>Default First Predicate</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Default First Predicate</em>'.
+   * @generated
+   */
+  DefaultFirstPredicate createDefaultFirstPredicate();
+
+  /**
+   * Returns a new object of class '<em>Verify</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Verify</em>'.
+   * @generated
+   */
+  Verify createVerify();
+
+  /**
+   * Returns a new object of class '<em>Ordinal Integer</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Ordinal Integer</em>'.
+   * @generated
+   */
+  OrdinalInteger createOrdinalInteger();
 
   /**
    * Returns the package supported by this factory.

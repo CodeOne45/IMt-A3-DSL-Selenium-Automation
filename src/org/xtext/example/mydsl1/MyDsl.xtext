@@ -2,49 +2,104 @@ grammar org.xtext.example.mydsl1.MyDsl with org.eclipse.xtext.common.Terminals
 
 generate myDsl "http://www.xtext.org/example/mydsl1/MyDsl"
 
-Model:
-    commands+=Command*;
 
+BrowserDsl:
+    cases+=TestCase*;
+
+TestCase:
+	'Test' 'case' ':' name=STRING '***' 
+    commands+=Command*
+	'***'
+;
 Command:
-    OpenBrowserCommand |
-    NavigateToCommand |
-    ClickCommand |
-    FillCommand |
-    SelectCommand |
-    VerifyCommand |
-    ReadCommand;
+    OpenBrowser |
+    GoTo |
+    DOMCommand;
+    
+OpenBrowser:
+    {OpenBrowser} 'open' 'a' 'browser' 'window';
 
-OpenBrowserCommand:
-    {OpenBrowser}'open' 'a' 'browser' 'window';
+DOMCommand:
+    Click | Insert | Copy | Paste | Verify
+;
+GoTo:
+    'go' 'to' url=STRING;
 
-NavigateToCommand:
-    'go' 'to' 'the' 'url' url=STRING;
+Click:
+    {Click} (('click' 'on') | 'select') element=Selector;
 
-ClickCommand:
-    ('click' 'on' 'the' 'link' | 'click' 'on' 'the' 'button' 'with' 'text') elementText=STRING; 
+Copy:
+    {Copy} 'copy' 'the' 'property' property=HTML_ATTRIBUTE 'of' element=Selector 'as' key=STRING;
 
-FillCommand:
-    'fill' 'the' 'field' fieldName=STRING 'with' fieldValue=STRING;
+Paste:
+    'paste' 'the' 'content' 'of' 'the' 'clipboard' 'in' element=Selector;
 
-SelectCommand:
-    'select' 'the' 'checkbox' 'named' checkboxName=STRING;
+Insert:
+    'fill' element=Selector 'with' content=Content;
 
-VerifyCommand:
-    'verify' 'that' 'the' 'page' 'contains' ( ('a'?) 'link' | 'the' 'string' ) verifyString=STRING;
+Selector:
+    predicate=SelectorPredicate 
+    domType=STRING 
+    ('with' 'properties' attributes=Attributes)?
+    ('with' 'associated' 'label' label=STRING)?
+    ('that' 'is' properties=Properties)?
+    ('in' parent=Selector)?
+;
 
-ReadCommand:
-    'read' 'the' 'element' 'with' 'text' elementText=STRING 'and' 'store' 'it' 'in' 'variable' variableName=ID;
+Attributes:
+	attributes+=ElementAttribute ('and' properties+=ElementAttribute)*
+;
 
-terminal STRING:
-    '"' ( '\\' . | !('\\' | '"') )* '"';
+ElementAttribute:
+	(name=HTML_ATTRIBUTE matcher=Matcher value=Content)
+;
 
-terminal ID:
-    ('a'..'z' | 'A'..'Z') ('a'..'z' | 'A'..'Z' | '0'..'9' | '_')*;
+Content: ClipboardContent | StringContent;
 
-// Define whitespace and comments
-terminal WS:
-    (' ' | '\t' | '\r' | '\n')+;
+ClipboardContent: 'the' 'saved' 'content' key=STRING;
 
-// Ignore comments
-//terminal COMMENT:
-//    '//' !('\n' | '\r')* ('\r'? '\n')?;
+StringContent: value=STRING;
+
+
+Properties:
+	properties+=ElementProperty ('and' properties+=ElementProperty)*
+;
+ElementProperty:
+	negated=("not")? property=("selected" | "visible" | "enabled")
+;
+SelectorPredicate:
+    AllPredicate | 
+    OrdinalPredicate | 
+    LastPredicate | 
+    DefaultFirstPredicate
+;
+
+AllPredicate:
+	{AllPredicate}'all' 'elements' 'of' 'type'
+;
+
+OrdinalPredicate:
+	'the' ordinal=OrdinalInteger
+;
+
+LastPredicate:
+	{LastPredicate}'the' 'last'
+;
+
+DefaultFirstPredicate:
+	{DefaultFirstPredicate} 'the'
+;
+
+Matcher:
+	"containing" | "matching"
+;
+
+Verify:
+    'verify' 'that' selector=Selector 'is' properties+=ElementProperty ('and' properties+=ElementProperty)*;
+    
+terminal ORDINAL_SUFFIX:'st' | 'nd' | 'rd' | 'th';
+
+OrdinalInteger:
+  value=INT ORDINAL_SUFFIX;
+  
+terminal HTML_ATTRIBUTE: ('a'..'z'|'A'..'Z'|'_'|'-') ('a'..'z'|'A'..'Z'|'_'|'-'|'0'..'9')*;

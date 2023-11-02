@@ -76,9 +76,14 @@ public class MyDslAdapterFactory extends AdapterFactoryImpl
     new MyDslSwitch<Adapter>()
     {
       @Override
-      public Adapter caseModel(Model object)
+      public Adapter caseBrowserDsl(BrowserDsl object)
       {
-        return createModelAdapter();
+        return createBrowserDslAdapter();
+      }
+      @Override
+      public Adapter caseTestCase(TestCase object)
+      {
+        return createTestCaseAdapter();
       }
       @Override
       public Adapter caseCommand(Command object)
@@ -86,44 +91,114 @@ public class MyDslAdapterFactory extends AdapterFactoryImpl
         return createCommandAdapter();
       }
       @Override
-      public Adapter caseOpenBrowserCommand(OpenBrowserCommand object)
-      {
-        return createOpenBrowserCommandAdapter();
-      }
-      @Override
-      public Adapter caseNavigateToCommand(NavigateToCommand object)
-      {
-        return createNavigateToCommandAdapter();
-      }
-      @Override
-      public Adapter caseClickCommand(ClickCommand object)
-      {
-        return createClickCommandAdapter();
-      }
-      @Override
-      public Adapter caseFillCommand(FillCommand object)
-      {
-        return createFillCommandAdapter();
-      }
-      @Override
-      public Adapter caseSelectCommand(SelectCommand object)
-      {
-        return createSelectCommandAdapter();
-      }
-      @Override
-      public Adapter caseVerifyCommand(VerifyCommand object)
-      {
-        return createVerifyCommandAdapter();
-      }
-      @Override
-      public Adapter caseReadCommand(ReadCommand object)
-      {
-        return createReadCommandAdapter();
-      }
-      @Override
       public Adapter caseOpenBrowser(OpenBrowser object)
       {
         return createOpenBrowserAdapter();
+      }
+      @Override
+      public Adapter caseDOMCommand(DOMCommand object)
+      {
+        return createDOMCommandAdapter();
+      }
+      @Override
+      public Adapter caseGoTo(GoTo object)
+      {
+        return createGoToAdapter();
+      }
+      @Override
+      public Adapter caseClick(Click object)
+      {
+        return createClickAdapter();
+      }
+      @Override
+      public Adapter caseCopy(Copy object)
+      {
+        return createCopyAdapter();
+      }
+      @Override
+      public Adapter casePaste(Paste object)
+      {
+        return createPasteAdapter();
+      }
+      @Override
+      public Adapter caseInsert(Insert object)
+      {
+        return createInsertAdapter();
+      }
+      @Override
+      public Adapter caseSelector(Selector object)
+      {
+        return createSelectorAdapter();
+      }
+      @Override
+      public Adapter caseAttributes(Attributes object)
+      {
+        return createAttributesAdapter();
+      }
+      @Override
+      public Adapter caseElementAttribute(ElementAttribute object)
+      {
+        return createElementAttributeAdapter();
+      }
+      @Override
+      public Adapter caseContent(Content object)
+      {
+        return createContentAdapter();
+      }
+      @Override
+      public Adapter caseClipboardContent(ClipboardContent object)
+      {
+        return createClipboardContentAdapter();
+      }
+      @Override
+      public Adapter caseStringContent(StringContent object)
+      {
+        return createStringContentAdapter();
+      }
+      @Override
+      public Adapter caseProperties(Properties object)
+      {
+        return createPropertiesAdapter();
+      }
+      @Override
+      public Adapter caseElementProperty(ElementProperty object)
+      {
+        return createElementPropertyAdapter();
+      }
+      @Override
+      public Adapter caseSelectorPredicate(SelectorPredicate object)
+      {
+        return createSelectorPredicateAdapter();
+      }
+      @Override
+      public Adapter caseAllPredicate(AllPredicate object)
+      {
+        return createAllPredicateAdapter();
+      }
+      @Override
+      public Adapter caseOrdinalPredicate(OrdinalPredicate object)
+      {
+        return createOrdinalPredicateAdapter();
+      }
+      @Override
+      public Adapter caseLastPredicate(LastPredicate object)
+      {
+        return createLastPredicateAdapter();
+      }
+      @Override
+      public Adapter caseDefaultFirstPredicate(DefaultFirstPredicate object)
+      {
+        return createDefaultFirstPredicateAdapter();
+      }
+      @Override
+      public Adapter caseVerify(Verify object)
+      {
+        return createVerifyAdapter();
+      }
+      @Override
+      public Adapter caseOrdinalInteger(OrdinalInteger object)
+      {
+        return createOrdinalIntegerAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -148,16 +223,31 @@ public class MyDslAdapterFactory extends AdapterFactoryImpl
 
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl1.myDsl.Model <em>Model</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl1.myDsl.BrowserDsl <em>Browser Dsl</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.example.mydsl1.myDsl.Model
+   * @see org.xtext.example.mydsl1.myDsl.BrowserDsl
    * @generated
    */
-  public Adapter createModelAdapter()
+  public Adapter createBrowserDslAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl1.myDsl.TestCase <em>Test Case</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl1.myDsl.TestCase
+   * @generated
+   */
+  public Adapter createTestCaseAdapter()
   {
     return null;
   }
@@ -178,111 +268,6 @@ public class MyDslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl1.myDsl.OpenBrowserCommand <em>Open Browser Command</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.mydsl1.myDsl.OpenBrowserCommand
-   * @generated
-   */
-  public Adapter createOpenBrowserCommandAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl1.myDsl.NavigateToCommand <em>Navigate To Command</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.mydsl1.myDsl.NavigateToCommand
-   * @generated
-   */
-  public Adapter createNavigateToCommandAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl1.myDsl.ClickCommand <em>Click Command</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.mydsl1.myDsl.ClickCommand
-   * @generated
-   */
-  public Adapter createClickCommandAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl1.myDsl.FillCommand <em>Fill Command</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.mydsl1.myDsl.FillCommand
-   * @generated
-   */
-  public Adapter createFillCommandAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl1.myDsl.SelectCommand <em>Select Command</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.mydsl1.myDsl.SelectCommand
-   * @generated
-   */
-  public Adapter createSelectCommandAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl1.myDsl.VerifyCommand <em>Verify Command</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.mydsl1.myDsl.VerifyCommand
-   * @generated
-   */
-  public Adapter createVerifyCommandAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl1.myDsl.ReadCommand <em>Read Command</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.mydsl1.myDsl.ReadCommand
-   * @generated
-   */
-  public Adapter createReadCommandAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl1.myDsl.OpenBrowser <em>Open Browser</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -293,6 +278,321 @@ public class MyDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createOpenBrowserAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl1.myDsl.DOMCommand <em>DOM Command</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl1.myDsl.DOMCommand
+   * @generated
+   */
+  public Adapter createDOMCommandAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl1.myDsl.GoTo <em>Go To</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl1.myDsl.GoTo
+   * @generated
+   */
+  public Adapter createGoToAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl1.myDsl.Click <em>Click</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl1.myDsl.Click
+   * @generated
+   */
+  public Adapter createClickAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl1.myDsl.Copy <em>Copy</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl1.myDsl.Copy
+   * @generated
+   */
+  public Adapter createCopyAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl1.myDsl.Paste <em>Paste</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl1.myDsl.Paste
+   * @generated
+   */
+  public Adapter createPasteAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl1.myDsl.Insert <em>Insert</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl1.myDsl.Insert
+   * @generated
+   */
+  public Adapter createInsertAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl1.myDsl.Selector <em>Selector</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl1.myDsl.Selector
+   * @generated
+   */
+  public Adapter createSelectorAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl1.myDsl.Attributes <em>Attributes</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl1.myDsl.Attributes
+   * @generated
+   */
+  public Adapter createAttributesAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl1.myDsl.ElementAttribute <em>Element Attribute</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl1.myDsl.ElementAttribute
+   * @generated
+   */
+  public Adapter createElementAttributeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl1.myDsl.Content <em>Content</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl1.myDsl.Content
+   * @generated
+   */
+  public Adapter createContentAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl1.myDsl.ClipboardContent <em>Clipboard Content</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl1.myDsl.ClipboardContent
+   * @generated
+   */
+  public Adapter createClipboardContentAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl1.myDsl.StringContent <em>String Content</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl1.myDsl.StringContent
+   * @generated
+   */
+  public Adapter createStringContentAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl1.myDsl.Properties <em>Properties</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl1.myDsl.Properties
+   * @generated
+   */
+  public Adapter createPropertiesAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl1.myDsl.ElementProperty <em>Element Property</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl1.myDsl.ElementProperty
+   * @generated
+   */
+  public Adapter createElementPropertyAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl1.myDsl.SelectorPredicate <em>Selector Predicate</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl1.myDsl.SelectorPredicate
+   * @generated
+   */
+  public Adapter createSelectorPredicateAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl1.myDsl.AllPredicate <em>All Predicate</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl1.myDsl.AllPredicate
+   * @generated
+   */
+  public Adapter createAllPredicateAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl1.myDsl.OrdinalPredicate <em>Ordinal Predicate</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl1.myDsl.OrdinalPredicate
+   * @generated
+   */
+  public Adapter createOrdinalPredicateAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl1.myDsl.LastPredicate <em>Last Predicate</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl1.myDsl.LastPredicate
+   * @generated
+   */
+  public Adapter createLastPredicateAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl1.myDsl.DefaultFirstPredicate <em>Default First Predicate</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl1.myDsl.DefaultFirstPredicate
+   * @generated
+   */
+  public Adapter createDefaultFirstPredicateAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl1.myDsl.Verify <em>Verify</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl1.myDsl.Verify
+   * @generated
+   */
+  public Adapter createVerifyAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl1.myDsl.OrdinalInteger <em>Ordinal Integer</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl1.myDsl.OrdinalInteger
+   * @generated
+   */
+  public Adapter createOrdinalIntegerAdapter()
   {
     return null;
   }

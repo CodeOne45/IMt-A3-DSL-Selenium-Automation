@@ -14,15 +14,28 @@ import org.eclipse.xtext.serializer.ISerializationContext;
 import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
-import org.xtext.example.mydsl1.myDsl.ClickCommand;
-import org.xtext.example.mydsl1.myDsl.FillCommand;
-import org.xtext.example.mydsl1.myDsl.Model;
+import org.xtext.example.mydsl1.myDsl.AllPredicate;
+import org.xtext.example.mydsl1.myDsl.Attributes;
+import org.xtext.example.mydsl1.myDsl.BrowserDsl;
+import org.xtext.example.mydsl1.myDsl.Click;
+import org.xtext.example.mydsl1.myDsl.ClipboardContent;
+import org.xtext.example.mydsl1.myDsl.Copy;
+import org.xtext.example.mydsl1.myDsl.DefaultFirstPredicate;
+import org.xtext.example.mydsl1.myDsl.ElementAttribute;
+import org.xtext.example.mydsl1.myDsl.ElementProperty;
+import org.xtext.example.mydsl1.myDsl.GoTo;
+import org.xtext.example.mydsl1.myDsl.Insert;
+import org.xtext.example.mydsl1.myDsl.LastPredicate;
 import org.xtext.example.mydsl1.myDsl.MyDslPackage;
-import org.xtext.example.mydsl1.myDsl.NavigateToCommand;
 import org.xtext.example.mydsl1.myDsl.OpenBrowser;
-import org.xtext.example.mydsl1.myDsl.ReadCommand;
-import org.xtext.example.mydsl1.myDsl.SelectCommand;
-import org.xtext.example.mydsl1.myDsl.VerifyCommand;
+import org.xtext.example.mydsl1.myDsl.OrdinalInteger;
+import org.xtext.example.mydsl1.myDsl.OrdinalPredicate;
+import org.xtext.example.mydsl1.myDsl.Paste;
+import org.xtext.example.mydsl1.myDsl.Properties;
+import org.xtext.example.mydsl1.myDsl.Selector;
+import org.xtext.example.mydsl1.myDsl.StringContent;
+import org.xtext.example.mydsl1.myDsl.TestCase;
+import org.xtext.example.mydsl1.myDsl.Verify;
 import org.xtext.example.mydsl1.services.MyDslGrammarAccess;
 
 @SuppressWarnings("all")
@@ -39,29 +52,68 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == MyDslPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
-			case MyDslPackage.CLICK_COMMAND:
-				sequence_ClickCommand(context, (ClickCommand) semanticObject); 
+			case MyDslPackage.ALL_PREDICATE:
+				sequence_AllPredicate(context, (AllPredicate) semanticObject); 
 				return; 
-			case MyDslPackage.FILL_COMMAND:
-				sequence_FillCommand(context, (FillCommand) semanticObject); 
+			case MyDslPackage.ATTRIBUTES:
+				sequence_Attributes(context, (Attributes) semanticObject); 
 				return; 
-			case MyDslPackage.MODEL:
-				sequence_Model(context, (Model) semanticObject); 
+			case MyDslPackage.BROWSER_DSL:
+				sequence_BrowserDsl(context, (BrowserDsl) semanticObject); 
 				return; 
-			case MyDslPackage.NAVIGATE_TO_COMMAND:
-				sequence_NavigateToCommand(context, (NavigateToCommand) semanticObject); 
+			case MyDslPackage.CLICK:
+				sequence_Click(context, (Click) semanticObject); 
+				return; 
+			case MyDslPackage.CLIPBOARD_CONTENT:
+				sequence_ClipboardContent(context, (ClipboardContent) semanticObject); 
+				return; 
+			case MyDslPackage.COPY:
+				sequence_Copy(context, (Copy) semanticObject); 
+				return; 
+			case MyDslPackage.DEFAULT_FIRST_PREDICATE:
+				sequence_DefaultFirstPredicate(context, (DefaultFirstPredicate) semanticObject); 
+				return; 
+			case MyDslPackage.ELEMENT_ATTRIBUTE:
+				sequence_ElementAttribute(context, (ElementAttribute) semanticObject); 
+				return; 
+			case MyDslPackage.ELEMENT_PROPERTY:
+				sequence_ElementProperty(context, (ElementProperty) semanticObject); 
+				return; 
+			case MyDslPackage.GO_TO:
+				sequence_GoTo(context, (GoTo) semanticObject); 
+				return; 
+			case MyDslPackage.INSERT:
+				sequence_Insert(context, (Insert) semanticObject); 
+				return; 
+			case MyDslPackage.LAST_PREDICATE:
+				sequence_LastPredicate(context, (LastPredicate) semanticObject); 
 				return; 
 			case MyDslPackage.OPEN_BROWSER:
-				sequence_OpenBrowserCommand(context, (OpenBrowser) semanticObject); 
+				sequence_OpenBrowser(context, (OpenBrowser) semanticObject); 
 				return; 
-			case MyDslPackage.READ_COMMAND:
-				sequence_ReadCommand(context, (ReadCommand) semanticObject); 
+			case MyDslPackage.ORDINAL_INTEGER:
+				sequence_OrdinalInteger(context, (OrdinalInteger) semanticObject); 
 				return; 
-			case MyDslPackage.SELECT_COMMAND:
-				sequence_SelectCommand(context, (SelectCommand) semanticObject); 
+			case MyDslPackage.ORDINAL_PREDICATE:
+				sequence_OrdinalPredicate(context, (OrdinalPredicate) semanticObject); 
 				return; 
-			case MyDslPackage.VERIFY_COMMAND:
-				sequence_VerifyCommand(context, (VerifyCommand) semanticObject); 
+			case MyDslPackage.PASTE:
+				sequence_Paste(context, (Paste) semanticObject); 
+				return; 
+			case MyDslPackage.PROPERTIES:
+				sequence_Properties(context, (Properties) semanticObject); 
+				return; 
+			case MyDslPackage.SELECTOR:
+				sequence_Selector(context, (Selector) semanticObject); 
+				return; 
+			case MyDslPackage.STRING_CONTENT:
+				sequence_StringContent(context, (StringContent) semanticObject); 
+				return; 
+			case MyDslPackage.TEST_CASE:
+				sequence_TestCase(context, (TestCase) semanticObject); 
+				return; 
+			case MyDslPackage.VERIFY:
+				sequence_Verify(context, (Verify) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null)
@@ -71,58 +123,14 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     Command returns ClickCommand
-	 *     ClickCommand returns ClickCommand
+	 *     SelectorPredicate returns AllPredicate
+	 *     AllPredicate returns AllPredicate
 	 *
 	 * Constraint:
-	 *     elementText=STRING
+	 *     {AllPredicate}
 	 * </pre>
 	 */
-	protected void sequence_ClickCommand(ISerializationContext context, ClickCommand semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.CLICK_COMMAND__ELEMENT_TEXT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.CLICK_COMMAND__ELEMENT_TEXT));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getClickCommandAccess().getElementTextSTRINGTerminalRuleCall_1_0(), semanticObject.getElementText());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     Command returns FillCommand
-	 *     FillCommand returns FillCommand
-	 *
-	 * Constraint:
-	 *     (fieldName=STRING fieldValue=STRING)
-	 * </pre>
-	 */
-	protected void sequence_FillCommand(ISerializationContext context, FillCommand semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.FILL_COMMAND__FIELD_NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.FILL_COMMAND__FIELD_NAME));
-			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.FILL_COMMAND__FIELD_VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.FILL_COMMAND__FIELD_VALUE));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getFillCommandAccess().getFieldNameSTRINGTerminalRuleCall_3_0(), semanticObject.getFieldName());
-		feeder.accept(grammarAccess.getFillCommandAccess().getFieldValueSTRINGTerminalRuleCall_5_0(), semanticObject.getFieldValue());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     Model returns Model
-	 *
-	 * Constraint:
-	 *     commands+=Command+
-	 * </pre>
-	 */
-	protected void sequence_Model(ISerializationContext context, Model semanticObject) {
+	protected void sequence_AllPredicate(ISerializationContext context, AllPredicate semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -130,21 +138,215 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     Command returns NavigateToCommand
-	 *     NavigateToCommand returns NavigateToCommand
+	 *     Attributes returns Attributes
+	 *
+	 * Constraint:
+	 *     (attributes+=ElementAttribute properties+=ElementAttribute*)
+	 * </pre>
+	 */
+	protected void sequence_Attributes(ISerializationContext context, Attributes semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     BrowserDsl returns BrowserDsl
+	 *
+	 * Constraint:
+	 *     cases+=TestCase+
+	 * </pre>
+	 */
+	protected void sequence_BrowserDsl(ISerializationContext context, BrowserDsl semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Command returns Click
+	 *     DOMCommand returns Click
+	 *     Click returns Click
+	 *
+	 * Constraint:
+	 *     element=Selector
+	 * </pre>
+	 */
+	protected void sequence_Click(ISerializationContext context, Click semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.CLICK__ELEMENT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.CLICK__ELEMENT));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getClickAccess().getElementSelectorParserRuleCall_2_0(), semanticObject.getElement());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Content returns ClipboardContent
+	 *     ClipboardContent returns ClipboardContent
+	 *
+	 * Constraint:
+	 *     key=STRING
+	 * </pre>
+	 */
+	protected void sequence_ClipboardContent(ISerializationContext context, ClipboardContent semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.CLIPBOARD_CONTENT__KEY) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.CLIPBOARD_CONTENT__KEY));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getClipboardContentAccess().getKeySTRINGTerminalRuleCall_3_0(), semanticObject.getKey());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Command returns Copy
+	 *     DOMCommand returns Copy
+	 *     Copy returns Copy
+	 *
+	 * Constraint:
+	 *     (property=HTML_ATTRIBUTE element=Selector key=STRING)
+	 * </pre>
+	 */
+	protected void sequence_Copy(ISerializationContext context, Copy semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.COPY__PROPERTY) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.COPY__PROPERTY));
+			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.COPY__ELEMENT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.COPY__ELEMENT));
+			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.COPY__KEY) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.COPY__KEY));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getCopyAccess().getPropertyHTML_ATTRIBUTETerminalRuleCall_4_0(), semanticObject.getProperty());
+		feeder.accept(grammarAccess.getCopyAccess().getElementSelectorParserRuleCall_6_0(), semanticObject.getElement());
+		feeder.accept(grammarAccess.getCopyAccess().getKeySTRINGTerminalRuleCall_8_0(), semanticObject.getKey());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     SelectorPredicate returns DefaultFirstPredicate
+	 *     DefaultFirstPredicate returns DefaultFirstPredicate
+	 *
+	 * Constraint:
+	 *     {DefaultFirstPredicate}
+	 * </pre>
+	 */
+	protected void sequence_DefaultFirstPredicate(ISerializationContext context, DefaultFirstPredicate semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     ElementAttribute returns ElementAttribute
+	 *
+	 * Constraint:
+	 *     (name=HTML_ATTRIBUTE matcher=Matcher value=Content)
+	 * </pre>
+	 */
+	protected void sequence_ElementAttribute(ISerializationContext context, ElementAttribute semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.ELEMENT_ATTRIBUTE__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.ELEMENT_ATTRIBUTE__NAME));
+			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.ELEMENT_ATTRIBUTE__MATCHER) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.ELEMENT_ATTRIBUTE__MATCHER));
+			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.ELEMENT_ATTRIBUTE__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.ELEMENT_ATTRIBUTE__VALUE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getElementAttributeAccess().getNameHTML_ATTRIBUTETerminalRuleCall_0_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getElementAttributeAccess().getMatcherMatcherParserRuleCall_1_0(), semanticObject.getMatcher());
+		feeder.accept(grammarAccess.getElementAttributeAccess().getValueContentParserRuleCall_2_0(), semanticObject.getValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     ElementProperty returns ElementProperty
+	 *
+	 * Constraint:
+	 *     (negated='not'? (property='selected' | property='visible' | property='enabled'))
+	 * </pre>
+	 */
+	protected void sequence_ElementProperty(ISerializationContext context, ElementProperty semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Command returns GoTo
+	 *     GoTo returns GoTo
 	 *
 	 * Constraint:
 	 *     url=STRING
 	 * </pre>
 	 */
-	protected void sequence_NavigateToCommand(ISerializationContext context, NavigateToCommand semanticObject) {
+	protected void sequence_GoTo(ISerializationContext context, GoTo semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.NAVIGATE_TO_COMMAND__URL) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.NAVIGATE_TO_COMMAND__URL));
+			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.GO_TO__URL) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.GO_TO__URL));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getNavigateToCommandAccess().getUrlSTRINGTerminalRuleCall_4_0(), semanticObject.getUrl());
+		feeder.accept(grammarAccess.getGoToAccess().getUrlSTRINGTerminalRuleCall_2_0(), semanticObject.getUrl());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Command returns Insert
+	 *     DOMCommand returns Insert
+	 *     Insert returns Insert
+	 *
+	 * Constraint:
+	 *     (element=Selector content=Content)
+	 * </pre>
+	 */
+	protected void sequence_Insert(ISerializationContext context, Insert semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.INSERT__ELEMENT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.INSERT__ELEMENT));
+			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.INSERT__CONTENT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.INSERT__CONTENT));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getInsertAccess().getElementSelectorParserRuleCall_1_0(), semanticObject.getElement());
+		feeder.accept(grammarAccess.getInsertAccess().getContentContentParserRuleCall_3_0(), semanticObject.getContent());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     SelectorPredicate returns LastPredicate
+	 *     LastPredicate returns LastPredicate
+	 *
+	 * Constraint:
+	 *     {LastPredicate}
+	 * </pre>
+	 */
+	protected void sequence_LastPredicate(ISerializationContext context, LastPredicate semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -152,13 +354,13 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 * <pre>
 	 * Contexts:
 	 *     Command returns OpenBrowser
-	 *     OpenBrowserCommand returns OpenBrowser
+	 *     OpenBrowser returns OpenBrowser
 	 *
 	 * Constraint:
 	 *     {OpenBrowser}
 	 * </pre>
 	 */
-	protected void sequence_OpenBrowserCommand(ISerializationContext context, OpenBrowser semanticObject) {
+	protected void sequence_OpenBrowser(ISerializationContext context, OpenBrowser semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -166,23 +368,19 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     Command returns ReadCommand
-	 *     ReadCommand returns ReadCommand
+	 *     OrdinalInteger returns OrdinalInteger
 	 *
 	 * Constraint:
-	 *     (elementText=STRING variableName=ID)
+	 *     value=INT
 	 * </pre>
 	 */
-	protected void sequence_ReadCommand(ISerializationContext context, ReadCommand semanticObject) {
+	protected void sequence_OrdinalInteger(ISerializationContext context, OrdinalInteger semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.READ_COMMAND__ELEMENT_TEXT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.READ_COMMAND__ELEMENT_TEXT));
-			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.READ_COMMAND__VARIABLE_NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.READ_COMMAND__VARIABLE_NAME));
+			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.ORDINAL_INTEGER__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.ORDINAL_INTEGER__VALUE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getReadCommandAccess().getElementTextSTRINGTerminalRuleCall_5_0(), semanticObject.getElementText());
-		feeder.accept(grammarAccess.getReadCommandAccess().getVariableNameIDTerminalRuleCall_11_0(), semanticObject.getVariableName());
+		feeder.accept(grammarAccess.getOrdinalIntegerAccess().getValueINTTerminalRuleCall_0_0(), semanticObject.getValue());
 		feeder.finish();
 	}
 	
@@ -190,20 +388,20 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     Command returns SelectCommand
-	 *     SelectCommand returns SelectCommand
+	 *     SelectorPredicate returns OrdinalPredicate
+	 *     OrdinalPredicate returns OrdinalPredicate
 	 *
 	 * Constraint:
-	 *     checkboxName=STRING
+	 *     ordinal=OrdinalInteger
 	 * </pre>
 	 */
-	protected void sequence_SelectCommand(ISerializationContext context, SelectCommand semanticObject) {
+	protected void sequence_OrdinalPredicate(ISerializationContext context, OrdinalPredicate semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.SELECT_COMMAND__CHECKBOX_NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.SELECT_COMMAND__CHECKBOX_NAME));
+			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.ORDINAL_PREDICATE__ORDINAL) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.ORDINAL_PREDICATE__ORDINAL));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getSelectCommandAccess().getCheckboxNameSTRINGTerminalRuleCall_4_0(), semanticObject.getCheckboxName());
+		feeder.accept(grammarAccess.getOrdinalPredicateAccess().getOrdinalOrdinalIntegerParserRuleCall_1_0(), semanticObject.getOrdinal());
 		feeder.finish();
 	}
 	
@@ -211,21 +409,108 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     Command returns VerifyCommand
-	 *     VerifyCommand returns VerifyCommand
+	 *     Command returns Paste
+	 *     DOMCommand returns Paste
+	 *     Paste returns Paste
 	 *
 	 * Constraint:
-	 *     verifyString=STRING
+	 *     element=Selector
 	 * </pre>
 	 */
-	protected void sequence_VerifyCommand(ISerializationContext context, VerifyCommand semanticObject) {
+	protected void sequence_Paste(ISerializationContext context, Paste semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.VERIFY_COMMAND__VERIFY_STRING) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.VERIFY_COMMAND__VERIFY_STRING));
+			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.PASTE__ELEMENT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.PASTE__ELEMENT));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getVerifyCommandAccess().getVerifyStringSTRINGTerminalRuleCall_6_0(), semanticObject.getVerifyString());
+		feeder.accept(grammarAccess.getPasteAccess().getElementSelectorParserRuleCall_7_0(), semanticObject.getElement());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Properties returns Properties
+	 *
+	 * Constraint:
+	 *     (properties+=ElementProperty properties+=ElementProperty*)
+	 * </pre>
+	 */
+	protected void sequence_Properties(ISerializationContext context, Properties semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Selector returns Selector
+	 *
+	 * Constraint:
+	 *     (
+	 *         predicate=SelectorPredicate 
+	 *         domType=STRING 
+	 *         attributes=Attributes? 
+	 *         label=STRING? 
+	 *         properties=Properties? 
+	 *         parent=Selector?
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_Selector(ISerializationContext context, Selector semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Content returns StringContent
+	 *     StringContent returns StringContent
+	 *
+	 * Constraint:
+	 *     value=STRING
+	 * </pre>
+	 */
+	protected void sequence_StringContent(ISerializationContext context, StringContent semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.STRING_CONTENT__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.STRING_CONTENT__VALUE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getStringContentAccess().getValueSTRINGTerminalRuleCall_0(), semanticObject.getValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     TestCase returns TestCase
+	 *
+	 * Constraint:
+	 *     (name=STRING commands+=Command*)
+	 * </pre>
+	 */
+	protected void sequence_TestCase(ISerializationContext context, TestCase semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Command returns Verify
+	 *     DOMCommand returns Verify
+	 *     Verify returns Verify
+	 *
+	 * Constraint:
+	 *     (selector=Selector properties+=ElementProperty properties+=ElementProperty*)
+	 * </pre>
+	 */
+	protected void sequence_Verify(ISerializationContext context, Verify semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

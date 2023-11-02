@@ -10,18 +10,33 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
-import org.xtext.example.mydsl1.myDsl.ClickCommand;
+import org.xtext.example.mydsl1.myDsl.AllPredicate;
+import org.xtext.example.mydsl1.myDsl.Attributes;
+import org.xtext.example.mydsl1.myDsl.BrowserDsl;
+import org.xtext.example.mydsl1.myDsl.Click;
+import org.xtext.example.mydsl1.myDsl.ClipboardContent;
 import org.xtext.example.mydsl1.myDsl.Command;
-import org.xtext.example.mydsl1.myDsl.FillCommand;
-import org.xtext.example.mydsl1.myDsl.Model;
+import org.xtext.example.mydsl1.myDsl.Content;
+import org.xtext.example.mydsl1.myDsl.Copy;
+import org.xtext.example.mydsl1.myDsl.DOMCommand;
+import org.xtext.example.mydsl1.myDsl.DefaultFirstPredicate;
+import org.xtext.example.mydsl1.myDsl.ElementAttribute;
+import org.xtext.example.mydsl1.myDsl.ElementProperty;
+import org.xtext.example.mydsl1.myDsl.GoTo;
+import org.xtext.example.mydsl1.myDsl.Insert;
+import org.xtext.example.mydsl1.myDsl.LastPredicate;
 import org.xtext.example.mydsl1.myDsl.MyDslFactory;
 import org.xtext.example.mydsl1.myDsl.MyDslPackage;
-import org.xtext.example.mydsl1.myDsl.NavigateToCommand;
 import org.xtext.example.mydsl1.myDsl.OpenBrowser;
-import org.xtext.example.mydsl1.myDsl.OpenBrowserCommand;
-import org.xtext.example.mydsl1.myDsl.ReadCommand;
-import org.xtext.example.mydsl1.myDsl.SelectCommand;
-import org.xtext.example.mydsl1.myDsl.VerifyCommand;
+import org.xtext.example.mydsl1.myDsl.OrdinalInteger;
+import org.xtext.example.mydsl1.myDsl.OrdinalPredicate;
+import org.xtext.example.mydsl1.myDsl.Paste;
+import org.xtext.example.mydsl1.myDsl.Properties;
+import org.xtext.example.mydsl1.myDsl.Selector;
+import org.xtext.example.mydsl1.myDsl.SelectorPredicate;
+import org.xtext.example.mydsl1.myDsl.StringContent;
+import org.xtext.example.mydsl1.myDsl.TestCase;
+import org.xtext.example.mydsl1.myDsl.Verify;
 
 /**
  * <!-- begin-user-doc -->
@@ -36,7 +51,14 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass modelEClass = null;
+  private EClass browserDslEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass testCaseEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -50,56 +72,154 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass openBrowserCommandEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass navigateToCommandEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass clickCommandEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass fillCommandEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass selectCommandEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass verifyCommandEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass readCommandEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   private EClass openBrowserEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass domCommandEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass goToEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass clickEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass copyEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass pasteEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass insertEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass selectorEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass attributesEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass elementAttributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass contentEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass clipboardContentEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass stringContentEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass propertiesEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass elementPropertyEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass selectorPredicateEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass allPredicateEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass ordinalPredicateEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass lastPredicateEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass defaultFirstPredicateEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass verifyEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass ordinalIntegerEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -169,9 +289,9 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * @generated
    */
   @Override
-  public EClass getModel()
+  public EClass getBrowserDsl()
   {
-    return modelEClass;
+    return browserDslEClass;
   }
 
   /**
@@ -180,9 +300,42 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * @generated
    */
   @Override
-  public EReference getModel_Commands()
+  public EReference getBrowserDsl_Cases()
   {
-    return (EReference)modelEClass.getEStructuralFeatures().get(0);
+    return (EReference)browserDslEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getTestCase()
+  {
+    return testCaseEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getTestCase_Name()
+  {
+    return (EAttribute)testCaseEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getTestCase_Commands()
+  {
+    return (EReference)testCaseEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -202,174 +355,548 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * @generated
    */
   @Override
-  public EClass getOpenBrowserCommand()
-  {
-    return openBrowserCommandEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getNavigateToCommand()
-  {
-    return navigateToCommandEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getNavigateToCommand_Url()
-  {
-    return (EAttribute)navigateToCommandEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getClickCommand()
-  {
-    return clickCommandEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getClickCommand_ElementText()
-  {
-    return (EAttribute)clickCommandEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getFillCommand()
-  {
-    return fillCommandEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getFillCommand_FieldName()
-  {
-    return (EAttribute)fillCommandEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getFillCommand_FieldValue()
-  {
-    return (EAttribute)fillCommandEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getSelectCommand()
-  {
-    return selectCommandEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getSelectCommand_CheckboxName()
-  {
-    return (EAttribute)selectCommandEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getVerifyCommand()
-  {
-    return verifyCommandEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getVerifyCommand_VerifyString()
-  {
-    return (EAttribute)verifyCommandEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getReadCommand()
-  {
-    return readCommandEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getReadCommand_ElementText()
-  {
-    return (EAttribute)readCommandEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getReadCommand_VariableName()
-  {
-    return (EAttribute)readCommandEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public EClass getOpenBrowser()
   {
     return openBrowserEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getDOMCommand()
+  {
+    return domCommandEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getGoTo()
+  {
+    return goToEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getGoTo_Url()
+  {
+    return (EAttribute)goToEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getClick()
+  {
+    return clickEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getClick_Element()
+  {
+    return (EReference)clickEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getCopy()
+  {
+    return copyEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getCopy_Property()
+  {
+    return (EAttribute)copyEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getCopy_Element()
+  {
+    return (EReference)copyEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getCopy_Key()
+  {
+    return (EAttribute)copyEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getPaste()
+  {
+    return pasteEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getPaste_Element()
+  {
+    return (EReference)pasteEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getInsert()
+  {
+    return insertEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getInsert_Element()
+  {
+    return (EReference)insertEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getInsert_Content()
+  {
+    return (EReference)insertEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getSelector()
+  {
+    return selectorEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getSelector_Predicate()
+  {
+    return (EReference)selectorEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getSelector_DomType()
+  {
+    return (EAttribute)selectorEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getSelector_Attributes()
+  {
+    return (EReference)selectorEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getSelector_Label()
+  {
+    return (EAttribute)selectorEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getSelector_Properties()
+  {
+    return (EReference)selectorEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getSelector_Parent()
+  {
+    return (EReference)selectorEClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getAttributes()
+  {
+    return attributesEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getAttributes_Attributes()
+  {
+    return (EReference)attributesEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getAttributes_Properties()
+  {
+    return (EReference)attributesEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getElementAttribute()
+  {
+    return elementAttributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getElementAttribute_Name()
+  {
+    return (EAttribute)elementAttributeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getElementAttribute_Matcher()
+  {
+    return (EAttribute)elementAttributeEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getElementAttribute_Value()
+  {
+    return (EReference)elementAttributeEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getContent()
+  {
+    return contentEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getClipboardContent()
+  {
+    return clipboardContentEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getClipboardContent_Key()
+  {
+    return (EAttribute)clipboardContentEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getStringContent()
+  {
+    return stringContentEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getStringContent_Value()
+  {
+    return (EAttribute)stringContentEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getProperties()
+  {
+    return propertiesEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getProperties_Properties()
+  {
+    return (EReference)propertiesEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getElementProperty()
+  {
+    return elementPropertyEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getElementProperty_Negated()
+  {
+    return (EAttribute)elementPropertyEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getElementProperty_Property()
+  {
+    return (EAttribute)elementPropertyEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getSelectorPredicate()
+  {
+    return selectorPredicateEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getAllPredicate()
+  {
+    return allPredicateEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getOrdinalPredicate()
+  {
+    return ordinalPredicateEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getOrdinalPredicate_Ordinal()
+  {
+    return (EReference)ordinalPredicateEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getLastPredicate()
+  {
+    return lastPredicateEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getDefaultFirstPredicate()
+  {
+    return defaultFirstPredicateEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getVerify()
+  {
+    return verifyEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getVerify_Selector()
+  {
+    return (EReference)verifyEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getVerify_Properties()
+  {
+    return (EReference)verifyEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getOrdinalInteger()
+  {
+    return ordinalIntegerEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getOrdinalInteger_Value()
+  {
+    return (EAttribute)ordinalIntegerEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -403,34 +930,86 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
     isCreated = true;
 
     // Create classes and their features
-    modelEClass = createEClass(MODEL);
-    createEReference(modelEClass, MODEL__COMMANDS);
+    browserDslEClass = createEClass(BROWSER_DSL);
+    createEReference(browserDslEClass, BROWSER_DSL__CASES);
+
+    testCaseEClass = createEClass(TEST_CASE);
+    createEAttribute(testCaseEClass, TEST_CASE__NAME);
+    createEReference(testCaseEClass, TEST_CASE__COMMANDS);
 
     commandEClass = createEClass(COMMAND);
 
-    openBrowserCommandEClass = createEClass(OPEN_BROWSER_COMMAND);
-
-    navigateToCommandEClass = createEClass(NAVIGATE_TO_COMMAND);
-    createEAttribute(navigateToCommandEClass, NAVIGATE_TO_COMMAND__URL);
-
-    clickCommandEClass = createEClass(CLICK_COMMAND);
-    createEAttribute(clickCommandEClass, CLICK_COMMAND__ELEMENT_TEXT);
-
-    fillCommandEClass = createEClass(FILL_COMMAND);
-    createEAttribute(fillCommandEClass, FILL_COMMAND__FIELD_NAME);
-    createEAttribute(fillCommandEClass, FILL_COMMAND__FIELD_VALUE);
-
-    selectCommandEClass = createEClass(SELECT_COMMAND);
-    createEAttribute(selectCommandEClass, SELECT_COMMAND__CHECKBOX_NAME);
-
-    verifyCommandEClass = createEClass(VERIFY_COMMAND);
-    createEAttribute(verifyCommandEClass, VERIFY_COMMAND__VERIFY_STRING);
-
-    readCommandEClass = createEClass(READ_COMMAND);
-    createEAttribute(readCommandEClass, READ_COMMAND__ELEMENT_TEXT);
-    createEAttribute(readCommandEClass, READ_COMMAND__VARIABLE_NAME);
-
     openBrowserEClass = createEClass(OPEN_BROWSER);
+
+    domCommandEClass = createEClass(DOM_COMMAND);
+
+    goToEClass = createEClass(GO_TO);
+    createEAttribute(goToEClass, GO_TO__URL);
+
+    clickEClass = createEClass(CLICK);
+    createEReference(clickEClass, CLICK__ELEMENT);
+
+    copyEClass = createEClass(COPY);
+    createEAttribute(copyEClass, COPY__PROPERTY);
+    createEReference(copyEClass, COPY__ELEMENT);
+    createEAttribute(copyEClass, COPY__KEY);
+
+    pasteEClass = createEClass(PASTE);
+    createEReference(pasteEClass, PASTE__ELEMENT);
+
+    insertEClass = createEClass(INSERT);
+    createEReference(insertEClass, INSERT__ELEMENT);
+    createEReference(insertEClass, INSERT__CONTENT);
+
+    selectorEClass = createEClass(SELECTOR);
+    createEReference(selectorEClass, SELECTOR__PREDICATE);
+    createEAttribute(selectorEClass, SELECTOR__DOM_TYPE);
+    createEReference(selectorEClass, SELECTOR__ATTRIBUTES);
+    createEAttribute(selectorEClass, SELECTOR__LABEL);
+    createEReference(selectorEClass, SELECTOR__PROPERTIES);
+    createEReference(selectorEClass, SELECTOR__PARENT);
+
+    attributesEClass = createEClass(ATTRIBUTES);
+    createEReference(attributesEClass, ATTRIBUTES__ATTRIBUTES);
+    createEReference(attributesEClass, ATTRIBUTES__PROPERTIES);
+
+    elementAttributeEClass = createEClass(ELEMENT_ATTRIBUTE);
+    createEAttribute(elementAttributeEClass, ELEMENT_ATTRIBUTE__NAME);
+    createEAttribute(elementAttributeEClass, ELEMENT_ATTRIBUTE__MATCHER);
+    createEReference(elementAttributeEClass, ELEMENT_ATTRIBUTE__VALUE);
+
+    contentEClass = createEClass(CONTENT);
+
+    clipboardContentEClass = createEClass(CLIPBOARD_CONTENT);
+    createEAttribute(clipboardContentEClass, CLIPBOARD_CONTENT__KEY);
+
+    stringContentEClass = createEClass(STRING_CONTENT);
+    createEAttribute(stringContentEClass, STRING_CONTENT__VALUE);
+
+    propertiesEClass = createEClass(PROPERTIES);
+    createEReference(propertiesEClass, PROPERTIES__PROPERTIES);
+
+    elementPropertyEClass = createEClass(ELEMENT_PROPERTY);
+    createEAttribute(elementPropertyEClass, ELEMENT_PROPERTY__NEGATED);
+    createEAttribute(elementPropertyEClass, ELEMENT_PROPERTY__PROPERTY);
+
+    selectorPredicateEClass = createEClass(SELECTOR_PREDICATE);
+
+    allPredicateEClass = createEClass(ALL_PREDICATE);
+
+    ordinalPredicateEClass = createEClass(ORDINAL_PREDICATE);
+    createEReference(ordinalPredicateEClass, ORDINAL_PREDICATE__ORDINAL);
+
+    lastPredicateEClass = createEClass(LAST_PREDICATE);
+
+    defaultFirstPredicateEClass = createEClass(DEFAULT_FIRST_PREDICATE);
+
+    verifyEClass = createEClass(VERIFY);
+    createEReference(verifyEClass, VERIFY__SELECTOR);
+    createEReference(verifyEClass, VERIFY__PROPERTIES);
+
+    ordinalIntegerEClass = createEClass(ORDINAL_INTEGER);
+    createEAttribute(ordinalIntegerEClass, ORDINAL_INTEGER__VALUE);
   }
 
   /**
@@ -462,44 +1041,102 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
     // Set bounds for type parameters
 
     // Add supertypes to classes
-    openBrowserCommandEClass.getESuperTypes().add(this.getCommand());
-    navigateToCommandEClass.getESuperTypes().add(this.getCommand());
-    clickCommandEClass.getESuperTypes().add(this.getCommand());
-    fillCommandEClass.getESuperTypes().add(this.getCommand());
-    selectCommandEClass.getESuperTypes().add(this.getCommand());
-    verifyCommandEClass.getESuperTypes().add(this.getCommand());
-    readCommandEClass.getESuperTypes().add(this.getCommand());
-    openBrowserEClass.getESuperTypes().add(this.getOpenBrowserCommand());
+    openBrowserEClass.getESuperTypes().add(this.getCommand());
+    domCommandEClass.getESuperTypes().add(this.getCommand());
+    goToEClass.getESuperTypes().add(this.getCommand());
+    clickEClass.getESuperTypes().add(this.getDOMCommand());
+    copyEClass.getESuperTypes().add(this.getDOMCommand());
+    pasteEClass.getESuperTypes().add(this.getDOMCommand());
+    insertEClass.getESuperTypes().add(this.getDOMCommand());
+    clipboardContentEClass.getESuperTypes().add(this.getContent());
+    stringContentEClass.getESuperTypes().add(this.getContent());
+    allPredicateEClass.getESuperTypes().add(this.getSelectorPredicate());
+    ordinalPredicateEClass.getESuperTypes().add(this.getSelectorPredicate());
+    lastPredicateEClass.getESuperTypes().add(this.getSelectorPredicate());
+    defaultFirstPredicateEClass.getESuperTypes().add(this.getSelectorPredicate());
+    verifyEClass.getESuperTypes().add(this.getDOMCommand());
 
     // Initialize classes and features; add operations and parameters
-    initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getModel_Commands(), this.getCommand(), null, "commands", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(browserDslEClass, BrowserDsl.class, "BrowserDsl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getBrowserDsl_Cases(), this.getTestCase(), null, "cases", null, 0, -1, BrowserDsl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(testCaseEClass, TestCase.class, "TestCase", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getTestCase_Name(), ecorePackage.getEString(), "name", null, 0, 1, TestCase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTestCase_Commands(), this.getCommand(), null, "commands", null, 0, -1, TestCase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(commandEClass, Command.class, "Command", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-    initEClass(openBrowserCommandEClass, OpenBrowserCommand.class, "OpenBrowserCommand", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(navigateToCommandEClass, NavigateToCommand.class, "NavigateToCommand", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getNavigateToCommand_Url(), ecorePackage.getEString(), "url", null, 0, 1, NavigateToCommand.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(clickCommandEClass, ClickCommand.class, "ClickCommand", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getClickCommand_ElementText(), ecorePackage.getEString(), "elementText", null, 0, 1, ClickCommand.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(fillCommandEClass, FillCommand.class, "FillCommand", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getFillCommand_FieldName(), ecorePackage.getEString(), "fieldName", null, 0, 1, FillCommand.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getFillCommand_FieldValue(), ecorePackage.getEString(), "fieldValue", null, 0, 1, FillCommand.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(selectCommandEClass, SelectCommand.class, "SelectCommand", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getSelectCommand_CheckboxName(), ecorePackage.getEString(), "checkboxName", null, 0, 1, SelectCommand.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(verifyCommandEClass, VerifyCommand.class, "VerifyCommand", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getVerifyCommand_VerifyString(), ecorePackage.getEString(), "verifyString", null, 0, 1, VerifyCommand.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(readCommandEClass, ReadCommand.class, "ReadCommand", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getReadCommand_ElementText(), ecorePackage.getEString(), "elementText", null, 0, 1, ReadCommand.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getReadCommand_VariableName(), ecorePackage.getEString(), "variableName", null, 0, 1, ReadCommand.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
     initEClass(openBrowserEClass, OpenBrowser.class, "OpenBrowser", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(domCommandEClass, DOMCommand.class, "DOMCommand", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(goToEClass, GoTo.class, "GoTo", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getGoTo_Url(), ecorePackage.getEString(), "url", null, 0, 1, GoTo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(clickEClass, Click.class, "Click", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getClick_Element(), this.getSelector(), null, "element", null, 0, 1, Click.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(copyEClass, Copy.class, "Copy", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getCopy_Property(), ecorePackage.getEString(), "property", null, 0, 1, Copy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCopy_Element(), this.getSelector(), null, "element", null, 0, 1, Copy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getCopy_Key(), ecorePackage.getEString(), "key", null, 0, 1, Copy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(pasteEClass, Paste.class, "Paste", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getPaste_Element(), this.getSelector(), null, "element", null, 0, 1, Paste.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(insertEClass, Insert.class, "Insert", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getInsert_Element(), this.getSelector(), null, "element", null, 0, 1, Insert.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getInsert_Content(), this.getContent(), null, "content", null, 0, 1, Insert.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(selectorEClass, Selector.class, "Selector", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getSelector_Predicate(), this.getSelectorPredicate(), null, "predicate", null, 0, 1, Selector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSelector_DomType(), ecorePackage.getEString(), "domType", null, 0, 1, Selector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSelector_Attributes(), this.getAttributes(), null, "attributes", null, 0, 1, Selector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSelector_Label(), ecorePackage.getEString(), "label", null, 0, 1, Selector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSelector_Properties(), this.getProperties(), null, "properties", null, 0, 1, Selector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSelector_Parent(), this.getSelector(), null, "parent", null, 0, 1, Selector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(attributesEClass, Attributes.class, "Attributes", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getAttributes_Attributes(), this.getElementAttribute(), null, "attributes", null, 0, -1, Attributes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAttributes_Properties(), this.getElementAttribute(), null, "properties", null, 0, -1, Attributes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(elementAttributeEClass, ElementAttribute.class, "ElementAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getElementAttribute_Name(), ecorePackage.getEString(), "name", null, 0, 1, ElementAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getElementAttribute_Matcher(), ecorePackage.getEString(), "matcher", null, 0, 1, ElementAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getElementAttribute_Value(), this.getContent(), null, "value", null, 0, 1, ElementAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(contentEClass, Content.class, "Content", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(clipboardContentEClass, ClipboardContent.class, "ClipboardContent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getClipboardContent_Key(), ecorePackage.getEString(), "key", null, 0, 1, ClipboardContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(stringContentEClass, StringContent.class, "StringContent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getStringContent_Value(), ecorePackage.getEString(), "value", null, 0, 1, StringContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(propertiesEClass, Properties.class, "Properties", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getProperties_Properties(), this.getElementProperty(), null, "properties", null, 0, -1, Properties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(elementPropertyEClass, ElementProperty.class, "ElementProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getElementProperty_Negated(), ecorePackage.getEString(), "negated", null, 0, 1, ElementProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getElementProperty_Property(), ecorePackage.getEString(), "property", null, 0, 1, ElementProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(selectorPredicateEClass, SelectorPredicate.class, "SelectorPredicate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(allPredicateEClass, AllPredicate.class, "AllPredicate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(ordinalPredicateEClass, OrdinalPredicate.class, "OrdinalPredicate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getOrdinalPredicate_Ordinal(), this.getOrdinalInteger(), null, "ordinal", null, 0, 1, OrdinalPredicate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(lastPredicateEClass, LastPredicate.class, "LastPredicate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(defaultFirstPredicateEClass, DefaultFirstPredicate.class, "DefaultFirstPredicate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(verifyEClass, Verify.class, "Verify", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getVerify_Selector(), this.getSelector(), null, "selector", null, 0, 1, Verify.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getVerify_Properties(), this.getElementProperty(), null, "properties", null, 0, -1, Verify.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(ordinalIntegerEClass, OrdinalInteger.class, "OrdinalInteger", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getOrdinalInteger_Value(), ecorePackage.getEInt(), "value", null, 0, 1, OrdinalInteger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

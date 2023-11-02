@@ -7,15 +7,26 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtext.generator.AbstractGenerator;
 import org.eclipse.xtext.generator.IFileSystemAccess2;
 import org.eclipse.xtext.generator.IGeneratorContext;
-
+import org.xtext.example.mydsl1.myDsl.TestCase
+import org.xtext.example.mydsl1.myDsl.OpenBrowser
 import org.xtext.example.mydsl1.myDsl.Command
-import org.xtext.example.mydsl1.myDsl.Model
-import org.xtext.example.mydsl1.myDsl.OpenBrowserCommand
-import org.xtext.example.mydsl1.myDsl.NavigateToCommand
-import org.xtext.example.mydsl1.myDsl.ClickCommand
-import org.xtext.example.mydsl1.myDsl.FillCommand
-import org.xtext.example.mydsl1.myDsl.SelectCommand
-import org.xtext.example.mydsl1.myDsl.VerifyCommand
+import org.xtext.example.mydsl1.myDsl.GoTo
+import org.xtext.example.mydsl1.myDsl.DOMCommand
+import org.xtext.example.mydsl1.myDsl.Click
+import org.xtext.example.mydsl1.myDsl.Copy
+import org.xtext.example.mydsl1.myDsl.Insert
+import org.xtext.example.mydsl1.myDsl.Verify
+import org.xtext.example.mydsl1.myDsl.Selector
+import java.util.List
+import org.xtext.example.mydsl1.myDsl.ElementProperty
+import org.xtext.example.mydsl1.myDsl.OrdinalPredicate
+import org.xtext.example.mydsl1.myDsl.LastPredicate
+import org.xtext.example.mydsl1.myDsl.DefaultFirstPredicate
+import org.xtext.example.mydsl1.myDsl.AllPredicate
+import org.xtext.example.mydsl1.myDsl.Content
+import org.xtext.example.mydsl1.myDsl.StringContent
+import org.xtext.example.mydsl1.myDsl.ClipboardContent
+import org.xtext.example.mydsl1.myDsl.ElementAttribute
 
 /**
  * Generates code from your model files on save.
@@ -25,86 +36,262 @@ import org.xtext.example.mydsl1.myDsl.VerifyCommand
 class MyDslGenerator extends AbstractGenerator {
     // Selenium Webdriver code generator
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-		if (resource != null) {
-			val model = resource.contents.head as Model
-			
-        	
-        	val inputFileName = resource.URI.lastSegment.toString();
-		    var name = inputFileName.replaceFirst(".dmodel", ".java");
-		    		    
-		    var className = resource.URI.lastSegment.toString().replaceFirst(".dmodel", "")
-		    
-		    className = Character.toUpperCase(className.charAt(0)) + className.substring(1);
-		    val seleniumCode = generateWebDriverCode(model, className)
-		    
-		    name = Character.toUpperCase(name.charAt(0)) + name.substring(1) ;
-		
-		    fsa.generateFile(name, seleniumCode);
-        	
+		for(TestCase test : resource.allContents.toIterable.filter(TestCase)) {
+			var name = test.name.replaceAll("[^a-zA-Z0-9-_\\.]", "_");
+			name = name.substring(0, 1).toUpperCase() + name.substring(1)
+			var text = '''
+				package fr.imta.amanthéo.browser;
+				
+				import org.openqa.selenium.By;
+				import org.openqa.selenium.WebDriver;
+				import org.openqa.selenium.WebElement;
+				import org.openqa.selenium.chrome.ChromeDriver;
+				import org.openqa.selenium.WebDriverException;
+				import org.openqa.selenium.JavascriptExecutor;
+				import java.util.stream.Collectors;
+				import java.util.function.Predicate;
+
+				import java.time.Duration;
+				import java.util.List;
+				import java.util.Map;
+				import java.util.HashMap;
+				public class «name» {
+					
+					private static Map<String, String> savedData = new HashMap();
+					
+					public static String getSavedData(String key) {
+						if (!savedData.containsKey(key)) {
+							throw new RuntimeException("No saved data named " + key); 
+						}
+						return savedData.get(key);
+					}
+					
+					public static List<WebElement> findElementsStable(WebDriver driver, By locator, Predicate<WebElement> filter, int maxAttempts, int retryCountIfZero) {
+						int lastCount = -1;
+						int retryZero = 0;
+					    for (int attempt = 0; attempt < maxAttempts; attempt++) {
+					        List<WebElement> current = driver.findElements(locator).stream().filter(filter).collect(Collectors.toList());
+					        if (current.size() == lastCount && (lastCount != 0 || retryZero == retryCountIfZero)) {
+								return current;
+					        } else {
+					        	lastCount = current.size();
+					        	if (lastCount == 0) {
+					        		retryZero ++;
+				        		}
+				        	}
+					        try {
+					        	if (lastCount == 0) {
+						            Thread.sleep(1000); // Wait for 1s
+					        	} else {
+						            Thread.sleep(100); // Wait for 1s
+					        	}
+					        } catch (InterruptedException e) {
+					            Thread.currentThread().interrupt();
+					        }
+					    }
+						throw new RuntimeException("Amount of web elements not stable");
+					}
+					
+					public static List<WebElement> findElementsStable(WebDriver driver, By locator, int maxAttempts, int retryCountIfZero) {
+						return findElementsStable(driver, locator, elt -> true, maxAttempts, retryCountIfZero);
+					}
+					
+				    public static void main(String[] args) throws Exception{
+				    	WebDriver driver;
+						«FOR command : test.commands»
+						«command.compile»
+						«ENDFOR»
+						if (driver == null) {
+							throw new RuntimeException("Cannot find a reference to the web driver. Has it been opened?");
+						}
+				        driver.quit();
+				    }
+				}
+				
+			'''
+			fsa.generateFile("fr/imta/amanthéo/browser/" + name +".java", text)
+		}
+
+	}
+	
+	def compile(Command command) {
+		return switch(command) {
+			OpenBrowser:'''
+			driver = new ChromeDriver();
+			driver.manage().window().maximize();
+			'''
+			GoTo :'''
+			driver.get("«command.url»");
+			'''
+			DOMCommand: command.compile
 		}
 	}
 	
-	def generateWebDriverCode(Model model, String className) {
-		val commandsCode = model.commands.map[generateCommandCode(it)].join('\n\n')
-	    '''
-	    import org.openqa.selenium.By;
-	    import org.openqa.selenium.WebDriver;
-	    import org.openqa.selenium.chrome.ChromeDriver;
-	    import org.openqa.selenium.chrome.ChromeOptions;
-	    import org.openqa.selenium.WebElement;
-	    
-	    public class  ''' + className + ''' {
-	      public static void main(String[] args) {	  
-	        
-	          ''' + commandsCode + '''
-	      }
-	    }
-	    '''		
+	def compile(DOMCommand command) {
+		val text = switch (command) {
+			Click : '''
+				«executeForXPath(command.element, 
+					'''
+					((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({behavior: 'auto',block: 'center',inline: 'center'});", e);
+					try {
+						Thread.sleep(100);
+					}  catch (InterruptedException e1) {
+						e1.printStackTrace();
+					}
+					e.click();
+					''',
+					"e"
+				)»
+			'''
+			Copy : '''
+				String dataToSave = "";
+				«executeForXPath(command.element, 
+					'''
+					«IF command.property == "text"»
+						dataToSave += e.getText().toString();
+					«ELSE»
+						dataToSave += e.getDomAttribute("«command.property»").toString();
+					«ENDIF»
+					savedData.put("«command.key»", dataToSave);
+					''',
+					"e"
+				)»
+			'''
+			Insert : '''
+				«executeForXPath(command.element, 
+					'''
+					e.sendKeys("«getContent(command.content)»");
+					''',
+					"e"
+				)»
+			'''
+			Verify : 
+				'''
+				«executeForXPath(command.selector, '''
+					«generatePropertyValidation(command.properties, "e", "validated")»
+				''', "e")»
+				'''
+		}
+		
+		return '''
+		{
+			«text»
+		}'''
+	}
+	
+	def generatePropertyValidation(List<ElementProperty> properties, String selector, String propertyName) {
+		'''
+		boolean «propertyName» = true;
+		«FOR property : properties»
+			«propertyName» &= «property.negated == "not" ? "!" : ""»«switch (property.property) {
+				case "selected": '''«selector».isSelected();'''
+				case "visible":'''«selector».isDisplayed();'''
+				case "enabled":'''«selector».isEnabled();'''
+			}
+			»
+		«ENDFOR»
+		'''
+	}
+	def executeForXPath(Selector selector, String command, String elementName) {
+		val predicate = selector.predicate
+		
+		'''
+			String xpath = "«selector.toXPath»";
+			«IF(selector.label !== null && !selector.label.blank)»
+				String labelFor = findElementsStable(driver, By.xpath("//label[contains(text(), '«selector.label»')]"), 10, 3)
+					.get(0)
+					.getAttribute("for");
+				xpath += "[@id='" + labelFor + "']";
+			«ENDIF»
+			«IF selector.properties !== null && !selector.properties.properties.isEmpty()»
+			Predicate<WebElement> predicate = (elt) -> {
+									«generatePropertyValidation(selector.properties.properties, "elt", "filter")»
+									return filter;
+								};
+			List<WebElement> current = findElementsStable(driver, By.xpath(xpath), predicate, 10, 5); 
+			«ELSE»
+			List<WebElement> current = findElementsStable(driver, By.xpath(xpath), 10, 5);
+			«ENDIF»
+			if (current.isEmpty()) {
+				throw new WebDriverException("could not find any element matching xpath " + xpath);
+			}
+			int index = «
+			switch (predicate) {
+				 OrdinalPredicate: predicate.getOrdinal().getValue() - 1
+				 LastPredicate: "current.size() - 1"
+				 DefaultFirstPredicate: "0"
+				 AllPredicate: "-1"
+			}»;
+			
+			if (index == -1) {
+				for (WebElement «elementName» : current) {
+					«command»
+				}	;
+			} else {
+				if (index < current.size()) {
+					WebElement «elementName»  = current.get(index);
+					«command»
+				} else {
+					throw new RuntimeException("No element found");
+				}
+			}
+		'''
+	}
+	
+	private static val TEXT_INPUTS = #[
+		    'email',
+		    'month',
+		    'number',
+		    'password',
+		    'search',
+		    'tel',
+		    'text',
+		    'url',
+		    'week'
+	]
+
+	def getContent(Content attribute) {
+		switch(attribute) {
+			StringContent: attribute.value
+			ClipboardContent: '''"+getSavedData("«attribute.key»")+"'''
+		}
+	}
+	def String toXPath(Selector selector)  {
+		var xpath = switch (selector.getDomType()) {
+			case "element" : "//*"
+			case "link" : "//a"
+			case "image" : "//img"
+			case "list": "//*[self::ul or self::ol]"
+			case "list item": "//li"
+			case "checkbox" : "//input[@type='checkbox']"
+			case "button" : "//*[self::button or self::input[@type='button'] or self::input[@type='submit']]"
+			case "text field" : "//*[" + TEXT_INPUTS.map[input | "self::input[@type='"+input+"']"].join(" or ") + "]"
+			default: "//"+ selector.getDomType()
+		}
+		
+		if (selector.attributes !== null) {
+			for (ElementAttribute elementAttribute : selector.getAttributes().getAttributes()) {
+				
+				val valueStr = getContent(elementAttribute.value)
+				
+				val attributeStr = elementAttribute.getName() == "text" ? "text()" : "@"+elementAttribute.getName()
+				val condition = switch (elementAttribute.getMatcher()) {
+					case "containing": String::format("[contains(%s, '%s')]", attributeStr, valueStr)
+					case "matching": String::format("[%s='%s']", attributeStr, valueStr)
+				}
+				xpath = xpath + condition
+			}
+		}
+		
+		if (selector.parent !== null) {
+			return selector.parent.toXPath + xpath
+		}
+		return xpath
 	}
 		
-
-  	def generateCommandCode(Command command) {
-  		switch command {
-	      OpenBrowserCommand: '''
-	        WebDriver driver = (WebDriver) new ChromeDriver();
-	      '''
-	      NavigateToCommand: '''
-	        driver.get("''' + command.url + '''");
-	      '''
-	      ClickCommand: '''
-	      	WebElement acceptButton = driver.findElement(By.xpath("//*[@id=\"popup-buttons\"]/button[1]"));
-            if (acceptButton.isDisplayed()) {
-              acceptButton.click();
-            }
-	        driver.findElement(By.linkText("''' + command.elementText + '''")).click();
-	      '''
-	      FillCommand: '''
-	        WebElement element = driver.findElement(By.name("''' + command.fieldName + '''"));
-	        element.sendKeys("''' + command.fieldValue + '''");
-	      '''
-	      SelectCommand: '''
-	        WebElement element = driver.findElement(By.name("''' + command.checkboxName + '''"));
-	        element.click();
-	      '''
-	      VerifyCommand: '''
-	      	  WebElement linkElement = driver.findElement(By.linkText("'''+ command.verifyString +'''"));
-		      if (linkElement.getTagName().equalsIgnoreCase("a")) {
-		        System.out.println("Verification successful: Page contains " + "''' + command.verifyString + '''");
-		      } else {
-		        System.out.println("Verification failed: Page does not contain " + "''' + command.verifyString + '''");
-		      }
-		  '''
-	      
-	      default: ''
-	    }  		
-  	}
-  	
   	
 }
 
-//WebElement languageDropdown = driver.findElement(By.id("langmenu0")); // Replace with the correct ID or XPath
-//languageDropdown.click();
-//WebElement englishOption = driver.findElement(By.xpath("//*[@id=\"dropdownlangmenu0\"]/li[3]")); // Replace with the correct XPath for English
-//englishOption.click();
+
 
 	
