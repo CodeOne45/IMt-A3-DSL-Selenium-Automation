@@ -1,0 +1,93 @@
+Test case : "test 1" ***
+open a browser window
+go to "http://www.imt-atlantique.fr/fr"
+verify that the "link" with properties text containing "Toutes les actualités" that is visible is visible
+***
+
+Test case : "test 2" 
+***
+open a browser window
+go to "http://www.imt-atlantique.fr/fr"
+click on the "link" with properties text containing "Toutes les actualités" that is visible
+verify that the "link" with properties text containing "Accueil" that is visible is visible
+***
+
+Test case : "test 3" 
+***
+open a browser window
+go to "http://www.imt-atlantique.fr/fr"
+click on the "link" with properties text containing "Toutes les actualités" that is visible
+verify that the "link" with properties text containing "Accueil" that is visible is visible
+click on the "img" with properties alt matching "Accueil"
+verify that the "link" with properties text matching "Toutes les actualités" is visible
+***
+
+Test case : "test 4" *** 
+open a browser window
+go to "http://www.imt-atlantique.fr/fr/rechercher"
+fill the 2nd "text field" with "Donald Trump"
+click on the "button" with properties value matching "Appliquer les filtres"
+verify that the "element" with properties text containing "Aucun résultat ne correspond à votre recherche" is visible
+***
+
+Test case : "test 5" *** 
+open a browser window
+go to "http://www.imt-atlantique.fr/fr/formation/trouver-ma-formation"
+click on the "checkbox" with associated label "Anglais"
+click on the "checkbox" with associated label "Temps plein"
+click on the "checkbox" with associated label "A domicile"
+click on the "button" with properties value matching "Appliquer les critères"
+verify that the "element" with properties text containing "No found course matching your criteria." is visible
+***
+
+Test case : "test 6" ***
+open a browser window
+go to "http://www.imt-atlantique.fr/fr/rechercher"
+fill the 2nd "text field" with "2006"
+click on the 1st "list item" in the "list" with properties id matching "ui-id-2"
+click on the "div" with properties class containing "nice-select" in the "element" with properties id matching "recherche-date-range"
+click on the "element" with properties text containing "Le mois dernier" in the "div" with properties class containing "nice-select" in the "element" with properties id matching "recherche-date-range"
+click on the "button" with properties value matching "Appliquer les filtres"
+verify that the "element" with properties text containing "Aucun résultat ne correspond à votre recherche" is visible
+***
+
+Test case : "test 7" ***
+open a browser window
+go to "http://www.imt-atlantique.fr/fr"
+
+copy the property text of the "link" 
+in the "span" with properties class containing "views-field-title" 
+in the 1st "div" with properties class matching "view-content" 
+in the "div" with properties class containing "view-actualites"
+as "link text"
+
+click on the "link" 
+in the "span" with properties class containing "views-field-title" 
+in the 1st "div" with properties class matching "view-content" 
+in the "div" with properties class containing "view-actualites"
+
+verify that the "element" with properties text containing the saved content "link text" is visible
+***
+
+Test case : "test 8" ***
+open a browser window
+go to "http://www.imt-atlantique.fr/fr"
+
+copy the property href of the "link"
+in the "div" with properties class containing "carrou_link"
+in the 2nd "div" with properties class containing "slick-slide" 
+in the 1st "div" with properties class containing "slick-list"
+as "post url"
+
+copy the property text of the "h2" 
+in the "div" with properties class containing "carrou_tit"
+in the 2nd "div" with properties class containing "slick-slide" 
+in the 1st "div" with properties class containing "slick-list"
+as "post title"
+
+go to "http://www.imt-atlantique.fr/fr/rechercher"
+fill the 2nd "text field" with the saved content "post title"
+click on the 1st "list item" in the "list" with properties id matching "ui-id-2"
+click on the "button" with properties value matching "Appliquer les filtres"
+verify that the "element" with properties href containing the saved content "post url" is visible
+***

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+	<extension point="org.eclipse.emf.ecore.generated_package">
+		<package
+			uri = "http://www.imta.www/fr/browserautomation/SeleniumDsl"
+			class = "www.imta.fr.browserautomation.seleniumDsl.SeleniumDslPackage"
+			genModel = "model/generated/SeleniumDsl.genmodel" />
+	</extension>
+</plugin>
