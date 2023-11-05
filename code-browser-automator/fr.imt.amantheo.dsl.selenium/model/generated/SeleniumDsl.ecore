@@ -47,8 +47,6 @@
   <eClassifiers xsi:type="ecore:EClass" name="Attributes">
     <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
         eType="#//ElementAttribute" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="properties" upperBound="-1"
-        eType="#//ElementAttribute" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ElementAttribute">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -72,20 +70,20 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="property" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SelectorPredicate"/>
-  <eClassifiers xsi:type="ecore:EClass" name="AllPredicate" eSuperTypes="#//SelectorPredicate"/>
-  <eClassifiers xsi:type="ecore:EClass" name="OrdinalPredicate" eSuperTypes="#//SelectorPredicate">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ordinal" eType="#//OrdinalInteger"
+  <eClassifiers xsi:type="ecore:EClass" name="AllCondition" eSuperTypes="#//SelectorPredicate"/>
+  <eClassifiers xsi:type="ecore:EClass" name="IntWithSuffix">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OrdinalCondition" eSuperTypes="#//SelectorPredicate">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ordinal" eType="#//IntWithSuffix"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="LastPredicate" eSuperTypes="#//SelectorPredicate"/>
-  <eClassifiers xsi:type="ecore:EClass" name="DefaultFirstPredicate" eSuperTypes="#//SelectorPredicate"/>
+  <eClassifiers xsi:type="ecore:EClass" name="LastCondition" eSuperTypes="#//SelectorPredicate"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FirstCondition" eSuperTypes="#//SelectorPredicate"/>
   <eClassifiers xsi:type="ecore:EClass" name="Verify" eSuperTypes="#//DOMCommand">
     <eStructuralFeatures xsi:type="ecore:EReference" name="selector" eType="#//Selector"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="properties" upperBound="-1"
         eType="#//ElementProperty" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="OrdinalInteger">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
 </ecore:EPackage>

@@ -14,21 +14,21 @@ import org.eclipse.xtext.serializer.ISerializationContext;
 import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
-import www.imta.fr.browserautomation.seleniumDsl.AllPredicate;
+import www.imta.fr.browserautomation.seleniumDsl.AllCondition;
 import www.imta.fr.browserautomation.seleniumDsl.Attributes;
 import www.imta.fr.browserautomation.seleniumDsl.BrowserDsl;
 import www.imta.fr.browserautomation.seleniumDsl.Click;
 import www.imta.fr.browserautomation.seleniumDsl.ClipboardContent;
 import www.imta.fr.browserautomation.seleniumDsl.Copy;
-import www.imta.fr.browserautomation.seleniumDsl.DefaultFirstPredicate;
 import www.imta.fr.browserautomation.seleniumDsl.ElementAttribute;
 import www.imta.fr.browserautomation.seleniumDsl.ElementProperty;
+import www.imta.fr.browserautomation.seleniumDsl.FirstCondition;
 import www.imta.fr.browserautomation.seleniumDsl.GoTo;
 import www.imta.fr.browserautomation.seleniumDsl.Insert;
-import www.imta.fr.browserautomation.seleniumDsl.LastPredicate;
+import www.imta.fr.browserautomation.seleniumDsl.IntWithSuffix;
+import www.imta.fr.browserautomation.seleniumDsl.LastCondition;
 import www.imta.fr.browserautomation.seleniumDsl.OpenBrowser;
-import www.imta.fr.browserautomation.seleniumDsl.OrdinalInteger;
-import www.imta.fr.browserautomation.seleniumDsl.OrdinalPredicate;
+import www.imta.fr.browserautomation.seleniumDsl.OrdinalCondition;
 import www.imta.fr.browserautomation.seleniumDsl.Paste;
 import www.imta.fr.browserautomation.seleniumDsl.Properties;
 import www.imta.fr.browserautomation.seleniumDsl.Selector;
@@ -51,8 +51,8 @@ public class SeleniumDslSemanticSequencer extends AbstractDelegatingSemanticSequ
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == SeleniumDslPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
-			case SeleniumDslPackage.ALL_PREDICATE:
-				sequence_AllPredicate(context, (AllPredicate) semanticObject); 
+			case SeleniumDslPackage.ALL_CONDITION:
+				sequence_AllCondition(context, (AllCondition) semanticObject); 
 				return; 
 			case SeleniumDslPackage.ATTRIBUTES:
 				sequence_Attributes(context, (Attributes) semanticObject); 
@@ -69,14 +69,14 @@ public class SeleniumDslSemanticSequencer extends AbstractDelegatingSemanticSequ
 			case SeleniumDslPackage.COPY:
 				sequence_Copy(context, (Copy) semanticObject); 
 				return; 
-			case SeleniumDslPackage.DEFAULT_FIRST_PREDICATE:
-				sequence_DefaultFirstPredicate(context, (DefaultFirstPredicate) semanticObject); 
-				return; 
 			case SeleniumDslPackage.ELEMENT_ATTRIBUTE:
 				sequence_ElementAttribute(context, (ElementAttribute) semanticObject); 
 				return; 
 			case SeleniumDslPackage.ELEMENT_PROPERTY:
 				sequence_ElementProperty(context, (ElementProperty) semanticObject); 
+				return; 
+			case SeleniumDslPackage.FIRST_CONDITION:
+				sequence_FirstCondition(context, (FirstCondition) semanticObject); 
 				return; 
 			case SeleniumDslPackage.GO_TO:
 				sequence_GoTo(context, (GoTo) semanticObject); 
@@ -84,17 +84,17 @@ public class SeleniumDslSemanticSequencer extends AbstractDelegatingSemanticSequ
 			case SeleniumDslPackage.INSERT:
 				sequence_Insert(context, (Insert) semanticObject); 
 				return; 
-			case SeleniumDslPackage.LAST_PREDICATE:
-				sequence_LastPredicate(context, (LastPredicate) semanticObject); 
+			case SeleniumDslPackage.INT_WITH_SUFFIX:
+				sequence_IntWithSuffix(context, (IntWithSuffix) semanticObject); 
+				return; 
+			case SeleniumDslPackage.LAST_CONDITION:
+				sequence_LastCondition(context, (LastCondition) semanticObject); 
 				return; 
 			case SeleniumDslPackage.OPEN_BROWSER:
 				sequence_OpenBrowser(context, (OpenBrowser) semanticObject); 
 				return; 
-			case SeleniumDslPackage.ORDINAL_INTEGER:
-				sequence_OrdinalInteger(context, (OrdinalInteger) semanticObject); 
-				return; 
-			case SeleniumDslPackage.ORDINAL_PREDICATE:
-				sequence_OrdinalPredicate(context, (OrdinalPredicate) semanticObject); 
+			case SeleniumDslPackage.ORDINAL_CONDITION:
+				sequence_OrdinalCondition(context, (OrdinalCondition) semanticObject); 
 				return; 
 			case SeleniumDslPackage.PASTE:
 				sequence_Paste(context, (Paste) semanticObject); 
@@ -119,14 +119,14 @@ public class SeleniumDslSemanticSequencer extends AbstractDelegatingSemanticSequ
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     SelectorPredicate returns AllPredicate
-	 *     AllPredicate returns AllPredicate
+	 *     SelectorPredicate returns AllCondition
+	 *     AllCondition returns AllCondition
 	 *
 	 * Constraint:
-	 *     {AllPredicate}
+	 *     {AllCondition}
 	 * </pre>
 	 */
-	protected void sequence_AllPredicate(ISerializationContext context, AllPredicate semanticObject) {
+	protected void sequence_AllCondition(ISerializationContext context, AllCondition semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -137,7 +137,7 @@ public class SeleniumDslSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     Attributes returns Attributes
 	 *
 	 * Constraint:
-	 *     (attributes+=ElementAttribute properties+=ElementAttribute*)
+	 *     (attributes+=ElementAttribute attributes+=ElementAttribute?)
 	 * </pre>
 	 */
 	protected void sequence_Attributes(ISerializationContext context, Attributes semanticObject) {
@@ -233,21 +233,6 @@ public class SeleniumDslSemanticSequencer extends AbstractDelegatingSemanticSequ
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     SelectorPredicate returns DefaultFirstPredicate
-	 *     DefaultFirstPredicate returns DefaultFirstPredicate
-	 *
-	 * Constraint:
-	 *     {DefaultFirstPredicate}
-	 * </pre>
-	 */
-	protected void sequence_DefaultFirstPredicate(ISerializationContext context, DefaultFirstPredicate semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
 	 *     ElementAttribute returns ElementAttribute
 	 *
 	 * Constraint:
@@ -288,11 +273,26 @@ public class SeleniumDslSemanticSequencer extends AbstractDelegatingSemanticSequ
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     SelectorPredicate returns FirstCondition
+	 *     FirstCondition returns FirstCondition
+	 *
+	 * Constraint:
+	 *     {FirstCondition}
+	 * </pre>
+	 */
+	protected void sequence_FirstCondition(ISerializationContext context, FirstCondition semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
 	 *     Command returns GoTo
 	 *     GoTo returns GoTo
 	 *
 	 * Constraint:
-	 *     url=STRING
+	 *     url=DynamicURL
 	 * </pre>
 	 */
 	protected void sequence_GoTo(ISerializationContext context, GoTo semanticObject) {
@@ -301,7 +301,7 @@ public class SeleniumDslSemanticSequencer extends AbstractDelegatingSemanticSequ
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SeleniumDslPackage.Literals.GO_TO__URL));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getGoToAccess().getUrlSTRINGTerminalRuleCall_2_0(), semanticObject.getUrl());
+		feeder.accept(grammarAccess.getGoToAccess().getUrlDynamicURLParserRuleCall_2_0_0(), semanticObject.getUrl());
 		feeder.finish();
 	}
 	
@@ -334,14 +334,34 @@ public class SeleniumDslSemanticSequencer extends AbstractDelegatingSemanticSequ
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     SelectorPredicate returns LastPredicate
-	 *     LastPredicate returns LastPredicate
+	 *     IntWithSuffix returns IntWithSuffix
 	 *
 	 * Constraint:
-	 *     {LastPredicate}
+	 *     value=INT
 	 * </pre>
 	 */
-	protected void sequence_LastPredicate(ISerializationContext context, LastPredicate semanticObject) {
+	protected void sequence_IntWithSuffix(ISerializationContext context, IntWithSuffix semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SeleniumDslPackage.Literals.INT_WITH_SUFFIX__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SeleniumDslPackage.Literals.INT_WITH_SUFFIX__VALUE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getIntWithSuffixAccess().getValueINTTerminalRuleCall_0_0(), semanticObject.getValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     SelectorPredicate returns LastCondition
+	 *     LastCondition returns LastCondition
+	 *
+	 * Constraint:
+	 *     {LastCondition}
+	 * </pre>
+	 */
+	protected void sequence_LastCondition(ISerializationContext context, LastCondition semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -364,40 +384,20 @@ public class SeleniumDslSemanticSequencer extends AbstractDelegatingSemanticSequ
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     OrdinalInteger returns OrdinalInteger
+	 *     SelectorPredicate returns OrdinalCondition
+	 *     OrdinalCondition returns OrdinalCondition
 	 *
 	 * Constraint:
-	 *     value=INT
+	 *     ordinal=IntWithSuffix
 	 * </pre>
 	 */
-	protected void sequence_OrdinalInteger(ISerializationContext context, OrdinalInteger semanticObject) {
+	protected void sequence_OrdinalCondition(ISerializationContext context, OrdinalCondition semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, SeleniumDslPackage.Literals.ORDINAL_INTEGER__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SeleniumDslPackage.Literals.ORDINAL_INTEGER__VALUE));
+			if (transientValues.isValueTransient(semanticObject, SeleniumDslPackage.Literals.ORDINAL_CONDITION__ORDINAL) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SeleniumDslPackage.Literals.ORDINAL_CONDITION__ORDINAL));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getOrdinalIntegerAccess().getValueINTTerminalRuleCall_0_0(), semanticObject.getValue());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     SelectorPredicate returns OrdinalPredicate
-	 *     OrdinalPredicate returns OrdinalPredicate
-	 *
-	 * Constraint:
-	 *     ordinal=OrdinalInteger
-	 * </pre>
-	 */
-	protected void sequence_OrdinalPredicate(ISerializationContext context, OrdinalPredicate semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, SeleniumDslPackage.Literals.ORDINAL_PREDICATE__ORDINAL) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SeleniumDslPackage.Literals.ORDINAL_PREDICATE__ORDINAL));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getOrdinalPredicateAccess().getOrdinalOrdinalIntegerParserRuleCall_1_0(), semanticObject.getOrdinal());
+		feeder.accept(grammarAccess.getOrdinalConditionAccess().getOrdinalIntWithSuffixParserRuleCall_1_0(), semanticObject.getOrdinal());
 		feeder.finish();
 	}
 	
@@ -430,7 +430,7 @@ public class SeleniumDslSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     Properties returns Properties
 	 *
 	 * Constraint:
-	 *     (properties+=ElementProperty properties+=ElementProperty*)
+	 *     (properties+=ElementProperty properties+=ElementProperty?)
 	 * </pre>
 	 */
 	protected void sequence_Properties(ISerializationContext context, Properties semanticObject) {
@@ -488,7 +488,7 @@ public class SeleniumDslSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     Verify returns Verify
 	 *
 	 * Constraint:
-	 *     (selector=Selector properties+=ElementProperty properties+=ElementProperty*)
+	 *     (selector=Selector properties+=ElementProperty properties+=ElementProperty?)
 	 * </pre>
 	 */
 	protected void sequence_Verify(ISerializationContext context, Verify semanticObject) {

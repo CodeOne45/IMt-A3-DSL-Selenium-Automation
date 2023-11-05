@@ -40,7 +40,6 @@
     </genClasses>
     <genClasses ecoreClass="SeleniumDsl.ecore#//Attributes">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SeleniumDsl.ecore#//Attributes/attributes"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SeleniumDsl.ecore#//Attributes/properties"/>
     </genClasses>
     <genClasses ecoreClass="SeleniumDsl.ecore#//ElementAttribute">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SeleniumDsl.ecore#//ElementAttribute/name"/>
@@ -62,18 +61,18 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SeleniumDsl.ecore#//ElementProperty/property"/>
     </genClasses>
     <genClasses ecoreClass="SeleniumDsl.ecore#//SelectorPredicate"/>
-    <genClasses ecoreClass="SeleniumDsl.ecore#//AllPredicate"/>
-    <genClasses ecoreClass="SeleniumDsl.ecore#//OrdinalPredicate">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SeleniumDsl.ecore#//OrdinalPredicate/ordinal"/>
+    <genClasses ecoreClass="SeleniumDsl.ecore#//AllCondition"/>
+    <genClasses ecoreClass="SeleniumDsl.ecore#//IntWithSuffix">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SeleniumDsl.ecore#//IntWithSuffix/value"/>
     </genClasses>
-    <genClasses ecoreClass="SeleniumDsl.ecore#//LastPredicate"/>
-    <genClasses ecoreClass="SeleniumDsl.ecore#//DefaultFirstPredicate"/>
+    <genClasses ecoreClass="SeleniumDsl.ecore#//OrdinalCondition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SeleniumDsl.ecore#//OrdinalCondition/ordinal"/>
+    </genClasses>
+    <genClasses ecoreClass="SeleniumDsl.ecore#//LastCondition"/>
+    <genClasses ecoreClass="SeleniumDsl.ecore#//FirstCondition"/>
     <genClasses ecoreClass="SeleniumDsl.ecore#//Verify">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SeleniumDsl.ecore#//Verify/selector"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SeleniumDsl.ecore#//Verify/properties"/>
-    </genClasses>
-    <genClasses ecoreClass="SeleniumDsl.ecore#//OrdinalInteger">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SeleniumDsl.ecore#//OrdinalInteger/value"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

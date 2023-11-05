@@ -1,0 +1,5 @@
+open a browser window
+go to "http://www.imt-atlantique.fr/fr/rechercher"
+fill the 2nd "text field" with "Donald Trump"
+click on the "button" with properties value matching "Appliquer les filtres"
+verify that the "element" with properties text containing "Aucun résultat ne correspond à votre recherche" is visible

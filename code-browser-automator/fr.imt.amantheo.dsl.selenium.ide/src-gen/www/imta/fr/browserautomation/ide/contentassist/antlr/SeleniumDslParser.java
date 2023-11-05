@@ -33,11 +33,13 @@ public class SeleniumDslParser extends AbstractContentAssistParser {
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, SeleniumDslGrammarAccess grammarAccess) {
 			builder.put(grammarAccess.getCommandAccess().getAlternatives(), "rule__Command__Alternatives");
 			builder.put(grammarAccess.getDOMCommandAccess().getAlternatives(), "rule__DOMCommand__Alternatives");
+			builder.put(grammarAccess.getGoToAccess().getAlternatives_2(), "rule__GoTo__Alternatives_2");
 			builder.put(grammarAccess.getClickAccess().getAlternatives_1(), "rule__Click__Alternatives_1");
 			builder.put(grammarAccess.getContentAccess().getAlternatives(), "rule__Content__Alternatives");
 			builder.put(grammarAccess.getElementPropertyAccess().getPropertyAlternatives_1_0(), "rule__ElementProperty__PropertyAlternatives_1_0");
 			builder.put(grammarAccess.getSelectorPredicateAccess().getAlternatives(), "rule__SelectorPredicate__Alternatives");
 			builder.put(grammarAccess.getMatcherAccess().getAlternatives(), "rule__Matcher__Alternatives");
+			builder.put(grammarAccess.getDynamicURLAccess().getAlternatives(), "rule__DynamicURL__Alternatives");
 			builder.put(grammarAccess.getOpenBrowserAccess().getGroup(), "rule__OpenBrowser__Group__0");
 			builder.put(grammarAccess.getGoToAccess().getGroup(), "rule__GoTo__Group__0");
 			builder.put(grammarAccess.getClickAccess().getGroup(), "rule__Click__Group__0");
@@ -57,15 +59,15 @@ public class SeleniumDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getPropertiesAccess().getGroup(), "rule__Properties__Group__0");
 			builder.put(grammarAccess.getPropertiesAccess().getGroup_1(), "rule__Properties__Group_1__0");
 			builder.put(grammarAccess.getElementPropertyAccess().getGroup(), "rule__ElementProperty__Group__0");
-			builder.put(grammarAccess.getAllPredicateAccess().getGroup(), "rule__AllPredicate__Group__0");
-			builder.put(grammarAccess.getOrdinalPredicateAccess().getGroup(), "rule__OrdinalPredicate__Group__0");
-			builder.put(grammarAccess.getLastPredicateAccess().getGroup(), "rule__LastPredicate__Group__0");
-			builder.put(grammarAccess.getDefaultFirstPredicateAccess().getGroup(), "rule__DefaultFirstPredicate__Group__0");
+			builder.put(grammarAccess.getAllConditionAccess().getGroup(), "rule__AllCondition__Group__0");
+			builder.put(grammarAccess.getIntWithSuffixAccess().getGroup(), "rule__IntWithSuffix__Group__0");
+			builder.put(grammarAccess.getOrdinalConditionAccess().getGroup(), "rule__OrdinalCondition__Group__0");
+			builder.put(grammarAccess.getLastConditionAccess().getGroup(), "rule__LastCondition__Group__0");
+			builder.put(grammarAccess.getFirstConditionAccess().getGroup(), "rule__FirstCondition__Group__0");
 			builder.put(grammarAccess.getVerifyAccess().getGroup(), "rule__Verify__Group__0");
 			builder.put(grammarAccess.getVerifyAccess().getGroup_5(), "rule__Verify__Group_5__0");
-			builder.put(grammarAccess.getOrdinalIntegerAccess().getGroup(), "rule__OrdinalInteger__Group__0");
 			builder.put(grammarAccess.getBrowserDslAccess().getCommandsAssignment(), "rule__BrowserDsl__CommandsAssignment");
-			builder.put(grammarAccess.getGoToAccess().getUrlAssignment_2(), "rule__GoTo__UrlAssignment_2");
+			builder.put(grammarAccess.getGoToAccess().getUrlAssignment_2_0(), "rule__GoTo__UrlAssignment_2_0");
 			builder.put(grammarAccess.getClickAccess().getElementAssignment_2(), "rule__Click__ElementAssignment_2");
 			builder.put(grammarAccess.getCopyAccess().getPropertyAssignment_4(), "rule__Copy__PropertyAssignment_4");
 			builder.put(grammarAccess.getCopyAccess().getElementAssignment_6(), "rule__Copy__ElementAssignment_6");
@@ -80,7 +82,7 @@ public class SeleniumDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getSelectorAccess().getPropertiesAssignment_4_2(), "rule__Selector__PropertiesAssignment_4_2");
 			builder.put(grammarAccess.getSelectorAccess().getParentAssignment_5_1(), "rule__Selector__ParentAssignment_5_1");
 			builder.put(grammarAccess.getAttributesAccess().getAttributesAssignment_0(), "rule__Attributes__AttributesAssignment_0");
-			builder.put(grammarAccess.getAttributesAccess().getPropertiesAssignment_1_1(), "rule__Attributes__PropertiesAssignment_1_1");
+			builder.put(grammarAccess.getAttributesAccess().getAttributesAssignment_1_1(), "rule__Attributes__AttributesAssignment_1_1");
 			builder.put(grammarAccess.getElementAttributeAccess().getNameAssignment_0(), "rule__ElementAttribute__NameAssignment_0");
 			builder.put(grammarAccess.getElementAttributeAccess().getMatcherAssignment_1(), "rule__ElementAttribute__MatcherAssignment_1");
 			builder.put(grammarAccess.getElementAttributeAccess().getValueAssignment_2(), "rule__ElementAttribute__ValueAssignment_2");
@@ -90,11 +92,11 @@ public class SeleniumDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getPropertiesAccess().getPropertiesAssignment_1_1(), "rule__Properties__PropertiesAssignment_1_1");
 			builder.put(grammarAccess.getElementPropertyAccess().getNegatedAssignment_0(), "rule__ElementProperty__NegatedAssignment_0");
 			builder.put(grammarAccess.getElementPropertyAccess().getPropertyAssignment_1(), "rule__ElementProperty__PropertyAssignment_1");
-			builder.put(grammarAccess.getOrdinalPredicateAccess().getOrdinalAssignment_1(), "rule__OrdinalPredicate__OrdinalAssignment_1");
+			builder.put(grammarAccess.getIntWithSuffixAccess().getValueAssignment_0(), "rule__IntWithSuffix__ValueAssignment_0");
+			builder.put(grammarAccess.getOrdinalConditionAccess().getOrdinalAssignment_1(), "rule__OrdinalCondition__OrdinalAssignment_1");
 			builder.put(grammarAccess.getVerifyAccess().getSelectorAssignment_2(), "rule__Verify__SelectorAssignment_2");
 			builder.put(grammarAccess.getVerifyAccess().getPropertiesAssignment_4(), "rule__Verify__PropertiesAssignment_4");
 			builder.put(grammarAccess.getVerifyAccess().getPropertiesAssignment_5_1(), "rule__Verify__PropertiesAssignment_5_1");
-			builder.put(grammarAccess.getOrdinalIntegerAccess().getValueAssignment_0(), "rule__OrdinalInteger__ValueAssignment_0");
 		}
 	}
 	

@@ -17,7 +17,6 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link www.imta.fr.browserautomation.seleniumDsl.Attributes#getAttributes <em>Attributes</em>}</li>
- *   <li>{@link www.imta.fr.browserautomation.seleniumDsl.Attributes#getProperties <em>Properties</em>}</li>
  * </ul>
  *
  * @see www.imta.fr.browserautomation.seleniumDsl.SeleniumDslPackage#getAttributes()
@@ -37,17 +36,5 @@ public interface Attributes extends EObject
    * @generated
    */
   EList<ElementAttribute> getAttributes();
-
-  /**
-   * Returns the value of the '<em><b>Properties</b></em>' containment reference list.
-   * The list contents are of type {@link www.imta.fr.browserautomation.seleniumDsl.ElementAttribute}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Properties</em>' containment reference list.
-   * @see www.imta.fr.browserautomation.seleniumDsl.SeleniumDslPackage#getAttributes_Properties()
-   * @model containment="true"
-   * @generated
-   */
-  EList<ElementAttribute> getProperties();
 
 } // Attributes

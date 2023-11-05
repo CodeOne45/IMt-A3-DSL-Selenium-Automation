@@ -20,5 +20,7 @@ Import-Package: org.apache.log4j
 Bundle-RequiredExecutionEnvironment: JavaSE-17
 Export-Package: www.imta.fr.browserautomation.ui.quickfix,
  fr.imt.amantheo.dsl.selenium.ui.internal,
- www.imta.fr.browserautomation.ui.contentassist
+ www.imta.fr.browserautomation.ui.contentassist,
+ fr.imta.yperiquoi.browserautomation.ui.contentassist,
+ fr.imta.yperiquoi.browserautomation.ui.quickfix
 Bundle-Activator: fr.imt.amantheo.dsl.selenium.ui.internal.SeleniumActivator

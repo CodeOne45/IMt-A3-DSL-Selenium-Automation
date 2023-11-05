@@ -402,22 +402,13 @@ public interface SeleniumDslPackage extends EPackage
   int ATTRIBUTES__ATTRIBUTES = 0;
 
   /**
-   * The feature id for the '<em><b>Properties</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ATTRIBUTES__PROPERTIES = 1;
-
-  /**
    * The number of structural features of the '<em>Attributes</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ATTRIBUTES_FEATURE_COUNT = 2;
+  int ATTRIBUTES_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link www.imta.fr.browserautomation.seleniumDsl.impl.ElementAttributeImpl <em>Element Attribute</em>}' class.
@@ -625,33 +616,61 @@ public interface SeleniumDslPackage extends EPackage
   int SELECTOR_PREDICATE_FEATURE_COUNT = 0;
 
   /**
-   * The meta object id for the '{@link www.imta.fr.browserautomation.seleniumDsl.impl.AllPredicateImpl <em>All Predicate</em>}' class.
+   * The meta object id for the '{@link www.imta.fr.browserautomation.seleniumDsl.impl.AllConditionImpl <em>All Condition</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see www.imta.fr.browserautomation.seleniumDsl.impl.AllPredicateImpl
-   * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getAllPredicate()
+   * @see www.imta.fr.browserautomation.seleniumDsl.impl.AllConditionImpl
+   * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getAllCondition()
    * @generated
    */
-  int ALL_PREDICATE = 18;
+  int ALL_CONDITION = 18;
 
   /**
-   * The number of structural features of the '<em>All Predicate</em>' class.
+   * The number of structural features of the '<em>All Condition</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ALL_PREDICATE_FEATURE_COUNT = SELECTOR_PREDICATE_FEATURE_COUNT + 0;
+  int ALL_CONDITION_FEATURE_COUNT = SELECTOR_PREDICATE_FEATURE_COUNT + 0;
 
   /**
-   * The meta object id for the '{@link www.imta.fr.browserautomation.seleniumDsl.impl.OrdinalPredicateImpl <em>Ordinal Predicate</em>}' class.
+   * The meta object id for the '{@link www.imta.fr.browserautomation.seleniumDsl.impl.IntWithSuffixImpl <em>Int With Suffix</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see www.imta.fr.browserautomation.seleniumDsl.impl.OrdinalPredicateImpl
-   * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getOrdinalPredicate()
+   * @see www.imta.fr.browserautomation.seleniumDsl.impl.IntWithSuffixImpl
+   * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getIntWithSuffix()
    * @generated
    */
-  int ORDINAL_PREDICATE = 19;
+  int INT_WITH_SUFFIX = 19;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INT_WITH_SUFFIX__VALUE = 0;
+
+  /**
+   * The number of structural features of the '<em>Int With Suffix</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INT_WITH_SUFFIX_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link www.imta.fr.browserautomation.seleniumDsl.impl.OrdinalConditionImpl <em>Ordinal Condition</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see www.imta.fr.browserautomation.seleniumDsl.impl.OrdinalConditionImpl
+   * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getOrdinalCondition()
+   * @generated
+   */
+  int ORDINAL_CONDITION = 20;
 
   /**
    * The feature id for the '<em><b>Ordinal</b></em>' containment reference.
@@ -660,54 +679,54 @@ public interface SeleniumDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ORDINAL_PREDICATE__ORDINAL = SELECTOR_PREDICATE_FEATURE_COUNT + 0;
+  int ORDINAL_CONDITION__ORDINAL = SELECTOR_PREDICATE_FEATURE_COUNT + 0;
 
   /**
-   * The number of structural features of the '<em>Ordinal Predicate</em>' class.
+   * The number of structural features of the '<em>Ordinal Condition</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ORDINAL_PREDICATE_FEATURE_COUNT = SELECTOR_PREDICATE_FEATURE_COUNT + 1;
+  int ORDINAL_CONDITION_FEATURE_COUNT = SELECTOR_PREDICATE_FEATURE_COUNT + 1;
 
   /**
-   * The meta object id for the '{@link www.imta.fr.browserautomation.seleniumDsl.impl.LastPredicateImpl <em>Last Predicate</em>}' class.
+   * The meta object id for the '{@link www.imta.fr.browserautomation.seleniumDsl.impl.LastConditionImpl <em>Last Condition</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see www.imta.fr.browserautomation.seleniumDsl.impl.LastPredicateImpl
-   * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getLastPredicate()
+   * @see www.imta.fr.browserautomation.seleniumDsl.impl.LastConditionImpl
+   * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getLastCondition()
    * @generated
    */
-  int LAST_PREDICATE = 20;
+  int LAST_CONDITION = 21;
 
   /**
-   * The number of structural features of the '<em>Last Predicate</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LAST_PREDICATE_FEATURE_COUNT = SELECTOR_PREDICATE_FEATURE_COUNT + 0;
-
-  /**
-   * The meta object id for the '{@link www.imta.fr.browserautomation.seleniumDsl.impl.DefaultFirstPredicateImpl <em>Default First Predicate</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see www.imta.fr.browserautomation.seleniumDsl.impl.DefaultFirstPredicateImpl
-   * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getDefaultFirstPredicate()
-   * @generated
-   */
-  int DEFAULT_FIRST_PREDICATE = 21;
-
-  /**
-   * The number of structural features of the '<em>Default First Predicate</em>' class.
+   * The number of structural features of the '<em>Last Condition</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DEFAULT_FIRST_PREDICATE_FEATURE_COUNT = SELECTOR_PREDICATE_FEATURE_COUNT + 0;
+  int LAST_CONDITION_FEATURE_COUNT = SELECTOR_PREDICATE_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link www.imta.fr.browserautomation.seleniumDsl.impl.FirstConditionImpl <em>First Condition</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see www.imta.fr.browserautomation.seleniumDsl.impl.FirstConditionImpl
+   * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getFirstCondition()
+   * @generated
+   */
+  int FIRST_CONDITION = 22;
+
+  /**
+   * The number of structural features of the '<em>First Condition</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FIRST_CONDITION_FEATURE_COUNT = SELECTOR_PREDICATE_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link www.imta.fr.browserautomation.seleniumDsl.impl.VerifyImpl <em>Verify</em>}' class.
@@ -717,7 +736,7 @@ public interface SeleniumDslPackage extends EPackage
    * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getVerify()
    * @generated
    */
-  int VERIFY = 22;
+  int VERIFY = 23;
 
   /**
    * The feature id for the '<em><b>Selector</b></em>' containment reference.
@@ -745,34 +764,6 @@ public interface SeleniumDslPackage extends EPackage
    * @ordered
    */
   int VERIFY_FEATURE_COUNT = DOM_COMMAND_FEATURE_COUNT + 2;
-
-  /**
-   * The meta object id for the '{@link www.imta.fr.browserautomation.seleniumDsl.impl.OrdinalIntegerImpl <em>Ordinal Integer</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see www.imta.fr.browserautomation.seleniumDsl.impl.OrdinalIntegerImpl
-   * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getOrdinalInteger()
-   * @generated
-   */
-  int ORDINAL_INTEGER = 23;
-
-  /**
-   * The feature id for the '<em><b>Value</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ORDINAL_INTEGER__VALUE = 0;
-
-  /**
-   * The number of structural features of the '<em>Ordinal Integer</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ORDINAL_INTEGER_FEATURE_COUNT = 1;
 
 
   /**
@@ -1062,17 +1053,6 @@ public interface SeleniumDslPackage extends EPackage
   EReference getAttributes_Attributes();
 
   /**
-   * Returns the meta object for the containment reference list '{@link www.imta.fr.browserautomation.seleniumDsl.Attributes#getProperties <em>Properties</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Properties</em>'.
-   * @see www.imta.fr.browserautomation.seleniumDsl.Attributes#getProperties()
-   * @see #getAttributes()
-   * @generated
-   */
-  EReference getAttributes_Properties();
-
-  /**
    * Returns the meta object for class '{@link www.imta.fr.browserautomation.seleniumDsl.ElementAttribute <em>Element Attribute</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1231,55 +1211,76 @@ public interface SeleniumDslPackage extends EPackage
   EClass getSelectorPredicate();
 
   /**
-   * Returns the meta object for class '{@link www.imta.fr.browserautomation.seleniumDsl.AllPredicate <em>All Predicate</em>}'.
+   * Returns the meta object for class '{@link www.imta.fr.browserautomation.seleniumDsl.AllCondition <em>All Condition</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>All Predicate</em>'.
-   * @see www.imta.fr.browserautomation.seleniumDsl.AllPredicate
+   * @return the meta object for class '<em>All Condition</em>'.
+   * @see www.imta.fr.browserautomation.seleniumDsl.AllCondition
    * @generated
    */
-  EClass getAllPredicate();
+  EClass getAllCondition();
 
   /**
-   * Returns the meta object for class '{@link www.imta.fr.browserautomation.seleniumDsl.OrdinalPredicate <em>Ordinal Predicate</em>}'.
+   * Returns the meta object for class '{@link www.imta.fr.browserautomation.seleniumDsl.IntWithSuffix <em>Int With Suffix</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Ordinal Predicate</em>'.
-   * @see www.imta.fr.browserautomation.seleniumDsl.OrdinalPredicate
+   * @return the meta object for class '<em>Int With Suffix</em>'.
+   * @see www.imta.fr.browserautomation.seleniumDsl.IntWithSuffix
    * @generated
    */
-  EClass getOrdinalPredicate();
+  EClass getIntWithSuffix();
 
   /**
-   * Returns the meta object for the containment reference '{@link www.imta.fr.browserautomation.seleniumDsl.OrdinalPredicate#getOrdinal <em>Ordinal</em>}'.
+   * Returns the meta object for the attribute '{@link www.imta.fr.browserautomation.seleniumDsl.IntWithSuffix#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see www.imta.fr.browserautomation.seleniumDsl.IntWithSuffix#getValue()
+   * @see #getIntWithSuffix()
+   * @generated
+   */
+  EAttribute getIntWithSuffix_Value();
+
+  /**
+   * Returns the meta object for class '{@link www.imta.fr.browserautomation.seleniumDsl.OrdinalCondition <em>Ordinal Condition</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Ordinal Condition</em>'.
+   * @see www.imta.fr.browserautomation.seleniumDsl.OrdinalCondition
+   * @generated
+   */
+  EClass getOrdinalCondition();
+
+  /**
+   * Returns the meta object for the containment reference '{@link www.imta.fr.browserautomation.seleniumDsl.OrdinalCondition#getOrdinal <em>Ordinal</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Ordinal</em>'.
-   * @see www.imta.fr.browserautomation.seleniumDsl.OrdinalPredicate#getOrdinal()
-   * @see #getOrdinalPredicate()
+   * @see www.imta.fr.browserautomation.seleniumDsl.OrdinalCondition#getOrdinal()
+   * @see #getOrdinalCondition()
    * @generated
    */
-  EReference getOrdinalPredicate_Ordinal();
+  EReference getOrdinalCondition_Ordinal();
 
   /**
-   * Returns the meta object for class '{@link www.imta.fr.browserautomation.seleniumDsl.LastPredicate <em>Last Predicate</em>}'.
+   * Returns the meta object for class '{@link www.imta.fr.browserautomation.seleniumDsl.LastCondition <em>Last Condition</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Last Predicate</em>'.
-   * @see www.imta.fr.browserautomation.seleniumDsl.LastPredicate
+   * @return the meta object for class '<em>Last Condition</em>'.
+   * @see www.imta.fr.browserautomation.seleniumDsl.LastCondition
    * @generated
    */
-  EClass getLastPredicate();
+  EClass getLastCondition();
 
   /**
-   * Returns the meta object for class '{@link www.imta.fr.browserautomation.seleniumDsl.DefaultFirstPredicate <em>Default First Predicate</em>}'.
+   * Returns the meta object for class '{@link www.imta.fr.browserautomation.seleniumDsl.FirstCondition <em>First Condition</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Default First Predicate</em>'.
-   * @see www.imta.fr.browserautomation.seleniumDsl.DefaultFirstPredicate
+   * @return the meta object for class '<em>First Condition</em>'.
+   * @see www.imta.fr.browserautomation.seleniumDsl.FirstCondition
    * @generated
    */
-  EClass getDefaultFirstPredicate();
+  EClass getFirstCondition();
 
   /**
    * Returns the meta object for class '{@link www.imta.fr.browserautomation.seleniumDsl.Verify <em>Verify</em>}'.
@@ -1312,27 +1313,6 @@ public interface SeleniumDslPackage extends EPackage
    * @generated
    */
   EReference getVerify_Properties();
-
-  /**
-   * Returns the meta object for class '{@link www.imta.fr.browserautomation.seleniumDsl.OrdinalInteger <em>Ordinal Integer</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Ordinal Integer</em>'.
-   * @see www.imta.fr.browserautomation.seleniumDsl.OrdinalInteger
-   * @generated
-   */
-  EClass getOrdinalInteger();
-
-  /**
-   * Returns the meta object for the attribute '{@link www.imta.fr.browserautomation.seleniumDsl.OrdinalInteger#getValue <em>Value</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Value</em>'.
-   * @see www.imta.fr.browserautomation.seleniumDsl.OrdinalInteger#getValue()
-   * @see #getOrdinalInteger()
-   * @generated
-   */
-  EAttribute getOrdinalInteger_Value();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -1596,14 +1576,6 @@ public interface SeleniumDslPackage extends EPackage
     EReference ATTRIBUTES__ATTRIBUTES = eINSTANCE.getAttributes_Attributes();
 
     /**
-     * The meta object literal for the '<em><b>Properties</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ATTRIBUTES__PROPERTIES = eINSTANCE.getAttributes_Properties();
-
-    /**
      * The meta object literal for the '{@link www.imta.fr.browserautomation.seleniumDsl.impl.ElementAttributeImpl <em>Element Attribute</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1738,24 +1710,42 @@ public interface SeleniumDslPackage extends EPackage
     EClass SELECTOR_PREDICATE = eINSTANCE.getSelectorPredicate();
 
     /**
-     * The meta object literal for the '{@link www.imta.fr.browserautomation.seleniumDsl.impl.AllPredicateImpl <em>All Predicate</em>}' class.
+     * The meta object literal for the '{@link www.imta.fr.browserautomation.seleniumDsl.impl.AllConditionImpl <em>All Condition</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see www.imta.fr.browserautomation.seleniumDsl.impl.AllPredicateImpl
-     * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getAllPredicate()
+     * @see www.imta.fr.browserautomation.seleniumDsl.impl.AllConditionImpl
+     * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getAllCondition()
      * @generated
      */
-    EClass ALL_PREDICATE = eINSTANCE.getAllPredicate();
+    EClass ALL_CONDITION = eINSTANCE.getAllCondition();
 
     /**
-     * The meta object literal for the '{@link www.imta.fr.browserautomation.seleniumDsl.impl.OrdinalPredicateImpl <em>Ordinal Predicate</em>}' class.
+     * The meta object literal for the '{@link www.imta.fr.browserautomation.seleniumDsl.impl.IntWithSuffixImpl <em>Int With Suffix</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see www.imta.fr.browserautomation.seleniumDsl.impl.OrdinalPredicateImpl
-     * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getOrdinalPredicate()
+     * @see www.imta.fr.browserautomation.seleniumDsl.impl.IntWithSuffixImpl
+     * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getIntWithSuffix()
      * @generated
      */
-    EClass ORDINAL_PREDICATE = eINSTANCE.getOrdinalPredicate();
+    EClass INT_WITH_SUFFIX = eINSTANCE.getIntWithSuffix();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute INT_WITH_SUFFIX__VALUE = eINSTANCE.getIntWithSuffix_Value();
+
+    /**
+     * The meta object literal for the '{@link www.imta.fr.browserautomation.seleniumDsl.impl.OrdinalConditionImpl <em>Ordinal Condition</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see www.imta.fr.browserautomation.seleniumDsl.impl.OrdinalConditionImpl
+     * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getOrdinalCondition()
+     * @generated
+     */
+    EClass ORDINAL_CONDITION = eINSTANCE.getOrdinalCondition();
 
     /**
      * The meta object literal for the '<em><b>Ordinal</b></em>' containment reference feature.
@@ -1763,27 +1753,27 @@ public interface SeleniumDslPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference ORDINAL_PREDICATE__ORDINAL = eINSTANCE.getOrdinalPredicate_Ordinal();
+    EReference ORDINAL_CONDITION__ORDINAL = eINSTANCE.getOrdinalCondition_Ordinal();
 
     /**
-     * The meta object literal for the '{@link www.imta.fr.browserautomation.seleniumDsl.impl.LastPredicateImpl <em>Last Predicate</em>}' class.
+     * The meta object literal for the '{@link www.imta.fr.browserautomation.seleniumDsl.impl.LastConditionImpl <em>Last Condition</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see www.imta.fr.browserautomation.seleniumDsl.impl.LastPredicateImpl
-     * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getLastPredicate()
+     * @see www.imta.fr.browserautomation.seleniumDsl.impl.LastConditionImpl
+     * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getLastCondition()
      * @generated
      */
-    EClass LAST_PREDICATE = eINSTANCE.getLastPredicate();
+    EClass LAST_CONDITION = eINSTANCE.getLastCondition();
 
     /**
-     * The meta object literal for the '{@link www.imta.fr.browserautomation.seleniumDsl.impl.DefaultFirstPredicateImpl <em>Default First Predicate</em>}' class.
+     * The meta object literal for the '{@link www.imta.fr.browserautomation.seleniumDsl.impl.FirstConditionImpl <em>First Condition</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see www.imta.fr.browserautomation.seleniumDsl.impl.DefaultFirstPredicateImpl
-     * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getDefaultFirstPredicate()
+     * @see www.imta.fr.browserautomation.seleniumDsl.impl.FirstConditionImpl
+     * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getFirstCondition()
      * @generated
      */
-    EClass DEFAULT_FIRST_PREDICATE = eINSTANCE.getDefaultFirstPredicate();
+    EClass FIRST_CONDITION = eINSTANCE.getFirstCondition();
 
     /**
      * The meta object literal for the '{@link www.imta.fr.browserautomation.seleniumDsl.impl.VerifyImpl <em>Verify</em>}' class.
@@ -1810,24 +1800,6 @@ public interface SeleniumDslPackage extends EPackage
      * @generated
      */
     EReference VERIFY__PROPERTIES = eINSTANCE.getVerify_Properties();
-
-    /**
-     * The meta object literal for the '{@link www.imta.fr.browserautomation.seleniumDsl.impl.OrdinalIntegerImpl <em>Ordinal Integer</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see www.imta.fr.browserautomation.seleniumDsl.impl.OrdinalIntegerImpl
-     * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getOrdinalInteger()
-     * @generated
-     */
-    EClass ORDINAL_INTEGER = eINSTANCE.getOrdinalInteger();
-
-    /**
-     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute ORDINAL_INTEGER__VALUE = eINSTANCE.getOrdinalInteger_Value();
 
   }
 

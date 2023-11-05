@@ -209,38 +209,38 @@ ruleDOMCommand returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getDOMCommandAccess().getInsertParserRuleCall_1());
+			newCompositeNode(grammarAccess.getDOMCommandAccess().getCopyParserRuleCall_1());
 		}
-		this_Insert_1=ruleInsert
+		this_Copy_1=ruleCopy
 		{
-			$current = $this_Insert_1.current;
+			$current = $this_Copy_1.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getDOMCommandAccess().getCopyParserRuleCall_2());
+			newCompositeNode(grammarAccess.getDOMCommandAccess().getPasteParserRuleCall_2());
 		}
-		this_Copy_2=ruleCopy
+		this_Paste_2=rulePaste
 		{
-			$current = $this_Copy_2.current;
+			$current = $this_Paste_2.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getDOMCommandAccess().getPasteParserRuleCall_3());
+			newCompositeNode(grammarAccess.getDOMCommandAccess().getVerifyParserRuleCall_3());
 		}
-		this_Paste_3=rulePaste
+		this_Verify_3=ruleVerify
 		{
-			$current = $this_Paste_3.current;
+			$current = $this_Verify_3.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getDOMCommandAccess().getVerifyParserRuleCall_4());
+			newCompositeNode(grammarAccess.getDOMCommandAccess().getInsertParserRuleCall_4());
 		}
-		this_Verify_4=ruleVerify
+		this_Insert_4=ruleInsert
 		{
-			$current = $this_Verify_4.current;
+			$current = $this_Insert_4.current;
 			afterParserOrEnumRuleCall();
 		}
 	)
@@ -272,22 +272,30 @@ ruleGoTo returns [EObject current=null]
 		}
 		(
 			(
-				lv_url_2_0=RULE_STRING
-				{
-					newLeafNode(lv_url_2_0, grammarAccess.getGoToAccess().getUrlSTRINGTerminalRuleCall_2_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getGoToRule());
+				(
+					{
+						newCompositeNode(grammarAccess.getGoToAccess().getUrlDynamicURLParserRuleCall_2_0_0());
 					}
-					setWithLastConsumed(
-						$current,
-						"url",
-						lv_url_2_0,
-						"org.eclipse.xtext.common.Terminals.STRING");
-				}
+					lv_url_2_0=ruleDynamicURL
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getGoToRule());
+						}
+						set(
+							$current,
+							"url",
+							lv_url_2_0,
+							"www.imta.fr.browserautomation.SeleniumDsl.DynamicURL");
+						afterParserOrEnumRuleCall();
+					}
+				)
 			)
-		)
+			    |
+			otherlv_3='URL'
+			{
+				newLeafNode(otherlv_3, grammarAccess.getGoToAccess().getURLKeyword_2_1());
+			}
+		)?
 	)
 ;
 
@@ -799,23 +807,23 @@ ruleAttributes returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getAttributesAccess().getPropertiesElementAttributeParserRuleCall_1_1_0());
+						newCompositeNode(grammarAccess.getAttributesAccess().getAttributesElementAttributeParserRuleCall_1_1_0());
 					}
-					lv_properties_2_0=ruleElementAttribute
+					lv_attributes_2_0=ruleElementAttribute
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getAttributesRule());
 						}
 						add(
 							$current,
-							"properties",
-							lv_properties_2_0,
+							"attributes",
+							lv_attributes_2_0,
 							"www.imta.fr.browserautomation.SeleniumDsl.ElementAttribute");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
-		)*
+		)?
 	)
 ;
 
@@ -1073,7 +1081,7 @@ ruleProperties returns [EObject current=null]
 					}
 				)
 			)
-		)*
+		)?
 	)
 ;
 
@@ -1165,52 +1173,52 @@ ruleSelectorPredicate returns [EObject current=null]
 }:
 	(
 		{
-			newCompositeNode(grammarAccess.getSelectorPredicateAccess().getAllPredicateParserRuleCall_0());
+			newCompositeNode(grammarAccess.getSelectorPredicateAccess().getAllConditionParserRuleCall_0());
 		}
-		this_AllPredicate_0=ruleAllPredicate
+		this_AllCondition_0=ruleAllCondition
 		{
-			$current = $this_AllPredicate_0.current;
+			$current = $this_AllCondition_0.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getSelectorPredicateAccess().getOrdinalPredicateParserRuleCall_1());
+			newCompositeNode(grammarAccess.getSelectorPredicateAccess().getOrdinalConditionParserRuleCall_1());
 		}
-		this_OrdinalPredicate_1=ruleOrdinalPredicate
+		this_OrdinalCondition_1=ruleOrdinalCondition
 		{
-			$current = $this_OrdinalPredicate_1.current;
+			$current = $this_OrdinalCondition_1.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getSelectorPredicateAccess().getLastPredicateParserRuleCall_2());
+			newCompositeNode(grammarAccess.getSelectorPredicateAccess().getLastConditionParserRuleCall_2());
 		}
-		this_LastPredicate_2=ruleLastPredicate
+		this_LastCondition_2=ruleLastCondition
 		{
-			$current = $this_LastPredicate_2.current;
+			$current = $this_LastCondition_2.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getSelectorPredicateAccess().getDefaultFirstPredicateParserRuleCall_3());
+			newCompositeNode(grammarAccess.getSelectorPredicateAccess().getFirstConditionParserRuleCall_3());
 		}
-		this_DefaultFirstPredicate_3=ruleDefaultFirstPredicate
+		this_FirstCondition_3=ruleFirstCondition
 		{
-			$current = $this_DefaultFirstPredicate_3.current;
+			$current = $this_FirstCondition_3.current;
 			afterParserOrEnumRuleCall();
 		}
 	)
 ;
 
-// Entry rule entryRuleAllPredicate
-entryRuleAllPredicate returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getAllPredicateRule()); }
-	iv_ruleAllPredicate=ruleAllPredicate
-	{ $current=$iv_ruleAllPredicate.current; }
+// Entry rule entryRuleAllCondition
+entryRuleAllCondition returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getAllConditionRule()); }
+	iv_ruleAllCondition=ruleAllCondition
+	{ $current=$iv_ruleAllCondition.current; }
 	EOF;
 
-// Rule AllPredicate
-ruleAllPredicate returns [EObject current=null]
+// Rule AllCondition
+ruleAllCondition returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -1221,38 +1229,79 @@ ruleAllPredicate returns [EObject current=null]
 		(
 			{
 				$current = forceCreateModelElement(
-					grammarAccess.getAllPredicateAccess().getAllPredicateAction_0(),
+					grammarAccess.getAllConditionAccess().getAllConditionAction_0(),
 					$current);
 			}
 		)
 		otherlv_1='all'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getAllPredicateAccess().getAllKeyword_1());
+			newLeafNode(otherlv_1, grammarAccess.getAllConditionAccess().getAllKeyword_1());
 		}
 		otherlv_2='elements'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getAllPredicateAccess().getElementsKeyword_2());
+			newLeafNode(otherlv_2, grammarAccess.getAllConditionAccess().getElementsKeyword_2());
 		}
 		otherlv_3='of'
 		{
-			newLeafNode(otherlv_3, grammarAccess.getAllPredicateAccess().getOfKeyword_3());
+			newLeafNode(otherlv_3, grammarAccess.getAllConditionAccess().getOfKeyword_3());
 		}
 		otherlv_4='type'
 		{
-			newLeafNode(otherlv_4, grammarAccess.getAllPredicateAccess().getTypeKeyword_4());
+			newLeafNode(otherlv_4, grammarAccess.getAllConditionAccess().getTypeKeyword_4());
 		}
 	)
 ;
 
-// Entry rule entryRuleOrdinalPredicate
-entryRuleOrdinalPredicate returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getOrdinalPredicateRule()); }
-	iv_ruleOrdinalPredicate=ruleOrdinalPredicate
-	{ $current=$iv_ruleOrdinalPredicate.current; }
+// Entry rule entryRuleIntWithSuffix
+entryRuleIntWithSuffix returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getIntWithSuffixRule()); }
+	iv_ruleIntWithSuffix=ruleIntWithSuffix
+	{ $current=$iv_ruleIntWithSuffix.current; }
 	EOF;
 
-// Rule OrdinalPredicate
-ruleOrdinalPredicate returns [EObject current=null]
+// Rule IntWithSuffix
+ruleIntWithSuffix returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			(
+				lv_value_0_0=RULE_INT
+				{
+					newLeafNode(lv_value_0_0, grammarAccess.getIntWithSuffixAccess().getValueINTTerminalRuleCall_0_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getIntWithSuffixRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"value",
+						lv_value_0_0,
+						"org.eclipse.xtext.common.Terminals.INT");
+				}
+			)
+		)
+		this_Suffix_1=RULE_SUFFIX
+		{
+			newLeafNode(this_Suffix_1, grammarAccess.getIntWithSuffixAccess().getSuffixTerminalRuleCall_1());
+		}
+	)
+;
+
+// Entry rule entryRuleOrdinalCondition
+entryRuleOrdinalCondition returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getOrdinalConditionRule()); }
+	iv_ruleOrdinalCondition=ruleOrdinalCondition
+	{ $current=$iv_ruleOrdinalCondition.current; }
+	EOF;
+
+// Rule OrdinalCondition
+ruleOrdinalCondition returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -1262,23 +1311,23 @@ ruleOrdinalPredicate returns [EObject current=null]
 	(
 		otherlv_0='the'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getOrdinalPredicateAccess().getTheKeyword_0());
+			newLeafNode(otherlv_0, grammarAccess.getOrdinalConditionAccess().getTheKeyword_0());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getOrdinalPredicateAccess().getOrdinalOrdinalIntegerParserRuleCall_1_0());
+					newCompositeNode(grammarAccess.getOrdinalConditionAccess().getOrdinalIntWithSuffixParserRuleCall_1_0());
 				}
-				lv_ordinal_1_0=ruleOrdinalInteger
+				lv_ordinal_1_0=ruleIntWithSuffix
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getOrdinalPredicateRule());
+						$current = createModelElementForParent(grammarAccess.getOrdinalConditionRule());
 					}
 					set(
 						$current,
 						"ordinal",
 						lv_ordinal_1_0,
-						"www.imta.fr.browserautomation.SeleniumDsl.OrdinalInteger");
+						"www.imta.fr.browserautomation.SeleniumDsl.IntWithSuffix");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -1286,15 +1335,15 @@ ruleOrdinalPredicate returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleLastPredicate
-entryRuleLastPredicate returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getLastPredicateRule()); }
-	iv_ruleLastPredicate=ruleLastPredicate
-	{ $current=$iv_ruleLastPredicate.current; }
+// Entry rule entryRuleLastCondition
+entryRuleLastCondition returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getLastConditionRule()); }
+	iv_ruleLastCondition=ruleLastCondition
+	{ $current=$iv_ruleLastCondition.current; }
 	EOF;
 
-// Rule LastPredicate
-ruleLastPredicate returns [EObject current=null]
+// Rule LastCondition
+ruleLastCondition returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -1305,30 +1354,30 @@ ruleLastPredicate returns [EObject current=null]
 		(
 			{
 				$current = forceCreateModelElement(
-					grammarAccess.getLastPredicateAccess().getLastPredicateAction_0(),
+					grammarAccess.getLastConditionAccess().getLastConditionAction_0(),
 					$current);
 			}
 		)
 		otherlv_1='the'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getLastPredicateAccess().getTheKeyword_1());
+			newLeafNode(otherlv_1, grammarAccess.getLastConditionAccess().getTheKeyword_1());
 		}
 		otherlv_2='last'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getLastPredicateAccess().getLastKeyword_2());
+			newLeafNode(otherlv_2, grammarAccess.getLastConditionAccess().getLastKeyword_2());
 		}
 	)
 ;
 
-// Entry rule entryRuleDefaultFirstPredicate
-entryRuleDefaultFirstPredicate returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getDefaultFirstPredicateRule()); }
-	iv_ruleDefaultFirstPredicate=ruleDefaultFirstPredicate
-	{ $current=$iv_ruleDefaultFirstPredicate.current; }
+// Entry rule entryRuleFirstCondition
+entryRuleFirstCondition returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getFirstConditionRule()); }
+	iv_ruleFirstCondition=ruleFirstCondition
+	{ $current=$iv_ruleFirstCondition.current; }
 	EOF;
 
-// Rule DefaultFirstPredicate
-ruleDefaultFirstPredicate returns [EObject current=null]
+// Rule FirstCondition
+ruleFirstCondition returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -1339,13 +1388,13 @@ ruleDefaultFirstPredicate returns [EObject current=null]
 		(
 			{
 				$current = forceCreateModelElement(
-					grammarAccess.getDefaultFirstPredicateAccess().getDefaultFirstPredicateAction_0(),
+					grammarAccess.getFirstConditionAccess().getFirstConditionAction_0(),
 					$current);
 			}
 		)
 		otherlv_1='the'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getDefaultFirstPredicateAccess().getTheKeyword_1());
+			newLeafNode(otherlv_1, grammarAccess.getFirstConditionAccess().getTheKeyword_1());
 		}
 	)
 ;
@@ -1470,19 +1519,19 @@ ruleVerify returns [EObject current=null]
 					}
 				)
 			)
-		)*
+		)?
 	)
 ;
 
-// Entry rule entryRuleOrdinalInteger
-entryRuleOrdinalInteger returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getOrdinalIntegerRule()); }
-	iv_ruleOrdinalInteger=ruleOrdinalInteger
-	{ $current=$iv_ruleOrdinalInteger.current; }
+// Entry rule entryRuleDynamicURL
+entryRuleDynamicURL returns [String current=null]:
+	{ newCompositeNode(grammarAccess.getDynamicURLRule()); }
+	iv_ruleDynamicURL=ruleDynamicURL
+	{ $current=$iv_ruleDynamicURL.current.getText(); }
 	EOF;
 
-// Rule OrdinalInteger
-ruleOrdinalInteger returns [EObject current=null]
+// Rule DynamicURL
+ruleDynamicURL returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
 @init {
 	enterRule();
 }
@@ -1490,34 +1539,31 @@ ruleOrdinalInteger returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		(
-			(
-				lv_value_0_0=RULE_INT
-				{
-					newLeafNode(lv_value_0_0, grammarAccess.getOrdinalIntegerAccess().getValueINTTerminalRuleCall_0_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getOrdinalIntegerRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"value",
-						lv_value_0_0,
-						"org.eclipse.xtext.common.Terminals.INT");
-				}
-			)
-		)
-		this_ORDINAL_SUFFIX_1=RULE_ORDINAL_SUFFIX
+		this_URL_0=RULE_URL
 		{
-			newLeafNode(this_ORDINAL_SUFFIX_1, grammarAccess.getOrdinalIntegerAccess().getORDINAL_SUFFIXTerminalRuleCall_1());
+			$current.merge(this_URL_0);
+		}
+		{
+			newLeafNode(this_URL_0, grammarAccess.getDynamicURLAccess().getURLTerminalRuleCall_0());
+		}
+		    |
+		this_STRING_1=RULE_STRING
+		{
+			$current.merge(this_STRING_1);
+		}
+		{
+			newLeafNode(this_STRING_1, grammarAccess.getDynamicURLAccess().getSTRINGTerminalRuleCall_1());
 		}
 	)
 ;
 
-RULE_ORDINAL_SUFFIX : ('st'|'nd'|'rd'|'th');
+RULE_SUFFIX : ('st'|'nd'|'rd'|'th');
 
 RULE_HTML_ATTRIBUTE : ('a'..'z'|'A'..'Z'|'_'|'-') ('a'..'z'|'A'..'Z'|'_'|'-'|'0'..'9')*;
+
+RULE_URL : ('http' 's'? '://')? RULE_DOMAIN (':' RULE_DOMAIN)* ('.' RULE_DOMAIN)* ('/' ('~'|RULE_DOMAIN))* ('?' ('~'|RULE_DOMAIN))* ('#' ('~'|RULE_DOMAIN))?;
+
+fragment RULE_DOMAIN : ('a'..'z'|'A'..'Z'|'_'|'-') ('a'..'z'|'A'..'Z'|'_'|'0'..'9'|'-')*;
 
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 

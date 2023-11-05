@@ -186,40 +186,49 @@ public interface SeleniumDslFactory extends EFactory
   SelectorPredicate createSelectorPredicate();
 
   /**
-   * Returns a new object of class '<em>All Predicate</em>'.
+   * Returns a new object of class '<em>All Condition</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>All Predicate</em>'.
+   * @return a new object of class '<em>All Condition</em>'.
    * @generated
    */
-  AllPredicate createAllPredicate();
+  AllCondition createAllCondition();
 
   /**
-   * Returns a new object of class '<em>Ordinal Predicate</em>'.
+   * Returns a new object of class '<em>Int With Suffix</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Ordinal Predicate</em>'.
+   * @return a new object of class '<em>Int With Suffix</em>'.
    * @generated
    */
-  OrdinalPredicate createOrdinalPredicate();
+  IntWithSuffix createIntWithSuffix();
 
   /**
-   * Returns a new object of class '<em>Last Predicate</em>'.
+   * Returns a new object of class '<em>Ordinal Condition</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Last Predicate</em>'.
+   * @return a new object of class '<em>Ordinal Condition</em>'.
    * @generated
    */
-  LastPredicate createLastPredicate();
+  OrdinalCondition createOrdinalCondition();
 
   /**
-   * Returns a new object of class '<em>Default First Predicate</em>'.
+   * Returns a new object of class '<em>Last Condition</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Default First Predicate</em>'.
+   * @return a new object of class '<em>Last Condition</em>'.
    * @generated
    */
-  DefaultFirstPredicate createDefaultFirstPredicate();
+  LastCondition createLastCondition();
+
+  /**
+   * Returns a new object of class '<em>First Condition</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>First Condition</em>'.
+   * @generated
+   */
+  FirstCondition createFirstCondition();
 
   /**
    * Returns a new object of class '<em>Verify</em>'.
@@ -229,15 +238,6 @@ public interface SeleniumDslFactory extends EFactory
    * @generated
    */
   Verify createVerify();
-
-  /**
-   * Returns a new object of class '<em>Ordinal Integer</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Ordinal Integer</em>'.
-   * @generated
-   */
-  OrdinalInteger createOrdinalInteger();
 
   /**
    * Returns the package supported by this factory.

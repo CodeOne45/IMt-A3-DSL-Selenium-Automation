@@ -212,35 +212,42 @@ public class SeleniumDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case SeleniumDslPackage.ALL_PREDICATE:
+      case SeleniumDslPackage.ALL_CONDITION:
       {
-        AllPredicate allPredicate = (AllPredicate)theEObject;
-        T result = caseAllPredicate(allPredicate);
-        if (result == null) result = caseSelectorPredicate(allPredicate);
+        AllCondition allCondition = (AllCondition)theEObject;
+        T result = caseAllCondition(allCondition);
+        if (result == null) result = caseSelectorPredicate(allCondition);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case SeleniumDslPackage.ORDINAL_PREDICATE:
+      case SeleniumDslPackage.INT_WITH_SUFFIX:
       {
-        OrdinalPredicate ordinalPredicate = (OrdinalPredicate)theEObject;
-        T result = caseOrdinalPredicate(ordinalPredicate);
-        if (result == null) result = caseSelectorPredicate(ordinalPredicate);
+        IntWithSuffix intWithSuffix = (IntWithSuffix)theEObject;
+        T result = caseIntWithSuffix(intWithSuffix);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case SeleniumDslPackage.LAST_PREDICATE:
+      case SeleniumDslPackage.ORDINAL_CONDITION:
       {
-        LastPredicate lastPredicate = (LastPredicate)theEObject;
-        T result = caseLastPredicate(lastPredicate);
-        if (result == null) result = caseSelectorPredicate(lastPredicate);
+        OrdinalCondition ordinalCondition = (OrdinalCondition)theEObject;
+        T result = caseOrdinalCondition(ordinalCondition);
+        if (result == null) result = caseSelectorPredicate(ordinalCondition);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case SeleniumDslPackage.DEFAULT_FIRST_PREDICATE:
+      case SeleniumDslPackage.LAST_CONDITION:
       {
-        DefaultFirstPredicate defaultFirstPredicate = (DefaultFirstPredicate)theEObject;
-        T result = caseDefaultFirstPredicate(defaultFirstPredicate);
-        if (result == null) result = caseSelectorPredicate(defaultFirstPredicate);
+        LastCondition lastCondition = (LastCondition)theEObject;
+        T result = caseLastCondition(lastCondition);
+        if (result == null) result = caseSelectorPredicate(lastCondition);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SeleniumDslPackage.FIRST_CONDITION:
+      {
+        FirstCondition firstCondition = (FirstCondition)theEObject;
+        T result = caseFirstCondition(firstCondition);
+        if (result == null) result = caseSelectorPredicate(firstCondition);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -250,13 +257,6 @@ public class SeleniumDslSwitch<T> extends Switch<T>
         T result = caseVerify(verify);
         if (result == null) result = caseDOMCommand(verify);
         if (result == null) result = caseCommand(verify);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case SeleniumDslPackage.ORDINAL_INTEGER:
-      {
-        OrdinalInteger ordinalInteger = (OrdinalInteger)theEObject;
-        T result = caseOrdinalInteger(ordinalInteger);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -553,65 +553,81 @@ public class SeleniumDslSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>All Predicate</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>All Condition</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>All Predicate</em>'.
+   * @return the result of interpreting the object as an instance of '<em>All Condition</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseAllPredicate(AllPredicate object)
+  public T caseAllCondition(AllCondition object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Ordinal Predicate</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Int With Suffix</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Ordinal Predicate</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Int With Suffix</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseOrdinalPredicate(OrdinalPredicate object)
+  public T caseIntWithSuffix(IntWithSuffix object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Last Predicate</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Ordinal Condition</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Last Predicate</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Ordinal Condition</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseLastPredicate(LastPredicate object)
+  public T caseOrdinalCondition(OrdinalCondition object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Default First Predicate</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Last Condition</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Default First Predicate</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Last Condition</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseDefaultFirstPredicate(DefaultFirstPredicate object)
+  public T caseLastCondition(LastCondition object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>First Condition</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>First Condition</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseFirstCondition(FirstCondition object)
   {
     return null;
   }
@@ -628,22 +644,6 @@ public class SeleniumDslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseVerify(Verify object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Ordinal Integer</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Ordinal Integer</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseOrdinalInteger(OrdinalInteger object)
   {
     return null;
   }

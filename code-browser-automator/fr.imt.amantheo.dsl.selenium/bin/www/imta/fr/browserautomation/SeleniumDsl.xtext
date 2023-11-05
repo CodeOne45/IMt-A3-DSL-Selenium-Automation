@@ -2,23 +2,27 @@ grammar www.imta.fr.browserautomation.SeleniumDsl with org.eclipse.xtext.common.
 
 generate seleniumDsl "http://www.imta.www/fr/browserautomation/SeleniumDsl"
 
-
 BrowserDsl:
     commands+=Command*;
+    
+// Define common terminal rules
+terminal Suffix: 'st' | 'nd' | 'rd' | 'th';
+terminal HTML_ATTRIBUTE: ('a'..'z'|'A'..'Z'|'_'|'-') ('a'..'z'|'A'..'Z'|'_'|'-'|'0'..'9')*;
+terminal URL: ('http' 's'? '://')? (DOMAIN) (':' DOMAIN)* ('.' DOMAIN)* ('/' ('~' | DOMAIN))* ('?' ('~' | DOMAIN))* ('#' ('~' | DOMAIN))?;
+terminal DOMAIN: ('a'..'z'|'A'..'Z'|'_'|'-') ('a'..'z'|'A'..'Z'|'_'|'0'..'9'|'-')*;
+
 
 Command:
-    OpenBrowser |
-    GoTo |
-    DOMCommand;
-    
+    OpenBrowser | GoTo | DOMCommand;
+
 OpenBrowser:
     {OpenBrowser} 'open' 'a' 'browser' 'window';
 
 DOMCommand:
-    Click | Insert | Copy | Paste | Verify
-;
+    Click | Copy | Paste | Verify | Insert;
+
 GoTo:
-    'go' 'to' url=STRING;
+    'go' 'to' (url=DynamicURL | 'URL')?;
 
 Click:
     {Click} (('click' 'on') | 'select') element=Selector;
@@ -33,21 +37,17 @@ Insert:
     'fill' element=Selector 'with' content=Content;
 
 Selector:
-    predicate=SelectorPredicate 
-    domType=STRING 
+    predicate=SelectorPredicate domType=STRING
     ('with' 'properties' attributes=Attributes)?
     ('with' 'associated' 'label' label=STRING)?
     ('that' 'is' properties=Properties)?
-    ('in' parent=Selector)?
-;
+    ('in' parent=Selector)?;
 
 Attributes:
-	attributes+=ElementAttribute ('and' properties+=ElementAttribute)*
-;
+    attributes+=ElementAttribute ('and' attributes+=ElementAttribute)?;
 
 ElementAttribute:
-	(name=HTML_ATTRIBUTE matcher=Matcher value=Content)
-;
+    (name=HTML_ATTRIBUTE matcher=Matcher value=Content);
 
 Content: ClipboardContent | StringContent;
 
@@ -55,46 +55,35 @@ ClipboardContent: 'the' 'saved' 'content' key=STRING;
 
 StringContent: value=STRING;
 
-
 Properties:
-	properties+=ElementProperty ('and' properties+=ElementProperty)*
-;
+    properties+=ElementProperty ('and' properties+=ElementProperty)?;
+
 ElementProperty:
-	negated=("not")? property=("selected" | "visible" | "enabled")
-;
+    negated=("not")? property=("selected" | "visible" | "enabled");
+
 SelectorPredicate:
-    AllPredicate | 
-    OrdinalPredicate | 
-    LastPredicate | 
-    DefaultFirstPredicate
-;
+    AllCondition | OrdinalCondition | LastCondition | FirstCondition;
 
-AllPredicate:
-	{AllPredicate}'all' 'elements' 'of' 'type'
-;
+AllCondition:
+    {AllCondition}'all' 'elements' 'of' 'type';
 
-OrdinalPredicate:
-	'the' ordinal=OrdinalInteger
-;
+IntWithSuffix:
+    value=INT Suffix;
 
-LastPredicate:
-	{LastPredicate}'the' 'last'
-;
+OrdinalCondition:
+    'the' ordinal=IntWithSuffix;
 
-DefaultFirstPredicate:
-	{DefaultFirstPredicate} 'the'
-;
+LastCondition:
+    {LastCondition}'the' 'last';
+
+FirstCondition:
+    {FirstCondition} 'the';
+
 
 Matcher:
-	"containing" | "matching"
-;
+    "containing" | "matching";
 
 Verify:
-    'verify' 'that' selector=Selector 'is' properties+=ElementProperty ('and' properties+=ElementProperty)*;
-    
-terminal ORDINAL_SUFFIX:'st' | 'nd' | 'rd' | 'th';
+    'verify' 'that' selector=Selector 'is' properties+=ElementProperty ('and' properties+=ElementProperty)?;
 
-OrdinalInteger:
-  value=INT ORDINAL_SUFFIX;
-  
-terminal HTML_ATTRIBUTE: ('a'..'z'|'A'..'Z'|'_'|'-') ('a'..'z'|'A'..'Z'|'_'|'-'|'0'..'9')*;
+DynamicURL: (URL | STRING);

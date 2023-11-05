@@ -83,12 +83,12 @@ public class SeleniumDslFactoryImpl extends EFactoryImpl implements SeleniumDslF
       case SeleniumDslPackage.PROPERTIES: return createProperties();
       case SeleniumDslPackage.ELEMENT_PROPERTY: return createElementProperty();
       case SeleniumDslPackage.SELECTOR_PREDICATE: return createSelectorPredicate();
-      case SeleniumDslPackage.ALL_PREDICATE: return createAllPredicate();
-      case SeleniumDslPackage.ORDINAL_PREDICATE: return createOrdinalPredicate();
-      case SeleniumDslPackage.LAST_PREDICATE: return createLastPredicate();
-      case SeleniumDslPackage.DEFAULT_FIRST_PREDICATE: return createDefaultFirstPredicate();
+      case SeleniumDslPackage.ALL_CONDITION: return createAllCondition();
+      case SeleniumDslPackage.INT_WITH_SUFFIX: return createIntWithSuffix();
+      case SeleniumDslPackage.ORDINAL_CONDITION: return createOrdinalCondition();
+      case SeleniumDslPackage.LAST_CONDITION: return createLastCondition();
+      case SeleniumDslPackage.FIRST_CONDITION: return createFirstCondition();
       case SeleniumDslPackage.VERIFY: return createVerify();
-      case SeleniumDslPackage.ORDINAL_INTEGER: return createOrdinalInteger();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -316,10 +316,10 @@ public class SeleniumDslFactoryImpl extends EFactoryImpl implements SeleniumDslF
    * @generated
    */
   @Override
-  public AllPredicate createAllPredicate()
+  public AllCondition createAllCondition()
   {
-    AllPredicateImpl allPredicate = new AllPredicateImpl();
-    return allPredicate;
+    AllConditionImpl allCondition = new AllConditionImpl();
+    return allCondition;
   }
 
   /**
@@ -328,10 +328,10 @@ public class SeleniumDslFactoryImpl extends EFactoryImpl implements SeleniumDslF
    * @generated
    */
   @Override
-  public OrdinalPredicate createOrdinalPredicate()
+  public IntWithSuffix createIntWithSuffix()
   {
-    OrdinalPredicateImpl ordinalPredicate = new OrdinalPredicateImpl();
-    return ordinalPredicate;
+    IntWithSuffixImpl intWithSuffix = new IntWithSuffixImpl();
+    return intWithSuffix;
   }
 
   /**
@@ -340,10 +340,10 @@ public class SeleniumDslFactoryImpl extends EFactoryImpl implements SeleniumDslF
    * @generated
    */
   @Override
-  public LastPredicate createLastPredicate()
+  public OrdinalCondition createOrdinalCondition()
   {
-    LastPredicateImpl lastPredicate = new LastPredicateImpl();
-    return lastPredicate;
+    OrdinalConditionImpl ordinalCondition = new OrdinalConditionImpl();
+    return ordinalCondition;
   }
 
   /**
@@ -352,10 +352,22 @@ public class SeleniumDslFactoryImpl extends EFactoryImpl implements SeleniumDslF
    * @generated
    */
   @Override
-  public DefaultFirstPredicate createDefaultFirstPredicate()
+  public LastCondition createLastCondition()
   {
-    DefaultFirstPredicateImpl defaultFirstPredicate = new DefaultFirstPredicateImpl();
-    return defaultFirstPredicate;
+    LastConditionImpl lastCondition = new LastConditionImpl();
+    return lastCondition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public FirstCondition createFirstCondition()
+  {
+    FirstConditionImpl firstCondition = new FirstConditionImpl();
+    return firstCondition;
   }
 
   /**
@@ -368,18 +380,6 @@ public class SeleniumDslFactoryImpl extends EFactoryImpl implements SeleniumDslF
   {
     VerifyImpl verify = new VerifyImpl();
     return verify;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public OrdinalInteger createOrdinalInteger()
-  {
-    OrdinalIntegerImpl ordinalInteger = new OrdinalIntegerImpl();
-    return ordinalInteger;
   }
 
   /**

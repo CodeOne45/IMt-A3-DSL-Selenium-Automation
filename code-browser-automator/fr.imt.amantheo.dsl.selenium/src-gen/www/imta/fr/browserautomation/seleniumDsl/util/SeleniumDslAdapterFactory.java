@@ -166,34 +166,34 @@ public class SeleniumDslAdapterFactory extends AdapterFactoryImpl
         return createSelectorPredicateAdapter();
       }
       @Override
-      public Adapter caseAllPredicate(AllPredicate object)
+      public Adapter caseAllCondition(AllCondition object)
       {
-        return createAllPredicateAdapter();
+        return createAllConditionAdapter();
       }
       @Override
-      public Adapter caseOrdinalPredicate(OrdinalPredicate object)
+      public Adapter caseIntWithSuffix(IntWithSuffix object)
       {
-        return createOrdinalPredicateAdapter();
+        return createIntWithSuffixAdapter();
       }
       @Override
-      public Adapter caseLastPredicate(LastPredicate object)
+      public Adapter caseOrdinalCondition(OrdinalCondition object)
       {
-        return createLastPredicateAdapter();
+        return createOrdinalConditionAdapter();
       }
       @Override
-      public Adapter caseDefaultFirstPredicate(DefaultFirstPredicate object)
+      public Adapter caseLastCondition(LastCondition object)
       {
-        return createDefaultFirstPredicateAdapter();
+        return createLastConditionAdapter();
+      }
+      @Override
+      public Adapter caseFirstCondition(FirstCondition object)
+      {
+        return createFirstConditionAdapter();
       }
       @Override
       public Adapter caseVerify(Verify object)
       {
         return createVerifyAdapter();
-      }
-      @Override
-      public Adapter caseOrdinalInteger(OrdinalInteger object)
-      {
-        return createOrdinalIntegerAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -488,61 +488,76 @@ public class SeleniumDslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link www.imta.fr.browserautomation.seleniumDsl.AllPredicate <em>All Predicate</em>}'.
+   * Creates a new adapter for an object of class '{@link www.imta.fr.browserautomation.seleniumDsl.AllCondition <em>All Condition</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see www.imta.fr.browserautomation.seleniumDsl.AllPredicate
+   * @see www.imta.fr.browserautomation.seleniumDsl.AllCondition
    * @generated
    */
-  public Adapter createAllPredicateAdapter()
+  public Adapter createAllConditionAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link www.imta.fr.browserautomation.seleniumDsl.OrdinalPredicate <em>Ordinal Predicate</em>}'.
+   * Creates a new adapter for an object of class '{@link www.imta.fr.browserautomation.seleniumDsl.IntWithSuffix <em>Int With Suffix</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see www.imta.fr.browserautomation.seleniumDsl.OrdinalPredicate
+   * @see www.imta.fr.browserautomation.seleniumDsl.IntWithSuffix
    * @generated
    */
-  public Adapter createOrdinalPredicateAdapter()
+  public Adapter createIntWithSuffixAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link www.imta.fr.browserautomation.seleniumDsl.LastPredicate <em>Last Predicate</em>}'.
+   * Creates a new adapter for an object of class '{@link www.imta.fr.browserautomation.seleniumDsl.OrdinalCondition <em>Ordinal Condition</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see www.imta.fr.browserautomation.seleniumDsl.LastPredicate
+   * @see www.imta.fr.browserautomation.seleniumDsl.OrdinalCondition
    * @generated
    */
-  public Adapter createLastPredicateAdapter()
+  public Adapter createOrdinalConditionAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link www.imta.fr.browserautomation.seleniumDsl.DefaultFirstPredicate <em>Default First Predicate</em>}'.
+   * Creates a new adapter for an object of class '{@link www.imta.fr.browserautomation.seleniumDsl.LastCondition <em>Last Condition</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see www.imta.fr.browserautomation.seleniumDsl.DefaultFirstPredicate
+   * @see www.imta.fr.browserautomation.seleniumDsl.LastCondition
    * @generated
    */
-  public Adapter createDefaultFirstPredicateAdapter()
+  public Adapter createLastConditionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link www.imta.fr.browserautomation.seleniumDsl.FirstCondition <em>First Condition</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see www.imta.fr.browserautomation.seleniumDsl.FirstCondition
+   * @generated
+   */
+  public Adapter createFirstConditionAdapter()
   {
     return null;
   }
@@ -558,21 +573,6 @@ public class SeleniumDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createVerifyAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link www.imta.fr.browserautomation.seleniumDsl.OrdinalInteger <em>Ordinal Integer</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see www.imta.fr.browserautomation.seleniumDsl.OrdinalInteger
-   * @generated
-   */
-  public Adapter createOrdinalIntegerAdapter()
   {
     return null;
   }

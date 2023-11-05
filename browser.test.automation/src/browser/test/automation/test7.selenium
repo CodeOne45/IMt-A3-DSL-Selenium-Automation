@@ -1,0 +1,15 @@
+open a browser window
+go to "http://www.imt-atlantique.fr/fr"
+
+copy the property text of the "link" 
+in the "span" with properties class containing "views-field-title" 
+in the 1st "div" with properties class matching "view-content" 
+in the "div" with properties class containing "view-actualites"
+as "link text"
+
+click on the "link" 
+in the "span" with properties class containing "views-field-title" 
+in the 1st "div" with properties class matching "view-content" 
+in the "div" with properties class containing "view-actualites"
+
+verify that the "element" with properties text containing the saved content "link text" is visible

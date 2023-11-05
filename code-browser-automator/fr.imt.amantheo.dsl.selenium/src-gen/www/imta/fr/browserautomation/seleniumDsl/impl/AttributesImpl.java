@@ -30,7 +30,6 @@ import www.imta.fr.browserautomation.seleniumDsl.SeleniumDslPackage;
  * </p>
  * <ul>
  *   <li>{@link www.imta.fr.browserautomation.seleniumDsl.impl.AttributesImpl#getAttributes <em>Attributes</em>}</li>
- *   <li>{@link www.imta.fr.browserautomation.seleniumDsl.impl.AttributesImpl#getProperties <em>Properties</em>}</li>
  * </ul>
  *
  * @generated
@@ -46,16 +45,6 @@ public class AttributesImpl extends MinimalEObjectImpl.Container implements Attr
    * @ordered
    */
   protected EList<ElementAttribute> attributes;
-
-  /**
-   * The cached value of the '{@link #getProperties() <em>Properties</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getProperties()
-   * @generated
-   * @ordered
-   */
-  protected EList<ElementAttribute> properties;
 
   /**
    * <!-- begin-user-doc -->
@@ -99,29 +88,12 @@ public class AttributesImpl extends MinimalEObjectImpl.Container implements Attr
    * @generated
    */
   @Override
-  public EList<ElementAttribute> getProperties()
-  {
-    if (properties == null)
-    {
-      properties = new EObjectContainmentEList<ElementAttribute>(ElementAttribute.class, this, SeleniumDslPackage.ATTRIBUTES__PROPERTIES);
-    }
-    return properties;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
     {
       case SeleniumDslPackage.ATTRIBUTES__ATTRIBUTES:
         return ((InternalEList<?>)getAttributes()).basicRemove(otherEnd, msgs);
-      case SeleniumDslPackage.ATTRIBUTES__PROPERTIES:
-        return ((InternalEList<?>)getProperties()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -138,8 +110,6 @@ public class AttributesImpl extends MinimalEObjectImpl.Container implements Attr
     {
       case SeleniumDslPackage.ATTRIBUTES__ATTRIBUTES:
         return getAttributes();
-      case SeleniumDslPackage.ATTRIBUTES__PROPERTIES:
-        return getProperties();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -159,10 +129,6 @@ public class AttributesImpl extends MinimalEObjectImpl.Container implements Attr
         getAttributes().clear();
         getAttributes().addAll((Collection<? extends ElementAttribute>)newValue);
         return;
-      case SeleniumDslPackage.ATTRIBUTES__PROPERTIES:
-        getProperties().clear();
-        getProperties().addAll((Collection<? extends ElementAttribute>)newValue);
-        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -180,9 +146,6 @@ public class AttributesImpl extends MinimalEObjectImpl.Container implements Attr
       case SeleniumDslPackage.ATTRIBUTES__ATTRIBUTES:
         getAttributes().clear();
         return;
-      case SeleniumDslPackage.ATTRIBUTES__PROPERTIES:
-        getProperties().clear();
-        return;
     }
     super.eUnset(featureID);
   }
@@ -199,8 +162,6 @@ public class AttributesImpl extends MinimalEObjectImpl.Container implements Attr
     {
       case SeleniumDslPackage.ATTRIBUTES__ATTRIBUTES:
         return attributes != null && !attributes.isEmpty();
-      case SeleniumDslPackage.ATTRIBUTES__PROPERTIES:
-        return properties != null && !properties.isEmpty();
     }
     return super.eIsSet(featureID);
   }

@@ -19,14 +19,14 @@ import java.util.List;
 import www.imta.fr.browserautomation.seleniumDsl.ElementProperty
 import www.imta.fr.browserautomation.seleniumDsl.Selector
 import www.imta.fr.browserautomation.seleniumDsl.Content
-import www.imta.fr.browserautomation.seleniumDsl.OrdinalPredicate
-import www.imta.fr.browserautomation.seleniumDsl.LastPredicate
-import www.imta.fr.browserautomation.seleniumDsl.DefaultFirstPredicate
-import www.imta.fr.browserautomation.seleniumDsl.AllPredicate
 import www.imta.fr.browserautomation.seleniumDsl.StringContent
 import www.imta.fr.browserautomation.seleniumDsl.ClipboardContent
 import www.imta.fr.browserautomation.seleniumDsl.ElementAttribute
 import www.imta.fr.browserautomation.seleniumDsl.BrowserDsl
+import www.imta.fr.browserautomation.seleniumDsl.LastCondition
+import www.imta.fr.browserautomation.seleniumDsl.FirstCondition
+import www.imta.fr.browserautomation.seleniumDsl.AllCondition
+import www.imta.fr.browserautomation.seleniumDsl.OrdinalCondition
 
 /**
  * Generates code from your model files on save.
@@ -48,81 +48,86 @@ class SeleniumDslGenerator extends AbstractGenerator {
 			    className = Character.toUpperCase(className.charAt(0)) + className.substring(1);
 			    
 			    name = Character.toUpperCase(name.charAt(0)) + name.substring(1) ;
-	        	
-	        	 var text = '''
-	                package fr.imta.amanthéo.browser;
-	
-	                import org.openqa.selenium.By;
-	                import org.openqa.selenium.WebDriver;
-	                import org.openqa.selenium.WebElement;
-	                import org.openqa.selenium.chrome.ChromeDriver;
-	                import org.openqa.selenium.WebDriverException;
-	                import org.openqa.selenium.JavascriptExecutor;
-	                import java.util.stream.Collectors;
-	                import java.util.function.Predicate;
-	
-	                import java.time.Duration;
-	                import java.util.List;
-	                import java.util.Map;
-	                import java.util.HashMap;
-	
-	                public class «className» {
-	
-	                    private static Map<String, String> savedData = new HashMap();
-	
-	                    public static String getSavedData(String key) {
-	                        if (!savedData.containsKey(key)) {
-	                            throw new RuntimeException("No saved data named " + key);
-	                        }
-	                        return savedData.get(key);
-	                    }
-	
-	                    public static List<WebElement> findElementsStable(WebDriver driver, By locator, Predicate<WebElement> filter, int maxAttempts, int retryCountIfZero) {
-	                        int lastCount = -1;
-	                        int retryZero = 0;
-	                        for (int attempt = 0; attempt < maxAttempts; attempt++) {
-	                            List<WebElement> current = driver.findElements(locator).stream().filter(filter).collect(Collectors.toList());
-	                            if (current.size() == lastCount && (lastCount != 0 || retryZero == retryCountIfZero)) {
-	                                return current;
-	                            } else {
-	                                lastCount = current.size();
-	                                if (lastCount == 0) {
-	                                    retryZero++;
-	                                }
-	                            }
-	                            try {
-	                                if (lastCount == 0) {
-	                                    Thread.sleep(1000); // Wait for 1s
-	                                } else {
-	                                    Thread.sleep(100); // Wait for 1s
-	                                }
-	                            } catch (InterruptedException e) {
-	                                Thread.currentThread().interrupt();
-	                            }
-	                        }
-	                        throw new RuntimeException("Amount of web elements not stable");
-	                    }
-	
-	                    public static List<WebElement> findElementsStable(WebDriver driver, By locator, int maxAttempts, int retryCountIfZero) {
-	                        return findElementsStable(driver, locator, elt -> true, maxAttempts, retryCountIfZero);
-	                    }
-	
-	                    public static void main(String[] args) throws Exception {
-	                        WebDriver driver;
-	                        '''
-	                         + model.commands.map[compile(it)].join('\n\n') +
-	                        '''
-	                        if (driver == null) {
-	                            throw new RuntimeException("Cannot find a reference to the web driver. Has it been opened?");
-	                        }
-	                        driver.quit();
-	                    }
-	                }
-	            ''';
+			    
+			    val code = generateClassHeader(className, model);
 	        
-	           	fsa.generateFile("fr/imta/amanthéo/browser/" + name , text);
+	           	fsa.generateFile("fr/imta/amanthéo/browser/" + name , code);
 	    	}
 	    }
+		
+		
+		def generateClassHeader(String className,  BrowserDsl model) {
+			'''
+package fr.imta.amanthéo.browser;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.WebDriverException;
+import org.openqa.selenium.JavascriptExecutor;
+import java.util.stream.Collectors;
+import java.util.function.Predicate;
+
+import java.time.Duration;
+import java.util.List;
+import java.util.Map;
+import java.util.HashMap;
+
+public class «className» {
+
+    private static Map<String, String> savedData = new HashMap();
+
+    public static String getSavedData(String key) {
+        if (!savedData.containsKey(key)) {
+            throw new RuntimeException("No saved data named " + key);
+        }
+        return savedData.get(key);
+    }
+    
+    public static List<WebElement> findElementsStable(WebDriver driver, By locator, Predicate<WebElement> filter, int maxAttempts, int retryCountIfZero) {
+        int lastCount = -1;
+        int retryZero = 0;
+        for (int attempt = 0; attempt < maxAttempts; attempt++) {
+            List<WebElement> current = driver.findElements(locator).stream().filter(filter).collect(Collectors.toList());
+            if (current.size() == lastCount && (lastCount != 0 || retryZero == retryCountIfZero)) {
+                return current;
+            } else {
+                lastCount = current.size();
+                if (lastCount == 0) {
+                    retryZero++;
+                }
+            }
+            try {
+                if (lastCount == 0) {
+                    Thread.sleep(1000); // Wait for 1s
+                } else {
+                    Thread.sleep(100); // Wait for 1s
+                }
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+        }
+        throw new RuntimeException("Amount of web elements not stable");
+    }
+
+    public static List<WebElement> findElementsStable(WebDriver driver, By locator, int maxAttempts, int retryCountIfZero) {
+        return findElementsStable(driver, locator, elt -> true, maxAttempts, retryCountIfZero);
+    }
+
+    public static void main(String[] args) throws Exception {
+        WebDriver driver;
+        '''
+         + model.commands.map[compile(it)].join('\n\n') +
+        '''
+        if (driver == null) {
+            throw new RuntimeException("Cannot find a reference to the web driver. Has it been opened?");
+        }
+        driver.quit();
+    }
+}
+	        '''
+		}
 
     def compile(Command command) {
         return switch(command) {
@@ -130,9 +135,17 @@ class SeleniumDslGenerator extends AbstractGenerator {
             driver = new ChromeDriver();
             driver.manage().window().maximize();
             '''
-            GoTo :'''
-            driver.get("«command.url»");
-            '''
+            GoTo :{
+            if (command.url.startsWith("\"") && command.url.endsWith("\"")) {
+                '''
+                driver.get(«command.url»);
+                '''
+            } else {
+                '''
+                driver.get("«command.url»");
+                '''
+            }
+        }
             DOMCommand: command.compile
         }
     }
@@ -228,10 +241,10 @@ class SeleniumDslGenerator extends AbstractGenerator {
             }
             int index = «
             switch (predicate) {
-                 OrdinalPredicate: predicate.getOrdinal().getValue() - 1
-                 LastPredicate: "current.size() - 1"
-                 DefaultFirstPredicate: "0"
-                 AllPredicate: "-1"
+                 OrdinalCondition: predicate.getOrdinal().getValue() - 1
+                 LastCondition: "current.size() - 1"
+                 FirstCondition: "0"
+                 AllCondition: "-1"
             }»;
             
             if (index == -1) {

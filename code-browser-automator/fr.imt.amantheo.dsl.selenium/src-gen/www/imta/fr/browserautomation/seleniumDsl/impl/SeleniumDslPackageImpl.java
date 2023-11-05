@@ -10,7 +10,7 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
-import www.imta.fr.browserautomation.seleniumDsl.AllPredicate;
+import www.imta.fr.browserautomation.seleniumDsl.AllCondition;
 import www.imta.fr.browserautomation.seleniumDsl.Attributes;
 import www.imta.fr.browserautomation.seleniumDsl.BrowserDsl;
 import www.imta.fr.browserautomation.seleniumDsl.Click;
@@ -19,15 +19,15 @@ import www.imta.fr.browserautomation.seleniumDsl.Command;
 import www.imta.fr.browserautomation.seleniumDsl.Content;
 import www.imta.fr.browserautomation.seleniumDsl.Copy;
 import www.imta.fr.browserautomation.seleniumDsl.DOMCommand;
-import www.imta.fr.browserautomation.seleniumDsl.DefaultFirstPredicate;
 import www.imta.fr.browserautomation.seleniumDsl.ElementAttribute;
 import www.imta.fr.browserautomation.seleniumDsl.ElementProperty;
+import www.imta.fr.browserautomation.seleniumDsl.FirstCondition;
 import www.imta.fr.browserautomation.seleniumDsl.GoTo;
 import www.imta.fr.browserautomation.seleniumDsl.Insert;
-import www.imta.fr.browserautomation.seleniumDsl.LastPredicate;
+import www.imta.fr.browserautomation.seleniumDsl.IntWithSuffix;
+import www.imta.fr.browserautomation.seleniumDsl.LastCondition;
 import www.imta.fr.browserautomation.seleniumDsl.OpenBrowser;
-import www.imta.fr.browserautomation.seleniumDsl.OrdinalInteger;
-import www.imta.fr.browserautomation.seleniumDsl.OrdinalPredicate;
+import www.imta.fr.browserautomation.seleniumDsl.OrdinalCondition;
 import www.imta.fr.browserautomation.seleniumDsl.Paste;
 import www.imta.fr.browserautomation.seleniumDsl.Properties;
 import www.imta.fr.browserautomation.seleniumDsl.Selector;
@@ -176,28 +176,35 @@ public class SeleniumDslPackageImpl extends EPackageImpl implements SeleniumDslP
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass allPredicateEClass = null;
+  private EClass allConditionEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass ordinalPredicateEClass = null;
+  private EClass intWithSuffixEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass lastPredicateEClass = null;
+  private EClass ordinalConditionEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass defaultFirstPredicateEClass = null;
+  private EClass lastConditionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass firstConditionEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -205,13 +212,6 @@ public class SeleniumDslPackageImpl extends EPackageImpl implements SeleniumDslP
    * @generated
    */
   private EClass verifyEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass ordinalIntegerEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -578,17 +578,6 @@ public class SeleniumDslPackageImpl extends EPackageImpl implements SeleniumDslP
    * @generated
    */
   @Override
-  public EReference getAttributes_Properties()
-  {
-    return (EReference)attributesEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public EClass getElementAttribute()
   {
     return elementAttributeEClass;
@@ -754,9 +743,9 @@ public class SeleniumDslPackageImpl extends EPackageImpl implements SeleniumDslP
    * @generated
    */
   @Override
-  public EClass getAllPredicate()
+  public EClass getAllCondition()
   {
-    return allPredicateEClass;
+    return allConditionEClass;
   }
 
   /**
@@ -765,9 +754,9 @@ public class SeleniumDslPackageImpl extends EPackageImpl implements SeleniumDslP
    * @generated
    */
   @Override
-  public EClass getOrdinalPredicate()
+  public EClass getIntWithSuffix()
   {
-    return ordinalPredicateEClass;
+    return intWithSuffixEClass;
   }
 
   /**
@@ -776,9 +765,9 @@ public class SeleniumDslPackageImpl extends EPackageImpl implements SeleniumDslP
    * @generated
    */
   @Override
-  public EReference getOrdinalPredicate_Ordinal()
+  public EAttribute getIntWithSuffix_Value()
   {
-    return (EReference)ordinalPredicateEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)intWithSuffixEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -787,9 +776,9 @@ public class SeleniumDslPackageImpl extends EPackageImpl implements SeleniumDslP
    * @generated
    */
   @Override
-  public EClass getLastPredicate()
+  public EClass getOrdinalCondition()
   {
-    return lastPredicateEClass;
+    return ordinalConditionEClass;
   }
 
   /**
@@ -798,9 +787,31 @@ public class SeleniumDslPackageImpl extends EPackageImpl implements SeleniumDslP
    * @generated
    */
   @Override
-  public EClass getDefaultFirstPredicate()
+  public EReference getOrdinalCondition_Ordinal()
   {
-    return defaultFirstPredicateEClass;
+    return (EReference)ordinalConditionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getLastCondition()
+  {
+    return lastConditionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getFirstCondition()
+  {
+    return firstConditionEClass;
   }
 
   /**
@@ -834,28 +845,6 @@ public class SeleniumDslPackageImpl extends EPackageImpl implements SeleniumDslP
   public EReference getVerify_Properties()
   {
     return (EReference)verifyEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getOrdinalInteger()
-  {
-    return ordinalIntegerEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getOrdinalInteger_Value()
-  {
-    return (EAttribute)ordinalIntegerEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -926,7 +915,6 @@ public class SeleniumDslPackageImpl extends EPackageImpl implements SeleniumDslP
 
     attributesEClass = createEClass(ATTRIBUTES);
     createEReference(attributesEClass, ATTRIBUTES__ATTRIBUTES);
-    createEReference(attributesEClass, ATTRIBUTES__PROPERTIES);
 
     elementAttributeEClass = createEClass(ELEMENT_ATTRIBUTE);
     createEAttribute(elementAttributeEClass, ELEMENT_ATTRIBUTE__NAME);
@@ -950,21 +938,21 @@ public class SeleniumDslPackageImpl extends EPackageImpl implements SeleniumDslP
 
     selectorPredicateEClass = createEClass(SELECTOR_PREDICATE);
 
-    allPredicateEClass = createEClass(ALL_PREDICATE);
+    allConditionEClass = createEClass(ALL_CONDITION);
 
-    ordinalPredicateEClass = createEClass(ORDINAL_PREDICATE);
-    createEReference(ordinalPredicateEClass, ORDINAL_PREDICATE__ORDINAL);
+    intWithSuffixEClass = createEClass(INT_WITH_SUFFIX);
+    createEAttribute(intWithSuffixEClass, INT_WITH_SUFFIX__VALUE);
 
-    lastPredicateEClass = createEClass(LAST_PREDICATE);
+    ordinalConditionEClass = createEClass(ORDINAL_CONDITION);
+    createEReference(ordinalConditionEClass, ORDINAL_CONDITION__ORDINAL);
 
-    defaultFirstPredicateEClass = createEClass(DEFAULT_FIRST_PREDICATE);
+    lastConditionEClass = createEClass(LAST_CONDITION);
+
+    firstConditionEClass = createEClass(FIRST_CONDITION);
 
     verifyEClass = createEClass(VERIFY);
     createEReference(verifyEClass, VERIFY__SELECTOR);
     createEReference(verifyEClass, VERIFY__PROPERTIES);
-
-    ordinalIntegerEClass = createEClass(ORDINAL_INTEGER);
-    createEAttribute(ordinalIntegerEClass, ORDINAL_INTEGER__VALUE);
   }
 
   /**
@@ -1005,10 +993,10 @@ public class SeleniumDslPackageImpl extends EPackageImpl implements SeleniumDslP
     insertEClass.getESuperTypes().add(this.getDOMCommand());
     clipboardContentEClass.getESuperTypes().add(this.getContent());
     stringContentEClass.getESuperTypes().add(this.getContent());
-    allPredicateEClass.getESuperTypes().add(this.getSelectorPredicate());
-    ordinalPredicateEClass.getESuperTypes().add(this.getSelectorPredicate());
-    lastPredicateEClass.getESuperTypes().add(this.getSelectorPredicate());
-    defaultFirstPredicateEClass.getESuperTypes().add(this.getSelectorPredicate());
+    allConditionEClass.getESuperTypes().add(this.getSelectorPredicate());
+    ordinalConditionEClass.getESuperTypes().add(this.getSelectorPredicate());
+    lastConditionEClass.getESuperTypes().add(this.getSelectorPredicate());
+    firstConditionEClass.getESuperTypes().add(this.getSelectorPredicate());
     verifyEClass.getESuperTypes().add(this.getDOMCommand());
 
     // Initialize classes and features; add operations and parameters
@@ -1049,7 +1037,6 @@ public class SeleniumDslPackageImpl extends EPackageImpl implements SeleniumDslP
 
     initEClass(attributesEClass, Attributes.class, "Attributes", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getAttributes_Attributes(), this.getElementAttribute(), null, "attributes", null, 0, -1, Attributes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getAttributes_Properties(), this.getElementAttribute(), null, "properties", null, 0, -1, Attributes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(elementAttributeEClass, ElementAttribute.class, "ElementAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getElementAttribute_Name(), ecorePackage.getEString(), "name", null, 0, 1, ElementAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1073,21 +1060,21 @@ public class SeleniumDslPackageImpl extends EPackageImpl implements SeleniumDslP
 
     initEClass(selectorPredicateEClass, SelectorPredicate.class, "SelectorPredicate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-    initEClass(allPredicateEClass, AllPredicate.class, "AllPredicate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEClass(allConditionEClass, AllCondition.class, "AllCondition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-    initEClass(ordinalPredicateEClass, OrdinalPredicate.class, "OrdinalPredicate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getOrdinalPredicate_Ordinal(), this.getOrdinalInteger(), null, "ordinal", null, 0, 1, OrdinalPredicate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(intWithSuffixEClass, IntWithSuffix.class, "IntWithSuffix", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getIntWithSuffix_Value(), ecorePackage.getEInt(), "value", null, 0, 1, IntWithSuffix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(lastPredicateEClass, LastPredicate.class, "LastPredicate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEClass(ordinalConditionEClass, OrdinalCondition.class, "OrdinalCondition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getOrdinalCondition_Ordinal(), this.getIntWithSuffix(), null, "ordinal", null, 0, 1, OrdinalCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(defaultFirstPredicateEClass, DefaultFirstPredicate.class, "DefaultFirstPredicate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEClass(lastConditionEClass, LastCondition.class, "LastCondition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(firstConditionEClass, FirstCondition.class, "FirstCondition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(verifyEClass, Verify.class, "Verify", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getVerify_Selector(), this.getSelector(), null, "selector", null, 0, 1, Verify.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getVerify_Properties(), this.getElementProperty(), null, "properties", null, 0, -1, Verify.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(ordinalIntegerEClass, OrdinalInteger.class, "OrdinalInteger", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getOrdinalInteger_Value(), ecorePackage.getEInt(), "value", null, 0, 1, OrdinalInteger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);
