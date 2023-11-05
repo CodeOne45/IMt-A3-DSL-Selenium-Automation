@@ -7,11 +7,7 @@
   <genPackages prefix="SeleniumDsl" basePackage="www.imta.fr.browserautomation" disposableProviderFactory="true"
       fileExtensions="selenium" ecorePackage="SeleniumDsl.ecore#/">
     <genClasses ecoreClass="SeleniumDsl.ecore#//BrowserDsl">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SeleniumDsl.ecore#//BrowserDsl/cases"/>
-    </genClasses>
-    <genClasses ecoreClass="SeleniumDsl.ecore#//TestCase">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SeleniumDsl.ecore#//TestCase/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SeleniumDsl.ecore#//TestCase/commands"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SeleniumDsl.ecore#//BrowserDsl/commands"/>
     </genClasses>
     <genClasses ecoreClass="SeleniumDsl.ecore#//Command"/>
     <genClasses ecoreClass="SeleniumDsl.ecore#//OpenBrowser"/>

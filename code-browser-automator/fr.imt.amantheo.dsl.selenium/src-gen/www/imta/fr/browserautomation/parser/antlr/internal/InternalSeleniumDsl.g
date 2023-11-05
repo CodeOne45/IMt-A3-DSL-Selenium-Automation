@@ -78,98 +78,22 @@ ruleBrowserDsl returns [EObject current=null]
 	(
 		(
 			{
-				newCompositeNode(grammarAccess.getBrowserDslAccess().getCasesTestCaseParserRuleCall_0());
+				newCompositeNode(grammarAccess.getBrowserDslAccess().getCommandsCommandParserRuleCall_0());
 			}
-			lv_cases_0_0=ruleTestCase
+			lv_commands_0_0=ruleCommand
 			{
 				if ($current==null) {
 					$current = createModelElementForParent(grammarAccess.getBrowserDslRule());
 				}
 				add(
 					$current,
-					"cases",
-					lv_cases_0_0,
-					"www.imta.fr.browserautomation.SeleniumDsl.TestCase");
+					"commands",
+					lv_commands_0_0,
+					"www.imta.fr.browserautomation.SeleniumDsl.Command");
 				afterParserOrEnumRuleCall();
 			}
 		)
 	)*
-;
-
-// Entry rule entryRuleTestCase
-entryRuleTestCase returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getTestCaseRule()); }
-	iv_ruleTestCase=ruleTestCase
-	{ $current=$iv_ruleTestCase.current; }
-	EOF;
-
-// Rule TestCase
-ruleTestCase returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		otherlv_0='Test'
-		{
-			newLeafNode(otherlv_0, grammarAccess.getTestCaseAccess().getTestKeyword_0());
-		}
-		otherlv_1='case'
-		{
-			newLeafNode(otherlv_1, grammarAccess.getTestCaseAccess().getCaseKeyword_1());
-		}
-		otherlv_2=':'
-		{
-			newLeafNode(otherlv_2, grammarAccess.getTestCaseAccess().getColonKeyword_2());
-		}
-		(
-			(
-				lv_name_3_0=RULE_STRING
-				{
-					newLeafNode(lv_name_3_0, grammarAccess.getTestCaseAccess().getNameSTRINGTerminalRuleCall_3_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getTestCaseRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"name",
-						lv_name_3_0,
-						"org.eclipse.xtext.common.Terminals.STRING");
-				}
-			)
-		)
-		otherlv_4='***'
-		{
-			newLeafNode(otherlv_4, grammarAccess.getTestCaseAccess().getAsteriskAsteriskAsteriskKeyword_4());
-		}
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getTestCaseAccess().getCommandsCommandParserRuleCall_5_0());
-				}
-				lv_commands_5_0=ruleCommand
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getTestCaseRule());
-					}
-					add(
-						$current,
-						"commands",
-						lv_commands_5_0,
-						"www.imta.fr.browserautomation.SeleniumDsl.Command");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)*
-		otherlv_6='***'
-		{
-			newLeafNode(otherlv_6, grammarAccess.getTestCaseAccess().getAsteriskAsteriskAsteriskKeyword_6());
-		}
-	)
 ;
 
 // Entry rule entryRuleCommand

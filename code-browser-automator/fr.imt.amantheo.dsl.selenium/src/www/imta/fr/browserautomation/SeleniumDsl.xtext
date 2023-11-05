@@ -4,13 +4,8 @@ generate seleniumDsl "http://www.imta.www/fr/browserautomation/SeleniumDsl"
 
 
 BrowserDsl:
-    cases+=TestCase*;
+    commands+=Command*;
 
-TestCase:
-	'Test' 'case' ':' name=STRING '***' 
-    commands+=Command*
-	'***'
-;
 Command:
     OpenBrowser |
     GoTo |

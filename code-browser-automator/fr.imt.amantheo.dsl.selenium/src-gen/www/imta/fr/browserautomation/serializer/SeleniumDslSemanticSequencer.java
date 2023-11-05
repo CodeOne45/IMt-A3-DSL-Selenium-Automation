@@ -34,7 +34,6 @@ import www.imta.fr.browserautomation.seleniumDsl.Properties;
 import www.imta.fr.browserautomation.seleniumDsl.Selector;
 import www.imta.fr.browserautomation.seleniumDsl.SeleniumDslPackage;
 import www.imta.fr.browserautomation.seleniumDsl.StringContent;
-import www.imta.fr.browserautomation.seleniumDsl.TestCase;
 import www.imta.fr.browserautomation.seleniumDsl.Verify;
 import www.imta.fr.browserautomation.services.SeleniumDslGrammarAccess;
 
@@ -109,9 +108,6 @@ public class SeleniumDslSemanticSequencer extends AbstractDelegatingSemanticSequ
 			case SeleniumDslPackage.STRING_CONTENT:
 				sequence_StringContent(context, (StringContent) semanticObject); 
 				return; 
-			case SeleniumDslPackage.TEST_CASE:
-				sequence_TestCase(context, (TestCase) semanticObject); 
-				return; 
 			case SeleniumDslPackage.VERIFY:
 				sequence_Verify(context, (Verify) semanticObject); 
 				return; 
@@ -155,7 +151,7 @@ public class SeleniumDslSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     BrowserDsl returns BrowserDsl
 	 *
 	 * Constraint:
-	 *     cases+=TestCase+
+	 *     commands+=Command+
 	 * </pre>
 	 */
 	protected void sequence_BrowserDsl(ISerializationContext context, BrowserDsl semanticObject) {
@@ -481,20 +477,6 @@ public class SeleniumDslSemanticSequencer extends AbstractDelegatingSemanticSequ
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getStringContentAccess().getValueSTRINGTerminalRuleCall_0(), semanticObject.getValue());
 		feeder.finish();
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     TestCase returns TestCase
-	 *
-	 * Constraint:
-	 *     (name=STRING commands+=Command*)
-	 * </pre>
-	 */
-	protected void sequence_TestCase(ISerializationContext context, TestCase semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

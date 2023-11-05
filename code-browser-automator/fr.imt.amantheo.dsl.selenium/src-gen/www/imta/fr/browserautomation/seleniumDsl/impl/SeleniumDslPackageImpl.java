@@ -35,7 +35,6 @@ import www.imta.fr.browserautomation.seleniumDsl.SelectorPredicate;
 import www.imta.fr.browserautomation.seleniumDsl.SeleniumDslFactory;
 import www.imta.fr.browserautomation.seleniumDsl.SeleniumDslPackage;
 import www.imta.fr.browserautomation.seleniumDsl.StringContent;
-import www.imta.fr.browserautomation.seleniumDsl.TestCase;
 import www.imta.fr.browserautomation.seleniumDsl.Verify;
 
 /**
@@ -52,13 +51,6 @@ public class SeleniumDslPackageImpl extends EPackageImpl implements SeleniumDslP
    * @generated
    */
   private EClass browserDslEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass testCaseEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -300,42 +292,9 @@ public class SeleniumDslPackageImpl extends EPackageImpl implements SeleniumDslP
    * @generated
    */
   @Override
-  public EReference getBrowserDsl_Cases()
+  public EReference getBrowserDsl_Commands()
   {
     return (EReference)browserDslEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getTestCase()
-  {
-    return testCaseEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getTestCase_Name()
-  {
-    return (EAttribute)testCaseEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getTestCase_Commands()
-  {
-    return (EReference)testCaseEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -931,11 +890,7 @@ public class SeleniumDslPackageImpl extends EPackageImpl implements SeleniumDslP
 
     // Create classes and their features
     browserDslEClass = createEClass(BROWSER_DSL);
-    createEReference(browserDslEClass, BROWSER_DSL__CASES);
-
-    testCaseEClass = createEClass(TEST_CASE);
-    createEAttribute(testCaseEClass, TEST_CASE__NAME);
-    createEReference(testCaseEClass, TEST_CASE__COMMANDS);
+    createEReference(browserDslEClass, BROWSER_DSL__COMMANDS);
 
     commandEClass = createEClass(COMMAND);
 
@@ -1058,11 +1013,7 @@ public class SeleniumDslPackageImpl extends EPackageImpl implements SeleniumDslP
 
     // Initialize classes and features; add operations and parameters
     initEClass(browserDslEClass, BrowserDsl.class, "BrowserDsl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getBrowserDsl_Cases(), this.getTestCase(), null, "cases", null, 0, -1, BrowserDsl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(testCaseEClass, TestCase.class, "TestCase", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getTestCase_Name(), ecorePackage.getEString(), "name", null, 0, 1, TestCase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getTestCase_Commands(), this.getCommand(), null, "commands", null, 0, -1, TestCase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getBrowserDsl_Commands(), this.getCommand(), null, "commands", null, 0, -1, BrowserDsl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(commandEClass, Command.class, "Command", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

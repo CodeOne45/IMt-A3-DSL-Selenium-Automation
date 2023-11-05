@@ -66,7 +66,6 @@ public class SeleniumDslFactoryImpl extends EFactoryImpl implements SeleniumDslF
     switch (eClass.getClassifierID())
     {
       case SeleniumDslPackage.BROWSER_DSL: return createBrowserDsl();
-      case SeleniumDslPackage.TEST_CASE: return createTestCase();
       case SeleniumDslPackage.COMMAND: return createCommand();
       case SeleniumDslPackage.OPEN_BROWSER: return createOpenBrowser();
       case SeleniumDslPackage.DOM_COMMAND: return createDOMCommand();
@@ -105,18 +104,6 @@ public class SeleniumDslFactoryImpl extends EFactoryImpl implements SeleniumDslF
   {
     BrowserDslImpl browserDsl = new BrowserDslImpl();
     return browserDsl;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public TestCase createTestCase()
-  {
-    TestCaseImpl testCase = new TestCaseImpl();
-    return testCase;
   }
 
   /**

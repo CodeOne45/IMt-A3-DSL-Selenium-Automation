@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link www.imta.fr.browserautomation.seleniumDsl.BrowserDsl#getCases <em>Cases</em>}</li>
+ *   <li>{@link www.imta.fr.browserautomation.seleniumDsl.BrowserDsl#getCommands <em>Commands</em>}</li>
  * </ul>
  *
  * @see www.imta.fr.browserautomation.seleniumDsl.SeleniumDslPackage#getBrowserDsl()
@@ -26,15 +26,15 @@ import org.eclipse.emf.ecore.EObject;
 public interface BrowserDsl extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Cases</b></em>' containment reference list.
-   * The list contents are of type {@link www.imta.fr.browserautomation.seleniumDsl.TestCase}.
+   * Returns the value of the '<em><b>Commands</b></em>' containment reference list.
+   * The list contents are of type {@link www.imta.fr.browserautomation.seleniumDsl.Command}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Cases</em>' containment reference list.
-   * @see www.imta.fr.browserautomation.seleniumDsl.SeleniumDslPackage#getBrowserDsl_Cases()
+   * @return the value of the '<em>Commands</em>' containment reference list.
+   * @see www.imta.fr.browserautomation.seleniumDsl.SeleniumDslPackage#getBrowserDsl_Commands()
    * @model containment="true"
    * @generated
    */
-  EList<TestCase> getCases();
+  EList<Command> getCommands();
 
 } // BrowserDsl

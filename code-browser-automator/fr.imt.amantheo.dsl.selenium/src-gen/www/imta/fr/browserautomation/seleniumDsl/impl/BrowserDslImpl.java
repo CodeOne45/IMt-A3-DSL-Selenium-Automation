@@ -18,8 +18,8 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import www.imta.fr.browserautomation.seleniumDsl.BrowserDsl;
+import www.imta.fr.browserautomation.seleniumDsl.Command;
 import www.imta.fr.browserautomation.seleniumDsl.SeleniumDslPackage;
-import www.imta.fr.browserautomation.seleniumDsl.TestCase;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,7 +29,7 @@ import www.imta.fr.browserautomation.seleniumDsl.TestCase;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link www.imta.fr.browserautomation.seleniumDsl.impl.BrowserDslImpl#getCases <em>Cases</em>}</li>
+ *   <li>{@link www.imta.fr.browserautomation.seleniumDsl.impl.BrowserDslImpl#getCommands <em>Commands</em>}</li>
  * </ul>
  *
  * @generated
@@ -37,14 +37,14 @@ import www.imta.fr.browserautomation.seleniumDsl.TestCase;
 public class BrowserDslImpl extends MinimalEObjectImpl.Container implements BrowserDsl
 {
   /**
-   * The cached value of the '{@link #getCases() <em>Cases</em>}' containment reference list.
+   * The cached value of the '{@link #getCommands() <em>Commands</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getCases()
+   * @see #getCommands()
    * @generated
    * @ordered
    */
-  protected EList<TestCase> cases;
+  protected EList<Command> commands;
 
   /**
    * <!-- begin-user-doc -->
@@ -73,13 +73,13 @@ public class BrowserDslImpl extends MinimalEObjectImpl.Container implements Brow
    * @generated
    */
   @Override
-  public EList<TestCase> getCases()
+  public EList<Command> getCommands()
   {
-    if (cases == null)
+    if (commands == null)
     {
-      cases = new EObjectContainmentEList<TestCase>(TestCase.class, this, SeleniumDslPackage.BROWSER_DSL__CASES);
+      commands = new EObjectContainmentEList<Command>(Command.class, this, SeleniumDslPackage.BROWSER_DSL__COMMANDS);
     }
-    return cases;
+    return commands;
   }
 
   /**
@@ -92,8 +92,8 @@ public class BrowserDslImpl extends MinimalEObjectImpl.Container implements Brow
   {
     switch (featureID)
     {
-      case SeleniumDslPackage.BROWSER_DSL__CASES:
-        return ((InternalEList<?>)getCases()).basicRemove(otherEnd, msgs);
+      case SeleniumDslPackage.BROWSER_DSL__COMMANDS:
+        return ((InternalEList<?>)getCommands()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -108,8 +108,8 @@ public class BrowserDslImpl extends MinimalEObjectImpl.Container implements Brow
   {
     switch (featureID)
     {
-      case SeleniumDslPackage.BROWSER_DSL__CASES:
-        return getCases();
+      case SeleniumDslPackage.BROWSER_DSL__COMMANDS:
+        return getCommands();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -125,9 +125,9 @@ public class BrowserDslImpl extends MinimalEObjectImpl.Container implements Brow
   {
     switch (featureID)
     {
-      case SeleniumDslPackage.BROWSER_DSL__CASES:
-        getCases().clear();
-        getCases().addAll((Collection<? extends TestCase>)newValue);
+      case SeleniumDslPackage.BROWSER_DSL__COMMANDS:
+        getCommands().clear();
+        getCommands().addAll((Collection<? extends Command>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -143,8 +143,8 @@ public class BrowserDslImpl extends MinimalEObjectImpl.Container implements Brow
   {
     switch (featureID)
     {
-      case SeleniumDslPackage.BROWSER_DSL__CASES:
-        getCases().clear();
+      case SeleniumDslPackage.BROWSER_DSL__COMMANDS:
+        getCommands().clear();
         return;
     }
     super.eUnset(featureID);
@@ -160,8 +160,8 @@ public class BrowserDslImpl extends MinimalEObjectImpl.Container implements Brow
   {
     switch (featureID)
     {
-      case SeleniumDslPackage.BROWSER_DSL__CASES:
-        return cases != null && !cases.isEmpty();
+      case SeleniumDslPackage.BROWSER_DSL__COMMANDS:
+        return commands != null && !commands.isEmpty();
     }
     return super.eIsSet(featureID);
   }

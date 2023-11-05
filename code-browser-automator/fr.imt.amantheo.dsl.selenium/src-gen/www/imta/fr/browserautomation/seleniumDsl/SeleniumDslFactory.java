@@ -33,15 +33,6 @@ public interface SeleniumDslFactory extends EFactory
   BrowserDsl createBrowserDsl();
 
   /**
-   * Returns a new object of class '<em>Test Case</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Test Case</em>'.
-   * @generated
-   */
-  TestCase createTestCase();
-
-  /**
    * Returns a new object of class '<em>Command</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

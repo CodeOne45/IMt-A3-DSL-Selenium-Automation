@@ -81,11 +81,6 @@ public class SeleniumDslAdapterFactory extends AdapterFactoryImpl
         return createBrowserDslAdapter();
       }
       @Override
-      public Adapter caseTestCase(TestCase object)
-      {
-        return createTestCaseAdapter();
-      }
-      @Override
       public Adapter caseCommand(Command object)
       {
         return createCommandAdapter();
@@ -233,21 +228,6 @@ public class SeleniumDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createBrowserDslAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link www.imta.fr.browserautomation.seleniumDsl.TestCase <em>Test Case</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see www.imta.fr.browserautomation.seleniumDsl.TestCase
-   * @generated
-   */
-  public Adapter createTestCaseAdapter()
   {
     return null;
   }

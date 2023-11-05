@@ -38,7 +38,6 @@ public class SeleniumDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getElementPropertyAccess().getPropertyAlternatives_1_0(), "rule__ElementProperty__PropertyAlternatives_1_0");
 			builder.put(grammarAccess.getSelectorPredicateAccess().getAlternatives(), "rule__SelectorPredicate__Alternatives");
 			builder.put(grammarAccess.getMatcherAccess().getAlternatives(), "rule__Matcher__Alternatives");
-			builder.put(grammarAccess.getTestCaseAccess().getGroup(), "rule__TestCase__Group__0");
 			builder.put(grammarAccess.getOpenBrowserAccess().getGroup(), "rule__OpenBrowser__Group__0");
 			builder.put(grammarAccess.getGoToAccess().getGroup(), "rule__GoTo__Group__0");
 			builder.put(grammarAccess.getClickAccess().getGroup(), "rule__Click__Group__0");
@@ -65,9 +64,7 @@ public class SeleniumDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getVerifyAccess().getGroup(), "rule__Verify__Group__0");
 			builder.put(grammarAccess.getVerifyAccess().getGroup_5(), "rule__Verify__Group_5__0");
 			builder.put(grammarAccess.getOrdinalIntegerAccess().getGroup(), "rule__OrdinalInteger__Group__0");
-			builder.put(grammarAccess.getBrowserDslAccess().getCasesAssignment(), "rule__BrowserDsl__CasesAssignment");
-			builder.put(grammarAccess.getTestCaseAccess().getNameAssignment_3(), "rule__TestCase__NameAssignment_3");
-			builder.put(grammarAccess.getTestCaseAccess().getCommandsAssignment_5(), "rule__TestCase__CommandsAssignment_5");
+			builder.put(grammarAccess.getBrowserDslAccess().getCommandsAssignment(), "rule__BrowserDsl__CommandsAssignment");
 			builder.put(grammarAccess.getGoToAccess().getUrlAssignment_2(), "rule__GoTo__UrlAssignment_2");
 			builder.put(grammarAccess.getClickAccess().getElementAssignment_2(), "rule__Click__ElementAssignment_2");
 			builder.put(grammarAccess.getCopyAccess().getPropertyAssignment_4(), "rule__Copy__PropertyAssignment_4");

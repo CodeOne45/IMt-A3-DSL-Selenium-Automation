@@ -25,70 +25,18 @@ public class SeleniumDslGrammarAccess extends AbstractElementFinder.AbstractGram
 	
 	public class BrowserDslElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "www.imta.fr.browserautomation.SeleniumDsl.BrowserDsl");
-		private final Assignment cCasesAssignment = (Assignment)rule.eContents().get(1);
-		private final RuleCall cCasesTestCaseParserRuleCall_0 = (RuleCall)cCasesAssignment.eContents().get(0);
+		private final Assignment cCommandsAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cCommandsCommandParserRuleCall_0 = (RuleCall)cCommandsAssignment.eContents().get(0);
 		
 		//BrowserDsl:
-		//    cases+=TestCase*;
+		//    commands+=Command*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//cases+=TestCase*
-		public Assignment getCasesAssignment() { return cCasesAssignment; }
-		
-		//TestCase
-		public RuleCall getCasesTestCaseParserRuleCall_0() { return cCasesTestCaseParserRuleCall_0; }
-	}
-	public class TestCaseElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "www.imta.fr.browserautomation.SeleniumDsl.TestCase");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cTestKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cCaseKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cNameAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cNameSTRINGTerminalRuleCall_3_0 = (RuleCall)cNameAssignment_3.eContents().get(0);
-		private final Keyword cAsteriskAsteriskAsteriskKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cCommandsAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cCommandsCommandParserRuleCall_5_0 = (RuleCall)cCommandsAssignment_5.eContents().get(0);
-		private final Keyword cAsteriskAsteriskAsteriskKeyword_6 = (Keyword)cGroup.eContents().get(6);
-		
-		//TestCase:
-		//    'Test' 'case' ':' name=STRING '***'
-		//    commands+=Command*
-		//    '***'
-		//;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'Test' 'case' ':' name=STRING '***'
 		//commands+=Command*
-		//'***'
-		public Group getGroup() { return cGroup; }
-		
-		//'Test'
-		public Keyword getTestKeyword_0() { return cTestKeyword_0; }
-		
-		//'case'
-		public Keyword getCaseKeyword_1() { return cCaseKeyword_1; }
-		
-		//':'
-		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
-		
-		//name=STRING
-		public Assignment getNameAssignment_3() { return cNameAssignment_3; }
-		
-		//STRING
-		public RuleCall getNameSTRINGTerminalRuleCall_3_0() { return cNameSTRINGTerminalRuleCall_3_0; }
-		
-		//'***'
-		public Keyword getAsteriskAsteriskAsteriskKeyword_4() { return cAsteriskAsteriskAsteriskKeyword_4; }
-		
-		//commands+=Command*
-		public Assignment getCommandsAssignment_5() { return cCommandsAssignment_5; }
+		public Assignment getCommandsAssignment() { return cCommandsAssignment; }
 		
 		//Command
-		public RuleCall getCommandsCommandParserRuleCall_5_0() { return cCommandsCommandParserRuleCall_5_0; }
-		
-		//'***'
-		public Keyword getAsteriskAsteriskAsteriskKeyword_6() { return cAsteriskAsteriskAsteriskKeyword_6; }
+		public RuleCall getCommandsCommandParserRuleCall_0() { return cCommandsCommandParserRuleCall_0; }
 	}
 	public class CommandElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "www.imta.fr.browserautomation.SeleniumDsl.Command");
@@ -954,7 +902,6 @@ public class SeleniumDslGrammarAccess extends AbstractElementFinder.AbstractGram
 	
 	
 	private final BrowserDslElements pBrowserDsl;
-	private final TestCaseElements pTestCase;
 	private final CommandElements pCommand;
 	private final OpenBrowserElements pOpenBrowser;
 	private final DOMCommandElements pDOMCommand;
@@ -992,7 +939,6 @@ public class SeleniumDslGrammarAccess extends AbstractElementFinder.AbstractGram
 		this.grammar = internalFindGrammar(grammarProvider);
 		this.gaTerminals = gaTerminals;
 		this.pBrowserDsl = new BrowserDslElements();
-		this.pTestCase = new TestCaseElements();
 		this.pCommand = new CommandElements();
 		this.pOpenBrowser = new OpenBrowserElements();
 		this.pDOMCommand = new DOMCommandElements();
@@ -1049,26 +995,13 @@ public class SeleniumDslGrammarAccess extends AbstractElementFinder.AbstractGram
 
 	
 	//BrowserDsl:
-	//    cases+=TestCase*;
+	//    commands+=Command*;
 	public BrowserDslElements getBrowserDslAccess() {
 		return pBrowserDsl;
 	}
 	
 	public ParserRule getBrowserDslRule() {
 		return getBrowserDslAccess().getRule();
-	}
-	
-	//TestCase:
-	//    'Test' 'case' ':' name=STRING '***'
-	//    commands+=Command*
-	//    '***'
-	//;
-	public TestCaseElements getTestCaseAccess() {
-		return pTestCase;
-	}
-	
-	public ParserRule getTestCaseRule() {
-		return getTestCaseAccess().getRule();
 	}
 	
 	//Command:

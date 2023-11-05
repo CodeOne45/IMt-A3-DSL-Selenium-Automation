@@ -68,13 +68,13 @@ public interface SeleniumDslPackage extends EPackage
   int BROWSER_DSL = 0;
 
   /**
-   * The feature id for the '<em><b>Cases</b></em>' containment reference list.
+   * The feature id for the '<em><b>Commands</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int BROWSER_DSL__CASES = 0;
+  int BROWSER_DSL__COMMANDS = 0;
 
   /**
    * The number of structural features of the '<em>Browser Dsl</em>' class.
@@ -86,43 +86,6 @@ public interface SeleniumDslPackage extends EPackage
   int BROWSER_DSL_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link www.imta.fr.browserautomation.seleniumDsl.impl.TestCaseImpl <em>Test Case</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see www.imta.fr.browserautomation.seleniumDsl.impl.TestCaseImpl
-   * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getTestCase()
-   * @generated
-   */
-  int TEST_CASE = 1;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TEST_CASE__NAME = 0;
-
-  /**
-   * The feature id for the '<em><b>Commands</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TEST_CASE__COMMANDS = 1;
-
-  /**
-   * The number of structural features of the '<em>Test Case</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TEST_CASE_FEATURE_COUNT = 2;
-
-  /**
    * The meta object id for the '{@link www.imta.fr.browserautomation.seleniumDsl.impl.CommandImpl <em>Command</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -130,7 +93,7 @@ public interface SeleniumDslPackage extends EPackage
    * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getCommand()
    * @generated
    */
-  int COMMAND = 2;
+  int COMMAND = 1;
 
   /**
    * The number of structural features of the '<em>Command</em>' class.
@@ -149,7 +112,7 @@ public interface SeleniumDslPackage extends EPackage
    * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getOpenBrowser()
    * @generated
    */
-  int OPEN_BROWSER = 3;
+  int OPEN_BROWSER = 2;
 
   /**
    * The number of structural features of the '<em>Open Browser</em>' class.
@@ -168,7 +131,7 @@ public interface SeleniumDslPackage extends EPackage
    * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getDOMCommand()
    * @generated
    */
-  int DOM_COMMAND = 4;
+  int DOM_COMMAND = 3;
 
   /**
    * The number of structural features of the '<em>DOM Command</em>' class.
@@ -187,7 +150,7 @@ public interface SeleniumDslPackage extends EPackage
    * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getGoTo()
    * @generated
    */
-  int GO_TO = 5;
+  int GO_TO = 4;
 
   /**
    * The feature id for the '<em><b>Url</b></em>' attribute.
@@ -215,7 +178,7 @@ public interface SeleniumDslPackage extends EPackage
    * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getClick()
    * @generated
    */
-  int CLICK = 6;
+  int CLICK = 5;
 
   /**
    * The feature id for the '<em><b>Element</b></em>' containment reference.
@@ -243,7 +206,7 @@ public interface SeleniumDslPackage extends EPackage
    * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getCopy()
    * @generated
    */
-  int COPY = 7;
+  int COPY = 6;
 
   /**
    * The feature id for the '<em><b>Property</b></em>' attribute.
@@ -289,7 +252,7 @@ public interface SeleniumDslPackage extends EPackage
    * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getPaste()
    * @generated
    */
-  int PASTE = 8;
+  int PASTE = 7;
 
   /**
    * The feature id for the '<em><b>Element</b></em>' containment reference.
@@ -317,7 +280,7 @@ public interface SeleniumDslPackage extends EPackage
    * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getInsert()
    * @generated
    */
-  int INSERT = 9;
+  int INSERT = 8;
 
   /**
    * The feature id for the '<em><b>Element</b></em>' containment reference.
@@ -354,7 +317,7 @@ public interface SeleniumDslPackage extends EPackage
    * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getSelector()
    * @generated
    */
-  int SELECTOR = 10;
+  int SELECTOR = 9;
 
   /**
    * The feature id for the '<em><b>Predicate</b></em>' containment reference.
@@ -427,7 +390,7 @@ public interface SeleniumDslPackage extends EPackage
    * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getAttributes()
    * @generated
    */
-  int ATTRIBUTES = 11;
+  int ATTRIBUTES = 10;
 
   /**
    * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
@@ -464,7 +427,7 @@ public interface SeleniumDslPackage extends EPackage
    * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getElementAttribute()
    * @generated
    */
-  int ELEMENT_ATTRIBUTE = 12;
+  int ELEMENT_ATTRIBUTE = 11;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -510,7 +473,7 @@ public interface SeleniumDslPackage extends EPackage
    * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getContent()
    * @generated
    */
-  int CONTENT = 13;
+  int CONTENT = 12;
 
   /**
    * The number of structural features of the '<em>Content</em>' class.
@@ -529,7 +492,7 @@ public interface SeleniumDslPackage extends EPackage
    * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getClipboardContent()
    * @generated
    */
-  int CLIPBOARD_CONTENT = 14;
+  int CLIPBOARD_CONTENT = 13;
 
   /**
    * The feature id for the '<em><b>Key</b></em>' attribute.
@@ -557,7 +520,7 @@ public interface SeleniumDslPackage extends EPackage
    * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getStringContent()
    * @generated
    */
-  int STRING_CONTENT = 15;
+  int STRING_CONTENT = 14;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -585,7 +548,7 @@ public interface SeleniumDslPackage extends EPackage
    * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getProperties()
    * @generated
    */
-  int PROPERTIES = 16;
+  int PROPERTIES = 15;
 
   /**
    * The feature id for the '<em><b>Properties</b></em>' containment reference list.
@@ -613,7 +576,7 @@ public interface SeleniumDslPackage extends EPackage
    * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getElementProperty()
    * @generated
    */
-  int ELEMENT_PROPERTY = 17;
+  int ELEMENT_PROPERTY = 16;
 
   /**
    * The feature id for the '<em><b>Negated</b></em>' attribute.
@@ -650,7 +613,7 @@ public interface SeleniumDslPackage extends EPackage
    * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getSelectorPredicate()
    * @generated
    */
-  int SELECTOR_PREDICATE = 18;
+  int SELECTOR_PREDICATE = 17;
 
   /**
    * The number of structural features of the '<em>Selector Predicate</em>' class.
@@ -669,7 +632,7 @@ public interface SeleniumDslPackage extends EPackage
    * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getAllPredicate()
    * @generated
    */
-  int ALL_PREDICATE = 19;
+  int ALL_PREDICATE = 18;
 
   /**
    * The number of structural features of the '<em>All Predicate</em>' class.
@@ -688,7 +651,7 @@ public interface SeleniumDslPackage extends EPackage
    * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getOrdinalPredicate()
    * @generated
    */
-  int ORDINAL_PREDICATE = 20;
+  int ORDINAL_PREDICATE = 19;
 
   /**
    * The feature id for the '<em><b>Ordinal</b></em>' containment reference.
@@ -716,7 +679,7 @@ public interface SeleniumDslPackage extends EPackage
    * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getLastPredicate()
    * @generated
    */
-  int LAST_PREDICATE = 21;
+  int LAST_PREDICATE = 20;
 
   /**
    * The number of structural features of the '<em>Last Predicate</em>' class.
@@ -735,7 +698,7 @@ public interface SeleniumDslPackage extends EPackage
    * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getDefaultFirstPredicate()
    * @generated
    */
-  int DEFAULT_FIRST_PREDICATE = 22;
+  int DEFAULT_FIRST_PREDICATE = 21;
 
   /**
    * The number of structural features of the '<em>Default First Predicate</em>' class.
@@ -754,7 +717,7 @@ public interface SeleniumDslPackage extends EPackage
    * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getVerify()
    * @generated
    */
-  int VERIFY = 23;
+  int VERIFY = 22;
 
   /**
    * The feature id for the '<em><b>Selector</b></em>' containment reference.
@@ -791,7 +754,7 @@ public interface SeleniumDslPackage extends EPackage
    * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getOrdinalInteger()
    * @generated
    */
-  int ORDINAL_INTEGER = 24;
+  int ORDINAL_INTEGER = 23;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -823,47 +786,15 @@ public interface SeleniumDslPackage extends EPackage
   EClass getBrowserDsl();
 
   /**
-   * Returns the meta object for the containment reference list '{@link www.imta.fr.browserautomation.seleniumDsl.BrowserDsl#getCases <em>Cases</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Cases</em>'.
-   * @see www.imta.fr.browserautomation.seleniumDsl.BrowserDsl#getCases()
-   * @see #getBrowserDsl()
-   * @generated
-   */
-  EReference getBrowserDsl_Cases();
-
-  /**
-   * Returns the meta object for class '{@link www.imta.fr.browserautomation.seleniumDsl.TestCase <em>Test Case</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Test Case</em>'.
-   * @see www.imta.fr.browserautomation.seleniumDsl.TestCase
-   * @generated
-   */
-  EClass getTestCase();
-
-  /**
-   * Returns the meta object for the attribute '{@link www.imta.fr.browserautomation.seleniumDsl.TestCase#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see www.imta.fr.browserautomation.seleniumDsl.TestCase#getName()
-   * @see #getTestCase()
-   * @generated
-   */
-  EAttribute getTestCase_Name();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link www.imta.fr.browserautomation.seleniumDsl.TestCase#getCommands <em>Commands</em>}'.
+   * Returns the meta object for the containment reference list '{@link www.imta.fr.browserautomation.seleniumDsl.BrowserDsl#getCommands <em>Commands</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Commands</em>'.
-   * @see www.imta.fr.browserautomation.seleniumDsl.TestCase#getCommands()
-   * @see #getTestCase()
+   * @see www.imta.fr.browserautomation.seleniumDsl.BrowserDsl#getCommands()
+   * @see #getBrowserDsl()
    * @generated
    */
-  EReference getTestCase_Commands();
+  EReference getBrowserDsl_Commands();
 
   /**
    * Returns the meta object for class '{@link www.imta.fr.browserautomation.seleniumDsl.Command <em>Command</em>}'.
@@ -1437,38 +1368,12 @@ public interface SeleniumDslPackage extends EPackage
     EClass BROWSER_DSL = eINSTANCE.getBrowserDsl();
 
     /**
-     * The meta object literal for the '<em><b>Cases</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference BROWSER_DSL__CASES = eINSTANCE.getBrowserDsl_Cases();
-
-    /**
-     * The meta object literal for the '{@link www.imta.fr.browserautomation.seleniumDsl.impl.TestCaseImpl <em>Test Case</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see www.imta.fr.browserautomation.seleniumDsl.impl.TestCaseImpl
-     * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getTestCase()
-     * @generated
-     */
-    EClass TEST_CASE = eINSTANCE.getTestCase();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute TEST_CASE__NAME = eINSTANCE.getTestCase_Name();
-
-    /**
      * The meta object literal for the '<em><b>Commands</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference TEST_CASE__COMMANDS = eINSTANCE.getTestCase_Commands();
+    EReference BROWSER_DSL__COMMANDS = eINSTANCE.getBrowserDsl_Commands();
 
     /**
      * The meta object literal for the '{@link www.imta.fr.browserautomation.seleniumDsl.impl.CommandImpl <em>Command</em>}' class.
