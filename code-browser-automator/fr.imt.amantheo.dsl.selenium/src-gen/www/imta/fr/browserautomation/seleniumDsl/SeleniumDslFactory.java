@@ -51,15 +51,6 @@ public interface SeleniumDslFactory extends EFactory
   OpenBrowser createOpenBrowser();
 
   /**
-   * Returns a new object of class '<em>DOM Command</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>DOM Command</em>'.
-   * @generated
-   */
-  DOMCommand createDOMCommand();
-
-  /**
    * Returns a new object of class '<em>Go To</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -78,157 +69,22 @@ public interface SeleniumDslFactory extends EFactory
   Click createClick();
 
   /**
-   * Returns a new object of class '<em>Copy</em>'.
+   * Returns a new object of class '<em>Fill</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Copy</em>'.
+   * @return a new object of class '<em>Fill</em>'.
    * @generated
    */
-  Copy createCopy();
+  Fill createFill();
 
   /**
-   * Returns a new object of class '<em>Paste</em>'.
+   * Returns a new object of class '<em>Select</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Paste</em>'.
+   * @return a new object of class '<em>Select</em>'.
    * @generated
    */
-  Paste createPaste();
-
-  /**
-   * Returns a new object of class '<em>Insert</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Insert</em>'.
-   * @generated
-   */
-  Insert createInsert();
-
-  /**
-   * Returns a new object of class '<em>Selector</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Selector</em>'.
-   * @generated
-   */
-  Selector createSelector();
-
-  /**
-   * Returns a new object of class '<em>Attributes</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Attributes</em>'.
-   * @generated
-   */
-  Attributes createAttributes();
-
-  /**
-   * Returns a new object of class '<em>Element Attribute</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Element Attribute</em>'.
-   * @generated
-   */
-  ElementAttribute createElementAttribute();
-
-  /**
-   * Returns a new object of class '<em>Content</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Content</em>'.
-   * @generated
-   */
-  Content createContent();
-
-  /**
-   * Returns a new object of class '<em>Clipboard Content</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Clipboard Content</em>'.
-   * @generated
-   */
-  ClipboardContent createClipboardContent();
-
-  /**
-   * Returns a new object of class '<em>String Content</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>String Content</em>'.
-   * @generated
-   */
-  StringContent createStringContent();
-
-  /**
-   * Returns a new object of class '<em>Properties</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Properties</em>'.
-   * @generated
-   */
-  Properties createProperties();
-
-  /**
-   * Returns a new object of class '<em>Element Property</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Element Property</em>'.
-   * @generated
-   */
-  ElementProperty createElementProperty();
-
-  /**
-   * Returns a new object of class '<em>Selector Predicate</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Selector Predicate</em>'.
-   * @generated
-   */
-  SelectorPredicate createSelectorPredicate();
-
-  /**
-   * Returns a new object of class '<em>All Condition</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>All Condition</em>'.
-   * @generated
-   */
-  AllCondition createAllCondition();
-
-  /**
-   * Returns a new object of class '<em>Int With Suffix</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Int With Suffix</em>'.
-   * @generated
-   */
-  IntWithSuffix createIntWithSuffix();
-
-  /**
-   * Returns a new object of class '<em>Ordinal Condition</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Ordinal Condition</em>'.
-   * @generated
-   */
-  OrdinalCondition createOrdinalCondition();
-
-  /**
-   * Returns a new object of class '<em>Last Condition</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Last Condition</em>'.
-   * @generated
-   */
-  LastCondition createLastCondition();
-
-  /**
-   * Returns a new object of class '<em>First Condition</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>First Condition</em>'.
-   * @generated
-   */
-  FirstCondition createFirstCondition();
+  Select createSelect();
 
   /**
    * Returns a new object of class '<em>Verify</em>'.
@@ -238,6 +94,33 @@ public interface SeleniumDslFactory extends EFactory
    * @generated
    */
   Verify createVerify();
+
+  /**
+   * Returns a new object of class '<em>Read</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Read</em>'.
+   * @generated
+   */
+  Read createRead();
+
+  /**
+   * Returns a new object of class '<em>Uncheck</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Uncheck</em>'.
+   * @generated
+   */
+  Uncheck createUncheck();
+
+  /**
+   * Returns a new object of class '<em>Combobox</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Combobox</em>'.
+   * @generated
+   */
+  Combobox createCombobox();
 
   /**
    * Returns the package supported by this factory.

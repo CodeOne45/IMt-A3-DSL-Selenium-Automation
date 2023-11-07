@@ -1,4 +1,4 @@
 open a browser window
-go to http://www.imt-atlantique.fr/fr
-click on the "link" with properties text containing "Toutes les actualités" that is visible
-verify that the "link" with properties text containing "Accueil" that is visible is visible
+go to url http://www.imt-atlantique.fr/fr
+click on the link "Toutes les actualités"
+verify that the page contains the link "Accueil"

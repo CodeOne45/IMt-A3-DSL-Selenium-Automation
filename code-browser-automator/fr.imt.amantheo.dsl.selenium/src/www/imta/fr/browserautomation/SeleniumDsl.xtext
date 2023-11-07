@@ -4,86 +4,43 @@ generate seleniumDsl "http://www.imta.www/fr/browserautomation/SeleniumDsl"
 
 BrowserDsl:
     commands+=Command*;
-    
-// Define common terminal rules
-terminal Suffix: 'st' | 'nd' | 'rd' | 'th';
-terminal HTML_ATTRIBUTE: ('a'..'z'|'A'..'Z'|'_'|'-') ('a'..'z'|'A'..'Z'|'_'|'-'|'0'..'9')*;
+
 terminal URL: ('http' 's'? '://')? (DOMAIN) (':' DOMAIN)* ('.' DOMAIN)* ('/' ('~' | DOMAIN))* ('?' ('~' | DOMAIN))* ('#' ('~' | DOMAIN))?;
 terminal DOMAIN: ('a'..'z'|'A'..'Z'|'_'|'-') ('a'..'z'|'A'..'Z'|'_'|'0'..'9'|'-')*;
 
-
 Command:
-    OpenBrowser | GoTo | DOMCommand;
+    OpenBrowser | GoTo | Click | Fill | Select | Verify | Read | Uncheck | Combobox;
 
 OpenBrowser:
     {OpenBrowser} 'open' 'a' 'browser' 'window';
 
-DOMCommand:
-    Click | Copy | Paste | Verify | Insert;
-
 GoTo:
-    'go' 'to' (url=DynamicURL | 'URL')?;
+    'go' 'to' 'url' (url=DynamicURL | 'URL')?;
 
 Click:
-    {Click} (('click' 'on') | 'select') element=Selector;
+    {Click} 'click' 'on' 'the' ('link' linkText=STRING | 'button' buttonText=STRING | 'image' alt=STRING | 'variable' variable=DOMELEMENT);
 
-Copy:
-    {Copy} 'copy' 'the' 'property' property=HTML_ATTRIBUTE 'of' element=Selector 'as' key=STRING;
+Fill:
+    'fill' 'the' 'text' 'field' fieldName=STRING 'with' 'the' ( 'text' textToFill=STRING | 'variable' variable=DOMELEMENT);
 
-Paste:
-    'paste' 'the' 'content' 'of' 'the' 'clipboard' 'in' element=Selector;
-
-Insert:
-    'fill' element=Selector 'with' content=Content;
-
-Selector:
-    predicate=SelectorPredicate domType=STRING
-    ('with' 'properties' attributes=Attributes)?
-    ('with' 'associated' 'label' label=STRING)?
-    ('that' 'is' properties=Properties)?
-    ('in' parent=Selector)?;
-
-Attributes:
-    attributes+=ElementAttribute ('and' attributes+=ElementAttribute)?;
-
-ElementAttribute:
-    (name=HTML_ATTRIBUTE matcher=Matcher value=Content);
-
-Content: ClipboardContent | StringContent;
-
-ClipboardContent: 'the' 'saved' 'content' key=STRING;
-
-StringContent: value=STRING;
-
-Properties:
-    properties+=ElementProperty ('and' properties+=ElementProperty)?;
-
-ElementProperty:
-    negated=("not")? property=("selected" | "visible" | "enabled");
-
-SelectorPredicate:
-    AllCondition | OrdinalCondition | LastCondition | FirstCondition;
-
-AllCondition:
-    {AllCondition}'all' 'elements' 'of' 'type';
-
-IntWithSuffix:
-    value=INT Suffix;
-
-OrdinalCondition:
-    'the' ordinal=IntWithSuffix;
-
-LastCondition:
-    {LastCondition}'the' 'last';
-
-FirstCondition:
-    {FirstCondition} 'the';
-
-
-Matcher:
-    "containing" | "matching";
+Select:
+    'select' 'the' 'checkbox' 'with' 'values' values+=STRING (',' values+=STRING)*;
 
 Verify:
-    'verify' 'that' selector=Selector 'is' properties+=ElementProperty ('and' properties+=ElementProperty)?;
+    {Verify} 'verify' 'that' 'the' 'page' 'contains' 'the' ( 'string' textToVerify=STRING | 'link' linkToVerify=STRING | 'variable' variable=DOMELEMENT);
+
+Read:
+    'read' 'the' elements+=DOMELEMENT (',' elements+=DOMELEMENT)* 'of' 'the' 'link' linkText=STRING 'number' number=INT;
+
+Uncheck:
+    {Uncheck} 'uncheck' 'all' 'checkboxes';
+
+Combobox:
+	'choose' 'the' 'option' option=STRING 'in' 'the' 'combobox' label=STRING;
+	
+DOMELEMENT:
+	('link' | 'button' | 'image' | 'url' | 'text' 'link' | 'title');
+
 
 DynamicURL: (URL | STRING);
+  

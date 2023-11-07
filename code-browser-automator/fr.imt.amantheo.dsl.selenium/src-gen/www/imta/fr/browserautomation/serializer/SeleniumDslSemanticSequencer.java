@@ -14,26 +14,16 @@ import org.eclipse.xtext.serializer.ISerializationContext;
 import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
-import www.imta.fr.browserautomation.seleniumDsl.AllCondition;
-import www.imta.fr.browserautomation.seleniumDsl.Attributes;
 import www.imta.fr.browserautomation.seleniumDsl.BrowserDsl;
 import www.imta.fr.browserautomation.seleniumDsl.Click;
-import www.imta.fr.browserautomation.seleniumDsl.ClipboardContent;
-import www.imta.fr.browserautomation.seleniumDsl.Copy;
-import www.imta.fr.browserautomation.seleniumDsl.ElementAttribute;
-import www.imta.fr.browserautomation.seleniumDsl.ElementProperty;
-import www.imta.fr.browserautomation.seleniumDsl.FirstCondition;
+import www.imta.fr.browserautomation.seleniumDsl.Combobox;
+import www.imta.fr.browserautomation.seleniumDsl.Fill;
 import www.imta.fr.browserautomation.seleniumDsl.GoTo;
-import www.imta.fr.browserautomation.seleniumDsl.Insert;
-import www.imta.fr.browserautomation.seleniumDsl.IntWithSuffix;
-import www.imta.fr.browserautomation.seleniumDsl.LastCondition;
 import www.imta.fr.browserautomation.seleniumDsl.OpenBrowser;
-import www.imta.fr.browserautomation.seleniumDsl.OrdinalCondition;
-import www.imta.fr.browserautomation.seleniumDsl.Paste;
-import www.imta.fr.browserautomation.seleniumDsl.Properties;
-import www.imta.fr.browserautomation.seleniumDsl.Selector;
+import www.imta.fr.browserautomation.seleniumDsl.Read;
+import www.imta.fr.browserautomation.seleniumDsl.Select;
 import www.imta.fr.browserautomation.seleniumDsl.SeleniumDslPackage;
-import www.imta.fr.browserautomation.seleniumDsl.StringContent;
+import www.imta.fr.browserautomation.seleniumDsl.Uncheck;
 import www.imta.fr.browserautomation.seleniumDsl.Verify;
 import www.imta.fr.browserautomation.services.SeleniumDslGrammarAccess;
 
@@ -51,62 +41,32 @@ public class SeleniumDslSemanticSequencer extends AbstractDelegatingSemanticSequ
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == SeleniumDslPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
-			case SeleniumDslPackage.ALL_CONDITION:
-				sequence_AllCondition(context, (AllCondition) semanticObject); 
-				return; 
-			case SeleniumDslPackage.ATTRIBUTES:
-				sequence_Attributes(context, (Attributes) semanticObject); 
-				return; 
 			case SeleniumDslPackage.BROWSER_DSL:
 				sequence_BrowserDsl(context, (BrowserDsl) semanticObject); 
 				return; 
 			case SeleniumDslPackage.CLICK:
 				sequence_Click(context, (Click) semanticObject); 
 				return; 
-			case SeleniumDslPackage.CLIPBOARD_CONTENT:
-				sequence_ClipboardContent(context, (ClipboardContent) semanticObject); 
+			case SeleniumDslPackage.COMBOBOX:
+				sequence_Combobox(context, (Combobox) semanticObject); 
 				return; 
-			case SeleniumDslPackage.COPY:
-				sequence_Copy(context, (Copy) semanticObject); 
-				return; 
-			case SeleniumDslPackage.ELEMENT_ATTRIBUTE:
-				sequence_ElementAttribute(context, (ElementAttribute) semanticObject); 
-				return; 
-			case SeleniumDslPackage.ELEMENT_PROPERTY:
-				sequence_ElementProperty(context, (ElementProperty) semanticObject); 
-				return; 
-			case SeleniumDslPackage.FIRST_CONDITION:
-				sequence_FirstCondition(context, (FirstCondition) semanticObject); 
+			case SeleniumDslPackage.FILL:
+				sequence_Fill(context, (Fill) semanticObject); 
 				return; 
 			case SeleniumDslPackage.GO_TO:
 				sequence_GoTo(context, (GoTo) semanticObject); 
 				return; 
-			case SeleniumDslPackage.INSERT:
-				sequence_Insert(context, (Insert) semanticObject); 
-				return; 
-			case SeleniumDslPackage.INT_WITH_SUFFIX:
-				sequence_IntWithSuffix(context, (IntWithSuffix) semanticObject); 
-				return; 
-			case SeleniumDslPackage.LAST_CONDITION:
-				sequence_LastCondition(context, (LastCondition) semanticObject); 
-				return; 
 			case SeleniumDslPackage.OPEN_BROWSER:
 				sequence_OpenBrowser(context, (OpenBrowser) semanticObject); 
 				return; 
-			case SeleniumDslPackage.ORDINAL_CONDITION:
-				sequence_OrdinalCondition(context, (OrdinalCondition) semanticObject); 
+			case SeleniumDslPackage.READ:
+				sequence_Read(context, (Read) semanticObject); 
 				return; 
-			case SeleniumDslPackage.PASTE:
-				sequence_Paste(context, (Paste) semanticObject); 
+			case SeleniumDslPackage.SELECT:
+				sequence_Select(context, (Select) semanticObject); 
 				return; 
-			case SeleniumDslPackage.PROPERTIES:
-				sequence_Properties(context, (Properties) semanticObject); 
-				return; 
-			case SeleniumDslPackage.SELECTOR:
-				sequence_Selector(context, (Selector) semanticObject); 
-				return; 
-			case SeleniumDslPackage.STRING_CONTENT:
-				sequence_StringContent(context, (StringContent) semanticObject); 
+			case SeleniumDslPackage.UNCHECK:
+				sequence_Uncheck(context, (Uncheck) semanticObject); 
 				return; 
 			case SeleniumDslPackage.VERIFY:
 				sequence_Verify(context, (Verify) semanticObject); 
@@ -115,35 +75,6 @@ public class SeleniumDslSemanticSequencer extends AbstractDelegatingSemanticSequ
 		if (errorAcceptor != null)
 			errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     SelectorPredicate returns AllCondition
-	 *     AllCondition returns AllCondition
-	 *
-	 * Constraint:
-	 *     {AllCondition}
-	 * </pre>
-	 */
-	protected void sequence_AllCondition(ISerializationContext context, AllCondition semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     Attributes returns Attributes
-	 *
-	 * Constraint:
-	 *     (attributes+=ElementAttribute attributes+=ElementAttribute?)
-	 * </pre>
-	 */
-	protected void sequence_Attributes(ISerializationContext context, Attributes semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
 	
 	/**
 	 * <pre>
@@ -163,109 +94,13 @@ public class SeleniumDslSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 * <pre>
 	 * Contexts:
 	 *     Command returns Click
-	 *     DOMCommand returns Click
 	 *     Click returns Click
 	 *
 	 * Constraint:
-	 *     element=Selector
+	 *     (linkText=STRING | buttonText=STRING | alt=STRING | variable=DOMELEMENT)
 	 * </pre>
 	 */
 	protected void sequence_Click(ISerializationContext context, Click semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, SeleniumDslPackage.Literals.CLICK__ELEMENT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SeleniumDslPackage.Literals.CLICK__ELEMENT));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getClickAccess().getElementSelectorParserRuleCall_2_0(), semanticObject.getElement());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     Content returns ClipboardContent
-	 *     ClipboardContent returns ClipboardContent
-	 *
-	 * Constraint:
-	 *     key=STRING
-	 * </pre>
-	 */
-	protected void sequence_ClipboardContent(ISerializationContext context, ClipboardContent semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, SeleniumDslPackage.Literals.CLIPBOARD_CONTENT__KEY) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SeleniumDslPackage.Literals.CLIPBOARD_CONTENT__KEY));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getClipboardContentAccess().getKeySTRINGTerminalRuleCall_3_0(), semanticObject.getKey());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     Command returns Copy
-	 *     DOMCommand returns Copy
-	 *     Copy returns Copy
-	 *
-	 * Constraint:
-	 *     (property=HTML_ATTRIBUTE element=Selector key=STRING)
-	 * </pre>
-	 */
-	protected void sequence_Copy(ISerializationContext context, Copy semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, SeleniumDslPackage.Literals.COPY__PROPERTY) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SeleniumDslPackage.Literals.COPY__PROPERTY));
-			if (transientValues.isValueTransient(semanticObject, SeleniumDslPackage.Literals.COPY__ELEMENT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SeleniumDslPackage.Literals.COPY__ELEMENT));
-			if (transientValues.isValueTransient(semanticObject, SeleniumDslPackage.Literals.COPY__KEY) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SeleniumDslPackage.Literals.COPY__KEY));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getCopyAccess().getPropertyHTML_ATTRIBUTETerminalRuleCall_4_0(), semanticObject.getProperty());
-		feeder.accept(grammarAccess.getCopyAccess().getElementSelectorParserRuleCall_6_0(), semanticObject.getElement());
-		feeder.accept(grammarAccess.getCopyAccess().getKeySTRINGTerminalRuleCall_8_0(), semanticObject.getKey());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     ElementAttribute returns ElementAttribute
-	 *
-	 * Constraint:
-	 *     (name=HTML_ATTRIBUTE matcher=Matcher value=Content)
-	 * </pre>
-	 */
-	protected void sequence_ElementAttribute(ISerializationContext context, ElementAttribute semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, SeleniumDslPackage.Literals.ELEMENT_ATTRIBUTE__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SeleniumDslPackage.Literals.ELEMENT_ATTRIBUTE__NAME));
-			if (transientValues.isValueTransient(semanticObject, SeleniumDslPackage.Literals.ELEMENT_ATTRIBUTE__MATCHER) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SeleniumDslPackage.Literals.ELEMENT_ATTRIBUTE__MATCHER));
-			if (transientValues.isValueTransient(semanticObject, SeleniumDslPackage.Literals.ELEMENT_ATTRIBUTE__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SeleniumDslPackage.Literals.ELEMENT_ATTRIBUTE__VALUE));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getElementAttributeAccess().getNameHTML_ATTRIBUTETerminalRuleCall_0_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getElementAttributeAccess().getMatcherMatcherParserRuleCall_1_0(), semanticObject.getMatcher());
-		feeder.accept(grammarAccess.getElementAttributeAccess().getValueContentParserRuleCall_2_0(), semanticObject.getValue());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     ElementProperty returns ElementProperty
-	 *
-	 * Constraint:
-	 *     (negated='not'? (property='selected' | property='visible' | property='enabled'))
-	 * </pre>
-	 */
-	protected void sequence_ElementProperty(ISerializationContext context, ElementProperty semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -273,14 +108,38 @@ public class SeleniumDslSemanticSequencer extends AbstractDelegatingSemanticSequ
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     SelectorPredicate returns FirstCondition
-	 *     FirstCondition returns FirstCondition
+	 *     Command returns Combobox
+	 *     Combobox returns Combobox
 	 *
 	 * Constraint:
-	 *     {FirstCondition}
+	 *     (option=STRING label=STRING)
 	 * </pre>
 	 */
-	protected void sequence_FirstCondition(ISerializationContext context, FirstCondition semanticObject) {
+	protected void sequence_Combobox(ISerializationContext context, Combobox semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SeleniumDslPackage.Literals.COMBOBOX__OPTION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SeleniumDslPackage.Literals.COMBOBOX__OPTION));
+			if (transientValues.isValueTransient(semanticObject, SeleniumDslPackage.Literals.COMBOBOX__LABEL) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SeleniumDslPackage.Literals.COMBOBOX__LABEL));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getComboboxAccess().getOptionSTRINGTerminalRuleCall_3_0(), semanticObject.getOption());
+		feeder.accept(grammarAccess.getComboboxAccess().getLabelSTRINGTerminalRuleCall_7_0(), semanticObject.getLabel());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Command returns Fill
+	 *     Fill returns Fill
+	 *
+	 * Constraint:
+	 *     (fieldName=STRING (textToFill=STRING | variable=DOMELEMENT))
+	 * </pre>
+	 */
+	protected void sequence_Fill(ISerializationContext context, Fill semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -301,68 +160,8 @@ public class SeleniumDslSemanticSequencer extends AbstractDelegatingSemanticSequ
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SeleniumDslPackage.Literals.GO_TO__URL));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getGoToAccess().getUrlDynamicURLParserRuleCall_2_0_0(), semanticObject.getUrl());
+		feeder.accept(grammarAccess.getGoToAccess().getUrlDynamicURLParserRuleCall_3_0_0(), semanticObject.getUrl());
 		feeder.finish();
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     Command returns Insert
-	 *     DOMCommand returns Insert
-	 *     Insert returns Insert
-	 *
-	 * Constraint:
-	 *     (element=Selector content=Content)
-	 * </pre>
-	 */
-	protected void sequence_Insert(ISerializationContext context, Insert semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, SeleniumDslPackage.Literals.INSERT__ELEMENT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SeleniumDslPackage.Literals.INSERT__ELEMENT));
-			if (transientValues.isValueTransient(semanticObject, SeleniumDslPackage.Literals.INSERT__CONTENT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SeleniumDslPackage.Literals.INSERT__CONTENT));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getInsertAccess().getElementSelectorParserRuleCall_1_0(), semanticObject.getElement());
-		feeder.accept(grammarAccess.getInsertAccess().getContentContentParserRuleCall_3_0(), semanticObject.getContent());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     IntWithSuffix returns IntWithSuffix
-	 *
-	 * Constraint:
-	 *     value=INT
-	 * </pre>
-	 */
-	protected void sequence_IntWithSuffix(ISerializationContext context, IntWithSuffix semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, SeleniumDslPackage.Literals.INT_WITH_SUFFIX__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SeleniumDslPackage.Literals.INT_WITH_SUFFIX__VALUE));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getIntWithSuffixAccess().getValueINTTerminalRuleCall_0_0(), semanticObject.getValue());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     SelectorPredicate returns LastCondition
-	 *     LastCondition returns LastCondition
-	 *
-	 * Constraint:
-	 *     {LastCondition}
-	 * </pre>
-	 */
-	protected void sequence_LastCondition(ISerializationContext context, LastCondition semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -384,56 +183,14 @@ public class SeleniumDslSemanticSequencer extends AbstractDelegatingSemanticSequ
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     SelectorPredicate returns OrdinalCondition
-	 *     OrdinalCondition returns OrdinalCondition
+	 *     Command returns Read
+	 *     Read returns Read
 	 *
 	 * Constraint:
-	 *     ordinal=IntWithSuffix
+	 *     (elements+=DOMELEMENT elements+=DOMELEMENT* linkText=STRING number=INT)
 	 * </pre>
 	 */
-	protected void sequence_OrdinalCondition(ISerializationContext context, OrdinalCondition semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, SeleniumDslPackage.Literals.ORDINAL_CONDITION__ORDINAL) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SeleniumDslPackage.Literals.ORDINAL_CONDITION__ORDINAL));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getOrdinalConditionAccess().getOrdinalIntWithSuffixParserRuleCall_1_0(), semanticObject.getOrdinal());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     Command returns Paste
-	 *     DOMCommand returns Paste
-	 *     Paste returns Paste
-	 *
-	 * Constraint:
-	 *     element=Selector
-	 * </pre>
-	 */
-	protected void sequence_Paste(ISerializationContext context, Paste semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, SeleniumDslPackage.Literals.PASTE__ELEMENT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SeleniumDslPackage.Literals.PASTE__ELEMENT));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getPasteAccess().getElementSelectorParserRuleCall_7_0(), semanticObject.getElement());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     Properties returns Properties
-	 *
-	 * Constraint:
-	 *     (properties+=ElementProperty properties+=ElementProperty?)
-	 * </pre>
-	 */
-	protected void sequence_Properties(ISerializationContext context, Properties semanticObject) {
+	protected void sequence_Read(ISerializationContext context, Read semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -441,20 +198,14 @@ public class SeleniumDslSemanticSequencer extends AbstractDelegatingSemanticSequ
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     Selector returns Selector
+	 *     Command returns Select
+	 *     Select returns Select
 	 *
 	 * Constraint:
-	 *     (
-	 *         predicate=SelectorPredicate 
-	 *         domType=STRING 
-	 *         attributes=Attributes? 
-	 *         label=STRING? 
-	 *         properties=Properties? 
-	 *         parent=Selector?
-	 *     )
+	 *     (values+=STRING values+=STRING*)
 	 * </pre>
 	 */
-	protected void sequence_Selector(ISerializationContext context, Selector semanticObject) {
+	protected void sequence_Select(ISerializationContext context, Select semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -462,21 +213,15 @@ public class SeleniumDslSemanticSequencer extends AbstractDelegatingSemanticSequ
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     Content returns StringContent
-	 *     StringContent returns StringContent
+	 *     Command returns Uncheck
+	 *     Uncheck returns Uncheck
 	 *
 	 * Constraint:
-	 *     value=STRING
+	 *     {Uncheck}
 	 * </pre>
 	 */
-	protected void sequence_StringContent(ISerializationContext context, StringContent semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, SeleniumDslPackage.Literals.STRING_CONTENT__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SeleniumDslPackage.Literals.STRING_CONTENT__VALUE));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getStringContentAccess().getValueSTRINGTerminalRuleCall_0(), semanticObject.getValue());
-		feeder.finish();
+	protected void sequence_Uncheck(ISerializationContext context, Uncheck semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -484,11 +229,10 @@ public class SeleniumDslSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 * <pre>
 	 * Contexts:
 	 *     Command returns Verify
-	 *     DOMCommand returns Verify
 	 *     Verify returns Verify
 	 *
 	 * Constraint:
-	 *     (selector=Selector properties+=ElementProperty properties+=ElementProperty?)
+	 *     (textToVerify=STRING | linkToVerify=STRING | variable=DOMELEMENT)
 	 * </pre>
 	 */
 	protected void sequence_Verify(ISerializationContext context, Verify semanticObject) {

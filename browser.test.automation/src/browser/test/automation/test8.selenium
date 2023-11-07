@@ -1,20 +1,7 @@
 open a browser window
-go to http://www.imt-atlantique.fr/fr
-
-copy the property href of the "link"
-in the "div" with properties class containing "carrou_link"
-in the 2nd "div" with properties class containing "slick-slide" 
-in the 1st "div" with properties class containing "slick-list"
-as "post url"
-
-copy the property text of the "h2" 
-in the "div" with properties class containing "carrou_tit"
-in the 2nd "div" with properties class containing "slick-slide" 
-in the 1st "div" with properties class containing "slick-list"
-as "post title"
-
-go to "http://www.imt-atlantique.fr/fr/rechercher"
-fill the 2nd "text field" with the saved content "post title"
-click on the 1st "list item" in the "list" with properties id matching "ui-id-2"
-click on the "button" with properties value matching "Appliquer les filtres"
-verify that the "element" with properties href containing the saved content "post url" is visible
+go to url http://www.imt-atlantique.fr/fr
+read the text link, url of the link "/fr/actualites" number 2
+go to url http://www.imt-atlantique.fr/fr/rechercher
+fill the text field "Rechercher" with the variable title
+click on the button "Appliquer les filtres"
+verify that the page contains the variable link

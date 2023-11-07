@@ -91,11 +91,6 @@ public class SeleniumDslAdapterFactory extends AdapterFactoryImpl
         return createOpenBrowserAdapter();
       }
       @Override
-      public Adapter caseDOMCommand(DOMCommand object)
-      {
-        return createDOMCommandAdapter();
-      }
-      @Override
       public Adapter caseGoTo(GoTo object)
       {
         return createGoToAdapter();
@@ -106,94 +101,34 @@ public class SeleniumDslAdapterFactory extends AdapterFactoryImpl
         return createClickAdapter();
       }
       @Override
-      public Adapter caseCopy(Copy object)
+      public Adapter caseFill(Fill object)
       {
-        return createCopyAdapter();
+        return createFillAdapter();
       }
       @Override
-      public Adapter casePaste(Paste object)
+      public Adapter caseSelect(Select object)
       {
-        return createPasteAdapter();
-      }
-      @Override
-      public Adapter caseInsert(Insert object)
-      {
-        return createInsertAdapter();
-      }
-      @Override
-      public Adapter caseSelector(Selector object)
-      {
-        return createSelectorAdapter();
-      }
-      @Override
-      public Adapter caseAttributes(Attributes object)
-      {
-        return createAttributesAdapter();
-      }
-      @Override
-      public Adapter caseElementAttribute(ElementAttribute object)
-      {
-        return createElementAttributeAdapter();
-      }
-      @Override
-      public Adapter caseContent(Content object)
-      {
-        return createContentAdapter();
-      }
-      @Override
-      public Adapter caseClipboardContent(ClipboardContent object)
-      {
-        return createClipboardContentAdapter();
-      }
-      @Override
-      public Adapter caseStringContent(StringContent object)
-      {
-        return createStringContentAdapter();
-      }
-      @Override
-      public Adapter caseProperties(Properties object)
-      {
-        return createPropertiesAdapter();
-      }
-      @Override
-      public Adapter caseElementProperty(ElementProperty object)
-      {
-        return createElementPropertyAdapter();
-      }
-      @Override
-      public Adapter caseSelectorPredicate(SelectorPredicate object)
-      {
-        return createSelectorPredicateAdapter();
-      }
-      @Override
-      public Adapter caseAllCondition(AllCondition object)
-      {
-        return createAllConditionAdapter();
-      }
-      @Override
-      public Adapter caseIntWithSuffix(IntWithSuffix object)
-      {
-        return createIntWithSuffixAdapter();
-      }
-      @Override
-      public Adapter caseOrdinalCondition(OrdinalCondition object)
-      {
-        return createOrdinalConditionAdapter();
-      }
-      @Override
-      public Adapter caseLastCondition(LastCondition object)
-      {
-        return createLastConditionAdapter();
-      }
-      @Override
-      public Adapter caseFirstCondition(FirstCondition object)
-      {
-        return createFirstConditionAdapter();
+        return createSelectAdapter();
       }
       @Override
       public Adapter caseVerify(Verify object)
       {
         return createVerifyAdapter();
+      }
+      @Override
+      public Adapter caseRead(Read object)
+      {
+        return createReadAdapter();
+      }
+      @Override
+      public Adapter caseUncheck(Uncheck object)
+      {
+        return createUncheckAdapter();
+      }
+      @Override
+      public Adapter caseCombobox(Combobox object)
+      {
+        return createComboboxAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -263,21 +198,6 @@ public class SeleniumDslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link www.imta.fr.browserautomation.seleniumDsl.DOMCommand <em>DOM Command</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see www.imta.fr.browserautomation.seleniumDsl.DOMCommand
-   * @generated
-   */
-  public Adapter createDOMCommandAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link www.imta.fr.browserautomation.seleniumDsl.GoTo <em>Go To</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -308,256 +228,31 @@ public class SeleniumDslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link www.imta.fr.browserautomation.seleniumDsl.Copy <em>Copy</em>}'.
+   * Creates a new adapter for an object of class '{@link www.imta.fr.browserautomation.seleniumDsl.Fill <em>Fill</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see www.imta.fr.browserautomation.seleniumDsl.Copy
+   * @see www.imta.fr.browserautomation.seleniumDsl.Fill
    * @generated
    */
-  public Adapter createCopyAdapter()
+  public Adapter createFillAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link www.imta.fr.browserautomation.seleniumDsl.Paste <em>Paste</em>}'.
+   * Creates a new adapter for an object of class '{@link www.imta.fr.browserautomation.seleniumDsl.Select <em>Select</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see www.imta.fr.browserautomation.seleniumDsl.Paste
+   * @see www.imta.fr.browserautomation.seleniumDsl.Select
    * @generated
    */
-  public Adapter createPasteAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link www.imta.fr.browserautomation.seleniumDsl.Insert <em>Insert</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see www.imta.fr.browserautomation.seleniumDsl.Insert
-   * @generated
-   */
-  public Adapter createInsertAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link www.imta.fr.browserautomation.seleniumDsl.Selector <em>Selector</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see www.imta.fr.browserautomation.seleniumDsl.Selector
-   * @generated
-   */
-  public Adapter createSelectorAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link www.imta.fr.browserautomation.seleniumDsl.Attributes <em>Attributes</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see www.imta.fr.browserautomation.seleniumDsl.Attributes
-   * @generated
-   */
-  public Adapter createAttributesAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link www.imta.fr.browserautomation.seleniumDsl.ElementAttribute <em>Element Attribute</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see www.imta.fr.browserautomation.seleniumDsl.ElementAttribute
-   * @generated
-   */
-  public Adapter createElementAttributeAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link www.imta.fr.browserautomation.seleniumDsl.Content <em>Content</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see www.imta.fr.browserautomation.seleniumDsl.Content
-   * @generated
-   */
-  public Adapter createContentAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link www.imta.fr.browserautomation.seleniumDsl.ClipboardContent <em>Clipboard Content</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see www.imta.fr.browserautomation.seleniumDsl.ClipboardContent
-   * @generated
-   */
-  public Adapter createClipboardContentAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link www.imta.fr.browserautomation.seleniumDsl.StringContent <em>String Content</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see www.imta.fr.browserautomation.seleniumDsl.StringContent
-   * @generated
-   */
-  public Adapter createStringContentAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link www.imta.fr.browserautomation.seleniumDsl.Properties <em>Properties</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see www.imta.fr.browserautomation.seleniumDsl.Properties
-   * @generated
-   */
-  public Adapter createPropertiesAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link www.imta.fr.browserautomation.seleniumDsl.ElementProperty <em>Element Property</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see www.imta.fr.browserautomation.seleniumDsl.ElementProperty
-   * @generated
-   */
-  public Adapter createElementPropertyAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link www.imta.fr.browserautomation.seleniumDsl.SelectorPredicate <em>Selector Predicate</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see www.imta.fr.browserautomation.seleniumDsl.SelectorPredicate
-   * @generated
-   */
-  public Adapter createSelectorPredicateAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link www.imta.fr.browserautomation.seleniumDsl.AllCondition <em>All Condition</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see www.imta.fr.browserautomation.seleniumDsl.AllCondition
-   * @generated
-   */
-  public Adapter createAllConditionAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link www.imta.fr.browserautomation.seleniumDsl.IntWithSuffix <em>Int With Suffix</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see www.imta.fr.browserautomation.seleniumDsl.IntWithSuffix
-   * @generated
-   */
-  public Adapter createIntWithSuffixAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link www.imta.fr.browserautomation.seleniumDsl.OrdinalCondition <em>Ordinal Condition</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see www.imta.fr.browserautomation.seleniumDsl.OrdinalCondition
-   * @generated
-   */
-  public Adapter createOrdinalConditionAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link www.imta.fr.browserautomation.seleniumDsl.LastCondition <em>Last Condition</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see www.imta.fr.browserautomation.seleniumDsl.LastCondition
-   * @generated
-   */
-  public Adapter createLastConditionAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link www.imta.fr.browserautomation.seleniumDsl.FirstCondition <em>First Condition</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see www.imta.fr.browserautomation.seleniumDsl.FirstCondition
-   * @generated
-   */
-  public Adapter createFirstConditionAdapter()
+  public Adapter createSelectAdapter()
   {
     return null;
   }
@@ -573,6 +268,51 @@ public class SeleniumDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createVerifyAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link www.imta.fr.browserautomation.seleniumDsl.Read <em>Read</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see www.imta.fr.browserautomation.seleniumDsl.Read
+   * @generated
+   */
+  public Adapter createReadAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link www.imta.fr.browserautomation.seleniumDsl.Uncheck <em>Uncheck</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see www.imta.fr.browserautomation.seleniumDsl.Uncheck
+   * @generated
+   */
+  public Adapter createUncheckAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link www.imta.fr.browserautomation.seleniumDsl.Combobox <em>Combobox</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see www.imta.fr.browserautomation.seleniumDsl.Combobox
+   * @generated
+   */
+  public Adapter createComboboxAdapter()
   {
     return null;
   }

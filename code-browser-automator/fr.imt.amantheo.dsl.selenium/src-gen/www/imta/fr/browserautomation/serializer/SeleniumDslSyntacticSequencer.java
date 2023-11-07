@@ -10,8 +10,6 @@ import org.eclipse.xtext.IGrammarAccess;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.AbstractElementAlias;
-import org.eclipse.xtext.serializer.analysis.GrammarAlias.AlternativeAlias;
-import org.eclipse.xtext.serializer.analysis.GrammarAlias.GroupAlias;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.TokenAlias;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynNavigable;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynTransition;
@@ -22,31 +20,19 @@ import www.imta.fr.browserautomation.services.SeleniumDslGrammarAccess;
 public class SeleniumDslSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected SeleniumDslGrammarAccess grammarAccess;
-	protected AbstractElementAlias match_Click_SelectKeyword_1_1_or___ClickKeyword_1_0_0_OnKeyword_1_0_1__;
-	protected AbstractElementAlias match_GoTo_URLKeyword_2_1_q;
+	protected AbstractElementAlias match_GoTo_URLKeyword_3_1_q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (SeleniumDslGrammarAccess) access;
-		match_Click_SelectKeyword_1_1_or___ClickKeyword_1_0_0_OnKeyword_1_0_1__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getClickAccess().getClickKeyword_1_0_0()), new TokenAlias(false, false, grammarAccess.getClickAccess().getOnKeyword_1_0_1())), new TokenAlias(false, false, grammarAccess.getClickAccess().getSelectKeyword_1_1()));
-		match_GoTo_URLKeyword_2_1_q = new TokenAlias(false, true, grammarAccess.getGoToAccess().getURLKeyword_2_1());
+		match_GoTo_URLKeyword_3_1_q = new TokenAlias(false, true, grammarAccess.getGoToAccess().getURLKeyword_3_1());
 	}
 	
 	@Override
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (ruleCall.getRule() == grammarAccess.getSuffixRule())
-			return getSuffixToken(semanticObject, ruleCall, node);
 		return "";
 	}
 	
-	/**
-	 * terminal Suffix: 'st' | 'nd' | 'rd' | 'th';
-	 */
-	protected String getSuffixToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (node != null)
-			return getTokenText(node);
-		return "st";
-	}
 	
 	@Override
 	protected void emitUnassignedTokens(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
@@ -54,10 +40,8 @@ public class SeleniumDslSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if (match_Click_SelectKeyword_1_1_or___ClickKeyword_1_0_0_OnKeyword_1_0_1__.equals(syntax))
-				emit_Click_SelectKeyword_1_1_or___ClickKeyword_1_0_0_OnKeyword_1_0_1__(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_GoTo_URLKeyword_2_1_q.equals(syntax))
-				emit_GoTo_URLKeyword_2_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			if (match_GoTo_URLKeyword_3_1_q.equals(syntax))
+				emit_GoTo_URLKeyword_3_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
@@ -65,28 +49,14 @@ public class SeleniumDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	/**
 	 * <pre>
 	 * Ambiguous syntax:
-	 *     ('click' 'on') | 'select'
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     (rule start) (ambiguity) element=Selector
-	 
-	 * </pre>
-	 */
-	protected void emit_Click_SelectKeyword_1_1_or___ClickKeyword_1_0_0_OnKeyword_1_0_1__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * <pre>
-	 * Ambiguous syntax:
 	 *     'URL'?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     (rule start) 'go' 'to' (ambiguity) (rule start)
+	 *     (rule start) 'go' 'to' 'url' (ambiguity) (rule start)
 	 
 	 * </pre>
 	 */
-	protected void emit_GoTo_URLKeyword_2_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_GoTo_URLKeyword_3_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

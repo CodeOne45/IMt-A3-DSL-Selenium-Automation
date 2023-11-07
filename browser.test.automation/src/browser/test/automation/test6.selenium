@@ -1,8 +1,6 @@
 open a browser window
-go to "http://www.imt-atlantique.fr/fr/rechercher"
-fill the 2nd "text field" with "2006"
-click on the 1st "list item" in the "list" with properties id matching "ui-id-2"
-click on the "div" with properties class containing "nice-select" in the "element" with properties id matching "recherche-date-range"
-click on the "element" with properties text containing "Le mois dernier" in the "div" with properties class containing "nice-select" in the "element" with properties id matching "recherche-date-range"
-click on the "button" with properties value matching "Appliquer les filtres"
-verify that the "element" with properties text containing "Aucun résultat ne correspond à votre recherche" is visible
+go to url http://www.imt-atlantique.fr/fr/rechercher
+fill the text field "Rechercher" with the text "2006"
+choose the option "Le mois dernier" in the combobox "Période de publication"
+click on the button "Appliquer les filtres"
+verify that the page contains the string "Aucun résultat ne correspond à votre recherche"

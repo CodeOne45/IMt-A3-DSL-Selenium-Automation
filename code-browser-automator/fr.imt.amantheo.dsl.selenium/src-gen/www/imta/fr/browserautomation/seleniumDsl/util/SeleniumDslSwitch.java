@@ -95,14 +95,6 @@ public class SeleniumDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case SeleniumDslPackage.DOM_COMMAND:
-      {
-        DOMCommand domCommand = (DOMCommand)theEObject;
-        T result = caseDOMCommand(domCommand);
-        if (result == null) result = caseCommand(domCommand);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case SeleniumDslPackage.GO_TO:
       {
         GoTo goTo = (GoTo)theEObject;
@@ -115,139 +107,23 @@ public class SeleniumDslSwitch<T> extends Switch<T>
       {
         Click click = (Click)theEObject;
         T result = caseClick(click);
-        if (result == null) result = caseDOMCommand(click);
         if (result == null) result = caseCommand(click);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case SeleniumDslPackage.COPY:
+      case SeleniumDslPackage.FILL:
       {
-        Copy copy = (Copy)theEObject;
-        T result = caseCopy(copy);
-        if (result == null) result = caseDOMCommand(copy);
-        if (result == null) result = caseCommand(copy);
+        Fill fill = (Fill)theEObject;
+        T result = caseFill(fill);
+        if (result == null) result = caseCommand(fill);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case SeleniumDslPackage.PASTE:
+      case SeleniumDslPackage.SELECT:
       {
-        Paste paste = (Paste)theEObject;
-        T result = casePaste(paste);
-        if (result == null) result = caseDOMCommand(paste);
-        if (result == null) result = caseCommand(paste);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case SeleniumDslPackage.INSERT:
-      {
-        Insert insert = (Insert)theEObject;
-        T result = caseInsert(insert);
-        if (result == null) result = caseDOMCommand(insert);
-        if (result == null) result = caseCommand(insert);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case SeleniumDslPackage.SELECTOR:
-      {
-        Selector selector = (Selector)theEObject;
-        T result = caseSelector(selector);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case SeleniumDslPackage.ATTRIBUTES:
-      {
-        Attributes attributes = (Attributes)theEObject;
-        T result = caseAttributes(attributes);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case SeleniumDslPackage.ELEMENT_ATTRIBUTE:
-      {
-        ElementAttribute elementAttribute = (ElementAttribute)theEObject;
-        T result = caseElementAttribute(elementAttribute);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case SeleniumDslPackage.CONTENT:
-      {
-        Content content = (Content)theEObject;
-        T result = caseContent(content);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case SeleniumDslPackage.CLIPBOARD_CONTENT:
-      {
-        ClipboardContent clipboardContent = (ClipboardContent)theEObject;
-        T result = caseClipboardContent(clipboardContent);
-        if (result == null) result = caseContent(clipboardContent);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case SeleniumDslPackage.STRING_CONTENT:
-      {
-        StringContent stringContent = (StringContent)theEObject;
-        T result = caseStringContent(stringContent);
-        if (result == null) result = caseContent(stringContent);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case SeleniumDslPackage.PROPERTIES:
-      {
-        Properties properties = (Properties)theEObject;
-        T result = caseProperties(properties);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case SeleniumDslPackage.ELEMENT_PROPERTY:
-      {
-        ElementProperty elementProperty = (ElementProperty)theEObject;
-        T result = caseElementProperty(elementProperty);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case SeleniumDslPackage.SELECTOR_PREDICATE:
-      {
-        SelectorPredicate selectorPredicate = (SelectorPredicate)theEObject;
-        T result = caseSelectorPredicate(selectorPredicate);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case SeleniumDslPackage.ALL_CONDITION:
-      {
-        AllCondition allCondition = (AllCondition)theEObject;
-        T result = caseAllCondition(allCondition);
-        if (result == null) result = caseSelectorPredicate(allCondition);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case SeleniumDslPackage.INT_WITH_SUFFIX:
-      {
-        IntWithSuffix intWithSuffix = (IntWithSuffix)theEObject;
-        T result = caseIntWithSuffix(intWithSuffix);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case SeleniumDslPackage.ORDINAL_CONDITION:
-      {
-        OrdinalCondition ordinalCondition = (OrdinalCondition)theEObject;
-        T result = caseOrdinalCondition(ordinalCondition);
-        if (result == null) result = caseSelectorPredicate(ordinalCondition);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case SeleniumDslPackage.LAST_CONDITION:
-      {
-        LastCondition lastCondition = (LastCondition)theEObject;
-        T result = caseLastCondition(lastCondition);
-        if (result == null) result = caseSelectorPredicate(lastCondition);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case SeleniumDslPackage.FIRST_CONDITION:
-      {
-        FirstCondition firstCondition = (FirstCondition)theEObject;
-        T result = caseFirstCondition(firstCondition);
-        if (result == null) result = caseSelectorPredicate(firstCondition);
+        Select select = (Select)theEObject;
+        T result = caseSelect(select);
+        if (result == null) result = caseCommand(select);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -255,8 +131,31 @@ public class SeleniumDslSwitch<T> extends Switch<T>
       {
         Verify verify = (Verify)theEObject;
         T result = caseVerify(verify);
-        if (result == null) result = caseDOMCommand(verify);
         if (result == null) result = caseCommand(verify);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SeleniumDslPackage.READ:
+      {
+        Read read = (Read)theEObject;
+        T result = caseRead(read);
+        if (result == null) result = caseCommand(read);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SeleniumDslPackage.UNCHECK:
+      {
+        Uncheck uncheck = (Uncheck)theEObject;
+        T result = caseUncheck(uncheck);
+        if (result == null) result = caseCommand(uncheck);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SeleniumDslPackage.COMBOBOX:
+      {
+        Combobox combobox = (Combobox)theEObject;
+        T result = caseCombobox(combobox);
+        if (result == null) result = caseCommand(combobox);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -313,22 +212,6 @@ public class SeleniumDslSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>DOM Command</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>DOM Command</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseDOMCommand(DOMCommand object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>Go To</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -361,273 +244,33 @@ public class SeleniumDslSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Copy</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Fill</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Copy</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Fill</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseCopy(Copy object)
+  public T caseFill(Fill object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Paste</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Select</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Paste</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Select</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T casePaste(Paste object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Insert</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Insert</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseInsert(Insert object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Selector</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Selector</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseSelector(Selector object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Attributes</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Attributes</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseAttributes(Attributes object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Element Attribute</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Element Attribute</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseElementAttribute(ElementAttribute object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Content</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Content</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseContent(Content object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Clipboard Content</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Clipboard Content</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseClipboardContent(ClipboardContent object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>String Content</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>String Content</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseStringContent(StringContent object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Properties</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Properties</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseProperties(Properties object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Element Property</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Element Property</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseElementProperty(ElementProperty object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Selector Predicate</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Selector Predicate</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseSelectorPredicate(SelectorPredicate object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>All Condition</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>All Condition</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseAllCondition(AllCondition object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Int With Suffix</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Int With Suffix</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseIntWithSuffix(IntWithSuffix object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Ordinal Condition</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Ordinal Condition</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseOrdinalCondition(OrdinalCondition object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Last Condition</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Last Condition</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseLastCondition(LastCondition object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>First Condition</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>First Condition</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseFirstCondition(FirstCondition object)
+  public T caseSelect(Select object)
   {
     return null;
   }
@@ -644,6 +287,54 @@ public class SeleniumDslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseVerify(Verify object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Read</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Read</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseRead(Read object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Uncheck</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Uncheck</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseUncheck(Uncheck object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Combobox</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Combobox</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCombobox(Combobox object)
   {
     return null;
   }

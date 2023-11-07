@@ -68,27 +68,14 @@ public class SeleniumDslFactoryImpl extends EFactoryImpl implements SeleniumDslF
       case SeleniumDslPackage.BROWSER_DSL: return createBrowserDsl();
       case SeleniumDslPackage.COMMAND: return createCommand();
       case SeleniumDslPackage.OPEN_BROWSER: return createOpenBrowser();
-      case SeleniumDslPackage.DOM_COMMAND: return createDOMCommand();
       case SeleniumDslPackage.GO_TO: return createGoTo();
       case SeleniumDslPackage.CLICK: return createClick();
-      case SeleniumDslPackage.COPY: return createCopy();
-      case SeleniumDslPackage.PASTE: return createPaste();
-      case SeleniumDslPackage.INSERT: return createInsert();
-      case SeleniumDslPackage.SELECTOR: return createSelector();
-      case SeleniumDslPackage.ATTRIBUTES: return createAttributes();
-      case SeleniumDslPackage.ELEMENT_ATTRIBUTE: return createElementAttribute();
-      case SeleniumDslPackage.CONTENT: return createContent();
-      case SeleniumDslPackage.CLIPBOARD_CONTENT: return createClipboardContent();
-      case SeleniumDslPackage.STRING_CONTENT: return createStringContent();
-      case SeleniumDslPackage.PROPERTIES: return createProperties();
-      case SeleniumDslPackage.ELEMENT_PROPERTY: return createElementProperty();
-      case SeleniumDslPackage.SELECTOR_PREDICATE: return createSelectorPredicate();
-      case SeleniumDslPackage.ALL_CONDITION: return createAllCondition();
-      case SeleniumDslPackage.INT_WITH_SUFFIX: return createIntWithSuffix();
-      case SeleniumDslPackage.ORDINAL_CONDITION: return createOrdinalCondition();
-      case SeleniumDslPackage.LAST_CONDITION: return createLastCondition();
-      case SeleniumDslPackage.FIRST_CONDITION: return createFirstCondition();
+      case SeleniumDslPackage.FILL: return createFill();
+      case SeleniumDslPackage.SELECT: return createSelect();
       case SeleniumDslPackage.VERIFY: return createVerify();
+      case SeleniumDslPackage.READ: return createRead();
+      case SeleniumDslPackage.UNCHECK: return createUncheck();
+      case SeleniumDslPackage.COMBOBOX: return createCombobox();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -136,18 +123,6 @@ public class SeleniumDslFactoryImpl extends EFactoryImpl implements SeleniumDslF
    * @generated
    */
   @Override
-  public DOMCommand createDOMCommand()
-  {
-    DOMCommandImpl domCommand = new DOMCommandImpl();
-    return domCommand;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public GoTo createGoTo()
   {
     GoToImpl goTo = new GoToImpl();
@@ -172,10 +147,10 @@ public class SeleniumDslFactoryImpl extends EFactoryImpl implements SeleniumDslF
    * @generated
    */
   @Override
-  public Copy createCopy()
+  public Fill createFill()
   {
-    CopyImpl copy = new CopyImpl();
-    return copy;
+    FillImpl fill = new FillImpl();
+    return fill;
   }
 
   /**
@@ -184,190 +159,10 @@ public class SeleniumDslFactoryImpl extends EFactoryImpl implements SeleniumDslF
    * @generated
    */
   @Override
-  public Paste createPaste()
+  public Select createSelect()
   {
-    PasteImpl paste = new PasteImpl();
-    return paste;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Insert createInsert()
-  {
-    InsertImpl insert = new InsertImpl();
-    return insert;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Selector createSelector()
-  {
-    SelectorImpl selector = new SelectorImpl();
-    return selector;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Attributes createAttributes()
-  {
-    AttributesImpl attributes = new AttributesImpl();
-    return attributes;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public ElementAttribute createElementAttribute()
-  {
-    ElementAttributeImpl elementAttribute = new ElementAttributeImpl();
-    return elementAttribute;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Content createContent()
-  {
-    ContentImpl content = new ContentImpl();
-    return content;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public ClipboardContent createClipboardContent()
-  {
-    ClipboardContentImpl clipboardContent = new ClipboardContentImpl();
-    return clipboardContent;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public StringContent createStringContent()
-  {
-    StringContentImpl stringContent = new StringContentImpl();
-    return stringContent;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Properties createProperties()
-  {
-    PropertiesImpl properties = new PropertiesImpl();
-    return properties;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public ElementProperty createElementProperty()
-  {
-    ElementPropertyImpl elementProperty = new ElementPropertyImpl();
-    return elementProperty;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public SelectorPredicate createSelectorPredicate()
-  {
-    SelectorPredicateImpl selectorPredicate = new SelectorPredicateImpl();
-    return selectorPredicate;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public AllCondition createAllCondition()
-  {
-    AllConditionImpl allCondition = new AllConditionImpl();
-    return allCondition;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public IntWithSuffix createIntWithSuffix()
-  {
-    IntWithSuffixImpl intWithSuffix = new IntWithSuffixImpl();
-    return intWithSuffix;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public OrdinalCondition createOrdinalCondition()
-  {
-    OrdinalConditionImpl ordinalCondition = new OrdinalConditionImpl();
-    return ordinalCondition;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public LastCondition createLastCondition()
-  {
-    LastConditionImpl lastCondition = new LastConditionImpl();
-    return lastCondition;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public FirstCondition createFirstCondition()
-  {
-    FirstConditionImpl firstCondition = new FirstConditionImpl();
-    return firstCondition;
+    SelectImpl select = new SelectImpl();
+    return select;
   }
 
   /**
@@ -380,6 +175,42 @@ public class SeleniumDslFactoryImpl extends EFactoryImpl implements SeleniumDslF
   {
     VerifyImpl verify = new VerifyImpl();
     return verify;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Read createRead()
+  {
+    ReadImpl read = new ReadImpl();
+    return read;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Uncheck createUncheck()
+  {
+    UncheckImpl uncheck = new UncheckImpl();
+    return uncheck;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Combobox createCombobox()
+  {
+    ComboboxImpl combobox = new ComboboxImpl();
+    return combobox;
   }
 
   /**

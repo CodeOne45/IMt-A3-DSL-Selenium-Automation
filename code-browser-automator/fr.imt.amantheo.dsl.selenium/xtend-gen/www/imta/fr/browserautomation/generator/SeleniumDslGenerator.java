@@ -4,8 +4,6 @@
 package www.imta.fr.browserautomation.generator;
 
 import com.google.common.base.Objects;
-import java.util.Collections;
-import java.util.List;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -13,30 +11,19 @@ import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.generator.AbstractGenerator;
 import org.eclipse.xtext.generator.IFileSystemAccess2;
 import org.eclipse.xtext.generator.IGeneratorContext;
-import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.ListExtensions;
-import www.imta.fr.browserautomation.seleniumDsl.AllCondition;
-import www.imta.fr.browserautomation.seleniumDsl.Attributes;
 import www.imta.fr.browserautomation.seleniumDsl.BrowserDsl;
 import www.imta.fr.browserautomation.seleniumDsl.Click;
-import www.imta.fr.browserautomation.seleniumDsl.ClipboardContent;
+import www.imta.fr.browserautomation.seleniumDsl.Combobox;
 import www.imta.fr.browserautomation.seleniumDsl.Command;
-import www.imta.fr.browserautomation.seleniumDsl.Content;
-import www.imta.fr.browserautomation.seleniumDsl.Copy;
-import www.imta.fr.browserautomation.seleniumDsl.DOMCommand;
-import www.imta.fr.browserautomation.seleniumDsl.ElementAttribute;
-import www.imta.fr.browserautomation.seleniumDsl.ElementProperty;
-import www.imta.fr.browserautomation.seleniumDsl.FirstCondition;
+import www.imta.fr.browserautomation.seleniumDsl.Fill;
 import www.imta.fr.browserautomation.seleniumDsl.GoTo;
-import www.imta.fr.browserautomation.seleniumDsl.Insert;
-import www.imta.fr.browserautomation.seleniumDsl.LastCondition;
 import www.imta.fr.browserautomation.seleniumDsl.OpenBrowser;
-import www.imta.fr.browserautomation.seleniumDsl.OrdinalCondition;
-import www.imta.fr.browserautomation.seleniumDsl.Selector;
-import www.imta.fr.browserautomation.seleniumDsl.SelectorPredicate;
-import www.imta.fr.browserautomation.seleniumDsl.StringContent;
+import www.imta.fr.browserautomation.seleniumDsl.Read;
+import www.imta.fr.browserautomation.seleniumDsl.Select;
+import www.imta.fr.browserautomation.seleniumDsl.Uncheck;
 import www.imta.fr.browserautomation.seleniumDsl.Verify;
 
 /**
@@ -62,15 +49,38 @@ public class SeleniumDslGenerator extends AbstractGenerator {
       String _substring_1 = name.substring(1);
       String _plus_1 = (Character.valueOf(_upperCase_1) + _substring_1);
       name = _plus_1;
-      final String code = this.generateClassHeader(className, model);
-      fsa.generateFile(("fr/imta/amanthéo/browser/" + name), code);
+      final String generatedCode = this.generateSeleniumCode(model, className);
+      fsa.generateFile(("fr/imta/amanthéo/browser/" + name), generatedCode);
     }
   }
 
-  public String generateClassHeader(final String className, final BrowserDsl model) {
+  public String generateSeleniumCode(final BrowserDsl model, final String className) {
+    String code = "";
+    String _code = code;
+    String _generateImportStatements = this.generateImportStatements();
+    code = (_code + _generateImportStatements);
+    String _code_1 = code;
+    code = (_code_1 + (("public class " + className) + " {\n"));
+    String _code_2 = code;
+    code = (_code_2 + "    public static void main(String[] args) {\n");
+    EList<Command> _commands = model.getCommands();
+    for (final Command command : _commands) {
+      String _code_3 = code;
+      String _processCommand = this.processCommand(command);
+      code = (_code_3 + _processCommand);
+    }
+    String _code_4 = code;
+    code = (_code_4 + "        driver.quit();\n");
+    String _code_5 = code;
+    code = (_code_5 + "    }\n");
+    String _code_6 = code;
+    code = (_code_6 + "}\n");
+    return code.toString();
+  }
+
+  public String generateImportStatements() {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("package fr.imta.amanthéo.browser;");
-    _builder.newLine();
     _builder.newLine();
     _builder.append("import org.openqa.selenium.By;");
     _builder.newLine();
@@ -80,608 +90,210 @@ public class SeleniumDslGenerator extends AbstractGenerator {
     _builder.newLine();
     _builder.append("import org.openqa.selenium.chrome.ChromeDriver;");
     _builder.newLine();
-    _builder.append("import org.openqa.selenium.WebDriverException;");
-    _builder.newLine();
     _builder.append("import org.openqa.selenium.JavascriptExecutor;");
     _builder.newLine();
-    _builder.append("import java.util.stream.Collectors;");
+    _builder.append("import org.openqa.selenium.interactions.Actions;");
     _builder.newLine();
-    _builder.append("import java.util.function.Predicate;");
+    _builder.append("import dev.failsafe.internal.util.Assert;");
     _builder.newLine();
+    _builder.append("import java.util.*;");
     _builder.newLine();
-    _builder.append("import java.time.Duration;");
-    _builder.newLine();
-    _builder.append("import java.util.List;");
-    _builder.newLine();
-    _builder.append("import java.util.Map;");
-    _builder.newLine();
-    _builder.append("import java.util.HashMap;");
-    _builder.newLine();
-    _builder.newLine();
-    _builder.append("public class ");
-    _builder.append(className);
-    _builder.append(" {");
-    _builder.newLineIfNotEmpty();
-    _builder.newLine();
-    _builder.append("    ");
-    _builder.append("private static Map<String, String> savedData = new HashMap();");
-    _builder.newLine();
-    _builder.newLine();
-    _builder.append("    ");
-    _builder.append("public static String getSavedData(String key) {");
-    _builder.newLine();
-    _builder.append("        ");
-    _builder.append("if (!savedData.containsKey(key)) {");
-    _builder.newLine();
-    _builder.append("            ");
-    _builder.append("throw new RuntimeException(\"No saved data named \" + key);");
-    _builder.newLine();
-    _builder.append("        ");
-    _builder.append("}");
-    _builder.newLine();
-    _builder.append("        ");
-    _builder.append("return savedData.get(key);");
-    _builder.newLine();
-    _builder.append("    ");
-    _builder.append("}");
-    _builder.newLine();
-    _builder.append("    ");
-    _builder.newLine();
-    _builder.append("    ");
-    _builder.append("public static List<WebElement> findElementsStable(WebDriver driver, By locator, Predicate<WebElement> filter, int maxAttempts, int retryCountIfZero) {");
-    _builder.newLine();
-    _builder.append("        ");
-    _builder.append("int lastCount = -1;");
-    _builder.newLine();
-    _builder.append("        ");
-    _builder.append("int retryZero = 0;");
-    _builder.newLine();
-    _builder.append("        ");
-    _builder.append("for (int attempt = 0; attempt < maxAttempts; attempt++) {");
-    _builder.newLine();
-    _builder.append("            ");
-    _builder.append("List<WebElement> current = driver.findElements(locator).stream().filter(filter).collect(Collectors.toList());");
-    _builder.newLine();
-    _builder.append("            ");
-    _builder.append("if (current.size() == lastCount && (lastCount != 0 || retryZero == retryCountIfZero)) {");
-    _builder.newLine();
-    _builder.append("                ");
-    _builder.append("return current;");
-    _builder.newLine();
-    _builder.append("            ");
-    _builder.append("} else {");
-    _builder.newLine();
-    _builder.append("                ");
-    _builder.append("lastCount = current.size();");
-    _builder.newLine();
-    _builder.append("                ");
-    _builder.append("if (lastCount == 0) {");
-    _builder.newLine();
-    _builder.append("                    ");
-    _builder.append("retryZero++;");
-    _builder.newLine();
-    _builder.append("                ");
-    _builder.append("}");
-    _builder.newLine();
-    _builder.append("            ");
-    _builder.append("}");
-    _builder.newLine();
-    _builder.append("            ");
-    _builder.append("try {");
-    _builder.newLine();
-    _builder.append("                ");
-    _builder.append("if (lastCount == 0) {");
-    _builder.newLine();
-    _builder.append("                    ");
-    _builder.append("Thread.sleep(1000); // Wait for 1s");
-    _builder.newLine();
-    _builder.append("                ");
-    _builder.append("} else {");
-    _builder.newLine();
-    _builder.append("                    ");
-    _builder.append("Thread.sleep(100); // Wait for 1s");
-    _builder.newLine();
-    _builder.append("                ");
-    _builder.append("}");
-    _builder.newLine();
-    _builder.append("            ");
-    _builder.append("} catch (InterruptedException e) {");
-    _builder.newLine();
-    _builder.append("                ");
-    _builder.append("Thread.currentThread().interrupt();");
-    _builder.newLine();
-    _builder.append("            ");
-    _builder.append("}");
-    _builder.newLine();
-    _builder.append("        ");
-    _builder.append("}");
-    _builder.newLine();
-    _builder.append("        ");
-    _builder.append("throw new RuntimeException(\"Amount of web elements not stable\");");
-    _builder.newLine();
-    _builder.append("    ");
-    _builder.append("}");
-    _builder.newLine();
-    _builder.newLine();
-    _builder.append("    ");
-    _builder.append("public static List<WebElement> findElementsStable(WebDriver driver, By locator, int maxAttempts, int retryCountIfZero) {");
-    _builder.newLine();
-    _builder.append("        ");
-    _builder.append("return findElementsStable(driver, locator, elt -> true, maxAttempts, retryCountIfZero);");
-    _builder.newLine();
-    _builder.append("    ");
-    _builder.append("}");
-    _builder.newLine();
-    _builder.newLine();
-    _builder.append("    ");
-    _builder.append("public static void main(String[] args) throws Exception {");
-    _builder.newLine();
-    _builder.append("        ");
-    _builder.append("WebDriver driver;");
-    _builder.newLine();
-    final Function1<Command, String> _function = (Command it) -> {
-      return this.compile(it);
-    };
-    String _join = IterableExtensions.join(ListExtensions.<Command, String>map(model.getCommands(), _function), "\n\n");
-    String _plus = (_builder.toString() + _join);
-    StringConcatenation _builder_1 = new StringConcatenation();
-    _builder_1.append("        ");
-    _builder_1.append("if (driver == null) {");
-    _builder_1.newLine();
-    _builder_1.append("            ");
-    _builder_1.append("throw new RuntimeException(\"Cannot find a reference to the web driver. Has it been opened?\");");
-    _builder_1.newLine();
-    _builder_1.append("        ");
-    _builder_1.append("}");
-    _builder_1.newLine();
-    _builder_1.append("        ");
-    _builder_1.append("driver.quit();");
-    _builder_1.newLine();
-    _builder_1.append("    ");
-    _builder_1.append("}");
-    _builder_1.newLine();
-    _builder_1.append("}");
-    _builder_1.newLine();
-    return (_plus + _builder_1);
-  }
-
-  public String compile(final Command command) {
-    String _switchResult = null;
-    boolean _matched = false;
-    if (command instanceof OpenBrowser) {
-      _matched=true;
-      StringConcatenation _builder = new StringConcatenation();
-      _builder.append("driver = new ChromeDriver();");
-      _builder.newLine();
-      _builder.append("driver.manage().window().maximize();");
-      _builder.newLine();
-      _switchResult = _builder.toString();
-    }
-    if (!_matched) {
-      if (command instanceof GoTo) {
-        _matched=true;
-        String _xifexpression = null;
-        if ((((GoTo)command).getUrl().startsWith("\"") && ((GoTo)command).getUrl().endsWith("\""))) {
-          StringConcatenation _builder = new StringConcatenation();
-          _builder.append("driver.get(");
-          String _url = ((GoTo)command).getUrl();
-          _builder.append(_url);
-          _builder.append(");");
-          _builder.newLineIfNotEmpty();
-          _xifexpression = _builder.toString();
-        } else {
-          StringConcatenation _builder_1 = new StringConcatenation();
-          _builder_1.append("driver.get(\"");
-          String _url_1 = ((GoTo)command).getUrl();
-          _builder_1.append(_url_1);
-          _builder_1.append("\");");
-          _builder_1.newLineIfNotEmpty();
-          _xifexpression = _builder_1.toString();
-        }
-        _switchResult = _xifexpression;
-      }
-    }
-    if (!_matched) {
-      if (command instanceof DOMCommand) {
-        _matched=true;
-        _switchResult = this.compile(((DOMCommand)command));
-      }
-    }
-    return _switchResult;
-  }
-
-  public String compile(final DOMCommand command) {
-    String _switchResult = null;
-    boolean _matched = false;
-    if (command instanceof Click) {
-      _matched=true;
-      StringConcatenation _builder = new StringConcatenation();
-      Selector _element = ((Click)command).getElement();
-      StringConcatenation _builder_1 = new StringConcatenation();
-      _builder_1.append("((JavascriptExecutor) driver).executeScript(\"arguments[0].scrollIntoView({behavior: \'auto\',block: \'center\',inline: \'center\'});\", e);");
-      _builder_1.newLine();
-      _builder_1.append("try {");
-      _builder_1.newLine();
-      _builder_1.append("    ");
-      _builder_1.append("Thread.sleep(100);");
-      _builder_1.newLine();
-      _builder_1.append("}  catch (InterruptedException e1) {");
-      _builder_1.newLine();
-      _builder_1.append("    ");
-      _builder_1.append("e1.printStackTrace();");
-      _builder_1.newLine();
-      _builder_1.append("}");
-      _builder_1.newLine();
-      _builder_1.append("e.click();");
-      _builder_1.newLine();
-      CharSequence _executeForXPath = this.executeForXPath(_element, _builder_1.toString(), 
-        "e");
-      _builder.append(_executeForXPath);
-      _builder.newLineIfNotEmpty();
-      _switchResult = _builder.toString();
-    }
-    if (!_matched) {
-      if (command instanceof Copy) {
-        _matched=true;
-        StringConcatenation _builder = new StringConcatenation();
-        _builder.append("String dataToSave = \"\";");
-        _builder.newLine();
-        Selector _element = ((Copy)command).getElement();
-        StringConcatenation _builder_1 = new StringConcatenation();
-        {
-          String _property = ((Copy)command).getProperty();
-          boolean _equals = Objects.equal(_property, "text");
-          if (_equals) {
-            _builder_1.append("dataToSave += e.getText().toString();");
-            _builder_1.newLine();
-          } else {
-            _builder_1.append("dataToSave += e.getDomAttribute(\"");
-            String _property_1 = ((Copy)command).getProperty();
-            _builder_1.append(_property_1);
-            _builder_1.append("\").toString();");
-            _builder_1.newLineIfNotEmpty();
-          }
-        }
-        _builder_1.append("savedData.put(\"");
-        String _key = ((Copy)command).getKey();
-        _builder_1.append(_key);
-        _builder_1.append("\", dataToSave);");
-        _builder_1.newLineIfNotEmpty();
-        CharSequence _executeForXPath = this.executeForXPath(_element, _builder_1.toString(), 
-          "e");
-        _builder.append(_executeForXPath);
-        _builder.newLineIfNotEmpty();
-        _switchResult = _builder.toString();
-      }
-    }
-    if (!_matched) {
-      if (command instanceof Insert) {
-        _matched=true;
-        StringConcatenation _builder = new StringConcatenation();
-        Selector _element = ((Insert)command).getElement();
-        StringConcatenation _builder_1 = new StringConcatenation();
-        _builder_1.append("e.sendKeys(\"");
-        CharSequence _content = this.getContent(((Insert)command).getContent());
-        _builder_1.append(_content);
-        _builder_1.append("\");");
-        _builder_1.newLineIfNotEmpty();
-        CharSequence _executeForXPath = this.executeForXPath(_element, _builder_1.toString(), 
-          "e");
-        _builder.append(_executeForXPath);
-        _builder.newLineIfNotEmpty();
-        _switchResult = _builder.toString();
-      }
-    }
-    if (!_matched) {
-      if (command instanceof Verify) {
-        _matched=true;
-        StringConcatenation _builder = new StringConcatenation();
-        Selector _selector = ((Verify)command).getSelector();
-        StringConcatenation _builder_1 = new StringConcatenation();
-        CharSequence _generatePropertyValidation = this.generatePropertyValidation(((Verify)command).getProperties(), "e", "validated");
-        _builder_1.append(_generatePropertyValidation);
-        _builder_1.newLineIfNotEmpty();
-        CharSequence _executeForXPath = this.executeForXPath(_selector, _builder_1.toString(), "e");
-        _builder.append(_executeForXPath);
-        _builder.newLineIfNotEmpty();
-        _switchResult = _builder.toString();
-      }
-    }
-    final String text = _switchResult;
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("{");
-    _builder.newLine();
-    _builder.append("    ");
-    _builder.append(text, "    ");
-    _builder.newLineIfNotEmpty();
-    _builder.append("}");
     return _builder.toString();
   }
 
-  public CharSequence generatePropertyValidation(final List<ElementProperty> properties, final String selector, final String propertyName) {
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("boolean ");
-    _builder.append(propertyName);
-    _builder.append(" = true;");
-    _builder.newLineIfNotEmpty();
-    {
-      for(final ElementProperty property : properties) {
-        _builder.append(propertyName);
-        _builder.append(" &= ");
-        String _xifexpression = null;
-        String _negated = property.getNegated();
-        boolean _equals = Objects.equal(_negated, "not");
-        if (_equals) {
-          _xifexpression = "!";
-        } else {
-          _xifexpression = "";
-        }
-        _builder.append(_xifexpression);
-        CharSequence _switchResult = null;
-        String _property = property.getProperty();
-        if (_property != null) {
-          switch (_property) {
-            case "selected":
-              StringConcatenation _builder_1 = new StringConcatenation();
-              _builder_1.append(selector);
-              _builder_1.append(".isSelected();");
-              _switchResult = _builder_1;
-              break;
-            case "visible":
-              StringConcatenation _builder_2 = new StringConcatenation();
-              _builder_2.append(selector);
-              _builder_2.append(".isDisplayed();");
-              _switchResult = _builder_2;
-              break;
-            case "enabled":
-              StringConcatenation _builder_3 = new StringConcatenation();
-              _builder_3.append(selector);
-              _builder_3.append(".isEnabled();");
-              _switchResult = _builder_3;
-              break;
-          }
-        }
-        _builder.append(_switchResult);
-        _builder.newLineIfNotEmpty();
-      }
-    }
-    return _builder;
-  }
-
-  public CharSequence executeForXPath(final Selector selector, final String command, final String elementName) {
-    CharSequence _xblockexpression = null;
-    {
-      final SelectorPredicate predicate = selector.getPredicate();
-      StringConcatenation _builder = new StringConcatenation();
-      _builder.append("String xpath = \"");
-      String _xPath = this.toXPath(selector);
-      _builder.append(_xPath);
-      _builder.append("\";");
-      _builder.newLineIfNotEmpty();
-      {
-        if (((selector.getLabel() != null) && (!selector.getLabel().isBlank()))) {
-          _builder.append("String labelFor = findElementsStable(driver, By.xpath(\"//label[contains(text(), \'");
-          String _label = selector.getLabel();
-          _builder.append(_label);
-          _builder.append("\')]\"), 10, 3)");
-          _builder.newLineIfNotEmpty();
-          _builder.append("    ");
-          _builder.append(".get(0)");
-          _builder.newLine();
-          _builder.append("    ");
-          _builder.append(".getAttribute(\"for\");");
-          _builder.newLine();
-          _builder.append("xpath += \"[@id=\'\" + labelFor + \"\']\";");
-          _builder.newLine();
-        }
-      }
-      {
-        if (((selector.getProperties() != null) && (!selector.getProperties().getProperties().isEmpty()))) {
-          _builder.append("Predicate<WebElement> predicate = (elt) -> {");
-          _builder.newLine();
-          _builder.append("                        ");
-          CharSequence _generatePropertyValidation = this.generatePropertyValidation(selector.getProperties().getProperties(), "elt", "filter");
-          _builder.append(_generatePropertyValidation, "                        ");
-          _builder.newLineIfNotEmpty();
-          _builder.append("                        ");
-          _builder.append("return filter;");
-          _builder.newLine();
-          _builder.append("                    ");
-          _builder.append("};");
-          _builder.newLine();
-          _builder.append("List<WebElement> current = findElementsStable(driver, By.xpath(xpath), predicate, 10, 5); ");
-          _builder.newLine();
-        } else {
-          _builder.append("List<WebElement> current = findElementsStable(driver, By.xpath(xpath), 10, 5);");
-          _builder.newLine();
-        }
-      }
-      _builder.append("if (current.isEmpty()) {");
-      _builder.newLine();
-      _builder.append("    ");
-      _builder.append("throw new WebDriverException(\"could not find any element matching xpath \" + xpath);");
-      _builder.newLine();
-      _builder.append("}");
-      _builder.newLine();
-      _builder.append("int index = ");
-      Object _switchResult = null;
-      boolean _matched = false;
-      if (predicate instanceof OrdinalCondition) {
-        _matched=true;
-        int _value = ((OrdinalCondition)predicate).getOrdinal().getValue();
-        _switchResult = Integer.valueOf((_value - 1));
-      }
-      if (!_matched) {
-        if (predicate instanceof LastCondition) {
-          _matched=true;
-          _switchResult = "current.size() - 1";
-        }
-      }
-      if (!_matched) {
-        if (predicate instanceof FirstCondition) {
-          _matched=true;
-          _switchResult = "0";
-        }
-      }
-      if (!_matched) {
-        if (predicate instanceof AllCondition) {
-          _matched=true;
-          _switchResult = "-1";
-        }
-      }
-      _builder.append(_switchResult);
-      _builder.append(";");
-      _builder.newLineIfNotEmpty();
-      _builder.newLine();
-      _builder.append("if (index == -1) {");
-      _builder.newLine();
-      _builder.append("    ");
-      _builder.append("for (WebElement ");
-      _builder.append(elementName, "    ");
-      _builder.append(" : current) {");
-      _builder.newLineIfNotEmpty();
-      _builder.append("        ");
-      _builder.append(command, "        ");
-      _builder.newLineIfNotEmpty();
-      _builder.append("    ");
-      _builder.append("}    ;");
-      _builder.newLine();
-      _builder.append("} else {");
-      _builder.newLine();
-      _builder.append("    ");
-      _builder.append("if (index < current.size()) {");
-      _builder.newLine();
-      _builder.append("        ");
-      _builder.append("WebElement ");
-      _builder.append(elementName, "        ");
-      _builder.append("  = current.get(index);");
-      _builder.newLineIfNotEmpty();
-      _builder.append("        ");
-      _builder.append(command, "        ");
-      _builder.newLineIfNotEmpty();
-      _builder.append("    ");
-      _builder.append("} else {");
-      _builder.newLine();
-      _builder.append("        ");
-      _builder.append("throw new RuntimeException(\"No element found\");");
-      _builder.newLine();
-      _builder.append("    ");
-      _builder.append("}");
-      _builder.newLine();
-      _builder.append("}");
-      _builder.newLine();
-      _xblockexpression = _builder;
-    }
-    return _xblockexpression;
-  }
-
-  private static final List<String> TEXT_INPUTS = Collections.<String>unmodifiableList(CollectionLiterals.<String>newArrayList("email", "month", "number", "password", "search", "tel", "text", "url", "week"));
-
-  public CharSequence getContent(final Content attribute) {
-    CharSequence _switchResult = null;
-    boolean _matched = false;
-    if (attribute instanceof StringContent) {
-      _matched=true;
-      _switchResult = ((StringContent)attribute).getValue();
-    }
-    if (!_matched) {
-      if (attribute instanceof ClipboardContent) {
-        _matched=true;
-        StringConcatenation _builder = new StringConcatenation();
-        _builder.append("\"+getSavedData(\"");
-        String _key = ((ClipboardContent)attribute).getKey();
-        _builder.append(_key);
-        _builder.append("\")+\"");
-        _switchResult = _builder;
-      }
-    }
-    return _switchResult;
-  }
-
-  public String toXPath(final Selector selector) {
-    String _switchResult = null;
-    String _domType = selector.getDomType();
-    if (_domType != null) {
-      switch (_domType) {
-        case "element":
-          _switchResult = "//*";
-          break;
-        case "link":
-          _switchResult = "//a";
-          break;
-        case "image":
-          _switchResult = "//img";
-          break;
-        case "list":
-          _switchResult = "//*[self::ul or self::ol]";
-          break;
-        case "list item":
-          _switchResult = "//li";
-          break;
-        case "checkbox":
-          _switchResult = "//input[@type=\'checkbox\']";
-          break;
-        case "button":
-          _switchResult = "//*[self::button or self::input[@type=\'button\'] or self::input[@type=\'submit\']]";
-          break;
-        case "text field":
-          final Function1<String, String> _function = (String input) -> {
-            return (("self::input[@type=\'" + input) + "\']");
-          };
-          String _join = IterableExtensions.join(ListExtensions.<String, String>map(SeleniumDslGenerator.TEXT_INPUTS, _function), " or ");
-          String _plus = ("//*[" + _join);
-          _switchResult = (_plus + "]");
-          break;
-        default:
-          String _domType_1 = selector.getDomType();
-          _switchResult = ("//" + _domType_1);
-          break;
-      }
+  public String processCommand(final Command command) {
+    if ((command instanceof OpenBrowser)) {
+      return "        WebDriver driver = new ChromeDriver();\n\n";
     } else {
-      String _domType_1 = selector.getDomType();
-      _switchResult = ("//" + _domType_1);
-    }
-    String xpath = _switchResult;
-    Attributes _attributes = selector.getAttributes();
-    boolean _tripleNotEquals = (_attributes != null);
-    if (_tripleNotEquals) {
-      EList<ElementAttribute> _attributes_1 = selector.getAttributes().getAttributes();
-      for (final ElementAttribute elementAttribute : _attributes_1) {
-        {
-          final CharSequence valueStr = this.getContent(elementAttribute.getValue());
-          String _xifexpression = null;
-          String _name = elementAttribute.getName();
-          boolean _equals = Objects.equal(_name, "text");
-          if (_equals) {
-            _xifexpression = "text()";
+      if ((command instanceof GoTo)) {
+        String _url = ((GoTo)command).getUrl();
+        String _plus = (("        // Go to URL\n" + "        driver.get(\"") + _url);
+        return (_plus + "\");\n\n");
+      } else {
+        if ((command instanceof Click)) {
+          return this.processClickCommand(((Click)command));
+        } else {
+          if ((command instanceof Fill)) {
+            return this.processFillCommand(((Fill)command));
           } else {
-            String _name_1 = elementAttribute.getName();
-            _xifexpression = ("@" + _name_1);
-          }
-          final String attributeStr = _xifexpression;
-          String _switchResult_1 = null;
-          String _matcher = elementAttribute.getMatcher();
-          if (_matcher != null) {
-            switch (_matcher) {
-              case "containing":
-                _switchResult_1 = String.format("[contains(%s, \'%s\')]", attributeStr, valueStr);
-                break;
-              case "matching":
-                _switchResult_1 = String.format("[%s=\'%s\']", attributeStr, valueStr);
-                break;
+            if ((command instanceof Select)) {
+              return this.processSelectCommand(((Select)command));
+            } else {
+              if ((command instanceof Verify)) {
+                return this.processVerifyCommand(((Verify)command));
+              } else {
+                if ((command instanceof Read)) {
+                  return this.processReadCommand(((Read)command));
+                } else {
+                  if ((command instanceof Uncheck)) {
+                    return (((((("        // Uncheck checkboxes\n" + 
+                      "        List<WebElement> checkboxes = driver.findElements(By.xpath(\"//input[@type=\'checkbox\']\"));\n") + 
+                      "        for (WebElement checkbox : checkboxes) {\n") + 
+                      "            if (checkbox.isSelected()) {\n") + 
+                      "                checkbox.click();\n") + 
+                      "            }\n") + 
+                      "        }\n\n");
+                  } else {
+                    if ((command instanceof Combobox)) {
+                      return "        // Combobox command processing\n";
+                    } else {
+                      return "";
+                    }
+                  }
+                }
+              }
             }
           }
-          final String condition = _switchResult_1;
-          xpath = (xpath + condition);
         }
       }
     }
-    Selector _parent = selector.getParent();
-    boolean _tripleNotEquals_1 = (_parent != null);
-    if (_tripleNotEquals_1) {
-      String _xPath = this.toXPath(selector.getParent());
-      return (_xPath + xpath);
+  }
+
+  public String processClickCommand(final Click command) {
+    String _linkText = command.getLinkText();
+    boolean _tripleNotEquals = (_linkText != null);
+    if (_tripleNotEquals) {
+      String _linkText_1 = command.getLinkText();
+      String _plus = ("         WebElement e = driver.findElement(By.xpath(\"//a[text()=\'" + _linkText_1);
+      String _plus_1 = (_plus + "\']\"));\n");
+      return (_plus_1 + 
+        "        driver.get(e.getAttribute(\"href\"));\n");
+    } else {
+      String _buttonText = command.getButtonText();
+      boolean _tripleNotEquals_1 = (_buttonText != null);
+      if (_tripleNotEquals_1) {
+        String _buttonText_1 = command.getButtonText();
+        String _plus_2 = (("        // Click on a button\n" + 
+          "        driver.findElement(By.xpath(\"//input[@value=\'") + _buttonText_1);
+        return (_plus_2 + "\']\")).click();\n\n");
+      } else {
+        String _alt = command.getAlt();
+        boolean _tripleNotEquals_2 = (_alt != null);
+        if (_tripleNotEquals_2) {
+          String _alt_1 = command.getAlt();
+          String _plus_3 = ("        driver.findElement(By.xpath(\"//img[@alt=\'" + _alt_1);
+          return (_plus_3 + "\']\")).click();\n\n");
+        } else {
+          String _variable = command.getVariable();
+          boolean _tripleNotEquals_3 = (_variable != null);
+          if (_tripleNotEquals_3) {
+            String _variable_1 = command.getVariable();
+            boolean _equals = Objects.equal(_variable_1, "url");
+            if (_equals) {
+              String _variable_2 = command.getVariable();
+              String _plus_4 = ("        driver.get(" + _variable_2);
+              return (_plus_4 + ");\n\n");
+            }
+          } else {
+            return "";
+          }
+        }
+      }
     }
-    return xpath;
+    return null;
+  }
+
+  public String processFillCommand(final Fill command) {
+    String _fieldName = command.getFieldName();
+    String _plus = ("        WebElement labelElement = driver.findElements(By.xpath(\"//label[text()=\'" + _fieldName);
+    String _plus_1 = (_plus + "\']\")).get(1);\n");
+    String _plus_2 = (_plus_1 + 
+      "        WebElement inputElement = driver.findElement(By.id(labelElement.getAttribute(\"for\")));\n");
+    String _xifexpression = null;
+    String _textToFill = command.getTextToFill();
+    boolean _tripleNotEquals = (_textToFill != null);
+    if (_tripleNotEquals) {
+      String _textToFill_1 = command.getTextToFill();
+      String _plus_3 = ("        inputElement.sendKeys(\"" + _textToFill_1);
+      _xifexpression = (_plus_3 + "\");\n\n");
+    } else {
+      String _variable = command.getVariable();
+      String _plus_4 = ("        inputElement.sendKeys(" + _variable);
+      _xifexpression = (_plus_4 + ");\n\n");
+    }
+    return (_plus_2 + _xifexpression);
+  }
+
+  public String processSelectCommand(final Select command) {
+    final Function1<String, String> _function = (String v) -> {
+      return (("\"" + v) + "\"");
+    };
+    final String values = IterableExtensions.join(ListExtensions.<String, String>map(command.getValues(), _function), ", ");
+    return ((((((((("         List<String> valuesToCheck = Arrays.asList(" + values) + ");\n") + 
+      "        JavascriptExecutor js = (JavascriptExecutor) driver;\n") + 
+      "        js.executeScript(\"window.scrollTo(0, 340);\");\n") + 
+      "        for(String value: valuesToCheck) {\n") + 
+      "            WebElement labelElement = driver.findElement(By.xpath(\"//label[text=\'\" + value + \"\']\"));\n") + 
+      "            WebElement inputElement = driver.findElement(By.id(labelElement.getAttribute(\"for\")));\n") + 
+      "            inputElement.click();\n") + 
+      "        }\n");
+  }
+
+  public String processVerifyCommand(final Verify command) {
+    String _textToVerify = command.getTextToVerify();
+    boolean _tripleNotEquals = (_textToVerify != null);
+    if (_tripleNotEquals) {
+      String _textToVerify_1 = command.getTextToVerify();
+      String _plus = (("        // Verify that the page contains text\n" + 
+        "        assert driver.getPageSource().contains(\"") + _textToVerify_1);
+      return (_plus + "\");\n\n");
+    } else {
+      String _linkToVerify = command.getLinkToVerify();
+      boolean _tripleNotEquals_1 = (_linkToVerify != null);
+      if (_tripleNotEquals_1) {
+        String _linkToVerify_1 = command.getLinkToVerify();
+        String _plus_1 = (("        // Verify that the page contains link\n" + 
+          "        assert driver.findElements(By.partialLinkText(\"") + _linkToVerify_1);
+        return (_plus_1 + "\")).size() > 0;\n\n");
+      } else {
+        String _variable = command.getVariable();
+        boolean _tripleNotEquals_2 = (_variable != null);
+        if (_tripleNotEquals_2) {
+          String _variable_1 = command.getVariable();
+          boolean _equals = Objects.equal(_variable_1, "url");
+          if (_equals) {
+            return (("        // Verify that the page countains the url\n" + 
+              "        WebElement foundLink = driver.findElement(By.xpath(\"//a[@href=\\\"\"+ url +\"\\\"]\"));\n") + 
+              "        Assert.notNull(link, \"Link is not found.\");\n");
+          } else {
+            String _variable_2 = command.getVariable();
+            boolean _equals_1 = Objects.equal(_variable_2, "title");
+            if (_equals_1) {
+              return ("        // Verify that the page countains the title\n" + 
+                "        assert driver.getPageSource().contains(title);\n");
+            } else {
+              return "";
+            }
+          }
+        }
+      }
+    }
+    return null;
+  }
+
+  public String processReadCommand(final Read command) {
+    String _linkText = command.getLinkText();
+    String _plus = (("        // Get the link to a news\n" + 
+      "        WebElement link = driver.findElements(By.xpath(\"//a[starts-with(@href, \'") + _linkText);
+    String _plus_1 = (_plus + "\')]\")).get(");
+    int _number = command.getNumber();
+    String _plus_2 = (_plus_1 + Integer.valueOf(_number));
+    String code = (_plus_2 + ");\n");
+    boolean _contains = command.getElements().contains("title");
+    if (_contains) {
+      String _code = code;
+      code = (_code + "        String title = link.getText();\n");
+    }
+    boolean _contains_1 = command.getElements().contains("url");
+    if (_contains_1) {
+      String _code_1 = code;
+      code = (_code_1 + "        String url = link.getAttribute(\"href\");\n");
+    }
+    boolean _contains_2 = command.getElements().contains("text link");
+    if (_contains_2) {
+      String _code_2 = code;
+      code = (_code_2 + "        String title = link.getText();\n");
+    }
+    return code;
   }
 }

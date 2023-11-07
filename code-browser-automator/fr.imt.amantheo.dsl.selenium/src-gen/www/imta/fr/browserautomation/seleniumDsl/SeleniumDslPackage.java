@@ -124,25 +124,6 @@ public interface SeleniumDslPackage extends EPackage
   int OPEN_BROWSER_FEATURE_COUNT = COMMAND_FEATURE_COUNT + 0;
 
   /**
-   * The meta object id for the '{@link www.imta.fr.browserautomation.seleniumDsl.impl.DOMCommandImpl <em>DOM Command</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see www.imta.fr.browserautomation.seleniumDsl.impl.DOMCommandImpl
-   * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getDOMCommand()
-   * @generated
-   */
-  int DOM_COMMAND = 3;
-
-  /**
-   * The number of structural features of the '<em>DOM Command</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DOM_COMMAND_FEATURE_COUNT = COMMAND_FEATURE_COUNT + 0;
-
-  /**
    * The meta object id for the '{@link www.imta.fr.browserautomation.seleniumDsl.impl.GoToImpl <em>Go To</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -150,7 +131,7 @@ public interface SeleniumDslPackage extends EPackage
    * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getGoTo()
    * @generated
    */
-  int GO_TO = 4;
+  int GO_TO = 3;
 
   /**
    * The feature id for the '<em><b>Url</b></em>' attribute.
@@ -178,16 +159,43 @@ public interface SeleniumDslPackage extends EPackage
    * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getClick()
    * @generated
    */
-  int CLICK = 5;
+  int CLICK = 4;
 
   /**
-   * The feature id for the '<em><b>Element</b></em>' containment reference.
+   * The feature id for the '<em><b>Link Text</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CLICK__ELEMENT = DOM_COMMAND_FEATURE_COUNT + 0;
+  int CLICK__LINK_TEXT = COMMAND_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Button Text</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLICK__BUTTON_TEXT = COMMAND_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Alt</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLICK__ALT = COMMAND_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Variable</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLICK__VARIABLE = COMMAND_FEATURE_COUNT + 3;
 
   /**
    * The number of structural features of the '<em>Click</em>' class.
@@ -196,537 +204,81 @@ public interface SeleniumDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CLICK_FEATURE_COUNT = DOM_COMMAND_FEATURE_COUNT + 1;
+  int CLICK_FEATURE_COUNT = COMMAND_FEATURE_COUNT + 4;
 
   /**
-   * The meta object id for the '{@link www.imta.fr.browserautomation.seleniumDsl.impl.CopyImpl <em>Copy</em>}' class.
+   * The meta object id for the '{@link www.imta.fr.browserautomation.seleniumDsl.impl.FillImpl <em>Fill</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see www.imta.fr.browserautomation.seleniumDsl.impl.CopyImpl
-   * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getCopy()
+   * @see www.imta.fr.browserautomation.seleniumDsl.impl.FillImpl
+   * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getFill()
    * @generated
    */
-  int COPY = 6;
+  int FILL = 5;
 
   /**
-   * The feature id for the '<em><b>Property</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COPY__PROPERTY = DOM_COMMAND_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Element</b></em>' containment reference.
+   * The feature id for the '<em><b>Field Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COPY__ELEMENT = DOM_COMMAND_FEATURE_COUNT + 1;
+  int FILL__FIELD_NAME = COMMAND_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Key</b></em>' attribute.
+   * The feature id for the '<em><b>Text To Fill</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COPY__KEY = DOM_COMMAND_FEATURE_COUNT + 2;
+  int FILL__TEXT_TO_FILL = COMMAND_FEATURE_COUNT + 1;
 
   /**
-   * The number of structural features of the '<em>Copy</em>' class.
+   * The feature id for the '<em><b>Variable</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COPY_FEATURE_COUNT = DOM_COMMAND_FEATURE_COUNT + 3;
+  int FILL__VARIABLE = COMMAND_FEATURE_COUNT + 2;
 
   /**
-   * The meta object id for the '{@link www.imta.fr.browserautomation.seleniumDsl.impl.PasteImpl <em>Paste</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see www.imta.fr.browserautomation.seleniumDsl.impl.PasteImpl
-   * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getPaste()
-   * @generated
-   */
-  int PASTE = 7;
-
-  /**
-   * The feature id for the '<em><b>Element</b></em>' containment reference.
+   * The number of structural features of the '<em>Fill</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PASTE__ELEMENT = DOM_COMMAND_FEATURE_COUNT + 0;
+  int FILL_FEATURE_COUNT = COMMAND_FEATURE_COUNT + 3;
 
   /**
-   * The number of structural features of the '<em>Paste</em>' class.
+   * The meta object id for the '{@link www.imta.fr.browserautomation.seleniumDsl.impl.SelectImpl <em>Select</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see www.imta.fr.browserautomation.seleniumDsl.impl.SelectImpl
+   * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getSelect()
+   * @generated
+   */
+  int SELECT = 6;
+
+  /**
+   * The feature id for the '<em><b>Values</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PASTE_FEATURE_COUNT = DOM_COMMAND_FEATURE_COUNT + 1;
+  int SELECT__VALUES = COMMAND_FEATURE_COUNT + 0;
 
   /**
-   * The meta object id for the '{@link www.imta.fr.browserautomation.seleniumDsl.impl.InsertImpl <em>Insert</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see www.imta.fr.browserautomation.seleniumDsl.impl.InsertImpl
-   * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getInsert()
-   * @generated
-   */
-  int INSERT = 8;
-
-  /**
-   * The feature id for the '<em><b>Element</b></em>' containment reference.
+   * The number of structural features of the '<em>Select</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int INSERT__ELEMENT = DOM_COMMAND_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Content</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INSERT__CONTENT = DOM_COMMAND_FEATURE_COUNT + 1;
-
-  /**
-   * The number of structural features of the '<em>Insert</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INSERT_FEATURE_COUNT = DOM_COMMAND_FEATURE_COUNT + 2;
-
-  /**
-   * The meta object id for the '{@link www.imta.fr.browserautomation.seleniumDsl.impl.SelectorImpl <em>Selector</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see www.imta.fr.browserautomation.seleniumDsl.impl.SelectorImpl
-   * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getSelector()
-   * @generated
-   */
-  int SELECTOR = 9;
-
-  /**
-   * The feature id for the '<em><b>Predicate</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SELECTOR__PREDICATE = 0;
-
-  /**
-   * The feature id for the '<em><b>Dom Type</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SELECTOR__DOM_TYPE = 1;
-
-  /**
-   * The feature id for the '<em><b>Attributes</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SELECTOR__ATTRIBUTES = 2;
-
-  /**
-   * The feature id for the '<em><b>Label</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SELECTOR__LABEL = 3;
-
-  /**
-   * The feature id for the '<em><b>Properties</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SELECTOR__PROPERTIES = 4;
-
-  /**
-   * The feature id for the '<em><b>Parent</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SELECTOR__PARENT = 5;
-
-  /**
-   * The number of structural features of the '<em>Selector</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SELECTOR_FEATURE_COUNT = 6;
-
-  /**
-   * The meta object id for the '{@link www.imta.fr.browserautomation.seleniumDsl.impl.AttributesImpl <em>Attributes</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see www.imta.fr.browserautomation.seleniumDsl.impl.AttributesImpl
-   * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getAttributes()
-   * @generated
-   */
-  int ATTRIBUTES = 10;
-
-  /**
-   * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ATTRIBUTES__ATTRIBUTES = 0;
-
-  /**
-   * The number of structural features of the '<em>Attributes</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ATTRIBUTES_FEATURE_COUNT = 1;
-
-  /**
-   * The meta object id for the '{@link www.imta.fr.browserautomation.seleniumDsl.impl.ElementAttributeImpl <em>Element Attribute</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see www.imta.fr.browserautomation.seleniumDsl.impl.ElementAttributeImpl
-   * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getElementAttribute()
-   * @generated
-   */
-  int ELEMENT_ATTRIBUTE = 11;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ELEMENT_ATTRIBUTE__NAME = 0;
-
-  /**
-   * The feature id for the '<em><b>Matcher</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ELEMENT_ATTRIBUTE__MATCHER = 1;
-
-  /**
-   * The feature id for the '<em><b>Value</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ELEMENT_ATTRIBUTE__VALUE = 2;
-
-  /**
-   * The number of structural features of the '<em>Element Attribute</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ELEMENT_ATTRIBUTE_FEATURE_COUNT = 3;
-
-  /**
-   * The meta object id for the '{@link www.imta.fr.browserautomation.seleniumDsl.impl.ContentImpl <em>Content</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see www.imta.fr.browserautomation.seleniumDsl.impl.ContentImpl
-   * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getContent()
-   * @generated
-   */
-  int CONTENT = 12;
-
-  /**
-   * The number of structural features of the '<em>Content</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONTENT_FEATURE_COUNT = 0;
-
-  /**
-   * The meta object id for the '{@link www.imta.fr.browserautomation.seleniumDsl.impl.ClipboardContentImpl <em>Clipboard Content</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see www.imta.fr.browserautomation.seleniumDsl.impl.ClipboardContentImpl
-   * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getClipboardContent()
-   * @generated
-   */
-  int CLIPBOARD_CONTENT = 13;
-
-  /**
-   * The feature id for the '<em><b>Key</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CLIPBOARD_CONTENT__KEY = CONTENT_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Clipboard Content</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CLIPBOARD_CONTENT_FEATURE_COUNT = CONTENT_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link www.imta.fr.browserautomation.seleniumDsl.impl.StringContentImpl <em>String Content</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see www.imta.fr.browserautomation.seleniumDsl.impl.StringContentImpl
-   * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getStringContent()
-   * @generated
-   */
-  int STRING_CONTENT = 14;
-
-  /**
-   * The feature id for the '<em><b>Value</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STRING_CONTENT__VALUE = CONTENT_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>String Content</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STRING_CONTENT_FEATURE_COUNT = CONTENT_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link www.imta.fr.browserautomation.seleniumDsl.impl.PropertiesImpl <em>Properties</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see www.imta.fr.browserautomation.seleniumDsl.impl.PropertiesImpl
-   * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getProperties()
-   * @generated
-   */
-  int PROPERTIES = 15;
-
-  /**
-   * The feature id for the '<em><b>Properties</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PROPERTIES__PROPERTIES = 0;
-
-  /**
-   * The number of structural features of the '<em>Properties</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PROPERTIES_FEATURE_COUNT = 1;
-
-  /**
-   * The meta object id for the '{@link www.imta.fr.browserautomation.seleniumDsl.impl.ElementPropertyImpl <em>Element Property</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see www.imta.fr.browserautomation.seleniumDsl.impl.ElementPropertyImpl
-   * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getElementProperty()
-   * @generated
-   */
-  int ELEMENT_PROPERTY = 16;
-
-  /**
-   * The feature id for the '<em><b>Negated</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ELEMENT_PROPERTY__NEGATED = 0;
-
-  /**
-   * The feature id for the '<em><b>Property</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ELEMENT_PROPERTY__PROPERTY = 1;
-
-  /**
-   * The number of structural features of the '<em>Element Property</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ELEMENT_PROPERTY_FEATURE_COUNT = 2;
-
-  /**
-   * The meta object id for the '{@link www.imta.fr.browserautomation.seleniumDsl.impl.SelectorPredicateImpl <em>Selector Predicate</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see www.imta.fr.browserautomation.seleniumDsl.impl.SelectorPredicateImpl
-   * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getSelectorPredicate()
-   * @generated
-   */
-  int SELECTOR_PREDICATE = 17;
-
-  /**
-   * The number of structural features of the '<em>Selector Predicate</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SELECTOR_PREDICATE_FEATURE_COUNT = 0;
-
-  /**
-   * The meta object id for the '{@link www.imta.fr.browserautomation.seleniumDsl.impl.AllConditionImpl <em>All Condition</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see www.imta.fr.browserautomation.seleniumDsl.impl.AllConditionImpl
-   * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getAllCondition()
-   * @generated
-   */
-  int ALL_CONDITION = 18;
-
-  /**
-   * The number of structural features of the '<em>All Condition</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ALL_CONDITION_FEATURE_COUNT = SELECTOR_PREDICATE_FEATURE_COUNT + 0;
-
-  /**
-   * The meta object id for the '{@link www.imta.fr.browserautomation.seleniumDsl.impl.IntWithSuffixImpl <em>Int With Suffix</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see www.imta.fr.browserautomation.seleniumDsl.impl.IntWithSuffixImpl
-   * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getIntWithSuffix()
-   * @generated
-   */
-  int INT_WITH_SUFFIX = 19;
-
-  /**
-   * The feature id for the '<em><b>Value</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INT_WITH_SUFFIX__VALUE = 0;
-
-  /**
-   * The number of structural features of the '<em>Int With Suffix</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INT_WITH_SUFFIX_FEATURE_COUNT = 1;
-
-  /**
-   * The meta object id for the '{@link www.imta.fr.browserautomation.seleniumDsl.impl.OrdinalConditionImpl <em>Ordinal Condition</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see www.imta.fr.browserautomation.seleniumDsl.impl.OrdinalConditionImpl
-   * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getOrdinalCondition()
-   * @generated
-   */
-  int ORDINAL_CONDITION = 20;
-
-  /**
-   * The feature id for the '<em><b>Ordinal</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ORDINAL_CONDITION__ORDINAL = SELECTOR_PREDICATE_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Ordinal Condition</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ORDINAL_CONDITION_FEATURE_COUNT = SELECTOR_PREDICATE_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link www.imta.fr.browserautomation.seleniumDsl.impl.LastConditionImpl <em>Last Condition</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see www.imta.fr.browserautomation.seleniumDsl.impl.LastConditionImpl
-   * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getLastCondition()
-   * @generated
-   */
-  int LAST_CONDITION = 21;
-
-  /**
-   * The number of structural features of the '<em>Last Condition</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LAST_CONDITION_FEATURE_COUNT = SELECTOR_PREDICATE_FEATURE_COUNT + 0;
-
-  /**
-   * The meta object id for the '{@link www.imta.fr.browserautomation.seleniumDsl.impl.FirstConditionImpl <em>First Condition</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see www.imta.fr.browserautomation.seleniumDsl.impl.FirstConditionImpl
-   * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getFirstCondition()
-   * @generated
-   */
-  int FIRST_CONDITION = 22;
-
-  /**
-   * The number of structural features of the '<em>First Condition</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FIRST_CONDITION_FEATURE_COUNT = SELECTOR_PREDICATE_FEATURE_COUNT + 0;
+  int SELECT_FEATURE_COUNT = COMMAND_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link www.imta.fr.browserautomation.seleniumDsl.impl.VerifyImpl <em>Verify</em>}' class.
@@ -736,25 +288,34 @@ public interface SeleniumDslPackage extends EPackage
    * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getVerify()
    * @generated
    */
-  int VERIFY = 23;
+  int VERIFY = 7;
 
   /**
-   * The feature id for the '<em><b>Selector</b></em>' containment reference.
+   * The feature id for the '<em><b>Text To Verify</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int VERIFY__SELECTOR = DOM_COMMAND_FEATURE_COUNT + 0;
+  int VERIFY__TEXT_TO_VERIFY = COMMAND_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Properties</b></em>' containment reference list.
+   * The feature id for the '<em><b>Link To Verify</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int VERIFY__PROPERTIES = DOM_COMMAND_FEATURE_COUNT + 1;
+  int VERIFY__LINK_TO_VERIFY = COMMAND_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Variable</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VERIFY__VARIABLE = COMMAND_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>Verify</em>' class.
@@ -763,7 +324,109 @@ public interface SeleniumDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VERIFY_FEATURE_COUNT = DOM_COMMAND_FEATURE_COUNT + 2;
+  int VERIFY_FEATURE_COUNT = COMMAND_FEATURE_COUNT + 3;
+
+  /**
+   * The meta object id for the '{@link www.imta.fr.browserautomation.seleniumDsl.impl.ReadImpl <em>Read</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see www.imta.fr.browserautomation.seleniumDsl.impl.ReadImpl
+   * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getRead()
+   * @generated
+   */
+  int READ = 8;
+
+  /**
+   * The feature id for the '<em><b>Elements</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int READ__ELEMENTS = COMMAND_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Link Text</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int READ__LINK_TEXT = COMMAND_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Number</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int READ__NUMBER = COMMAND_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>Read</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int READ_FEATURE_COUNT = COMMAND_FEATURE_COUNT + 3;
+
+  /**
+   * The meta object id for the '{@link www.imta.fr.browserautomation.seleniumDsl.impl.UncheckImpl <em>Uncheck</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see www.imta.fr.browserautomation.seleniumDsl.impl.UncheckImpl
+   * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getUncheck()
+   * @generated
+   */
+  int UNCHECK = 9;
+
+  /**
+   * The number of structural features of the '<em>Uncheck</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UNCHECK_FEATURE_COUNT = COMMAND_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link www.imta.fr.browserautomation.seleniumDsl.impl.ComboboxImpl <em>Combobox</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see www.imta.fr.browserautomation.seleniumDsl.impl.ComboboxImpl
+   * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getCombobox()
+   * @generated
+   */
+  int COMBOBOX = 10;
+
+  /**
+   * The feature id for the '<em><b>Option</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMBOBOX__OPTION = COMMAND_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Label</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMBOBOX__LABEL = COMMAND_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Combobox</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMBOBOX_FEATURE_COUNT = COMMAND_FEATURE_COUNT + 2;
 
 
   /**
@@ -808,16 +471,6 @@ public interface SeleniumDslPackage extends EPackage
   EClass getOpenBrowser();
 
   /**
-   * Returns the meta object for class '{@link www.imta.fr.browserautomation.seleniumDsl.DOMCommand <em>DOM Command</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>DOM Command</em>'.
-   * @see www.imta.fr.browserautomation.seleniumDsl.DOMCommand
-   * @generated
-   */
-  EClass getDOMCommand();
-
-  /**
    * Returns the meta object for class '{@link www.imta.fr.browserautomation.seleniumDsl.GoTo <em>Go To</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -849,438 +502,112 @@ public interface SeleniumDslPackage extends EPackage
   EClass getClick();
 
   /**
-   * Returns the meta object for the containment reference '{@link www.imta.fr.browserautomation.seleniumDsl.Click#getElement <em>Element</em>}'.
+   * Returns the meta object for the attribute '{@link www.imta.fr.browserautomation.seleniumDsl.Click#getLinkText <em>Link Text</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Element</em>'.
-   * @see www.imta.fr.browserautomation.seleniumDsl.Click#getElement()
+   * @return the meta object for the attribute '<em>Link Text</em>'.
+   * @see www.imta.fr.browserautomation.seleniumDsl.Click#getLinkText()
    * @see #getClick()
    * @generated
    */
-  EReference getClick_Element();
+  EAttribute getClick_LinkText();
 
   /**
-   * Returns the meta object for class '{@link www.imta.fr.browserautomation.seleniumDsl.Copy <em>Copy</em>}'.
+   * Returns the meta object for the attribute '{@link www.imta.fr.browserautomation.seleniumDsl.Click#getButtonText <em>Button Text</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Copy</em>'.
-   * @see www.imta.fr.browserautomation.seleniumDsl.Copy
+   * @return the meta object for the attribute '<em>Button Text</em>'.
+   * @see www.imta.fr.browserautomation.seleniumDsl.Click#getButtonText()
+   * @see #getClick()
    * @generated
    */
-  EClass getCopy();
+  EAttribute getClick_ButtonText();
 
   /**
-   * Returns the meta object for the attribute '{@link www.imta.fr.browserautomation.seleniumDsl.Copy#getProperty <em>Property</em>}'.
+   * Returns the meta object for the attribute '{@link www.imta.fr.browserautomation.seleniumDsl.Click#getAlt <em>Alt</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Property</em>'.
-   * @see www.imta.fr.browserautomation.seleniumDsl.Copy#getProperty()
-   * @see #getCopy()
+   * @return the meta object for the attribute '<em>Alt</em>'.
+   * @see www.imta.fr.browserautomation.seleniumDsl.Click#getAlt()
+   * @see #getClick()
    * @generated
    */
-  EAttribute getCopy_Property();
+  EAttribute getClick_Alt();
 
   /**
-   * Returns the meta object for the containment reference '{@link www.imta.fr.browserautomation.seleniumDsl.Copy#getElement <em>Element</em>}'.
+   * Returns the meta object for the attribute '{@link www.imta.fr.browserautomation.seleniumDsl.Click#getVariable <em>Variable</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Element</em>'.
-   * @see www.imta.fr.browserautomation.seleniumDsl.Copy#getElement()
-   * @see #getCopy()
+   * @return the meta object for the attribute '<em>Variable</em>'.
+   * @see www.imta.fr.browserautomation.seleniumDsl.Click#getVariable()
+   * @see #getClick()
    * @generated
    */
-  EReference getCopy_Element();
+  EAttribute getClick_Variable();
 
   /**
-   * Returns the meta object for the attribute '{@link www.imta.fr.browserautomation.seleniumDsl.Copy#getKey <em>Key</em>}'.
+   * Returns the meta object for class '{@link www.imta.fr.browserautomation.seleniumDsl.Fill <em>Fill</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Key</em>'.
-   * @see www.imta.fr.browserautomation.seleniumDsl.Copy#getKey()
-   * @see #getCopy()
+   * @return the meta object for class '<em>Fill</em>'.
+   * @see www.imta.fr.browserautomation.seleniumDsl.Fill
    * @generated
    */
-  EAttribute getCopy_Key();
+  EClass getFill();
 
   /**
-   * Returns the meta object for class '{@link www.imta.fr.browserautomation.seleniumDsl.Paste <em>Paste</em>}'.
+   * Returns the meta object for the attribute '{@link www.imta.fr.browserautomation.seleniumDsl.Fill#getFieldName <em>Field Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Paste</em>'.
-   * @see www.imta.fr.browserautomation.seleniumDsl.Paste
+   * @return the meta object for the attribute '<em>Field Name</em>'.
+   * @see www.imta.fr.browserautomation.seleniumDsl.Fill#getFieldName()
+   * @see #getFill()
    * @generated
    */
-  EClass getPaste();
+  EAttribute getFill_FieldName();
 
   /**
-   * Returns the meta object for the containment reference '{@link www.imta.fr.browserautomation.seleniumDsl.Paste#getElement <em>Element</em>}'.
+   * Returns the meta object for the attribute '{@link www.imta.fr.browserautomation.seleniumDsl.Fill#getTextToFill <em>Text To Fill</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Element</em>'.
-   * @see www.imta.fr.browserautomation.seleniumDsl.Paste#getElement()
-   * @see #getPaste()
+   * @return the meta object for the attribute '<em>Text To Fill</em>'.
+   * @see www.imta.fr.browserautomation.seleniumDsl.Fill#getTextToFill()
+   * @see #getFill()
    * @generated
    */
-  EReference getPaste_Element();
+  EAttribute getFill_TextToFill();
 
   /**
-   * Returns the meta object for class '{@link www.imta.fr.browserautomation.seleniumDsl.Insert <em>Insert</em>}'.
+   * Returns the meta object for the attribute '{@link www.imta.fr.browserautomation.seleniumDsl.Fill#getVariable <em>Variable</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Insert</em>'.
-   * @see www.imta.fr.browserautomation.seleniumDsl.Insert
+   * @return the meta object for the attribute '<em>Variable</em>'.
+   * @see www.imta.fr.browserautomation.seleniumDsl.Fill#getVariable()
+   * @see #getFill()
    * @generated
    */
-  EClass getInsert();
+  EAttribute getFill_Variable();
 
   /**
-   * Returns the meta object for the containment reference '{@link www.imta.fr.browserautomation.seleniumDsl.Insert#getElement <em>Element</em>}'.
+   * Returns the meta object for class '{@link www.imta.fr.browserautomation.seleniumDsl.Select <em>Select</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Element</em>'.
-   * @see www.imta.fr.browserautomation.seleniumDsl.Insert#getElement()
-   * @see #getInsert()
+   * @return the meta object for class '<em>Select</em>'.
+   * @see www.imta.fr.browserautomation.seleniumDsl.Select
    * @generated
    */
-  EReference getInsert_Element();
+  EClass getSelect();
 
   /**
-   * Returns the meta object for the containment reference '{@link www.imta.fr.browserautomation.seleniumDsl.Insert#getContent <em>Content</em>}'.
+   * Returns the meta object for the attribute list '{@link www.imta.fr.browserautomation.seleniumDsl.Select#getValues <em>Values</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Content</em>'.
-   * @see www.imta.fr.browserautomation.seleniumDsl.Insert#getContent()
-   * @see #getInsert()
+   * @return the meta object for the attribute list '<em>Values</em>'.
+   * @see www.imta.fr.browserautomation.seleniumDsl.Select#getValues()
+   * @see #getSelect()
    * @generated
    */
-  EReference getInsert_Content();
-
-  /**
-   * Returns the meta object for class '{@link www.imta.fr.browserautomation.seleniumDsl.Selector <em>Selector</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Selector</em>'.
-   * @see www.imta.fr.browserautomation.seleniumDsl.Selector
-   * @generated
-   */
-  EClass getSelector();
-
-  /**
-   * Returns the meta object for the containment reference '{@link www.imta.fr.browserautomation.seleniumDsl.Selector#getPredicate <em>Predicate</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Predicate</em>'.
-   * @see www.imta.fr.browserautomation.seleniumDsl.Selector#getPredicate()
-   * @see #getSelector()
-   * @generated
-   */
-  EReference getSelector_Predicate();
-
-  /**
-   * Returns the meta object for the attribute '{@link www.imta.fr.browserautomation.seleniumDsl.Selector#getDomType <em>Dom Type</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Dom Type</em>'.
-   * @see www.imta.fr.browserautomation.seleniumDsl.Selector#getDomType()
-   * @see #getSelector()
-   * @generated
-   */
-  EAttribute getSelector_DomType();
-
-  /**
-   * Returns the meta object for the containment reference '{@link www.imta.fr.browserautomation.seleniumDsl.Selector#getAttributes <em>Attributes</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Attributes</em>'.
-   * @see www.imta.fr.browserautomation.seleniumDsl.Selector#getAttributes()
-   * @see #getSelector()
-   * @generated
-   */
-  EReference getSelector_Attributes();
-
-  /**
-   * Returns the meta object for the attribute '{@link www.imta.fr.browserautomation.seleniumDsl.Selector#getLabel <em>Label</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Label</em>'.
-   * @see www.imta.fr.browserautomation.seleniumDsl.Selector#getLabel()
-   * @see #getSelector()
-   * @generated
-   */
-  EAttribute getSelector_Label();
-
-  /**
-   * Returns the meta object for the containment reference '{@link www.imta.fr.browserautomation.seleniumDsl.Selector#getProperties <em>Properties</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Properties</em>'.
-   * @see www.imta.fr.browserautomation.seleniumDsl.Selector#getProperties()
-   * @see #getSelector()
-   * @generated
-   */
-  EReference getSelector_Properties();
-
-  /**
-   * Returns the meta object for the containment reference '{@link www.imta.fr.browserautomation.seleniumDsl.Selector#getParent <em>Parent</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Parent</em>'.
-   * @see www.imta.fr.browserautomation.seleniumDsl.Selector#getParent()
-   * @see #getSelector()
-   * @generated
-   */
-  EReference getSelector_Parent();
-
-  /**
-   * Returns the meta object for class '{@link www.imta.fr.browserautomation.seleniumDsl.Attributes <em>Attributes</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Attributes</em>'.
-   * @see www.imta.fr.browserautomation.seleniumDsl.Attributes
-   * @generated
-   */
-  EClass getAttributes();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link www.imta.fr.browserautomation.seleniumDsl.Attributes#getAttributes <em>Attributes</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Attributes</em>'.
-   * @see www.imta.fr.browserautomation.seleniumDsl.Attributes#getAttributes()
-   * @see #getAttributes()
-   * @generated
-   */
-  EReference getAttributes_Attributes();
-
-  /**
-   * Returns the meta object for class '{@link www.imta.fr.browserautomation.seleniumDsl.ElementAttribute <em>Element Attribute</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Element Attribute</em>'.
-   * @see www.imta.fr.browserautomation.seleniumDsl.ElementAttribute
-   * @generated
-   */
-  EClass getElementAttribute();
-
-  /**
-   * Returns the meta object for the attribute '{@link www.imta.fr.browserautomation.seleniumDsl.ElementAttribute#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see www.imta.fr.browserautomation.seleniumDsl.ElementAttribute#getName()
-   * @see #getElementAttribute()
-   * @generated
-   */
-  EAttribute getElementAttribute_Name();
-
-  /**
-   * Returns the meta object for the attribute '{@link www.imta.fr.browserautomation.seleniumDsl.ElementAttribute#getMatcher <em>Matcher</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Matcher</em>'.
-   * @see www.imta.fr.browserautomation.seleniumDsl.ElementAttribute#getMatcher()
-   * @see #getElementAttribute()
-   * @generated
-   */
-  EAttribute getElementAttribute_Matcher();
-
-  /**
-   * Returns the meta object for the containment reference '{@link www.imta.fr.browserautomation.seleniumDsl.ElementAttribute#getValue <em>Value</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Value</em>'.
-   * @see www.imta.fr.browserautomation.seleniumDsl.ElementAttribute#getValue()
-   * @see #getElementAttribute()
-   * @generated
-   */
-  EReference getElementAttribute_Value();
-
-  /**
-   * Returns the meta object for class '{@link www.imta.fr.browserautomation.seleniumDsl.Content <em>Content</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Content</em>'.
-   * @see www.imta.fr.browserautomation.seleniumDsl.Content
-   * @generated
-   */
-  EClass getContent();
-
-  /**
-   * Returns the meta object for class '{@link www.imta.fr.browserautomation.seleniumDsl.ClipboardContent <em>Clipboard Content</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Clipboard Content</em>'.
-   * @see www.imta.fr.browserautomation.seleniumDsl.ClipboardContent
-   * @generated
-   */
-  EClass getClipboardContent();
-
-  /**
-   * Returns the meta object for the attribute '{@link www.imta.fr.browserautomation.seleniumDsl.ClipboardContent#getKey <em>Key</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Key</em>'.
-   * @see www.imta.fr.browserautomation.seleniumDsl.ClipboardContent#getKey()
-   * @see #getClipboardContent()
-   * @generated
-   */
-  EAttribute getClipboardContent_Key();
-
-  /**
-   * Returns the meta object for class '{@link www.imta.fr.browserautomation.seleniumDsl.StringContent <em>String Content</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>String Content</em>'.
-   * @see www.imta.fr.browserautomation.seleniumDsl.StringContent
-   * @generated
-   */
-  EClass getStringContent();
-
-  /**
-   * Returns the meta object for the attribute '{@link www.imta.fr.browserautomation.seleniumDsl.StringContent#getValue <em>Value</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Value</em>'.
-   * @see www.imta.fr.browserautomation.seleniumDsl.StringContent#getValue()
-   * @see #getStringContent()
-   * @generated
-   */
-  EAttribute getStringContent_Value();
-
-  /**
-   * Returns the meta object for class '{@link www.imta.fr.browserautomation.seleniumDsl.Properties <em>Properties</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Properties</em>'.
-   * @see www.imta.fr.browserautomation.seleniumDsl.Properties
-   * @generated
-   */
-  EClass getProperties();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link www.imta.fr.browserautomation.seleniumDsl.Properties#getProperties <em>Properties</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Properties</em>'.
-   * @see www.imta.fr.browserautomation.seleniumDsl.Properties#getProperties()
-   * @see #getProperties()
-   * @generated
-   */
-  EReference getProperties_Properties();
-
-  /**
-   * Returns the meta object for class '{@link www.imta.fr.browserautomation.seleniumDsl.ElementProperty <em>Element Property</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Element Property</em>'.
-   * @see www.imta.fr.browserautomation.seleniumDsl.ElementProperty
-   * @generated
-   */
-  EClass getElementProperty();
-
-  /**
-   * Returns the meta object for the attribute '{@link www.imta.fr.browserautomation.seleniumDsl.ElementProperty#getNegated <em>Negated</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Negated</em>'.
-   * @see www.imta.fr.browserautomation.seleniumDsl.ElementProperty#getNegated()
-   * @see #getElementProperty()
-   * @generated
-   */
-  EAttribute getElementProperty_Negated();
-
-  /**
-   * Returns the meta object for the attribute '{@link www.imta.fr.browserautomation.seleniumDsl.ElementProperty#getProperty <em>Property</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Property</em>'.
-   * @see www.imta.fr.browserautomation.seleniumDsl.ElementProperty#getProperty()
-   * @see #getElementProperty()
-   * @generated
-   */
-  EAttribute getElementProperty_Property();
-
-  /**
-   * Returns the meta object for class '{@link www.imta.fr.browserautomation.seleniumDsl.SelectorPredicate <em>Selector Predicate</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Selector Predicate</em>'.
-   * @see www.imta.fr.browserautomation.seleniumDsl.SelectorPredicate
-   * @generated
-   */
-  EClass getSelectorPredicate();
-
-  /**
-   * Returns the meta object for class '{@link www.imta.fr.browserautomation.seleniumDsl.AllCondition <em>All Condition</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>All Condition</em>'.
-   * @see www.imta.fr.browserautomation.seleniumDsl.AllCondition
-   * @generated
-   */
-  EClass getAllCondition();
-
-  /**
-   * Returns the meta object for class '{@link www.imta.fr.browserautomation.seleniumDsl.IntWithSuffix <em>Int With Suffix</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Int With Suffix</em>'.
-   * @see www.imta.fr.browserautomation.seleniumDsl.IntWithSuffix
-   * @generated
-   */
-  EClass getIntWithSuffix();
-
-  /**
-   * Returns the meta object for the attribute '{@link www.imta.fr.browserautomation.seleniumDsl.IntWithSuffix#getValue <em>Value</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Value</em>'.
-   * @see www.imta.fr.browserautomation.seleniumDsl.IntWithSuffix#getValue()
-   * @see #getIntWithSuffix()
-   * @generated
-   */
-  EAttribute getIntWithSuffix_Value();
-
-  /**
-   * Returns the meta object for class '{@link www.imta.fr.browserautomation.seleniumDsl.OrdinalCondition <em>Ordinal Condition</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Ordinal Condition</em>'.
-   * @see www.imta.fr.browserautomation.seleniumDsl.OrdinalCondition
-   * @generated
-   */
-  EClass getOrdinalCondition();
-
-  /**
-   * Returns the meta object for the containment reference '{@link www.imta.fr.browserautomation.seleniumDsl.OrdinalCondition#getOrdinal <em>Ordinal</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Ordinal</em>'.
-   * @see www.imta.fr.browserautomation.seleniumDsl.OrdinalCondition#getOrdinal()
-   * @see #getOrdinalCondition()
-   * @generated
-   */
-  EReference getOrdinalCondition_Ordinal();
-
-  /**
-   * Returns the meta object for class '{@link www.imta.fr.browserautomation.seleniumDsl.LastCondition <em>Last Condition</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Last Condition</em>'.
-   * @see www.imta.fr.browserautomation.seleniumDsl.LastCondition
-   * @generated
-   */
-  EClass getLastCondition();
-
-  /**
-   * Returns the meta object for class '{@link www.imta.fr.browserautomation.seleniumDsl.FirstCondition <em>First Condition</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>First Condition</em>'.
-   * @see www.imta.fr.browserautomation.seleniumDsl.FirstCondition
-   * @generated
-   */
-  EClass getFirstCondition();
+  EAttribute getSelect_Values();
 
   /**
    * Returns the meta object for class '{@link www.imta.fr.browserautomation.seleniumDsl.Verify <em>Verify</em>}'.
@@ -1293,26 +620,122 @@ public interface SeleniumDslPackage extends EPackage
   EClass getVerify();
 
   /**
-   * Returns the meta object for the containment reference '{@link www.imta.fr.browserautomation.seleniumDsl.Verify#getSelector <em>Selector</em>}'.
+   * Returns the meta object for the attribute '{@link www.imta.fr.browserautomation.seleniumDsl.Verify#getTextToVerify <em>Text To Verify</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Selector</em>'.
-   * @see www.imta.fr.browserautomation.seleniumDsl.Verify#getSelector()
+   * @return the meta object for the attribute '<em>Text To Verify</em>'.
+   * @see www.imta.fr.browserautomation.seleniumDsl.Verify#getTextToVerify()
    * @see #getVerify()
    * @generated
    */
-  EReference getVerify_Selector();
+  EAttribute getVerify_TextToVerify();
 
   /**
-   * Returns the meta object for the containment reference list '{@link www.imta.fr.browserautomation.seleniumDsl.Verify#getProperties <em>Properties</em>}'.
+   * Returns the meta object for the attribute '{@link www.imta.fr.browserautomation.seleniumDsl.Verify#getLinkToVerify <em>Link To Verify</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Properties</em>'.
-   * @see www.imta.fr.browserautomation.seleniumDsl.Verify#getProperties()
+   * @return the meta object for the attribute '<em>Link To Verify</em>'.
+   * @see www.imta.fr.browserautomation.seleniumDsl.Verify#getLinkToVerify()
    * @see #getVerify()
    * @generated
    */
-  EReference getVerify_Properties();
+  EAttribute getVerify_LinkToVerify();
+
+  /**
+   * Returns the meta object for the attribute '{@link www.imta.fr.browserautomation.seleniumDsl.Verify#getVariable <em>Variable</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Variable</em>'.
+   * @see www.imta.fr.browserautomation.seleniumDsl.Verify#getVariable()
+   * @see #getVerify()
+   * @generated
+   */
+  EAttribute getVerify_Variable();
+
+  /**
+   * Returns the meta object for class '{@link www.imta.fr.browserautomation.seleniumDsl.Read <em>Read</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Read</em>'.
+   * @see www.imta.fr.browserautomation.seleniumDsl.Read
+   * @generated
+   */
+  EClass getRead();
+
+  /**
+   * Returns the meta object for the attribute list '{@link www.imta.fr.browserautomation.seleniumDsl.Read#getElements <em>Elements</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Elements</em>'.
+   * @see www.imta.fr.browserautomation.seleniumDsl.Read#getElements()
+   * @see #getRead()
+   * @generated
+   */
+  EAttribute getRead_Elements();
+
+  /**
+   * Returns the meta object for the attribute '{@link www.imta.fr.browserautomation.seleniumDsl.Read#getLinkText <em>Link Text</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Link Text</em>'.
+   * @see www.imta.fr.browserautomation.seleniumDsl.Read#getLinkText()
+   * @see #getRead()
+   * @generated
+   */
+  EAttribute getRead_LinkText();
+
+  /**
+   * Returns the meta object for the attribute '{@link www.imta.fr.browserautomation.seleniumDsl.Read#getNumber <em>Number</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Number</em>'.
+   * @see www.imta.fr.browserautomation.seleniumDsl.Read#getNumber()
+   * @see #getRead()
+   * @generated
+   */
+  EAttribute getRead_Number();
+
+  /**
+   * Returns the meta object for class '{@link www.imta.fr.browserautomation.seleniumDsl.Uncheck <em>Uncheck</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Uncheck</em>'.
+   * @see www.imta.fr.browserautomation.seleniumDsl.Uncheck
+   * @generated
+   */
+  EClass getUncheck();
+
+  /**
+   * Returns the meta object for class '{@link www.imta.fr.browserautomation.seleniumDsl.Combobox <em>Combobox</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Combobox</em>'.
+   * @see www.imta.fr.browserautomation.seleniumDsl.Combobox
+   * @generated
+   */
+  EClass getCombobox();
+
+  /**
+   * Returns the meta object for the attribute '{@link www.imta.fr.browserautomation.seleniumDsl.Combobox#getOption <em>Option</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Option</em>'.
+   * @see www.imta.fr.browserautomation.seleniumDsl.Combobox#getOption()
+   * @see #getCombobox()
+   * @generated
+   */
+  EAttribute getCombobox_Option();
+
+  /**
+   * Returns the meta object for the attribute '{@link www.imta.fr.browserautomation.seleniumDsl.Combobox#getLabel <em>Label</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Label</em>'.
+   * @see www.imta.fr.browserautomation.seleniumDsl.Combobox#getLabel()
+   * @see #getCombobox()
+   * @generated
+   */
+  EAttribute getCombobox_Label();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -1376,16 +799,6 @@ public interface SeleniumDslPackage extends EPackage
     EClass OPEN_BROWSER = eINSTANCE.getOpenBrowser();
 
     /**
-     * The meta object literal for the '{@link www.imta.fr.browserautomation.seleniumDsl.impl.DOMCommandImpl <em>DOM Command</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see www.imta.fr.browserautomation.seleniumDsl.impl.DOMCommandImpl
-     * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getDOMCommand()
-     * @generated
-     */
-    EClass DOM_COMMAND = eINSTANCE.getDOMCommand();
-
-    /**
      * The meta object literal for the '{@link www.imta.fr.browserautomation.seleniumDsl.impl.GoToImpl <em>Go To</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1414,366 +827,88 @@ public interface SeleniumDslPackage extends EPackage
     EClass CLICK = eINSTANCE.getClick();
 
     /**
-     * The meta object literal for the '<em><b>Element</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Link Text</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference CLICK__ELEMENT = eINSTANCE.getClick_Element();
+    EAttribute CLICK__LINK_TEXT = eINSTANCE.getClick_LinkText();
 
     /**
-     * The meta object literal for the '{@link www.imta.fr.browserautomation.seleniumDsl.impl.CopyImpl <em>Copy</em>}' class.
+     * The meta object literal for the '<em><b>Button Text</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see www.imta.fr.browserautomation.seleniumDsl.impl.CopyImpl
-     * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getCopy()
      * @generated
      */
-    EClass COPY = eINSTANCE.getCopy();
+    EAttribute CLICK__BUTTON_TEXT = eINSTANCE.getClick_ButtonText();
 
     /**
-     * The meta object literal for the '<em><b>Property</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Alt</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute COPY__PROPERTY = eINSTANCE.getCopy_Property();
+    EAttribute CLICK__ALT = eINSTANCE.getClick_Alt();
 
     /**
-     * The meta object literal for the '<em><b>Element</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Variable</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference COPY__ELEMENT = eINSTANCE.getCopy_Element();
+    EAttribute CLICK__VARIABLE = eINSTANCE.getClick_Variable();
 
     /**
-     * The meta object literal for the '<em><b>Key</b></em>' attribute feature.
+     * The meta object literal for the '{@link www.imta.fr.browserautomation.seleniumDsl.impl.FillImpl <em>Fill</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see www.imta.fr.browserautomation.seleniumDsl.impl.FillImpl
+     * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getFill()
      * @generated
      */
-    EAttribute COPY__KEY = eINSTANCE.getCopy_Key();
+    EClass FILL = eINSTANCE.getFill();
 
     /**
-     * The meta object literal for the '{@link www.imta.fr.browserautomation.seleniumDsl.impl.PasteImpl <em>Paste</em>}' class.
+     * The meta object literal for the '<em><b>Field Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see www.imta.fr.browserautomation.seleniumDsl.impl.PasteImpl
-     * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getPaste()
      * @generated
      */
-    EClass PASTE = eINSTANCE.getPaste();
+    EAttribute FILL__FIELD_NAME = eINSTANCE.getFill_FieldName();
 
     /**
-     * The meta object literal for the '<em><b>Element</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Text To Fill</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference PASTE__ELEMENT = eINSTANCE.getPaste_Element();
+    EAttribute FILL__TEXT_TO_FILL = eINSTANCE.getFill_TextToFill();
 
     /**
-     * The meta object literal for the '{@link www.imta.fr.browserautomation.seleniumDsl.impl.InsertImpl <em>Insert</em>}' class.
+     * The meta object literal for the '<em><b>Variable</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see www.imta.fr.browserautomation.seleniumDsl.impl.InsertImpl
-     * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getInsert()
      * @generated
      */
-    EClass INSERT = eINSTANCE.getInsert();
+    EAttribute FILL__VARIABLE = eINSTANCE.getFill_Variable();
 
     /**
-     * The meta object literal for the '<em><b>Element</b></em>' containment reference feature.
+     * The meta object literal for the '{@link www.imta.fr.browserautomation.seleniumDsl.impl.SelectImpl <em>Select</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see www.imta.fr.browserautomation.seleniumDsl.impl.SelectImpl
+     * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getSelect()
      * @generated
      */
-    EReference INSERT__ELEMENT = eINSTANCE.getInsert_Element();
+    EClass SELECT = eINSTANCE.getSelect();
 
     /**
-     * The meta object literal for the '<em><b>Content</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Values</b></em>' attribute list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference INSERT__CONTENT = eINSTANCE.getInsert_Content();
-
-    /**
-     * The meta object literal for the '{@link www.imta.fr.browserautomation.seleniumDsl.impl.SelectorImpl <em>Selector</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see www.imta.fr.browserautomation.seleniumDsl.impl.SelectorImpl
-     * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getSelector()
-     * @generated
-     */
-    EClass SELECTOR = eINSTANCE.getSelector();
-
-    /**
-     * The meta object literal for the '<em><b>Predicate</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference SELECTOR__PREDICATE = eINSTANCE.getSelector_Predicate();
-
-    /**
-     * The meta object literal for the '<em><b>Dom Type</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute SELECTOR__DOM_TYPE = eINSTANCE.getSelector_DomType();
-
-    /**
-     * The meta object literal for the '<em><b>Attributes</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference SELECTOR__ATTRIBUTES = eINSTANCE.getSelector_Attributes();
-
-    /**
-     * The meta object literal for the '<em><b>Label</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute SELECTOR__LABEL = eINSTANCE.getSelector_Label();
-
-    /**
-     * The meta object literal for the '<em><b>Properties</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference SELECTOR__PROPERTIES = eINSTANCE.getSelector_Properties();
-
-    /**
-     * The meta object literal for the '<em><b>Parent</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference SELECTOR__PARENT = eINSTANCE.getSelector_Parent();
-
-    /**
-     * The meta object literal for the '{@link www.imta.fr.browserautomation.seleniumDsl.impl.AttributesImpl <em>Attributes</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see www.imta.fr.browserautomation.seleniumDsl.impl.AttributesImpl
-     * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getAttributes()
-     * @generated
-     */
-    EClass ATTRIBUTES = eINSTANCE.getAttributes();
-
-    /**
-     * The meta object literal for the '<em><b>Attributes</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ATTRIBUTES__ATTRIBUTES = eINSTANCE.getAttributes_Attributes();
-
-    /**
-     * The meta object literal for the '{@link www.imta.fr.browserautomation.seleniumDsl.impl.ElementAttributeImpl <em>Element Attribute</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see www.imta.fr.browserautomation.seleniumDsl.impl.ElementAttributeImpl
-     * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getElementAttribute()
-     * @generated
-     */
-    EClass ELEMENT_ATTRIBUTE = eINSTANCE.getElementAttribute();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute ELEMENT_ATTRIBUTE__NAME = eINSTANCE.getElementAttribute_Name();
-
-    /**
-     * The meta object literal for the '<em><b>Matcher</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute ELEMENT_ATTRIBUTE__MATCHER = eINSTANCE.getElementAttribute_Matcher();
-
-    /**
-     * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ELEMENT_ATTRIBUTE__VALUE = eINSTANCE.getElementAttribute_Value();
-
-    /**
-     * The meta object literal for the '{@link www.imta.fr.browserautomation.seleniumDsl.impl.ContentImpl <em>Content</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see www.imta.fr.browserautomation.seleniumDsl.impl.ContentImpl
-     * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getContent()
-     * @generated
-     */
-    EClass CONTENT = eINSTANCE.getContent();
-
-    /**
-     * The meta object literal for the '{@link www.imta.fr.browserautomation.seleniumDsl.impl.ClipboardContentImpl <em>Clipboard Content</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see www.imta.fr.browserautomation.seleniumDsl.impl.ClipboardContentImpl
-     * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getClipboardContent()
-     * @generated
-     */
-    EClass CLIPBOARD_CONTENT = eINSTANCE.getClipboardContent();
-
-    /**
-     * The meta object literal for the '<em><b>Key</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute CLIPBOARD_CONTENT__KEY = eINSTANCE.getClipboardContent_Key();
-
-    /**
-     * The meta object literal for the '{@link www.imta.fr.browserautomation.seleniumDsl.impl.StringContentImpl <em>String Content</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see www.imta.fr.browserautomation.seleniumDsl.impl.StringContentImpl
-     * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getStringContent()
-     * @generated
-     */
-    EClass STRING_CONTENT = eINSTANCE.getStringContent();
-
-    /**
-     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute STRING_CONTENT__VALUE = eINSTANCE.getStringContent_Value();
-
-    /**
-     * The meta object literal for the '{@link www.imta.fr.browserautomation.seleniumDsl.impl.PropertiesImpl <em>Properties</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see www.imta.fr.browserautomation.seleniumDsl.impl.PropertiesImpl
-     * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getProperties()
-     * @generated
-     */
-    EClass PROPERTIES = eINSTANCE.getProperties();
-
-    /**
-     * The meta object literal for the '<em><b>Properties</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference PROPERTIES__PROPERTIES = eINSTANCE.getProperties_Properties();
-
-    /**
-     * The meta object literal for the '{@link www.imta.fr.browserautomation.seleniumDsl.impl.ElementPropertyImpl <em>Element Property</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see www.imta.fr.browserautomation.seleniumDsl.impl.ElementPropertyImpl
-     * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getElementProperty()
-     * @generated
-     */
-    EClass ELEMENT_PROPERTY = eINSTANCE.getElementProperty();
-
-    /**
-     * The meta object literal for the '<em><b>Negated</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute ELEMENT_PROPERTY__NEGATED = eINSTANCE.getElementProperty_Negated();
-
-    /**
-     * The meta object literal for the '<em><b>Property</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute ELEMENT_PROPERTY__PROPERTY = eINSTANCE.getElementProperty_Property();
-
-    /**
-     * The meta object literal for the '{@link www.imta.fr.browserautomation.seleniumDsl.impl.SelectorPredicateImpl <em>Selector Predicate</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see www.imta.fr.browserautomation.seleniumDsl.impl.SelectorPredicateImpl
-     * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getSelectorPredicate()
-     * @generated
-     */
-    EClass SELECTOR_PREDICATE = eINSTANCE.getSelectorPredicate();
-
-    /**
-     * The meta object literal for the '{@link www.imta.fr.browserautomation.seleniumDsl.impl.AllConditionImpl <em>All Condition</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see www.imta.fr.browserautomation.seleniumDsl.impl.AllConditionImpl
-     * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getAllCondition()
-     * @generated
-     */
-    EClass ALL_CONDITION = eINSTANCE.getAllCondition();
-
-    /**
-     * The meta object literal for the '{@link www.imta.fr.browserautomation.seleniumDsl.impl.IntWithSuffixImpl <em>Int With Suffix</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see www.imta.fr.browserautomation.seleniumDsl.impl.IntWithSuffixImpl
-     * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getIntWithSuffix()
-     * @generated
-     */
-    EClass INT_WITH_SUFFIX = eINSTANCE.getIntWithSuffix();
-
-    /**
-     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute INT_WITH_SUFFIX__VALUE = eINSTANCE.getIntWithSuffix_Value();
-
-    /**
-     * The meta object literal for the '{@link www.imta.fr.browserautomation.seleniumDsl.impl.OrdinalConditionImpl <em>Ordinal Condition</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see www.imta.fr.browserautomation.seleniumDsl.impl.OrdinalConditionImpl
-     * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getOrdinalCondition()
-     * @generated
-     */
-    EClass ORDINAL_CONDITION = eINSTANCE.getOrdinalCondition();
-
-    /**
-     * The meta object literal for the '<em><b>Ordinal</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ORDINAL_CONDITION__ORDINAL = eINSTANCE.getOrdinalCondition_Ordinal();
-
-    /**
-     * The meta object literal for the '{@link www.imta.fr.browserautomation.seleniumDsl.impl.LastConditionImpl <em>Last Condition</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see www.imta.fr.browserautomation.seleniumDsl.impl.LastConditionImpl
-     * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getLastCondition()
-     * @generated
-     */
-    EClass LAST_CONDITION = eINSTANCE.getLastCondition();
-
-    /**
-     * The meta object literal for the '{@link www.imta.fr.browserautomation.seleniumDsl.impl.FirstConditionImpl <em>First Condition</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see www.imta.fr.browserautomation.seleniumDsl.impl.FirstConditionImpl
-     * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getFirstCondition()
-     * @generated
-     */
-    EClass FIRST_CONDITION = eINSTANCE.getFirstCondition();
+    EAttribute SELECT__VALUES = eINSTANCE.getSelect_Values();
 
     /**
      * The meta object literal for the '{@link www.imta.fr.browserautomation.seleniumDsl.impl.VerifyImpl <em>Verify</em>}' class.
@@ -1786,20 +921,98 @@ public interface SeleniumDslPackage extends EPackage
     EClass VERIFY = eINSTANCE.getVerify();
 
     /**
-     * The meta object literal for the '<em><b>Selector</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Text To Verify</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference VERIFY__SELECTOR = eINSTANCE.getVerify_Selector();
+    EAttribute VERIFY__TEXT_TO_VERIFY = eINSTANCE.getVerify_TextToVerify();
 
     /**
-     * The meta object literal for the '<em><b>Properties</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Link To Verify</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference VERIFY__PROPERTIES = eINSTANCE.getVerify_Properties();
+    EAttribute VERIFY__LINK_TO_VERIFY = eINSTANCE.getVerify_LinkToVerify();
+
+    /**
+     * The meta object literal for the '<em><b>Variable</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute VERIFY__VARIABLE = eINSTANCE.getVerify_Variable();
+
+    /**
+     * The meta object literal for the '{@link www.imta.fr.browserautomation.seleniumDsl.impl.ReadImpl <em>Read</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see www.imta.fr.browserautomation.seleniumDsl.impl.ReadImpl
+     * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getRead()
+     * @generated
+     */
+    EClass READ = eINSTANCE.getRead();
+
+    /**
+     * The meta object literal for the '<em><b>Elements</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute READ__ELEMENTS = eINSTANCE.getRead_Elements();
+
+    /**
+     * The meta object literal for the '<em><b>Link Text</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute READ__LINK_TEXT = eINSTANCE.getRead_LinkText();
+
+    /**
+     * The meta object literal for the '<em><b>Number</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute READ__NUMBER = eINSTANCE.getRead_Number();
+
+    /**
+     * The meta object literal for the '{@link www.imta.fr.browserautomation.seleniumDsl.impl.UncheckImpl <em>Uncheck</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see www.imta.fr.browserautomation.seleniumDsl.impl.UncheckImpl
+     * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getUncheck()
+     * @generated
+     */
+    EClass UNCHECK = eINSTANCE.getUncheck();
+
+    /**
+     * The meta object literal for the '{@link www.imta.fr.browserautomation.seleniumDsl.impl.ComboboxImpl <em>Combobox</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see www.imta.fr.browserautomation.seleniumDsl.impl.ComboboxImpl
+     * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getCombobox()
+     * @generated
+     */
+    EClass COMBOBOX = eINSTANCE.getCombobox();
+
+    /**
+     * The meta object literal for the '<em><b>Option</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute COMBOBOX__OPTION = eINSTANCE.getCombobox_Option();
+
+    /**
+     * The meta object literal for the '<em><b>Label</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute COMBOBOX__LABEL = eINSTANCE.getCombobox_Label();
 
   }
 

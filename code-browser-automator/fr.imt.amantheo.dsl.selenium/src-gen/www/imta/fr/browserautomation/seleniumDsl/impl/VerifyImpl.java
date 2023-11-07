@@ -3,23 +3,12 @@
  */
 package www.imta.fr.browserautomation.seleniumDsl.impl;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
-
-import www.imta.fr.browserautomation.seleniumDsl.ElementProperty;
-import www.imta.fr.browserautomation.seleniumDsl.Selector;
 import www.imta.fr.browserautomation.seleniumDsl.SeleniumDslPackage;
 import www.imta.fr.browserautomation.seleniumDsl.Verify;
 
@@ -31,33 +20,74 @@ import www.imta.fr.browserautomation.seleniumDsl.Verify;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link www.imta.fr.browserautomation.seleniumDsl.impl.VerifyImpl#getSelector <em>Selector</em>}</li>
- *   <li>{@link www.imta.fr.browserautomation.seleniumDsl.impl.VerifyImpl#getProperties <em>Properties</em>}</li>
+ *   <li>{@link www.imta.fr.browserautomation.seleniumDsl.impl.VerifyImpl#getTextToVerify <em>Text To Verify</em>}</li>
+ *   <li>{@link www.imta.fr.browserautomation.seleniumDsl.impl.VerifyImpl#getLinkToVerify <em>Link To Verify</em>}</li>
+ *   <li>{@link www.imta.fr.browserautomation.seleniumDsl.impl.VerifyImpl#getVariable <em>Variable</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class VerifyImpl extends DOMCommandImpl implements Verify
+public class VerifyImpl extends CommandImpl implements Verify
 {
   /**
-   * The cached value of the '{@link #getSelector() <em>Selector</em>}' containment reference.
+   * The default value of the '{@link #getTextToVerify() <em>Text To Verify</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getSelector()
+   * @see #getTextToVerify()
    * @generated
    * @ordered
    */
-  protected Selector selector;
+  protected static final String TEXT_TO_VERIFY_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getProperties() <em>Properties</em>}' containment reference list.
+   * The cached value of the '{@link #getTextToVerify() <em>Text To Verify</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getProperties()
+   * @see #getTextToVerify()
    * @generated
    * @ordered
    */
-  protected EList<ElementProperty> properties;
+  protected String textToVerify = TEXT_TO_VERIFY_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getLinkToVerify() <em>Link To Verify</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getLinkToVerify()
+   * @generated
+   * @ordered
+   */
+  protected static final String LINK_TO_VERIFY_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getLinkToVerify() <em>Link To Verify</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getLinkToVerify()
+   * @generated
+   * @ordered
+   */
+  protected String linkToVerify = LINK_TO_VERIFY_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getVariable() <em>Variable</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getVariable()
+   * @generated
+   * @ordered
+   */
+  protected static final String VARIABLE_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getVariable() <em>Variable</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getVariable()
+   * @generated
+   * @ordered
+   */
+  protected String variable = VARIABLE_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -86,9 +116,9 @@ public class VerifyImpl extends DOMCommandImpl implements Verify
    * @generated
    */
   @Override
-  public Selector getSelector()
+  public String getTextToVerify()
   {
-    return selector;
+    return textToVerify;
   }
 
   /**
@@ -96,16 +126,13 @@ public class VerifyImpl extends DOMCommandImpl implements Verify
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetSelector(Selector newSelector, NotificationChain msgs)
+  @Override
+  public void setTextToVerify(String newTextToVerify)
   {
-    Selector oldSelector = selector;
-    selector = newSelector;
+    String oldTextToVerify = textToVerify;
+    textToVerify = newTextToVerify;
     if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SeleniumDslPackage.VERIFY__SELECTOR, oldSelector, newSelector);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
+      eNotify(new ENotificationImpl(this, Notification.SET, SeleniumDslPackage.VERIFY__TEXT_TO_VERIFY, oldTextToVerify, textToVerify));
   }
 
   /**
@@ -114,20 +141,9 @@ public class VerifyImpl extends DOMCommandImpl implements Verify
    * @generated
    */
   @Override
-  public void setSelector(Selector newSelector)
+  public String getLinkToVerify()
   {
-    if (newSelector != selector)
-    {
-      NotificationChain msgs = null;
-      if (selector != null)
-        msgs = ((InternalEObject)selector).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SeleniumDslPackage.VERIFY__SELECTOR, null, msgs);
-      if (newSelector != null)
-        msgs = ((InternalEObject)newSelector).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SeleniumDslPackage.VERIFY__SELECTOR, null, msgs);
-      msgs = basicSetSelector(newSelector, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SeleniumDslPackage.VERIFY__SELECTOR, newSelector, newSelector));
+    return linkToVerify;
   }
 
   /**
@@ -136,13 +152,12 @@ public class VerifyImpl extends DOMCommandImpl implements Verify
    * @generated
    */
   @Override
-  public EList<ElementProperty> getProperties()
+  public void setLinkToVerify(String newLinkToVerify)
   {
-    if (properties == null)
-    {
-      properties = new EObjectContainmentEList<ElementProperty>(ElementProperty.class, this, SeleniumDslPackage.VERIFY__PROPERTIES);
-    }
-    return properties;
+    String oldLinkToVerify = linkToVerify;
+    linkToVerify = newLinkToVerify;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SeleniumDslPackage.VERIFY__LINK_TO_VERIFY, oldLinkToVerify, linkToVerify));
   }
 
   /**
@@ -151,16 +166,23 @@ public class VerifyImpl extends DOMCommandImpl implements Verify
    * @generated
    */
   @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  public String getVariable()
   {
-    switch (featureID)
-    {
-      case SeleniumDslPackage.VERIFY__SELECTOR:
-        return basicSetSelector(null, msgs);
-      case SeleniumDslPackage.VERIFY__PROPERTIES:
-        return ((InternalEList<?>)getProperties()).basicRemove(otherEnd, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
+    return variable;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setVariable(String newVariable)
+  {
+    String oldVariable = variable;
+    variable = newVariable;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SeleniumDslPackage.VERIFY__VARIABLE, oldVariable, variable));
   }
 
   /**
@@ -173,10 +195,12 @@ public class VerifyImpl extends DOMCommandImpl implements Verify
   {
     switch (featureID)
     {
-      case SeleniumDslPackage.VERIFY__SELECTOR:
-        return getSelector();
-      case SeleniumDslPackage.VERIFY__PROPERTIES:
-        return getProperties();
+      case SeleniumDslPackage.VERIFY__TEXT_TO_VERIFY:
+        return getTextToVerify();
+      case SeleniumDslPackage.VERIFY__LINK_TO_VERIFY:
+        return getLinkToVerify();
+      case SeleniumDslPackage.VERIFY__VARIABLE:
+        return getVariable();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -186,18 +210,19 @@ public class VerifyImpl extends DOMCommandImpl implements Verify
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case SeleniumDslPackage.VERIFY__SELECTOR:
-        setSelector((Selector)newValue);
+      case SeleniumDslPackage.VERIFY__TEXT_TO_VERIFY:
+        setTextToVerify((String)newValue);
         return;
-      case SeleniumDslPackage.VERIFY__PROPERTIES:
-        getProperties().clear();
-        getProperties().addAll((Collection<? extends ElementProperty>)newValue);
+      case SeleniumDslPackage.VERIFY__LINK_TO_VERIFY:
+        setLinkToVerify((String)newValue);
+        return;
+      case SeleniumDslPackage.VERIFY__VARIABLE:
+        setVariable((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -213,11 +238,14 @@ public class VerifyImpl extends DOMCommandImpl implements Verify
   {
     switch (featureID)
     {
-      case SeleniumDslPackage.VERIFY__SELECTOR:
-        setSelector((Selector)null);
+      case SeleniumDslPackage.VERIFY__TEXT_TO_VERIFY:
+        setTextToVerify(TEXT_TO_VERIFY_EDEFAULT);
         return;
-      case SeleniumDslPackage.VERIFY__PROPERTIES:
-        getProperties().clear();
+      case SeleniumDslPackage.VERIFY__LINK_TO_VERIFY:
+        setLinkToVerify(LINK_TO_VERIFY_EDEFAULT);
+        return;
+      case SeleniumDslPackage.VERIFY__VARIABLE:
+        setVariable(VARIABLE_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -233,12 +261,35 @@ public class VerifyImpl extends DOMCommandImpl implements Verify
   {
     switch (featureID)
     {
-      case SeleniumDslPackage.VERIFY__SELECTOR:
-        return selector != null;
-      case SeleniumDslPackage.VERIFY__PROPERTIES:
-        return properties != null && !properties.isEmpty();
+      case SeleniumDslPackage.VERIFY__TEXT_TO_VERIFY:
+        return TEXT_TO_VERIFY_EDEFAULT == null ? textToVerify != null : !TEXT_TO_VERIFY_EDEFAULT.equals(textToVerify);
+      case SeleniumDslPackage.VERIFY__LINK_TO_VERIFY:
+        return LINK_TO_VERIFY_EDEFAULT == null ? linkToVerify != null : !LINK_TO_VERIFY_EDEFAULT.equals(linkToVerify);
+      case SeleniumDslPackage.VERIFY__VARIABLE:
+        return VARIABLE_EDEFAULT == null ? variable != null : !VARIABLE_EDEFAULT.equals(variable);
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuilder result = new StringBuilder(super.toString());
+    result.append(" (textToVerify: ");
+    result.append(textToVerify);
+    result.append(", linkToVerify: ");
+    result.append(linkToVerify);
+    result.append(", variable: ");
+    result.append(variable);
+    result.append(')');
+    return result.toString();
   }
 
 } //VerifyImpl

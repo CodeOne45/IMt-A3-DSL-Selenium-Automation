@@ -4,15 +4,12 @@
 package www.imta.fr.browserautomation.seleniumDsl.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import www.imta.fr.browserautomation.seleniumDsl.Click;
-import www.imta.fr.browserautomation.seleniumDsl.Selector;
 import www.imta.fr.browserautomation.seleniumDsl.SeleniumDslPackage;
 
 /**
@@ -23,22 +20,95 @@ import www.imta.fr.browserautomation.seleniumDsl.SeleniumDslPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link www.imta.fr.browserautomation.seleniumDsl.impl.ClickImpl#getElement <em>Element</em>}</li>
+ *   <li>{@link www.imta.fr.browserautomation.seleniumDsl.impl.ClickImpl#getLinkText <em>Link Text</em>}</li>
+ *   <li>{@link www.imta.fr.browserautomation.seleniumDsl.impl.ClickImpl#getButtonText <em>Button Text</em>}</li>
+ *   <li>{@link www.imta.fr.browserautomation.seleniumDsl.impl.ClickImpl#getAlt <em>Alt</em>}</li>
+ *   <li>{@link www.imta.fr.browserautomation.seleniumDsl.impl.ClickImpl#getVariable <em>Variable</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ClickImpl extends DOMCommandImpl implements Click
+public class ClickImpl extends CommandImpl implements Click
 {
   /**
-   * The cached value of the '{@link #getElement() <em>Element</em>}' containment reference.
+   * The default value of the '{@link #getLinkText() <em>Link Text</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getElement()
+   * @see #getLinkText()
    * @generated
    * @ordered
    */
-  protected Selector element;
+  protected static final String LINK_TEXT_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getLinkText() <em>Link Text</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getLinkText()
+   * @generated
+   * @ordered
+   */
+  protected String linkText = LINK_TEXT_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getButtonText() <em>Button Text</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getButtonText()
+   * @generated
+   * @ordered
+   */
+  protected static final String BUTTON_TEXT_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getButtonText() <em>Button Text</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getButtonText()
+   * @generated
+   * @ordered
+   */
+  protected String buttonText = BUTTON_TEXT_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getAlt() <em>Alt</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAlt()
+   * @generated
+   * @ordered
+   */
+  protected static final String ALT_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getAlt() <em>Alt</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAlt()
+   * @generated
+   * @ordered
+   */
+  protected String alt = ALT_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getVariable() <em>Variable</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getVariable()
+   * @generated
+   * @ordered
+   */
+  protected static final String VARIABLE_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getVariable() <em>Variable</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getVariable()
+   * @generated
+   * @ordered
+   */
+  protected String variable = VARIABLE_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -67,9 +137,9 @@ public class ClickImpl extends DOMCommandImpl implements Click
    * @generated
    */
   @Override
-  public Selector getElement()
+  public String getLinkText()
   {
-    return element;
+    return linkText;
   }
 
   /**
@@ -77,16 +147,13 @@ public class ClickImpl extends DOMCommandImpl implements Click
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetElement(Selector newElement, NotificationChain msgs)
+  @Override
+  public void setLinkText(String newLinkText)
   {
-    Selector oldElement = element;
-    element = newElement;
+    String oldLinkText = linkText;
+    linkText = newLinkText;
     if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SeleniumDslPackage.CLICK__ELEMENT, oldElement, newElement);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
+      eNotify(new ENotificationImpl(this, Notification.SET, SeleniumDslPackage.CLICK__LINK_TEXT, oldLinkText, linkText));
   }
 
   /**
@@ -95,20 +162,9 @@ public class ClickImpl extends DOMCommandImpl implements Click
    * @generated
    */
   @Override
-  public void setElement(Selector newElement)
+  public String getButtonText()
   {
-    if (newElement != element)
-    {
-      NotificationChain msgs = null;
-      if (element != null)
-        msgs = ((InternalEObject)element).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SeleniumDslPackage.CLICK__ELEMENT, null, msgs);
-      if (newElement != null)
-        msgs = ((InternalEObject)newElement).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SeleniumDslPackage.CLICK__ELEMENT, null, msgs);
-      msgs = basicSetElement(newElement, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SeleniumDslPackage.CLICK__ELEMENT, newElement, newElement));
+    return buttonText;
   }
 
   /**
@@ -117,14 +173,62 @@ public class ClickImpl extends DOMCommandImpl implements Click
    * @generated
    */
   @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  public void setButtonText(String newButtonText)
   {
-    switch (featureID)
-    {
-      case SeleniumDslPackage.CLICK__ELEMENT:
-        return basicSetElement(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
+    String oldButtonText = buttonText;
+    buttonText = newButtonText;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SeleniumDslPackage.CLICK__BUTTON_TEXT, oldButtonText, buttonText));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getAlt()
+  {
+    return alt;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setAlt(String newAlt)
+  {
+    String oldAlt = alt;
+    alt = newAlt;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SeleniumDslPackage.CLICK__ALT, oldAlt, alt));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getVariable()
+  {
+    return variable;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setVariable(String newVariable)
+  {
+    String oldVariable = variable;
+    variable = newVariable;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SeleniumDslPackage.CLICK__VARIABLE, oldVariable, variable));
   }
 
   /**
@@ -137,8 +241,14 @@ public class ClickImpl extends DOMCommandImpl implements Click
   {
     switch (featureID)
     {
-      case SeleniumDslPackage.CLICK__ELEMENT:
-        return getElement();
+      case SeleniumDslPackage.CLICK__LINK_TEXT:
+        return getLinkText();
+      case SeleniumDslPackage.CLICK__BUTTON_TEXT:
+        return getButtonText();
+      case SeleniumDslPackage.CLICK__ALT:
+        return getAlt();
+      case SeleniumDslPackage.CLICK__VARIABLE:
+        return getVariable();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -153,8 +263,17 @@ public class ClickImpl extends DOMCommandImpl implements Click
   {
     switch (featureID)
     {
-      case SeleniumDslPackage.CLICK__ELEMENT:
-        setElement((Selector)newValue);
+      case SeleniumDslPackage.CLICK__LINK_TEXT:
+        setLinkText((String)newValue);
+        return;
+      case SeleniumDslPackage.CLICK__BUTTON_TEXT:
+        setButtonText((String)newValue);
+        return;
+      case SeleniumDslPackage.CLICK__ALT:
+        setAlt((String)newValue);
+        return;
+      case SeleniumDslPackage.CLICK__VARIABLE:
+        setVariable((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -170,8 +289,17 @@ public class ClickImpl extends DOMCommandImpl implements Click
   {
     switch (featureID)
     {
-      case SeleniumDslPackage.CLICK__ELEMENT:
-        setElement((Selector)null);
+      case SeleniumDslPackage.CLICK__LINK_TEXT:
+        setLinkText(LINK_TEXT_EDEFAULT);
+        return;
+      case SeleniumDslPackage.CLICK__BUTTON_TEXT:
+        setButtonText(BUTTON_TEXT_EDEFAULT);
+        return;
+      case SeleniumDslPackage.CLICK__ALT:
+        setAlt(ALT_EDEFAULT);
+        return;
+      case SeleniumDslPackage.CLICK__VARIABLE:
+        setVariable(VARIABLE_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -187,10 +315,39 @@ public class ClickImpl extends DOMCommandImpl implements Click
   {
     switch (featureID)
     {
-      case SeleniumDslPackage.CLICK__ELEMENT:
-        return element != null;
+      case SeleniumDslPackage.CLICK__LINK_TEXT:
+        return LINK_TEXT_EDEFAULT == null ? linkText != null : !LINK_TEXT_EDEFAULT.equals(linkText);
+      case SeleniumDslPackage.CLICK__BUTTON_TEXT:
+        return BUTTON_TEXT_EDEFAULT == null ? buttonText != null : !BUTTON_TEXT_EDEFAULT.equals(buttonText);
+      case SeleniumDslPackage.CLICK__ALT:
+        return ALT_EDEFAULT == null ? alt != null : !ALT_EDEFAULT.equals(alt);
+      case SeleniumDslPackage.CLICK__VARIABLE:
+        return VARIABLE_EDEFAULT == null ? variable != null : !VARIABLE_EDEFAULT.equals(variable);
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuilder result = new StringBuilder(super.toString());
+    result.append(" (linkText: ");
+    result.append(linkText);
+    result.append(", buttonText: ");
+    result.append(buttonText);
+    result.append(", alt: ");
+    result.append(alt);
+    result.append(", variable: ");
+    result.append(variable);
+    result.append(')');
+    return result.toString();
   }
 
 } //ClickImpl

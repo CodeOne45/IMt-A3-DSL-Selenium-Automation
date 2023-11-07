@@ -3,7 +3,6 @@
  */
 package www.imta.fr.browserautomation.seleniumDsl;
 
-import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,48 +13,81 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link www.imta.fr.browserautomation.seleniumDsl.Verify#getSelector <em>Selector</em>}</li>
- *   <li>{@link www.imta.fr.browserautomation.seleniumDsl.Verify#getProperties <em>Properties</em>}</li>
+ *   <li>{@link www.imta.fr.browserautomation.seleniumDsl.Verify#getTextToVerify <em>Text To Verify</em>}</li>
+ *   <li>{@link www.imta.fr.browserautomation.seleniumDsl.Verify#getLinkToVerify <em>Link To Verify</em>}</li>
+ *   <li>{@link www.imta.fr.browserautomation.seleniumDsl.Verify#getVariable <em>Variable</em>}</li>
  * </ul>
  *
  * @see www.imta.fr.browserautomation.seleniumDsl.SeleniumDslPackage#getVerify()
  * @model
  * @generated
  */
-public interface Verify extends DOMCommand
+public interface Verify extends Command
 {
   /**
-   * Returns the value of the '<em><b>Selector</b></em>' containment reference.
+   * Returns the value of the '<em><b>Text To Verify</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Selector</em>' containment reference.
-   * @see #setSelector(Selector)
-   * @see www.imta.fr.browserautomation.seleniumDsl.SeleniumDslPackage#getVerify_Selector()
-   * @model containment="true"
+   * @return the value of the '<em>Text To Verify</em>' attribute.
+   * @see #setTextToVerify(String)
+   * @see www.imta.fr.browserautomation.seleniumDsl.SeleniumDslPackage#getVerify_TextToVerify()
+   * @model
    * @generated
    */
-  Selector getSelector();
+  String getTextToVerify();
 
   /**
-   * Sets the value of the '{@link www.imta.fr.browserautomation.seleniumDsl.Verify#getSelector <em>Selector</em>}' containment reference.
+   * Sets the value of the '{@link www.imta.fr.browserautomation.seleniumDsl.Verify#getTextToVerify <em>Text To Verify</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Selector</em>' containment reference.
-   * @see #getSelector()
+   * @param value the new value of the '<em>Text To Verify</em>' attribute.
+   * @see #getTextToVerify()
    * @generated
    */
-  void setSelector(Selector value);
+  void setTextToVerify(String value);
 
   /**
-   * Returns the value of the '<em><b>Properties</b></em>' containment reference list.
-   * The list contents are of type {@link www.imta.fr.browserautomation.seleniumDsl.ElementProperty}.
+   * Returns the value of the '<em><b>Link To Verify</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Properties</em>' containment reference list.
-   * @see www.imta.fr.browserautomation.seleniumDsl.SeleniumDslPackage#getVerify_Properties()
-   * @model containment="true"
+   * @return the value of the '<em>Link To Verify</em>' attribute.
+   * @see #setLinkToVerify(String)
+   * @see www.imta.fr.browserautomation.seleniumDsl.SeleniumDslPackage#getVerify_LinkToVerify()
+   * @model
    * @generated
    */
-  EList<ElementProperty> getProperties();
+  String getLinkToVerify();
+
+  /**
+   * Sets the value of the '{@link www.imta.fr.browserautomation.seleniumDsl.Verify#getLinkToVerify <em>Link To Verify</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Link To Verify</em>' attribute.
+   * @see #getLinkToVerify()
+   * @generated
+   */
+  void setLinkToVerify(String value);
+
+  /**
+   * Returns the value of the '<em><b>Variable</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Variable</em>' attribute.
+   * @see #setVariable(String)
+   * @see www.imta.fr.browserautomation.seleniumDsl.SeleniumDslPackage#getVerify_Variable()
+   * @model
+   * @generated
+   */
+  String getVariable();
+
+  /**
+   * Sets the value of the '{@link www.imta.fr.browserautomation.seleniumDsl.Verify#getVariable <em>Variable</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Variable</em>' attribute.
+   * @see #getVariable()
+   * @generated
+   */
+  void setVariable(String value);
 
 } // Verify
