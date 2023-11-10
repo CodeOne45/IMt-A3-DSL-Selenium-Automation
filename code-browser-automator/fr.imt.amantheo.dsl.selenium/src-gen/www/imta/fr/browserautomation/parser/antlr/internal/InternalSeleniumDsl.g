@@ -267,30 +267,23 @@ ruleGoTo returns [EObject current=null]
 		}
 		(
 			(
-				(
-					{
-						newCompositeNode(grammarAccess.getGoToAccess().getUrlDynamicURLParserRuleCall_3_0_0());
+				{
+					newCompositeNode(grammarAccess.getGoToAccess().getUrlDynamicURLParserRuleCall_3_0());
+				}
+				lv_url_3_0=ruleDynamicURL
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getGoToRule());
 					}
-					lv_url_3_0=ruleDynamicURL
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getGoToRule());
-						}
-						set(
-							$current,
-							"url",
-							lv_url_3_0,
-							"www.imta.fr.browserautomation.SeleniumDsl.DynamicURL");
-						afterParserOrEnumRuleCall();
-					}
-				)
+					set(
+						$current,
+						"url",
+						lv_url_3_0,
+						"www.imta.fr.browserautomation.SeleniumDsl.DynamicURL");
+					afterParserOrEnumRuleCall();
+				}
 			)
-			    |
-			otherlv_4='URL'
-			{
-				newLeafNode(otherlv_4, grammarAccess.getGoToAccess().getURLKeyword_3_1());
-			}
-		)?
+		)
 	)
 ;
 
@@ -413,9 +406,9 @@ ruleClick returns [EObject current=null]
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getClickAccess().getVariableDOMELEMENTParserRuleCall_4_3_1_0());
+							newCompositeNode(grammarAccess.getClickAccess().getVariableElementTypeParserRuleCall_4_3_1_0());
 						}
-						lv_variable_11_0=ruleDOMELEMENT
+						lv_variable_11_0=ruleElementType
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getClickRule());
@@ -424,7 +417,7 @@ ruleClick returns [EObject current=null]
 								$current,
 								"variable",
 								lv_variable_11_0,
-								"www.imta.fr.browserautomation.SeleniumDsl.DOMELEMENT");
+								"www.imta.fr.browserautomation.SeleniumDsl.ElementType");
 							afterParserOrEnumRuleCall();
 						}
 					)
@@ -454,23 +447,30 @@ ruleFill returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getFillAccess().getFillKeyword_0());
 		}
-		otherlv_1='the'
-		{
-			newLeafNode(otherlv_1, grammarAccess.getFillAccess().getTheKeyword_1());
-		}
-		otherlv_2='text'
-		{
-			newLeafNode(otherlv_2, grammarAccess.getFillAccess().getTextKeyword_2());
-		}
-		otherlv_3='field'
-		{
-			newLeafNode(otherlv_3, grammarAccess.getFillAccess().getFieldKeyword_3());
-		}
 		(
 			(
-				lv_fieldName_4_0=RULE_STRING
 				{
-					newLeafNode(lv_fieldName_4_0, grammarAccess.getFillAccess().getFieldNameSTRINGTerminalRuleCall_4_0());
+					newCompositeNode(grammarAccess.getFillAccess().getElementSelectorParserRuleCall_1_0());
+				}
+				lv_element_1_0=ruleSelector
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getFillRule());
+					}
+					set(
+						$current,
+						"element",
+						lv_element_1_0,
+						"www.imta.fr.browserautomation.SeleniumDsl.Selector");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			(
+				lv_fieldName_2_0=RULE_STRING
+				{
+					newLeafNode(lv_fieldName_2_0, grammarAccess.getFillAccess().getFieldNameSTRINGTerminalRuleCall_2_0());
 				}
 				{
 					if ($current==null) {
@@ -479,30 +479,30 @@ ruleFill returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"fieldName",
-						lv_fieldName_4_0,
+						lv_fieldName_2_0,
 						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
 		)
-		otherlv_5='with'
+		otherlv_3='with'
 		{
-			newLeafNode(otherlv_5, grammarAccess.getFillAccess().getWithKeyword_5());
+			newLeafNode(otherlv_3, grammarAccess.getFillAccess().getWithKeyword_3());
 		}
-		otherlv_6='the'
+		otherlv_4='the'
 		{
-			newLeafNode(otherlv_6, grammarAccess.getFillAccess().getTheKeyword_6());
+			newLeafNode(otherlv_4, grammarAccess.getFillAccess().getTheKeyword_4());
 		}
 		(
 			(
-				otherlv_7='text'
+				otherlv_5='text'
 				{
-					newLeafNode(otherlv_7, grammarAccess.getFillAccess().getTextKeyword_7_0_0());
+					newLeafNode(otherlv_5, grammarAccess.getFillAccess().getTextKeyword_5_0_0());
 				}
 				(
 					(
-						lv_textToFill_8_0=RULE_STRING
+						lv_textToFill_6_0=RULE_STRING
 						{
-							newLeafNode(lv_textToFill_8_0, grammarAccess.getFillAccess().getTextToFillSTRINGTerminalRuleCall_7_0_1_0());
+							newLeafNode(lv_textToFill_6_0, grammarAccess.getFillAccess().getTextToFillSTRINGTerminalRuleCall_5_0_1_0());
 						}
 						{
 							if ($current==null) {
@@ -511,7 +511,7 @@ ruleFill returns [EObject current=null]
 							setWithLastConsumed(
 								$current,
 								"textToFill",
-								lv_textToFill_8_0,
+								lv_textToFill_6_0,
 								"org.eclipse.xtext.common.Terminals.STRING");
 						}
 					)
@@ -519,16 +519,16 @@ ruleFill returns [EObject current=null]
 			)
 			    |
 			(
-				otherlv_9='variable'
+				otherlv_7='variable'
 				{
-					newLeafNode(otherlv_9, grammarAccess.getFillAccess().getVariableKeyword_7_1_0());
+					newLeafNode(otherlv_7, grammarAccess.getFillAccess().getVariableKeyword_5_1_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getFillAccess().getVariableDOMELEMENTParserRuleCall_7_1_1_0());
+							newCompositeNode(grammarAccess.getFillAccess().getVariableElementTypeParserRuleCall_5_1_1_0());
 						}
-						lv_variable_10_0=ruleDOMELEMENT
+						lv_variable_8_0=ruleElementType
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getFillRule());
@@ -536,14 +536,169 @@ ruleFill returns [EObject current=null]
 							set(
 								$current,
 								"variable",
-								lv_variable_10_0,
-								"www.imta.fr.browserautomation.SeleniumDsl.DOMELEMENT");
+								lv_variable_8_0,
+								"www.imta.fr.browserautomation.SeleniumDsl.ElementType");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)
 		)
+	)
+;
+
+// Entry rule entryRuleSelector
+entryRuleSelector returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getSelectorRule()); }
+	iv_ruleSelector=ruleSelector
+	{ $current=$iv_ruleSelector.current; }
+	EOF;
+
+// Rule Selector
+ruleSelector returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			otherlv_0='the'
+			{
+				newLeafNode(otherlv_0, grammarAccess.getSelectorAccess().getTheKeyword_0_0());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getSelectorAccess().getElementTypeElementTypeParserRuleCall_0_1_0());
+					}
+					lv_elementType_1_0=ruleElementType
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getSelectorRule());
+						}
+						set(
+							$current,
+							"elementType",
+							lv_elementType_1_0,
+							"www.imta.fr.browserautomation.SeleniumDsl.ElementType");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)?
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getSelectorAccess().getElementTypeElementTypeParserRuleCall_1_0());
+				}
+				lv_elementType_2_0=ruleElementType
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getSelectorRule());
+					}
+					set(
+						$current,
+						"elementType",
+						lv_elementType_2_0,
+						"www.imta.fr.browserautomation.SeleniumDsl.ElementType");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)?
+	)
+;
+
+// Entry rule entryRuleElementType
+entryRuleElementType returns [String current=null]:
+	{ newCompositeNode(grammarAccess.getElementTypeRule()); }
+	iv_ruleElementType=ruleElementType
+	{ $current=$iv_ruleElementType.current.getText(); }
+	EOF;
+
+// Rule ElementType
+ruleElementType returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			kw='text'
+			{
+				$current.merge(kw);
+				newLeafNode(kw, grammarAccess.getElementTypeAccess().getTextKeyword_0_0());
+			}
+			kw='field'
+			{
+				$current.merge(kw);
+				newLeafNode(kw, grammarAccess.getElementTypeAccess().getFieldKeyword_0_1());
+			}
+		)
+		    |
+		kw='checkboxes'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getElementTypeAccess().getCheckboxesKeyword_1());
+		}
+		    |
+		kw='combobox'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getElementTypeAccess().getComboboxKeyword_2());
+		}
+		    |
+		kw='option'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getElementTypeAccess().getOptionKeyword_3());
+		}
+		    |
+		kw='link'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getElementTypeAccess().getLinkKeyword_4());
+		}
+		    |
+		kw='button'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getElementTypeAccess().getButtonKeyword_5());
+		}
+		    |
+		kw='image'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getElementTypeAccess().getImageKeyword_6());
+		}
+		    |
+		kw='url'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getElementTypeAccess().getUrlKeyword_7());
+		}
+		    |
+		(
+			kw='text'
+			{
+				$current.merge(kw);
+				newLeafNode(kw, grammarAccess.getElementTypeAccess().getTextKeyword_8_0());
+			}
+			kw='link'
+			{
+				$current.merge(kw);
+				newLeafNode(kw, grammarAccess.getElementTypeAccess().getLinkKeyword_8_1());
+			}
+		)
+		    |
+		kw='title'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getElementTypeAccess().getTitleKeyword_9());
+		}
 	)
 ;
 
@@ -563,31 +718,41 @@ ruleSelect returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='select'
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getSelectAccess().getSelectAction_0(),
+					$current);
+			}
+		)
+		otherlv_1='check'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getSelectAccess().getSelectKeyword_0());
-		}
-		otherlv_1='the'
-		{
-			newLeafNode(otherlv_1, grammarAccess.getSelectAccess().getTheKeyword_1());
-		}
-		otherlv_2='checkbox'
-		{
-			newLeafNode(otherlv_2, grammarAccess.getSelectAccess().getCheckboxKeyword_2());
-		}
-		otherlv_3='with'
-		{
-			newLeafNode(otherlv_3, grammarAccess.getSelectAccess().getWithKeyword_3());
-		}
-		otherlv_4='values'
-		{
-			newLeafNode(otherlv_4, grammarAccess.getSelectAccess().getValuesKeyword_4());
+			newLeafNode(otherlv_1, grammarAccess.getSelectAccess().getCheckKeyword_1());
 		}
 		(
 			(
-				lv_values_5_0=RULE_STRING
 				{
-					newLeafNode(lv_values_5_0, grammarAccess.getSelectAccess().getValuesSTRINGTerminalRuleCall_5_0());
+					newCompositeNode(grammarAccess.getSelectAccess().getElementTypeSelectorParserRuleCall_2_0());
+				}
+				lv_elementType_2_0=ruleSelector
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getSelectRule());
+					}
+					set(
+						$current,
+						"elementType",
+						lv_elementType_2_0,
+						"www.imta.fr.browserautomation.SeleniumDsl.Selector");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			(
+				lv_values_3_0=RULE_STRING
+				{
+					newLeafNode(lv_values_3_0, grammarAccess.getSelectAccess().getValuesSTRINGTerminalRuleCall_3_0());
 				}
 				{
 					if ($current==null) {
@@ -596,21 +761,21 @@ ruleSelect returns [EObject current=null]
 					addWithLastConsumed(
 						$current,
 						"values",
-						lv_values_5_0,
+						lv_values_3_0,
 						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
 		)
 		(
-			otherlv_6=','
+			otherlv_4=','
 			{
-				newLeafNode(otherlv_6, grammarAccess.getSelectAccess().getCommaKeyword_6_0());
+				newLeafNode(otherlv_4, grammarAccess.getSelectAccess().getCommaKeyword_4_0());
 			}
 			(
 				(
-					lv_values_7_0=RULE_STRING
+					lv_values_5_0=RULE_STRING
 					{
-						newLeafNode(lv_values_7_0, grammarAccess.getSelectAccess().getValuesSTRINGTerminalRuleCall_6_1_0());
+						newLeafNode(lv_values_5_0, grammarAccess.getSelectAccess().getValuesSTRINGTerminalRuleCall_4_1_0());
 					}
 					{
 						if ($current==null) {
@@ -619,7 +784,7 @@ ruleSelect returns [EObject current=null]
 						addWithLastConsumed(
 							$current,
 							"values",
-							lv_values_7_0,
+							lv_values_5_0,
 							"org.eclipse.xtext.common.Terminals.STRING");
 					}
 				)
@@ -644,48 +809,41 @@ ruleVerify returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		(
-			{
-				$current = forceCreateModelElement(
-					grammarAccess.getVerifyAccess().getVerifyAction_0(),
-					$current);
-			}
-		)
-		otherlv_1='verify'
+		otherlv_0='verify'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getVerifyAccess().getVerifyKeyword_1());
+			newLeafNode(otherlv_0, grammarAccess.getVerifyAccess().getVerifyKeyword_0());
 		}
-		otherlv_2='that'
+		otherlv_1='that'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getVerifyAccess().getThatKeyword_2());
+			newLeafNode(otherlv_1, grammarAccess.getVerifyAccess().getThatKeyword_1());
 		}
-		otherlv_3='the'
+		otherlv_2='the'
 		{
-			newLeafNode(otherlv_3, grammarAccess.getVerifyAccess().getTheKeyword_3());
+			newLeafNode(otherlv_2, grammarAccess.getVerifyAccess().getTheKeyword_2());
 		}
-		otherlv_4='page'
+		otherlv_3='page'
 		{
-			newLeafNode(otherlv_4, grammarAccess.getVerifyAccess().getPageKeyword_4());
+			newLeafNode(otherlv_3, grammarAccess.getVerifyAccess().getPageKeyword_3());
 		}
-		otherlv_5='contains'
+		otherlv_4='contains'
 		{
-			newLeafNode(otherlv_5, grammarAccess.getVerifyAccess().getContainsKeyword_5());
+			newLeafNode(otherlv_4, grammarAccess.getVerifyAccess().getContainsKeyword_4());
 		}
-		otherlv_6='the'
+		otherlv_5='the'
 		{
-			newLeafNode(otherlv_6, grammarAccess.getVerifyAccess().getTheKeyword_6());
+			newLeafNode(otherlv_5, grammarAccess.getVerifyAccess().getTheKeyword_5());
 		}
 		(
 			(
-				otherlv_7='string'
+				otherlv_6='string'
 				{
-					newLeafNode(otherlv_7, grammarAccess.getVerifyAccess().getStringKeyword_7_0_0());
+					newLeafNode(otherlv_6, grammarAccess.getVerifyAccess().getStringKeyword_6_0_0());
 				}
 				(
 					(
-						lv_textToVerify_8_0=RULE_STRING
+						lv_textToVerify_7_0=RULE_STRING
 						{
-							newLeafNode(lv_textToVerify_8_0, grammarAccess.getVerifyAccess().getTextToVerifySTRINGTerminalRuleCall_7_0_1_0());
+							newLeafNode(lv_textToVerify_7_0, grammarAccess.getVerifyAccess().getTextToVerifySTRINGTerminalRuleCall_6_0_1_0());
 						}
 						{
 							if ($current==null) {
@@ -694,7 +852,7 @@ ruleVerify returns [EObject current=null]
 							setWithLastConsumed(
 								$current,
 								"textToVerify",
-								lv_textToVerify_8_0,
+								lv_textToVerify_7_0,
 								"org.eclipse.xtext.common.Terminals.STRING");
 						}
 					)
@@ -702,15 +860,15 @@ ruleVerify returns [EObject current=null]
 			)
 			    |
 			(
-				otherlv_9='link'
+				otherlv_8='link'
 				{
-					newLeafNode(otherlv_9, grammarAccess.getVerifyAccess().getLinkKeyword_7_1_0());
+					newLeafNode(otherlv_8, grammarAccess.getVerifyAccess().getLinkKeyword_6_1_0());
 				}
 				(
 					(
-						lv_linkToVerify_10_0=RULE_STRING
+						lv_linkToVerify_9_0=RULE_STRING
 						{
-							newLeafNode(lv_linkToVerify_10_0, grammarAccess.getVerifyAccess().getLinkToVerifySTRINGTerminalRuleCall_7_1_1_0());
+							newLeafNode(lv_linkToVerify_9_0, grammarAccess.getVerifyAccess().getLinkToVerifySTRINGTerminalRuleCall_6_1_1_0());
 						}
 						{
 							if ($current==null) {
@@ -719,7 +877,7 @@ ruleVerify returns [EObject current=null]
 							setWithLastConsumed(
 								$current,
 								"linkToVerify",
-								lv_linkToVerify_10_0,
+								lv_linkToVerify_9_0,
 								"org.eclipse.xtext.common.Terminals.STRING");
 						}
 					)
@@ -727,16 +885,16 @@ ruleVerify returns [EObject current=null]
 			)
 			    |
 			(
-				otherlv_11='variable'
+				otherlv_10='variable'
 				{
-					newLeafNode(otherlv_11, grammarAccess.getVerifyAccess().getVariableKeyword_7_2_0());
+					newLeafNode(otherlv_10, grammarAccess.getVerifyAccess().getVariableKeyword_6_2_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getVerifyAccess().getVariableDOMELEMENTParserRuleCall_7_2_1_0());
+							newCompositeNode(grammarAccess.getVerifyAccess().getVariableElementTypeParserRuleCall_6_2_1_0());
 						}
-						lv_variable_12_0=ruleDOMELEMENT
+						lv_variable_11_0=ruleElementType
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getVerifyRule());
@@ -744,8 +902,8 @@ ruleVerify returns [EObject current=null]
 							set(
 								$current,
 								"variable",
-								lv_variable_12_0,
-								"www.imta.fr.browserautomation.SeleniumDsl.DOMELEMENT");
+								lv_variable_11_0,
+								"www.imta.fr.browserautomation.SeleniumDsl.ElementType");
 							afterParserOrEnumRuleCall();
 						}
 					)
@@ -782,9 +940,9 @@ ruleRead returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getReadAccess().getElementsDOMELEMENTParserRuleCall_2_0());
+					newCompositeNode(grammarAccess.getReadAccess().getElementsElementTypeParserRuleCall_2_0());
 				}
-				lv_elements_2_0=ruleDOMELEMENT
+				lv_elements_2_0=ruleElementType
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getReadRule());
@@ -793,7 +951,7 @@ ruleRead returns [EObject current=null]
 						$current,
 						"elements",
 						lv_elements_2_0,
-						"www.imta.fr.browserautomation.SeleniumDsl.DOMELEMENT");
+						"www.imta.fr.browserautomation.SeleniumDsl.ElementType");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -806,9 +964,9 @@ ruleRead returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getReadAccess().getElementsDOMELEMENTParserRuleCall_3_1_0());
+						newCompositeNode(grammarAccess.getReadAccess().getElementsElementTypeParserRuleCall_3_1_0());
 					}
-					lv_elements_4_0=ruleDOMELEMENT
+					lv_elements_4_0=ruleElementType
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getReadRule());
@@ -817,7 +975,7 @@ ruleRead returns [EObject current=null]
 							$current,
 							"elements",
 							lv_elements_4_0,
-							"www.imta.fr.browserautomation.SeleniumDsl.DOMELEMENT");
+							"www.imta.fr.browserautomation.SeleniumDsl.ElementType");
 						afterParserOrEnumRuleCall();
 					}
 				)
@@ -936,19 +1094,30 @@ ruleCombobox returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getComboboxAccess().getChooseKeyword_0());
 		}
-		otherlv_1='the'
-		{
-			newLeafNode(otherlv_1, grammarAccess.getComboboxAccess().getTheKeyword_1());
-		}
-		otherlv_2='option'
-		{
-			newLeafNode(otherlv_2, grammarAccess.getComboboxAccess().getOptionKeyword_2());
-		}
 		(
 			(
-				lv_option_3_0=RULE_STRING
 				{
-					newLeafNode(lv_option_3_0, grammarAccess.getComboboxAccess().getOptionSTRINGTerminalRuleCall_3_0());
+					newCompositeNode(grammarAccess.getComboboxAccess().getElementsSelectorParserRuleCall_1_0());
+				}
+				lv_elements_1_0=ruleSelector
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getComboboxRule());
+					}
+					add(
+						$current,
+						"elements",
+						lv_elements_1_0,
+						"www.imta.fr.browserautomation.SeleniumDsl.Selector");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			(
+				lv_option_2_0=RULE_STRING
+				{
+					newLeafNode(lv_option_2_0, grammarAccess.getComboboxAccess().getOptionSTRINGTerminalRuleCall_2_0());
 				}
 				{
 					if ($current==null) {
@@ -957,28 +1126,39 @@ ruleCombobox returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"option",
-						lv_option_3_0,
+						lv_option_2_0,
 						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
 		)
-		otherlv_4='in'
+		otherlv_3='in'
 		{
-			newLeafNode(otherlv_4, grammarAccess.getComboboxAccess().getInKeyword_4());
-		}
-		otherlv_5='the'
-		{
-			newLeafNode(otherlv_5, grammarAccess.getComboboxAccess().getTheKeyword_5());
-		}
-		otherlv_6='combobox'
-		{
-			newLeafNode(otherlv_6, grammarAccess.getComboboxAccess().getComboboxKeyword_6());
+			newLeafNode(otherlv_3, grammarAccess.getComboboxAccess().getInKeyword_3());
 		}
 		(
 			(
-				lv_label_7_0=RULE_STRING
 				{
-					newLeafNode(lv_label_7_0, grammarAccess.getComboboxAccess().getLabelSTRINGTerminalRuleCall_7_0());
+					newCompositeNode(grammarAccess.getComboboxAccess().getElementsSelectorParserRuleCall_4_0());
+				}
+				lv_elements_4_0=ruleSelector
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getComboboxRule());
+					}
+					add(
+						$current,
+						"elements",
+						lv_elements_4_0,
+						"www.imta.fr.browserautomation.SeleniumDsl.Selector");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			(
+				lv_label_5_0=RULE_STRING
+				{
+					newLeafNode(lv_label_5_0, grammarAccess.getComboboxAccess().getLabelSTRINGTerminalRuleCall_5_0());
 				}
 				{
 					if ($current==null) {
@@ -987,72 +1167,11 @@ ruleCombobox returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"label",
-						lv_label_7_0,
+						lv_label_5_0,
 						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
 		)
-	)
-;
-
-// Entry rule entryRuleDOMELEMENT
-entryRuleDOMELEMENT returns [String current=null]:
-	{ newCompositeNode(grammarAccess.getDOMELEMENTRule()); }
-	iv_ruleDOMELEMENT=ruleDOMELEMENT
-	{ $current=$iv_ruleDOMELEMENT.current.getText(); }
-	EOF;
-
-// Rule DOMELEMENT
-ruleDOMELEMENT returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		kw='link'
-		{
-			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getDOMELEMENTAccess().getLinkKeyword_0());
-		}
-		    |
-		kw='button'
-		{
-			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getDOMELEMENTAccess().getButtonKeyword_1());
-		}
-		    |
-		kw='image'
-		{
-			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getDOMELEMENTAccess().getImageKeyword_2());
-		}
-		    |
-		kw='url'
-		{
-			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getDOMELEMENTAccess().getUrlKeyword_3());
-		}
-		    |
-		(
-			kw='text'
-			{
-				$current.merge(kw);
-				newLeafNode(kw, grammarAccess.getDOMELEMENTAccess().getTextKeyword_4_0());
-			}
-			kw='link'
-			{
-				$current.merge(kw);
-				newLeafNode(kw, grammarAccess.getDOMELEMENTAccess().getLinkKeyword_4_1());
-			}
-		)
-		    |
-		kw='title'
-		{
-			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getDOMELEMENTAccess().getTitleKeyword_5());
-		}
 	)
 ;
 

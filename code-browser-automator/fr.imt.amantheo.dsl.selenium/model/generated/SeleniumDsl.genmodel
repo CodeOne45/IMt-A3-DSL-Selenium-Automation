@@ -21,11 +21,16 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SeleniumDsl.ecore#//Click/variable"/>
     </genClasses>
     <genClasses ecoreClass="SeleniumDsl.ecore#//Fill">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SeleniumDsl.ecore#//Fill/element"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SeleniumDsl.ecore#//Fill/fieldName"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SeleniumDsl.ecore#//Fill/textToFill"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SeleniumDsl.ecore#//Fill/variable"/>
     </genClasses>
+    <genClasses ecoreClass="SeleniumDsl.ecore#//Selector">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SeleniumDsl.ecore#//Selector/elementType"/>
+    </genClasses>
     <genClasses ecoreClass="SeleniumDsl.ecore#//Select">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SeleniumDsl.ecore#//Select/elementType"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SeleniumDsl.ecore#//Select/values"/>
     </genClasses>
     <genClasses ecoreClass="SeleniumDsl.ecore#//Verify">
@@ -40,6 +45,7 @@
     </genClasses>
     <genClasses ecoreClass="SeleniumDsl.ecore#//Uncheck"/>
     <genClasses ecoreClass="SeleniumDsl.ecore#//Combobox">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SeleniumDsl.ecore#//Combobox/elements"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SeleniumDsl.ecore#//Combobox/option"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SeleniumDsl.ecore#//Combobox/label"/>
     </genClasses>

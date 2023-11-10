@@ -217,13 +217,22 @@ public interface SeleniumDslPackage extends EPackage
   int FILL = 5;
 
   /**
+   * The feature id for the '<em><b>Element</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FILL__ELEMENT = COMMAND_FEATURE_COUNT + 0;
+
+  /**
    * The feature id for the '<em><b>Field Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FILL__FIELD_NAME = COMMAND_FEATURE_COUNT + 0;
+  int FILL__FIELD_NAME = COMMAND_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Text To Fill</b></em>' attribute.
@@ -232,7 +241,7 @@ public interface SeleniumDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FILL__TEXT_TO_FILL = COMMAND_FEATURE_COUNT + 1;
+  int FILL__TEXT_TO_FILL = COMMAND_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Variable</b></em>' attribute.
@@ -241,7 +250,7 @@ public interface SeleniumDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FILL__VARIABLE = COMMAND_FEATURE_COUNT + 2;
+  int FILL__VARIABLE = COMMAND_FEATURE_COUNT + 3;
 
   /**
    * The number of structural features of the '<em>Fill</em>' class.
@@ -250,7 +259,35 @@ public interface SeleniumDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FILL_FEATURE_COUNT = COMMAND_FEATURE_COUNT + 3;
+  int FILL_FEATURE_COUNT = COMMAND_FEATURE_COUNT + 4;
+
+  /**
+   * The meta object id for the '{@link www.imta.fr.browserautomation.seleniumDsl.impl.SelectorImpl <em>Selector</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see www.imta.fr.browserautomation.seleniumDsl.impl.SelectorImpl
+   * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getSelector()
+   * @generated
+   */
+  int SELECTOR = 6;
+
+  /**
+   * The feature id for the '<em><b>Element Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SELECTOR__ELEMENT_TYPE = 0;
+
+  /**
+   * The number of structural features of the '<em>Selector</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SELECTOR_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link www.imta.fr.browserautomation.seleniumDsl.impl.SelectImpl <em>Select</em>}' class.
@@ -260,7 +297,16 @@ public interface SeleniumDslPackage extends EPackage
    * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getSelect()
    * @generated
    */
-  int SELECT = 6;
+  int SELECT = 7;
+
+  /**
+   * The feature id for the '<em><b>Element Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SELECT__ELEMENT_TYPE = COMMAND_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Values</b></em>' attribute list.
@@ -269,7 +315,7 @@ public interface SeleniumDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SELECT__VALUES = COMMAND_FEATURE_COUNT + 0;
+  int SELECT__VALUES = COMMAND_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Select</em>' class.
@@ -278,7 +324,7 @@ public interface SeleniumDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SELECT_FEATURE_COUNT = COMMAND_FEATURE_COUNT + 1;
+  int SELECT_FEATURE_COUNT = COMMAND_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link www.imta.fr.browserautomation.seleniumDsl.impl.VerifyImpl <em>Verify</em>}' class.
@@ -288,7 +334,7 @@ public interface SeleniumDslPackage extends EPackage
    * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getVerify()
    * @generated
    */
-  int VERIFY = 7;
+  int VERIFY = 8;
 
   /**
    * The feature id for the '<em><b>Text To Verify</b></em>' attribute.
@@ -334,7 +380,7 @@ public interface SeleniumDslPackage extends EPackage
    * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getRead()
    * @generated
    */
-  int READ = 8;
+  int READ = 9;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' attribute list.
@@ -380,7 +426,7 @@ public interface SeleniumDslPackage extends EPackage
    * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getUncheck()
    * @generated
    */
-  int UNCHECK = 9;
+  int UNCHECK = 10;
 
   /**
    * The number of structural features of the '<em>Uncheck</em>' class.
@@ -399,7 +445,16 @@ public interface SeleniumDslPackage extends EPackage
    * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getCombobox()
    * @generated
    */
-  int COMBOBOX = 10;
+  int COMBOBOX = 11;
+
+  /**
+   * The feature id for the '<em><b>Elements</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMBOBOX__ELEMENTS = COMMAND_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Option</b></em>' attribute.
@@ -408,7 +463,7 @@ public interface SeleniumDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int COMBOBOX__OPTION = COMMAND_FEATURE_COUNT + 0;
+  int COMBOBOX__OPTION = COMMAND_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Label</b></em>' attribute.
@@ -417,7 +472,7 @@ public interface SeleniumDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int COMBOBOX__LABEL = COMMAND_FEATURE_COUNT + 1;
+  int COMBOBOX__LABEL = COMMAND_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>Combobox</em>' class.
@@ -426,7 +481,7 @@ public interface SeleniumDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int COMBOBOX_FEATURE_COUNT = COMMAND_FEATURE_COUNT + 2;
+  int COMBOBOX_FEATURE_COUNT = COMMAND_FEATURE_COUNT + 3;
 
 
   /**
@@ -556,6 +611,17 @@ public interface SeleniumDslPackage extends EPackage
   EClass getFill();
 
   /**
+   * Returns the meta object for the containment reference '{@link www.imta.fr.browserautomation.seleniumDsl.Fill#getElement <em>Element</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Element</em>'.
+   * @see www.imta.fr.browserautomation.seleniumDsl.Fill#getElement()
+   * @see #getFill()
+   * @generated
+   */
+  EReference getFill_Element();
+
+  /**
    * Returns the meta object for the attribute '{@link www.imta.fr.browserautomation.seleniumDsl.Fill#getFieldName <em>Field Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -589,6 +655,27 @@ public interface SeleniumDslPackage extends EPackage
   EAttribute getFill_Variable();
 
   /**
+   * Returns the meta object for class '{@link www.imta.fr.browserautomation.seleniumDsl.Selector <em>Selector</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Selector</em>'.
+   * @see www.imta.fr.browserautomation.seleniumDsl.Selector
+   * @generated
+   */
+  EClass getSelector();
+
+  /**
+   * Returns the meta object for the attribute '{@link www.imta.fr.browserautomation.seleniumDsl.Selector#getElementType <em>Element Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Element Type</em>'.
+   * @see www.imta.fr.browserautomation.seleniumDsl.Selector#getElementType()
+   * @see #getSelector()
+   * @generated
+   */
+  EAttribute getSelector_ElementType();
+
+  /**
    * Returns the meta object for class '{@link www.imta.fr.browserautomation.seleniumDsl.Select <em>Select</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -597,6 +684,17 @@ public interface SeleniumDslPackage extends EPackage
    * @generated
    */
   EClass getSelect();
+
+  /**
+   * Returns the meta object for the containment reference '{@link www.imta.fr.browserautomation.seleniumDsl.Select#getElementType <em>Element Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Element Type</em>'.
+   * @see www.imta.fr.browserautomation.seleniumDsl.Select#getElementType()
+   * @see #getSelect()
+   * @generated
+   */
+  EReference getSelect_ElementType();
 
   /**
    * Returns the meta object for the attribute list '{@link www.imta.fr.browserautomation.seleniumDsl.Select#getValues <em>Values</em>}'.
@@ -714,6 +812,17 @@ public interface SeleniumDslPackage extends EPackage
    * @generated
    */
   EClass getCombobox();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link www.imta.fr.browserautomation.seleniumDsl.Combobox#getElements <em>Elements</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Elements</em>'.
+   * @see www.imta.fr.browserautomation.seleniumDsl.Combobox#getElements()
+   * @see #getCombobox()
+   * @generated
+   */
+  EReference getCombobox_Elements();
 
   /**
    * Returns the meta object for the attribute '{@link www.imta.fr.browserautomation.seleniumDsl.Combobox#getOption <em>Option</em>}'.
@@ -869,6 +978,14 @@ public interface SeleniumDslPackage extends EPackage
     EClass FILL = eINSTANCE.getFill();
 
     /**
+     * The meta object literal for the '<em><b>Element</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FILL__ELEMENT = eINSTANCE.getFill_Element();
+
+    /**
      * The meta object literal for the '<em><b>Field Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -893,6 +1010,24 @@ public interface SeleniumDslPackage extends EPackage
     EAttribute FILL__VARIABLE = eINSTANCE.getFill_Variable();
 
     /**
+     * The meta object literal for the '{@link www.imta.fr.browserautomation.seleniumDsl.impl.SelectorImpl <em>Selector</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see www.imta.fr.browserautomation.seleniumDsl.impl.SelectorImpl
+     * @see www.imta.fr.browserautomation.seleniumDsl.impl.SeleniumDslPackageImpl#getSelector()
+     * @generated
+     */
+    EClass SELECTOR = eINSTANCE.getSelector();
+
+    /**
+     * The meta object literal for the '<em><b>Element Type</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SELECTOR__ELEMENT_TYPE = eINSTANCE.getSelector_ElementType();
+
+    /**
      * The meta object literal for the '{@link www.imta.fr.browserautomation.seleniumDsl.impl.SelectImpl <em>Select</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -901,6 +1036,14 @@ public interface SeleniumDslPackage extends EPackage
      * @generated
      */
     EClass SELECT = eINSTANCE.getSelect();
+
+    /**
+     * The meta object literal for the '<em><b>Element Type</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SELECT__ELEMENT_TYPE = eINSTANCE.getSelect_ElementType();
 
     /**
      * The meta object literal for the '<em><b>Values</b></em>' attribute list feature.
@@ -997,6 +1140,14 @@ public interface SeleniumDslPackage extends EPackage
      * @generated
      */
     EClass COMBOBOX = eINSTANCE.getCombobox();
+
+    /**
+     * The meta object literal for the '<em><b>Elements</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference COMBOBOX__ELEMENTS = eINSTANCE.getCombobox_Elements();
 
     /**
      * The meta object literal for the '<em><b>Option</b></em>' attribute feature.

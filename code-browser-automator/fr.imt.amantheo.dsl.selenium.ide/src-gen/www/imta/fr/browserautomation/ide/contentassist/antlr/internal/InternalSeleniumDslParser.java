@@ -22,9 +22,8 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalSeleniumDslParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_URL", "RULE_STRING", "RULE_INT", "RULE_DOMAIN", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'URL'", "'link'", "'button'", "'image'", "'url'", "'title'", "'open'", "'a'", "'browser'", "'window'", "'go'", "'to'", "'click'", "'on'", "'the'", "'variable'", "'fill'", "'text'", "'field'", "'with'", "'select'", "'checkbox'", "'values'", "','", "'verify'", "'that'", "'page'", "'contains'", "'string'", "'read'", "'of'", "'number'", "'uncheck'", "'all'", "'checkboxes'", "'choose'", "'option'", "'in'", "'combobox'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_URL", "RULE_STRING", "RULE_INT", "RULE_DOMAIN", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'checkboxes'", "'combobox'", "'option'", "'link'", "'button'", "'image'", "'url'", "'title'", "'open'", "'a'", "'browser'", "'window'", "'go'", "'to'", "'click'", "'on'", "'the'", "'variable'", "'fill'", "'with'", "'text'", "'field'", "'check'", "','", "'verify'", "'that'", "'page'", "'contains'", "'string'", "'read'", "'of'", "'number'", "'uncheck'", "'all'", "'choose'", "'in'"
     };
-    public static final int T__50=50;
     public static final int T__19=19;
     public static final int T__15=15;
     public static final int T__16=16;
@@ -32,7 +31,6 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
     public static final int T__18=18;
     public static final int T__13=13;
     public static final int T__14=14;
-    public static final int T__51=51;
     public static final int RULE_ID=8;
     public static final int T__26=26;
     public static final int T__27=27;
@@ -63,7 +61,6 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
     public static final int RULE_WS=11;
     public static final int RULE_ANY_OTHER=12;
     public static final int T__48=48;
-    public static final int T__49=49;
     public static final int T__44=44;
     public static final int T__45=45;
     public static final int T__46=46;
@@ -159,7 +156,7 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
                 int alt1=2;
                 int LA1_0 = input.LA(1);
 
-                if ( (LA1_0==19||LA1_0==23||LA1_0==25||LA1_0==29||LA1_0==33||LA1_0==37||LA1_0==42||LA1_0==45||LA1_0==48) ) {
+                if ( (LA1_0==21||LA1_0==25||LA1_0==27||LA1_0==31||LA1_0==35||LA1_0==37||LA1_0==42||LA1_0==45||LA1_0==47) ) {
                     alt1=1;
                 }
 
@@ -589,12 +586,166 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
     // $ANTLR end "ruleFill"
 
 
+    // $ANTLR start "entryRuleSelector"
+    // InternalSeleniumDsl.g:203:1: entryRuleSelector : ruleSelector EOF ;
+    public final void entryRuleSelector() throws RecognitionException {
+        try {
+            // InternalSeleniumDsl.g:204:1: ( ruleSelector EOF )
+            // InternalSeleniumDsl.g:205:1: ruleSelector EOF
+            {
+             before(grammarAccess.getSelectorRule()); 
+            pushFollow(FOLLOW_1);
+            ruleSelector();
+
+            state._fsp--;
+
+             after(grammarAccess.getSelectorRule()); 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "entryRuleSelector"
+
+
+    // $ANTLR start "ruleSelector"
+    // InternalSeleniumDsl.g:212:1: ruleSelector : ( ( rule__Selector__Group__0 ) ) ;
+    public final void ruleSelector() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSeleniumDsl.g:216:2: ( ( ( rule__Selector__Group__0 ) ) )
+            // InternalSeleniumDsl.g:217:2: ( ( rule__Selector__Group__0 ) )
+            {
+            // InternalSeleniumDsl.g:217:2: ( ( rule__Selector__Group__0 ) )
+            // InternalSeleniumDsl.g:218:3: ( rule__Selector__Group__0 )
+            {
+             before(grammarAccess.getSelectorAccess().getGroup()); 
+            // InternalSeleniumDsl.g:219:3: ( rule__Selector__Group__0 )
+            // InternalSeleniumDsl.g:219:4: rule__Selector__Group__0
+            {
+            pushFollow(FOLLOW_2);
+            rule__Selector__Group__0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getSelectorAccess().getGroup()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleSelector"
+
+
+    // $ANTLR start "entryRuleElementType"
+    // InternalSeleniumDsl.g:228:1: entryRuleElementType : ruleElementType EOF ;
+    public final void entryRuleElementType() throws RecognitionException {
+        try {
+            // InternalSeleniumDsl.g:229:1: ( ruleElementType EOF )
+            // InternalSeleniumDsl.g:230:1: ruleElementType EOF
+            {
+             before(grammarAccess.getElementTypeRule()); 
+            pushFollow(FOLLOW_1);
+            ruleElementType();
+
+            state._fsp--;
+
+             after(grammarAccess.getElementTypeRule()); 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "entryRuleElementType"
+
+
+    // $ANTLR start "ruleElementType"
+    // InternalSeleniumDsl.g:237:1: ruleElementType : ( ( rule__ElementType__Alternatives ) ) ;
+    public final void ruleElementType() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSeleniumDsl.g:241:2: ( ( ( rule__ElementType__Alternatives ) ) )
+            // InternalSeleniumDsl.g:242:2: ( ( rule__ElementType__Alternatives ) )
+            {
+            // InternalSeleniumDsl.g:242:2: ( ( rule__ElementType__Alternatives ) )
+            // InternalSeleniumDsl.g:243:3: ( rule__ElementType__Alternatives )
+            {
+             before(grammarAccess.getElementTypeAccess().getAlternatives()); 
+            // InternalSeleniumDsl.g:244:3: ( rule__ElementType__Alternatives )
+            // InternalSeleniumDsl.g:244:4: rule__ElementType__Alternatives
+            {
+            pushFollow(FOLLOW_2);
+            rule__ElementType__Alternatives();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getElementTypeAccess().getAlternatives()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleElementType"
+
+
     // $ANTLR start "entryRuleSelect"
-    // InternalSeleniumDsl.g:203:1: entryRuleSelect : ruleSelect EOF ;
+    // InternalSeleniumDsl.g:253:1: entryRuleSelect : ruleSelect EOF ;
     public final void entryRuleSelect() throws RecognitionException {
         try {
-            // InternalSeleniumDsl.g:204:1: ( ruleSelect EOF )
-            // InternalSeleniumDsl.g:205:1: ruleSelect EOF
+            // InternalSeleniumDsl.g:254:1: ( ruleSelect EOF )
+            // InternalSeleniumDsl.g:255:1: ruleSelect EOF
             {
              before(grammarAccess.getSelectRule()); 
             pushFollow(FOLLOW_1);
@@ -620,21 +771,21 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "ruleSelect"
-    // InternalSeleniumDsl.g:212:1: ruleSelect : ( ( rule__Select__Group__0 ) ) ;
+    // InternalSeleniumDsl.g:262:1: ruleSelect : ( ( rule__Select__Group__0 ) ) ;
     public final void ruleSelect() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:216:2: ( ( ( rule__Select__Group__0 ) ) )
-            // InternalSeleniumDsl.g:217:2: ( ( rule__Select__Group__0 ) )
+            // InternalSeleniumDsl.g:266:2: ( ( ( rule__Select__Group__0 ) ) )
+            // InternalSeleniumDsl.g:267:2: ( ( rule__Select__Group__0 ) )
             {
-            // InternalSeleniumDsl.g:217:2: ( ( rule__Select__Group__0 ) )
-            // InternalSeleniumDsl.g:218:3: ( rule__Select__Group__0 )
+            // InternalSeleniumDsl.g:267:2: ( ( rule__Select__Group__0 ) )
+            // InternalSeleniumDsl.g:268:3: ( rule__Select__Group__0 )
             {
              before(grammarAccess.getSelectAccess().getGroup()); 
-            // InternalSeleniumDsl.g:219:3: ( rule__Select__Group__0 )
-            // InternalSeleniumDsl.g:219:4: rule__Select__Group__0
+            // InternalSeleniumDsl.g:269:3: ( rule__Select__Group__0 )
+            // InternalSeleniumDsl.g:269:4: rule__Select__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__Select__Group__0();
@@ -667,11 +818,11 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "entryRuleVerify"
-    // InternalSeleniumDsl.g:228:1: entryRuleVerify : ruleVerify EOF ;
+    // InternalSeleniumDsl.g:278:1: entryRuleVerify : ruleVerify EOF ;
     public final void entryRuleVerify() throws RecognitionException {
         try {
-            // InternalSeleniumDsl.g:229:1: ( ruleVerify EOF )
-            // InternalSeleniumDsl.g:230:1: ruleVerify EOF
+            // InternalSeleniumDsl.g:279:1: ( ruleVerify EOF )
+            // InternalSeleniumDsl.g:280:1: ruleVerify EOF
             {
              before(grammarAccess.getVerifyRule()); 
             pushFollow(FOLLOW_1);
@@ -697,21 +848,21 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "ruleVerify"
-    // InternalSeleniumDsl.g:237:1: ruleVerify : ( ( rule__Verify__Group__0 ) ) ;
+    // InternalSeleniumDsl.g:287:1: ruleVerify : ( ( rule__Verify__Group__0 ) ) ;
     public final void ruleVerify() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:241:2: ( ( ( rule__Verify__Group__0 ) ) )
-            // InternalSeleniumDsl.g:242:2: ( ( rule__Verify__Group__0 ) )
+            // InternalSeleniumDsl.g:291:2: ( ( ( rule__Verify__Group__0 ) ) )
+            // InternalSeleniumDsl.g:292:2: ( ( rule__Verify__Group__0 ) )
             {
-            // InternalSeleniumDsl.g:242:2: ( ( rule__Verify__Group__0 ) )
-            // InternalSeleniumDsl.g:243:3: ( rule__Verify__Group__0 )
+            // InternalSeleniumDsl.g:292:2: ( ( rule__Verify__Group__0 ) )
+            // InternalSeleniumDsl.g:293:3: ( rule__Verify__Group__0 )
             {
              before(grammarAccess.getVerifyAccess().getGroup()); 
-            // InternalSeleniumDsl.g:244:3: ( rule__Verify__Group__0 )
-            // InternalSeleniumDsl.g:244:4: rule__Verify__Group__0
+            // InternalSeleniumDsl.g:294:3: ( rule__Verify__Group__0 )
+            // InternalSeleniumDsl.g:294:4: rule__Verify__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__Verify__Group__0();
@@ -744,11 +895,11 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "entryRuleRead"
-    // InternalSeleniumDsl.g:253:1: entryRuleRead : ruleRead EOF ;
+    // InternalSeleniumDsl.g:303:1: entryRuleRead : ruleRead EOF ;
     public final void entryRuleRead() throws RecognitionException {
         try {
-            // InternalSeleniumDsl.g:254:1: ( ruleRead EOF )
-            // InternalSeleniumDsl.g:255:1: ruleRead EOF
+            // InternalSeleniumDsl.g:304:1: ( ruleRead EOF )
+            // InternalSeleniumDsl.g:305:1: ruleRead EOF
             {
              before(grammarAccess.getReadRule()); 
             pushFollow(FOLLOW_1);
@@ -774,21 +925,21 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "ruleRead"
-    // InternalSeleniumDsl.g:262:1: ruleRead : ( ( rule__Read__Group__0 ) ) ;
+    // InternalSeleniumDsl.g:312:1: ruleRead : ( ( rule__Read__Group__0 ) ) ;
     public final void ruleRead() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:266:2: ( ( ( rule__Read__Group__0 ) ) )
-            // InternalSeleniumDsl.g:267:2: ( ( rule__Read__Group__0 ) )
+            // InternalSeleniumDsl.g:316:2: ( ( ( rule__Read__Group__0 ) ) )
+            // InternalSeleniumDsl.g:317:2: ( ( rule__Read__Group__0 ) )
             {
-            // InternalSeleniumDsl.g:267:2: ( ( rule__Read__Group__0 ) )
-            // InternalSeleniumDsl.g:268:3: ( rule__Read__Group__0 )
+            // InternalSeleniumDsl.g:317:2: ( ( rule__Read__Group__0 ) )
+            // InternalSeleniumDsl.g:318:3: ( rule__Read__Group__0 )
             {
              before(grammarAccess.getReadAccess().getGroup()); 
-            // InternalSeleniumDsl.g:269:3: ( rule__Read__Group__0 )
-            // InternalSeleniumDsl.g:269:4: rule__Read__Group__0
+            // InternalSeleniumDsl.g:319:3: ( rule__Read__Group__0 )
+            // InternalSeleniumDsl.g:319:4: rule__Read__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__Read__Group__0();
@@ -821,11 +972,11 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "entryRuleUncheck"
-    // InternalSeleniumDsl.g:278:1: entryRuleUncheck : ruleUncheck EOF ;
+    // InternalSeleniumDsl.g:328:1: entryRuleUncheck : ruleUncheck EOF ;
     public final void entryRuleUncheck() throws RecognitionException {
         try {
-            // InternalSeleniumDsl.g:279:1: ( ruleUncheck EOF )
-            // InternalSeleniumDsl.g:280:1: ruleUncheck EOF
+            // InternalSeleniumDsl.g:329:1: ( ruleUncheck EOF )
+            // InternalSeleniumDsl.g:330:1: ruleUncheck EOF
             {
              before(grammarAccess.getUncheckRule()); 
             pushFollow(FOLLOW_1);
@@ -851,21 +1002,21 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "ruleUncheck"
-    // InternalSeleniumDsl.g:287:1: ruleUncheck : ( ( rule__Uncheck__Group__0 ) ) ;
+    // InternalSeleniumDsl.g:337:1: ruleUncheck : ( ( rule__Uncheck__Group__0 ) ) ;
     public final void ruleUncheck() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:291:2: ( ( ( rule__Uncheck__Group__0 ) ) )
-            // InternalSeleniumDsl.g:292:2: ( ( rule__Uncheck__Group__0 ) )
+            // InternalSeleniumDsl.g:341:2: ( ( ( rule__Uncheck__Group__0 ) ) )
+            // InternalSeleniumDsl.g:342:2: ( ( rule__Uncheck__Group__0 ) )
             {
-            // InternalSeleniumDsl.g:292:2: ( ( rule__Uncheck__Group__0 ) )
-            // InternalSeleniumDsl.g:293:3: ( rule__Uncheck__Group__0 )
+            // InternalSeleniumDsl.g:342:2: ( ( rule__Uncheck__Group__0 ) )
+            // InternalSeleniumDsl.g:343:3: ( rule__Uncheck__Group__0 )
             {
              before(grammarAccess.getUncheckAccess().getGroup()); 
-            // InternalSeleniumDsl.g:294:3: ( rule__Uncheck__Group__0 )
-            // InternalSeleniumDsl.g:294:4: rule__Uncheck__Group__0
+            // InternalSeleniumDsl.g:344:3: ( rule__Uncheck__Group__0 )
+            // InternalSeleniumDsl.g:344:4: rule__Uncheck__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__Uncheck__Group__0();
@@ -898,11 +1049,11 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "entryRuleCombobox"
-    // InternalSeleniumDsl.g:303:1: entryRuleCombobox : ruleCombobox EOF ;
+    // InternalSeleniumDsl.g:353:1: entryRuleCombobox : ruleCombobox EOF ;
     public final void entryRuleCombobox() throws RecognitionException {
         try {
-            // InternalSeleniumDsl.g:304:1: ( ruleCombobox EOF )
-            // InternalSeleniumDsl.g:305:1: ruleCombobox EOF
+            // InternalSeleniumDsl.g:354:1: ( ruleCombobox EOF )
+            // InternalSeleniumDsl.g:355:1: ruleCombobox EOF
             {
              before(grammarAccess.getComboboxRule()); 
             pushFollow(FOLLOW_1);
@@ -928,21 +1079,21 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "ruleCombobox"
-    // InternalSeleniumDsl.g:312:1: ruleCombobox : ( ( rule__Combobox__Group__0 ) ) ;
+    // InternalSeleniumDsl.g:362:1: ruleCombobox : ( ( rule__Combobox__Group__0 ) ) ;
     public final void ruleCombobox() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:316:2: ( ( ( rule__Combobox__Group__0 ) ) )
-            // InternalSeleniumDsl.g:317:2: ( ( rule__Combobox__Group__0 ) )
+            // InternalSeleniumDsl.g:366:2: ( ( ( rule__Combobox__Group__0 ) ) )
+            // InternalSeleniumDsl.g:367:2: ( ( rule__Combobox__Group__0 ) )
             {
-            // InternalSeleniumDsl.g:317:2: ( ( rule__Combobox__Group__0 ) )
-            // InternalSeleniumDsl.g:318:3: ( rule__Combobox__Group__0 )
+            // InternalSeleniumDsl.g:367:2: ( ( rule__Combobox__Group__0 ) )
+            // InternalSeleniumDsl.g:368:3: ( rule__Combobox__Group__0 )
             {
              before(grammarAccess.getComboboxAccess().getGroup()); 
-            // InternalSeleniumDsl.g:319:3: ( rule__Combobox__Group__0 )
-            // InternalSeleniumDsl.g:319:4: rule__Combobox__Group__0
+            // InternalSeleniumDsl.g:369:3: ( rule__Combobox__Group__0 )
+            // InternalSeleniumDsl.g:369:4: rule__Combobox__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__Combobox__Group__0();
@@ -974,89 +1125,12 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
     // $ANTLR end "ruleCombobox"
 
 
-    // $ANTLR start "entryRuleDOMELEMENT"
-    // InternalSeleniumDsl.g:328:1: entryRuleDOMELEMENT : ruleDOMELEMENT EOF ;
-    public final void entryRuleDOMELEMENT() throws RecognitionException {
-        try {
-            // InternalSeleniumDsl.g:329:1: ( ruleDOMELEMENT EOF )
-            // InternalSeleniumDsl.g:330:1: ruleDOMELEMENT EOF
-            {
-             before(grammarAccess.getDOMELEMENTRule()); 
-            pushFollow(FOLLOW_1);
-            ruleDOMELEMENT();
-
-            state._fsp--;
-
-             after(grammarAccess.getDOMELEMENTRule()); 
-            match(input,EOF,FOLLOW_2); 
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-        }
-        return ;
-    }
-    // $ANTLR end "entryRuleDOMELEMENT"
-
-
-    // $ANTLR start "ruleDOMELEMENT"
-    // InternalSeleniumDsl.g:337:1: ruleDOMELEMENT : ( ( rule__DOMELEMENT__Alternatives ) ) ;
-    public final void ruleDOMELEMENT() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSeleniumDsl.g:341:2: ( ( ( rule__DOMELEMENT__Alternatives ) ) )
-            // InternalSeleniumDsl.g:342:2: ( ( rule__DOMELEMENT__Alternatives ) )
-            {
-            // InternalSeleniumDsl.g:342:2: ( ( rule__DOMELEMENT__Alternatives ) )
-            // InternalSeleniumDsl.g:343:3: ( rule__DOMELEMENT__Alternatives )
-            {
-             before(grammarAccess.getDOMELEMENTAccess().getAlternatives()); 
-            // InternalSeleniumDsl.g:344:3: ( rule__DOMELEMENT__Alternatives )
-            // InternalSeleniumDsl.g:344:4: rule__DOMELEMENT__Alternatives
-            {
-            pushFollow(FOLLOW_2);
-            rule__DOMELEMENT__Alternatives();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getDOMELEMENTAccess().getAlternatives()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "ruleDOMELEMENT"
-
-
     // $ANTLR start "entryRuleDynamicURL"
-    // InternalSeleniumDsl.g:353:1: entryRuleDynamicURL : ruleDynamicURL EOF ;
+    // InternalSeleniumDsl.g:378:1: entryRuleDynamicURL : ruleDynamicURL EOF ;
     public final void entryRuleDynamicURL() throws RecognitionException {
         try {
-            // InternalSeleniumDsl.g:354:1: ( ruleDynamicURL EOF )
-            // InternalSeleniumDsl.g:355:1: ruleDynamicURL EOF
+            // InternalSeleniumDsl.g:379:1: ( ruleDynamicURL EOF )
+            // InternalSeleniumDsl.g:380:1: ruleDynamicURL EOF
             {
              before(grammarAccess.getDynamicURLRule()); 
             pushFollow(FOLLOW_1);
@@ -1082,21 +1156,21 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "ruleDynamicURL"
-    // InternalSeleniumDsl.g:362:1: ruleDynamicURL : ( ( rule__DynamicURL__Alternatives ) ) ;
+    // InternalSeleniumDsl.g:387:1: ruleDynamicURL : ( ( rule__DynamicURL__Alternatives ) ) ;
     public final void ruleDynamicURL() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:366:2: ( ( ( rule__DynamicURL__Alternatives ) ) )
-            // InternalSeleniumDsl.g:367:2: ( ( rule__DynamicURL__Alternatives ) )
+            // InternalSeleniumDsl.g:391:2: ( ( ( rule__DynamicURL__Alternatives ) ) )
+            // InternalSeleniumDsl.g:392:2: ( ( rule__DynamicURL__Alternatives ) )
             {
-            // InternalSeleniumDsl.g:367:2: ( ( rule__DynamicURL__Alternatives ) )
-            // InternalSeleniumDsl.g:368:3: ( rule__DynamicURL__Alternatives )
+            // InternalSeleniumDsl.g:392:2: ( ( rule__DynamicURL__Alternatives ) )
+            // InternalSeleniumDsl.g:393:3: ( rule__DynamicURL__Alternatives )
             {
              before(grammarAccess.getDynamicURLAccess().getAlternatives()); 
-            // InternalSeleniumDsl.g:369:3: ( rule__DynamicURL__Alternatives )
-            // InternalSeleniumDsl.g:369:4: rule__DynamicURL__Alternatives
+            // InternalSeleniumDsl.g:394:3: ( rule__DynamicURL__Alternatives )
+            // InternalSeleniumDsl.g:394:4: rule__DynamicURL__Alternatives
             {
             pushFollow(FOLLOW_2);
             rule__DynamicURL__Alternatives();
@@ -1129,36 +1203,36 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Command__Alternatives"
-    // InternalSeleniumDsl.g:377:1: rule__Command__Alternatives : ( ( ruleOpenBrowser ) | ( ruleGoTo ) | ( ruleClick ) | ( ruleFill ) | ( ruleSelect ) | ( ruleVerify ) | ( ruleRead ) | ( ruleUncheck ) | ( ruleCombobox ) );
+    // InternalSeleniumDsl.g:402:1: rule__Command__Alternatives : ( ( ruleOpenBrowser ) | ( ruleGoTo ) | ( ruleClick ) | ( ruleFill ) | ( ruleSelect ) | ( ruleVerify ) | ( ruleRead ) | ( ruleUncheck ) | ( ruleCombobox ) );
     public final void rule__Command__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:381:1: ( ( ruleOpenBrowser ) | ( ruleGoTo ) | ( ruleClick ) | ( ruleFill ) | ( ruleSelect ) | ( ruleVerify ) | ( ruleRead ) | ( ruleUncheck ) | ( ruleCombobox ) )
+            // InternalSeleniumDsl.g:406:1: ( ( ruleOpenBrowser ) | ( ruleGoTo ) | ( ruleClick ) | ( ruleFill ) | ( ruleSelect ) | ( ruleVerify ) | ( ruleRead ) | ( ruleUncheck ) | ( ruleCombobox ) )
             int alt2=9;
             switch ( input.LA(1) ) {
-            case 19:
+            case 21:
                 {
                 alt2=1;
                 }
                 break;
-            case 23:
+            case 25:
                 {
                 alt2=2;
                 }
                 break;
-            case 25:
+            case 27:
                 {
                 alt2=3;
                 }
                 break;
-            case 29:
+            case 31:
                 {
                 alt2=4;
                 }
                 break;
-            case 33:
+            case 35:
                 {
                 alt2=5;
                 }
@@ -1178,7 +1252,7 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
                 alt2=8;
                 }
                 break;
-            case 48:
+            case 47:
                 {
                 alt2=9;
                 }
@@ -1192,10 +1266,10 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
             switch (alt2) {
                 case 1 :
-                    // InternalSeleniumDsl.g:382:2: ( ruleOpenBrowser )
+                    // InternalSeleniumDsl.g:407:2: ( ruleOpenBrowser )
                     {
-                    // InternalSeleniumDsl.g:382:2: ( ruleOpenBrowser )
-                    // InternalSeleniumDsl.g:383:3: ruleOpenBrowser
+                    // InternalSeleniumDsl.g:407:2: ( ruleOpenBrowser )
+                    // InternalSeleniumDsl.g:408:3: ruleOpenBrowser
                     {
                      before(grammarAccess.getCommandAccess().getOpenBrowserParserRuleCall_0()); 
                     pushFollow(FOLLOW_2);
@@ -1211,10 +1285,10 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 2 :
-                    // InternalSeleniumDsl.g:388:2: ( ruleGoTo )
+                    // InternalSeleniumDsl.g:413:2: ( ruleGoTo )
                     {
-                    // InternalSeleniumDsl.g:388:2: ( ruleGoTo )
-                    // InternalSeleniumDsl.g:389:3: ruleGoTo
+                    // InternalSeleniumDsl.g:413:2: ( ruleGoTo )
+                    // InternalSeleniumDsl.g:414:3: ruleGoTo
                     {
                      before(grammarAccess.getCommandAccess().getGoToParserRuleCall_1()); 
                     pushFollow(FOLLOW_2);
@@ -1230,10 +1304,10 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 3 :
-                    // InternalSeleniumDsl.g:394:2: ( ruleClick )
+                    // InternalSeleniumDsl.g:419:2: ( ruleClick )
                     {
-                    // InternalSeleniumDsl.g:394:2: ( ruleClick )
-                    // InternalSeleniumDsl.g:395:3: ruleClick
+                    // InternalSeleniumDsl.g:419:2: ( ruleClick )
+                    // InternalSeleniumDsl.g:420:3: ruleClick
                     {
                      before(grammarAccess.getCommandAccess().getClickParserRuleCall_2()); 
                     pushFollow(FOLLOW_2);
@@ -1249,10 +1323,10 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 4 :
-                    // InternalSeleniumDsl.g:400:2: ( ruleFill )
+                    // InternalSeleniumDsl.g:425:2: ( ruleFill )
                     {
-                    // InternalSeleniumDsl.g:400:2: ( ruleFill )
-                    // InternalSeleniumDsl.g:401:3: ruleFill
+                    // InternalSeleniumDsl.g:425:2: ( ruleFill )
+                    // InternalSeleniumDsl.g:426:3: ruleFill
                     {
                      before(grammarAccess.getCommandAccess().getFillParserRuleCall_3()); 
                     pushFollow(FOLLOW_2);
@@ -1268,10 +1342,10 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 5 :
-                    // InternalSeleniumDsl.g:406:2: ( ruleSelect )
+                    // InternalSeleniumDsl.g:431:2: ( ruleSelect )
                     {
-                    // InternalSeleniumDsl.g:406:2: ( ruleSelect )
-                    // InternalSeleniumDsl.g:407:3: ruleSelect
+                    // InternalSeleniumDsl.g:431:2: ( ruleSelect )
+                    // InternalSeleniumDsl.g:432:3: ruleSelect
                     {
                      before(grammarAccess.getCommandAccess().getSelectParserRuleCall_4()); 
                     pushFollow(FOLLOW_2);
@@ -1287,10 +1361,10 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 6 :
-                    // InternalSeleniumDsl.g:412:2: ( ruleVerify )
+                    // InternalSeleniumDsl.g:437:2: ( ruleVerify )
                     {
-                    // InternalSeleniumDsl.g:412:2: ( ruleVerify )
-                    // InternalSeleniumDsl.g:413:3: ruleVerify
+                    // InternalSeleniumDsl.g:437:2: ( ruleVerify )
+                    // InternalSeleniumDsl.g:438:3: ruleVerify
                     {
                      before(grammarAccess.getCommandAccess().getVerifyParserRuleCall_5()); 
                     pushFollow(FOLLOW_2);
@@ -1306,10 +1380,10 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 7 :
-                    // InternalSeleniumDsl.g:418:2: ( ruleRead )
+                    // InternalSeleniumDsl.g:443:2: ( ruleRead )
                     {
-                    // InternalSeleniumDsl.g:418:2: ( ruleRead )
-                    // InternalSeleniumDsl.g:419:3: ruleRead
+                    // InternalSeleniumDsl.g:443:2: ( ruleRead )
+                    // InternalSeleniumDsl.g:444:3: ruleRead
                     {
                      before(grammarAccess.getCommandAccess().getReadParserRuleCall_6()); 
                     pushFollow(FOLLOW_2);
@@ -1325,10 +1399,10 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 8 :
-                    // InternalSeleniumDsl.g:424:2: ( ruleUncheck )
+                    // InternalSeleniumDsl.g:449:2: ( ruleUncheck )
                     {
-                    // InternalSeleniumDsl.g:424:2: ( ruleUncheck )
-                    // InternalSeleniumDsl.g:425:3: ruleUncheck
+                    // InternalSeleniumDsl.g:449:2: ( ruleUncheck )
+                    // InternalSeleniumDsl.g:450:3: ruleUncheck
                     {
                      before(grammarAccess.getCommandAccess().getUncheckParserRuleCall_7()); 
                     pushFollow(FOLLOW_2);
@@ -1344,10 +1418,10 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 9 :
-                    // InternalSeleniumDsl.g:430:2: ( ruleCombobox )
+                    // InternalSeleniumDsl.g:455:2: ( ruleCombobox )
                     {
-                    // InternalSeleniumDsl.g:430:2: ( ruleCombobox )
-                    // InternalSeleniumDsl.g:431:3: ruleCombobox
+                    // InternalSeleniumDsl.g:455:2: ( ruleCombobox )
+                    // InternalSeleniumDsl.g:456:3: ruleCombobox
                     {
                      before(grammarAccess.getCommandAccess().getComboboxParserRuleCall_8()); 
                     pushFollow(FOLLOW_2);
@@ -1379,134 +1453,53 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__Command__Alternatives"
 
 
-    // $ANTLR start "rule__GoTo__Alternatives_3"
-    // InternalSeleniumDsl.g:440:1: rule__GoTo__Alternatives_3 : ( ( ( rule__GoTo__UrlAssignment_3_0 ) ) | ( 'URL' ) );
-    public final void rule__GoTo__Alternatives_3() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSeleniumDsl.g:444:1: ( ( ( rule__GoTo__UrlAssignment_3_0 ) ) | ( 'URL' ) )
-            int alt3=2;
-            int LA3_0 = input.LA(1);
-
-            if ( ((LA3_0>=RULE_URL && LA3_0<=RULE_STRING)) ) {
-                alt3=1;
-            }
-            else if ( (LA3_0==13) ) {
-                alt3=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 3, 0, input);
-
-                throw nvae;
-            }
-            switch (alt3) {
-                case 1 :
-                    // InternalSeleniumDsl.g:445:2: ( ( rule__GoTo__UrlAssignment_3_0 ) )
-                    {
-                    // InternalSeleniumDsl.g:445:2: ( ( rule__GoTo__UrlAssignment_3_0 ) )
-                    // InternalSeleniumDsl.g:446:3: ( rule__GoTo__UrlAssignment_3_0 )
-                    {
-                     before(grammarAccess.getGoToAccess().getUrlAssignment_3_0()); 
-                    // InternalSeleniumDsl.g:447:3: ( rule__GoTo__UrlAssignment_3_0 )
-                    // InternalSeleniumDsl.g:447:4: rule__GoTo__UrlAssignment_3_0
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__GoTo__UrlAssignment_3_0();
-
-                    state._fsp--;
-
-
-                    }
-
-                     after(grammarAccess.getGoToAccess().getUrlAssignment_3_0()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 2 :
-                    // InternalSeleniumDsl.g:451:2: ( 'URL' )
-                    {
-                    // InternalSeleniumDsl.g:451:2: ( 'URL' )
-                    // InternalSeleniumDsl.g:452:3: 'URL'
-                    {
-                     before(grammarAccess.getGoToAccess().getURLKeyword_3_1()); 
-                    match(input,13,FOLLOW_2); 
-                     after(grammarAccess.getGoToAccess().getURLKeyword_3_1()); 
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__GoTo__Alternatives_3"
-
-
     // $ANTLR start "rule__Click__Alternatives_4"
-    // InternalSeleniumDsl.g:461:1: rule__Click__Alternatives_4 : ( ( ( rule__Click__Group_4_0__0 ) ) | ( ( rule__Click__Group_4_1__0 ) ) | ( ( rule__Click__Group_4_2__0 ) ) | ( ( rule__Click__Group_4_3__0 ) ) );
+    // InternalSeleniumDsl.g:465:1: rule__Click__Alternatives_4 : ( ( ( rule__Click__Group_4_0__0 ) ) | ( ( rule__Click__Group_4_1__0 ) ) | ( ( rule__Click__Group_4_2__0 ) ) | ( ( rule__Click__Group_4_3__0 ) ) );
     public final void rule__Click__Alternatives_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:465:1: ( ( ( rule__Click__Group_4_0__0 ) ) | ( ( rule__Click__Group_4_1__0 ) ) | ( ( rule__Click__Group_4_2__0 ) ) | ( ( rule__Click__Group_4_3__0 ) ) )
-            int alt4=4;
+            // InternalSeleniumDsl.g:469:1: ( ( ( rule__Click__Group_4_0__0 ) ) | ( ( rule__Click__Group_4_1__0 ) ) | ( ( rule__Click__Group_4_2__0 ) ) | ( ( rule__Click__Group_4_3__0 ) ) )
+            int alt3=4;
             switch ( input.LA(1) ) {
-            case 14:
-                {
-                alt4=1;
-                }
-                break;
-            case 15:
-                {
-                alt4=2;
-                }
-                break;
             case 16:
                 {
-                alt4=3;
+                alt3=1;
                 }
                 break;
-            case 28:
+            case 17:
                 {
-                alt4=4;
+                alt3=2;
+                }
+                break;
+            case 18:
+                {
+                alt3=3;
+                }
+                break;
+            case 30:
+                {
+                alt3=4;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 4, 0, input);
+                    new NoViableAltException("", 3, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt4) {
+            switch (alt3) {
                 case 1 :
-                    // InternalSeleniumDsl.g:466:2: ( ( rule__Click__Group_4_0__0 ) )
+                    // InternalSeleniumDsl.g:470:2: ( ( rule__Click__Group_4_0__0 ) )
                     {
-                    // InternalSeleniumDsl.g:466:2: ( ( rule__Click__Group_4_0__0 ) )
-                    // InternalSeleniumDsl.g:467:3: ( rule__Click__Group_4_0__0 )
+                    // InternalSeleniumDsl.g:470:2: ( ( rule__Click__Group_4_0__0 ) )
+                    // InternalSeleniumDsl.g:471:3: ( rule__Click__Group_4_0__0 )
                     {
                      before(grammarAccess.getClickAccess().getGroup_4_0()); 
-                    // InternalSeleniumDsl.g:468:3: ( rule__Click__Group_4_0__0 )
-                    // InternalSeleniumDsl.g:468:4: rule__Click__Group_4_0__0
+                    // InternalSeleniumDsl.g:472:3: ( rule__Click__Group_4_0__0 )
+                    // InternalSeleniumDsl.g:472:4: rule__Click__Group_4_0__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__Click__Group_4_0__0();
@@ -1524,14 +1517,14 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 2 :
-                    // InternalSeleniumDsl.g:472:2: ( ( rule__Click__Group_4_1__0 ) )
+                    // InternalSeleniumDsl.g:476:2: ( ( rule__Click__Group_4_1__0 ) )
                     {
-                    // InternalSeleniumDsl.g:472:2: ( ( rule__Click__Group_4_1__0 ) )
-                    // InternalSeleniumDsl.g:473:3: ( rule__Click__Group_4_1__0 )
+                    // InternalSeleniumDsl.g:476:2: ( ( rule__Click__Group_4_1__0 ) )
+                    // InternalSeleniumDsl.g:477:3: ( rule__Click__Group_4_1__0 )
                     {
                      before(grammarAccess.getClickAccess().getGroup_4_1()); 
-                    // InternalSeleniumDsl.g:474:3: ( rule__Click__Group_4_1__0 )
-                    // InternalSeleniumDsl.g:474:4: rule__Click__Group_4_1__0
+                    // InternalSeleniumDsl.g:478:3: ( rule__Click__Group_4_1__0 )
+                    // InternalSeleniumDsl.g:478:4: rule__Click__Group_4_1__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__Click__Group_4_1__0();
@@ -1549,14 +1542,14 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 3 :
-                    // InternalSeleniumDsl.g:478:2: ( ( rule__Click__Group_4_2__0 ) )
+                    // InternalSeleniumDsl.g:482:2: ( ( rule__Click__Group_4_2__0 ) )
                     {
-                    // InternalSeleniumDsl.g:478:2: ( ( rule__Click__Group_4_2__0 ) )
-                    // InternalSeleniumDsl.g:479:3: ( rule__Click__Group_4_2__0 )
+                    // InternalSeleniumDsl.g:482:2: ( ( rule__Click__Group_4_2__0 ) )
+                    // InternalSeleniumDsl.g:483:3: ( rule__Click__Group_4_2__0 )
                     {
                      before(grammarAccess.getClickAccess().getGroup_4_2()); 
-                    // InternalSeleniumDsl.g:480:3: ( rule__Click__Group_4_2__0 )
-                    // InternalSeleniumDsl.g:480:4: rule__Click__Group_4_2__0
+                    // InternalSeleniumDsl.g:484:3: ( rule__Click__Group_4_2__0 )
+                    // InternalSeleniumDsl.g:484:4: rule__Click__Group_4_2__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__Click__Group_4_2__0();
@@ -1574,14 +1567,14 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 4 :
-                    // InternalSeleniumDsl.g:484:2: ( ( rule__Click__Group_4_3__0 ) )
+                    // InternalSeleniumDsl.g:488:2: ( ( rule__Click__Group_4_3__0 ) )
                     {
-                    // InternalSeleniumDsl.g:484:2: ( ( rule__Click__Group_4_3__0 ) )
-                    // InternalSeleniumDsl.g:485:3: ( rule__Click__Group_4_3__0 )
+                    // InternalSeleniumDsl.g:488:2: ( ( rule__Click__Group_4_3__0 ) )
+                    // InternalSeleniumDsl.g:489:3: ( rule__Click__Group_4_3__0 )
                     {
                      before(grammarAccess.getClickAccess().getGroup_4_3()); 
-                    // InternalSeleniumDsl.g:486:3: ( rule__Click__Group_4_3__0 )
-                    // InternalSeleniumDsl.g:486:4: rule__Click__Group_4_3__0
+                    // InternalSeleniumDsl.g:490:3: ( rule__Click__Group_4_3__0 )
+                    // InternalSeleniumDsl.g:490:4: rule__Click__Group_4_3__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__Click__Group_4_3__0();
@@ -1615,49 +1608,49 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__Click__Alternatives_4"
 
 
-    // $ANTLR start "rule__Fill__Alternatives_7"
-    // InternalSeleniumDsl.g:494:1: rule__Fill__Alternatives_7 : ( ( ( rule__Fill__Group_7_0__0 ) ) | ( ( rule__Fill__Group_7_1__0 ) ) );
-    public final void rule__Fill__Alternatives_7() throws RecognitionException {
+    // $ANTLR start "rule__Fill__Alternatives_5"
+    // InternalSeleniumDsl.g:498:1: rule__Fill__Alternatives_5 : ( ( ( rule__Fill__Group_5_0__0 ) ) | ( ( rule__Fill__Group_5_1__0 ) ) );
+    public final void rule__Fill__Alternatives_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:498:1: ( ( ( rule__Fill__Group_7_0__0 ) ) | ( ( rule__Fill__Group_7_1__0 ) ) )
-            int alt5=2;
-            int LA5_0 = input.LA(1);
+            // InternalSeleniumDsl.g:502:1: ( ( ( rule__Fill__Group_5_0__0 ) ) | ( ( rule__Fill__Group_5_1__0 ) ) )
+            int alt4=2;
+            int LA4_0 = input.LA(1);
 
-            if ( (LA5_0==30) ) {
-                alt5=1;
+            if ( (LA4_0==33) ) {
+                alt4=1;
             }
-            else if ( (LA5_0==28) ) {
-                alt5=2;
+            else if ( (LA4_0==30) ) {
+                alt4=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 5, 0, input);
+                    new NoViableAltException("", 4, 0, input);
 
                 throw nvae;
             }
-            switch (alt5) {
+            switch (alt4) {
                 case 1 :
-                    // InternalSeleniumDsl.g:499:2: ( ( rule__Fill__Group_7_0__0 ) )
+                    // InternalSeleniumDsl.g:503:2: ( ( rule__Fill__Group_5_0__0 ) )
                     {
-                    // InternalSeleniumDsl.g:499:2: ( ( rule__Fill__Group_7_0__0 ) )
-                    // InternalSeleniumDsl.g:500:3: ( rule__Fill__Group_7_0__0 )
+                    // InternalSeleniumDsl.g:503:2: ( ( rule__Fill__Group_5_0__0 ) )
+                    // InternalSeleniumDsl.g:504:3: ( rule__Fill__Group_5_0__0 )
                     {
-                     before(grammarAccess.getFillAccess().getGroup_7_0()); 
-                    // InternalSeleniumDsl.g:501:3: ( rule__Fill__Group_7_0__0 )
-                    // InternalSeleniumDsl.g:501:4: rule__Fill__Group_7_0__0
+                     before(grammarAccess.getFillAccess().getGroup_5_0()); 
+                    // InternalSeleniumDsl.g:505:3: ( rule__Fill__Group_5_0__0 )
+                    // InternalSeleniumDsl.g:505:4: rule__Fill__Group_5_0__0
                     {
                     pushFollow(FOLLOW_2);
-                    rule__Fill__Group_7_0__0();
+                    rule__Fill__Group_5_0__0();
 
                     state._fsp--;
 
 
                     }
 
-                     after(grammarAccess.getFillAccess().getGroup_7_0()); 
+                     after(grammarAccess.getFillAccess().getGroup_5_0()); 
 
                     }
 
@@ -1665,24 +1658,24 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 2 :
-                    // InternalSeleniumDsl.g:505:2: ( ( rule__Fill__Group_7_1__0 ) )
+                    // InternalSeleniumDsl.g:509:2: ( ( rule__Fill__Group_5_1__0 ) )
                     {
-                    // InternalSeleniumDsl.g:505:2: ( ( rule__Fill__Group_7_1__0 ) )
-                    // InternalSeleniumDsl.g:506:3: ( rule__Fill__Group_7_1__0 )
+                    // InternalSeleniumDsl.g:509:2: ( ( rule__Fill__Group_5_1__0 ) )
+                    // InternalSeleniumDsl.g:510:3: ( rule__Fill__Group_5_1__0 )
                     {
-                     before(grammarAccess.getFillAccess().getGroup_7_1()); 
-                    // InternalSeleniumDsl.g:507:3: ( rule__Fill__Group_7_1__0 )
-                    // InternalSeleniumDsl.g:507:4: rule__Fill__Group_7_1__0
+                     before(grammarAccess.getFillAccess().getGroup_5_1()); 
+                    // InternalSeleniumDsl.g:511:3: ( rule__Fill__Group_5_1__0 )
+                    // InternalSeleniumDsl.g:511:4: rule__Fill__Group_5_1__0
                     {
                     pushFollow(FOLLOW_2);
-                    rule__Fill__Group_7_1__0();
+                    rule__Fill__Group_5_1__0();
 
                     state._fsp--;
 
 
                     }
 
-                     after(grammarAccess.getFillAccess().getGroup_7_1()); 
+                     after(grammarAccess.getFillAccess().getGroup_5_1()); 
 
                     }
 
@@ -1703,17 +1696,215 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Fill__Alternatives_7"
+    // $ANTLR end "rule__Fill__Alternatives_5"
 
 
-    // $ANTLR start "rule__Verify__Alternatives_7"
-    // InternalSeleniumDsl.g:515:1: rule__Verify__Alternatives_7 : ( ( ( rule__Verify__Group_7_0__0 ) ) | ( ( rule__Verify__Group_7_1__0 ) ) | ( ( rule__Verify__Group_7_2__0 ) ) );
-    public final void rule__Verify__Alternatives_7() throws RecognitionException {
+    // $ANTLR start "rule__ElementType__Alternatives"
+    // InternalSeleniumDsl.g:519:1: rule__ElementType__Alternatives : ( ( ( rule__ElementType__Group_0__0 ) ) | ( 'checkboxes' ) | ( 'combobox' ) | ( 'option' ) | ( 'link' ) | ( 'button' ) | ( 'image' ) | ( 'url' ) | ( ( rule__ElementType__Group_8__0 ) ) | ( 'title' ) );
+    public final void rule__ElementType__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:519:1: ( ( ( rule__Verify__Group_7_0__0 ) ) | ( ( rule__Verify__Group_7_1__0 ) ) | ( ( rule__Verify__Group_7_2__0 ) ) )
+            // InternalSeleniumDsl.g:523:1: ( ( ( rule__ElementType__Group_0__0 ) ) | ( 'checkboxes' ) | ( 'combobox' ) | ( 'option' ) | ( 'link' ) | ( 'button' ) | ( 'image' ) | ( 'url' ) | ( ( rule__ElementType__Group_8__0 ) ) | ( 'title' ) )
+            int alt5=10;
+            alt5 = dfa5.predict(input);
+            switch (alt5) {
+                case 1 :
+                    // InternalSeleniumDsl.g:524:2: ( ( rule__ElementType__Group_0__0 ) )
+                    {
+                    // InternalSeleniumDsl.g:524:2: ( ( rule__ElementType__Group_0__0 ) )
+                    // InternalSeleniumDsl.g:525:3: ( rule__ElementType__Group_0__0 )
+                    {
+                     before(grammarAccess.getElementTypeAccess().getGroup_0()); 
+                    // InternalSeleniumDsl.g:526:3: ( rule__ElementType__Group_0__0 )
+                    // InternalSeleniumDsl.g:526:4: rule__ElementType__Group_0__0
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__ElementType__Group_0__0();
+
+                    state._fsp--;
+
+
+                    }
+
+                     after(grammarAccess.getElementTypeAccess().getGroup_0()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // InternalSeleniumDsl.g:530:2: ( 'checkboxes' )
+                    {
+                    // InternalSeleniumDsl.g:530:2: ( 'checkboxes' )
+                    // InternalSeleniumDsl.g:531:3: 'checkboxes'
+                    {
+                     before(grammarAccess.getElementTypeAccess().getCheckboxesKeyword_1()); 
+                    match(input,13,FOLLOW_2); 
+                     after(grammarAccess.getElementTypeAccess().getCheckboxesKeyword_1()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 3 :
+                    // InternalSeleniumDsl.g:536:2: ( 'combobox' )
+                    {
+                    // InternalSeleniumDsl.g:536:2: ( 'combobox' )
+                    // InternalSeleniumDsl.g:537:3: 'combobox'
+                    {
+                     before(grammarAccess.getElementTypeAccess().getComboboxKeyword_2()); 
+                    match(input,14,FOLLOW_2); 
+                     after(grammarAccess.getElementTypeAccess().getComboboxKeyword_2()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 4 :
+                    // InternalSeleniumDsl.g:542:2: ( 'option' )
+                    {
+                    // InternalSeleniumDsl.g:542:2: ( 'option' )
+                    // InternalSeleniumDsl.g:543:3: 'option'
+                    {
+                     before(grammarAccess.getElementTypeAccess().getOptionKeyword_3()); 
+                    match(input,15,FOLLOW_2); 
+                     after(grammarAccess.getElementTypeAccess().getOptionKeyword_3()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 5 :
+                    // InternalSeleniumDsl.g:548:2: ( 'link' )
+                    {
+                    // InternalSeleniumDsl.g:548:2: ( 'link' )
+                    // InternalSeleniumDsl.g:549:3: 'link'
+                    {
+                     before(grammarAccess.getElementTypeAccess().getLinkKeyword_4()); 
+                    match(input,16,FOLLOW_2); 
+                     after(grammarAccess.getElementTypeAccess().getLinkKeyword_4()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 6 :
+                    // InternalSeleniumDsl.g:554:2: ( 'button' )
+                    {
+                    // InternalSeleniumDsl.g:554:2: ( 'button' )
+                    // InternalSeleniumDsl.g:555:3: 'button'
+                    {
+                     before(grammarAccess.getElementTypeAccess().getButtonKeyword_5()); 
+                    match(input,17,FOLLOW_2); 
+                     after(grammarAccess.getElementTypeAccess().getButtonKeyword_5()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 7 :
+                    // InternalSeleniumDsl.g:560:2: ( 'image' )
+                    {
+                    // InternalSeleniumDsl.g:560:2: ( 'image' )
+                    // InternalSeleniumDsl.g:561:3: 'image'
+                    {
+                     before(grammarAccess.getElementTypeAccess().getImageKeyword_6()); 
+                    match(input,18,FOLLOW_2); 
+                     after(grammarAccess.getElementTypeAccess().getImageKeyword_6()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 8 :
+                    // InternalSeleniumDsl.g:566:2: ( 'url' )
+                    {
+                    // InternalSeleniumDsl.g:566:2: ( 'url' )
+                    // InternalSeleniumDsl.g:567:3: 'url'
+                    {
+                     before(grammarAccess.getElementTypeAccess().getUrlKeyword_7()); 
+                    match(input,19,FOLLOW_2); 
+                     after(grammarAccess.getElementTypeAccess().getUrlKeyword_7()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 9 :
+                    // InternalSeleniumDsl.g:572:2: ( ( rule__ElementType__Group_8__0 ) )
+                    {
+                    // InternalSeleniumDsl.g:572:2: ( ( rule__ElementType__Group_8__0 ) )
+                    // InternalSeleniumDsl.g:573:3: ( rule__ElementType__Group_8__0 )
+                    {
+                     before(grammarAccess.getElementTypeAccess().getGroup_8()); 
+                    // InternalSeleniumDsl.g:574:3: ( rule__ElementType__Group_8__0 )
+                    // InternalSeleniumDsl.g:574:4: rule__ElementType__Group_8__0
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__ElementType__Group_8__0();
+
+                    state._fsp--;
+
+
+                    }
+
+                     after(grammarAccess.getElementTypeAccess().getGroup_8()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 10 :
+                    // InternalSeleniumDsl.g:578:2: ( 'title' )
+                    {
+                    // InternalSeleniumDsl.g:578:2: ( 'title' )
+                    // InternalSeleniumDsl.g:579:3: 'title'
+                    {
+                     before(grammarAccess.getElementTypeAccess().getTitleKeyword_9()); 
+                    match(input,20,FOLLOW_2); 
+                     after(grammarAccess.getElementTypeAccess().getTitleKeyword_9()); 
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ElementType__Alternatives"
+
+
+    // $ANTLR start "rule__Verify__Alternatives_6"
+    // InternalSeleniumDsl.g:588:1: rule__Verify__Alternatives_6 : ( ( ( rule__Verify__Group_6_0__0 ) ) | ( ( rule__Verify__Group_6_1__0 ) ) | ( ( rule__Verify__Group_6_2__0 ) ) );
+    public final void rule__Verify__Alternatives_6() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSeleniumDsl.g:592:1: ( ( ( rule__Verify__Group_6_0__0 ) ) | ( ( rule__Verify__Group_6_1__0 ) ) | ( ( rule__Verify__Group_6_2__0 ) ) )
             int alt6=3;
             switch ( input.LA(1) ) {
             case 41:
@@ -1721,12 +1912,12 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
                 alt6=1;
                 }
                 break;
-            case 14:
+            case 16:
                 {
                 alt6=2;
                 }
                 break;
-            case 28:
+            case 30:
                 {
                 alt6=3;
                 }
@@ -1740,24 +1931,24 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
             switch (alt6) {
                 case 1 :
-                    // InternalSeleniumDsl.g:520:2: ( ( rule__Verify__Group_7_0__0 ) )
+                    // InternalSeleniumDsl.g:593:2: ( ( rule__Verify__Group_6_0__0 ) )
                     {
-                    // InternalSeleniumDsl.g:520:2: ( ( rule__Verify__Group_7_0__0 ) )
-                    // InternalSeleniumDsl.g:521:3: ( rule__Verify__Group_7_0__0 )
+                    // InternalSeleniumDsl.g:593:2: ( ( rule__Verify__Group_6_0__0 ) )
+                    // InternalSeleniumDsl.g:594:3: ( rule__Verify__Group_6_0__0 )
                     {
-                     before(grammarAccess.getVerifyAccess().getGroup_7_0()); 
-                    // InternalSeleniumDsl.g:522:3: ( rule__Verify__Group_7_0__0 )
-                    // InternalSeleniumDsl.g:522:4: rule__Verify__Group_7_0__0
+                     before(grammarAccess.getVerifyAccess().getGroup_6_0()); 
+                    // InternalSeleniumDsl.g:595:3: ( rule__Verify__Group_6_0__0 )
+                    // InternalSeleniumDsl.g:595:4: rule__Verify__Group_6_0__0
                     {
                     pushFollow(FOLLOW_2);
-                    rule__Verify__Group_7_0__0();
+                    rule__Verify__Group_6_0__0();
 
                     state._fsp--;
 
 
                     }
 
-                     after(grammarAccess.getVerifyAccess().getGroup_7_0()); 
+                     after(grammarAccess.getVerifyAccess().getGroup_6_0()); 
 
                     }
 
@@ -1765,24 +1956,24 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 2 :
-                    // InternalSeleniumDsl.g:526:2: ( ( rule__Verify__Group_7_1__0 ) )
+                    // InternalSeleniumDsl.g:599:2: ( ( rule__Verify__Group_6_1__0 ) )
                     {
-                    // InternalSeleniumDsl.g:526:2: ( ( rule__Verify__Group_7_1__0 ) )
-                    // InternalSeleniumDsl.g:527:3: ( rule__Verify__Group_7_1__0 )
+                    // InternalSeleniumDsl.g:599:2: ( ( rule__Verify__Group_6_1__0 ) )
+                    // InternalSeleniumDsl.g:600:3: ( rule__Verify__Group_6_1__0 )
                     {
-                     before(grammarAccess.getVerifyAccess().getGroup_7_1()); 
-                    // InternalSeleniumDsl.g:528:3: ( rule__Verify__Group_7_1__0 )
-                    // InternalSeleniumDsl.g:528:4: rule__Verify__Group_7_1__0
+                     before(grammarAccess.getVerifyAccess().getGroup_6_1()); 
+                    // InternalSeleniumDsl.g:601:3: ( rule__Verify__Group_6_1__0 )
+                    // InternalSeleniumDsl.g:601:4: rule__Verify__Group_6_1__0
                     {
                     pushFollow(FOLLOW_2);
-                    rule__Verify__Group_7_1__0();
+                    rule__Verify__Group_6_1__0();
 
                     state._fsp--;
 
 
                     }
 
-                     after(grammarAccess.getVerifyAccess().getGroup_7_1()); 
+                     after(grammarAccess.getVerifyAccess().getGroup_6_1()); 
 
                     }
 
@@ -1790,24 +1981,24 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 3 :
-                    // InternalSeleniumDsl.g:532:2: ( ( rule__Verify__Group_7_2__0 ) )
+                    // InternalSeleniumDsl.g:605:2: ( ( rule__Verify__Group_6_2__0 ) )
                     {
-                    // InternalSeleniumDsl.g:532:2: ( ( rule__Verify__Group_7_2__0 ) )
-                    // InternalSeleniumDsl.g:533:3: ( rule__Verify__Group_7_2__0 )
+                    // InternalSeleniumDsl.g:605:2: ( ( rule__Verify__Group_6_2__0 ) )
+                    // InternalSeleniumDsl.g:606:3: ( rule__Verify__Group_6_2__0 )
                     {
-                     before(grammarAccess.getVerifyAccess().getGroup_7_2()); 
-                    // InternalSeleniumDsl.g:534:3: ( rule__Verify__Group_7_2__0 )
-                    // InternalSeleniumDsl.g:534:4: rule__Verify__Group_7_2__0
+                     before(grammarAccess.getVerifyAccess().getGroup_6_2()); 
+                    // InternalSeleniumDsl.g:607:3: ( rule__Verify__Group_6_2__0 )
+                    // InternalSeleniumDsl.g:607:4: rule__Verify__Group_6_2__0
                     {
                     pushFollow(FOLLOW_2);
-                    rule__Verify__Group_7_2__0();
+                    rule__Verify__Group_6_2__0();
 
                     state._fsp--;
 
 
                     }
 
-                     after(grammarAccess.getVerifyAccess().getGroup_7_2()); 
+                     after(grammarAccess.getVerifyAccess().getGroup_6_2()); 
 
                     }
 
@@ -1828,203 +2019,38 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Verify__Alternatives_7"
-
-
-    // $ANTLR start "rule__DOMELEMENT__Alternatives"
-    // InternalSeleniumDsl.g:542:1: rule__DOMELEMENT__Alternatives : ( ( 'link' ) | ( 'button' ) | ( 'image' ) | ( 'url' ) | ( ( rule__DOMELEMENT__Group_4__0 ) ) | ( 'title' ) );
-    public final void rule__DOMELEMENT__Alternatives() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSeleniumDsl.g:546:1: ( ( 'link' ) | ( 'button' ) | ( 'image' ) | ( 'url' ) | ( ( rule__DOMELEMENT__Group_4__0 ) ) | ( 'title' ) )
-            int alt7=6;
-            switch ( input.LA(1) ) {
-            case 14:
-                {
-                alt7=1;
-                }
-                break;
-            case 15:
-                {
-                alt7=2;
-                }
-                break;
-            case 16:
-                {
-                alt7=3;
-                }
-                break;
-            case 17:
-                {
-                alt7=4;
-                }
-                break;
-            case 30:
-                {
-                alt7=5;
-                }
-                break;
-            case 18:
-                {
-                alt7=6;
-                }
-                break;
-            default:
-                NoViableAltException nvae =
-                    new NoViableAltException("", 7, 0, input);
-
-                throw nvae;
-            }
-
-            switch (alt7) {
-                case 1 :
-                    // InternalSeleniumDsl.g:547:2: ( 'link' )
-                    {
-                    // InternalSeleniumDsl.g:547:2: ( 'link' )
-                    // InternalSeleniumDsl.g:548:3: 'link'
-                    {
-                     before(grammarAccess.getDOMELEMENTAccess().getLinkKeyword_0()); 
-                    match(input,14,FOLLOW_2); 
-                     after(grammarAccess.getDOMELEMENTAccess().getLinkKeyword_0()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 2 :
-                    // InternalSeleniumDsl.g:553:2: ( 'button' )
-                    {
-                    // InternalSeleniumDsl.g:553:2: ( 'button' )
-                    // InternalSeleniumDsl.g:554:3: 'button'
-                    {
-                     before(grammarAccess.getDOMELEMENTAccess().getButtonKeyword_1()); 
-                    match(input,15,FOLLOW_2); 
-                     after(grammarAccess.getDOMELEMENTAccess().getButtonKeyword_1()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 3 :
-                    // InternalSeleniumDsl.g:559:2: ( 'image' )
-                    {
-                    // InternalSeleniumDsl.g:559:2: ( 'image' )
-                    // InternalSeleniumDsl.g:560:3: 'image'
-                    {
-                     before(grammarAccess.getDOMELEMENTAccess().getImageKeyword_2()); 
-                    match(input,16,FOLLOW_2); 
-                     after(grammarAccess.getDOMELEMENTAccess().getImageKeyword_2()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 4 :
-                    // InternalSeleniumDsl.g:565:2: ( 'url' )
-                    {
-                    // InternalSeleniumDsl.g:565:2: ( 'url' )
-                    // InternalSeleniumDsl.g:566:3: 'url'
-                    {
-                     before(grammarAccess.getDOMELEMENTAccess().getUrlKeyword_3()); 
-                    match(input,17,FOLLOW_2); 
-                     after(grammarAccess.getDOMELEMENTAccess().getUrlKeyword_3()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 5 :
-                    // InternalSeleniumDsl.g:571:2: ( ( rule__DOMELEMENT__Group_4__0 ) )
-                    {
-                    // InternalSeleniumDsl.g:571:2: ( ( rule__DOMELEMENT__Group_4__0 ) )
-                    // InternalSeleniumDsl.g:572:3: ( rule__DOMELEMENT__Group_4__0 )
-                    {
-                     before(grammarAccess.getDOMELEMENTAccess().getGroup_4()); 
-                    // InternalSeleniumDsl.g:573:3: ( rule__DOMELEMENT__Group_4__0 )
-                    // InternalSeleniumDsl.g:573:4: rule__DOMELEMENT__Group_4__0
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__DOMELEMENT__Group_4__0();
-
-                    state._fsp--;
-
-
-                    }
-
-                     after(grammarAccess.getDOMELEMENTAccess().getGroup_4()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 6 :
-                    // InternalSeleniumDsl.g:577:2: ( 'title' )
-                    {
-                    // InternalSeleniumDsl.g:577:2: ( 'title' )
-                    // InternalSeleniumDsl.g:578:3: 'title'
-                    {
-                     before(grammarAccess.getDOMELEMENTAccess().getTitleKeyword_5()); 
-                    match(input,18,FOLLOW_2); 
-                     after(grammarAccess.getDOMELEMENTAccess().getTitleKeyword_5()); 
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__DOMELEMENT__Alternatives"
+    // $ANTLR end "rule__Verify__Alternatives_6"
 
 
     // $ANTLR start "rule__DynamicURL__Alternatives"
-    // InternalSeleniumDsl.g:587:1: rule__DynamicURL__Alternatives : ( ( RULE_URL ) | ( RULE_STRING ) );
+    // InternalSeleniumDsl.g:615:1: rule__DynamicURL__Alternatives : ( ( RULE_URL ) | ( RULE_STRING ) );
     public final void rule__DynamicURL__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:591:1: ( ( RULE_URL ) | ( RULE_STRING ) )
-            int alt8=2;
-            int LA8_0 = input.LA(1);
+            // InternalSeleniumDsl.g:619:1: ( ( RULE_URL ) | ( RULE_STRING ) )
+            int alt7=2;
+            int LA7_0 = input.LA(1);
 
-            if ( (LA8_0==RULE_URL) ) {
-                alt8=1;
+            if ( (LA7_0==RULE_URL) ) {
+                alt7=1;
             }
-            else if ( (LA8_0==RULE_STRING) ) {
-                alt8=2;
+            else if ( (LA7_0==RULE_STRING) ) {
+                alt7=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 8, 0, input);
+                    new NoViableAltException("", 7, 0, input);
 
                 throw nvae;
             }
-            switch (alt8) {
+            switch (alt7) {
                 case 1 :
-                    // InternalSeleniumDsl.g:592:2: ( RULE_URL )
+                    // InternalSeleniumDsl.g:620:2: ( RULE_URL )
                     {
-                    // InternalSeleniumDsl.g:592:2: ( RULE_URL )
-                    // InternalSeleniumDsl.g:593:3: RULE_URL
+                    // InternalSeleniumDsl.g:620:2: ( RULE_URL )
+                    // InternalSeleniumDsl.g:621:3: RULE_URL
                     {
                      before(grammarAccess.getDynamicURLAccess().getURLTerminalRuleCall_0()); 
                     match(input,RULE_URL,FOLLOW_2); 
@@ -2036,10 +2062,10 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 2 :
-                    // InternalSeleniumDsl.g:598:2: ( RULE_STRING )
+                    // InternalSeleniumDsl.g:626:2: ( RULE_STRING )
                     {
-                    // InternalSeleniumDsl.g:598:2: ( RULE_STRING )
-                    // InternalSeleniumDsl.g:599:3: RULE_STRING
+                    // InternalSeleniumDsl.g:626:2: ( RULE_STRING )
+                    // InternalSeleniumDsl.g:627:3: RULE_STRING
                     {
                      before(grammarAccess.getDynamicURLAccess().getSTRINGTerminalRuleCall_1()); 
                     match(input,RULE_STRING,FOLLOW_2); 
@@ -2068,14 +2094,14 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__OpenBrowser__Group__0"
-    // InternalSeleniumDsl.g:608:1: rule__OpenBrowser__Group__0 : rule__OpenBrowser__Group__0__Impl rule__OpenBrowser__Group__1 ;
+    // InternalSeleniumDsl.g:636:1: rule__OpenBrowser__Group__0 : rule__OpenBrowser__Group__0__Impl rule__OpenBrowser__Group__1 ;
     public final void rule__OpenBrowser__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:612:1: ( rule__OpenBrowser__Group__0__Impl rule__OpenBrowser__Group__1 )
-            // InternalSeleniumDsl.g:613:2: rule__OpenBrowser__Group__0__Impl rule__OpenBrowser__Group__1
+            // InternalSeleniumDsl.g:640:1: ( rule__OpenBrowser__Group__0__Impl rule__OpenBrowser__Group__1 )
+            // InternalSeleniumDsl.g:641:2: rule__OpenBrowser__Group__0__Impl rule__OpenBrowser__Group__1
             {
             pushFollow(FOLLOW_4);
             rule__OpenBrowser__Group__0__Impl();
@@ -2106,21 +2132,21 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__OpenBrowser__Group__0__Impl"
-    // InternalSeleniumDsl.g:620:1: rule__OpenBrowser__Group__0__Impl : ( () ) ;
+    // InternalSeleniumDsl.g:648:1: rule__OpenBrowser__Group__0__Impl : ( () ) ;
     public final void rule__OpenBrowser__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:624:1: ( ( () ) )
-            // InternalSeleniumDsl.g:625:1: ( () )
+            // InternalSeleniumDsl.g:652:1: ( ( () ) )
+            // InternalSeleniumDsl.g:653:1: ( () )
             {
-            // InternalSeleniumDsl.g:625:1: ( () )
-            // InternalSeleniumDsl.g:626:2: ()
+            // InternalSeleniumDsl.g:653:1: ( () )
+            // InternalSeleniumDsl.g:654:2: ()
             {
              before(grammarAccess.getOpenBrowserAccess().getOpenBrowserAction_0()); 
-            // InternalSeleniumDsl.g:627:2: ()
-            // InternalSeleniumDsl.g:627:3: 
+            // InternalSeleniumDsl.g:655:2: ()
+            // InternalSeleniumDsl.g:655:3: 
             {
             }
 
@@ -2143,14 +2169,14 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__OpenBrowser__Group__1"
-    // InternalSeleniumDsl.g:635:1: rule__OpenBrowser__Group__1 : rule__OpenBrowser__Group__1__Impl rule__OpenBrowser__Group__2 ;
+    // InternalSeleniumDsl.g:663:1: rule__OpenBrowser__Group__1 : rule__OpenBrowser__Group__1__Impl rule__OpenBrowser__Group__2 ;
     public final void rule__OpenBrowser__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:639:1: ( rule__OpenBrowser__Group__1__Impl rule__OpenBrowser__Group__2 )
-            // InternalSeleniumDsl.g:640:2: rule__OpenBrowser__Group__1__Impl rule__OpenBrowser__Group__2
+            // InternalSeleniumDsl.g:667:1: ( rule__OpenBrowser__Group__1__Impl rule__OpenBrowser__Group__2 )
+            // InternalSeleniumDsl.g:668:2: rule__OpenBrowser__Group__1__Impl rule__OpenBrowser__Group__2
             {
             pushFollow(FOLLOW_5);
             rule__OpenBrowser__Group__1__Impl();
@@ -2181,20 +2207,20 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__OpenBrowser__Group__1__Impl"
-    // InternalSeleniumDsl.g:647:1: rule__OpenBrowser__Group__1__Impl : ( 'open' ) ;
+    // InternalSeleniumDsl.g:675:1: rule__OpenBrowser__Group__1__Impl : ( 'open' ) ;
     public final void rule__OpenBrowser__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:651:1: ( ( 'open' ) )
-            // InternalSeleniumDsl.g:652:1: ( 'open' )
+            // InternalSeleniumDsl.g:679:1: ( ( 'open' ) )
+            // InternalSeleniumDsl.g:680:1: ( 'open' )
             {
-            // InternalSeleniumDsl.g:652:1: ( 'open' )
-            // InternalSeleniumDsl.g:653:2: 'open'
+            // InternalSeleniumDsl.g:680:1: ( 'open' )
+            // InternalSeleniumDsl.g:681:2: 'open'
             {
              before(grammarAccess.getOpenBrowserAccess().getOpenKeyword_1()); 
-            match(input,19,FOLLOW_2); 
+            match(input,21,FOLLOW_2); 
              after(grammarAccess.getOpenBrowserAccess().getOpenKeyword_1()); 
 
             }
@@ -2218,14 +2244,14 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__OpenBrowser__Group__2"
-    // InternalSeleniumDsl.g:662:1: rule__OpenBrowser__Group__2 : rule__OpenBrowser__Group__2__Impl rule__OpenBrowser__Group__3 ;
+    // InternalSeleniumDsl.g:690:1: rule__OpenBrowser__Group__2 : rule__OpenBrowser__Group__2__Impl rule__OpenBrowser__Group__3 ;
     public final void rule__OpenBrowser__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:666:1: ( rule__OpenBrowser__Group__2__Impl rule__OpenBrowser__Group__3 )
-            // InternalSeleniumDsl.g:667:2: rule__OpenBrowser__Group__2__Impl rule__OpenBrowser__Group__3
+            // InternalSeleniumDsl.g:694:1: ( rule__OpenBrowser__Group__2__Impl rule__OpenBrowser__Group__3 )
+            // InternalSeleniumDsl.g:695:2: rule__OpenBrowser__Group__2__Impl rule__OpenBrowser__Group__3
             {
             pushFollow(FOLLOW_6);
             rule__OpenBrowser__Group__2__Impl();
@@ -2256,20 +2282,20 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__OpenBrowser__Group__2__Impl"
-    // InternalSeleniumDsl.g:674:1: rule__OpenBrowser__Group__2__Impl : ( 'a' ) ;
+    // InternalSeleniumDsl.g:702:1: rule__OpenBrowser__Group__2__Impl : ( 'a' ) ;
     public final void rule__OpenBrowser__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:678:1: ( ( 'a' ) )
-            // InternalSeleniumDsl.g:679:1: ( 'a' )
+            // InternalSeleniumDsl.g:706:1: ( ( 'a' ) )
+            // InternalSeleniumDsl.g:707:1: ( 'a' )
             {
-            // InternalSeleniumDsl.g:679:1: ( 'a' )
-            // InternalSeleniumDsl.g:680:2: 'a'
+            // InternalSeleniumDsl.g:707:1: ( 'a' )
+            // InternalSeleniumDsl.g:708:2: 'a'
             {
              before(grammarAccess.getOpenBrowserAccess().getAKeyword_2()); 
-            match(input,20,FOLLOW_2); 
+            match(input,22,FOLLOW_2); 
              after(grammarAccess.getOpenBrowserAccess().getAKeyword_2()); 
 
             }
@@ -2293,14 +2319,14 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__OpenBrowser__Group__3"
-    // InternalSeleniumDsl.g:689:1: rule__OpenBrowser__Group__3 : rule__OpenBrowser__Group__3__Impl rule__OpenBrowser__Group__4 ;
+    // InternalSeleniumDsl.g:717:1: rule__OpenBrowser__Group__3 : rule__OpenBrowser__Group__3__Impl rule__OpenBrowser__Group__4 ;
     public final void rule__OpenBrowser__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:693:1: ( rule__OpenBrowser__Group__3__Impl rule__OpenBrowser__Group__4 )
-            // InternalSeleniumDsl.g:694:2: rule__OpenBrowser__Group__3__Impl rule__OpenBrowser__Group__4
+            // InternalSeleniumDsl.g:721:1: ( rule__OpenBrowser__Group__3__Impl rule__OpenBrowser__Group__4 )
+            // InternalSeleniumDsl.g:722:2: rule__OpenBrowser__Group__3__Impl rule__OpenBrowser__Group__4
             {
             pushFollow(FOLLOW_7);
             rule__OpenBrowser__Group__3__Impl();
@@ -2331,20 +2357,20 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__OpenBrowser__Group__3__Impl"
-    // InternalSeleniumDsl.g:701:1: rule__OpenBrowser__Group__3__Impl : ( 'browser' ) ;
+    // InternalSeleniumDsl.g:729:1: rule__OpenBrowser__Group__3__Impl : ( 'browser' ) ;
     public final void rule__OpenBrowser__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:705:1: ( ( 'browser' ) )
-            // InternalSeleniumDsl.g:706:1: ( 'browser' )
+            // InternalSeleniumDsl.g:733:1: ( ( 'browser' ) )
+            // InternalSeleniumDsl.g:734:1: ( 'browser' )
             {
-            // InternalSeleniumDsl.g:706:1: ( 'browser' )
-            // InternalSeleniumDsl.g:707:2: 'browser'
+            // InternalSeleniumDsl.g:734:1: ( 'browser' )
+            // InternalSeleniumDsl.g:735:2: 'browser'
             {
              before(grammarAccess.getOpenBrowserAccess().getBrowserKeyword_3()); 
-            match(input,21,FOLLOW_2); 
+            match(input,23,FOLLOW_2); 
              after(grammarAccess.getOpenBrowserAccess().getBrowserKeyword_3()); 
 
             }
@@ -2368,14 +2394,14 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__OpenBrowser__Group__4"
-    // InternalSeleniumDsl.g:716:1: rule__OpenBrowser__Group__4 : rule__OpenBrowser__Group__4__Impl ;
+    // InternalSeleniumDsl.g:744:1: rule__OpenBrowser__Group__4 : rule__OpenBrowser__Group__4__Impl ;
     public final void rule__OpenBrowser__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:720:1: ( rule__OpenBrowser__Group__4__Impl )
-            // InternalSeleniumDsl.g:721:2: rule__OpenBrowser__Group__4__Impl
+            // InternalSeleniumDsl.g:748:1: ( rule__OpenBrowser__Group__4__Impl )
+            // InternalSeleniumDsl.g:749:2: rule__OpenBrowser__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__OpenBrowser__Group__4__Impl();
@@ -2401,20 +2427,20 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__OpenBrowser__Group__4__Impl"
-    // InternalSeleniumDsl.g:727:1: rule__OpenBrowser__Group__4__Impl : ( 'window' ) ;
+    // InternalSeleniumDsl.g:755:1: rule__OpenBrowser__Group__4__Impl : ( 'window' ) ;
     public final void rule__OpenBrowser__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:731:1: ( ( 'window' ) )
-            // InternalSeleniumDsl.g:732:1: ( 'window' )
+            // InternalSeleniumDsl.g:759:1: ( ( 'window' ) )
+            // InternalSeleniumDsl.g:760:1: ( 'window' )
             {
-            // InternalSeleniumDsl.g:732:1: ( 'window' )
-            // InternalSeleniumDsl.g:733:2: 'window'
+            // InternalSeleniumDsl.g:760:1: ( 'window' )
+            // InternalSeleniumDsl.g:761:2: 'window'
             {
              before(grammarAccess.getOpenBrowserAccess().getWindowKeyword_4()); 
-            match(input,22,FOLLOW_2); 
+            match(input,24,FOLLOW_2); 
              after(grammarAccess.getOpenBrowserAccess().getWindowKeyword_4()); 
 
             }
@@ -2438,14 +2464,14 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__GoTo__Group__0"
-    // InternalSeleniumDsl.g:743:1: rule__GoTo__Group__0 : rule__GoTo__Group__0__Impl rule__GoTo__Group__1 ;
+    // InternalSeleniumDsl.g:771:1: rule__GoTo__Group__0 : rule__GoTo__Group__0__Impl rule__GoTo__Group__1 ;
     public final void rule__GoTo__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:747:1: ( rule__GoTo__Group__0__Impl rule__GoTo__Group__1 )
-            // InternalSeleniumDsl.g:748:2: rule__GoTo__Group__0__Impl rule__GoTo__Group__1
+            // InternalSeleniumDsl.g:775:1: ( rule__GoTo__Group__0__Impl rule__GoTo__Group__1 )
+            // InternalSeleniumDsl.g:776:2: rule__GoTo__Group__0__Impl rule__GoTo__Group__1
             {
             pushFollow(FOLLOW_8);
             rule__GoTo__Group__0__Impl();
@@ -2476,20 +2502,20 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__GoTo__Group__0__Impl"
-    // InternalSeleniumDsl.g:755:1: rule__GoTo__Group__0__Impl : ( 'go' ) ;
+    // InternalSeleniumDsl.g:783:1: rule__GoTo__Group__0__Impl : ( 'go' ) ;
     public final void rule__GoTo__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:759:1: ( ( 'go' ) )
-            // InternalSeleniumDsl.g:760:1: ( 'go' )
+            // InternalSeleniumDsl.g:787:1: ( ( 'go' ) )
+            // InternalSeleniumDsl.g:788:1: ( 'go' )
             {
-            // InternalSeleniumDsl.g:760:1: ( 'go' )
-            // InternalSeleniumDsl.g:761:2: 'go'
+            // InternalSeleniumDsl.g:788:1: ( 'go' )
+            // InternalSeleniumDsl.g:789:2: 'go'
             {
              before(grammarAccess.getGoToAccess().getGoKeyword_0()); 
-            match(input,23,FOLLOW_2); 
+            match(input,25,FOLLOW_2); 
              after(grammarAccess.getGoToAccess().getGoKeyword_0()); 
 
             }
@@ -2513,14 +2539,14 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__GoTo__Group__1"
-    // InternalSeleniumDsl.g:770:1: rule__GoTo__Group__1 : rule__GoTo__Group__1__Impl rule__GoTo__Group__2 ;
+    // InternalSeleniumDsl.g:798:1: rule__GoTo__Group__1 : rule__GoTo__Group__1__Impl rule__GoTo__Group__2 ;
     public final void rule__GoTo__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:774:1: ( rule__GoTo__Group__1__Impl rule__GoTo__Group__2 )
-            // InternalSeleniumDsl.g:775:2: rule__GoTo__Group__1__Impl rule__GoTo__Group__2
+            // InternalSeleniumDsl.g:802:1: ( rule__GoTo__Group__1__Impl rule__GoTo__Group__2 )
+            // InternalSeleniumDsl.g:803:2: rule__GoTo__Group__1__Impl rule__GoTo__Group__2
             {
             pushFollow(FOLLOW_9);
             rule__GoTo__Group__1__Impl();
@@ -2551,20 +2577,20 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__GoTo__Group__1__Impl"
-    // InternalSeleniumDsl.g:782:1: rule__GoTo__Group__1__Impl : ( 'to' ) ;
+    // InternalSeleniumDsl.g:810:1: rule__GoTo__Group__1__Impl : ( 'to' ) ;
     public final void rule__GoTo__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:786:1: ( ( 'to' ) )
-            // InternalSeleniumDsl.g:787:1: ( 'to' )
+            // InternalSeleniumDsl.g:814:1: ( ( 'to' ) )
+            // InternalSeleniumDsl.g:815:1: ( 'to' )
             {
-            // InternalSeleniumDsl.g:787:1: ( 'to' )
-            // InternalSeleniumDsl.g:788:2: 'to'
+            // InternalSeleniumDsl.g:815:1: ( 'to' )
+            // InternalSeleniumDsl.g:816:2: 'to'
             {
              before(grammarAccess.getGoToAccess().getToKeyword_1()); 
-            match(input,24,FOLLOW_2); 
+            match(input,26,FOLLOW_2); 
              after(grammarAccess.getGoToAccess().getToKeyword_1()); 
 
             }
@@ -2588,14 +2614,14 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__GoTo__Group__2"
-    // InternalSeleniumDsl.g:797:1: rule__GoTo__Group__2 : rule__GoTo__Group__2__Impl rule__GoTo__Group__3 ;
+    // InternalSeleniumDsl.g:825:1: rule__GoTo__Group__2 : rule__GoTo__Group__2__Impl rule__GoTo__Group__3 ;
     public final void rule__GoTo__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:801:1: ( rule__GoTo__Group__2__Impl rule__GoTo__Group__3 )
-            // InternalSeleniumDsl.g:802:2: rule__GoTo__Group__2__Impl rule__GoTo__Group__3
+            // InternalSeleniumDsl.g:829:1: ( rule__GoTo__Group__2__Impl rule__GoTo__Group__3 )
+            // InternalSeleniumDsl.g:830:2: rule__GoTo__Group__2__Impl rule__GoTo__Group__3
             {
             pushFollow(FOLLOW_10);
             rule__GoTo__Group__2__Impl();
@@ -2626,20 +2652,20 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__GoTo__Group__2__Impl"
-    // InternalSeleniumDsl.g:809:1: rule__GoTo__Group__2__Impl : ( 'url' ) ;
+    // InternalSeleniumDsl.g:837:1: rule__GoTo__Group__2__Impl : ( 'url' ) ;
     public final void rule__GoTo__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:813:1: ( ( 'url' ) )
-            // InternalSeleniumDsl.g:814:1: ( 'url' )
+            // InternalSeleniumDsl.g:841:1: ( ( 'url' ) )
+            // InternalSeleniumDsl.g:842:1: ( 'url' )
             {
-            // InternalSeleniumDsl.g:814:1: ( 'url' )
-            // InternalSeleniumDsl.g:815:2: 'url'
+            // InternalSeleniumDsl.g:842:1: ( 'url' )
+            // InternalSeleniumDsl.g:843:2: 'url'
             {
              before(grammarAccess.getGoToAccess().getUrlKeyword_2()); 
-            match(input,17,FOLLOW_2); 
+            match(input,19,FOLLOW_2); 
              after(grammarAccess.getGoToAccess().getUrlKeyword_2()); 
 
             }
@@ -2663,14 +2689,14 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__GoTo__Group__3"
-    // InternalSeleniumDsl.g:824:1: rule__GoTo__Group__3 : rule__GoTo__Group__3__Impl ;
+    // InternalSeleniumDsl.g:852:1: rule__GoTo__Group__3 : rule__GoTo__Group__3__Impl ;
     public final void rule__GoTo__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:828:1: ( rule__GoTo__Group__3__Impl )
-            // InternalSeleniumDsl.g:829:2: rule__GoTo__Group__3__Impl
+            // InternalSeleniumDsl.g:856:1: ( rule__GoTo__Group__3__Impl )
+            // InternalSeleniumDsl.g:857:2: rule__GoTo__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__GoTo__Group__3__Impl();
@@ -2696,42 +2722,31 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__GoTo__Group__3__Impl"
-    // InternalSeleniumDsl.g:835:1: rule__GoTo__Group__3__Impl : ( ( rule__GoTo__Alternatives_3 )? ) ;
+    // InternalSeleniumDsl.g:863:1: rule__GoTo__Group__3__Impl : ( ( rule__GoTo__UrlAssignment_3 ) ) ;
     public final void rule__GoTo__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:839:1: ( ( ( rule__GoTo__Alternatives_3 )? ) )
-            // InternalSeleniumDsl.g:840:1: ( ( rule__GoTo__Alternatives_3 )? )
+            // InternalSeleniumDsl.g:867:1: ( ( ( rule__GoTo__UrlAssignment_3 ) ) )
+            // InternalSeleniumDsl.g:868:1: ( ( rule__GoTo__UrlAssignment_3 ) )
             {
-            // InternalSeleniumDsl.g:840:1: ( ( rule__GoTo__Alternatives_3 )? )
-            // InternalSeleniumDsl.g:841:2: ( rule__GoTo__Alternatives_3 )?
+            // InternalSeleniumDsl.g:868:1: ( ( rule__GoTo__UrlAssignment_3 ) )
+            // InternalSeleniumDsl.g:869:2: ( rule__GoTo__UrlAssignment_3 )
             {
-             before(grammarAccess.getGoToAccess().getAlternatives_3()); 
-            // InternalSeleniumDsl.g:842:2: ( rule__GoTo__Alternatives_3 )?
-            int alt9=2;
-            int LA9_0 = input.LA(1);
+             before(grammarAccess.getGoToAccess().getUrlAssignment_3()); 
+            // InternalSeleniumDsl.g:870:2: ( rule__GoTo__UrlAssignment_3 )
+            // InternalSeleniumDsl.g:870:3: rule__GoTo__UrlAssignment_3
+            {
+            pushFollow(FOLLOW_2);
+            rule__GoTo__UrlAssignment_3();
 
-            if ( ((LA9_0>=RULE_URL && LA9_0<=RULE_STRING)||LA9_0==13) ) {
-                alt9=1;
-            }
-            switch (alt9) {
-                case 1 :
-                    // InternalSeleniumDsl.g:842:3: rule__GoTo__Alternatives_3
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__GoTo__Alternatives_3();
+            state._fsp--;
 
-                    state._fsp--;
-
-
-                    }
-                    break;
 
             }
 
-             after(grammarAccess.getGoToAccess().getAlternatives_3()); 
+             after(grammarAccess.getGoToAccess().getUrlAssignment_3()); 
 
             }
 
@@ -2754,14 +2769,14 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Click__Group__0"
-    // InternalSeleniumDsl.g:851:1: rule__Click__Group__0 : rule__Click__Group__0__Impl rule__Click__Group__1 ;
+    // InternalSeleniumDsl.g:879:1: rule__Click__Group__0 : rule__Click__Group__0__Impl rule__Click__Group__1 ;
     public final void rule__Click__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:855:1: ( rule__Click__Group__0__Impl rule__Click__Group__1 )
-            // InternalSeleniumDsl.g:856:2: rule__Click__Group__0__Impl rule__Click__Group__1
+            // InternalSeleniumDsl.g:883:1: ( rule__Click__Group__0__Impl rule__Click__Group__1 )
+            // InternalSeleniumDsl.g:884:2: rule__Click__Group__0__Impl rule__Click__Group__1
             {
             pushFollow(FOLLOW_11);
             rule__Click__Group__0__Impl();
@@ -2792,21 +2807,21 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Click__Group__0__Impl"
-    // InternalSeleniumDsl.g:863:1: rule__Click__Group__0__Impl : ( () ) ;
+    // InternalSeleniumDsl.g:891:1: rule__Click__Group__0__Impl : ( () ) ;
     public final void rule__Click__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:867:1: ( ( () ) )
-            // InternalSeleniumDsl.g:868:1: ( () )
+            // InternalSeleniumDsl.g:895:1: ( ( () ) )
+            // InternalSeleniumDsl.g:896:1: ( () )
             {
-            // InternalSeleniumDsl.g:868:1: ( () )
-            // InternalSeleniumDsl.g:869:2: ()
+            // InternalSeleniumDsl.g:896:1: ( () )
+            // InternalSeleniumDsl.g:897:2: ()
             {
              before(grammarAccess.getClickAccess().getClickAction_0()); 
-            // InternalSeleniumDsl.g:870:2: ()
-            // InternalSeleniumDsl.g:870:3: 
+            // InternalSeleniumDsl.g:898:2: ()
+            // InternalSeleniumDsl.g:898:3: 
             {
             }
 
@@ -2829,14 +2844,14 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Click__Group__1"
-    // InternalSeleniumDsl.g:878:1: rule__Click__Group__1 : rule__Click__Group__1__Impl rule__Click__Group__2 ;
+    // InternalSeleniumDsl.g:906:1: rule__Click__Group__1 : rule__Click__Group__1__Impl rule__Click__Group__2 ;
     public final void rule__Click__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:882:1: ( rule__Click__Group__1__Impl rule__Click__Group__2 )
-            // InternalSeleniumDsl.g:883:2: rule__Click__Group__1__Impl rule__Click__Group__2
+            // InternalSeleniumDsl.g:910:1: ( rule__Click__Group__1__Impl rule__Click__Group__2 )
+            // InternalSeleniumDsl.g:911:2: rule__Click__Group__1__Impl rule__Click__Group__2
             {
             pushFollow(FOLLOW_12);
             rule__Click__Group__1__Impl();
@@ -2867,20 +2882,20 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Click__Group__1__Impl"
-    // InternalSeleniumDsl.g:890:1: rule__Click__Group__1__Impl : ( 'click' ) ;
+    // InternalSeleniumDsl.g:918:1: rule__Click__Group__1__Impl : ( 'click' ) ;
     public final void rule__Click__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:894:1: ( ( 'click' ) )
-            // InternalSeleniumDsl.g:895:1: ( 'click' )
+            // InternalSeleniumDsl.g:922:1: ( ( 'click' ) )
+            // InternalSeleniumDsl.g:923:1: ( 'click' )
             {
-            // InternalSeleniumDsl.g:895:1: ( 'click' )
-            // InternalSeleniumDsl.g:896:2: 'click'
+            // InternalSeleniumDsl.g:923:1: ( 'click' )
+            // InternalSeleniumDsl.g:924:2: 'click'
             {
              before(grammarAccess.getClickAccess().getClickKeyword_1()); 
-            match(input,25,FOLLOW_2); 
+            match(input,27,FOLLOW_2); 
              after(grammarAccess.getClickAccess().getClickKeyword_1()); 
 
             }
@@ -2904,14 +2919,14 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Click__Group__2"
-    // InternalSeleniumDsl.g:905:1: rule__Click__Group__2 : rule__Click__Group__2__Impl rule__Click__Group__3 ;
+    // InternalSeleniumDsl.g:933:1: rule__Click__Group__2 : rule__Click__Group__2__Impl rule__Click__Group__3 ;
     public final void rule__Click__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:909:1: ( rule__Click__Group__2__Impl rule__Click__Group__3 )
-            // InternalSeleniumDsl.g:910:2: rule__Click__Group__2__Impl rule__Click__Group__3
+            // InternalSeleniumDsl.g:937:1: ( rule__Click__Group__2__Impl rule__Click__Group__3 )
+            // InternalSeleniumDsl.g:938:2: rule__Click__Group__2__Impl rule__Click__Group__3
             {
             pushFollow(FOLLOW_13);
             rule__Click__Group__2__Impl();
@@ -2942,20 +2957,20 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Click__Group__2__Impl"
-    // InternalSeleniumDsl.g:917:1: rule__Click__Group__2__Impl : ( 'on' ) ;
+    // InternalSeleniumDsl.g:945:1: rule__Click__Group__2__Impl : ( 'on' ) ;
     public final void rule__Click__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:921:1: ( ( 'on' ) )
-            // InternalSeleniumDsl.g:922:1: ( 'on' )
+            // InternalSeleniumDsl.g:949:1: ( ( 'on' ) )
+            // InternalSeleniumDsl.g:950:1: ( 'on' )
             {
-            // InternalSeleniumDsl.g:922:1: ( 'on' )
-            // InternalSeleniumDsl.g:923:2: 'on'
+            // InternalSeleniumDsl.g:950:1: ( 'on' )
+            // InternalSeleniumDsl.g:951:2: 'on'
             {
              before(grammarAccess.getClickAccess().getOnKeyword_2()); 
-            match(input,26,FOLLOW_2); 
+            match(input,28,FOLLOW_2); 
              after(grammarAccess.getClickAccess().getOnKeyword_2()); 
 
             }
@@ -2979,14 +2994,14 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Click__Group__3"
-    // InternalSeleniumDsl.g:932:1: rule__Click__Group__3 : rule__Click__Group__3__Impl rule__Click__Group__4 ;
+    // InternalSeleniumDsl.g:960:1: rule__Click__Group__3 : rule__Click__Group__3__Impl rule__Click__Group__4 ;
     public final void rule__Click__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:936:1: ( rule__Click__Group__3__Impl rule__Click__Group__4 )
-            // InternalSeleniumDsl.g:937:2: rule__Click__Group__3__Impl rule__Click__Group__4
+            // InternalSeleniumDsl.g:964:1: ( rule__Click__Group__3__Impl rule__Click__Group__4 )
+            // InternalSeleniumDsl.g:965:2: rule__Click__Group__3__Impl rule__Click__Group__4
             {
             pushFollow(FOLLOW_14);
             rule__Click__Group__3__Impl();
@@ -3017,20 +3032,20 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Click__Group__3__Impl"
-    // InternalSeleniumDsl.g:944:1: rule__Click__Group__3__Impl : ( 'the' ) ;
+    // InternalSeleniumDsl.g:972:1: rule__Click__Group__3__Impl : ( 'the' ) ;
     public final void rule__Click__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:948:1: ( ( 'the' ) )
-            // InternalSeleniumDsl.g:949:1: ( 'the' )
+            // InternalSeleniumDsl.g:976:1: ( ( 'the' ) )
+            // InternalSeleniumDsl.g:977:1: ( 'the' )
             {
-            // InternalSeleniumDsl.g:949:1: ( 'the' )
-            // InternalSeleniumDsl.g:950:2: 'the'
+            // InternalSeleniumDsl.g:977:1: ( 'the' )
+            // InternalSeleniumDsl.g:978:2: 'the'
             {
              before(grammarAccess.getClickAccess().getTheKeyword_3()); 
-            match(input,27,FOLLOW_2); 
+            match(input,29,FOLLOW_2); 
              after(grammarAccess.getClickAccess().getTheKeyword_3()); 
 
             }
@@ -3054,14 +3069,14 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Click__Group__4"
-    // InternalSeleniumDsl.g:959:1: rule__Click__Group__4 : rule__Click__Group__4__Impl ;
+    // InternalSeleniumDsl.g:987:1: rule__Click__Group__4 : rule__Click__Group__4__Impl ;
     public final void rule__Click__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:963:1: ( rule__Click__Group__4__Impl )
-            // InternalSeleniumDsl.g:964:2: rule__Click__Group__4__Impl
+            // InternalSeleniumDsl.g:991:1: ( rule__Click__Group__4__Impl )
+            // InternalSeleniumDsl.g:992:2: rule__Click__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Click__Group__4__Impl();
@@ -3087,21 +3102,21 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Click__Group__4__Impl"
-    // InternalSeleniumDsl.g:970:1: rule__Click__Group__4__Impl : ( ( rule__Click__Alternatives_4 ) ) ;
+    // InternalSeleniumDsl.g:998:1: rule__Click__Group__4__Impl : ( ( rule__Click__Alternatives_4 ) ) ;
     public final void rule__Click__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:974:1: ( ( ( rule__Click__Alternatives_4 ) ) )
-            // InternalSeleniumDsl.g:975:1: ( ( rule__Click__Alternatives_4 ) )
+            // InternalSeleniumDsl.g:1002:1: ( ( ( rule__Click__Alternatives_4 ) ) )
+            // InternalSeleniumDsl.g:1003:1: ( ( rule__Click__Alternatives_4 ) )
             {
-            // InternalSeleniumDsl.g:975:1: ( ( rule__Click__Alternatives_4 ) )
-            // InternalSeleniumDsl.g:976:2: ( rule__Click__Alternatives_4 )
+            // InternalSeleniumDsl.g:1003:1: ( ( rule__Click__Alternatives_4 ) )
+            // InternalSeleniumDsl.g:1004:2: ( rule__Click__Alternatives_4 )
             {
              before(grammarAccess.getClickAccess().getAlternatives_4()); 
-            // InternalSeleniumDsl.g:977:2: ( rule__Click__Alternatives_4 )
-            // InternalSeleniumDsl.g:977:3: rule__Click__Alternatives_4
+            // InternalSeleniumDsl.g:1005:2: ( rule__Click__Alternatives_4 )
+            // InternalSeleniumDsl.g:1005:3: rule__Click__Alternatives_4
             {
             pushFollow(FOLLOW_2);
             rule__Click__Alternatives_4();
@@ -3134,14 +3149,14 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Click__Group_4_0__0"
-    // InternalSeleniumDsl.g:986:1: rule__Click__Group_4_0__0 : rule__Click__Group_4_0__0__Impl rule__Click__Group_4_0__1 ;
+    // InternalSeleniumDsl.g:1014:1: rule__Click__Group_4_0__0 : rule__Click__Group_4_0__0__Impl rule__Click__Group_4_0__1 ;
     public final void rule__Click__Group_4_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:990:1: ( rule__Click__Group_4_0__0__Impl rule__Click__Group_4_0__1 )
-            // InternalSeleniumDsl.g:991:2: rule__Click__Group_4_0__0__Impl rule__Click__Group_4_0__1
+            // InternalSeleniumDsl.g:1018:1: ( rule__Click__Group_4_0__0__Impl rule__Click__Group_4_0__1 )
+            // InternalSeleniumDsl.g:1019:2: rule__Click__Group_4_0__0__Impl rule__Click__Group_4_0__1
             {
             pushFollow(FOLLOW_15);
             rule__Click__Group_4_0__0__Impl();
@@ -3172,20 +3187,20 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Click__Group_4_0__0__Impl"
-    // InternalSeleniumDsl.g:998:1: rule__Click__Group_4_0__0__Impl : ( 'link' ) ;
+    // InternalSeleniumDsl.g:1026:1: rule__Click__Group_4_0__0__Impl : ( 'link' ) ;
     public final void rule__Click__Group_4_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:1002:1: ( ( 'link' ) )
-            // InternalSeleniumDsl.g:1003:1: ( 'link' )
+            // InternalSeleniumDsl.g:1030:1: ( ( 'link' ) )
+            // InternalSeleniumDsl.g:1031:1: ( 'link' )
             {
-            // InternalSeleniumDsl.g:1003:1: ( 'link' )
-            // InternalSeleniumDsl.g:1004:2: 'link'
+            // InternalSeleniumDsl.g:1031:1: ( 'link' )
+            // InternalSeleniumDsl.g:1032:2: 'link'
             {
              before(grammarAccess.getClickAccess().getLinkKeyword_4_0_0()); 
-            match(input,14,FOLLOW_2); 
+            match(input,16,FOLLOW_2); 
              after(grammarAccess.getClickAccess().getLinkKeyword_4_0_0()); 
 
             }
@@ -3209,14 +3224,14 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Click__Group_4_0__1"
-    // InternalSeleniumDsl.g:1013:1: rule__Click__Group_4_0__1 : rule__Click__Group_4_0__1__Impl ;
+    // InternalSeleniumDsl.g:1041:1: rule__Click__Group_4_0__1 : rule__Click__Group_4_0__1__Impl ;
     public final void rule__Click__Group_4_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:1017:1: ( rule__Click__Group_4_0__1__Impl )
-            // InternalSeleniumDsl.g:1018:2: rule__Click__Group_4_0__1__Impl
+            // InternalSeleniumDsl.g:1045:1: ( rule__Click__Group_4_0__1__Impl )
+            // InternalSeleniumDsl.g:1046:2: rule__Click__Group_4_0__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Click__Group_4_0__1__Impl();
@@ -3242,21 +3257,21 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Click__Group_4_0__1__Impl"
-    // InternalSeleniumDsl.g:1024:1: rule__Click__Group_4_0__1__Impl : ( ( rule__Click__LinkTextAssignment_4_0_1 ) ) ;
+    // InternalSeleniumDsl.g:1052:1: rule__Click__Group_4_0__1__Impl : ( ( rule__Click__LinkTextAssignment_4_0_1 ) ) ;
     public final void rule__Click__Group_4_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:1028:1: ( ( ( rule__Click__LinkTextAssignment_4_0_1 ) ) )
-            // InternalSeleniumDsl.g:1029:1: ( ( rule__Click__LinkTextAssignment_4_0_1 ) )
+            // InternalSeleniumDsl.g:1056:1: ( ( ( rule__Click__LinkTextAssignment_4_0_1 ) ) )
+            // InternalSeleniumDsl.g:1057:1: ( ( rule__Click__LinkTextAssignment_4_0_1 ) )
             {
-            // InternalSeleniumDsl.g:1029:1: ( ( rule__Click__LinkTextAssignment_4_0_1 ) )
-            // InternalSeleniumDsl.g:1030:2: ( rule__Click__LinkTextAssignment_4_0_1 )
+            // InternalSeleniumDsl.g:1057:1: ( ( rule__Click__LinkTextAssignment_4_0_1 ) )
+            // InternalSeleniumDsl.g:1058:2: ( rule__Click__LinkTextAssignment_4_0_1 )
             {
              before(grammarAccess.getClickAccess().getLinkTextAssignment_4_0_1()); 
-            // InternalSeleniumDsl.g:1031:2: ( rule__Click__LinkTextAssignment_4_0_1 )
-            // InternalSeleniumDsl.g:1031:3: rule__Click__LinkTextAssignment_4_0_1
+            // InternalSeleniumDsl.g:1059:2: ( rule__Click__LinkTextAssignment_4_0_1 )
+            // InternalSeleniumDsl.g:1059:3: rule__Click__LinkTextAssignment_4_0_1
             {
             pushFollow(FOLLOW_2);
             rule__Click__LinkTextAssignment_4_0_1();
@@ -3289,14 +3304,14 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Click__Group_4_1__0"
-    // InternalSeleniumDsl.g:1040:1: rule__Click__Group_4_1__0 : rule__Click__Group_4_1__0__Impl rule__Click__Group_4_1__1 ;
+    // InternalSeleniumDsl.g:1068:1: rule__Click__Group_4_1__0 : rule__Click__Group_4_1__0__Impl rule__Click__Group_4_1__1 ;
     public final void rule__Click__Group_4_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:1044:1: ( rule__Click__Group_4_1__0__Impl rule__Click__Group_4_1__1 )
-            // InternalSeleniumDsl.g:1045:2: rule__Click__Group_4_1__0__Impl rule__Click__Group_4_1__1
+            // InternalSeleniumDsl.g:1072:1: ( rule__Click__Group_4_1__0__Impl rule__Click__Group_4_1__1 )
+            // InternalSeleniumDsl.g:1073:2: rule__Click__Group_4_1__0__Impl rule__Click__Group_4_1__1
             {
             pushFollow(FOLLOW_15);
             rule__Click__Group_4_1__0__Impl();
@@ -3327,20 +3342,20 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Click__Group_4_1__0__Impl"
-    // InternalSeleniumDsl.g:1052:1: rule__Click__Group_4_1__0__Impl : ( 'button' ) ;
+    // InternalSeleniumDsl.g:1080:1: rule__Click__Group_4_1__0__Impl : ( 'button' ) ;
     public final void rule__Click__Group_4_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:1056:1: ( ( 'button' ) )
-            // InternalSeleniumDsl.g:1057:1: ( 'button' )
+            // InternalSeleniumDsl.g:1084:1: ( ( 'button' ) )
+            // InternalSeleniumDsl.g:1085:1: ( 'button' )
             {
-            // InternalSeleniumDsl.g:1057:1: ( 'button' )
-            // InternalSeleniumDsl.g:1058:2: 'button'
+            // InternalSeleniumDsl.g:1085:1: ( 'button' )
+            // InternalSeleniumDsl.g:1086:2: 'button'
             {
              before(grammarAccess.getClickAccess().getButtonKeyword_4_1_0()); 
-            match(input,15,FOLLOW_2); 
+            match(input,17,FOLLOW_2); 
              after(grammarAccess.getClickAccess().getButtonKeyword_4_1_0()); 
 
             }
@@ -3364,14 +3379,14 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Click__Group_4_1__1"
-    // InternalSeleniumDsl.g:1067:1: rule__Click__Group_4_1__1 : rule__Click__Group_4_1__1__Impl ;
+    // InternalSeleniumDsl.g:1095:1: rule__Click__Group_4_1__1 : rule__Click__Group_4_1__1__Impl ;
     public final void rule__Click__Group_4_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:1071:1: ( rule__Click__Group_4_1__1__Impl )
-            // InternalSeleniumDsl.g:1072:2: rule__Click__Group_4_1__1__Impl
+            // InternalSeleniumDsl.g:1099:1: ( rule__Click__Group_4_1__1__Impl )
+            // InternalSeleniumDsl.g:1100:2: rule__Click__Group_4_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Click__Group_4_1__1__Impl();
@@ -3397,21 +3412,21 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Click__Group_4_1__1__Impl"
-    // InternalSeleniumDsl.g:1078:1: rule__Click__Group_4_1__1__Impl : ( ( rule__Click__ButtonTextAssignment_4_1_1 ) ) ;
+    // InternalSeleniumDsl.g:1106:1: rule__Click__Group_4_1__1__Impl : ( ( rule__Click__ButtonTextAssignment_4_1_1 ) ) ;
     public final void rule__Click__Group_4_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:1082:1: ( ( ( rule__Click__ButtonTextAssignment_4_1_1 ) ) )
-            // InternalSeleniumDsl.g:1083:1: ( ( rule__Click__ButtonTextAssignment_4_1_1 ) )
+            // InternalSeleniumDsl.g:1110:1: ( ( ( rule__Click__ButtonTextAssignment_4_1_1 ) ) )
+            // InternalSeleniumDsl.g:1111:1: ( ( rule__Click__ButtonTextAssignment_4_1_1 ) )
             {
-            // InternalSeleniumDsl.g:1083:1: ( ( rule__Click__ButtonTextAssignment_4_1_1 ) )
-            // InternalSeleniumDsl.g:1084:2: ( rule__Click__ButtonTextAssignment_4_1_1 )
+            // InternalSeleniumDsl.g:1111:1: ( ( rule__Click__ButtonTextAssignment_4_1_1 ) )
+            // InternalSeleniumDsl.g:1112:2: ( rule__Click__ButtonTextAssignment_4_1_1 )
             {
              before(grammarAccess.getClickAccess().getButtonTextAssignment_4_1_1()); 
-            // InternalSeleniumDsl.g:1085:2: ( rule__Click__ButtonTextAssignment_4_1_1 )
-            // InternalSeleniumDsl.g:1085:3: rule__Click__ButtonTextAssignment_4_1_1
+            // InternalSeleniumDsl.g:1113:2: ( rule__Click__ButtonTextAssignment_4_1_1 )
+            // InternalSeleniumDsl.g:1113:3: rule__Click__ButtonTextAssignment_4_1_1
             {
             pushFollow(FOLLOW_2);
             rule__Click__ButtonTextAssignment_4_1_1();
@@ -3444,14 +3459,14 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Click__Group_4_2__0"
-    // InternalSeleniumDsl.g:1094:1: rule__Click__Group_4_2__0 : rule__Click__Group_4_2__0__Impl rule__Click__Group_4_2__1 ;
+    // InternalSeleniumDsl.g:1122:1: rule__Click__Group_4_2__0 : rule__Click__Group_4_2__0__Impl rule__Click__Group_4_2__1 ;
     public final void rule__Click__Group_4_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:1098:1: ( rule__Click__Group_4_2__0__Impl rule__Click__Group_4_2__1 )
-            // InternalSeleniumDsl.g:1099:2: rule__Click__Group_4_2__0__Impl rule__Click__Group_4_2__1
+            // InternalSeleniumDsl.g:1126:1: ( rule__Click__Group_4_2__0__Impl rule__Click__Group_4_2__1 )
+            // InternalSeleniumDsl.g:1127:2: rule__Click__Group_4_2__0__Impl rule__Click__Group_4_2__1
             {
             pushFollow(FOLLOW_15);
             rule__Click__Group_4_2__0__Impl();
@@ -3482,20 +3497,20 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Click__Group_4_2__0__Impl"
-    // InternalSeleniumDsl.g:1106:1: rule__Click__Group_4_2__0__Impl : ( 'image' ) ;
+    // InternalSeleniumDsl.g:1134:1: rule__Click__Group_4_2__0__Impl : ( 'image' ) ;
     public final void rule__Click__Group_4_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:1110:1: ( ( 'image' ) )
-            // InternalSeleniumDsl.g:1111:1: ( 'image' )
+            // InternalSeleniumDsl.g:1138:1: ( ( 'image' ) )
+            // InternalSeleniumDsl.g:1139:1: ( 'image' )
             {
-            // InternalSeleniumDsl.g:1111:1: ( 'image' )
-            // InternalSeleniumDsl.g:1112:2: 'image'
+            // InternalSeleniumDsl.g:1139:1: ( 'image' )
+            // InternalSeleniumDsl.g:1140:2: 'image'
             {
              before(grammarAccess.getClickAccess().getImageKeyword_4_2_0()); 
-            match(input,16,FOLLOW_2); 
+            match(input,18,FOLLOW_2); 
              after(grammarAccess.getClickAccess().getImageKeyword_4_2_0()); 
 
             }
@@ -3519,14 +3534,14 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Click__Group_4_2__1"
-    // InternalSeleniumDsl.g:1121:1: rule__Click__Group_4_2__1 : rule__Click__Group_4_2__1__Impl ;
+    // InternalSeleniumDsl.g:1149:1: rule__Click__Group_4_2__1 : rule__Click__Group_4_2__1__Impl ;
     public final void rule__Click__Group_4_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:1125:1: ( rule__Click__Group_4_2__1__Impl )
-            // InternalSeleniumDsl.g:1126:2: rule__Click__Group_4_2__1__Impl
+            // InternalSeleniumDsl.g:1153:1: ( rule__Click__Group_4_2__1__Impl )
+            // InternalSeleniumDsl.g:1154:2: rule__Click__Group_4_2__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Click__Group_4_2__1__Impl();
@@ -3552,21 +3567,21 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Click__Group_4_2__1__Impl"
-    // InternalSeleniumDsl.g:1132:1: rule__Click__Group_4_2__1__Impl : ( ( rule__Click__AltAssignment_4_2_1 ) ) ;
+    // InternalSeleniumDsl.g:1160:1: rule__Click__Group_4_2__1__Impl : ( ( rule__Click__AltAssignment_4_2_1 ) ) ;
     public final void rule__Click__Group_4_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:1136:1: ( ( ( rule__Click__AltAssignment_4_2_1 ) ) )
-            // InternalSeleniumDsl.g:1137:1: ( ( rule__Click__AltAssignment_4_2_1 ) )
+            // InternalSeleniumDsl.g:1164:1: ( ( ( rule__Click__AltAssignment_4_2_1 ) ) )
+            // InternalSeleniumDsl.g:1165:1: ( ( rule__Click__AltAssignment_4_2_1 ) )
             {
-            // InternalSeleniumDsl.g:1137:1: ( ( rule__Click__AltAssignment_4_2_1 ) )
-            // InternalSeleniumDsl.g:1138:2: ( rule__Click__AltAssignment_4_2_1 )
+            // InternalSeleniumDsl.g:1165:1: ( ( rule__Click__AltAssignment_4_2_1 ) )
+            // InternalSeleniumDsl.g:1166:2: ( rule__Click__AltAssignment_4_2_1 )
             {
              before(grammarAccess.getClickAccess().getAltAssignment_4_2_1()); 
-            // InternalSeleniumDsl.g:1139:2: ( rule__Click__AltAssignment_4_2_1 )
-            // InternalSeleniumDsl.g:1139:3: rule__Click__AltAssignment_4_2_1
+            // InternalSeleniumDsl.g:1167:2: ( rule__Click__AltAssignment_4_2_1 )
+            // InternalSeleniumDsl.g:1167:3: rule__Click__AltAssignment_4_2_1
             {
             pushFollow(FOLLOW_2);
             rule__Click__AltAssignment_4_2_1();
@@ -3599,14 +3614,14 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Click__Group_4_3__0"
-    // InternalSeleniumDsl.g:1148:1: rule__Click__Group_4_3__0 : rule__Click__Group_4_3__0__Impl rule__Click__Group_4_3__1 ;
+    // InternalSeleniumDsl.g:1176:1: rule__Click__Group_4_3__0 : rule__Click__Group_4_3__0__Impl rule__Click__Group_4_3__1 ;
     public final void rule__Click__Group_4_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:1152:1: ( rule__Click__Group_4_3__0__Impl rule__Click__Group_4_3__1 )
-            // InternalSeleniumDsl.g:1153:2: rule__Click__Group_4_3__0__Impl rule__Click__Group_4_3__1
+            // InternalSeleniumDsl.g:1180:1: ( rule__Click__Group_4_3__0__Impl rule__Click__Group_4_3__1 )
+            // InternalSeleniumDsl.g:1181:2: rule__Click__Group_4_3__0__Impl rule__Click__Group_4_3__1
             {
             pushFollow(FOLLOW_16);
             rule__Click__Group_4_3__0__Impl();
@@ -3637,20 +3652,20 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Click__Group_4_3__0__Impl"
-    // InternalSeleniumDsl.g:1160:1: rule__Click__Group_4_3__0__Impl : ( 'variable' ) ;
+    // InternalSeleniumDsl.g:1188:1: rule__Click__Group_4_3__0__Impl : ( 'variable' ) ;
     public final void rule__Click__Group_4_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:1164:1: ( ( 'variable' ) )
-            // InternalSeleniumDsl.g:1165:1: ( 'variable' )
+            // InternalSeleniumDsl.g:1192:1: ( ( 'variable' ) )
+            // InternalSeleniumDsl.g:1193:1: ( 'variable' )
             {
-            // InternalSeleniumDsl.g:1165:1: ( 'variable' )
-            // InternalSeleniumDsl.g:1166:2: 'variable'
+            // InternalSeleniumDsl.g:1193:1: ( 'variable' )
+            // InternalSeleniumDsl.g:1194:2: 'variable'
             {
              before(grammarAccess.getClickAccess().getVariableKeyword_4_3_0()); 
-            match(input,28,FOLLOW_2); 
+            match(input,30,FOLLOW_2); 
              after(grammarAccess.getClickAccess().getVariableKeyword_4_3_0()); 
 
             }
@@ -3674,14 +3689,14 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Click__Group_4_3__1"
-    // InternalSeleniumDsl.g:1175:1: rule__Click__Group_4_3__1 : rule__Click__Group_4_3__1__Impl ;
+    // InternalSeleniumDsl.g:1203:1: rule__Click__Group_4_3__1 : rule__Click__Group_4_3__1__Impl ;
     public final void rule__Click__Group_4_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:1179:1: ( rule__Click__Group_4_3__1__Impl )
-            // InternalSeleniumDsl.g:1180:2: rule__Click__Group_4_3__1__Impl
+            // InternalSeleniumDsl.g:1207:1: ( rule__Click__Group_4_3__1__Impl )
+            // InternalSeleniumDsl.g:1208:2: rule__Click__Group_4_3__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Click__Group_4_3__1__Impl();
@@ -3707,21 +3722,21 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Click__Group_4_3__1__Impl"
-    // InternalSeleniumDsl.g:1186:1: rule__Click__Group_4_3__1__Impl : ( ( rule__Click__VariableAssignment_4_3_1 ) ) ;
+    // InternalSeleniumDsl.g:1214:1: rule__Click__Group_4_3__1__Impl : ( ( rule__Click__VariableAssignment_4_3_1 ) ) ;
     public final void rule__Click__Group_4_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:1190:1: ( ( ( rule__Click__VariableAssignment_4_3_1 ) ) )
-            // InternalSeleniumDsl.g:1191:1: ( ( rule__Click__VariableAssignment_4_3_1 ) )
+            // InternalSeleniumDsl.g:1218:1: ( ( ( rule__Click__VariableAssignment_4_3_1 ) ) )
+            // InternalSeleniumDsl.g:1219:1: ( ( rule__Click__VariableAssignment_4_3_1 ) )
             {
-            // InternalSeleniumDsl.g:1191:1: ( ( rule__Click__VariableAssignment_4_3_1 ) )
-            // InternalSeleniumDsl.g:1192:2: ( rule__Click__VariableAssignment_4_3_1 )
+            // InternalSeleniumDsl.g:1219:1: ( ( rule__Click__VariableAssignment_4_3_1 ) )
+            // InternalSeleniumDsl.g:1220:2: ( rule__Click__VariableAssignment_4_3_1 )
             {
              before(grammarAccess.getClickAccess().getVariableAssignment_4_3_1()); 
-            // InternalSeleniumDsl.g:1193:2: ( rule__Click__VariableAssignment_4_3_1 )
-            // InternalSeleniumDsl.g:1193:3: rule__Click__VariableAssignment_4_3_1
+            // InternalSeleniumDsl.g:1221:2: ( rule__Click__VariableAssignment_4_3_1 )
+            // InternalSeleniumDsl.g:1221:3: rule__Click__VariableAssignment_4_3_1
             {
             pushFollow(FOLLOW_2);
             rule__Click__VariableAssignment_4_3_1();
@@ -3754,16 +3769,16 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Fill__Group__0"
-    // InternalSeleniumDsl.g:1202:1: rule__Fill__Group__0 : rule__Fill__Group__0__Impl rule__Fill__Group__1 ;
+    // InternalSeleniumDsl.g:1230:1: rule__Fill__Group__0 : rule__Fill__Group__0__Impl rule__Fill__Group__1 ;
     public final void rule__Fill__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:1206:1: ( rule__Fill__Group__0__Impl rule__Fill__Group__1 )
-            // InternalSeleniumDsl.g:1207:2: rule__Fill__Group__0__Impl rule__Fill__Group__1
+            // InternalSeleniumDsl.g:1234:1: ( rule__Fill__Group__0__Impl rule__Fill__Group__1 )
+            // InternalSeleniumDsl.g:1235:2: rule__Fill__Group__0__Impl rule__Fill__Group__1
             {
-            pushFollow(FOLLOW_13);
+            pushFollow(FOLLOW_17);
             rule__Fill__Group__0__Impl();
 
             state._fsp--;
@@ -3792,20 +3807,20 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Fill__Group__0__Impl"
-    // InternalSeleniumDsl.g:1214:1: rule__Fill__Group__0__Impl : ( 'fill' ) ;
+    // InternalSeleniumDsl.g:1242:1: rule__Fill__Group__0__Impl : ( 'fill' ) ;
     public final void rule__Fill__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:1218:1: ( ( 'fill' ) )
-            // InternalSeleniumDsl.g:1219:1: ( 'fill' )
+            // InternalSeleniumDsl.g:1246:1: ( ( 'fill' ) )
+            // InternalSeleniumDsl.g:1247:1: ( 'fill' )
             {
-            // InternalSeleniumDsl.g:1219:1: ( 'fill' )
-            // InternalSeleniumDsl.g:1220:2: 'fill'
+            // InternalSeleniumDsl.g:1247:1: ( 'fill' )
+            // InternalSeleniumDsl.g:1248:2: 'fill'
             {
              before(grammarAccess.getFillAccess().getFillKeyword_0()); 
-            match(input,29,FOLLOW_2); 
+            match(input,31,FOLLOW_2); 
              after(grammarAccess.getFillAccess().getFillKeyword_0()); 
 
             }
@@ -3829,16 +3844,16 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Fill__Group__1"
-    // InternalSeleniumDsl.g:1229:1: rule__Fill__Group__1 : rule__Fill__Group__1__Impl rule__Fill__Group__2 ;
+    // InternalSeleniumDsl.g:1257:1: rule__Fill__Group__1 : rule__Fill__Group__1__Impl rule__Fill__Group__2 ;
     public final void rule__Fill__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:1233:1: ( rule__Fill__Group__1__Impl rule__Fill__Group__2 )
-            // InternalSeleniumDsl.g:1234:2: rule__Fill__Group__1__Impl rule__Fill__Group__2
+            // InternalSeleniumDsl.g:1261:1: ( rule__Fill__Group__1__Impl rule__Fill__Group__2 )
+            // InternalSeleniumDsl.g:1262:2: rule__Fill__Group__1__Impl rule__Fill__Group__2
             {
-            pushFollow(FOLLOW_17);
+            pushFollow(FOLLOW_15);
             rule__Fill__Group__1__Impl();
 
             state._fsp--;
@@ -3867,21 +3882,31 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Fill__Group__1__Impl"
-    // InternalSeleniumDsl.g:1241:1: rule__Fill__Group__1__Impl : ( 'the' ) ;
+    // InternalSeleniumDsl.g:1269:1: rule__Fill__Group__1__Impl : ( ( rule__Fill__ElementAssignment_1 ) ) ;
     public final void rule__Fill__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:1245:1: ( ( 'the' ) )
-            // InternalSeleniumDsl.g:1246:1: ( 'the' )
+            // InternalSeleniumDsl.g:1273:1: ( ( ( rule__Fill__ElementAssignment_1 ) ) )
+            // InternalSeleniumDsl.g:1274:1: ( ( rule__Fill__ElementAssignment_1 ) )
             {
-            // InternalSeleniumDsl.g:1246:1: ( 'the' )
-            // InternalSeleniumDsl.g:1247:2: 'the'
+            // InternalSeleniumDsl.g:1274:1: ( ( rule__Fill__ElementAssignment_1 ) )
+            // InternalSeleniumDsl.g:1275:2: ( rule__Fill__ElementAssignment_1 )
             {
-             before(grammarAccess.getFillAccess().getTheKeyword_1()); 
-            match(input,27,FOLLOW_2); 
-             after(grammarAccess.getFillAccess().getTheKeyword_1()); 
+             before(grammarAccess.getFillAccess().getElementAssignment_1()); 
+            // InternalSeleniumDsl.g:1276:2: ( rule__Fill__ElementAssignment_1 )
+            // InternalSeleniumDsl.g:1276:3: rule__Fill__ElementAssignment_1
+            {
+            pushFollow(FOLLOW_2);
+            rule__Fill__ElementAssignment_1();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getFillAccess().getElementAssignment_1()); 
 
             }
 
@@ -3904,14 +3929,14 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Fill__Group__2"
-    // InternalSeleniumDsl.g:1256:1: rule__Fill__Group__2 : rule__Fill__Group__2__Impl rule__Fill__Group__3 ;
+    // InternalSeleniumDsl.g:1284:1: rule__Fill__Group__2 : rule__Fill__Group__2__Impl rule__Fill__Group__3 ;
     public final void rule__Fill__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:1260:1: ( rule__Fill__Group__2__Impl rule__Fill__Group__3 )
-            // InternalSeleniumDsl.g:1261:2: rule__Fill__Group__2__Impl rule__Fill__Group__3
+            // InternalSeleniumDsl.g:1288:1: ( rule__Fill__Group__2__Impl rule__Fill__Group__3 )
+            // InternalSeleniumDsl.g:1289:2: rule__Fill__Group__2__Impl rule__Fill__Group__3
             {
             pushFollow(FOLLOW_18);
             rule__Fill__Group__2__Impl();
@@ -3942,21 +3967,31 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Fill__Group__2__Impl"
-    // InternalSeleniumDsl.g:1268:1: rule__Fill__Group__2__Impl : ( 'text' ) ;
+    // InternalSeleniumDsl.g:1296:1: rule__Fill__Group__2__Impl : ( ( rule__Fill__FieldNameAssignment_2 ) ) ;
     public final void rule__Fill__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:1272:1: ( ( 'text' ) )
-            // InternalSeleniumDsl.g:1273:1: ( 'text' )
+            // InternalSeleniumDsl.g:1300:1: ( ( ( rule__Fill__FieldNameAssignment_2 ) ) )
+            // InternalSeleniumDsl.g:1301:1: ( ( rule__Fill__FieldNameAssignment_2 ) )
             {
-            // InternalSeleniumDsl.g:1273:1: ( 'text' )
-            // InternalSeleniumDsl.g:1274:2: 'text'
+            // InternalSeleniumDsl.g:1301:1: ( ( rule__Fill__FieldNameAssignment_2 ) )
+            // InternalSeleniumDsl.g:1302:2: ( rule__Fill__FieldNameAssignment_2 )
             {
-             before(grammarAccess.getFillAccess().getTextKeyword_2()); 
-            match(input,30,FOLLOW_2); 
-             after(grammarAccess.getFillAccess().getTextKeyword_2()); 
+             before(grammarAccess.getFillAccess().getFieldNameAssignment_2()); 
+            // InternalSeleniumDsl.g:1303:2: ( rule__Fill__FieldNameAssignment_2 )
+            // InternalSeleniumDsl.g:1303:3: rule__Fill__FieldNameAssignment_2
+            {
+            pushFollow(FOLLOW_2);
+            rule__Fill__FieldNameAssignment_2();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getFillAccess().getFieldNameAssignment_2()); 
 
             }
 
@@ -3979,16 +4014,16 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Fill__Group__3"
-    // InternalSeleniumDsl.g:1283:1: rule__Fill__Group__3 : rule__Fill__Group__3__Impl rule__Fill__Group__4 ;
+    // InternalSeleniumDsl.g:1311:1: rule__Fill__Group__3 : rule__Fill__Group__3__Impl rule__Fill__Group__4 ;
     public final void rule__Fill__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:1287:1: ( rule__Fill__Group__3__Impl rule__Fill__Group__4 )
-            // InternalSeleniumDsl.g:1288:2: rule__Fill__Group__3__Impl rule__Fill__Group__4
+            // InternalSeleniumDsl.g:1315:1: ( rule__Fill__Group__3__Impl rule__Fill__Group__4 )
+            // InternalSeleniumDsl.g:1316:2: rule__Fill__Group__3__Impl rule__Fill__Group__4
             {
-            pushFollow(FOLLOW_15);
+            pushFollow(FOLLOW_13);
             rule__Fill__Group__3__Impl();
 
             state._fsp--;
@@ -4017,21 +4052,21 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Fill__Group__3__Impl"
-    // InternalSeleniumDsl.g:1295:1: rule__Fill__Group__3__Impl : ( 'field' ) ;
+    // InternalSeleniumDsl.g:1323:1: rule__Fill__Group__3__Impl : ( 'with' ) ;
     public final void rule__Fill__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:1299:1: ( ( 'field' ) )
-            // InternalSeleniumDsl.g:1300:1: ( 'field' )
+            // InternalSeleniumDsl.g:1327:1: ( ( 'with' ) )
+            // InternalSeleniumDsl.g:1328:1: ( 'with' )
             {
-            // InternalSeleniumDsl.g:1300:1: ( 'field' )
-            // InternalSeleniumDsl.g:1301:2: 'field'
+            // InternalSeleniumDsl.g:1328:1: ( 'with' )
+            // InternalSeleniumDsl.g:1329:2: 'with'
             {
-             before(grammarAccess.getFillAccess().getFieldKeyword_3()); 
-            match(input,31,FOLLOW_2); 
-             after(grammarAccess.getFillAccess().getFieldKeyword_3()); 
+             before(grammarAccess.getFillAccess().getWithKeyword_3()); 
+            match(input,32,FOLLOW_2); 
+             after(grammarAccess.getFillAccess().getWithKeyword_3()); 
 
             }
 
@@ -4054,14 +4089,14 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Fill__Group__4"
-    // InternalSeleniumDsl.g:1310:1: rule__Fill__Group__4 : rule__Fill__Group__4__Impl rule__Fill__Group__5 ;
+    // InternalSeleniumDsl.g:1338:1: rule__Fill__Group__4 : rule__Fill__Group__4__Impl rule__Fill__Group__5 ;
     public final void rule__Fill__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:1314:1: ( rule__Fill__Group__4__Impl rule__Fill__Group__5 )
-            // InternalSeleniumDsl.g:1315:2: rule__Fill__Group__4__Impl rule__Fill__Group__5
+            // InternalSeleniumDsl.g:1342:1: ( rule__Fill__Group__4__Impl rule__Fill__Group__5 )
+            // InternalSeleniumDsl.g:1343:2: rule__Fill__Group__4__Impl rule__Fill__Group__5
             {
             pushFollow(FOLLOW_19);
             rule__Fill__Group__4__Impl();
@@ -4092,31 +4127,21 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Fill__Group__4__Impl"
-    // InternalSeleniumDsl.g:1322:1: rule__Fill__Group__4__Impl : ( ( rule__Fill__FieldNameAssignment_4 ) ) ;
+    // InternalSeleniumDsl.g:1350:1: rule__Fill__Group__4__Impl : ( 'the' ) ;
     public final void rule__Fill__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:1326:1: ( ( ( rule__Fill__FieldNameAssignment_4 ) ) )
-            // InternalSeleniumDsl.g:1327:1: ( ( rule__Fill__FieldNameAssignment_4 ) )
+            // InternalSeleniumDsl.g:1354:1: ( ( 'the' ) )
+            // InternalSeleniumDsl.g:1355:1: ( 'the' )
             {
-            // InternalSeleniumDsl.g:1327:1: ( ( rule__Fill__FieldNameAssignment_4 ) )
-            // InternalSeleniumDsl.g:1328:2: ( rule__Fill__FieldNameAssignment_4 )
+            // InternalSeleniumDsl.g:1355:1: ( 'the' )
+            // InternalSeleniumDsl.g:1356:2: 'the'
             {
-             before(grammarAccess.getFillAccess().getFieldNameAssignment_4()); 
-            // InternalSeleniumDsl.g:1329:2: ( rule__Fill__FieldNameAssignment_4 )
-            // InternalSeleniumDsl.g:1329:3: rule__Fill__FieldNameAssignment_4
-            {
-            pushFollow(FOLLOW_2);
-            rule__Fill__FieldNameAssignment_4();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getFillAccess().getFieldNameAssignment_4()); 
+             before(grammarAccess.getFillAccess().getTheKeyword_4()); 
+            match(input,29,FOLLOW_2); 
+             after(grammarAccess.getFillAccess().getTheKeyword_4()); 
 
             }
 
@@ -4139,22 +4164,17 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Fill__Group__5"
-    // InternalSeleniumDsl.g:1337:1: rule__Fill__Group__5 : rule__Fill__Group__5__Impl rule__Fill__Group__6 ;
+    // InternalSeleniumDsl.g:1365:1: rule__Fill__Group__5 : rule__Fill__Group__5__Impl ;
     public final void rule__Fill__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:1341:1: ( rule__Fill__Group__5__Impl rule__Fill__Group__6 )
-            // InternalSeleniumDsl.g:1342:2: rule__Fill__Group__5__Impl rule__Fill__Group__6
+            // InternalSeleniumDsl.g:1369:1: ( rule__Fill__Group__5__Impl )
+            // InternalSeleniumDsl.g:1370:2: rule__Fill__Group__5__Impl
             {
-            pushFollow(FOLLOW_13);
-            rule__Fill__Group__5__Impl();
-
-            state._fsp--;
-
             pushFollow(FOLLOW_2);
-            rule__Fill__Group__6();
+            rule__Fill__Group__5__Impl();
 
             state._fsp--;
 
@@ -4177,21 +4197,31 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Fill__Group__5__Impl"
-    // InternalSeleniumDsl.g:1349:1: rule__Fill__Group__5__Impl : ( 'with' ) ;
+    // InternalSeleniumDsl.g:1376:1: rule__Fill__Group__5__Impl : ( ( rule__Fill__Alternatives_5 ) ) ;
     public final void rule__Fill__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:1353:1: ( ( 'with' ) )
-            // InternalSeleniumDsl.g:1354:1: ( 'with' )
+            // InternalSeleniumDsl.g:1380:1: ( ( ( rule__Fill__Alternatives_5 ) ) )
+            // InternalSeleniumDsl.g:1381:1: ( ( rule__Fill__Alternatives_5 ) )
             {
-            // InternalSeleniumDsl.g:1354:1: ( 'with' )
-            // InternalSeleniumDsl.g:1355:2: 'with'
+            // InternalSeleniumDsl.g:1381:1: ( ( rule__Fill__Alternatives_5 ) )
+            // InternalSeleniumDsl.g:1382:2: ( rule__Fill__Alternatives_5 )
             {
-             before(grammarAccess.getFillAccess().getWithKeyword_5()); 
-            match(input,32,FOLLOW_2); 
-             after(grammarAccess.getFillAccess().getWithKeyword_5()); 
+             before(grammarAccess.getFillAccess().getAlternatives_5()); 
+            // InternalSeleniumDsl.g:1383:2: ( rule__Fill__Alternatives_5 )
+            // InternalSeleniumDsl.g:1383:3: rule__Fill__Alternatives_5
+            {
+            pushFollow(FOLLOW_2);
+            rule__Fill__Alternatives_5();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getFillAccess().getAlternatives_5()); 
 
             }
 
@@ -4213,178 +4243,23 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__Fill__Group__5__Impl"
 
 
-    // $ANTLR start "rule__Fill__Group__6"
-    // InternalSeleniumDsl.g:1364:1: rule__Fill__Group__6 : rule__Fill__Group__6__Impl rule__Fill__Group__7 ;
-    public final void rule__Fill__Group__6() throws RecognitionException {
+    // $ANTLR start "rule__Fill__Group_5_0__0"
+    // InternalSeleniumDsl.g:1392:1: rule__Fill__Group_5_0__0 : rule__Fill__Group_5_0__0__Impl rule__Fill__Group_5_0__1 ;
+    public final void rule__Fill__Group_5_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:1368:1: ( rule__Fill__Group__6__Impl rule__Fill__Group__7 )
-            // InternalSeleniumDsl.g:1369:2: rule__Fill__Group__6__Impl rule__Fill__Group__7
-            {
-            pushFollow(FOLLOW_20);
-            rule__Fill__Group__6__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__Fill__Group__7();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Fill__Group__6"
-
-
-    // $ANTLR start "rule__Fill__Group__6__Impl"
-    // InternalSeleniumDsl.g:1376:1: rule__Fill__Group__6__Impl : ( 'the' ) ;
-    public final void rule__Fill__Group__6__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSeleniumDsl.g:1380:1: ( ( 'the' ) )
-            // InternalSeleniumDsl.g:1381:1: ( 'the' )
-            {
-            // InternalSeleniumDsl.g:1381:1: ( 'the' )
-            // InternalSeleniumDsl.g:1382:2: 'the'
-            {
-             before(grammarAccess.getFillAccess().getTheKeyword_6()); 
-            match(input,27,FOLLOW_2); 
-             after(grammarAccess.getFillAccess().getTheKeyword_6()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Fill__Group__6__Impl"
-
-
-    // $ANTLR start "rule__Fill__Group__7"
-    // InternalSeleniumDsl.g:1391:1: rule__Fill__Group__7 : rule__Fill__Group__7__Impl ;
-    public final void rule__Fill__Group__7() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSeleniumDsl.g:1395:1: ( rule__Fill__Group__7__Impl )
-            // InternalSeleniumDsl.g:1396:2: rule__Fill__Group__7__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__Fill__Group__7__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Fill__Group__7"
-
-
-    // $ANTLR start "rule__Fill__Group__7__Impl"
-    // InternalSeleniumDsl.g:1402:1: rule__Fill__Group__7__Impl : ( ( rule__Fill__Alternatives_7 ) ) ;
-    public final void rule__Fill__Group__7__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSeleniumDsl.g:1406:1: ( ( ( rule__Fill__Alternatives_7 ) ) )
-            // InternalSeleniumDsl.g:1407:1: ( ( rule__Fill__Alternatives_7 ) )
-            {
-            // InternalSeleniumDsl.g:1407:1: ( ( rule__Fill__Alternatives_7 ) )
-            // InternalSeleniumDsl.g:1408:2: ( rule__Fill__Alternatives_7 )
-            {
-             before(grammarAccess.getFillAccess().getAlternatives_7()); 
-            // InternalSeleniumDsl.g:1409:2: ( rule__Fill__Alternatives_7 )
-            // InternalSeleniumDsl.g:1409:3: rule__Fill__Alternatives_7
-            {
-            pushFollow(FOLLOW_2);
-            rule__Fill__Alternatives_7();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getFillAccess().getAlternatives_7()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Fill__Group__7__Impl"
-
-
-    // $ANTLR start "rule__Fill__Group_7_0__0"
-    // InternalSeleniumDsl.g:1418:1: rule__Fill__Group_7_0__0 : rule__Fill__Group_7_0__0__Impl rule__Fill__Group_7_0__1 ;
-    public final void rule__Fill__Group_7_0__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSeleniumDsl.g:1422:1: ( rule__Fill__Group_7_0__0__Impl rule__Fill__Group_7_0__1 )
-            // InternalSeleniumDsl.g:1423:2: rule__Fill__Group_7_0__0__Impl rule__Fill__Group_7_0__1
+            // InternalSeleniumDsl.g:1396:1: ( rule__Fill__Group_5_0__0__Impl rule__Fill__Group_5_0__1 )
+            // InternalSeleniumDsl.g:1397:2: rule__Fill__Group_5_0__0__Impl rule__Fill__Group_5_0__1
             {
             pushFollow(FOLLOW_15);
-            rule__Fill__Group_7_0__0__Impl();
+            rule__Fill__Group_5_0__0__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__Fill__Group_7_0__1();
+            rule__Fill__Group_5_0__1();
 
             state._fsp--;
 
@@ -4403,25 +4278,25 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Fill__Group_7_0__0"
+    // $ANTLR end "rule__Fill__Group_5_0__0"
 
 
-    // $ANTLR start "rule__Fill__Group_7_0__0__Impl"
-    // InternalSeleniumDsl.g:1430:1: rule__Fill__Group_7_0__0__Impl : ( 'text' ) ;
-    public final void rule__Fill__Group_7_0__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Fill__Group_5_0__0__Impl"
+    // InternalSeleniumDsl.g:1404:1: rule__Fill__Group_5_0__0__Impl : ( 'text' ) ;
+    public final void rule__Fill__Group_5_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:1434:1: ( ( 'text' ) )
-            // InternalSeleniumDsl.g:1435:1: ( 'text' )
+            // InternalSeleniumDsl.g:1408:1: ( ( 'text' ) )
+            // InternalSeleniumDsl.g:1409:1: ( 'text' )
             {
-            // InternalSeleniumDsl.g:1435:1: ( 'text' )
-            // InternalSeleniumDsl.g:1436:2: 'text'
+            // InternalSeleniumDsl.g:1409:1: ( 'text' )
+            // InternalSeleniumDsl.g:1410:2: 'text'
             {
-             before(grammarAccess.getFillAccess().getTextKeyword_7_0_0()); 
-            match(input,30,FOLLOW_2); 
-             after(grammarAccess.getFillAccess().getTextKeyword_7_0_0()); 
+             before(grammarAccess.getFillAccess().getTextKeyword_5_0_0()); 
+            match(input,33,FOLLOW_2); 
+             after(grammarAccess.getFillAccess().getTextKeyword_5_0_0()); 
 
             }
 
@@ -4440,21 +4315,21 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Fill__Group_7_0__0__Impl"
+    // $ANTLR end "rule__Fill__Group_5_0__0__Impl"
 
 
-    // $ANTLR start "rule__Fill__Group_7_0__1"
-    // InternalSeleniumDsl.g:1445:1: rule__Fill__Group_7_0__1 : rule__Fill__Group_7_0__1__Impl ;
-    public final void rule__Fill__Group_7_0__1() throws RecognitionException {
+    // $ANTLR start "rule__Fill__Group_5_0__1"
+    // InternalSeleniumDsl.g:1419:1: rule__Fill__Group_5_0__1 : rule__Fill__Group_5_0__1__Impl ;
+    public final void rule__Fill__Group_5_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:1449:1: ( rule__Fill__Group_7_0__1__Impl )
-            // InternalSeleniumDsl.g:1450:2: rule__Fill__Group_7_0__1__Impl
+            // InternalSeleniumDsl.g:1423:1: ( rule__Fill__Group_5_0__1__Impl )
+            // InternalSeleniumDsl.g:1424:2: rule__Fill__Group_5_0__1__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__Fill__Group_7_0__1__Impl();
+            rule__Fill__Group_5_0__1__Impl();
 
             state._fsp--;
 
@@ -4473,35 +4348,35 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Fill__Group_7_0__1"
+    // $ANTLR end "rule__Fill__Group_5_0__1"
 
 
-    // $ANTLR start "rule__Fill__Group_7_0__1__Impl"
-    // InternalSeleniumDsl.g:1456:1: rule__Fill__Group_7_0__1__Impl : ( ( rule__Fill__TextToFillAssignment_7_0_1 ) ) ;
-    public final void rule__Fill__Group_7_0__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Fill__Group_5_0__1__Impl"
+    // InternalSeleniumDsl.g:1430:1: rule__Fill__Group_5_0__1__Impl : ( ( rule__Fill__TextToFillAssignment_5_0_1 ) ) ;
+    public final void rule__Fill__Group_5_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:1460:1: ( ( ( rule__Fill__TextToFillAssignment_7_0_1 ) ) )
-            // InternalSeleniumDsl.g:1461:1: ( ( rule__Fill__TextToFillAssignment_7_0_1 ) )
+            // InternalSeleniumDsl.g:1434:1: ( ( ( rule__Fill__TextToFillAssignment_5_0_1 ) ) )
+            // InternalSeleniumDsl.g:1435:1: ( ( rule__Fill__TextToFillAssignment_5_0_1 ) )
             {
-            // InternalSeleniumDsl.g:1461:1: ( ( rule__Fill__TextToFillAssignment_7_0_1 ) )
-            // InternalSeleniumDsl.g:1462:2: ( rule__Fill__TextToFillAssignment_7_0_1 )
+            // InternalSeleniumDsl.g:1435:1: ( ( rule__Fill__TextToFillAssignment_5_0_1 ) )
+            // InternalSeleniumDsl.g:1436:2: ( rule__Fill__TextToFillAssignment_5_0_1 )
             {
-             before(grammarAccess.getFillAccess().getTextToFillAssignment_7_0_1()); 
-            // InternalSeleniumDsl.g:1463:2: ( rule__Fill__TextToFillAssignment_7_0_1 )
-            // InternalSeleniumDsl.g:1463:3: rule__Fill__TextToFillAssignment_7_0_1
+             before(grammarAccess.getFillAccess().getTextToFillAssignment_5_0_1()); 
+            // InternalSeleniumDsl.g:1437:2: ( rule__Fill__TextToFillAssignment_5_0_1 )
+            // InternalSeleniumDsl.g:1437:3: rule__Fill__TextToFillAssignment_5_0_1
             {
             pushFollow(FOLLOW_2);
-            rule__Fill__TextToFillAssignment_7_0_1();
+            rule__Fill__TextToFillAssignment_5_0_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getFillAccess().getTextToFillAssignment_7_0_1()); 
+             after(grammarAccess.getFillAccess().getTextToFillAssignment_5_0_1()); 
 
             }
 
@@ -4520,26 +4395,26 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Fill__Group_7_0__1__Impl"
+    // $ANTLR end "rule__Fill__Group_5_0__1__Impl"
 
 
-    // $ANTLR start "rule__Fill__Group_7_1__0"
-    // InternalSeleniumDsl.g:1472:1: rule__Fill__Group_7_1__0 : rule__Fill__Group_7_1__0__Impl rule__Fill__Group_7_1__1 ;
-    public final void rule__Fill__Group_7_1__0() throws RecognitionException {
+    // $ANTLR start "rule__Fill__Group_5_1__0"
+    // InternalSeleniumDsl.g:1446:1: rule__Fill__Group_5_1__0 : rule__Fill__Group_5_1__0__Impl rule__Fill__Group_5_1__1 ;
+    public final void rule__Fill__Group_5_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:1476:1: ( rule__Fill__Group_7_1__0__Impl rule__Fill__Group_7_1__1 )
-            // InternalSeleniumDsl.g:1477:2: rule__Fill__Group_7_1__0__Impl rule__Fill__Group_7_1__1
+            // InternalSeleniumDsl.g:1450:1: ( rule__Fill__Group_5_1__0__Impl rule__Fill__Group_5_1__1 )
+            // InternalSeleniumDsl.g:1451:2: rule__Fill__Group_5_1__0__Impl rule__Fill__Group_5_1__1
             {
             pushFollow(FOLLOW_16);
-            rule__Fill__Group_7_1__0__Impl();
+            rule__Fill__Group_5_1__0__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__Fill__Group_7_1__1();
+            rule__Fill__Group_5_1__1();
 
             state._fsp--;
 
@@ -4558,25 +4433,25 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Fill__Group_7_1__0"
+    // $ANTLR end "rule__Fill__Group_5_1__0"
 
 
-    // $ANTLR start "rule__Fill__Group_7_1__0__Impl"
-    // InternalSeleniumDsl.g:1484:1: rule__Fill__Group_7_1__0__Impl : ( 'variable' ) ;
-    public final void rule__Fill__Group_7_1__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Fill__Group_5_1__0__Impl"
+    // InternalSeleniumDsl.g:1458:1: rule__Fill__Group_5_1__0__Impl : ( 'variable' ) ;
+    public final void rule__Fill__Group_5_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:1488:1: ( ( 'variable' ) )
-            // InternalSeleniumDsl.g:1489:1: ( 'variable' )
+            // InternalSeleniumDsl.g:1462:1: ( ( 'variable' ) )
+            // InternalSeleniumDsl.g:1463:1: ( 'variable' )
             {
-            // InternalSeleniumDsl.g:1489:1: ( 'variable' )
-            // InternalSeleniumDsl.g:1490:2: 'variable'
+            // InternalSeleniumDsl.g:1463:1: ( 'variable' )
+            // InternalSeleniumDsl.g:1464:2: 'variable'
             {
-             before(grammarAccess.getFillAccess().getVariableKeyword_7_1_0()); 
-            match(input,28,FOLLOW_2); 
-             after(grammarAccess.getFillAccess().getVariableKeyword_7_1_0()); 
+             before(grammarAccess.getFillAccess().getVariableKeyword_5_1_0()); 
+            match(input,30,FOLLOW_2); 
+             after(grammarAccess.getFillAccess().getVariableKeyword_5_1_0()); 
 
             }
 
@@ -4595,21 +4470,21 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Fill__Group_7_1__0__Impl"
+    // $ANTLR end "rule__Fill__Group_5_1__0__Impl"
 
 
-    // $ANTLR start "rule__Fill__Group_7_1__1"
-    // InternalSeleniumDsl.g:1499:1: rule__Fill__Group_7_1__1 : rule__Fill__Group_7_1__1__Impl ;
-    public final void rule__Fill__Group_7_1__1() throws RecognitionException {
+    // $ANTLR start "rule__Fill__Group_5_1__1"
+    // InternalSeleniumDsl.g:1473:1: rule__Fill__Group_5_1__1 : rule__Fill__Group_5_1__1__Impl ;
+    public final void rule__Fill__Group_5_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:1503:1: ( rule__Fill__Group_7_1__1__Impl )
-            // InternalSeleniumDsl.g:1504:2: rule__Fill__Group_7_1__1__Impl
+            // InternalSeleniumDsl.g:1477:1: ( rule__Fill__Group_5_1__1__Impl )
+            // InternalSeleniumDsl.g:1478:2: rule__Fill__Group_5_1__1__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__Fill__Group_7_1__1__Impl();
+            rule__Fill__Group_5_1__1__Impl();
 
             state._fsp--;
 
@@ -4628,35 +4503,35 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Fill__Group_7_1__1"
+    // $ANTLR end "rule__Fill__Group_5_1__1"
 
 
-    // $ANTLR start "rule__Fill__Group_7_1__1__Impl"
-    // InternalSeleniumDsl.g:1510:1: rule__Fill__Group_7_1__1__Impl : ( ( rule__Fill__VariableAssignment_7_1_1 ) ) ;
-    public final void rule__Fill__Group_7_1__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Fill__Group_5_1__1__Impl"
+    // InternalSeleniumDsl.g:1484:1: rule__Fill__Group_5_1__1__Impl : ( ( rule__Fill__VariableAssignment_5_1_1 ) ) ;
+    public final void rule__Fill__Group_5_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:1514:1: ( ( ( rule__Fill__VariableAssignment_7_1_1 ) ) )
-            // InternalSeleniumDsl.g:1515:1: ( ( rule__Fill__VariableAssignment_7_1_1 ) )
+            // InternalSeleniumDsl.g:1488:1: ( ( ( rule__Fill__VariableAssignment_5_1_1 ) ) )
+            // InternalSeleniumDsl.g:1489:1: ( ( rule__Fill__VariableAssignment_5_1_1 ) )
             {
-            // InternalSeleniumDsl.g:1515:1: ( ( rule__Fill__VariableAssignment_7_1_1 ) )
-            // InternalSeleniumDsl.g:1516:2: ( rule__Fill__VariableAssignment_7_1_1 )
+            // InternalSeleniumDsl.g:1489:1: ( ( rule__Fill__VariableAssignment_5_1_1 ) )
+            // InternalSeleniumDsl.g:1490:2: ( rule__Fill__VariableAssignment_5_1_1 )
             {
-             before(grammarAccess.getFillAccess().getVariableAssignment_7_1_1()); 
-            // InternalSeleniumDsl.g:1517:2: ( rule__Fill__VariableAssignment_7_1_1 )
-            // InternalSeleniumDsl.g:1517:3: rule__Fill__VariableAssignment_7_1_1
+             before(grammarAccess.getFillAccess().getVariableAssignment_5_1_1()); 
+            // InternalSeleniumDsl.g:1491:2: ( rule__Fill__VariableAssignment_5_1_1 )
+            // InternalSeleniumDsl.g:1491:3: rule__Fill__VariableAssignment_5_1_1
             {
             pushFollow(FOLLOW_2);
-            rule__Fill__VariableAssignment_7_1_1();
+            rule__Fill__VariableAssignment_5_1_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getFillAccess().getVariableAssignment_7_1_1()); 
+             after(grammarAccess.getFillAccess().getVariableAssignment_5_1_1()); 
 
             }
 
@@ -4675,20 +4550,652 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Fill__Group_7_1__1__Impl"
+    // $ANTLR end "rule__Fill__Group_5_1__1__Impl"
+
+
+    // $ANTLR start "rule__Selector__Group__0"
+    // InternalSeleniumDsl.g:1500:1: rule__Selector__Group__0 : rule__Selector__Group__0__Impl rule__Selector__Group__1 ;
+    public final void rule__Selector__Group__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSeleniumDsl.g:1504:1: ( rule__Selector__Group__0__Impl rule__Selector__Group__1 )
+            // InternalSeleniumDsl.g:1505:2: rule__Selector__Group__0__Impl rule__Selector__Group__1
+            {
+            pushFollow(FOLLOW_17);
+            rule__Selector__Group__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Selector__Group__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Selector__Group__0"
+
+
+    // $ANTLR start "rule__Selector__Group__0__Impl"
+    // InternalSeleniumDsl.g:1512:1: rule__Selector__Group__0__Impl : ( ( rule__Selector__Group_0__0 )? ) ;
+    public final void rule__Selector__Group__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSeleniumDsl.g:1516:1: ( ( ( rule__Selector__Group_0__0 )? ) )
+            // InternalSeleniumDsl.g:1517:1: ( ( rule__Selector__Group_0__0 )? )
+            {
+            // InternalSeleniumDsl.g:1517:1: ( ( rule__Selector__Group_0__0 )? )
+            // InternalSeleniumDsl.g:1518:2: ( rule__Selector__Group_0__0 )?
+            {
+             before(grammarAccess.getSelectorAccess().getGroup_0()); 
+            // InternalSeleniumDsl.g:1519:2: ( rule__Selector__Group_0__0 )?
+            int alt8=2;
+            int LA8_0 = input.LA(1);
+
+            if ( (LA8_0==29) ) {
+                alt8=1;
+            }
+            switch (alt8) {
+                case 1 :
+                    // InternalSeleniumDsl.g:1519:3: rule__Selector__Group_0__0
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__Selector__Group_0__0();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+
+            }
+
+             after(grammarAccess.getSelectorAccess().getGroup_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Selector__Group__0__Impl"
+
+
+    // $ANTLR start "rule__Selector__Group__1"
+    // InternalSeleniumDsl.g:1527:1: rule__Selector__Group__1 : rule__Selector__Group__1__Impl ;
+    public final void rule__Selector__Group__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSeleniumDsl.g:1531:1: ( rule__Selector__Group__1__Impl )
+            // InternalSeleniumDsl.g:1532:2: rule__Selector__Group__1__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__Selector__Group__1__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Selector__Group__1"
+
+
+    // $ANTLR start "rule__Selector__Group__1__Impl"
+    // InternalSeleniumDsl.g:1538:1: rule__Selector__Group__1__Impl : ( ( rule__Selector__ElementTypeAssignment_1 )? ) ;
+    public final void rule__Selector__Group__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSeleniumDsl.g:1542:1: ( ( ( rule__Selector__ElementTypeAssignment_1 )? ) )
+            // InternalSeleniumDsl.g:1543:1: ( ( rule__Selector__ElementTypeAssignment_1 )? )
+            {
+            // InternalSeleniumDsl.g:1543:1: ( ( rule__Selector__ElementTypeAssignment_1 )? )
+            // InternalSeleniumDsl.g:1544:2: ( rule__Selector__ElementTypeAssignment_1 )?
+            {
+             before(grammarAccess.getSelectorAccess().getElementTypeAssignment_1()); 
+            // InternalSeleniumDsl.g:1545:2: ( rule__Selector__ElementTypeAssignment_1 )?
+            int alt9=2;
+            int LA9_0 = input.LA(1);
+
+            if ( ((LA9_0>=13 && LA9_0<=20)||LA9_0==33) ) {
+                alt9=1;
+            }
+            switch (alt9) {
+                case 1 :
+                    // InternalSeleniumDsl.g:1545:3: rule__Selector__ElementTypeAssignment_1
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__Selector__ElementTypeAssignment_1();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+
+            }
+
+             after(grammarAccess.getSelectorAccess().getElementTypeAssignment_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Selector__Group__1__Impl"
+
+
+    // $ANTLR start "rule__Selector__Group_0__0"
+    // InternalSeleniumDsl.g:1554:1: rule__Selector__Group_0__0 : rule__Selector__Group_0__0__Impl rule__Selector__Group_0__1 ;
+    public final void rule__Selector__Group_0__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSeleniumDsl.g:1558:1: ( rule__Selector__Group_0__0__Impl rule__Selector__Group_0__1 )
+            // InternalSeleniumDsl.g:1559:2: rule__Selector__Group_0__0__Impl rule__Selector__Group_0__1
+            {
+            pushFollow(FOLLOW_16);
+            rule__Selector__Group_0__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Selector__Group_0__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Selector__Group_0__0"
+
+
+    // $ANTLR start "rule__Selector__Group_0__0__Impl"
+    // InternalSeleniumDsl.g:1566:1: rule__Selector__Group_0__0__Impl : ( 'the' ) ;
+    public final void rule__Selector__Group_0__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSeleniumDsl.g:1570:1: ( ( 'the' ) )
+            // InternalSeleniumDsl.g:1571:1: ( 'the' )
+            {
+            // InternalSeleniumDsl.g:1571:1: ( 'the' )
+            // InternalSeleniumDsl.g:1572:2: 'the'
+            {
+             before(grammarAccess.getSelectorAccess().getTheKeyword_0_0()); 
+            match(input,29,FOLLOW_2); 
+             after(grammarAccess.getSelectorAccess().getTheKeyword_0_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Selector__Group_0__0__Impl"
+
+
+    // $ANTLR start "rule__Selector__Group_0__1"
+    // InternalSeleniumDsl.g:1581:1: rule__Selector__Group_0__1 : rule__Selector__Group_0__1__Impl ;
+    public final void rule__Selector__Group_0__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSeleniumDsl.g:1585:1: ( rule__Selector__Group_0__1__Impl )
+            // InternalSeleniumDsl.g:1586:2: rule__Selector__Group_0__1__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__Selector__Group_0__1__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Selector__Group_0__1"
+
+
+    // $ANTLR start "rule__Selector__Group_0__1__Impl"
+    // InternalSeleniumDsl.g:1592:1: rule__Selector__Group_0__1__Impl : ( ( rule__Selector__ElementTypeAssignment_0_1 ) ) ;
+    public final void rule__Selector__Group_0__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSeleniumDsl.g:1596:1: ( ( ( rule__Selector__ElementTypeAssignment_0_1 ) ) )
+            // InternalSeleniumDsl.g:1597:1: ( ( rule__Selector__ElementTypeAssignment_0_1 ) )
+            {
+            // InternalSeleniumDsl.g:1597:1: ( ( rule__Selector__ElementTypeAssignment_0_1 ) )
+            // InternalSeleniumDsl.g:1598:2: ( rule__Selector__ElementTypeAssignment_0_1 )
+            {
+             before(grammarAccess.getSelectorAccess().getElementTypeAssignment_0_1()); 
+            // InternalSeleniumDsl.g:1599:2: ( rule__Selector__ElementTypeAssignment_0_1 )
+            // InternalSeleniumDsl.g:1599:3: rule__Selector__ElementTypeAssignment_0_1
+            {
+            pushFollow(FOLLOW_2);
+            rule__Selector__ElementTypeAssignment_0_1();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getSelectorAccess().getElementTypeAssignment_0_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Selector__Group_0__1__Impl"
+
+
+    // $ANTLR start "rule__ElementType__Group_0__0"
+    // InternalSeleniumDsl.g:1608:1: rule__ElementType__Group_0__0 : rule__ElementType__Group_0__0__Impl rule__ElementType__Group_0__1 ;
+    public final void rule__ElementType__Group_0__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSeleniumDsl.g:1612:1: ( rule__ElementType__Group_0__0__Impl rule__ElementType__Group_0__1 )
+            // InternalSeleniumDsl.g:1613:2: rule__ElementType__Group_0__0__Impl rule__ElementType__Group_0__1
+            {
+            pushFollow(FOLLOW_20);
+            rule__ElementType__Group_0__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__ElementType__Group_0__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ElementType__Group_0__0"
+
+
+    // $ANTLR start "rule__ElementType__Group_0__0__Impl"
+    // InternalSeleniumDsl.g:1620:1: rule__ElementType__Group_0__0__Impl : ( 'text' ) ;
+    public final void rule__ElementType__Group_0__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSeleniumDsl.g:1624:1: ( ( 'text' ) )
+            // InternalSeleniumDsl.g:1625:1: ( 'text' )
+            {
+            // InternalSeleniumDsl.g:1625:1: ( 'text' )
+            // InternalSeleniumDsl.g:1626:2: 'text'
+            {
+             before(grammarAccess.getElementTypeAccess().getTextKeyword_0_0()); 
+            match(input,33,FOLLOW_2); 
+             after(grammarAccess.getElementTypeAccess().getTextKeyword_0_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ElementType__Group_0__0__Impl"
+
+
+    // $ANTLR start "rule__ElementType__Group_0__1"
+    // InternalSeleniumDsl.g:1635:1: rule__ElementType__Group_0__1 : rule__ElementType__Group_0__1__Impl ;
+    public final void rule__ElementType__Group_0__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSeleniumDsl.g:1639:1: ( rule__ElementType__Group_0__1__Impl )
+            // InternalSeleniumDsl.g:1640:2: rule__ElementType__Group_0__1__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__ElementType__Group_0__1__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ElementType__Group_0__1"
+
+
+    // $ANTLR start "rule__ElementType__Group_0__1__Impl"
+    // InternalSeleniumDsl.g:1646:1: rule__ElementType__Group_0__1__Impl : ( 'field' ) ;
+    public final void rule__ElementType__Group_0__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSeleniumDsl.g:1650:1: ( ( 'field' ) )
+            // InternalSeleniumDsl.g:1651:1: ( 'field' )
+            {
+            // InternalSeleniumDsl.g:1651:1: ( 'field' )
+            // InternalSeleniumDsl.g:1652:2: 'field'
+            {
+             before(grammarAccess.getElementTypeAccess().getFieldKeyword_0_1()); 
+            match(input,34,FOLLOW_2); 
+             after(grammarAccess.getElementTypeAccess().getFieldKeyword_0_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ElementType__Group_0__1__Impl"
+
+
+    // $ANTLR start "rule__ElementType__Group_8__0"
+    // InternalSeleniumDsl.g:1662:1: rule__ElementType__Group_8__0 : rule__ElementType__Group_8__0__Impl rule__ElementType__Group_8__1 ;
+    public final void rule__ElementType__Group_8__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSeleniumDsl.g:1666:1: ( rule__ElementType__Group_8__0__Impl rule__ElementType__Group_8__1 )
+            // InternalSeleniumDsl.g:1667:2: rule__ElementType__Group_8__0__Impl rule__ElementType__Group_8__1
+            {
+            pushFollow(FOLLOW_21);
+            rule__ElementType__Group_8__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__ElementType__Group_8__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ElementType__Group_8__0"
+
+
+    // $ANTLR start "rule__ElementType__Group_8__0__Impl"
+    // InternalSeleniumDsl.g:1674:1: rule__ElementType__Group_8__0__Impl : ( 'text' ) ;
+    public final void rule__ElementType__Group_8__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSeleniumDsl.g:1678:1: ( ( 'text' ) )
+            // InternalSeleniumDsl.g:1679:1: ( 'text' )
+            {
+            // InternalSeleniumDsl.g:1679:1: ( 'text' )
+            // InternalSeleniumDsl.g:1680:2: 'text'
+            {
+             before(grammarAccess.getElementTypeAccess().getTextKeyword_8_0()); 
+            match(input,33,FOLLOW_2); 
+             after(grammarAccess.getElementTypeAccess().getTextKeyword_8_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ElementType__Group_8__0__Impl"
+
+
+    // $ANTLR start "rule__ElementType__Group_8__1"
+    // InternalSeleniumDsl.g:1689:1: rule__ElementType__Group_8__1 : rule__ElementType__Group_8__1__Impl ;
+    public final void rule__ElementType__Group_8__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSeleniumDsl.g:1693:1: ( rule__ElementType__Group_8__1__Impl )
+            // InternalSeleniumDsl.g:1694:2: rule__ElementType__Group_8__1__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__ElementType__Group_8__1__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ElementType__Group_8__1"
+
+
+    // $ANTLR start "rule__ElementType__Group_8__1__Impl"
+    // InternalSeleniumDsl.g:1700:1: rule__ElementType__Group_8__1__Impl : ( 'link' ) ;
+    public final void rule__ElementType__Group_8__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSeleniumDsl.g:1704:1: ( ( 'link' ) )
+            // InternalSeleniumDsl.g:1705:1: ( 'link' )
+            {
+            // InternalSeleniumDsl.g:1705:1: ( 'link' )
+            // InternalSeleniumDsl.g:1706:2: 'link'
+            {
+             before(grammarAccess.getElementTypeAccess().getLinkKeyword_8_1()); 
+            match(input,16,FOLLOW_2); 
+             after(grammarAccess.getElementTypeAccess().getLinkKeyword_8_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ElementType__Group_8__1__Impl"
 
 
     // $ANTLR start "rule__Select__Group__0"
-    // InternalSeleniumDsl.g:1526:1: rule__Select__Group__0 : rule__Select__Group__0__Impl rule__Select__Group__1 ;
+    // InternalSeleniumDsl.g:1716:1: rule__Select__Group__0 : rule__Select__Group__0__Impl rule__Select__Group__1 ;
     public final void rule__Select__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:1530:1: ( rule__Select__Group__0__Impl rule__Select__Group__1 )
-            // InternalSeleniumDsl.g:1531:2: rule__Select__Group__0__Impl rule__Select__Group__1
+            // InternalSeleniumDsl.g:1720:1: ( rule__Select__Group__0__Impl rule__Select__Group__1 )
+            // InternalSeleniumDsl.g:1721:2: rule__Select__Group__0__Impl rule__Select__Group__1
             {
-            pushFollow(FOLLOW_13);
+            pushFollow(FOLLOW_22);
             rule__Select__Group__0__Impl();
 
             state._fsp--;
@@ -4717,31 +5224,31 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Select__Group__0__Impl"
-    // InternalSeleniumDsl.g:1538:1: rule__Select__Group__0__Impl : ( 'select' ) ;
+    // InternalSeleniumDsl.g:1728:1: rule__Select__Group__0__Impl : ( () ) ;
     public final void rule__Select__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:1542:1: ( ( 'select' ) )
-            // InternalSeleniumDsl.g:1543:1: ( 'select' )
+            // InternalSeleniumDsl.g:1732:1: ( ( () ) )
+            // InternalSeleniumDsl.g:1733:1: ( () )
             {
-            // InternalSeleniumDsl.g:1543:1: ( 'select' )
-            // InternalSeleniumDsl.g:1544:2: 'select'
+            // InternalSeleniumDsl.g:1733:1: ( () )
+            // InternalSeleniumDsl.g:1734:2: ()
             {
-             before(grammarAccess.getSelectAccess().getSelectKeyword_0()); 
-            match(input,33,FOLLOW_2); 
-             after(grammarAccess.getSelectAccess().getSelectKeyword_0()); 
+             before(grammarAccess.getSelectAccess().getSelectAction_0()); 
+            // InternalSeleniumDsl.g:1735:2: ()
+            // InternalSeleniumDsl.g:1735:3: 
+            {
+            }
+
+             after(grammarAccess.getSelectAccess().getSelectAction_0()); 
 
             }
 
 
             }
 
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
         }
         finally {
 
@@ -4754,16 +5261,16 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Select__Group__1"
-    // InternalSeleniumDsl.g:1553:1: rule__Select__Group__1 : rule__Select__Group__1__Impl rule__Select__Group__2 ;
+    // InternalSeleniumDsl.g:1743:1: rule__Select__Group__1 : rule__Select__Group__1__Impl rule__Select__Group__2 ;
     public final void rule__Select__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:1557:1: ( rule__Select__Group__1__Impl rule__Select__Group__2 )
-            // InternalSeleniumDsl.g:1558:2: rule__Select__Group__1__Impl rule__Select__Group__2
+            // InternalSeleniumDsl.g:1747:1: ( rule__Select__Group__1__Impl rule__Select__Group__2 )
+            // InternalSeleniumDsl.g:1748:2: rule__Select__Group__1__Impl rule__Select__Group__2
             {
-            pushFollow(FOLLOW_21);
+            pushFollow(FOLLOW_17);
             rule__Select__Group__1__Impl();
 
             state._fsp--;
@@ -4792,21 +5299,21 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Select__Group__1__Impl"
-    // InternalSeleniumDsl.g:1565:1: rule__Select__Group__1__Impl : ( 'the' ) ;
+    // InternalSeleniumDsl.g:1755:1: rule__Select__Group__1__Impl : ( 'check' ) ;
     public final void rule__Select__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:1569:1: ( ( 'the' ) )
-            // InternalSeleniumDsl.g:1570:1: ( 'the' )
+            // InternalSeleniumDsl.g:1759:1: ( ( 'check' ) )
+            // InternalSeleniumDsl.g:1760:1: ( 'check' )
             {
-            // InternalSeleniumDsl.g:1570:1: ( 'the' )
-            // InternalSeleniumDsl.g:1571:2: 'the'
+            // InternalSeleniumDsl.g:1760:1: ( 'check' )
+            // InternalSeleniumDsl.g:1761:2: 'check'
             {
-             before(grammarAccess.getSelectAccess().getTheKeyword_1()); 
-            match(input,27,FOLLOW_2); 
-             after(grammarAccess.getSelectAccess().getTheKeyword_1()); 
+             before(grammarAccess.getSelectAccess().getCheckKeyword_1()); 
+            match(input,35,FOLLOW_2); 
+             after(grammarAccess.getSelectAccess().getCheckKeyword_1()); 
 
             }
 
@@ -4829,16 +5336,16 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Select__Group__2"
-    // InternalSeleniumDsl.g:1580:1: rule__Select__Group__2 : rule__Select__Group__2__Impl rule__Select__Group__3 ;
+    // InternalSeleniumDsl.g:1770:1: rule__Select__Group__2 : rule__Select__Group__2__Impl rule__Select__Group__3 ;
     public final void rule__Select__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:1584:1: ( rule__Select__Group__2__Impl rule__Select__Group__3 )
-            // InternalSeleniumDsl.g:1585:2: rule__Select__Group__2__Impl rule__Select__Group__3
+            // InternalSeleniumDsl.g:1774:1: ( rule__Select__Group__2__Impl rule__Select__Group__3 )
+            // InternalSeleniumDsl.g:1775:2: rule__Select__Group__2__Impl rule__Select__Group__3
             {
-            pushFollow(FOLLOW_19);
+            pushFollow(FOLLOW_15);
             rule__Select__Group__2__Impl();
 
             state._fsp--;
@@ -4867,21 +5374,31 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Select__Group__2__Impl"
-    // InternalSeleniumDsl.g:1592:1: rule__Select__Group__2__Impl : ( 'checkbox' ) ;
+    // InternalSeleniumDsl.g:1782:1: rule__Select__Group__2__Impl : ( ( rule__Select__ElementTypeAssignment_2 ) ) ;
     public final void rule__Select__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:1596:1: ( ( 'checkbox' ) )
-            // InternalSeleniumDsl.g:1597:1: ( 'checkbox' )
+            // InternalSeleniumDsl.g:1786:1: ( ( ( rule__Select__ElementTypeAssignment_2 ) ) )
+            // InternalSeleniumDsl.g:1787:1: ( ( rule__Select__ElementTypeAssignment_2 ) )
             {
-            // InternalSeleniumDsl.g:1597:1: ( 'checkbox' )
-            // InternalSeleniumDsl.g:1598:2: 'checkbox'
+            // InternalSeleniumDsl.g:1787:1: ( ( rule__Select__ElementTypeAssignment_2 ) )
+            // InternalSeleniumDsl.g:1788:2: ( rule__Select__ElementTypeAssignment_2 )
             {
-             before(grammarAccess.getSelectAccess().getCheckboxKeyword_2()); 
-            match(input,34,FOLLOW_2); 
-             after(grammarAccess.getSelectAccess().getCheckboxKeyword_2()); 
+             before(grammarAccess.getSelectAccess().getElementTypeAssignment_2()); 
+            // InternalSeleniumDsl.g:1789:2: ( rule__Select__ElementTypeAssignment_2 )
+            // InternalSeleniumDsl.g:1789:3: rule__Select__ElementTypeAssignment_2
+            {
+            pushFollow(FOLLOW_2);
+            rule__Select__ElementTypeAssignment_2();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getSelectAccess().getElementTypeAssignment_2()); 
 
             }
 
@@ -4904,16 +5421,16 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Select__Group__3"
-    // InternalSeleniumDsl.g:1607:1: rule__Select__Group__3 : rule__Select__Group__3__Impl rule__Select__Group__4 ;
+    // InternalSeleniumDsl.g:1797:1: rule__Select__Group__3 : rule__Select__Group__3__Impl rule__Select__Group__4 ;
     public final void rule__Select__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:1611:1: ( rule__Select__Group__3__Impl rule__Select__Group__4 )
-            // InternalSeleniumDsl.g:1612:2: rule__Select__Group__3__Impl rule__Select__Group__4
+            // InternalSeleniumDsl.g:1801:1: ( rule__Select__Group__3__Impl rule__Select__Group__4 )
+            // InternalSeleniumDsl.g:1802:2: rule__Select__Group__3__Impl rule__Select__Group__4
             {
-            pushFollow(FOLLOW_22);
+            pushFollow(FOLLOW_23);
             rule__Select__Group__3__Impl();
 
             state._fsp--;
@@ -4942,21 +5459,31 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Select__Group__3__Impl"
-    // InternalSeleniumDsl.g:1619:1: rule__Select__Group__3__Impl : ( 'with' ) ;
+    // InternalSeleniumDsl.g:1809:1: rule__Select__Group__3__Impl : ( ( rule__Select__ValuesAssignment_3 ) ) ;
     public final void rule__Select__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:1623:1: ( ( 'with' ) )
-            // InternalSeleniumDsl.g:1624:1: ( 'with' )
+            // InternalSeleniumDsl.g:1813:1: ( ( ( rule__Select__ValuesAssignment_3 ) ) )
+            // InternalSeleniumDsl.g:1814:1: ( ( rule__Select__ValuesAssignment_3 ) )
             {
-            // InternalSeleniumDsl.g:1624:1: ( 'with' )
-            // InternalSeleniumDsl.g:1625:2: 'with'
+            // InternalSeleniumDsl.g:1814:1: ( ( rule__Select__ValuesAssignment_3 ) )
+            // InternalSeleniumDsl.g:1815:2: ( rule__Select__ValuesAssignment_3 )
             {
-             before(grammarAccess.getSelectAccess().getWithKeyword_3()); 
-            match(input,32,FOLLOW_2); 
-             after(grammarAccess.getSelectAccess().getWithKeyword_3()); 
+             before(grammarAccess.getSelectAccess().getValuesAssignment_3()); 
+            // InternalSeleniumDsl.g:1816:2: ( rule__Select__ValuesAssignment_3 )
+            // InternalSeleniumDsl.g:1816:3: rule__Select__ValuesAssignment_3
+            {
+            pushFollow(FOLLOW_2);
+            rule__Select__ValuesAssignment_3();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getSelectAccess().getValuesAssignment_3()); 
 
             }
 
@@ -4979,22 +5506,17 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Select__Group__4"
-    // InternalSeleniumDsl.g:1634:1: rule__Select__Group__4 : rule__Select__Group__4__Impl rule__Select__Group__5 ;
+    // InternalSeleniumDsl.g:1824:1: rule__Select__Group__4 : rule__Select__Group__4__Impl ;
     public final void rule__Select__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:1638:1: ( rule__Select__Group__4__Impl rule__Select__Group__5 )
-            // InternalSeleniumDsl.g:1639:2: rule__Select__Group__4__Impl rule__Select__Group__5
+            // InternalSeleniumDsl.g:1828:1: ( rule__Select__Group__4__Impl )
+            // InternalSeleniumDsl.g:1829:2: rule__Select__Group__4__Impl
             {
-            pushFollow(FOLLOW_15);
-            rule__Select__Group__4__Impl();
-
-            state._fsp--;
-
             pushFollow(FOLLOW_2);
-            rule__Select__Group__5();
+            rule__Select__Group__4__Impl();
 
             state._fsp--;
 
@@ -5017,21 +5539,49 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Select__Group__4__Impl"
-    // InternalSeleniumDsl.g:1646:1: rule__Select__Group__4__Impl : ( 'values' ) ;
+    // InternalSeleniumDsl.g:1835:1: rule__Select__Group__4__Impl : ( ( rule__Select__Group_4__0 )* ) ;
     public final void rule__Select__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:1650:1: ( ( 'values' ) )
-            // InternalSeleniumDsl.g:1651:1: ( 'values' )
+            // InternalSeleniumDsl.g:1839:1: ( ( ( rule__Select__Group_4__0 )* ) )
+            // InternalSeleniumDsl.g:1840:1: ( ( rule__Select__Group_4__0 )* )
             {
-            // InternalSeleniumDsl.g:1651:1: ( 'values' )
-            // InternalSeleniumDsl.g:1652:2: 'values'
+            // InternalSeleniumDsl.g:1840:1: ( ( rule__Select__Group_4__0 )* )
+            // InternalSeleniumDsl.g:1841:2: ( rule__Select__Group_4__0 )*
             {
-             before(grammarAccess.getSelectAccess().getValuesKeyword_4()); 
-            match(input,35,FOLLOW_2); 
-             after(grammarAccess.getSelectAccess().getValuesKeyword_4()); 
+             before(grammarAccess.getSelectAccess().getGroup_4()); 
+            // InternalSeleniumDsl.g:1842:2: ( rule__Select__Group_4__0 )*
+            loop10:
+            do {
+                int alt10=2;
+                int LA10_0 = input.LA(1);
+
+                if ( (LA10_0==36) ) {
+                    alt10=1;
+                }
+
+
+                switch (alt10) {
+            	case 1 :
+            	    // InternalSeleniumDsl.g:1842:3: rule__Select__Group_4__0
+            	    {
+            	    pushFollow(FOLLOW_24);
+            	    rule__Select__Group_4__0();
+
+            	    state._fsp--;
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop10;
+                }
+            } while (true);
+
+             after(grammarAccess.getSelectAccess().getGroup_4()); 
 
             }
 
@@ -5053,206 +5603,23 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__Select__Group__4__Impl"
 
 
-    // $ANTLR start "rule__Select__Group__5"
-    // InternalSeleniumDsl.g:1661:1: rule__Select__Group__5 : rule__Select__Group__5__Impl rule__Select__Group__6 ;
-    public final void rule__Select__Group__5() throws RecognitionException {
+    // $ANTLR start "rule__Select__Group_4__0"
+    // InternalSeleniumDsl.g:1851:1: rule__Select__Group_4__0 : rule__Select__Group_4__0__Impl rule__Select__Group_4__1 ;
+    public final void rule__Select__Group_4__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:1665:1: ( rule__Select__Group__5__Impl rule__Select__Group__6 )
-            // InternalSeleniumDsl.g:1666:2: rule__Select__Group__5__Impl rule__Select__Group__6
-            {
-            pushFollow(FOLLOW_23);
-            rule__Select__Group__5__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__Select__Group__6();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Select__Group__5"
-
-
-    // $ANTLR start "rule__Select__Group__5__Impl"
-    // InternalSeleniumDsl.g:1673:1: rule__Select__Group__5__Impl : ( ( rule__Select__ValuesAssignment_5 ) ) ;
-    public final void rule__Select__Group__5__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSeleniumDsl.g:1677:1: ( ( ( rule__Select__ValuesAssignment_5 ) ) )
-            // InternalSeleniumDsl.g:1678:1: ( ( rule__Select__ValuesAssignment_5 ) )
-            {
-            // InternalSeleniumDsl.g:1678:1: ( ( rule__Select__ValuesAssignment_5 ) )
-            // InternalSeleniumDsl.g:1679:2: ( rule__Select__ValuesAssignment_5 )
-            {
-             before(grammarAccess.getSelectAccess().getValuesAssignment_5()); 
-            // InternalSeleniumDsl.g:1680:2: ( rule__Select__ValuesAssignment_5 )
-            // InternalSeleniumDsl.g:1680:3: rule__Select__ValuesAssignment_5
-            {
-            pushFollow(FOLLOW_2);
-            rule__Select__ValuesAssignment_5();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getSelectAccess().getValuesAssignment_5()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Select__Group__5__Impl"
-
-
-    // $ANTLR start "rule__Select__Group__6"
-    // InternalSeleniumDsl.g:1688:1: rule__Select__Group__6 : rule__Select__Group__6__Impl ;
-    public final void rule__Select__Group__6() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSeleniumDsl.g:1692:1: ( rule__Select__Group__6__Impl )
-            // InternalSeleniumDsl.g:1693:2: rule__Select__Group__6__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__Select__Group__6__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Select__Group__6"
-
-
-    // $ANTLR start "rule__Select__Group__6__Impl"
-    // InternalSeleniumDsl.g:1699:1: rule__Select__Group__6__Impl : ( ( rule__Select__Group_6__0 )* ) ;
-    public final void rule__Select__Group__6__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSeleniumDsl.g:1703:1: ( ( ( rule__Select__Group_6__0 )* ) )
-            // InternalSeleniumDsl.g:1704:1: ( ( rule__Select__Group_6__0 )* )
-            {
-            // InternalSeleniumDsl.g:1704:1: ( ( rule__Select__Group_6__0 )* )
-            // InternalSeleniumDsl.g:1705:2: ( rule__Select__Group_6__0 )*
-            {
-             before(grammarAccess.getSelectAccess().getGroup_6()); 
-            // InternalSeleniumDsl.g:1706:2: ( rule__Select__Group_6__0 )*
-            loop10:
-            do {
-                int alt10=2;
-                int LA10_0 = input.LA(1);
-
-                if ( (LA10_0==36) ) {
-                    alt10=1;
-                }
-
-
-                switch (alt10) {
-            	case 1 :
-            	    // InternalSeleniumDsl.g:1706:3: rule__Select__Group_6__0
-            	    {
-            	    pushFollow(FOLLOW_24);
-            	    rule__Select__Group_6__0();
-
-            	    state._fsp--;
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop10;
-                }
-            } while (true);
-
-             after(grammarAccess.getSelectAccess().getGroup_6()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Select__Group__6__Impl"
-
-
-    // $ANTLR start "rule__Select__Group_6__0"
-    // InternalSeleniumDsl.g:1715:1: rule__Select__Group_6__0 : rule__Select__Group_6__0__Impl rule__Select__Group_6__1 ;
-    public final void rule__Select__Group_6__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSeleniumDsl.g:1719:1: ( rule__Select__Group_6__0__Impl rule__Select__Group_6__1 )
-            // InternalSeleniumDsl.g:1720:2: rule__Select__Group_6__0__Impl rule__Select__Group_6__1
+            // InternalSeleniumDsl.g:1855:1: ( rule__Select__Group_4__0__Impl rule__Select__Group_4__1 )
+            // InternalSeleniumDsl.g:1856:2: rule__Select__Group_4__0__Impl rule__Select__Group_4__1
             {
             pushFollow(FOLLOW_15);
-            rule__Select__Group_6__0__Impl();
+            rule__Select__Group_4__0__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__Select__Group_6__1();
+            rule__Select__Group_4__1();
 
             state._fsp--;
 
@@ -5271,25 +5638,25 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Select__Group_6__0"
+    // $ANTLR end "rule__Select__Group_4__0"
 
 
-    // $ANTLR start "rule__Select__Group_6__0__Impl"
-    // InternalSeleniumDsl.g:1727:1: rule__Select__Group_6__0__Impl : ( ',' ) ;
-    public final void rule__Select__Group_6__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Select__Group_4__0__Impl"
+    // InternalSeleniumDsl.g:1863:1: rule__Select__Group_4__0__Impl : ( ',' ) ;
+    public final void rule__Select__Group_4__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:1731:1: ( ( ',' ) )
-            // InternalSeleniumDsl.g:1732:1: ( ',' )
+            // InternalSeleniumDsl.g:1867:1: ( ( ',' ) )
+            // InternalSeleniumDsl.g:1868:1: ( ',' )
             {
-            // InternalSeleniumDsl.g:1732:1: ( ',' )
-            // InternalSeleniumDsl.g:1733:2: ','
+            // InternalSeleniumDsl.g:1868:1: ( ',' )
+            // InternalSeleniumDsl.g:1869:2: ','
             {
-             before(grammarAccess.getSelectAccess().getCommaKeyword_6_0()); 
+             before(grammarAccess.getSelectAccess().getCommaKeyword_4_0()); 
             match(input,36,FOLLOW_2); 
-             after(grammarAccess.getSelectAccess().getCommaKeyword_6_0()); 
+             after(grammarAccess.getSelectAccess().getCommaKeyword_4_0()); 
 
             }
 
@@ -5308,21 +5675,21 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Select__Group_6__0__Impl"
+    // $ANTLR end "rule__Select__Group_4__0__Impl"
 
 
-    // $ANTLR start "rule__Select__Group_6__1"
-    // InternalSeleniumDsl.g:1742:1: rule__Select__Group_6__1 : rule__Select__Group_6__1__Impl ;
-    public final void rule__Select__Group_6__1() throws RecognitionException {
+    // $ANTLR start "rule__Select__Group_4__1"
+    // InternalSeleniumDsl.g:1878:1: rule__Select__Group_4__1 : rule__Select__Group_4__1__Impl ;
+    public final void rule__Select__Group_4__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:1746:1: ( rule__Select__Group_6__1__Impl )
-            // InternalSeleniumDsl.g:1747:2: rule__Select__Group_6__1__Impl
+            // InternalSeleniumDsl.g:1882:1: ( rule__Select__Group_4__1__Impl )
+            // InternalSeleniumDsl.g:1883:2: rule__Select__Group_4__1__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__Select__Group_6__1__Impl();
+            rule__Select__Group_4__1__Impl();
 
             state._fsp--;
 
@@ -5341,35 +5708,35 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Select__Group_6__1"
+    // $ANTLR end "rule__Select__Group_4__1"
 
 
-    // $ANTLR start "rule__Select__Group_6__1__Impl"
-    // InternalSeleniumDsl.g:1753:1: rule__Select__Group_6__1__Impl : ( ( rule__Select__ValuesAssignment_6_1 ) ) ;
-    public final void rule__Select__Group_6__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Select__Group_4__1__Impl"
+    // InternalSeleniumDsl.g:1889:1: rule__Select__Group_4__1__Impl : ( ( rule__Select__ValuesAssignment_4_1 ) ) ;
+    public final void rule__Select__Group_4__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:1757:1: ( ( ( rule__Select__ValuesAssignment_6_1 ) ) )
-            // InternalSeleniumDsl.g:1758:1: ( ( rule__Select__ValuesAssignment_6_1 ) )
+            // InternalSeleniumDsl.g:1893:1: ( ( ( rule__Select__ValuesAssignment_4_1 ) ) )
+            // InternalSeleniumDsl.g:1894:1: ( ( rule__Select__ValuesAssignment_4_1 ) )
             {
-            // InternalSeleniumDsl.g:1758:1: ( ( rule__Select__ValuesAssignment_6_1 ) )
-            // InternalSeleniumDsl.g:1759:2: ( rule__Select__ValuesAssignment_6_1 )
+            // InternalSeleniumDsl.g:1894:1: ( ( rule__Select__ValuesAssignment_4_1 ) )
+            // InternalSeleniumDsl.g:1895:2: ( rule__Select__ValuesAssignment_4_1 )
             {
-             before(grammarAccess.getSelectAccess().getValuesAssignment_6_1()); 
-            // InternalSeleniumDsl.g:1760:2: ( rule__Select__ValuesAssignment_6_1 )
-            // InternalSeleniumDsl.g:1760:3: rule__Select__ValuesAssignment_6_1
+             before(grammarAccess.getSelectAccess().getValuesAssignment_4_1()); 
+            // InternalSeleniumDsl.g:1896:2: ( rule__Select__ValuesAssignment_4_1 )
+            // InternalSeleniumDsl.g:1896:3: rule__Select__ValuesAssignment_4_1
             {
             pushFollow(FOLLOW_2);
-            rule__Select__ValuesAssignment_6_1();
+            rule__Select__ValuesAssignment_4_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getSelectAccess().getValuesAssignment_6_1()); 
+             after(grammarAccess.getSelectAccess().getValuesAssignment_4_1()); 
 
             }
 
@@ -5388,18 +5755,18 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Select__Group_6__1__Impl"
+    // $ANTLR end "rule__Select__Group_4__1__Impl"
 
 
     // $ANTLR start "rule__Verify__Group__0"
-    // InternalSeleniumDsl.g:1769:1: rule__Verify__Group__0 : rule__Verify__Group__0__Impl rule__Verify__Group__1 ;
+    // InternalSeleniumDsl.g:1905:1: rule__Verify__Group__0 : rule__Verify__Group__0__Impl rule__Verify__Group__1 ;
     public final void rule__Verify__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:1773:1: ( rule__Verify__Group__0__Impl rule__Verify__Group__1 )
-            // InternalSeleniumDsl.g:1774:2: rule__Verify__Group__0__Impl rule__Verify__Group__1
+            // InternalSeleniumDsl.g:1909:1: ( rule__Verify__Group__0__Impl rule__Verify__Group__1 )
+            // InternalSeleniumDsl.g:1910:2: rule__Verify__Group__0__Impl rule__Verify__Group__1
             {
             pushFollow(FOLLOW_25);
             rule__Verify__Group__0__Impl();
@@ -5430,31 +5797,31 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Verify__Group__0__Impl"
-    // InternalSeleniumDsl.g:1781:1: rule__Verify__Group__0__Impl : ( () ) ;
+    // InternalSeleniumDsl.g:1917:1: rule__Verify__Group__0__Impl : ( 'verify' ) ;
     public final void rule__Verify__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:1785:1: ( ( () ) )
-            // InternalSeleniumDsl.g:1786:1: ( () )
+            // InternalSeleniumDsl.g:1921:1: ( ( 'verify' ) )
+            // InternalSeleniumDsl.g:1922:1: ( 'verify' )
             {
-            // InternalSeleniumDsl.g:1786:1: ( () )
-            // InternalSeleniumDsl.g:1787:2: ()
+            // InternalSeleniumDsl.g:1922:1: ( 'verify' )
+            // InternalSeleniumDsl.g:1923:2: 'verify'
             {
-             before(grammarAccess.getVerifyAccess().getVerifyAction_0()); 
-            // InternalSeleniumDsl.g:1788:2: ()
-            // InternalSeleniumDsl.g:1788:3: 
-            {
-            }
-
-             after(grammarAccess.getVerifyAccess().getVerifyAction_0()); 
+             before(grammarAccess.getVerifyAccess().getVerifyKeyword_0()); 
+            match(input,37,FOLLOW_2); 
+             after(grammarAccess.getVerifyAccess().getVerifyKeyword_0()); 
 
             }
 
 
             }
 
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
         }
         finally {
 
@@ -5467,16 +5834,16 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Verify__Group__1"
-    // InternalSeleniumDsl.g:1796:1: rule__Verify__Group__1 : rule__Verify__Group__1__Impl rule__Verify__Group__2 ;
+    // InternalSeleniumDsl.g:1932:1: rule__Verify__Group__1 : rule__Verify__Group__1__Impl rule__Verify__Group__2 ;
     public final void rule__Verify__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:1800:1: ( rule__Verify__Group__1__Impl rule__Verify__Group__2 )
-            // InternalSeleniumDsl.g:1801:2: rule__Verify__Group__1__Impl rule__Verify__Group__2
+            // InternalSeleniumDsl.g:1936:1: ( rule__Verify__Group__1__Impl rule__Verify__Group__2 )
+            // InternalSeleniumDsl.g:1937:2: rule__Verify__Group__1__Impl rule__Verify__Group__2
             {
-            pushFollow(FOLLOW_26);
+            pushFollow(FOLLOW_13);
             rule__Verify__Group__1__Impl();
 
             state._fsp--;
@@ -5505,21 +5872,21 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Verify__Group__1__Impl"
-    // InternalSeleniumDsl.g:1808:1: rule__Verify__Group__1__Impl : ( 'verify' ) ;
+    // InternalSeleniumDsl.g:1944:1: rule__Verify__Group__1__Impl : ( 'that' ) ;
     public final void rule__Verify__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:1812:1: ( ( 'verify' ) )
-            // InternalSeleniumDsl.g:1813:1: ( 'verify' )
+            // InternalSeleniumDsl.g:1948:1: ( ( 'that' ) )
+            // InternalSeleniumDsl.g:1949:1: ( 'that' )
             {
-            // InternalSeleniumDsl.g:1813:1: ( 'verify' )
-            // InternalSeleniumDsl.g:1814:2: 'verify'
+            // InternalSeleniumDsl.g:1949:1: ( 'that' )
+            // InternalSeleniumDsl.g:1950:2: 'that'
             {
-             before(grammarAccess.getVerifyAccess().getVerifyKeyword_1()); 
-            match(input,37,FOLLOW_2); 
-             after(grammarAccess.getVerifyAccess().getVerifyKeyword_1()); 
+             before(grammarAccess.getVerifyAccess().getThatKeyword_1()); 
+            match(input,38,FOLLOW_2); 
+             after(grammarAccess.getVerifyAccess().getThatKeyword_1()); 
 
             }
 
@@ -5542,16 +5909,16 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Verify__Group__2"
-    // InternalSeleniumDsl.g:1823:1: rule__Verify__Group__2 : rule__Verify__Group__2__Impl rule__Verify__Group__3 ;
+    // InternalSeleniumDsl.g:1959:1: rule__Verify__Group__2 : rule__Verify__Group__2__Impl rule__Verify__Group__3 ;
     public final void rule__Verify__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:1827:1: ( rule__Verify__Group__2__Impl rule__Verify__Group__3 )
-            // InternalSeleniumDsl.g:1828:2: rule__Verify__Group__2__Impl rule__Verify__Group__3
+            // InternalSeleniumDsl.g:1963:1: ( rule__Verify__Group__2__Impl rule__Verify__Group__3 )
+            // InternalSeleniumDsl.g:1964:2: rule__Verify__Group__2__Impl rule__Verify__Group__3
             {
-            pushFollow(FOLLOW_13);
+            pushFollow(FOLLOW_26);
             rule__Verify__Group__2__Impl();
 
             state._fsp--;
@@ -5580,21 +5947,21 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Verify__Group__2__Impl"
-    // InternalSeleniumDsl.g:1835:1: rule__Verify__Group__2__Impl : ( 'that' ) ;
+    // InternalSeleniumDsl.g:1971:1: rule__Verify__Group__2__Impl : ( 'the' ) ;
     public final void rule__Verify__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:1839:1: ( ( 'that' ) )
-            // InternalSeleniumDsl.g:1840:1: ( 'that' )
+            // InternalSeleniumDsl.g:1975:1: ( ( 'the' ) )
+            // InternalSeleniumDsl.g:1976:1: ( 'the' )
             {
-            // InternalSeleniumDsl.g:1840:1: ( 'that' )
-            // InternalSeleniumDsl.g:1841:2: 'that'
+            // InternalSeleniumDsl.g:1976:1: ( 'the' )
+            // InternalSeleniumDsl.g:1977:2: 'the'
             {
-             before(grammarAccess.getVerifyAccess().getThatKeyword_2()); 
-            match(input,38,FOLLOW_2); 
-             after(grammarAccess.getVerifyAccess().getThatKeyword_2()); 
+             before(grammarAccess.getVerifyAccess().getTheKeyword_2()); 
+            match(input,29,FOLLOW_2); 
+             after(grammarAccess.getVerifyAccess().getTheKeyword_2()); 
 
             }
 
@@ -5617,14 +5984,14 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Verify__Group__3"
-    // InternalSeleniumDsl.g:1850:1: rule__Verify__Group__3 : rule__Verify__Group__3__Impl rule__Verify__Group__4 ;
+    // InternalSeleniumDsl.g:1986:1: rule__Verify__Group__3 : rule__Verify__Group__3__Impl rule__Verify__Group__4 ;
     public final void rule__Verify__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:1854:1: ( rule__Verify__Group__3__Impl rule__Verify__Group__4 )
-            // InternalSeleniumDsl.g:1855:2: rule__Verify__Group__3__Impl rule__Verify__Group__4
+            // InternalSeleniumDsl.g:1990:1: ( rule__Verify__Group__3__Impl rule__Verify__Group__4 )
+            // InternalSeleniumDsl.g:1991:2: rule__Verify__Group__3__Impl rule__Verify__Group__4
             {
             pushFollow(FOLLOW_27);
             rule__Verify__Group__3__Impl();
@@ -5655,21 +6022,21 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Verify__Group__3__Impl"
-    // InternalSeleniumDsl.g:1862:1: rule__Verify__Group__3__Impl : ( 'the' ) ;
+    // InternalSeleniumDsl.g:1998:1: rule__Verify__Group__3__Impl : ( 'page' ) ;
     public final void rule__Verify__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:1866:1: ( ( 'the' ) )
-            // InternalSeleniumDsl.g:1867:1: ( 'the' )
+            // InternalSeleniumDsl.g:2002:1: ( ( 'page' ) )
+            // InternalSeleniumDsl.g:2003:1: ( 'page' )
             {
-            // InternalSeleniumDsl.g:1867:1: ( 'the' )
-            // InternalSeleniumDsl.g:1868:2: 'the'
+            // InternalSeleniumDsl.g:2003:1: ( 'page' )
+            // InternalSeleniumDsl.g:2004:2: 'page'
             {
-             before(grammarAccess.getVerifyAccess().getTheKeyword_3()); 
-            match(input,27,FOLLOW_2); 
-             after(grammarAccess.getVerifyAccess().getTheKeyword_3()); 
+             before(grammarAccess.getVerifyAccess().getPageKeyword_3()); 
+            match(input,39,FOLLOW_2); 
+             after(grammarAccess.getVerifyAccess().getPageKeyword_3()); 
 
             }
 
@@ -5692,16 +6059,16 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Verify__Group__4"
-    // InternalSeleniumDsl.g:1877:1: rule__Verify__Group__4 : rule__Verify__Group__4__Impl rule__Verify__Group__5 ;
+    // InternalSeleniumDsl.g:2013:1: rule__Verify__Group__4 : rule__Verify__Group__4__Impl rule__Verify__Group__5 ;
     public final void rule__Verify__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:1881:1: ( rule__Verify__Group__4__Impl rule__Verify__Group__5 )
-            // InternalSeleniumDsl.g:1882:2: rule__Verify__Group__4__Impl rule__Verify__Group__5
+            // InternalSeleniumDsl.g:2017:1: ( rule__Verify__Group__4__Impl rule__Verify__Group__5 )
+            // InternalSeleniumDsl.g:2018:2: rule__Verify__Group__4__Impl rule__Verify__Group__5
             {
-            pushFollow(FOLLOW_28);
+            pushFollow(FOLLOW_13);
             rule__Verify__Group__4__Impl();
 
             state._fsp--;
@@ -5730,21 +6097,21 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Verify__Group__4__Impl"
-    // InternalSeleniumDsl.g:1889:1: rule__Verify__Group__4__Impl : ( 'page' ) ;
+    // InternalSeleniumDsl.g:2025:1: rule__Verify__Group__4__Impl : ( 'contains' ) ;
     public final void rule__Verify__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:1893:1: ( ( 'page' ) )
-            // InternalSeleniumDsl.g:1894:1: ( 'page' )
+            // InternalSeleniumDsl.g:2029:1: ( ( 'contains' ) )
+            // InternalSeleniumDsl.g:2030:1: ( 'contains' )
             {
-            // InternalSeleniumDsl.g:1894:1: ( 'page' )
-            // InternalSeleniumDsl.g:1895:2: 'page'
+            // InternalSeleniumDsl.g:2030:1: ( 'contains' )
+            // InternalSeleniumDsl.g:2031:2: 'contains'
             {
-             before(grammarAccess.getVerifyAccess().getPageKeyword_4()); 
-            match(input,39,FOLLOW_2); 
-             after(grammarAccess.getVerifyAccess().getPageKeyword_4()); 
+             before(grammarAccess.getVerifyAccess().getContainsKeyword_4()); 
+            match(input,40,FOLLOW_2); 
+             after(grammarAccess.getVerifyAccess().getContainsKeyword_4()); 
 
             }
 
@@ -5767,16 +6134,16 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Verify__Group__5"
-    // InternalSeleniumDsl.g:1904:1: rule__Verify__Group__5 : rule__Verify__Group__5__Impl rule__Verify__Group__6 ;
+    // InternalSeleniumDsl.g:2040:1: rule__Verify__Group__5 : rule__Verify__Group__5__Impl rule__Verify__Group__6 ;
     public final void rule__Verify__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:1908:1: ( rule__Verify__Group__5__Impl rule__Verify__Group__6 )
-            // InternalSeleniumDsl.g:1909:2: rule__Verify__Group__5__Impl rule__Verify__Group__6
+            // InternalSeleniumDsl.g:2044:1: ( rule__Verify__Group__5__Impl rule__Verify__Group__6 )
+            // InternalSeleniumDsl.g:2045:2: rule__Verify__Group__5__Impl rule__Verify__Group__6
             {
-            pushFollow(FOLLOW_13);
+            pushFollow(FOLLOW_28);
             rule__Verify__Group__5__Impl();
 
             state._fsp--;
@@ -5805,21 +6172,21 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Verify__Group__5__Impl"
-    // InternalSeleniumDsl.g:1916:1: rule__Verify__Group__5__Impl : ( 'contains' ) ;
+    // InternalSeleniumDsl.g:2052:1: rule__Verify__Group__5__Impl : ( 'the' ) ;
     public final void rule__Verify__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:1920:1: ( ( 'contains' ) )
-            // InternalSeleniumDsl.g:1921:1: ( 'contains' )
+            // InternalSeleniumDsl.g:2056:1: ( ( 'the' ) )
+            // InternalSeleniumDsl.g:2057:1: ( 'the' )
             {
-            // InternalSeleniumDsl.g:1921:1: ( 'contains' )
-            // InternalSeleniumDsl.g:1922:2: 'contains'
+            // InternalSeleniumDsl.g:2057:1: ( 'the' )
+            // InternalSeleniumDsl.g:2058:2: 'the'
             {
-             before(grammarAccess.getVerifyAccess().getContainsKeyword_5()); 
-            match(input,40,FOLLOW_2); 
-             after(grammarAccess.getVerifyAccess().getContainsKeyword_5()); 
+             before(grammarAccess.getVerifyAccess().getTheKeyword_5()); 
+            match(input,29,FOLLOW_2); 
+             after(grammarAccess.getVerifyAccess().getTheKeyword_5()); 
 
             }
 
@@ -5842,22 +6209,17 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Verify__Group__6"
-    // InternalSeleniumDsl.g:1931:1: rule__Verify__Group__6 : rule__Verify__Group__6__Impl rule__Verify__Group__7 ;
+    // InternalSeleniumDsl.g:2067:1: rule__Verify__Group__6 : rule__Verify__Group__6__Impl ;
     public final void rule__Verify__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:1935:1: ( rule__Verify__Group__6__Impl rule__Verify__Group__7 )
-            // InternalSeleniumDsl.g:1936:2: rule__Verify__Group__6__Impl rule__Verify__Group__7
+            // InternalSeleniumDsl.g:2071:1: ( rule__Verify__Group__6__Impl )
+            // InternalSeleniumDsl.g:2072:2: rule__Verify__Group__6__Impl
             {
-            pushFollow(FOLLOW_29);
-            rule__Verify__Group__6__Impl();
-
-            state._fsp--;
-
             pushFollow(FOLLOW_2);
-            rule__Verify__Group__7();
+            rule__Verify__Group__6__Impl();
 
             state._fsp--;
 
@@ -5880,21 +6242,31 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Verify__Group__6__Impl"
-    // InternalSeleniumDsl.g:1943:1: rule__Verify__Group__6__Impl : ( 'the' ) ;
+    // InternalSeleniumDsl.g:2078:1: rule__Verify__Group__6__Impl : ( ( rule__Verify__Alternatives_6 ) ) ;
     public final void rule__Verify__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:1947:1: ( ( 'the' ) )
-            // InternalSeleniumDsl.g:1948:1: ( 'the' )
+            // InternalSeleniumDsl.g:2082:1: ( ( ( rule__Verify__Alternatives_6 ) ) )
+            // InternalSeleniumDsl.g:2083:1: ( ( rule__Verify__Alternatives_6 ) )
             {
-            // InternalSeleniumDsl.g:1948:1: ( 'the' )
-            // InternalSeleniumDsl.g:1949:2: 'the'
+            // InternalSeleniumDsl.g:2083:1: ( ( rule__Verify__Alternatives_6 ) )
+            // InternalSeleniumDsl.g:2084:2: ( rule__Verify__Alternatives_6 )
             {
-             before(grammarAccess.getVerifyAccess().getTheKeyword_6()); 
-            match(input,27,FOLLOW_2); 
-             after(grammarAccess.getVerifyAccess().getTheKeyword_6()); 
+             before(grammarAccess.getVerifyAccess().getAlternatives_6()); 
+            // InternalSeleniumDsl.g:2085:2: ( rule__Verify__Alternatives_6 )
+            // InternalSeleniumDsl.g:2085:3: rule__Verify__Alternatives_6
+            {
+            pushFollow(FOLLOW_2);
+            rule__Verify__Alternatives_6();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getVerifyAccess().getAlternatives_6()); 
 
             }
 
@@ -5916,103 +6288,23 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__Verify__Group__6__Impl"
 
 
-    // $ANTLR start "rule__Verify__Group__7"
-    // InternalSeleniumDsl.g:1958:1: rule__Verify__Group__7 : rule__Verify__Group__7__Impl ;
-    public final void rule__Verify__Group__7() throws RecognitionException {
+    // $ANTLR start "rule__Verify__Group_6_0__0"
+    // InternalSeleniumDsl.g:2094:1: rule__Verify__Group_6_0__0 : rule__Verify__Group_6_0__0__Impl rule__Verify__Group_6_0__1 ;
+    public final void rule__Verify__Group_6_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:1962:1: ( rule__Verify__Group__7__Impl )
-            // InternalSeleniumDsl.g:1963:2: rule__Verify__Group__7__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__Verify__Group__7__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Verify__Group__7"
-
-
-    // $ANTLR start "rule__Verify__Group__7__Impl"
-    // InternalSeleniumDsl.g:1969:1: rule__Verify__Group__7__Impl : ( ( rule__Verify__Alternatives_7 ) ) ;
-    public final void rule__Verify__Group__7__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSeleniumDsl.g:1973:1: ( ( ( rule__Verify__Alternatives_7 ) ) )
-            // InternalSeleniumDsl.g:1974:1: ( ( rule__Verify__Alternatives_7 ) )
-            {
-            // InternalSeleniumDsl.g:1974:1: ( ( rule__Verify__Alternatives_7 ) )
-            // InternalSeleniumDsl.g:1975:2: ( rule__Verify__Alternatives_7 )
-            {
-             before(grammarAccess.getVerifyAccess().getAlternatives_7()); 
-            // InternalSeleniumDsl.g:1976:2: ( rule__Verify__Alternatives_7 )
-            // InternalSeleniumDsl.g:1976:3: rule__Verify__Alternatives_7
-            {
-            pushFollow(FOLLOW_2);
-            rule__Verify__Alternatives_7();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getVerifyAccess().getAlternatives_7()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Verify__Group__7__Impl"
-
-
-    // $ANTLR start "rule__Verify__Group_7_0__0"
-    // InternalSeleniumDsl.g:1985:1: rule__Verify__Group_7_0__0 : rule__Verify__Group_7_0__0__Impl rule__Verify__Group_7_0__1 ;
-    public final void rule__Verify__Group_7_0__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSeleniumDsl.g:1989:1: ( rule__Verify__Group_7_0__0__Impl rule__Verify__Group_7_0__1 )
-            // InternalSeleniumDsl.g:1990:2: rule__Verify__Group_7_0__0__Impl rule__Verify__Group_7_0__1
+            // InternalSeleniumDsl.g:2098:1: ( rule__Verify__Group_6_0__0__Impl rule__Verify__Group_6_0__1 )
+            // InternalSeleniumDsl.g:2099:2: rule__Verify__Group_6_0__0__Impl rule__Verify__Group_6_0__1
             {
             pushFollow(FOLLOW_15);
-            rule__Verify__Group_7_0__0__Impl();
+            rule__Verify__Group_6_0__0__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__Verify__Group_7_0__1();
+            rule__Verify__Group_6_0__1();
 
             state._fsp--;
 
@@ -6031,25 +6323,25 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Verify__Group_7_0__0"
+    // $ANTLR end "rule__Verify__Group_6_0__0"
 
 
-    // $ANTLR start "rule__Verify__Group_7_0__0__Impl"
-    // InternalSeleniumDsl.g:1997:1: rule__Verify__Group_7_0__0__Impl : ( 'string' ) ;
-    public final void rule__Verify__Group_7_0__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Verify__Group_6_0__0__Impl"
+    // InternalSeleniumDsl.g:2106:1: rule__Verify__Group_6_0__0__Impl : ( 'string' ) ;
+    public final void rule__Verify__Group_6_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:2001:1: ( ( 'string' ) )
-            // InternalSeleniumDsl.g:2002:1: ( 'string' )
+            // InternalSeleniumDsl.g:2110:1: ( ( 'string' ) )
+            // InternalSeleniumDsl.g:2111:1: ( 'string' )
             {
-            // InternalSeleniumDsl.g:2002:1: ( 'string' )
-            // InternalSeleniumDsl.g:2003:2: 'string'
+            // InternalSeleniumDsl.g:2111:1: ( 'string' )
+            // InternalSeleniumDsl.g:2112:2: 'string'
             {
-             before(grammarAccess.getVerifyAccess().getStringKeyword_7_0_0()); 
+             before(grammarAccess.getVerifyAccess().getStringKeyword_6_0_0()); 
             match(input,41,FOLLOW_2); 
-             after(grammarAccess.getVerifyAccess().getStringKeyword_7_0_0()); 
+             after(grammarAccess.getVerifyAccess().getStringKeyword_6_0_0()); 
 
             }
 
@@ -6068,21 +6360,21 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Verify__Group_7_0__0__Impl"
+    // $ANTLR end "rule__Verify__Group_6_0__0__Impl"
 
 
-    // $ANTLR start "rule__Verify__Group_7_0__1"
-    // InternalSeleniumDsl.g:2012:1: rule__Verify__Group_7_0__1 : rule__Verify__Group_7_0__1__Impl ;
-    public final void rule__Verify__Group_7_0__1() throws RecognitionException {
+    // $ANTLR start "rule__Verify__Group_6_0__1"
+    // InternalSeleniumDsl.g:2121:1: rule__Verify__Group_6_0__1 : rule__Verify__Group_6_0__1__Impl ;
+    public final void rule__Verify__Group_6_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:2016:1: ( rule__Verify__Group_7_0__1__Impl )
-            // InternalSeleniumDsl.g:2017:2: rule__Verify__Group_7_0__1__Impl
+            // InternalSeleniumDsl.g:2125:1: ( rule__Verify__Group_6_0__1__Impl )
+            // InternalSeleniumDsl.g:2126:2: rule__Verify__Group_6_0__1__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__Verify__Group_7_0__1__Impl();
+            rule__Verify__Group_6_0__1__Impl();
 
             state._fsp--;
 
@@ -6101,35 +6393,35 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Verify__Group_7_0__1"
+    // $ANTLR end "rule__Verify__Group_6_0__1"
 
 
-    // $ANTLR start "rule__Verify__Group_7_0__1__Impl"
-    // InternalSeleniumDsl.g:2023:1: rule__Verify__Group_7_0__1__Impl : ( ( rule__Verify__TextToVerifyAssignment_7_0_1 ) ) ;
-    public final void rule__Verify__Group_7_0__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Verify__Group_6_0__1__Impl"
+    // InternalSeleniumDsl.g:2132:1: rule__Verify__Group_6_0__1__Impl : ( ( rule__Verify__TextToVerifyAssignment_6_0_1 ) ) ;
+    public final void rule__Verify__Group_6_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:2027:1: ( ( ( rule__Verify__TextToVerifyAssignment_7_0_1 ) ) )
-            // InternalSeleniumDsl.g:2028:1: ( ( rule__Verify__TextToVerifyAssignment_7_0_1 ) )
+            // InternalSeleniumDsl.g:2136:1: ( ( ( rule__Verify__TextToVerifyAssignment_6_0_1 ) ) )
+            // InternalSeleniumDsl.g:2137:1: ( ( rule__Verify__TextToVerifyAssignment_6_0_1 ) )
             {
-            // InternalSeleniumDsl.g:2028:1: ( ( rule__Verify__TextToVerifyAssignment_7_0_1 ) )
-            // InternalSeleniumDsl.g:2029:2: ( rule__Verify__TextToVerifyAssignment_7_0_1 )
+            // InternalSeleniumDsl.g:2137:1: ( ( rule__Verify__TextToVerifyAssignment_6_0_1 ) )
+            // InternalSeleniumDsl.g:2138:2: ( rule__Verify__TextToVerifyAssignment_6_0_1 )
             {
-             before(grammarAccess.getVerifyAccess().getTextToVerifyAssignment_7_0_1()); 
-            // InternalSeleniumDsl.g:2030:2: ( rule__Verify__TextToVerifyAssignment_7_0_1 )
-            // InternalSeleniumDsl.g:2030:3: rule__Verify__TextToVerifyAssignment_7_0_1
+             before(grammarAccess.getVerifyAccess().getTextToVerifyAssignment_6_0_1()); 
+            // InternalSeleniumDsl.g:2139:2: ( rule__Verify__TextToVerifyAssignment_6_0_1 )
+            // InternalSeleniumDsl.g:2139:3: rule__Verify__TextToVerifyAssignment_6_0_1
             {
             pushFollow(FOLLOW_2);
-            rule__Verify__TextToVerifyAssignment_7_0_1();
+            rule__Verify__TextToVerifyAssignment_6_0_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getVerifyAccess().getTextToVerifyAssignment_7_0_1()); 
+             after(grammarAccess.getVerifyAccess().getTextToVerifyAssignment_6_0_1()); 
 
             }
 
@@ -6148,26 +6440,26 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Verify__Group_7_0__1__Impl"
+    // $ANTLR end "rule__Verify__Group_6_0__1__Impl"
 
 
-    // $ANTLR start "rule__Verify__Group_7_1__0"
-    // InternalSeleniumDsl.g:2039:1: rule__Verify__Group_7_1__0 : rule__Verify__Group_7_1__0__Impl rule__Verify__Group_7_1__1 ;
-    public final void rule__Verify__Group_7_1__0() throws RecognitionException {
+    // $ANTLR start "rule__Verify__Group_6_1__0"
+    // InternalSeleniumDsl.g:2148:1: rule__Verify__Group_6_1__0 : rule__Verify__Group_6_1__0__Impl rule__Verify__Group_6_1__1 ;
+    public final void rule__Verify__Group_6_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:2043:1: ( rule__Verify__Group_7_1__0__Impl rule__Verify__Group_7_1__1 )
-            // InternalSeleniumDsl.g:2044:2: rule__Verify__Group_7_1__0__Impl rule__Verify__Group_7_1__1
+            // InternalSeleniumDsl.g:2152:1: ( rule__Verify__Group_6_1__0__Impl rule__Verify__Group_6_1__1 )
+            // InternalSeleniumDsl.g:2153:2: rule__Verify__Group_6_1__0__Impl rule__Verify__Group_6_1__1
             {
             pushFollow(FOLLOW_15);
-            rule__Verify__Group_7_1__0__Impl();
+            rule__Verify__Group_6_1__0__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__Verify__Group_7_1__1();
+            rule__Verify__Group_6_1__1();
 
             state._fsp--;
 
@@ -6186,25 +6478,25 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Verify__Group_7_1__0"
+    // $ANTLR end "rule__Verify__Group_6_1__0"
 
 
-    // $ANTLR start "rule__Verify__Group_7_1__0__Impl"
-    // InternalSeleniumDsl.g:2051:1: rule__Verify__Group_7_1__0__Impl : ( 'link' ) ;
-    public final void rule__Verify__Group_7_1__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Verify__Group_6_1__0__Impl"
+    // InternalSeleniumDsl.g:2160:1: rule__Verify__Group_6_1__0__Impl : ( 'link' ) ;
+    public final void rule__Verify__Group_6_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:2055:1: ( ( 'link' ) )
-            // InternalSeleniumDsl.g:2056:1: ( 'link' )
+            // InternalSeleniumDsl.g:2164:1: ( ( 'link' ) )
+            // InternalSeleniumDsl.g:2165:1: ( 'link' )
             {
-            // InternalSeleniumDsl.g:2056:1: ( 'link' )
-            // InternalSeleniumDsl.g:2057:2: 'link'
+            // InternalSeleniumDsl.g:2165:1: ( 'link' )
+            // InternalSeleniumDsl.g:2166:2: 'link'
             {
-             before(grammarAccess.getVerifyAccess().getLinkKeyword_7_1_0()); 
-            match(input,14,FOLLOW_2); 
-             after(grammarAccess.getVerifyAccess().getLinkKeyword_7_1_0()); 
+             before(grammarAccess.getVerifyAccess().getLinkKeyword_6_1_0()); 
+            match(input,16,FOLLOW_2); 
+             after(grammarAccess.getVerifyAccess().getLinkKeyword_6_1_0()); 
 
             }
 
@@ -6223,21 +6515,21 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Verify__Group_7_1__0__Impl"
+    // $ANTLR end "rule__Verify__Group_6_1__0__Impl"
 
 
-    // $ANTLR start "rule__Verify__Group_7_1__1"
-    // InternalSeleniumDsl.g:2066:1: rule__Verify__Group_7_1__1 : rule__Verify__Group_7_1__1__Impl ;
-    public final void rule__Verify__Group_7_1__1() throws RecognitionException {
+    // $ANTLR start "rule__Verify__Group_6_1__1"
+    // InternalSeleniumDsl.g:2175:1: rule__Verify__Group_6_1__1 : rule__Verify__Group_6_1__1__Impl ;
+    public final void rule__Verify__Group_6_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:2070:1: ( rule__Verify__Group_7_1__1__Impl )
-            // InternalSeleniumDsl.g:2071:2: rule__Verify__Group_7_1__1__Impl
+            // InternalSeleniumDsl.g:2179:1: ( rule__Verify__Group_6_1__1__Impl )
+            // InternalSeleniumDsl.g:2180:2: rule__Verify__Group_6_1__1__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__Verify__Group_7_1__1__Impl();
+            rule__Verify__Group_6_1__1__Impl();
 
             state._fsp--;
 
@@ -6256,35 +6548,35 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Verify__Group_7_1__1"
+    // $ANTLR end "rule__Verify__Group_6_1__1"
 
 
-    // $ANTLR start "rule__Verify__Group_7_1__1__Impl"
-    // InternalSeleniumDsl.g:2077:1: rule__Verify__Group_7_1__1__Impl : ( ( rule__Verify__LinkToVerifyAssignment_7_1_1 ) ) ;
-    public final void rule__Verify__Group_7_1__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Verify__Group_6_1__1__Impl"
+    // InternalSeleniumDsl.g:2186:1: rule__Verify__Group_6_1__1__Impl : ( ( rule__Verify__LinkToVerifyAssignment_6_1_1 ) ) ;
+    public final void rule__Verify__Group_6_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:2081:1: ( ( ( rule__Verify__LinkToVerifyAssignment_7_1_1 ) ) )
-            // InternalSeleniumDsl.g:2082:1: ( ( rule__Verify__LinkToVerifyAssignment_7_1_1 ) )
+            // InternalSeleniumDsl.g:2190:1: ( ( ( rule__Verify__LinkToVerifyAssignment_6_1_1 ) ) )
+            // InternalSeleniumDsl.g:2191:1: ( ( rule__Verify__LinkToVerifyAssignment_6_1_1 ) )
             {
-            // InternalSeleniumDsl.g:2082:1: ( ( rule__Verify__LinkToVerifyAssignment_7_1_1 ) )
-            // InternalSeleniumDsl.g:2083:2: ( rule__Verify__LinkToVerifyAssignment_7_1_1 )
+            // InternalSeleniumDsl.g:2191:1: ( ( rule__Verify__LinkToVerifyAssignment_6_1_1 ) )
+            // InternalSeleniumDsl.g:2192:2: ( rule__Verify__LinkToVerifyAssignment_6_1_1 )
             {
-             before(grammarAccess.getVerifyAccess().getLinkToVerifyAssignment_7_1_1()); 
-            // InternalSeleniumDsl.g:2084:2: ( rule__Verify__LinkToVerifyAssignment_7_1_1 )
-            // InternalSeleniumDsl.g:2084:3: rule__Verify__LinkToVerifyAssignment_7_1_1
+             before(grammarAccess.getVerifyAccess().getLinkToVerifyAssignment_6_1_1()); 
+            // InternalSeleniumDsl.g:2193:2: ( rule__Verify__LinkToVerifyAssignment_6_1_1 )
+            // InternalSeleniumDsl.g:2193:3: rule__Verify__LinkToVerifyAssignment_6_1_1
             {
             pushFollow(FOLLOW_2);
-            rule__Verify__LinkToVerifyAssignment_7_1_1();
+            rule__Verify__LinkToVerifyAssignment_6_1_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getVerifyAccess().getLinkToVerifyAssignment_7_1_1()); 
+             after(grammarAccess.getVerifyAccess().getLinkToVerifyAssignment_6_1_1()); 
 
             }
 
@@ -6303,26 +6595,26 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Verify__Group_7_1__1__Impl"
+    // $ANTLR end "rule__Verify__Group_6_1__1__Impl"
 
 
-    // $ANTLR start "rule__Verify__Group_7_2__0"
-    // InternalSeleniumDsl.g:2093:1: rule__Verify__Group_7_2__0 : rule__Verify__Group_7_2__0__Impl rule__Verify__Group_7_2__1 ;
-    public final void rule__Verify__Group_7_2__0() throws RecognitionException {
+    // $ANTLR start "rule__Verify__Group_6_2__0"
+    // InternalSeleniumDsl.g:2202:1: rule__Verify__Group_6_2__0 : rule__Verify__Group_6_2__0__Impl rule__Verify__Group_6_2__1 ;
+    public final void rule__Verify__Group_6_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:2097:1: ( rule__Verify__Group_7_2__0__Impl rule__Verify__Group_7_2__1 )
-            // InternalSeleniumDsl.g:2098:2: rule__Verify__Group_7_2__0__Impl rule__Verify__Group_7_2__1
+            // InternalSeleniumDsl.g:2206:1: ( rule__Verify__Group_6_2__0__Impl rule__Verify__Group_6_2__1 )
+            // InternalSeleniumDsl.g:2207:2: rule__Verify__Group_6_2__0__Impl rule__Verify__Group_6_2__1
             {
             pushFollow(FOLLOW_16);
-            rule__Verify__Group_7_2__0__Impl();
+            rule__Verify__Group_6_2__0__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__Verify__Group_7_2__1();
+            rule__Verify__Group_6_2__1();
 
             state._fsp--;
 
@@ -6341,25 +6633,25 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Verify__Group_7_2__0"
+    // $ANTLR end "rule__Verify__Group_6_2__0"
 
 
-    // $ANTLR start "rule__Verify__Group_7_2__0__Impl"
-    // InternalSeleniumDsl.g:2105:1: rule__Verify__Group_7_2__0__Impl : ( 'variable' ) ;
-    public final void rule__Verify__Group_7_2__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Verify__Group_6_2__0__Impl"
+    // InternalSeleniumDsl.g:2214:1: rule__Verify__Group_6_2__0__Impl : ( 'variable' ) ;
+    public final void rule__Verify__Group_6_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:2109:1: ( ( 'variable' ) )
-            // InternalSeleniumDsl.g:2110:1: ( 'variable' )
+            // InternalSeleniumDsl.g:2218:1: ( ( 'variable' ) )
+            // InternalSeleniumDsl.g:2219:1: ( 'variable' )
             {
-            // InternalSeleniumDsl.g:2110:1: ( 'variable' )
-            // InternalSeleniumDsl.g:2111:2: 'variable'
+            // InternalSeleniumDsl.g:2219:1: ( 'variable' )
+            // InternalSeleniumDsl.g:2220:2: 'variable'
             {
-             before(grammarAccess.getVerifyAccess().getVariableKeyword_7_2_0()); 
-            match(input,28,FOLLOW_2); 
-             after(grammarAccess.getVerifyAccess().getVariableKeyword_7_2_0()); 
+             before(grammarAccess.getVerifyAccess().getVariableKeyword_6_2_0()); 
+            match(input,30,FOLLOW_2); 
+             after(grammarAccess.getVerifyAccess().getVariableKeyword_6_2_0()); 
 
             }
 
@@ -6378,21 +6670,21 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Verify__Group_7_2__0__Impl"
+    // $ANTLR end "rule__Verify__Group_6_2__0__Impl"
 
 
-    // $ANTLR start "rule__Verify__Group_7_2__1"
-    // InternalSeleniumDsl.g:2120:1: rule__Verify__Group_7_2__1 : rule__Verify__Group_7_2__1__Impl ;
-    public final void rule__Verify__Group_7_2__1() throws RecognitionException {
+    // $ANTLR start "rule__Verify__Group_6_2__1"
+    // InternalSeleniumDsl.g:2229:1: rule__Verify__Group_6_2__1 : rule__Verify__Group_6_2__1__Impl ;
+    public final void rule__Verify__Group_6_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:2124:1: ( rule__Verify__Group_7_2__1__Impl )
-            // InternalSeleniumDsl.g:2125:2: rule__Verify__Group_7_2__1__Impl
+            // InternalSeleniumDsl.g:2233:1: ( rule__Verify__Group_6_2__1__Impl )
+            // InternalSeleniumDsl.g:2234:2: rule__Verify__Group_6_2__1__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__Verify__Group_7_2__1__Impl();
+            rule__Verify__Group_6_2__1__Impl();
 
             state._fsp--;
 
@@ -6411,35 +6703,35 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Verify__Group_7_2__1"
+    // $ANTLR end "rule__Verify__Group_6_2__1"
 
 
-    // $ANTLR start "rule__Verify__Group_7_2__1__Impl"
-    // InternalSeleniumDsl.g:2131:1: rule__Verify__Group_7_2__1__Impl : ( ( rule__Verify__VariableAssignment_7_2_1 ) ) ;
-    public final void rule__Verify__Group_7_2__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Verify__Group_6_2__1__Impl"
+    // InternalSeleniumDsl.g:2240:1: rule__Verify__Group_6_2__1__Impl : ( ( rule__Verify__VariableAssignment_6_2_1 ) ) ;
+    public final void rule__Verify__Group_6_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:2135:1: ( ( ( rule__Verify__VariableAssignment_7_2_1 ) ) )
-            // InternalSeleniumDsl.g:2136:1: ( ( rule__Verify__VariableAssignment_7_2_1 ) )
+            // InternalSeleniumDsl.g:2244:1: ( ( ( rule__Verify__VariableAssignment_6_2_1 ) ) )
+            // InternalSeleniumDsl.g:2245:1: ( ( rule__Verify__VariableAssignment_6_2_1 ) )
             {
-            // InternalSeleniumDsl.g:2136:1: ( ( rule__Verify__VariableAssignment_7_2_1 ) )
-            // InternalSeleniumDsl.g:2137:2: ( rule__Verify__VariableAssignment_7_2_1 )
+            // InternalSeleniumDsl.g:2245:1: ( ( rule__Verify__VariableAssignment_6_2_1 ) )
+            // InternalSeleniumDsl.g:2246:2: ( rule__Verify__VariableAssignment_6_2_1 )
             {
-             before(grammarAccess.getVerifyAccess().getVariableAssignment_7_2_1()); 
-            // InternalSeleniumDsl.g:2138:2: ( rule__Verify__VariableAssignment_7_2_1 )
-            // InternalSeleniumDsl.g:2138:3: rule__Verify__VariableAssignment_7_2_1
+             before(grammarAccess.getVerifyAccess().getVariableAssignment_6_2_1()); 
+            // InternalSeleniumDsl.g:2247:2: ( rule__Verify__VariableAssignment_6_2_1 )
+            // InternalSeleniumDsl.g:2247:3: rule__Verify__VariableAssignment_6_2_1
             {
             pushFollow(FOLLOW_2);
-            rule__Verify__VariableAssignment_7_2_1();
+            rule__Verify__VariableAssignment_6_2_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getVerifyAccess().getVariableAssignment_7_2_1()); 
+             after(grammarAccess.getVerifyAccess().getVariableAssignment_6_2_1()); 
 
             }
 
@@ -6458,18 +6750,18 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Verify__Group_7_2__1__Impl"
+    // $ANTLR end "rule__Verify__Group_6_2__1__Impl"
 
 
     // $ANTLR start "rule__Read__Group__0"
-    // InternalSeleniumDsl.g:2147:1: rule__Read__Group__0 : rule__Read__Group__0__Impl rule__Read__Group__1 ;
+    // InternalSeleniumDsl.g:2256:1: rule__Read__Group__0 : rule__Read__Group__0__Impl rule__Read__Group__1 ;
     public final void rule__Read__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:2151:1: ( rule__Read__Group__0__Impl rule__Read__Group__1 )
-            // InternalSeleniumDsl.g:2152:2: rule__Read__Group__0__Impl rule__Read__Group__1
+            // InternalSeleniumDsl.g:2260:1: ( rule__Read__Group__0__Impl rule__Read__Group__1 )
+            // InternalSeleniumDsl.g:2261:2: rule__Read__Group__0__Impl rule__Read__Group__1
             {
             pushFollow(FOLLOW_13);
             rule__Read__Group__0__Impl();
@@ -6500,17 +6792,17 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Read__Group__0__Impl"
-    // InternalSeleniumDsl.g:2159:1: rule__Read__Group__0__Impl : ( 'read' ) ;
+    // InternalSeleniumDsl.g:2268:1: rule__Read__Group__0__Impl : ( 'read' ) ;
     public final void rule__Read__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:2163:1: ( ( 'read' ) )
-            // InternalSeleniumDsl.g:2164:1: ( 'read' )
+            // InternalSeleniumDsl.g:2272:1: ( ( 'read' ) )
+            // InternalSeleniumDsl.g:2273:1: ( 'read' )
             {
-            // InternalSeleniumDsl.g:2164:1: ( 'read' )
-            // InternalSeleniumDsl.g:2165:2: 'read'
+            // InternalSeleniumDsl.g:2273:1: ( 'read' )
+            // InternalSeleniumDsl.g:2274:2: 'read'
             {
              before(grammarAccess.getReadAccess().getReadKeyword_0()); 
             match(input,42,FOLLOW_2); 
@@ -6537,14 +6829,14 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Read__Group__1"
-    // InternalSeleniumDsl.g:2174:1: rule__Read__Group__1 : rule__Read__Group__1__Impl rule__Read__Group__2 ;
+    // InternalSeleniumDsl.g:2283:1: rule__Read__Group__1 : rule__Read__Group__1__Impl rule__Read__Group__2 ;
     public final void rule__Read__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:2178:1: ( rule__Read__Group__1__Impl rule__Read__Group__2 )
-            // InternalSeleniumDsl.g:2179:2: rule__Read__Group__1__Impl rule__Read__Group__2
+            // InternalSeleniumDsl.g:2287:1: ( rule__Read__Group__1__Impl rule__Read__Group__2 )
+            // InternalSeleniumDsl.g:2288:2: rule__Read__Group__1__Impl rule__Read__Group__2
             {
             pushFollow(FOLLOW_16);
             rule__Read__Group__1__Impl();
@@ -6575,20 +6867,20 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Read__Group__1__Impl"
-    // InternalSeleniumDsl.g:2186:1: rule__Read__Group__1__Impl : ( 'the' ) ;
+    // InternalSeleniumDsl.g:2295:1: rule__Read__Group__1__Impl : ( 'the' ) ;
     public final void rule__Read__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:2190:1: ( ( 'the' ) )
-            // InternalSeleniumDsl.g:2191:1: ( 'the' )
+            // InternalSeleniumDsl.g:2299:1: ( ( 'the' ) )
+            // InternalSeleniumDsl.g:2300:1: ( 'the' )
             {
-            // InternalSeleniumDsl.g:2191:1: ( 'the' )
-            // InternalSeleniumDsl.g:2192:2: 'the'
+            // InternalSeleniumDsl.g:2300:1: ( 'the' )
+            // InternalSeleniumDsl.g:2301:2: 'the'
             {
              before(grammarAccess.getReadAccess().getTheKeyword_1()); 
-            match(input,27,FOLLOW_2); 
+            match(input,29,FOLLOW_2); 
              after(grammarAccess.getReadAccess().getTheKeyword_1()); 
 
             }
@@ -6612,16 +6904,16 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Read__Group__2"
-    // InternalSeleniumDsl.g:2201:1: rule__Read__Group__2 : rule__Read__Group__2__Impl rule__Read__Group__3 ;
+    // InternalSeleniumDsl.g:2310:1: rule__Read__Group__2 : rule__Read__Group__2__Impl rule__Read__Group__3 ;
     public final void rule__Read__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:2205:1: ( rule__Read__Group__2__Impl rule__Read__Group__3 )
-            // InternalSeleniumDsl.g:2206:2: rule__Read__Group__2__Impl rule__Read__Group__3
+            // InternalSeleniumDsl.g:2314:1: ( rule__Read__Group__2__Impl rule__Read__Group__3 )
+            // InternalSeleniumDsl.g:2315:2: rule__Read__Group__2__Impl rule__Read__Group__3
             {
-            pushFollow(FOLLOW_30);
+            pushFollow(FOLLOW_29);
             rule__Read__Group__2__Impl();
 
             state._fsp--;
@@ -6650,21 +6942,21 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Read__Group__2__Impl"
-    // InternalSeleniumDsl.g:2213:1: rule__Read__Group__2__Impl : ( ( rule__Read__ElementsAssignment_2 ) ) ;
+    // InternalSeleniumDsl.g:2322:1: rule__Read__Group__2__Impl : ( ( rule__Read__ElementsAssignment_2 ) ) ;
     public final void rule__Read__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:2217:1: ( ( ( rule__Read__ElementsAssignment_2 ) ) )
-            // InternalSeleniumDsl.g:2218:1: ( ( rule__Read__ElementsAssignment_2 ) )
+            // InternalSeleniumDsl.g:2326:1: ( ( ( rule__Read__ElementsAssignment_2 ) ) )
+            // InternalSeleniumDsl.g:2327:1: ( ( rule__Read__ElementsAssignment_2 ) )
             {
-            // InternalSeleniumDsl.g:2218:1: ( ( rule__Read__ElementsAssignment_2 ) )
-            // InternalSeleniumDsl.g:2219:2: ( rule__Read__ElementsAssignment_2 )
+            // InternalSeleniumDsl.g:2327:1: ( ( rule__Read__ElementsAssignment_2 ) )
+            // InternalSeleniumDsl.g:2328:2: ( rule__Read__ElementsAssignment_2 )
             {
              before(grammarAccess.getReadAccess().getElementsAssignment_2()); 
-            // InternalSeleniumDsl.g:2220:2: ( rule__Read__ElementsAssignment_2 )
-            // InternalSeleniumDsl.g:2220:3: rule__Read__ElementsAssignment_2
+            // InternalSeleniumDsl.g:2329:2: ( rule__Read__ElementsAssignment_2 )
+            // InternalSeleniumDsl.g:2329:3: rule__Read__ElementsAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__Read__ElementsAssignment_2();
@@ -6697,16 +6989,16 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Read__Group__3"
-    // InternalSeleniumDsl.g:2228:1: rule__Read__Group__3 : rule__Read__Group__3__Impl rule__Read__Group__4 ;
+    // InternalSeleniumDsl.g:2337:1: rule__Read__Group__3 : rule__Read__Group__3__Impl rule__Read__Group__4 ;
     public final void rule__Read__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:2232:1: ( rule__Read__Group__3__Impl rule__Read__Group__4 )
-            // InternalSeleniumDsl.g:2233:2: rule__Read__Group__3__Impl rule__Read__Group__4
+            // InternalSeleniumDsl.g:2341:1: ( rule__Read__Group__3__Impl rule__Read__Group__4 )
+            // InternalSeleniumDsl.g:2342:2: rule__Read__Group__3__Impl rule__Read__Group__4
             {
-            pushFollow(FOLLOW_30);
+            pushFollow(FOLLOW_29);
             rule__Read__Group__3__Impl();
 
             state._fsp--;
@@ -6735,20 +7027,20 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Read__Group__3__Impl"
-    // InternalSeleniumDsl.g:2240:1: rule__Read__Group__3__Impl : ( ( rule__Read__Group_3__0 )* ) ;
+    // InternalSeleniumDsl.g:2349:1: rule__Read__Group__3__Impl : ( ( rule__Read__Group_3__0 )* ) ;
     public final void rule__Read__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:2244:1: ( ( ( rule__Read__Group_3__0 )* ) )
-            // InternalSeleniumDsl.g:2245:1: ( ( rule__Read__Group_3__0 )* )
+            // InternalSeleniumDsl.g:2353:1: ( ( ( rule__Read__Group_3__0 )* ) )
+            // InternalSeleniumDsl.g:2354:1: ( ( rule__Read__Group_3__0 )* )
             {
-            // InternalSeleniumDsl.g:2245:1: ( ( rule__Read__Group_3__0 )* )
-            // InternalSeleniumDsl.g:2246:2: ( rule__Read__Group_3__0 )*
+            // InternalSeleniumDsl.g:2354:1: ( ( rule__Read__Group_3__0 )* )
+            // InternalSeleniumDsl.g:2355:2: ( rule__Read__Group_3__0 )*
             {
              before(grammarAccess.getReadAccess().getGroup_3()); 
-            // InternalSeleniumDsl.g:2247:2: ( rule__Read__Group_3__0 )*
+            // InternalSeleniumDsl.g:2356:2: ( rule__Read__Group_3__0 )*
             loop11:
             do {
                 int alt11=2;
@@ -6761,7 +7053,7 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
                 switch (alt11) {
             	case 1 :
-            	    // InternalSeleniumDsl.g:2247:3: rule__Read__Group_3__0
+            	    // InternalSeleniumDsl.g:2356:3: rule__Read__Group_3__0
             	    {
             	    pushFollow(FOLLOW_24);
             	    rule__Read__Group_3__0();
@@ -6800,14 +7092,14 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Read__Group__4"
-    // InternalSeleniumDsl.g:2255:1: rule__Read__Group__4 : rule__Read__Group__4__Impl rule__Read__Group__5 ;
+    // InternalSeleniumDsl.g:2364:1: rule__Read__Group__4 : rule__Read__Group__4__Impl rule__Read__Group__5 ;
     public final void rule__Read__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:2259:1: ( rule__Read__Group__4__Impl rule__Read__Group__5 )
-            // InternalSeleniumDsl.g:2260:2: rule__Read__Group__4__Impl rule__Read__Group__5
+            // InternalSeleniumDsl.g:2368:1: ( rule__Read__Group__4__Impl rule__Read__Group__5 )
+            // InternalSeleniumDsl.g:2369:2: rule__Read__Group__4__Impl rule__Read__Group__5
             {
             pushFollow(FOLLOW_13);
             rule__Read__Group__4__Impl();
@@ -6838,17 +7130,17 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Read__Group__4__Impl"
-    // InternalSeleniumDsl.g:2267:1: rule__Read__Group__4__Impl : ( 'of' ) ;
+    // InternalSeleniumDsl.g:2376:1: rule__Read__Group__4__Impl : ( 'of' ) ;
     public final void rule__Read__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:2271:1: ( ( 'of' ) )
-            // InternalSeleniumDsl.g:2272:1: ( 'of' )
+            // InternalSeleniumDsl.g:2380:1: ( ( 'of' ) )
+            // InternalSeleniumDsl.g:2381:1: ( 'of' )
             {
-            // InternalSeleniumDsl.g:2272:1: ( 'of' )
-            // InternalSeleniumDsl.g:2273:2: 'of'
+            // InternalSeleniumDsl.g:2381:1: ( 'of' )
+            // InternalSeleniumDsl.g:2382:2: 'of'
             {
              before(grammarAccess.getReadAccess().getOfKeyword_4()); 
             match(input,43,FOLLOW_2); 
@@ -6875,16 +7167,16 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Read__Group__5"
-    // InternalSeleniumDsl.g:2282:1: rule__Read__Group__5 : rule__Read__Group__5__Impl rule__Read__Group__6 ;
+    // InternalSeleniumDsl.g:2391:1: rule__Read__Group__5 : rule__Read__Group__5__Impl rule__Read__Group__6 ;
     public final void rule__Read__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:2286:1: ( rule__Read__Group__5__Impl rule__Read__Group__6 )
-            // InternalSeleniumDsl.g:2287:2: rule__Read__Group__5__Impl rule__Read__Group__6
+            // InternalSeleniumDsl.g:2395:1: ( rule__Read__Group__5__Impl rule__Read__Group__6 )
+            // InternalSeleniumDsl.g:2396:2: rule__Read__Group__5__Impl rule__Read__Group__6
             {
-            pushFollow(FOLLOW_31);
+            pushFollow(FOLLOW_21);
             rule__Read__Group__5__Impl();
 
             state._fsp--;
@@ -6913,20 +7205,20 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Read__Group__5__Impl"
-    // InternalSeleniumDsl.g:2294:1: rule__Read__Group__5__Impl : ( 'the' ) ;
+    // InternalSeleniumDsl.g:2403:1: rule__Read__Group__5__Impl : ( 'the' ) ;
     public final void rule__Read__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:2298:1: ( ( 'the' ) )
-            // InternalSeleniumDsl.g:2299:1: ( 'the' )
+            // InternalSeleniumDsl.g:2407:1: ( ( 'the' ) )
+            // InternalSeleniumDsl.g:2408:1: ( 'the' )
             {
-            // InternalSeleniumDsl.g:2299:1: ( 'the' )
-            // InternalSeleniumDsl.g:2300:2: 'the'
+            // InternalSeleniumDsl.g:2408:1: ( 'the' )
+            // InternalSeleniumDsl.g:2409:2: 'the'
             {
              before(grammarAccess.getReadAccess().getTheKeyword_5()); 
-            match(input,27,FOLLOW_2); 
+            match(input,29,FOLLOW_2); 
              after(grammarAccess.getReadAccess().getTheKeyword_5()); 
 
             }
@@ -6950,14 +7242,14 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Read__Group__6"
-    // InternalSeleniumDsl.g:2309:1: rule__Read__Group__6 : rule__Read__Group__6__Impl rule__Read__Group__7 ;
+    // InternalSeleniumDsl.g:2418:1: rule__Read__Group__6 : rule__Read__Group__6__Impl rule__Read__Group__7 ;
     public final void rule__Read__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:2313:1: ( rule__Read__Group__6__Impl rule__Read__Group__7 )
-            // InternalSeleniumDsl.g:2314:2: rule__Read__Group__6__Impl rule__Read__Group__7
+            // InternalSeleniumDsl.g:2422:1: ( rule__Read__Group__6__Impl rule__Read__Group__7 )
+            // InternalSeleniumDsl.g:2423:2: rule__Read__Group__6__Impl rule__Read__Group__7
             {
             pushFollow(FOLLOW_15);
             rule__Read__Group__6__Impl();
@@ -6988,20 +7280,20 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Read__Group__6__Impl"
-    // InternalSeleniumDsl.g:2321:1: rule__Read__Group__6__Impl : ( 'link' ) ;
+    // InternalSeleniumDsl.g:2430:1: rule__Read__Group__6__Impl : ( 'link' ) ;
     public final void rule__Read__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:2325:1: ( ( 'link' ) )
-            // InternalSeleniumDsl.g:2326:1: ( 'link' )
+            // InternalSeleniumDsl.g:2434:1: ( ( 'link' ) )
+            // InternalSeleniumDsl.g:2435:1: ( 'link' )
             {
-            // InternalSeleniumDsl.g:2326:1: ( 'link' )
-            // InternalSeleniumDsl.g:2327:2: 'link'
+            // InternalSeleniumDsl.g:2435:1: ( 'link' )
+            // InternalSeleniumDsl.g:2436:2: 'link'
             {
              before(grammarAccess.getReadAccess().getLinkKeyword_6()); 
-            match(input,14,FOLLOW_2); 
+            match(input,16,FOLLOW_2); 
              after(grammarAccess.getReadAccess().getLinkKeyword_6()); 
 
             }
@@ -7025,16 +7317,16 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Read__Group__7"
-    // InternalSeleniumDsl.g:2336:1: rule__Read__Group__7 : rule__Read__Group__7__Impl rule__Read__Group__8 ;
+    // InternalSeleniumDsl.g:2445:1: rule__Read__Group__7 : rule__Read__Group__7__Impl rule__Read__Group__8 ;
     public final void rule__Read__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:2340:1: ( rule__Read__Group__7__Impl rule__Read__Group__8 )
-            // InternalSeleniumDsl.g:2341:2: rule__Read__Group__7__Impl rule__Read__Group__8
+            // InternalSeleniumDsl.g:2449:1: ( rule__Read__Group__7__Impl rule__Read__Group__8 )
+            // InternalSeleniumDsl.g:2450:2: rule__Read__Group__7__Impl rule__Read__Group__8
             {
-            pushFollow(FOLLOW_32);
+            pushFollow(FOLLOW_30);
             rule__Read__Group__7__Impl();
 
             state._fsp--;
@@ -7063,21 +7355,21 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Read__Group__7__Impl"
-    // InternalSeleniumDsl.g:2348:1: rule__Read__Group__7__Impl : ( ( rule__Read__LinkTextAssignment_7 ) ) ;
+    // InternalSeleniumDsl.g:2457:1: rule__Read__Group__7__Impl : ( ( rule__Read__LinkTextAssignment_7 ) ) ;
     public final void rule__Read__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:2352:1: ( ( ( rule__Read__LinkTextAssignment_7 ) ) )
-            // InternalSeleniumDsl.g:2353:1: ( ( rule__Read__LinkTextAssignment_7 ) )
+            // InternalSeleniumDsl.g:2461:1: ( ( ( rule__Read__LinkTextAssignment_7 ) ) )
+            // InternalSeleniumDsl.g:2462:1: ( ( rule__Read__LinkTextAssignment_7 ) )
             {
-            // InternalSeleniumDsl.g:2353:1: ( ( rule__Read__LinkTextAssignment_7 ) )
-            // InternalSeleniumDsl.g:2354:2: ( rule__Read__LinkTextAssignment_7 )
+            // InternalSeleniumDsl.g:2462:1: ( ( rule__Read__LinkTextAssignment_7 ) )
+            // InternalSeleniumDsl.g:2463:2: ( rule__Read__LinkTextAssignment_7 )
             {
              before(grammarAccess.getReadAccess().getLinkTextAssignment_7()); 
-            // InternalSeleniumDsl.g:2355:2: ( rule__Read__LinkTextAssignment_7 )
-            // InternalSeleniumDsl.g:2355:3: rule__Read__LinkTextAssignment_7
+            // InternalSeleniumDsl.g:2464:2: ( rule__Read__LinkTextAssignment_7 )
+            // InternalSeleniumDsl.g:2464:3: rule__Read__LinkTextAssignment_7
             {
             pushFollow(FOLLOW_2);
             rule__Read__LinkTextAssignment_7();
@@ -7110,16 +7402,16 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Read__Group__8"
-    // InternalSeleniumDsl.g:2363:1: rule__Read__Group__8 : rule__Read__Group__8__Impl rule__Read__Group__9 ;
+    // InternalSeleniumDsl.g:2472:1: rule__Read__Group__8 : rule__Read__Group__8__Impl rule__Read__Group__9 ;
     public final void rule__Read__Group__8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:2367:1: ( rule__Read__Group__8__Impl rule__Read__Group__9 )
-            // InternalSeleniumDsl.g:2368:2: rule__Read__Group__8__Impl rule__Read__Group__9
+            // InternalSeleniumDsl.g:2476:1: ( rule__Read__Group__8__Impl rule__Read__Group__9 )
+            // InternalSeleniumDsl.g:2477:2: rule__Read__Group__8__Impl rule__Read__Group__9
             {
-            pushFollow(FOLLOW_33);
+            pushFollow(FOLLOW_31);
             rule__Read__Group__8__Impl();
 
             state._fsp--;
@@ -7148,17 +7440,17 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Read__Group__8__Impl"
-    // InternalSeleniumDsl.g:2375:1: rule__Read__Group__8__Impl : ( 'number' ) ;
+    // InternalSeleniumDsl.g:2484:1: rule__Read__Group__8__Impl : ( 'number' ) ;
     public final void rule__Read__Group__8__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:2379:1: ( ( 'number' ) )
-            // InternalSeleniumDsl.g:2380:1: ( 'number' )
+            // InternalSeleniumDsl.g:2488:1: ( ( 'number' ) )
+            // InternalSeleniumDsl.g:2489:1: ( 'number' )
             {
-            // InternalSeleniumDsl.g:2380:1: ( 'number' )
-            // InternalSeleniumDsl.g:2381:2: 'number'
+            // InternalSeleniumDsl.g:2489:1: ( 'number' )
+            // InternalSeleniumDsl.g:2490:2: 'number'
             {
              before(grammarAccess.getReadAccess().getNumberKeyword_8()); 
             match(input,44,FOLLOW_2); 
@@ -7185,14 +7477,14 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Read__Group__9"
-    // InternalSeleniumDsl.g:2390:1: rule__Read__Group__9 : rule__Read__Group__9__Impl ;
+    // InternalSeleniumDsl.g:2499:1: rule__Read__Group__9 : rule__Read__Group__9__Impl ;
     public final void rule__Read__Group__9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:2394:1: ( rule__Read__Group__9__Impl )
-            // InternalSeleniumDsl.g:2395:2: rule__Read__Group__9__Impl
+            // InternalSeleniumDsl.g:2503:1: ( rule__Read__Group__9__Impl )
+            // InternalSeleniumDsl.g:2504:2: rule__Read__Group__9__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Read__Group__9__Impl();
@@ -7218,21 +7510,21 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Read__Group__9__Impl"
-    // InternalSeleniumDsl.g:2401:1: rule__Read__Group__9__Impl : ( ( rule__Read__NumberAssignment_9 ) ) ;
+    // InternalSeleniumDsl.g:2510:1: rule__Read__Group__9__Impl : ( ( rule__Read__NumberAssignment_9 ) ) ;
     public final void rule__Read__Group__9__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:2405:1: ( ( ( rule__Read__NumberAssignment_9 ) ) )
-            // InternalSeleniumDsl.g:2406:1: ( ( rule__Read__NumberAssignment_9 ) )
+            // InternalSeleniumDsl.g:2514:1: ( ( ( rule__Read__NumberAssignment_9 ) ) )
+            // InternalSeleniumDsl.g:2515:1: ( ( rule__Read__NumberAssignment_9 ) )
             {
-            // InternalSeleniumDsl.g:2406:1: ( ( rule__Read__NumberAssignment_9 ) )
-            // InternalSeleniumDsl.g:2407:2: ( rule__Read__NumberAssignment_9 )
+            // InternalSeleniumDsl.g:2515:1: ( ( rule__Read__NumberAssignment_9 ) )
+            // InternalSeleniumDsl.g:2516:2: ( rule__Read__NumberAssignment_9 )
             {
              before(grammarAccess.getReadAccess().getNumberAssignment_9()); 
-            // InternalSeleniumDsl.g:2408:2: ( rule__Read__NumberAssignment_9 )
-            // InternalSeleniumDsl.g:2408:3: rule__Read__NumberAssignment_9
+            // InternalSeleniumDsl.g:2517:2: ( rule__Read__NumberAssignment_9 )
+            // InternalSeleniumDsl.g:2517:3: rule__Read__NumberAssignment_9
             {
             pushFollow(FOLLOW_2);
             rule__Read__NumberAssignment_9();
@@ -7265,14 +7557,14 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Read__Group_3__0"
-    // InternalSeleniumDsl.g:2417:1: rule__Read__Group_3__0 : rule__Read__Group_3__0__Impl rule__Read__Group_3__1 ;
+    // InternalSeleniumDsl.g:2526:1: rule__Read__Group_3__0 : rule__Read__Group_3__0__Impl rule__Read__Group_3__1 ;
     public final void rule__Read__Group_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:2421:1: ( rule__Read__Group_3__0__Impl rule__Read__Group_3__1 )
-            // InternalSeleniumDsl.g:2422:2: rule__Read__Group_3__0__Impl rule__Read__Group_3__1
+            // InternalSeleniumDsl.g:2530:1: ( rule__Read__Group_3__0__Impl rule__Read__Group_3__1 )
+            // InternalSeleniumDsl.g:2531:2: rule__Read__Group_3__0__Impl rule__Read__Group_3__1
             {
             pushFollow(FOLLOW_16);
             rule__Read__Group_3__0__Impl();
@@ -7303,17 +7595,17 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Read__Group_3__0__Impl"
-    // InternalSeleniumDsl.g:2429:1: rule__Read__Group_3__0__Impl : ( ',' ) ;
+    // InternalSeleniumDsl.g:2538:1: rule__Read__Group_3__0__Impl : ( ',' ) ;
     public final void rule__Read__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:2433:1: ( ( ',' ) )
-            // InternalSeleniumDsl.g:2434:1: ( ',' )
+            // InternalSeleniumDsl.g:2542:1: ( ( ',' ) )
+            // InternalSeleniumDsl.g:2543:1: ( ',' )
             {
-            // InternalSeleniumDsl.g:2434:1: ( ',' )
-            // InternalSeleniumDsl.g:2435:2: ','
+            // InternalSeleniumDsl.g:2543:1: ( ',' )
+            // InternalSeleniumDsl.g:2544:2: ','
             {
              before(grammarAccess.getReadAccess().getCommaKeyword_3_0()); 
             match(input,36,FOLLOW_2); 
@@ -7340,14 +7632,14 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Read__Group_3__1"
-    // InternalSeleniumDsl.g:2444:1: rule__Read__Group_3__1 : rule__Read__Group_3__1__Impl ;
+    // InternalSeleniumDsl.g:2553:1: rule__Read__Group_3__1 : rule__Read__Group_3__1__Impl ;
     public final void rule__Read__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:2448:1: ( rule__Read__Group_3__1__Impl )
-            // InternalSeleniumDsl.g:2449:2: rule__Read__Group_3__1__Impl
+            // InternalSeleniumDsl.g:2557:1: ( rule__Read__Group_3__1__Impl )
+            // InternalSeleniumDsl.g:2558:2: rule__Read__Group_3__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Read__Group_3__1__Impl();
@@ -7373,21 +7665,21 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Read__Group_3__1__Impl"
-    // InternalSeleniumDsl.g:2455:1: rule__Read__Group_3__1__Impl : ( ( rule__Read__ElementsAssignment_3_1 ) ) ;
+    // InternalSeleniumDsl.g:2564:1: rule__Read__Group_3__1__Impl : ( ( rule__Read__ElementsAssignment_3_1 ) ) ;
     public final void rule__Read__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:2459:1: ( ( ( rule__Read__ElementsAssignment_3_1 ) ) )
-            // InternalSeleniumDsl.g:2460:1: ( ( rule__Read__ElementsAssignment_3_1 ) )
+            // InternalSeleniumDsl.g:2568:1: ( ( ( rule__Read__ElementsAssignment_3_1 ) ) )
+            // InternalSeleniumDsl.g:2569:1: ( ( rule__Read__ElementsAssignment_3_1 ) )
             {
-            // InternalSeleniumDsl.g:2460:1: ( ( rule__Read__ElementsAssignment_3_1 ) )
-            // InternalSeleniumDsl.g:2461:2: ( rule__Read__ElementsAssignment_3_1 )
+            // InternalSeleniumDsl.g:2569:1: ( ( rule__Read__ElementsAssignment_3_1 ) )
+            // InternalSeleniumDsl.g:2570:2: ( rule__Read__ElementsAssignment_3_1 )
             {
              before(grammarAccess.getReadAccess().getElementsAssignment_3_1()); 
-            // InternalSeleniumDsl.g:2462:2: ( rule__Read__ElementsAssignment_3_1 )
-            // InternalSeleniumDsl.g:2462:3: rule__Read__ElementsAssignment_3_1
+            // InternalSeleniumDsl.g:2571:2: ( rule__Read__ElementsAssignment_3_1 )
+            // InternalSeleniumDsl.g:2571:3: rule__Read__ElementsAssignment_3_1
             {
             pushFollow(FOLLOW_2);
             rule__Read__ElementsAssignment_3_1();
@@ -7420,16 +7712,16 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Uncheck__Group__0"
-    // InternalSeleniumDsl.g:2471:1: rule__Uncheck__Group__0 : rule__Uncheck__Group__0__Impl rule__Uncheck__Group__1 ;
+    // InternalSeleniumDsl.g:2580:1: rule__Uncheck__Group__0 : rule__Uncheck__Group__0__Impl rule__Uncheck__Group__1 ;
     public final void rule__Uncheck__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:2475:1: ( rule__Uncheck__Group__0__Impl rule__Uncheck__Group__1 )
-            // InternalSeleniumDsl.g:2476:2: rule__Uncheck__Group__0__Impl rule__Uncheck__Group__1
+            // InternalSeleniumDsl.g:2584:1: ( rule__Uncheck__Group__0__Impl rule__Uncheck__Group__1 )
+            // InternalSeleniumDsl.g:2585:2: rule__Uncheck__Group__0__Impl rule__Uncheck__Group__1
             {
-            pushFollow(FOLLOW_34);
+            pushFollow(FOLLOW_32);
             rule__Uncheck__Group__0__Impl();
 
             state._fsp--;
@@ -7458,21 +7750,21 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Uncheck__Group__0__Impl"
-    // InternalSeleniumDsl.g:2483:1: rule__Uncheck__Group__0__Impl : ( () ) ;
+    // InternalSeleniumDsl.g:2592:1: rule__Uncheck__Group__0__Impl : ( () ) ;
     public final void rule__Uncheck__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:2487:1: ( ( () ) )
-            // InternalSeleniumDsl.g:2488:1: ( () )
+            // InternalSeleniumDsl.g:2596:1: ( ( () ) )
+            // InternalSeleniumDsl.g:2597:1: ( () )
             {
-            // InternalSeleniumDsl.g:2488:1: ( () )
-            // InternalSeleniumDsl.g:2489:2: ()
+            // InternalSeleniumDsl.g:2597:1: ( () )
+            // InternalSeleniumDsl.g:2598:2: ()
             {
              before(grammarAccess.getUncheckAccess().getUncheckAction_0()); 
-            // InternalSeleniumDsl.g:2490:2: ()
-            // InternalSeleniumDsl.g:2490:3: 
+            // InternalSeleniumDsl.g:2599:2: ()
+            // InternalSeleniumDsl.g:2599:3: 
             {
             }
 
@@ -7495,16 +7787,16 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Uncheck__Group__1"
-    // InternalSeleniumDsl.g:2498:1: rule__Uncheck__Group__1 : rule__Uncheck__Group__1__Impl rule__Uncheck__Group__2 ;
+    // InternalSeleniumDsl.g:2607:1: rule__Uncheck__Group__1 : rule__Uncheck__Group__1__Impl rule__Uncheck__Group__2 ;
     public final void rule__Uncheck__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:2502:1: ( rule__Uncheck__Group__1__Impl rule__Uncheck__Group__2 )
-            // InternalSeleniumDsl.g:2503:2: rule__Uncheck__Group__1__Impl rule__Uncheck__Group__2
+            // InternalSeleniumDsl.g:2611:1: ( rule__Uncheck__Group__1__Impl rule__Uncheck__Group__2 )
+            // InternalSeleniumDsl.g:2612:2: rule__Uncheck__Group__1__Impl rule__Uncheck__Group__2
             {
-            pushFollow(FOLLOW_35);
+            pushFollow(FOLLOW_33);
             rule__Uncheck__Group__1__Impl();
 
             state._fsp--;
@@ -7533,17 +7825,17 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Uncheck__Group__1__Impl"
-    // InternalSeleniumDsl.g:2510:1: rule__Uncheck__Group__1__Impl : ( 'uncheck' ) ;
+    // InternalSeleniumDsl.g:2619:1: rule__Uncheck__Group__1__Impl : ( 'uncheck' ) ;
     public final void rule__Uncheck__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:2514:1: ( ( 'uncheck' ) )
-            // InternalSeleniumDsl.g:2515:1: ( 'uncheck' )
+            // InternalSeleniumDsl.g:2623:1: ( ( 'uncheck' ) )
+            // InternalSeleniumDsl.g:2624:1: ( 'uncheck' )
             {
-            // InternalSeleniumDsl.g:2515:1: ( 'uncheck' )
-            // InternalSeleniumDsl.g:2516:2: 'uncheck'
+            // InternalSeleniumDsl.g:2624:1: ( 'uncheck' )
+            // InternalSeleniumDsl.g:2625:2: 'uncheck'
             {
              before(grammarAccess.getUncheckAccess().getUncheckKeyword_1()); 
             match(input,45,FOLLOW_2); 
@@ -7570,16 +7862,16 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Uncheck__Group__2"
-    // InternalSeleniumDsl.g:2525:1: rule__Uncheck__Group__2 : rule__Uncheck__Group__2__Impl rule__Uncheck__Group__3 ;
+    // InternalSeleniumDsl.g:2634:1: rule__Uncheck__Group__2 : rule__Uncheck__Group__2__Impl rule__Uncheck__Group__3 ;
     public final void rule__Uncheck__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:2529:1: ( rule__Uncheck__Group__2__Impl rule__Uncheck__Group__3 )
-            // InternalSeleniumDsl.g:2530:2: rule__Uncheck__Group__2__Impl rule__Uncheck__Group__3
+            // InternalSeleniumDsl.g:2638:1: ( rule__Uncheck__Group__2__Impl rule__Uncheck__Group__3 )
+            // InternalSeleniumDsl.g:2639:2: rule__Uncheck__Group__2__Impl rule__Uncheck__Group__3
             {
-            pushFollow(FOLLOW_36);
+            pushFollow(FOLLOW_34);
             rule__Uncheck__Group__2__Impl();
 
             state._fsp--;
@@ -7608,17 +7900,17 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Uncheck__Group__2__Impl"
-    // InternalSeleniumDsl.g:2537:1: rule__Uncheck__Group__2__Impl : ( 'all' ) ;
+    // InternalSeleniumDsl.g:2646:1: rule__Uncheck__Group__2__Impl : ( 'all' ) ;
     public final void rule__Uncheck__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:2541:1: ( ( 'all' ) )
-            // InternalSeleniumDsl.g:2542:1: ( 'all' )
+            // InternalSeleniumDsl.g:2650:1: ( ( 'all' ) )
+            // InternalSeleniumDsl.g:2651:1: ( 'all' )
             {
-            // InternalSeleniumDsl.g:2542:1: ( 'all' )
-            // InternalSeleniumDsl.g:2543:2: 'all'
+            // InternalSeleniumDsl.g:2651:1: ( 'all' )
+            // InternalSeleniumDsl.g:2652:2: 'all'
             {
              before(grammarAccess.getUncheckAccess().getAllKeyword_2()); 
             match(input,46,FOLLOW_2); 
@@ -7645,14 +7937,14 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Uncheck__Group__3"
-    // InternalSeleniumDsl.g:2552:1: rule__Uncheck__Group__3 : rule__Uncheck__Group__3__Impl ;
+    // InternalSeleniumDsl.g:2661:1: rule__Uncheck__Group__3 : rule__Uncheck__Group__3__Impl ;
     public final void rule__Uncheck__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:2556:1: ( rule__Uncheck__Group__3__Impl )
-            // InternalSeleniumDsl.g:2557:2: rule__Uncheck__Group__3__Impl
+            // InternalSeleniumDsl.g:2665:1: ( rule__Uncheck__Group__3__Impl )
+            // InternalSeleniumDsl.g:2666:2: rule__Uncheck__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Uncheck__Group__3__Impl();
@@ -7678,20 +7970,20 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Uncheck__Group__3__Impl"
-    // InternalSeleniumDsl.g:2563:1: rule__Uncheck__Group__3__Impl : ( 'checkboxes' ) ;
+    // InternalSeleniumDsl.g:2672:1: rule__Uncheck__Group__3__Impl : ( 'checkboxes' ) ;
     public final void rule__Uncheck__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:2567:1: ( ( 'checkboxes' ) )
-            // InternalSeleniumDsl.g:2568:1: ( 'checkboxes' )
+            // InternalSeleniumDsl.g:2676:1: ( ( 'checkboxes' ) )
+            // InternalSeleniumDsl.g:2677:1: ( 'checkboxes' )
             {
-            // InternalSeleniumDsl.g:2568:1: ( 'checkboxes' )
-            // InternalSeleniumDsl.g:2569:2: 'checkboxes'
+            // InternalSeleniumDsl.g:2677:1: ( 'checkboxes' )
+            // InternalSeleniumDsl.g:2678:2: 'checkboxes'
             {
              before(grammarAccess.getUncheckAccess().getCheckboxesKeyword_3()); 
-            match(input,47,FOLLOW_2); 
+            match(input,13,FOLLOW_2); 
              after(grammarAccess.getUncheckAccess().getCheckboxesKeyword_3()); 
 
             }
@@ -7715,16 +8007,16 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Combobox__Group__0"
-    // InternalSeleniumDsl.g:2579:1: rule__Combobox__Group__0 : rule__Combobox__Group__0__Impl rule__Combobox__Group__1 ;
+    // InternalSeleniumDsl.g:2688:1: rule__Combobox__Group__0 : rule__Combobox__Group__0__Impl rule__Combobox__Group__1 ;
     public final void rule__Combobox__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:2583:1: ( rule__Combobox__Group__0__Impl rule__Combobox__Group__1 )
-            // InternalSeleniumDsl.g:2584:2: rule__Combobox__Group__0__Impl rule__Combobox__Group__1
+            // InternalSeleniumDsl.g:2692:1: ( rule__Combobox__Group__0__Impl rule__Combobox__Group__1 )
+            // InternalSeleniumDsl.g:2693:2: rule__Combobox__Group__0__Impl rule__Combobox__Group__1
             {
-            pushFollow(FOLLOW_13);
+            pushFollow(FOLLOW_17);
             rule__Combobox__Group__0__Impl();
 
             state._fsp--;
@@ -7753,20 +8045,20 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Combobox__Group__0__Impl"
-    // InternalSeleniumDsl.g:2591:1: rule__Combobox__Group__0__Impl : ( 'choose' ) ;
+    // InternalSeleniumDsl.g:2700:1: rule__Combobox__Group__0__Impl : ( 'choose' ) ;
     public final void rule__Combobox__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:2595:1: ( ( 'choose' ) )
-            // InternalSeleniumDsl.g:2596:1: ( 'choose' )
+            // InternalSeleniumDsl.g:2704:1: ( ( 'choose' ) )
+            // InternalSeleniumDsl.g:2705:1: ( 'choose' )
             {
-            // InternalSeleniumDsl.g:2596:1: ( 'choose' )
-            // InternalSeleniumDsl.g:2597:2: 'choose'
+            // InternalSeleniumDsl.g:2705:1: ( 'choose' )
+            // InternalSeleniumDsl.g:2706:2: 'choose'
             {
              before(grammarAccess.getComboboxAccess().getChooseKeyword_0()); 
-            match(input,48,FOLLOW_2); 
+            match(input,47,FOLLOW_2); 
              after(grammarAccess.getComboboxAccess().getChooseKeyword_0()); 
 
             }
@@ -7790,16 +8082,16 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Combobox__Group__1"
-    // InternalSeleniumDsl.g:2606:1: rule__Combobox__Group__1 : rule__Combobox__Group__1__Impl rule__Combobox__Group__2 ;
+    // InternalSeleniumDsl.g:2715:1: rule__Combobox__Group__1 : rule__Combobox__Group__1__Impl rule__Combobox__Group__2 ;
     public final void rule__Combobox__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:2610:1: ( rule__Combobox__Group__1__Impl rule__Combobox__Group__2 )
-            // InternalSeleniumDsl.g:2611:2: rule__Combobox__Group__1__Impl rule__Combobox__Group__2
+            // InternalSeleniumDsl.g:2719:1: ( rule__Combobox__Group__1__Impl rule__Combobox__Group__2 )
+            // InternalSeleniumDsl.g:2720:2: rule__Combobox__Group__1__Impl rule__Combobox__Group__2
             {
-            pushFollow(FOLLOW_37);
+            pushFollow(FOLLOW_15);
             rule__Combobox__Group__1__Impl();
 
             state._fsp--;
@@ -7828,21 +8120,31 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Combobox__Group__1__Impl"
-    // InternalSeleniumDsl.g:2618:1: rule__Combobox__Group__1__Impl : ( 'the' ) ;
+    // InternalSeleniumDsl.g:2727:1: rule__Combobox__Group__1__Impl : ( ( rule__Combobox__ElementsAssignment_1 ) ) ;
     public final void rule__Combobox__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:2622:1: ( ( 'the' ) )
-            // InternalSeleniumDsl.g:2623:1: ( 'the' )
+            // InternalSeleniumDsl.g:2731:1: ( ( ( rule__Combobox__ElementsAssignment_1 ) ) )
+            // InternalSeleniumDsl.g:2732:1: ( ( rule__Combobox__ElementsAssignment_1 ) )
             {
-            // InternalSeleniumDsl.g:2623:1: ( 'the' )
-            // InternalSeleniumDsl.g:2624:2: 'the'
+            // InternalSeleniumDsl.g:2732:1: ( ( rule__Combobox__ElementsAssignment_1 ) )
+            // InternalSeleniumDsl.g:2733:2: ( rule__Combobox__ElementsAssignment_1 )
             {
-             before(grammarAccess.getComboboxAccess().getTheKeyword_1()); 
-            match(input,27,FOLLOW_2); 
-             after(grammarAccess.getComboboxAccess().getTheKeyword_1()); 
+             before(grammarAccess.getComboboxAccess().getElementsAssignment_1()); 
+            // InternalSeleniumDsl.g:2734:2: ( rule__Combobox__ElementsAssignment_1 )
+            // InternalSeleniumDsl.g:2734:3: rule__Combobox__ElementsAssignment_1
+            {
+            pushFollow(FOLLOW_2);
+            rule__Combobox__ElementsAssignment_1();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getComboboxAccess().getElementsAssignment_1()); 
 
             }
 
@@ -7865,16 +8167,16 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Combobox__Group__2"
-    // InternalSeleniumDsl.g:2633:1: rule__Combobox__Group__2 : rule__Combobox__Group__2__Impl rule__Combobox__Group__3 ;
+    // InternalSeleniumDsl.g:2742:1: rule__Combobox__Group__2 : rule__Combobox__Group__2__Impl rule__Combobox__Group__3 ;
     public final void rule__Combobox__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:2637:1: ( rule__Combobox__Group__2__Impl rule__Combobox__Group__3 )
-            // InternalSeleniumDsl.g:2638:2: rule__Combobox__Group__2__Impl rule__Combobox__Group__3
+            // InternalSeleniumDsl.g:2746:1: ( rule__Combobox__Group__2__Impl rule__Combobox__Group__3 )
+            // InternalSeleniumDsl.g:2747:2: rule__Combobox__Group__2__Impl rule__Combobox__Group__3
             {
-            pushFollow(FOLLOW_15);
+            pushFollow(FOLLOW_35);
             rule__Combobox__Group__2__Impl();
 
             state._fsp--;
@@ -7903,21 +8205,31 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Combobox__Group__2__Impl"
-    // InternalSeleniumDsl.g:2645:1: rule__Combobox__Group__2__Impl : ( 'option' ) ;
+    // InternalSeleniumDsl.g:2754:1: rule__Combobox__Group__2__Impl : ( ( rule__Combobox__OptionAssignment_2 ) ) ;
     public final void rule__Combobox__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:2649:1: ( ( 'option' ) )
-            // InternalSeleniumDsl.g:2650:1: ( 'option' )
+            // InternalSeleniumDsl.g:2758:1: ( ( ( rule__Combobox__OptionAssignment_2 ) ) )
+            // InternalSeleniumDsl.g:2759:1: ( ( rule__Combobox__OptionAssignment_2 ) )
             {
-            // InternalSeleniumDsl.g:2650:1: ( 'option' )
-            // InternalSeleniumDsl.g:2651:2: 'option'
+            // InternalSeleniumDsl.g:2759:1: ( ( rule__Combobox__OptionAssignment_2 ) )
+            // InternalSeleniumDsl.g:2760:2: ( rule__Combobox__OptionAssignment_2 )
             {
-             before(grammarAccess.getComboboxAccess().getOptionKeyword_2()); 
-            match(input,49,FOLLOW_2); 
-             after(grammarAccess.getComboboxAccess().getOptionKeyword_2()); 
+             before(grammarAccess.getComboboxAccess().getOptionAssignment_2()); 
+            // InternalSeleniumDsl.g:2761:2: ( rule__Combobox__OptionAssignment_2 )
+            // InternalSeleniumDsl.g:2761:3: rule__Combobox__OptionAssignment_2
+            {
+            pushFollow(FOLLOW_2);
+            rule__Combobox__OptionAssignment_2();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getComboboxAccess().getOptionAssignment_2()); 
 
             }
 
@@ -7940,16 +8252,16 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Combobox__Group__3"
-    // InternalSeleniumDsl.g:2660:1: rule__Combobox__Group__3 : rule__Combobox__Group__3__Impl rule__Combobox__Group__4 ;
+    // InternalSeleniumDsl.g:2769:1: rule__Combobox__Group__3 : rule__Combobox__Group__3__Impl rule__Combobox__Group__4 ;
     public final void rule__Combobox__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:2664:1: ( rule__Combobox__Group__3__Impl rule__Combobox__Group__4 )
-            // InternalSeleniumDsl.g:2665:2: rule__Combobox__Group__3__Impl rule__Combobox__Group__4
+            // InternalSeleniumDsl.g:2773:1: ( rule__Combobox__Group__3__Impl rule__Combobox__Group__4 )
+            // InternalSeleniumDsl.g:2774:2: rule__Combobox__Group__3__Impl rule__Combobox__Group__4
             {
-            pushFollow(FOLLOW_38);
+            pushFollow(FOLLOW_17);
             rule__Combobox__Group__3__Impl();
 
             state._fsp--;
@@ -7978,31 +8290,21 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Combobox__Group__3__Impl"
-    // InternalSeleniumDsl.g:2672:1: rule__Combobox__Group__3__Impl : ( ( rule__Combobox__OptionAssignment_3 ) ) ;
+    // InternalSeleniumDsl.g:2781:1: rule__Combobox__Group__3__Impl : ( 'in' ) ;
     public final void rule__Combobox__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:2676:1: ( ( ( rule__Combobox__OptionAssignment_3 ) ) )
-            // InternalSeleniumDsl.g:2677:1: ( ( rule__Combobox__OptionAssignment_3 ) )
+            // InternalSeleniumDsl.g:2785:1: ( ( 'in' ) )
+            // InternalSeleniumDsl.g:2786:1: ( 'in' )
             {
-            // InternalSeleniumDsl.g:2677:1: ( ( rule__Combobox__OptionAssignment_3 ) )
-            // InternalSeleniumDsl.g:2678:2: ( rule__Combobox__OptionAssignment_3 )
+            // InternalSeleniumDsl.g:2786:1: ( 'in' )
+            // InternalSeleniumDsl.g:2787:2: 'in'
             {
-             before(grammarAccess.getComboboxAccess().getOptionAssignment_3()); 
-            // InternalSeleniumDsl.g:2679:2: ( rule__Combobox__OptionAssignment_3 )
-            // InternalSeleniumDsl.g:2679:3: rule__Combobox__OptionAssignment_3
-            {
-            pushFollow(FOLLOW_2);
-            rule__Combobox__OptionAssignment_3();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getComboboxAccess().getOptionAssignment_3()); 
+             before(grammarAccess.getComboboxAccess().getInKeyword_3()); 
+            match(input,48,FOLLOW_2); 
+             after(grammarAccess.getComboboxAccess().getInKeyword_3()); 
 
             }
 
@@ -8025,16 +8327,16 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Combobox__Group__4"
-    // InternalSeleniumDsl.g:2687:1: rule__Combobox__Group__4 : rule__Combobox__Group__4__Impl rule__Combobox__Group__5 ;
+    // InternalSeleniumDsl.g:2796:1: rule__Combobox__Group__4 : rule__Combobox__Group__4__Impl rule__Combobox__Group__5 ;
     public final void rule__Combobox__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:2691:1: ( rule__Combobox__Group__4__Impl rule__Combobox__Group__5 )
-            // InternalSeleniumDsl.g:2692:2: rule__Combobox__Group__4__Impl rule__Combobox__Group__5
+            // InternalSeleniumDsl.g:2800:1: ( rule__Combobox__Group__4__Impl rule__Combobox__Group__5 )
+            // InternalSeleniumDsl.g:2801:2: rule__Combobox__Group__4__Impl rule__Combobox__Group__5
             {
-            pushFollow(FOLLOW_13);
+            pushFollow(FOLLOW_15);
             rule__Combobox__Group__4__Impl();
 
             state._fsp--;
@@ -8063,21 +8365,31 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Combobox__Group__4__Impl"
-    // InternalSeleniumDsl.g:2699:1: rule__Combobox__Group__4__Impl : ( 'in' ) ;
+    // InternalSeleniumDsl.g:2808:1: rule__Combobox__Group__4__Impl : ( ( rule__Combobox__ElementsAssignment_4 ) ) ;
     public final void rule__Combobox__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:2703:1: ( ( 'in' ) )
-            // InternalSeleniumDsl.g:2704:1: ( 'in' )
+            // InternalSeleniumDsl.g:2812:1: ( ( ( rule__Combobox__ElementsAssignment_4 ) ) )
+            // InternalSeleniumDsl.g:2813:1: ( ( rule__Combobox__ElementsAssignment_4 ) )
             {
-            // InternalSeleniumDsl.g:2704:1: ( 'in' )
-            // InternalSeleniumDsl.g:2705:2: 'in'
+            // InternalSeleniumDsl.g:2813:1: ( ( rule__Combobox__ElementsAssignment_4 ) )
+            // InternalSeleniumDsl.g:2814:2: ( rule__Combobox__ElementsAssignment_4 )
             {
-             before(grammarAccess.getComboboxAccess().getInKeyword_4()); 
-            match(input,50,FOLLOW_2); 
-             after(grammarAccess.getComboboxAccess().getInKeyword_4()); 
+             before(grammarAccess.getComboboxAccess().getElementsAssignment_4()); 
+            // InternalSeleniumDsl.g:2815:2: ( rule__Combobox__ElementsAssignment_4 )
+            // InternalSeleniumDsl.g:2815:3: rule__Combobox__ElementsAssignment_4
+            {
+            pushFollow(FOLLOW_2);
+            rule__Combobox__ElementsAssignment_4();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getComboboxAccess().getElementsAssignment_4()); 
 
             }
 
@@ -8100,22 +8412,17 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Combobox__Group__5"
-    // InternalSeleniumDsl.g:2714:1: rule__Combobox__Group__5 : rule__Combobox__Group__5__Impl rule__Combobox__Group__6 ;
+    // InternalSeleniumDsl.g:2823:1: rule__Combobox__Group__5 : rule__Combobox__Group__5__Impl ;
     public final void rule__Combobox__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:2718:1: ( rule__Combobox__Group__5__Impl rule__Combobox__Group__6 )
-            // InternalSeleniumDsl.g:2719:2: rule__Combobox__Group__5__Impl rule__Combobox__Group__6
+            // InternalSeleniumDsl.g:2827:1: ( rule__Combobox__Group__5__Impl )
+            // InternalSeleniumDsl.g:2828:2: rule__Combobox__Group__5__Impl
             {
-            pushFollow(FOLLOW_39);
-            rule__Combobox__Group__5__Impl();
-
-            state._fsp--;
-
             pushFollow(FOLLOW_2);
-            rule__Combobox__Group__6();
+            rule__Combobox__Group__5__Impl();
 
             state._fsp--;
 
@@ -8138,21 +8445,31 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Combobox__Group__5__Impl"
-    // InternalSeleniumDsl.g:2726:1: rule__Combobox__Group__5__Impl : ( 'the' ) ;
+    // InternalSeleniumDsl.g:2834:1: rule__Combobox__Group__5__Impl : ( ( rule__Combobox__LabelAssignment_5 ) ) ;
     public final void rule__Combobox__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:2730:1: ( ( 'the' ) )
-            // InternalSeleniumDsl.g:2731:1: ( 'the' )
+            // InternalSeleniumDsl.g:2838:1: ( ( ( rule__Combobox__LabelAssignment_5 ) ) )
+            // InternalSeleniumDsl.g:2839:1: ( ( rule__Combobox__LabelAssignment_5 ) )
             {
-            // InternalSeleniumDsl.g:2731:1: ( 'the' )
-            // InternalSeleniumDsl.g:2732:2: 'the'
+            // InternalSeleniumDsl.g:2839:1: ( ( rule__Combobox__LabelAssignment_5 ) )
+            // InternalSeleniumDsl.g:2840:2: ( rule__Combobox__LabelAssignment_5 )
             {
-             before(grammarAccess.getComboboxAccess().getTheKeyword_5()); 
-            match(input,27,FOLLOW_2); 
-             after(grammarAccess.getComboboxAccess().getTheKeyword_5()); 
+             before(grammarAccess.getComboboxAccess().getLabelAssignment_5()); 
+            // InternalSeleniumDsl.g:2841:2: ( rule__Combobox__LabelAssignment_5 )
+            // InternalSeleniumDsl.g:2841:3: rule__Combobox__LabelAssignment_5
+            {
+            pushFollow(FOLLOW_2);
+            rule__Combobox__LabelAssignment_5();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getComboboxAccess().getLabelAssignment_5()); 
 
             }
 
@@ -8174,318 +8491,18 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__Combobox__Group__5__Impl"
 
 
-    // $ANTLR start "rule__Combobox__Group__6"
-    // InternalSeleniumDsl.g:2741:1: rule__Combobox__Group__6 : rule__Combobox__Group__6__Impl rule__Combobox__Group__7 ;
-    public final void rule__Combobox__Group__6() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSeleniumDsl.g:2745:1: ( rule__Combobox__Group__6__Impl rule__Combobox__Group__7 )
-            // InternalSeleniumDsl.g:2746:2: rule__Combobox__Group__6__Impl rule__Combobox__Group__7
-            {
-            pushFollow(FOLLOW_15);
-            rule__Combobox__Group__6__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__Combobox__Group__7();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Combobox__Group__6"
-
-
-    // $ANTLR start "rule__Combobox__Group__6__Impl"
-    // InternalSeleniumDsl.g:2753:1: rule__Combobox__Group__6__Impl : ( 'combobox' ) ;
-    public final void rule__Combobox__Group__6__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSeleniumDsl.g:2757:1: ( ( 'combobox' ) )
-            // InternalSeleniumDsl.g:2758:1: ( 'combobox' )
-            {
-            // InternalSeleniumDsl.g:2758:1: ( 'combobox' )
-            // InternalSeleniumDsl.g:2759:2: 'combobox'
-            {
-             before(grammarAccess.getComboboxAccess().getComboboxKeyword_6()); 
-            match(input,51,FOLLOW_2); 
-             after(grammarAccess.getComboboxAccess().getComboboxKeyword_6()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Combobox__Group__6__Impl"
-
-
-    // $ANTLR start "rule__Combobox__Group__7"
-    // InternalSeleniumDsl.g:2768:1: rule__Combobox__Group__7 : rule__Combobox__Group__7__Impl ;
-    public final void rule__Combobox__Group__7() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSeleniumDsl.g:2772:1: ( rule__Combobox__Group__7__Impl )
-            // InternalSeleniumDsl.g:2773:2: rule__Combobox__Group__7__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__Combobox__Group__7__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Combobox__Group__7"
-
-
-    // $ANTLR start "rule__Combobox__Group__7__Impl"
-    // InternalSeleniumDsl.g:2779:1: rule__Combobox__Group__7__Impl : ( ( rule__Combobox__LabelAssignment_7 ) ) ;
-    public final void rule__Combobox__Group__7__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSeleniumDsl.g:2783:1: ( ( ( rule__Combobox__LabelAssignment_7 ) ) )
-            // InternalSeleniumDsl.g:2784:1: ( ( rule__Combobox__LabelAssignment_7 ) )
-            {
-            // InternalSeleniumDsl.g:2784:1: ( ( rule__Combobox__LabelAssignment_7 ) )
-            // InternalSeleniumDsl.g:2785:2: ( rule__Combobox__LabelAssignment_7 )
-            {
-             before(grammarAccess.getComboboxAccess().getLabelAssignment_7()); 
-            // InternalSeleniumDsl.g:2786:2: ( rule__Combobox__LabelAssignment_7 )
-            // InternalSeleniumDsl.g:2786:3: rule__Combobox__LabelAssignment_7
-            {
-            pushFollow(FOLLOW_2);
-            rule__Combobox__LabelAssignment_7();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getComboboxAccess().getLabelAssignment_7()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Combobox__Group__7__Impl"
-
-
-    // $ANTLR start "rule__DOMELEMENT__Group_4__0"
-    // InternalSeleniumDsl.g:2795:1: rule__DOMELEMENT__Group_4__0 : rule__DOMELEMENT__Group_4__0__Impl rule__DOMELEMENT__Group_4__1 ;
-    public final void rule__DOMELEMENT__Group_4__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSeleniumDsl.g:2799:1: ( rule__DOMELEMENT__Group_4__0__Impl rule__DOMELEMENT__Group_4__1 )
-            // InternalSeleniumDsl.g:2800:2: rule__DOMELEMENT__Group_4__0__Impl rule__DOMELEMENT__Group_4__1
-            {
-            pushFollow(FOLLOW_31);
-            rule__DOMELEMENT__Group_4__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__DOMELEMENT__Group_4__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__DOMELEMENT__Group_4__0"
-
-
-    // $ANTLR start "rule__DOMELEMENT__Group_4__0__Impl"
-    // InternalSeleniumDsl.g:2807:1: rule__DOMELEMENT__Group_4__0__Impl : ( 'text' ) ;
-    public final void rule__DOMELEMENT__Group_4__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSeleniumDsl.g:2811:1: ( ( 'text' ) )
-            // InternalSeleniumDsl.g:2812:1: ( 'text' )
-            {
-            // InternalSeleniumDsl.g:2812:1: ( 'text' )
-            // InternalSeleniumDsl.g:2813:2: 'text'
-            {
-             before(grammarAccess.getDOMELEMENTAccess().getTextKeyword_4_0()); 
-            match(input,30,FOLLOW_2); 
-             after(grammarAccess.getDOMELEMENTAccess().getTextKeyword_4_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__DOMELEMENT__Group_4__0__Impl"
-
-
-    // $ANTLR start "rule__DOMELEMENT__Group_4__1"
-    // InternalSeleniumDsl.g:2822:1: rule__DOMELEMENT__Group_4__1 : rule__DOMELEMENT__Group_4__1__Impl ;
-    public final void rule__DOMELEMENT__Group_4__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSeleniumDsl.g:2826:1: ( rule__DOMELEMENT__Group_4__1__Impl )
-            // InternalSeleniumDsl.g:2827:2: rule__DOMELEMENT__Group_4__1__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__DOMELEMENT__Group_4__1__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__DOMELEMENT__Group_4__1"
-
-
-    // $ANTLR start "rule__DOMELEMENT__Group_4__1__Impl"
-    // InternalSeleniumDsl.g:2833:1: rule__DOMELEMENT__Group_4__1__Impl : ( 'link' ) ;
-    public final void rule__DOMELEMENT__Group_4__1__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSeleniumDsl.g:2837:1: ( ( 'link' ) )
-            // InternalSeleniumDsl.g:2838:1: ( 'link' )
-            {
-            // InternalSeleniumDsl.g:2838:1: ( 'link' )
-            // InternalSeleniumDsl.g:2839:2: 'link'
-            {
-             before(grammarAccess.getDOMELEMENTAccess().getLinkKeyword_4_1()); 
-            match(input,14,FOLLOW_2); 
-             after(grammarAccess.getDOMELEMENTAccess().getLinkKeyword_4_1()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__DOMELEMENT__Group_4__1__Impl"
-
-
     // $ANTLR start "rule__BrowserDsl__CommandsAssignment"
-    // InternalSeleniumDsl.g:2849:1: rule__BrowserDsl__CommandsAssignment : ( ruleCommand ) ;
+    // InternalSeleniumDsl.g:2850:1: rule__BrowserDsl__CommandsAssignment : ( ruleCommand ) ;
     public final void rule__BrowserDsl__CommandsAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:2853:1: ( ( ruleCommand ) )
-            // InternalSeleniumDsl.g:2854:2: ( ruleCommand )
+            // InternalSeleniumDsl.g:2854:1: ( ( ruleCommand ) )
+            // InternalSeleniumDsl.g:2855:2: ( ruleCommand )
             {
-            // InternalSeleniumDsl.g:2854:2: ( ruleCommand )
-            // InternalSeleniumDsl.g:2855:3: ruleCommand
+            // InternalSeleniumDsl.g:2855:2: ( ruleCommand )
+            // InternalSeleniumDsl.g:2856:3: ruleCommand
             {
              before(grammarAccess.getBrowserDslAccess().getCommandsCommandParserRuleCall_0()); 
             pushFollow(FOLLOW_2);
@@ -8515,26 +8532,26 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__BrowserDsl__CommandsAssignment"
 
 
-    // $ANTLR start "rule__GoTo__UrlAssignment_3_0"
-    // InternalSeleniumDsl.g:2864:1: rule__GoTo__UrlAssignment_3_0 : ( ruleDynamicURL ) ;
-    public final void rule__GoTo__UrlAssignment_3_0() throws RecognitionException {
+    // $ANTLR start "rule__GoTo__UrlAssignment_3"
+    // InternalSeleniumDsl.g:2865:1: rule__GoTo__UrlAssignment_3 : ( ruleDynamicURL ) ;
+    public final void rule__GoTo__UrlAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:2868:1: ( ( ruleDynamicURL ) )
-            // InternalSeleniumDsl.g:2869:2: ( ruleDynamicURL )
+            // InternalSeleniumDsl.g:2869:1: ( ( ruleDynamicURL ) )
+            // InternalSeleniumDsl.g:2870:2: ( ruleDynamicURL )
             {
-            // InternalSeleniumDsl.g:2869:2: ( ruleDynamicURL )
-            // InternalSeleniumDsl.g:2870:3: ruleDynamicURL
+            // InternalSeleniumDsl.g:2870:2: ( ruleDynamicURL )
+            // InternalSeleniumDsl.g:2871:3: ruleDynamicURL
             {
-             before(grammarAccess.getGoToAccess().getUrlDynamicURLParserRuleCall_3_0_0()); 
+             before(grammarAccess.getGoToAccess().getUrlDynamicURLParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
             ruleDynamicURL();
 
             state._fsp--;
 
-             after(grammarAccess.getGoToAccess().getUrlDynamicURLParserRuleCall_3_0_0()); 
+             after(grammarAccess.getGoToAccess().getUrlDynamicURLParserRuleCall_3_0()); 
 
             }
 
@@ -8553,21 +8570,21 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__GoTo__UrlAssignment_3_0"
+    // $ANTLR end "rule__GoTo__UrlAssignment_3"
 
 
     // $ANTLR start "rule__Click__LinkTextAssignment_4_0_1"
-    // InternalSeleniumDsl.g:2879:1: rule__Click__LinkTextAssignment_4_0_1 : ( RULE_STRING ) ;
+    // InternalSeleniumDsl.g:2880:1: rule__Click__LinkTextAssignment_4_0_1 : ( RULE_STRING ) ;
     public final void rule__Click__LinkTextAssignment_4_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:2883:1: ( ( RULE_STRING ) )
-            // InternalSeleniumDsl.g:2884:2: ( RULE_STRING )
+            // InternalSeleniumDsl.g:2884:1: ( ( RULE_STRING ) )
+            // InternalSeleniumDsl.g:2885:2: ( RULE_STRING )
             {
-            // InternalSeleniumDsl.g:2884:2: ( RULE_STRING )
-            // InternalSeleniumDsl.g:2885:3: RULE_STRING
+            // InternalSeleniumDsl.g:2885:2: ( RULE_STRING )
+            // InternalSeleniumDsl.g:2886:3: RULE_STRING
             {
              before(grammarAccess.getClickAccess().getLinkTextSTRINGTerminalRuleCall_4_0_1_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -8594,17 +8611,17 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Click__ButtonTextAssignment_4_1_1"
-    // InternalSeleniumDsl.g:2894:1: rule__Click__ButtonTextAssignment_4_1_1 : ( RULE_STRING ) ;
+    // InternalSeleniumDsl.g:2895:1: rule__Click__ButtonTextAssignment_4_1_1 : ( RULE_STRING ) ;
     public final void rule__Click__ButtonTextAssignment_4_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:2898:1: ( ( RULE_STRING ) )
-            // InternalSeleniumDsl.g:2899:2: ( RULE_STRING )
+            // InternalSeleniumDsl.g:2899:1: ( ( RULE_STRING ) )
+            // InternalSeleniumDsl.g:2900:2: ( RULE_STRING )
             {
-            // InternalSeleniumDsl.g:2899:2: ( RULE_STRING )
-            // InternalSeleniumDsl.g:2900:3: RULE_STRING
+            // InternalSeleniumDsl.g:2900:2: ( RULE_STRING )
+            // InternalSeleniumDsl.g:2901:3: RULE_STRING
             {
              before(grammarAccess.getClickAccess().getButtonTextSTRINGTerminalRuleCall_4_1_1_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -8631,17 +8648,17 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Click__AltAssignment_4_2_1"
-    // InternalSeleniumDsl.g:2909:1: rule__Click__AltAssignment_4_2_1 : ( RULE_STRING ) ;
+    // InternalSeleniumDsl.g:2910:1: rule__Click__AltAssignment_4_2_1 : ( RULE_STRING ) ;
     public final void rule__Click__AltAssignment_4_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:2913:1: ( ( RULE_STRING ) )
-            // InternalSeleniumDsl.g:2914:2: ( RULE_STRING )
+            // InternalSeleniumDsl.g:2914:1: ( ( RULE_STRING ) )
+            // InternalSeleniumDsl.g:2915:2: ( RULE_STRING )
             {
-            // InternalSeleniumDsl.g:2914:2: ( RULE_STRING )
-            // InternalSeleniumDsl.g:2915:3: RULE_STRING
+            // InternalSeleniumDsl.g:2915:2: ( RULE_STRING )
+            // InternalSeleniumDsl.g:2916:3: RULE_STRING
             {
              before(grammarAccess.getClickAccess().getAltSTRINGTerminalRuleCall_4_2_1_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -8668,25 +8685,25 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Click__VariableAssignment_4_3_1"
-    // InternalSeleniumDsl.g:2924:1: rule__Click__VariableAssignment_4_3_1 : ( ruleDOMELEMENT ) ;
+    // InternalSeleniumDsl.g:2925:1: rule__Click__VariableAssignment_4_3_1 : ( ruleElementType ) ;
     public final void rule__Click__VariableAssignment_4_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:2928:1: ( ( ruleDOMELEMENT ) )
-            // InternalSeleniumDsl.g:2929:2: ( ruleDOMELEMENT )
+            // InternalSeleniumDsl.g:2929:1: ( ( ruleElementType ) )
+            // InternalSeleniumDsl.g:2930:2: ( ruleElementType )
             {
-            // InternalSeleniumDsl.g:2929:2: ( ruleDOMELEMENT )
-            // InternalSeleniumDsl.g:2930:3: ruleDOMELEMENT
+            // InternalSeleniumDsl.g:2930:2: ( ruleElementType )
+            // InternalSeleniumDsl.g:2931:3: ruleElementType
             {
-             before(grammarAccess.getClickAccess().getVariableDOMELEMENTParserRuleCall_4_3_1_0()); 
+             before(grammarAccess.getClickAccess().getVariableElementTypeParserRuleCall_4_3_1_0()); 
             pushFollow(FOLLOW_2);
-            ruleDOMELEMENT();
+            ruleElementType();
 
             state._fsp--;
 
-             after(grammarAccess.getClickAccess().getVariableDOMELEMENTParserRuleCall_4_3_1_0()); 
+             after(grammarAccess.getClickAccess().getVariableElementTypeParserRuleCall_4_3_1_0()); 
 
             }
 
@@ -8708,100 +8725,26 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__Click__VariableAssignment_4_3_1"
 
 
-    // $ANTLR start "rule__Fill__FieldNameAssignment_4"
-    // InternalSeleniumDsl.g:2939:1: rule__Fill__FieldNameAssignment_4 : ( RULE_STRING ) ;
-    public final void rule__Fill__FieldNameAssignment_4() throws RecognitionException {
+    // $ANTLR start "rule__Fill__ElementAssignment_1"
+    // InternalSeleniumDsl.g:2940:1: rule__Fill__ElementAssignment_1 : ( ruleSelector ) ;
+    public final void rule__Fill__ElementAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:2943:1: ( ( RULE_STRING ) )
-            // InternalSeleniumDsl.g:2944:2: ( RULE_STRING )
+            // InternalSeleniumDsl.g:2944:1: ( ( ruleSelector ) )
+            // InternalSeleniumDsl.g:2945:2: ( ruleSelector )
             {
-            // InternalSeleniumDsl.g:2944:2: ( RULE_STRING )
-            // InternalSeleniumDsl.g:2945:3: RULE_STRING
+            // InternalSeleniumDsl.g:2945:2: ( ruleSelector )
+            // InternalSeleniumDsl.g:2946:3: ruleSelector
             {
-             before(grammarAccess.getFillAccess().getFieldNameSTRINGTerminalRuleCall_4_0()); 
-            match(input,RULE_STRING,FOLLOW_2); 
-             after(grammarAccess.getFillAccess().getFieldNameSTRINGTerminalRuleCall_4_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Fill__FieldNameAssignment_4"
-
-
-    // $ANTLR start "rule__Fill__TextToFillAssignment_7_0_1"
-    // InternalSeleniumDsl.g:2954:1: rule__Fill__TextToFillAssignment_7_0_1 : ( RULE_STRING ) ;
-    public final void rule__Fill__TextToFillAssignment_7_0_1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSeleniumDsl.g:2958:1: ( ( RULE_STRING ) )
-            // InternalSeleniumDsl.g:2959:2: ( RULE_STRING )
-            {
-            // InternalSeleniumDsl.g:2959:2: ( RULE_STRING )
-            // InternalSeleniumDsl.g:2960:3: RULE_STRING
-            {
-             before(grammarAccess.getFillAccess().getTextToFillSTRINGTerminalRuleCall_7_0_1_0()); 
-            match(input,RULE_STRING,FOLLOW_2); 
-             after(grammarAccess.getFillAccess().getTextToFillSTRINGTerminalRuleCall_7_0_1_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Fill__TextToFillAssignment_7_0_1"
-
-
-    // $ANTLR start "rule__Fill__VariableAssignment_7_1_1"
-    // InternalSeleniumDsl.g:2969:1: rule__Fill__VariableAssignment_7_1_1 : ( ruleDOMELEMENT ) ;
-    public final void rule__Fill__VariableAssignment_7_1_1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSeleniumDsl.g:2973:1: ( ( ruleDOMELEMENT ) )
-            // InternalSeleniumDsl.g:2974:2: ( ruleDOMELEMENT )
-            {
-            // InternalSeleniumDsl.g:2974:2: ( ruleDOMELEMENT )
-            // InternalSeleniumDsl.g:2975:3: ruleDOMELEMENT
-            {
-             before(grammarAccess.getFillAccess().getVariableDOMELEMENTParserRuleCall_7_1_1_0()); 
+             before(grammarAccess.getFillAccess().getElementSelectorParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
-            ruleDOMELEMENT();
+            ruleSelector();
 
             state._fsp--;
 
-             after(grammarAccess.getFillAccess().getVariableDOMELEMENTParserRuleCall_7_1_1_0()); 
+             after(grammarAccess.getFillAccess().getElementSelectorParserRuleCall_1_0()); 
 
             }
 
@@ -8820,25 +8763,25 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Fill__VariableAssignment_7_1_1"
+    // $ANTLR end "rule__Fill__ElementAssignment_1"
 
 
-    // $ANTLR start "rule__Select__ValuesAssignment_5"
-    // InternalSeleniumDsl.g:2984:1: rule__Select__ValuesAssignment_5 : ( RULE_STRING ) ;
-    public final void rule__Select__ValuesAssignment_5() throws RecognitionException {
+    // $ANTLR start "rule__Fill__FieldNameAssignment_2"
+    // InternalSeleniumDsl.g:2955:1: rule__Fill__FieldNameAssignment_2 : ( RULE_STRING ) ;
+    public final void rule__Fill__FieldNameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:2988:1: ( ( RULE_STRING ) )
-            // InternalSeleniumDsl.g:2989:2: ( RULE_STRING )
+            // InternalSeleniumDsl.g:2959:1: ( ( RULE_STRING ) )
+            // InternalSeleniumDsl.g:2960:2: ( RULE_STRING )
             {
-            // InternalSeleniumDsl.g:2989:2: ( RULE_STRING )
-            // InternalSeleniumDsl.g:2990:3: RULE_STRING
+            // InternalSeleniumDsl.g:2960:2: ( RULE_STRING )
+            // InternalSeleniumDsl.g:2961:3: RULE_STRING
             {
-             before(grammarAccess.getSelectAccess().getValuesSTRINGTerminalRuleCall_5_0()); 
+             before(grammarAccess.getFillAccess().getFieldNameSTRINGTerminalRuleCall_2_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
-             after(grammarAccess.getSelectAccess().getValuesSTRINGTerminalRuleCall_5_0()); 
+             after(grammarAccess.getFillAccess().getFieldNameSTRINGTerminalRuleCall_2_0()); 
 
             }
 
@@ -8857,25 +8800,25 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Select__ValuesAssignment_5"
+    // $ANTLR end "rule__Fill__FieldNameAssignment_2"
 
 
-    // $ANTLR start "rule__Select__ValuesAssignment_6_1"
-    // InternalSeleniumDsl.g:2999:1: rule__Select__ValuesAssignment_6_1 : ( RULE_STRING ) ;
-    public final void rule__Select__ValuesAssignment_6_1() throws RecognitionException {
+    // $ANTLR start "rule__Fill__TextToFillAssignment_5_0_1"
+    // InternalSeleniumDsl.g:2970:1: rule__Fill__TextToFillAssignment_5_0_1 : ( RULE_STRING ) ;
+    public final void rule__Fill__TextToFillAssignment_5_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:3003:1: ( ( RULE_STRING ) )
-            // InternalSeleniumDsl.g:3004:2: ( RULE_STRING )
+            // InternalSeleniumDsl.g:2974:1: ( ( RULE_STRING ) )
+            // InternalSeleniumDsl.g:2975:2: ( RULE_STRING )
             {
-            // InternalSeleniumDsl.g:3004:2: ( RULE_STRING )
-            // InternalSeleniumDsl.g:3005:3: RULE_STRING
+            // InternalSeleniumDsl.g:2975:2: ( RULE_STRING )
+            // InternalSeleniumDsl.g:2976:3: RULE_STRING
             {
-             before(grammarAccess.getSelectAccess().getValuesSTRINGTerminalRuleCall_6_1_0()); 
+             before(grammarAccess.getFillAccess().getTextToFillSTRINGTerminalRuleCall_5_0_1_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
-             after(grammarAccess.getSelectAccess().getValuesSTRINGTerminalRuleCall_6_1_0()); 
+             after(grammarAccess.getFillAccess().getTextToFillSTRINGTerminalRuleCall_5_0_1_0()); 
 
             }
 
@@ -8894,103 +8837,29 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Select__ValuesAssignment_6_1"
+    // $ANTLR end "rule__Fill__TextToFillAssignment_5_0_1"
 
 
-    // $ANTLR start "rule__Verify__TextToVerifyAssignment_7_0_1"
-    // InternalSeleniumDsl.g:3014:1: rule__Verify__TextToVerifyAssignment_7_0_1 : ( RULE_STRING ) ;
-    public final void rule__Verify__TextToVerifyAssignment_7_0_1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSeleniumDsl.g:3018:1: ( ( RULE_STRING ) )
-            // InternalSeleniumDsl.g:3019:2: ( RULE_STRING )
-            {
-            // InternalSeleniumDsl.g:3019:2: ( RULE_STRING )
-            // InternalSeleniumDsl.g:3020:3: RULE_STRING
-            {
-             before(grammarAccess.getVerifyAccess().getTextToVerifySTRINGTerminalRuleCall_7_0_1_0()); 
-            match(input,RULE_STRING,FOLLOW_2); 
-             after(grammarAccess.getVerifyAccess().getTextToVerifySTRINGTerminalRuleCall_7_0_1_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Verify__TextToVerifyAssignment_7_0_1"
-
-
-    // $ANTLR start "rule__Verify__LinkToVerifyAssignment_7_1_1"
-    // InternalSeleniumDsl.g:3029:1: rule__Verify__LinkToVerifyAssignment_7_1_1 : ( RULE_STRING ) ;
-    public final void rule__Verify__LinkToVerifyAssignment_7_1_1() throws RecognitionException {
+    // $ANTLR start "rule__Fill__VariableAssignment_5_1_1"
+    // InternalSeleniumDsl.g:2985:1: rule__Fill__VariableAssignment_5_1_1 : ( ruleElementType ) ;
+    public final void rule__Fill__VariableAssignment_5_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:3033:1: ( ( RULE_STRING ) )
-            // InternalSeleniumDsl.g:3034:2: ( RULE_STRING )
+            // InternalSeleniumDsl.g:2989:1: ( ( ruleElementType ) )
+            // InternalSeleniumDsl.g:2990:2: ( ruleElementType )
             {
-            // InternalSeleniumDsl.g:3034:2: ( RULE_STRING )
-            // InternalSeleniumDsl.g:3035:3: RULE_STRING
+            // InternalSeleniumDsl.g:2990:2: ( ruleElementType )
+            // InternalSeleniumDsl.g:2991:3: ruleElementType
             {
-             before(grammarAccess.getVerifyAccess().getLinkToVerifySTRINGTerminalRuleCall_7_1_1_0()); 
-            match(input,RULE_STRING,FOLLOW_2); 
-             after(grammarAccess.getVerifyAccess().getLinkToVerifySTRINGTerminalRuleCall_7_1_1_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Verify__LinkToVerifyAssignment_7_1_1"
-
-
-    // $ANTLR start "rule__Verify__VariableAssignment_7_2_1"
-    // InternalSeleniumDsl.g:3044:1: rule__Verify__VariableAssignment_7_2_1 : ( ruleDOMELEMENT ) ;
-    public final void rule__Verify__VariableAssignment_7_2_1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSeleniumDsl.g:3048:1: ( ( ruleDOMELEMENT ) )
-            // InternalSeleniumDsl.g:3049:2: ( ruleDOMELEMENT )
-            {
-            // InternalSeleniumDsl.g:3049:2: ( ruleDOMELEMENT )
-            // InternalSeleniumDsl.g:3050:3: ruleDOMELEMENT
-            {
-             before(grammarAccess.getVerifyAccess().getVariableDOMELEMENTParserRuleCall_7_2_1_0()); 
+             before(grammarAccess.getFillAccess().getVariableElementTypeParserRuleCall_5_1_1_0()); 
             pushFollow(FOLLOW_2);
-            ruleDOMELEMENT();
+            ruleElementType();
 
             state._fsp--;
 
-             after(grammarAccess.getVerifyAccess().getVariableDOMELEMENTParserRuleCall_7_2_1_0()); 
+             after(grammarAccess.getFillAccess().getVariableElementTypeParserRuleCall_5_1_1_0()); 
 
             }
 
@@ -9009,29 +8878,341 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Verify__VariableAssignment_7_2_1"
+    // $ANTLR end "rule__Fill__VariableAssignment_5_1_1"
+
+
+    // $ANTLR start "rule__Selector__ElementTypeAssignment_0_1"
+    // InternalSeleniumDsl.g:3000:1: rule__Selector__ElementTypeAssignment_0_1 : ( ruleElementType ) ;
+    public final void rule__Selector__ElementTypeAssignment_0_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSeleniumDsl.g:3004:1: ( ( ruleElementType ) )
+            // InternalSeleniumDsl.g:3005:2: ( ruleElementType )
+            {
+            // InternalSeleniumDsl.g:3005:2: ( ruleElementType )
+            // InternalSeleniumDsl.g:3006:3: ruleElementType
+            {
+             before(grammarAccess.getSelectorAccess().getElementTypeElementTypeParserRuleCall_0_1_0()); 
+            pushFollow(FOLLOW_2);
+            ruleElementType();
+
+            state._fsp--;
+
+             after(grammarAccess.getSelectorAccess().getElementTypeElementTypeParserRuleCall_0_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Selector__ElementTypeAssignment_0_1"
+
+
+    // $ANTLR start "rule__Selector__ElementTypeAssignment_1"
+    // InternalSeleniumDsl.g:3015:1: rule__Selector__ElementTypeAssignment_1 : ( ruleElementType ) ;
+    public final void rule__Selector__ElementTypeAssignment_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSeleniumDsl.g:3019:1: ( ( ruleElementType ) )
+            // InternalSeleniumDsl.g:3020:2: ( ruleElementType )
+            {
+            // InternalSeleniumDsl.g:3020:2: ( ruleElementType )
+            // InternalSeleniumDsl.g:3021:3: ruleElementType
+            {
+             before(grammarAccess.getSelectorAccess().getElementTypeElementTypeParserRuleCall_1_0()); 
+            pushFollow(FOLLOW_2);
+            ruleElementType();
+
+            state._fsp--;
+
+             after(grammarAccess.getSelectorAccess().getElementTypeElementTypeParserRuleCall_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Selector__ElementTypeAssignment_1"
+
+
+    // $ANTLR start "rule__Select__ElementTypeAssignment_2"
+    // InternalSeleniumDsl.g:3030:1: rule__Select__ElementTypeAssignment_2 : ( ruleSelector ) ;
+    public final void rule__Select__ElementTypeAssignment_2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSeleniumDsl.g:3034:1: ( ( ruleSelector ) )
+            // InternalSeleniumDsl.g:3035:2: ( ruleSelector )
+            {
+            // InternalSeleniumDsl.g:3035:2: ( ruleSelector )
+            // InternalSeleniumDsl.g:3036:3: ruleSelector
+            {
+             before(grammarAccess.getSelectAccess().getElementTypeSelectorParserRuleCall_2_0()); 
+            pushFollow(FOLLOW_2);
+            ruleSelector();
+
+            state._fsp--;
+
+             after(grammarAccess.getSelectAccess().getElementTypeSelectorParserRuleCall_2_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Select__ElementTypeAssignment_2"
+
+
+    // $ANTLR start "rule__Select__ValuesAssignment_3"
+    // InternalSeleniumDsl.g:3045:1: rule__Select__ValuesAssignment_3 : ( RULE_STRING ) ;
+    public final void rule__Select__ValuesAssignment_3() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSeleniumDsl.g:3049:1: ( ( RULE_STRING ) )
+            // InternalSeleniumDsl.g:3050:2: ( RULE_STRING )
+            {
+            // InternalSeleniumDsl.g:3050:2: ( RULE_STRING )
+            // InternalSeleniumDsl.g:3051:3: RULE_STRING
+            {
+             before(grammarAccess.getSelectAccess().getValuesSTRINGTerminalRuleCall_3_0()); 
+            match(input,RULE_STRING,FOLLOW_2); 
+             after(grammarAccess.getSelectAccess().getValuesSTRINGTerminalRuleCall_3_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Select__ValuesAssignment_3"
+
+
+    // $ANTLR start "rule__Select__ValuesAssignment_4_1"
+    // InternalSeleniumDsl.g:3060:1: rule__Select__ValuesAssignment_4_1 : ( RULE_STRING ) ;
+    public final void rule__Select__ValuesAssignment_4_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSeleniumDsl.g:3064:1: ( ( RULE_STRING ) )
+            // InternalSeleniumDsl.g:3065:2: ( RULE_STRING )
+            {
+            // InternalSeleniumDsl.g:3065:2: ( RULE_STRING )
+            // InternalSeleniumDsl.g:3066:3: RULE_STRING
+            {
+             before(grammarAccess.getSelectAccess().getValuesSTRINGTerminalRuleCall_4_1_0()); 
+            match(input,RULE_STRING,FOLLOW_2); 
+             after(grammarAccess.getSelectAccess().getValuesSTRINGTerminalRuleCall_4_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Select__ValuesAssignment_4_1"
+
+
+    // $ANTLR start "rule__Verify__TextToVerifyAssignment_6_0_1"
+    // InternalSeleniumDsl.g:3075:1: rule__Verify__TextToVerifyAssignment_6_0_1 : ( RULE_STRING ) ;
+    public final void rule__Verify__TextToVerifyAssignment_6_0_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSeleniumDsl.g:3079:1: ( ( RULE_STRING ) )
+            // InternalSeleniumDsl.g:3080:2: ( RULE_STRING )
+            {
+            // InternalSeleniumDsl.g:3080:2: ( RULE_STRING )
+            // InternalSeleniumDsl.g:3081:3: RULE_STRING
+            {
+             before(grammarAccess.getVerifyAccess().getTextToVerifySTRINGTerminalRuleCall_6_0_1_0()); 
+            match(input,RULE_STRING,FOLLOW_2); 
+             after(grammarAccess.getVerifyAccess().getTextToVerifySTRINGTerminalRuleCall_6_0_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Verify__TextToVerifyAssignment_6_0_1"
+
+
+    // $ANTLR start "rule__Verify__LinkToVerifyAssignment_6_1_1"
+    // InternalSeleniumDsl.g:3090:1: rule__Verify__LinkToVerifyAssignment_6_1_1 : ( RULE_STRING ) ;
+    public final void rule__Verify__LinkToVerifyAssignment_6_1_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSeleniumDsl.g:3094:1: ( ( RULE_STRING ) )
+            // InternalSeleniumDsl.g:3095:2: ( RULE_STRING )
+            {
+            // InternalSeleniumDsl.g:3095:2: ( RULE_STRING )
+            // InternalSeleniumDsl.g:3096:3: RULE_STRING
+            {
+             before(grammarAccess.getVerifyAccess().getLinkToVerifySTRINGTerminalRuleCall_6_1_1_0()); 
+            match(input,RULE_STRING,FOLLOW_2); 
+             after(grammarAccess.getVerifyAccess().getLinkToVerifySTRINGTerminalRuleCall_6_1_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Verify__LinkToVerifyAssignment_6_1_1"
+
+
+    // $ANTLR start "rule__Verify__VariableAssignment_6_2_1"
+    // InternalSeleniumDsl.g:3105:1: rule__Verify__VariableAssignment_6_2_1 : ( ruleElementType ) ;
+    public final void rule__Verify__VariableAssignment_6_2_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSeleniumDsl.g:3109:1: ( ( ruleElementType ) )
+            // InternalSeleniumDsl.g:3110:2: ( ruleElementType )
+            {
+            // InternalSeleniumDsl.g:3110:2: ( ruleElementType )
+            // InternalSeleniumDsl.g:3111:3: ruleElementType
+            {
+             before(grammarAccess.getVerifyAccess().getVariableElementTypeParserRuleCall_6_2_1_0()); 
+            pushFollow(FOLLOW_2);
+            ruleElementType();
+
+            state._fsp--;
+
+             after(grammarAccess.getVerifyAccess().getVariableElementTypeParserRuleCall_6_2_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Verify__VariableAssignment_6_2_1"
 
 
     // $ANTLR start "rule__Read__ElementsAssignment_2"
-    // InternalSeleniumDsl.g:3059:1: rule__Read__ElementsAssignment_2 : ( ruleDOMELEMENT ) ;
+    // InternalSeleniumDsl.g:3120:1: rule__Read__ElementsAssignment_2 : ( ruleElementType ) ;
     public final void rule__Read__ElementsAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:3063:1: ( ( ruleDOMELEMENT ) )
-            // InternalSeleniumDsl.g:3064:2: ( ruleDOMELEMENT )
+            // InternalSeleniumDsl.g:3124:1: ( ( ruleElementType ) )
+            // InternalSeleniumDsl.g:3125:2: ( ruleElementType )
             {
-            // InternalSeleniumDsl.g:3064:2: ( ruleDOMELEMENT )
-            // InternalSeleniumDsl.g:3065:3: ruleDOMELEMENT
+            // InternalSeleniumDsl.g:3125:2: ( ruleElementType )
+            // InternalSeleniumDsl.g:3126:3: ruleElementType
             {
-             before(grammarAccess.getReadAccess().getElementsDOMELEMENTParserRuleCall_2_0()); 
+             before(grammarAccess.getReadAccess().getElementsElementTypeParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
-            ruleDOMELEMENT();
+            ruleElementType();
 
             state._fsp--;
 
-             after(grammarAccess.getReadAccess().getElementsDOMELEMENTParserRuleCall_2_0()); 
+             after(grammarAccess.getReadAccess().getElementsElementTypeParserRuleCall_2_0()); 
 
             }
 
@@ -9054,25 +9235,25 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Read__ElementsAssignment_3_1"
-    // InternalSeleniumDsl.g:3074:1: rule__Read__ElementsAssignment_3_1 : ( ruleDOMELEMENT ) ;
+    // InternalSeleniumDsl.g:3135:1: rule__Read__ElementsAssignment_3_1 : ( ruleElementType ) ;
     public final void rule__Read__ElementsAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:3078:1: ( ( ruleDOMELEMENT ) )
-            // InternalSeleniumDsl.g:3079:2: ( ruleDOMELEMENT )
+            // InternalSeleniumDsl.g:3139:1: ( ( ruleElementType ) )
+            // InternalSeleniumDsl.g:3140:2: ( ruleElementType )
             {
-            // InternalSeleniumDsl.g:3079:2: ( ruleDOMELEMENT )
-            // InternalSeleniumDsl.g:3080:3: ruleDOMELEMENT
+            // InternalSeleniumDsl.g:3140:2: ( ruleElementType )
+            // InternalSeleniumDsl.g:3141:3: ruleElementType
             {
-             before(grammarAccess.getReadAccess().getElementsDOMELEMENTParserRuleCall_3_1_0()); 
+             before(grammarAccess.getReadAccess().getElementsElementTypeParserRuleCall_3_1_0()); 
             pushFollow(FOLLOW_2);
-            ruleDOMELEMENT();
+            ruleElementType();
 
             state._fsp--;
 
-             after(grammarAccess.getReadAccess().getElementsDOMELEMENTParserRuleCall_3_1_0()); 
+             after(grammarAccess.getReadAccess().getElementsElementTypeParserRuleCall_3_1_0()); 
 
             }
 
@@ -9095,17 +9276,17 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Read__LinkTextAssignment_7"
-    // InternalSeleniumDsl.g:3089:1: rule__Read__LinkTextAssignment_7 : ( RULE_STRING ) ;
+    // InternalSeleniumDsl.g:3150:1: rule__Read__LinkTextAssignment_7 : ( RULE_STRING ) ;
     public final void rule__Read__LinkTextAssignment_7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:3093:1: ( ( RULE_STRING ) )
-            // InternalSeleniumDsl.g:3094:2: ( RULE_STRING )
+            // InternalSeleniumDsl.g:3154:1: ( ( RULE_STRING ) )
+            // InternalSeleniumDsl.g:3155:2: ( RULE_STRING )
             {
-            // InternalSeleniumDsl.g:3094:2: ( RULE_STRING )
-            // InternalSeleniumDsl.g:3095:3: RULE_STRING
+            // InternalSeleniumDsl.g:3155:2: ( RULE_STRING )
+            // InternalSeleniumDsl.g:3156:3: RULE_STRING
             {
              before(grammarAccess.getReadAccess().getLinkTextSTRINGTerminalRuleCall_7_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -9132,17 +9313,17 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Read__NumberAssignment_9"
-    // InternalSeleniumDsl.g:3104:1: rule__Read__NumberAssignment_9 : ( RULE_INT ) ;
+    // InternalSeleniumDsl.g:3165:1: rule__Read__NumberAssignment_9 : ( RULE_INT ) ;
     public final void rule__Read__NumberAssignment_9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:3108:1: ( ( RULE_INT ) )
-            // InternalSeleniumDsl.g:3109:2: ( RULE_INT )
+            // InternalSeleniumDsl.g:3169:1: ( ( RULE_INT ) )
+            // InternalSeleniumDsl.g:3170:2: ( RULE_INT )
             {
-            // InternalSeleniumDsl.g:3109:2: ( RULE_INT )
-            // InternalSeleniumDsl.g:3110:3: RULE_INT
+            // InternalSeleniumDsl.g:3170:2: ( RULE_INT )
+            // InternalSeleniumDsl.g:3171:3: RULE_INT
             {
              before(grammarAccess.getReadAccess().getNumberINTTerminalRuleCall_9_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -9168,22 +9349,26 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__Read__NumberAssignment_9"
 
 
-    // $ANTLR start "rule__Combobox__OptionAssignment_3"
-    // InternalSeleniumDsl.g:3119:1: rule__Combobox__OptionAssignment_3 : ( RULE_STRING ) ;
-    public final void rule__Combobox__OptionAssignment_3() throws RecognitionException {
+    // $ANTLR start "rule__Combobox__ElementsAssignment_1"
+    // InternalSeleniumDsl.g:3180:1: rule__Combobox__ElementsAssignment_1 : ( ruleSelector ) ;
+    public final void rule__Combobox__ElementsAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:3123:1: ( ( RULE_STRING ) )
-            // InternalSeleniumDsl.g:3124:2: ( RULE_STRING )
+            // InternalSeleniumDsl.g:3184:1: ( ( ruleSelector ) )
+            // InternalSeleniumDsl.g:3185:2: ( ruleSelector )
             {
-            // InternalSeleniumDsl.g:3124:2: ( RULE_STRING )
-            // InternalSeleniumDsl.g:3125:3: RULE_STRING
+            // InternalSeleniumDsl.g:3185:2: ( ruleSelector )
+            // InternalSeleniumDsl.g:3186:3: ruleSelector
             {
-             before(grammarAccess.getComboboxAccess().getOptionSTRINGTerminalRuleCall_3_0()); 
-            match(input,RULE_STRING,FOLLOW_2); 
-             after(grammarAccess.getComboboxAccess().getOptionSTRINGTerminalRuleCall_3_0()); 
+             before(grammarAccess.getComboboxAccess().getElementsSelectorParserRuleCall_1_0()); 
+            pushFollow(FOLLOW_2);
+            ruleSelector();
+
+            state._fsp--;
+
+             after(grammarAccess.getComboboxAccess().getElementsSelectorParserRuleCall_1_0()); 
 
             }
 
@@ -9202,25 +9387,25 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Combobox__OptionAssignment_3"
+    // $ANTLR end "rule__Combobox__ElementsAssignment_1"
 
 
-    // $ANTLR start "rule__Combobox__LabelAssignment_7"
-    // InternalSeleniumDsl.g:3134:1: rule__Combobox__LabelAssignment_7 : ( RULE_STRING ) ;
-    public final void rule__Combobox__LabelAssignment_7() throws RecognitionException {
+    // $ANTLR start "rule__Combobox__OptionAssignment_2"
+    // InternalSeleniumDsl.g:3195:1: rule__Combobox__OptionAssignment_2 : ( RULE_STRING ) ;
+    public final void rule__Combobox__OptionAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSeleniumDsl.g:3138:1: ( ( RULE_STRING ) )
-            // InternalSeleniumDsl.g:3139:2: ( RULE_STRING )
+            // InternalSeleniumDsl.g:3199:1: ( ( RULE_STRING ) )
+            // InternalSeleniumDsl.g:3200:2: ( RULE_STRING )
             {
-            // InternalSeleniumDsl.g:3139:2: ( RULE_STRING )
-            // InternalSeleniumDsl.g:3140:3: RULE_STRING
+            // InternalSeleniumDsl.g:3200:2: ( RULE_STRING )
+            // InternalSeleniumDsl.g:3201:3: RULE_STRING
             {
-             before(grammarAccess.getComboboxAccess().getLabelSTRINGTerminalRuleCall_7_0()); 
+             before(grammarAccess.getComboboxAccess().getOptionSTRINGTerminalRuleCall_2_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
-             after(grammarAccess.getComboboxAccess().getLabelSTRINGTerminalRuleCall_7_0()); 
+             after(grammarAccess.getComboboxAccess().getOptionSTRINGTerminalRuleCall_2_0()); 
 
             }
 
@@ -9239,51 +9424,170 @@ public class InternalSeleniumDslParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Combobox__LabelAssignment_7"
+    // $ANTLR end "rule__Combobox__OptionAssignment_2"
+
+
+    // $ANTLR start "rule__Combobox__ElementsAssignment_4"
+    // InternalSeleniumDsl.g:3210:1: rule__Combobox__ElementsAssignment_4 : ( ruleSelector ) ;
+    public final void rule__Combobox__ElementsAssignment_4() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSeleniumDsl.g:3214:1: ( ( ruleSelector ) )
+            // InternalSeleniumDsl.g:3215:2: ( ruleSelector )
+            {
+            // InternalSeleniumDsl.g:3215:2: ( ruleSelector )
+            // InternalSeleniumDsl.g:3216:3: ruleSelector
+            {
+             before(grammarAccess.getComboboxAccess().getElementsSelectorParserRuleCall_4_0()); 
+            pushFollow(FOLLOW_2);
+            ruleSelector();
+
+            state._fsp--;
+
+             after(grammarAccess.getComboboxAccess().getElementsSelectorParserRuleCall_4_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Combobox__ElementsAssignment_4"
+
+
+    // $ANTLR start "rule__Combobox__LabelAssignment_5"
+    // InternalSeleniumDsl.g:3225:1: rule__Combobox__LabelAssignment_5 : ( RULE_STRING ) ;
+    public final void rule__Combobox__LabelAssignment_5() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSeleniumDsl.g:3229:1: ( ( RULE_STRING ) )
+            // InternalSeleniumDsl.g:3230:2: ( RULE_STRING )
+            {
+            // InternalSeleniumDsl.g:3230:2: ( RULE_STRING )
+            // InternalSeleniumDsl.g:3231:3: RULE_STRING
+            {
+             before(grammarAccess.getComboboxAccess().getLabelSTRINGTerminalRuleCall_5_0()); 
+            match(input,RULE_STRING,FOLLOW_2); 
+             after(grammarAccess.getComboboxAccess().getLabelSTRINGTerminalRuleCall_5_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Combobox__LabelAssignment_5"
 
     // Delegated rules
 
 
+    protected DFA5 dfa5 = new DFA5(this);
+    static final String dfa_1s = "\14\uffff";
+    static final String dfa_2s = "\1\15\1\20\12\uffff";
+    static final String dfa_3s = "\1\41\1\42\12\uffff";
+    static final String dfa_4s = "\2\uffff\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\12\1\1\1\11";
+    static final String dfa_5s = "\14\uffff}>";
+    static final String[] dfa_6s = {
+            "\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11\14\uffff\1\1",
+            "\1\13\21\uffff\1\12",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+    };
+
+    static final short[] dfa_1 = DFA.unpackEncodedString(dfa_1s);
+    static final char[] dfa_2 = DFA.unpackEncodedStringToUnsignedChars(dfa_2s);
+    static final char[] dfa_3 = DFA.unpackEncodedStringToUnsignedChars(dfa_3s);
+    static final short[] dfa_4 = DFA.unpackEncodedString(dfa_4s);
+    static final short[] dfa_5 = DFA.unpackEncodedString(dfa_5s);
+    static final short[][] dfa_6 = unpackEncodedStringArray(dfa_6s);
+
+    class DFA5 extends DFA {
+
+        public DFA5(BaseRecognizer recognizer) {
+            this.recognizer = recognizer;
+            this.decisionNumber = 5;
+            this.eot = dfa_1;
+            this.eof = dfa_1;
+            this.min = dfa_2;
+            this.max = dfa_3;
+            this.accept = dfa_4;
+            this.special = dfa_5;
+            this.transition = dfa_6;
+        }
+        public String getDescription() {
+            return "519:1: rule__ElementType__Alternatives : ( ( ( rule__ElementType__Group_0__0 ) ) | ( 'checkboxes' ) | ( 'combobox' ) | ( 'option' ) | ( 'link' ) | ( 'button' ) | ( 'image' ) | ( 'url' ) | ( ( rule__ElementType__Group_8__0 ) ) | ( 'title' ) );";
+        }
+    }
  
 
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0001242222880002L});
-    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000002030L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x000000001001C000L});
+    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000A4288A200002L});
+    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000800000L});
+    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000004000000L});
+    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000000030L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000010000000L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000020000000L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000040070000L});
     public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x000000004007C000L});
-    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000040000000L});
-    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000080000000L});
-    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000050000000L});
-    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000400000000L});
+    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x00000002001FE000L});
+    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x00000002201FE000L});
+    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000240000000L});
+    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000400000000L});
+    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000000010000L});
     public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000800000000L});
     public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000001000000000L});
     public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000001000000002L});
-    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000002000000000L});
-    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000004000000000L});
-    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000008000000000L});
-    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000010000000000L});
-    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000020010004000L});
-    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000081000000000L});
-    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000100000000000L});
-    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0000200000000000L});
-    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x0000400000000000L});
-    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x0000800000000000L});
-    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x0002000000000000L});
-    public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x0004000000000000L});
-    public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x0008000000000000L});
+    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000004000000000L});
+    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000008000000000L});
+    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000010000000000L});
+    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000020040010000L});
+    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000081000000000L});
+    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000100000000000L});
+    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000200000000000L});
+    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0000400000000000L});
+    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x0001000000000000L});
 
 }

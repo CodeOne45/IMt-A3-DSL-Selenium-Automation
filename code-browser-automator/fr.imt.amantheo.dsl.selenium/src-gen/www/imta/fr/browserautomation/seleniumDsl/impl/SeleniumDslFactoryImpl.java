@@ -71,6 +71,7 @@ public class SeleniumDslFactoryImpl extends EFactoryImpl implements SeleniumDslF
       case SeleniumDslPackage.GO_TO: return createGoTo();
       case SeleniumDslPackage.CLICK: return createClick();
       case SeleniumDslPackage.FILL: return createFill();
+      case SeleniumDslPackage.SELECTOR: return createSelector();
       case SeleniumDslPackage.SELECT: return createSelect();
       case SeleniumDslPackage.VERIFY: return createVerify();
       case SeleniumDslPackage.READ: return createRead();
@@ -151,6 +152,18 @@ public class SeleniumDslFactoryImpl extends EFactoryImpl implements SeleniumDslF
   {
     FillImpl fill = new FillImpl();
     return fill;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Selector createSelector()
+  {
+    SelectorImpl selector = new SelectorImpl();
+    return selector;
   }
 
   /**

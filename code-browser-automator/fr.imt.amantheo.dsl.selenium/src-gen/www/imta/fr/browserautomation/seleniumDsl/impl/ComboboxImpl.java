@@ -3,13 +3,23 @@
  */
 package www.imta.fr.browserautomation.seleniumDsl.impl;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+
 import www.imta.fr.browserautomation.seleniumDsl.Combobox;
+import www.imta.fr.browserautomation.seleniumDsl.Selector;
 import www.imta.fr.browserautomation.seleniumDsl.SeleniumDslPackage;
 
 /**
@@ -20,6 +30,7 @@ import www.imta.fr.browserautomation.seleniumDsl.SeleniumDslPackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link www.imta.fr.browserautomation.seleniumDsl.impl.ComboboxImpl#getElements <em>Elements</em>}</li>
  *   <li>{@link www.imta.fr.browserautomation.seleniumDsl.impl.ComboboxImpl#getOption <em>Option</em>}</li>
  *   <li>{@link www.imta.fr.browserautomation.seleniumDsl.impl.ComboboxImpl#getLabel <em>Label</em>}</li>
  * </ul>
@@ -28,6 +39,16 @@ import www.imta.fr.browserautomation.seleniumDsl.SeleniumDslPackage;
  */
 public class ComboboxImpl extends CommandImpl implements Combobox
 {
+  /**
+   * The cached value of the '{@link #getElements() <em>Elements</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getElements()
+   * @generated
+   * @ordered
+   */
+  protected EList<Selector> elements;
+
   /**
    * The default value of the '{@link #getOption() <em>Option</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -95,6 +116,21 @@ public class ComboboxImpl extends CommandImpl implements Combobox
    * @generated
    */
   @Override
+  public EList<Selector> getElements()
+  {
+    if (elements == null)
+    {
+      elements = new EObjectContainmentEList<Selector>(Selector.class, this, SeleniumDslPackage.COMBOBOX__ELEMENTS);
+    }
+    return elements;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public String getOption()
   {
     return option;
@@ -145,10 +181,28 @@ public class ComboboxImpl extends CommandImpl implements Combobox
    * @generated
    */
   @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case SeleniumDslPackage.COMBOBOX__ELEMENTS:
+        return ((InternalEList<?>)getElements()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
     {
+      case SeleniumDslPackage.COMBOBOX__ELEMENTS:
+        return getElements();
       case SeleniumDslPackage.COMBOBOX__OPTION:
         return getOption();
       case SeleniumDslPackage.COMBOBOX__LABEL:
@@ -162,11 +216,16 @@ public class ComboboxImpl extends CommandImpl implements Combobox
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
+      case SeleniumDslPackage.COMBOBOX__ELEMENTS:
+        getElements().clear();
+        getElements().addAll((Collection<? extends Selector>)newValue);
+        return;
       case SeleniumDslPackage.COMBOBOX__OPTION:
         setOption((String)newValue);
         return;
@@ -187,6 +246,9 @@ public class ComboboxImpl extends CommandImpl implements Combobox
   {
     switch (featureID)
     {
+      case SeleniumDslPackage.COMBOBOX__ELEMENTS:
+        getElements().clear();
+        return;
       case SeleniumDslPackage.COMBOBOX__OPTION:
         setOption(OPTION_EDEFAULT);
         return;
@@ -207,6 +269,8 @@ public class ComboboxImpl extends CommandImpl implements Combobox
   {
     switch (featureID)
     {
+      case SeleniumDslPackage.COMBOBOX__ELEMENTS:
+        return elements != null && !elements.isEmpty();
       case SeleniumDslPackage.COMBOBOX__OPTION:
         return OPTION_EDEFAULT == null ? option != null : !OPTION_EDEFAULT.equals(option);
       case SeleniumDslPackage.COMBOBOX__LABEL:

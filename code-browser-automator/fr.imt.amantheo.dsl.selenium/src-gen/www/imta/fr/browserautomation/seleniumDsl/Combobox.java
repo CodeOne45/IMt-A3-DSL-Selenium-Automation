@@ -3,6 +3,7 @@
  */
 package www.imta.fr.browserautomation.seleniumDsl;
 
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -13,6 +14,7 @@ package www.imta.fr.browserautomation.seleniumDsl;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link www.imta.fr.browserautomation.seleniumDsl.Combobox#getElements <em>Elements</em>}</li>
  *   <li>{@link www.imta.fr.browserautomation.seleniumDsl.Combobox#getOption <em>Option</em>}</li>
  *   <li>{@link www.imta.fr.browserautomation.seleniumDsl.Combobox#getLabel <em>Label</em>}</li>
  * </ul>
@@ -23,6 +25,18 @@ package www.imta.fr.browserautomation.seleniumDsl;
  */
 public interface Combobox extends Command
 {
+  /**
+   * Returns the value of the '<em><b>Elements</b></em>' containment reference list.
+   * The list contents are of type {@link www.imta.fr.browserautomation.seleniumDsl.Selector}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Elements</em>' containment reference list.
+   * @see www.imta.fr.browserautomation.seleniumDsl.SeleniumDslPackage#getCombobox_Elements()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Selector> getElements();
+
   /**
    * Returns the value of the '<em><b>Option</b></em>' attribute.
    * <!-- begin-user-doc -->

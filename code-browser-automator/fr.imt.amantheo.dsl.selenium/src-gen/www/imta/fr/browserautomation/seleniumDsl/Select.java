@@ -14,6 +14,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link www.imta.fr.browserautomation.seleniumDsl.Select#getElementType <em>Element Type</em>}</li>
  *   <li>{@link www.imta.fr.browserautomation.seleniumDsl.Select#getValues <em>Values</em>}</li>
  * </ul>
  *
@@ -23,6 +24,28 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface Select extends Command
 {
+  /**
+   * Returns the value of the '<em><b>Element Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Element Type</em>' containment reference.
+   * @see #setElementType(Selector)
+   * @see www.imta.fr.browserautomation.seleniumDsl.SeleniumDslPackage#getSelect_ElementType()
+   * @model containment="true"
+   * @generated
+   */
+  Selector getElementType();
+
+  /**
+   * Sets the value of the '{@link www.imta.fr.browserautomation.seleniumDsl.Select#getElementType <em>Element Type</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Element Type</em>' containment reference.
+   * @see #getElementType()
+   * @generated
+   */
+  void setElementType(Selector value);
+
   /**
    * Returns the value of the '<em><b>Values</b></em>' attribute list.
    * The list contents are of type {@link java.lang.String}.

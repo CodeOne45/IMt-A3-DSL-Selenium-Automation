@@ -78,6 +78,15 @@ public interface SeleniumDslFactory extends EFactory
   Fill createFill();
 
   /**
+   * Returns a new object of class '<em>Selector</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Selector</em>'.
+   * @generated
+   */
+  Selector createSelector();
+
+  /**
    * Returns a new object of class '<em>Select</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

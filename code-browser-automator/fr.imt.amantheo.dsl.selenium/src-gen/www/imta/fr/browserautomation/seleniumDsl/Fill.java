@@ -13,6 +13,7 @@ package www.imta.fr.browserautomation.seleniumDsl;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link www.imta.fr.browserautomation.seleniumDsl.Fill#getElement <em>Element</em>}</li>
  *   <li>{@link www.imta.fr.browserautomation.seleniumDsl.Fill#getFieldName <em>Field Name</em>}</li>
  *   <li>{@link www.imta.fr.browserautomation.seleniumDsl.Fill#getTextToFill <em>Text To Fill</em>}</li>
  *   <li>{@link www.imta.fr.browserautomation.seleniumDsl.Fill#getVariable <em>Variable</em>}</li>
@@ -24,6 +25,28 @@ package www.imta.fr.browserautomation.seleniumDsl;
  */
 public interface Fill extends Command
 {
+  /**
+   * Returns the value of the '<em><b>Element</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Element</em>' containment reference.
+   * @see #setElement(Selector)
+   * @see www.imta.fr.browserautomation.seleniumDsl.SeleniumDslPackage#getFill_Element()
+   * @model containment="true"
+   * @generated
+   */
+  Selector getElement();
+
+  /**
+   * Sets the value of the '{@link www.imta.fr.browserautomation.seleniumDsl.Fill#getElement <em>Element</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Element</em>' containment reference.
+   * @see #getElement()
+   * @generated
+   */
+  void setElement(Selector value);
+
   /**
    * Returns the value of the '<em><b>Field Name</b></em>' attribute.
    * <!-- begin-user-doc -->

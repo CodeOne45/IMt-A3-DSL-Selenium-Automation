@@ -14,11 +14,11 @@ public class Test2 {
         // Go to URL
         driver.get("http://www.imt-atlantique.fr/fr");
 
-         WebElement e = driver.findElement(By.xpath("//a[text()='Toutes les actualités']"));
+        // Click on the link with text: Toutes les actualités
+        WebElement e = driver.findElement(By.xpath("//a[text()='Toutes les actualités']"));
         driver.get(e.getAttribute("href"));
-        // Verify that the page contains link
+        // Verify that the page contains a link with text: Accueil
         assert driver.findElements(By.partialLinkText("Accueil")).size() > 0;
-
         driver.quit();
     }
 }

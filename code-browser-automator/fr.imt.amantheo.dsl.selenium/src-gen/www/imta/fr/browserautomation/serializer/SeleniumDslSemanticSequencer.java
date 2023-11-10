@@ -22,6 +22,7 @@ import www.imta.fr.browserautomation.seleniumDsl.GoTo;
 import www.imta.fr.browserautomation.seleniumDsl.OpenBrowser;
 import www.imta.fr.browserautomation.seleniumDsl.Read;
 import www.imta.fr.browserautomation.seleniumDsl.Select;
+import www.imta.fr.browserautomation.seleniumDsl.Selector;
 import www.imta.fr.browserautomation.seleniumDsl.SeleniumDslPackage;
 import www.imta.fr.browserautomation.seleniumDsl.Uncheck;
 import www.imta.fr.browserautomation.seleniumDsl.Verify;
@@ -65,6 +66,9 @@ public class SeleniumDslSemanticSequencer extends AbstractDelegatingSemanticSequ
 			case SeleniumDslPackage.SELECT:
 				sequence_Select(context, (Select) semanticObject); 
 				return; 
+			case SeleniumDslPackage.SELECTOR:
+				sequence_Selector(context, (Selector) semanticObject); 
+				return; 
 			case SeleniumDslPackage.UNCHECK:
 				sequence_Uncheck(context, (Uncheck) semanticObject); 
 				return; 
@@ -97,7 +101,7 @@ public class SeleniumDslSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     Click returns Click
 	 *
 	 * Constraint:
-	 *     (linkText=STRING | buttonText=STRING | alt=STRING | variable=DOMELEMENT)
+	 *     (linkText=STRING | buttonText=STRING | alt=STRING | variable=ElementType)
 	 * </pre>
 	 */
 	protected void sequence_Click(ISerializationContext context, Click semanticObject) {
@@ -112,20 +116,11 @@ public class SeleniumDslSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     Combobox returns Combobox
 	 *
 	 * Constraint:
-	 *     (option=STRING label=STRING)
+	 *     (elements+=Selector option=STRING elements+=Selector label=STRING)
 	 * </pre>
 	 */
 	protected void sequence_Combobox(ISerializationContext context, Combobox semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, SeleniumDslPackage.Literals.COMBOBOX__OPTION) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SeleniumDslPackage.Literals.COMBOBOX__OPTION));
-			if (transientValues.isValueTransient(semanticObject, SeleniumDslPackage.Literals.COMBOBOX__LABEL) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SeleniumDslPackage.Literals.COMBOBOX__LABEL));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getComboboxAccess().getOptionSTRINGTerminalRuleCall_3_0(), semanticObject.getOption());
-		feeder.accept(grammarAccess.getComboboxAccess().getLabelSTRINGTerminalRuleCall_7_0(), semanticObject.getLabel());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -136,7 +131,7 @@ public class SeleniumDslSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     Fill returns Fill
 	 *
 	 * Constraint:
-	 *     (fieldName=STRING (textToFill=STRING | variable=DOMELEMENT))
+	 *     (element=Selector fieldName=STRING (textToFill=STRING | variable=ElementType))
 	 * </pre>
 	 */
 	protected void sequence_Fill(ISerializationContext context, Fill semanticObject) {
@@ -160,7 +155,7 @@ public class SeleniumDslSemanticSequencer extends AbstractDelegatingSemanticSequ
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SeleniumDslPackage.Literals.GO_TO__URL));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getGoToAccess().getUrlDynamicURLParserRuleCall_3_0_0(), semanticObject.getUrl());
+		feeder.accept(grammarAccess.getGoToAccess().getUrlDynamicURLParserRuleCall_3_0(), semanticObject.getUrl());
 		feeder.finish();
 	}
 	
@@ -187,7 +182,7 @@ public class SeleniumDslSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     Read returns Read
 	 *
 	 * Constraint:
-	 *     (elements+=DOMELEMENT elements+=DOMELEMENT* linkText=STRING number=INT)
+	 *     (elements+=ElementType elements+=ElementType* linkText=STRING number=INT)
 	 * </pre>
 	 */
 	protected void sequence_Read(ISerializationContext context, Read semanticObject) {
@@ -202,10 +197,24 @@ public class SeleniumDslSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     Select returns Select
 	 *
 	 * Constraint:
-	 *     (values+=STRING values+=STRING*)
+	 *     (elementType=Selector values+=STRING values+=STRING*)
 	 * </pre>
 	 */
 	protected void sequence_Select(ISerializationContext context, Select semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Selector returns Selector
+	 *
+	 * Constraint:
+	 *     ((elementType=ElementType elementType=ElementType) | elementType=ElementType)?
+	 * </pre>
+	 */
+	protected void sequence_Selector(ISerializationContext context, Selector semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -232,7 +241,7 @@ public class SeleniumDslSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     Verify returns Verify
 	 *
 	 * Constraint:
-	 *     (textToVerify=STRING | linkToVerify=STRING | variable=DOMELEMENT)
+	 *     (textToVerify=STRING | linkToVerify=STRING | variable=ElementType)
 	 * </pre>
 	 */
 	protected void sequence_Verify(ISerializationContext context, Verify semanticObject) {

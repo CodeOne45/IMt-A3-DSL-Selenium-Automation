@@ -14,13 +14,15 @@ public class Test7 {
         // Go to URL
         driver.get("http://www.imt-atlantique.fr/fr");
 
-        // Get the link to a news
+        // Read elements of the link: /fr/actualites
         WebElement link = driver.findElements(By.xpath("//a[starts-with(@href, '/fr/actualites')]")).get(1);
+        // Read title
         String title = link.getText();
+        // Read URL
         String url = link.getAttribute("href");
+        // Open the URL specified in the variable 'url'
         driver.get(url);
-
-        // Verify that the page countains the title
+        // Verify that the page contains the specified title
         assert driver.getPageSource().contains(title);
         driver.quit();
     }

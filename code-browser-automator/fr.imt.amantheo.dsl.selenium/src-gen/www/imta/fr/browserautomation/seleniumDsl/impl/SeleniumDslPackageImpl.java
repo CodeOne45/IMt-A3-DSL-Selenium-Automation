@@ -19,6 +19,7 @@ import www.imta.fr.browserautomation.seleniumDsl.GoTo;
 import www.imta.fr.browserautomation.seleniumDsl.OpenBrowser;
 import www.imta.fr.browserautomation.seleniumDsl.Read;
 import www.imta.fr.browserautomation.seleniumDsl.Select;
+import www.imta.fr.browserautomation.seleniumDsl.Selector;
 import www.imta.fr.browserautomation.seleniumDsl.SeleniumDslFactory;
 import www.imta.fr.browserautomation.seleniumDsl.SeleniumDslPackage;
 import www.imta.fr.browserautomation.seleniumDsl.Uncheck;
@@ -73,6 +74,13 @@ public class SeleniumDslPackageImpl extends EPackageImpl implements SeleniumDslP
    * @generated
    */
   private EClass fillEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass selectorEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -309,9 +317,9 @@ public class SeleniumDslPackageImpl extends EPackageImpl implements SeleniumDslP
    * @generated
    */
   @Override
-  public EAttribute getFill_FieldName()
+  public EReference getFill_Element()
   {
-    return (EAttribute)fillEClass.getEStructuralFeatures().get(0);
+    return (EReference)fillEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -320,7 +328,7 @@ public class SeleniumDslPackageImpl extends EPackageImpl implements SeleniumDslP
    * @generated
    */
   @Override
-  public EAttribute getFill_TextToFill()
+  public EAttribute getFill_FieldName()
   {
     return (EAttribute)fillEClass.getEStructuralFeatures().get(1);
   }
@@ -331,9 +339,42 @@ public class SeleniumDslPackageImpl extends EPackageImpl implements SeleniumDslP
    * @generated
    */
   @Override
-  public EAttribute getFill_Variable()
+  public EAttribute getFill_TextToFill()
   {
     return (EAttribute)fillEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getFill_Variable()
+  {
+    return (EAttribute)fillEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getSelector()
+  {
+    return selectorEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getSelector_ElementType()
+  {
+    return (EAttribute)selectorEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -353,9 +394,20 @@ public class SeleniumDslPackageImpl extends EPackageImpl implements SeleniumDslP
    * @generated
    */
   @Override
+  public EReference getSelect_ElementType()
+  {
+    return (EReference)selectEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EAttribute getSelect_Values()
   {
-    return (EAttribute)selectEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)selectEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -474,9 +526,20 @@ public class SeleniumDslPackageImpl extends EPackageImpl implements SeleniumDslP
    * @generated
    */
   @Override
+  public EReference getCombobox_Elements()
+  {
+    return (EReference)comboboxEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EAttribute getCombobox_Option()
   {
-    return (EAttribute)comboboxEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)comboboxEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -487,7 +550,7 @@ public class SeleniumDslPackageImpl extends EPackageImpl implements SeleniumDslP
   @Override
   public EAttribute getCombobox_Label()
   {
-    return (EAttribute)comboboxEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)comboboxEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -538,11 +601,16 @@ public class SeleniumDslPackageImpl extends EPackageImpl implements SeleniumDslP
     createEAttribute(clickEClass, CLICK__VARIABLE);
 
     fillEClass = createEClass(FILL);
+    createEReference(fillEClass, FILL__ELEMENT);
     createEAttribute(fillEClass, FILL__FIELD_NAME);
     createEAttribute(fillEClass, FILL__TEXT_TO_FILL);
     createEAttribute(fillEClass, FILL__VARIABLE);
 
+    selectorEClass = createEClass(SELECTOR);
+    createEAttribute(selectorEClass, SELECTOR__ELEMENT_TYPE);
+
     selectEClass = createEClass(SELECT);
+    createEReference(selectEClass, SELECT__ELEMENT_TYPE);
     createEAttribute(selectEClass, SELECT__VALUES);
 
     verifyEClass = createEClass(VERIFY);
@@ -558,6 +626,7 @@ public class SeleniumDslPackageImpl extends EPackageImpl implements SeleniumDslP
     uncheckEClass = createEClass(UNCHECK);
 
     comboboxEClass = createEClass(COMBOBOX);
+    createEReference(comboboxEClass, COMBOBOX__ELEMENTS);
     createEAttribute(comboboxEClass, COMBOBOX__OPTION);
     createEAttribute(comboboxEClass, COMBOBOX__LABEL);
   }
@@ -619,11 +688,16 @@ public class SeleniumDslPackageImpl extends EPackageImpl implements SeleniumDslP
     initEAttribute(getClick_Variable(), ecorePackage.getEString(), "variable", null, 0, 1, Click.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(fillEClass, Fill.class, "Fill", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getFill_Element(), this.getSelector(), null, "element", null, 0, 1, Fill.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getFill_FieldName(), ecorePackage.getEString(), "fieldName", null, 0, 1, Fill.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getFill_TextToFill(), ecorePackage.getEString(), "textToFill", null, 0, 1, Fill.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getFill_Variable(), ecorePackage.getEString(), "variable", null, 0, 1, Fill.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(selectorEClass, Selector.class, "Selector", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getSelector_ElementType(), ecorePackage.getEString(), "elementType", null, 0, 1, Selector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(selectEClass, Select.class, "Select", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getSelect_ElementType(), this.getSelector(), null, "elementType", null, 0, 1, Select.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getSelect_Values(), ecorePackage.getEString(), "values", null, 0, -1, Select.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(verifyEClass, Verify.class, "Verify", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -639,6 +713,7 @@ public class SeleniumDslPackageImpl extends EPackageImpl implements SeleniumDslP
     initEClass(uncheckEClass, Uncheck.class, "Uncheck", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(comboboxEClass, Combobox.class, "Combobox", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getCombobox_Elements(), this.getSelector(), null, "elements", null, 0, -1, Combobox.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getCombobox_Option(), ecorePackage.getEString(), "option", null, 0, 1, Combobox.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getCombobox_Label(), ecorePackage.getEString(), "label", null, 0, 1, Combobox.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

@@ -4,12 +4,15 @@
 package www.imta.fr.browserautomation.seleniumDsl.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import www.imta.fr.browserautomation.seleniumDsl.Fill;
+import www.imta.fr.browserautomation.seleniumDsl.Selector;
 import www.imta.fr.browserautomation.seleniumDsl.SeleniumDslPackage;
 
 /**
@@ -20,6 +23,7 @@ import www.imta.fr.browserautomation.seleniumDsl.SeleniumDslPackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link www.imta.fr.browserautomation.seleniumDsl.impl.FillImpl#getElement <em>Element</em>}</li>
  *   <li>{@link www.imta.fr.browserautomation.seleniumDsl.impl.FillImpl#getFieldName <em>Field Name</em>}</li>
  *   <li>{@link www.imta.fr.browserautomation.seleniumDsl.impl.FillImpl#getTextToFill <em>Text To Fill</em>}</li>
  *   <li>{@link www.imta.fr.browserautomation.seleniumDsl.impl.FillImpl#getVariable <em>Variable</em>}</li>
@@ -29,6 +33,16 @@ import www.imta.fr.browserautomation.seleniumDsl.SeleniumDslPackage;
  */
 public class FillImpl extends CommandImpl implements Fill
 {
+  /**
+   * The cached value of the '{@link #getElement() <em>Element</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getElement()
+   * @generated
+   * @ordered
+   */
+  protected Selector element;
+
   /**
    * The default value of the '{@link #getFieldName() <em>Field Name</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -116,6 +130,56 @@ public class FillImpl extends CommandImpl implements Fill
    * @generated
    */
   @Override
+  public Selector getElement()
+  {
+    return element;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetElement(Selector newElement, NotificationChain msgs)
+  {
+    Selector oldElement = element;
+    element = newElement;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SeleniumDslPackage.FILL__ELEMENT, oldElement, newElement);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setElement(Selector newElement)
+  {
+    if (newElement != element)
+    {
+      NotificationChain msgs = null;
+      if (element != null)
+        msgs = ((InternalEObject)element).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SeleniumDslPackage.FILL__ELEMENT, null, msgs);
+      if (newElement != null)
+        msgs = ((InternalEObject)newElement).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SeleniumDslPackage.FILL__ELEMENT, null, msgs);
+      msgs = basicSetElement(newElement, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SeleniumDslPackage.FILL__ELEMENT, newElement, newElement));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public String getFieldName()
   {
     return fieldName;
@@ -191,10 +255,28 @@ public class FillImpl extends CommandImpl implements Fill
    * @generated
    */
   @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case SeleniumDslPackage.FILL__ELEMENT:
+        return basicSetElement(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
     {
+      case SeleniumDslPackage.FILL__ELEMENT:
+        return getElement();
       case SeleniumDslPackage.FILL__FIELD_NAME:
         return getFieldName();
       case SeleniumDslPackage.FILL__TEXT_TO_FILL:
@@ -215,6 +297,9 @@ public class FillImpl extends CommandImpl implements Fill
   {
     switch (featureID)
     {
+      case SeleniumDslPackage.FILL__ELEMENT:
+        setElement((Selector)newValue);
+        return;
       case SeleniumDslPackage.FILL__FIELD_NAME:
         setFieldName((String)newValue);
         return;
@@ -238,6 +323,9 @@ public class FillImpl extends CommandImpl implements Fill
   {
     switch (featureID)
     {
+      case SeleniumDslPackage.FILL__ELEMENT:
+        setElement((Selector)null);
+        return;
       case SeleniumDslPackage.FILL__FIELD_NAME:
         setFieldName(FIELD_NAME_EDEFAULT);
         return;
@@ -261,6 +349,8 @@ public class FillImpl extends CommandImpl implements Fill
   {
     switch (featureID)
     {
+      case SeleniumDslPackage.FILL__ELEMENT:
+        return element != null;
       case SeleniumDslPackage.FILL__FIELD_NAME:
         return FIELD_NAME_EDEFAULT == null ? fieldName != null : !FIELD_NAME_EDEFAULT.equals(fieldName);
       case SeleniumDslPackage.FILL__TEXT_TO_FILL:

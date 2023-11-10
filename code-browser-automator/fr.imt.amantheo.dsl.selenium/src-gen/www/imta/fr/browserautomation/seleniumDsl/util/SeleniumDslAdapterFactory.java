@@ -106,6 +106,11 @@ public class SeleniumDslAdapterFactory extends AdapterFactoryImpl
         return createFillAdapter();
       }
       @Override
+      public Adapter caseSelector(Selector object)
+      {
+        return createSelectorAdapter();
+      }
+      @Override
       public Adapter caseSelect(Select object)
       {
         return createSelectAdapter();
@@ -238,6 +243,21 @@ public class SeleniumDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createFillAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link www.imta.fr.browserautomation.seleniumDsl.Selector <em>Selector</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see www.imta.fr.browserautomation.seleniumDsl.Selector
+   * @generated
+   */
+  public Adapter createSelectorAdapter()
   {
     return null;
   }

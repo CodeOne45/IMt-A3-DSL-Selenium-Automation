@@ -23,6 +23,7 @@ import www.imta.fr.browserautomation.seleniumDsl.GoTo;
 import www.imta.fr.browserautomation.seleniumDsl.OpenBrowser;
 import www.imta.fr.browserautomation.seleniumDsl.Read;
 import www.imta.fr.browserautomation.seleniumDsl.Select;
+import www.imta.fr.browserautomation.seleniumDsl.Selector;
 import www.imta.fr.browserautomation.seleniumDsl.Uncheck;
 import www.imta.fr.browserautomation.seleniumDsl.Verify;
 
@@ -126,16 +127,10 @@ public class SeleniumDslGenerator extends AbstractGenerator {
                   return this.processReadCommand(((Read)command));
                 } else {
                   if ((command instanceof Uncheck)) {
-                    return (((((("        // Uncheck checkboxes\n" + 
-                      "        List<WebElement> checkboxes = driver.findElements(By.xpath(\"//input[@type=\'checkbox\']\"));\n") + 
-                      "        for (WebElement checkbox : checkboxes) {\n") + 
-                      "            if (checkbox.isSelected()) {\n") + 
-                      "                checkbox.click();\n") + 
-                      "            }\n") + 
-                      "        }\n\n");
+                    return (((((("        // Uncheck all checkboxes\n" + "        List<WebElement> checkboxes = driver.findElements(By.xpath(\"//input[@type=\'checkbox\']\"));\n") + "        for (WebElement checkbox : checkboxes) {\n") + "            if (checkbox.isSelected()) {\n") + "                checkbox.click();\n") + "            }\n") + "        }\n");
                   } else {
                     if ((command instanceof Combobox)) {
-                      return "        // Combobox command processing\n";
+                      return "        // Combobox\n";
                     } else {
                       return "";
                     }
@@ -154,25 +149,35 @@ public class SeleniumDslGenerator extends AbstractGenerator {
     boolean _tripleNotEquals = (_linkText != null);
     if (_tripleNotEquals) {
       String _linkText_1 = command.getLinkText();
-      String _plus = ("         WebElement e = driver.findElement(By.xpath(\"//a[text()=\'" + _linkText_1);
-      String _plus_1 = (_plus + "\']\"));\n");
-      return (_plus_1 + 
-        "        driver.get(e.getAttribute(\"href\"));\n");
+      String _plus = ("        // Click on the link with text: " + _linkText_1);
+      String _plus_1 = (_plus + "\n");
+      String _plus_2 = (_plus_1 + "        WebElement e = driver.findElement(By.xpath(\"//a[text()=\'");
+      String _linkText_2 = command.getLinkText();
+      String _plus_3 = (_plus_2 + _linkText_2);
+      String _plus_4 = (_plus_3 + "\']\"));\n");
+      return (_plus_4 + "        driver.get(e.getAttribute(\"href\"));\n");
     } else {
       String _buttonText = command.getButtonText();
       boolean _tripleNotEquals_1 = (_buttonText != null);
       if (_tripleNotEquals_1) {
         String _buttonText_1 = command.getButtonText();
-        String _plus_2 = (("        // Click on a button\n" + 
-          "        driver.findElement(By.xpath(\"//input[@value=\'") + _buttonText_1);
-        return (_plus_2 + "\']\")).click();\n\n");
+        String _plus_5 = ("        // Click on a button with value: " + _buttonText_1);
+        String _plus_6 = (_plus_5 + "\n");
+        String _plus_7 = (_plus_6 + "        driver.findElement(By.xpath(\"//input[@value=\'");
+        String _buttonText_2 = command.getButtonText();
+        String _plus_8 = (_plus_7 + _buttonText_2);
+        return (_plus_8 + "\']\")).click();\n");
       } else {
         String _alt = command.getAlt();
         boolean _tripleNotEquals_2 = (_alt != null);
         if (_tripleNotEquals_2) {
           String _alt_1 = command.getAlt();
-          String _plus_3 = ("        driver.findElement(By.xpath(\"//img[@alt=\'" + _alt_1);
-          return (_plus_3 + "\']\")).click();\n\n");
+          String _plus_9 = ("        // Click on an image with alt text: " + _alt_1);
+          String _plus_10 = (_plus_9 + "\n");
+          String _plus_11 = (_plus_10 + "        driver.findElement(By.xpath(\"//img[@alt=\'");
+          String _alt_2 = command.getAlt();
+          String _plus_12 = (_plus_11 + _alt_2);
+          return (_plus_12 + "\']\")).click();\n");
         } else {
           String _variable = command.getVariable();
           boolean _tripleNotEquals_3 = (_variable != null);
@@ -181,37 +186,38 @@ public class SeleniumDslGenerator extends AbstractGenerator {
             boolean _equals = Objects.equal(_variable_1, "url");
             if (_equals) {
               String _variable_2 = command.getVariable();
-              String _plus_4 = ("        driver.get(" + _variable_2);
-              return (_plus_4 + ");\n\n");
+              String _plus_13 = (("        // Open the URL specified in the variable \'url\'\n" + "        driver.get(") + _variable_2);
+              return (_plus_13 + ");\n");
             }
-          } else {
-            return "";
           }
         }
       }
     }
-    return null;
+    return "";
   }
 
   public String processFillCommand(final Fill command) {
     String _fieldName = command.getFieldName();
-    String _plus = ("        WebElement labelElement = driver.findElements(By.xpath(\"//label[text()=\'" + _fieldName);
-    String _plus_1 = (_plus + "\']\")).get(1);\n");
-    String _plus_2 = (_plus_1 + 
-      "        WebElement inputElement = driver.findElement(By.id(labelElement.getAttribute(\"for\")));\n");
+    String _plus = ("        // Fill the text field: " + _fieldName);
+    String _plus_1 = (_plus + "\n");
+    String _plus_2 = (_plus_1 + "        WebElement labelElement = driver.findElements(By.xpath(\"//label[text()=\'");
+    String _fieldName_1 = command.getFieldName();
+    String _plus_3 = (_plus_2 + _fieldName_1);
+    String _plus_4 = (_plus_3 + "\']\")).get(1);\n");
+    String _plus_5 = (_plus_4 + "        WebElement inputElement = driver.findElement(By.id(labelElement.getAttribute(\"for\")));\n");
     String _xifexpression = null;
     String _textToFill = command.getTextToFill();
     boolean _tripleNotEquals = (_textToFill != null);
     if (_tripleNotEquals) {
       String _textToFill_1 = command.getTextToFill();
-      String _plus_3 = ("        inputElement.sendKeys(\"" + _textToFill_1);
-      _xifexpression = (_plus_3 + "\");\n\n");
+      String _plus_6 = ("        inputElement.sendKeys(\"" + _textToFill_1);
+      _xifexpression = (_plus_6 + "\");\n");
     } else {
       String _variable = command.getVariable();
-      String _plus_4 = ("        inputElement.sendKeys(" + _variable);
-      _xifexpression = (_plus_4 + ");\n\n");
+      String _plus_7 = ("        inputElement.sendKeys(" + _variable);
+      _xifexpression = (_plus_7 + ");\n");
     }
-    return (_plus_2 + _xifexpression);
+    return (_plus_5 + _xifexpression);
   }
 
   public String processSelectCommand(final Select command) {
@@ -219,14 +225,19 @@ public class SeleniumDslGenerator extends AbstractGenerator {
       return (("\"" + v) + "\"");
     };
     final String values = IterableExtensions.join(ListExtensions.<String, String>map(command.getValues(), _function), ", ");
-    return ((((((((("         List<String> valuesToCheck = Arrays.asList(" + values) + ");\n") + 
-      "        JavascriptExecutor js = (JavascriptExecutor) driver;\n") + 
-      "        js.executeScript(\"window.scrollTo(0, 340);\");\n") + 
-      "        for(String value: valuesToCheck) {\n") + 
-      "            WebElement labelElement = driver.findElement(By.xpath(\"//label[text=\'\" + value + \"\']\"));\n") + 
-      "            WebElement inputElement = driver.findElement(By.id(labelElement.getAttribute(\"for\")));\n") + 
-      "            inputElement.click();\n") + 
-      "        }\n");
+    Selector _elementType = command.getElementType();
+    String _plus = ("        // Select values in the element: " + _elementType);
+    String _plus_1 = (_plus + "\n");
+    String _plus_2 = (_plus_1 + "        List<String> valuesToCheck = Arrays.asList(");
+    String _plus_3 = (_plus_2 + values);
+    String _plus_4 = (_plus_3 + ");\n");
+    String _plus_5 = (_plus_4 + "        JavascriptExecutor js = (JavascriptExecutor) driver;\n");
+    String _plus_6 = (_plus_5 + "        js.executeScript(\"window.scrollTo(0, 340);\");\n");
+    String _plus_7 = (_plus_6 + "        for(String value: valuesToCheck) {\n");
+    String _plus_8 = (_plus_7 + "            WebElement labelElement = driver.findElement(By.xpath(\"//label[text()=\'\" + value + \"\']\"));\n");
+    String _plus_9 = (_plus_8 + "            WebElement inputElement = driver.findElement(By.id(labelElement.getAttribute(\"for\")));\n");
+    String _plus_10 = (_plus_9 + "            inputElement.click();\n");
+    return (_plus_10 + "        }\n");
   }
 
   public String processVerifyCommand(final Verify command) {
@@ -234,17 +245,23 @@ public class SeleniumDslGenerator extends AbstractGenerator {
     boolean _tripleNotEquals = (_textToVerify != null);
     if (_tripleNotEquals) {
       String _textToVerify_1 = command.getTextToVerify();
-      String _plus = (("        // Verify that the page contains text\n" + 
-        "        assert driver.getPageSource().contains(\"") + _textToVerify_1);
-      return (_plus + "\");\n\n");
+      String _plus = ("        // Verify that the page contains text: " + _textToVerify_1);
+      String _plus_1 = (_plus + "\n");
+      String _plus_2 = (_plus_1 + "        assert driver.getPageSource().contains(\"");
+      String _textToVerify_2 = command.getTextToVerify();
+      String _plus_3 = (_plus_2 + _textToVerify_2);
+      return (_plus_3 + "\");\n");
     } else {
       String _linkToVerify = command.getLinkToVerify();
       boolean _tripleNotEquals_1 = (_linkToVerify != null);
       if (_tripleNotEquals_1) {
         String _linkToVerify_1 = command.getLinkToVerify();
-        String _plus_1 = (("        // Verify that the page contains link\n" + 
-          "        assert driver.findElements(By.partialLinkText(\"") + _linkToVerify_1);
-        return (_plus_1 + "\")).size() > 0;\n\n");
+        String _plus_4 = ("        // Verify that the page contains a link with text: " + _linkToVerify_1);
+        String _plus_5 = (_plus_4 + "\n");
+        String _plus_6 = (_plus_5 + "        assert driver.findElements(By.partialLinkText(\"");
+        String _linkToVerify_2 = command.getLinkToVerify();
+        String _plus_7 = (_plus_6 + _linkToVerify_2);
+        return (_plus_7 + "\")).size() > 0;\n");
       } else {
         String _variable = command.getVariable();
         boolean _tripleNotEquals_2 = (_variable != null);
@@ -252,47 +269,45 @@ public class SeleniumDslGenerator extends AbstractGenerator {
           String _variable_1 = command.getVariable();
           boolean _equals = Objects.equal(_variable_1, "url");
           if (_equals) {
-            return (("        // Verify that the page countains the url\n" + 
-              "        WebElement foundLink = driver.findElement(By.xpath(\"//a[@href=\\\"\"+ url +\"\\\"]\"));\n") + 
-              "        Assert.notNull(link, \"Link is not found.\");\n");
+            return (("        // Verify that the page contains a link with the specified URL\n" + "        WebElement foundLink = driver.findElement(By.xpath(\"//a[@href=\\\"\"+ url +\"\\\"]\"));\n") + "        Assert.notNull(link, \"Link is not found.\");\n");
           } else {
             String _variable_2 = command.getVariable();
             boolean _equals_1 = Objects.equal(_variable_2, "title");
             if (_equals_1) {
-              return ("        // Verify that the page countains the title\n" + 
-                "        assert driver.getPageSource().contains(title);\n");
-            } else {
-              return "";
+              return ("        // Verify that the page contains the specified title\n" + "        assert driver.getPageSource().contains(title);\n");
             }
           }
         }
       }
     }
-    return null;
+    return "";
   }
 
   public String processReadCommand(final Read command) {
     String _linkText = command.getLinkText();
-    String _plus = (("        // Get the link to a news\n" + 
-      "        WebElement link = driver.findElements(By.xpath(\"//a[starts-with(@href, \'") + _linkText);
-    String _plus_1 = (_plus + "\')]\")).get(");
+    String _plus = ("        // Read elements of the link: " + _linkText);
+    String _plus_1 = (_plus + "\n");
+    String _plus_2 = (_plus_1 + "        WebElement link = driver.findElements(By.xpath(\"//a[starts-with(@href, \'");
+    String _linkText_1 = command.getLinkText();
+    String _plus_3 = (_plus_2 + _linkText_1);
+    String _plus_4 = (_plus_3 + "\')]\")).get(");
     int _number = command.getNumber();
-    String _plus_2 = (_plus_1 + Integer.valueOf(_number));
-    String code = (_plus_2 + ");\n");
+    String _plus_5 = (_plus_4 + Integer.valueOf(_number));
+    String code = (_plus_5 + ");\n");
     boolean _contains = command.getElements().contains("title");
     if (_contains) {
       String _code = code;
-      code = (_code + "        String title = link.getText();\n");
+      code = (_code + "        // Read title\n        String title = link.getText();\n");
     }
     boolean _contains_1 = command.getElements().contains("url");
     if (_contains_1) {
       String _code_1 = code;
-      code = (_code_1 + "        String url = link.getAttribute(\"href\");\n");
+      code = (_code_1 + "        // Read URL\n        String url = link.getAttribute(\"href\");\n");
     }
     boolean _contains_2 = command.getElements().contains("text link");
     if (_contains_2) {
       String _code_2 = code;
-      code = (_code_2 + "        String title = link.getText();\n");
+      code = (_code_2 + "        // Read text link\n        String title = link.getText();\n");
     }
     return code;
   }

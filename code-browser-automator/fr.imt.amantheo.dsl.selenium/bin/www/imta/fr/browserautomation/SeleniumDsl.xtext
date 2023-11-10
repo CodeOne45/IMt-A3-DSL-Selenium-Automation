@@ -15,32 +15,45 @@ OpenBrowser:
     {OpenBrowser} 'open' 'a' 'browser' 'window';
 
 GoTo:
-    'go' 'to' 'url' (url=DynamicURL | 'URL')?;
+    'go' 'to' 'url' url=DynamicURL;
 
 Click:
-    {Click} 'click' 'on' 'the' ('link' linkText=STRING | 'button' buttonText=STRING | 'image' alt=STRING | 'variable' variable=DOMELEMENT);
+    {Click} 'click' 'on' 'the' ('link' linkText=STRING | 'button' buttonText=STRING | 'image' alt=STRING | 'variable' variable=ElementType);
 
 Fill:
-    'fill' 'the' 'text' 'field' fieldName=STRING 'with' 'the' ( 'text' textToFill=STRING | 'variable' variable=DOMELEMENT);
+    'fill' element=Selector fieldName=STRING  'with' 'the' ('text' textToFill=STRING | 'variable' variable=ElementType);
+
+Selector:
+    ('the' elementType=ElementType)?
+    (elementType=ElementType)?
+;
+
+ElementType:
+    'text' 'field' |
+    'checkboxes' |
+    'combobox' |
+    'option' |
+    'link' |
+    'button' |
+    'image' |
+    'url' |
+    'text' 'link' |
+    'title';
 
 Select:
-    'select' 'the' 'checkbox' 'with' 'values' values+=STRING (',' values+=STRING)*;
+    {Select} 'check' elementType=Selector values+=STRING (',' values+=STRING)* ;
 
 Verify:
-    {Verify} 'verify' 'that' 'the' 'page' 'contains' 'the' ( 'string' textToVerify=STRING | 'link' linkToVerify=STRING | 'variable' variable=DOMELEMENT);
+    'verify' 'that' 'the' 'page' 'contains' 'the' ('string' textToVerify=STRING | 'link' linkToVerify=STRING | 'variable' variable=ElementType);
 
 Read:
-    'read' 'the' elements+=DOMELEMENT (',' elements+=DOMELEMENT)* 'of' 'the' 'link' linkText=STRING 'number' number=INT;
+    'read' 'the' elements+=ElementType (',' elements+=ElementType)* 'of' 'the' 'link' linkText=STRING 'number' number=INT;
 
 Uncheck:
     {Uncheck} 'uncheck' 'all' 'checkboxes';
 
 Combobox:
-	'choose' 'the' 'option' option=STRING 'in' 'the' 'combobox' label=STRING;
-	
-DOMELEMENT:
-	('link' | 'button' | 'image' | 'url' | 'text' 'link' | 'title');
+    'choose' elements+=Selector option=STRING 'in' elements+=Selector label=STRING;
 
 
 DynamicURL: (URL | STRING);
-  

@@ -122,16 +122,14 @@ public class SeleniumDslGrammarAccess extends AbstractElementFinder.AbstractGram
 		private final Keyword cGoKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cToKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Keyword cUrlKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Alternatives cAlternatives_3 = (Alternatives)cGroup.eContents().get(3);
-		private final Assignment cUrlAssignment_3_0 = (Assignment)cAlternatives_3.eContents().get(0);
-		private final RuleCall cUrlDynamicURLParserRuleCall_3_0_0 = (RuleCall)cUrlAssignment_3_0.eContents().get(0);
-		private final Keyword cURLKeyword_3_1 = (Keyword)cAlternatives_3.eContents().get(1);
+		private final Assignment cUrlAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cUrlDynamicURLParserRuleCall_3_0 = (RuleCall)cUrlAssignment_3.eContents().get(0);
 		
 		//GoTo:
-		//    'go' 'to' 'url' (url=DynamicURL | 'URL')?;
+		//    'go' 'to' 'url' url=DynamicURL;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'go' 'to' 'url' (url=DynamicURL | 'URL')?
+		//'go' 'to' 'url' url=DynamicURL
 		public Group getGroup() { return cGroup; }
 		
 		//'go'
@@ -143,17 +141,11 @@ public class SeleniumDslGrammarAccess extends AbstractElementFinder.AbstractGram
 		//'url'
 		public Keyword getUrlKeyword_2() { return cUrlKeyword_2; }
 		
-		//(url=DynamicURL | 'URL')?
-		public Alternatives getAlternatives_3() { return cAlternatives_3; }
-		
 		//url=DynamicURL
-		public Assignment getUrlAssignment_3_0() { return cUrlAssignment_3_0; }
+		public Assignment getUrlAssignment_3() { return cUrlAssignment_3; }
 		
 		//DynamicURL
-		public RuleCall getUrlDynamicURLParserRuleCall_3_0_0() { return cUrlDynamicURLParserRuleCall_3_0_0; }
-		
-		//'URL'
-		public Keyword getURLKeyword_3_1() { return cURLKeyword_3_1; }
+		public RuleCall getUrlDynamicURLParserRuleCall_3_0() { return cUrlDynamicURLParserRuleCall_3_0; }
 	}
 	public class ClickElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "www.imta.fr.browserautomation.SeleniumDsl.Click");
@@ -178,13 +170,13 @@ public class SeleniumDslGrammarAccess extends AbstractElementFinder.AbstractGram
 		private final Group cGroup_4_3 = (Group)cAlternatives_4.eContents().get(3);
 		private final Keyword cVariableKeyword_4_3_0 = (Keyword)cGroup_4_3.eContents().get(0);
 		private final Assignment cVariableAssignment_4_3_1 = (Assignment)cGroup_4_3.eContents().get(1);
-		private final RuleCall cVariableDOMELEMENTParserRuleCall_4_3_1_0 = (RuleCall)cVariableAssignment_4_3_1.eContents().get(0);
+		private final RuleCall cVariableElementTypeParserRuleCall_4_3_1_0 = (RuleCall)cVariableAssignment_4_3_1.eContents().get(0);
 		
 		//Click:
-		//    {Click} 'click' 'on' 'the' ('link' linkText=STRING | 'button' buttonText=STRING | 'image' alt=STRING | 'variable' variable=DOMELEMENT);
+		//    {Click} 'click' 'on' 'the' ('link' linkText=STRING | 'button' buttonText=STRING | 'image' alt=STRING | 'variable' variable=ElementType);
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{Click} 'click' 'on' 'the' ('link' linkText=STRING | 'button' buttonText=STRING | 'image' alt=STRING | 'variable' variable=DOMELEMENT)
+		//{Click} 'click' 'on' 'the' ('link' linkText=STRING | 'button' buttonText=STRING | 'image' alt=STRING | 'variable' variable=ElementType)
 		public Group getGroup() { return cGroup; }
 		
 		//{Click}
@@ -199,7 +191,7 @@ public class SeleniumDslGrammarAccess extends AbstractElementFinder.AbstractGram
 		//'the'
 		public Keyword getTheKeyword_3() { return cTheKeyword_3; }
 		
-		//('link' linkText=STRING | 'button' buttonText=STRING | 'image' alt=STRING | 'variable' variable=DOMELEMENT)
+		//('link' linkText=STRING | 'button' buttonText=STRING | 'image' alt=STRING | 'variable' variable=ElementType)
 		public Alternatives getAlternatives_4() { return cAlternatives_4; }
 		
 		//'link' linkText=STRING
@@ -238,242 +230,353 @@ public class SeleniumDslGrammarAccess extends AbstractElementFinder.AbstractGram
 		//STRING
 		public RuleCall getAltSTRINGTerminalRuleCall_4_2_1_0() { return cAltSTRINGTerminalRuleCall_4_2_1_0; }
 		
-		//'variable' variable=DOMELEMENT
+		//'variable' variable=ElementType
 		public Group getGroup_4_3() { return cGroup_4_3; }
 		
 		//'variable'
 		public Keyword getVariableKeyword_4_3_0() { return cVariableKeyword_4_3_0; }
 		
-		//variable=DOMELEMENT
+		//variable=ElementType
 		public Assignment getVariableAssignment_4_3_1() { return cVariableAssignment_4_3_1; }
 		
-		//DOMELEMENT
-		public RuleCall getVariableDOMELEMENTParserRuleCall_4_3_1_0() { return cVariableDOMELEMENTParserRuleCall_4_3_1_0; }
+		//ElementType
+		public RuleCall getVariableElementTypeParserRuleCall_4_3_1_0() { return cVariableElementTypeParserRuleCall_4_3_1_0; }
 	}
 	public class FillElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "www.imta.fr.browserautomation.SeleniumDsl.Fill");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cFillKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cTheKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cTextKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Keyword cFieldKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cFieldNameAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cFieldNameSTRINGTerminalRuleCall_4_0 = (RuleCall)cFieldNameAssignment_4.eContents().get(0);
-		private final Keyword cWithKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Keyword cTheKeyword_6 = (Keyword)cGroup.eContents().get(6);
-		private final Alternatives cAlternatives_7 = (Alternatives)cGroup.eContents().get(7);
-		private final Group cGroup_7_0 = (Group)cAlternatives_7.eContents().get(0);
-		private final Keyword cTextKeyword_7_0_0 = (Keyword)cGroup_7_0.eContents().get(0);
-		private final Assignment cTextToFillAssignment_7_0_1 = (Assignment)cGroup_7_0.eContents().get(1);
-		private final RuleCall cTextToFillSTRINGTerminalRuleCall_7_0_1_0 = (RuleCall)cTextToFillAssignment_7_0_1.eContents().get(0);
-		private final Group cGroup_7_1 = (Group)cAlternatives_7.eContents().get(1);
-		private final Keyword cVariableKeyword_7_1_0 = (Keyword)cGroup_7_1.eContents().get(0);
-		private final Assignment cVariableAssignment_7_1_1 = (Assignment)cGroup_7_1.eContents().get(1);
-		private final RuleCall cVariableDOMELEMENTParserRuleCall_7_1_1_0 = (RuleCall)cVariableAssignment_7_1_1.eContents().get(0);
+		private final Assignment cElementAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cElementSelectorParserRuleCall_1_0 = (RuleCall)cElementAssignment_1.eContents().get(0);
+		private final Assignment cFieldNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cFieldNameSTRINGTerminalRuleCall_2_0 = (RuleCall)cFieldNameAssignment_2.eContents().get(0);
+		private final Keyword cWithKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cTheKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Alternatives cAlternatives_5 = (Alternatives)cGroup.eContents().get(5);
+		private final Group cGroup_5_0 = (Group)cAlternatives_5.eContents().get(0);
+		private final Keyword cTextKeyword_5_0_0 = (Keyword)cGroup_5_0.eContents().get(0);
+		private final Assignment cTextToFillAssignment_5_0_1 = (Assignment)cGroup_5_0.eContents().get(1);
+		private final RuleCall cTextToFillSTRINGTerminalRuleCall_5_0_1_0 = (RuleCall)cTextToFillAssignment_5_0_1.eContents().get(0);
+		private final Group cGroup_5_1 = (Group)cAlternatives_5.eContents().get(1);
+		private final Keyword cVariableKeyword_5_1_0 = (Keyword)cGroup_5_1.eContents().get(0);
+		private final Assignment cVariableAssignment_5_1_1 = (Assignment)cGroup_5_1.eContents().get(1);
+		private final RuleCall cVariableElementTypeParserRuleCall_5_1_1_0 = (RuleCall)cVariableAssignment_5_1_1.eContents().get(0);
 		
 		//Fill:
-		//    'fill' 'the' 'text' 'field' fieldName=STRING 'with' 'the' ( 'text' textToFill=STRING | 'variable' variable=DOMELEMENT);
+		//    'fill' element=Selector fieldName=STRING  'with' 'the' ('text' textToFill=STRING | 'variable' variable=ElementType);
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'fill' 'the' 'text' 'field' fieldName=STRING 'with' 'the' ( 'text' textToFill=STRING | 'variable' variable=DOMELEMENT)
+		//'fill' element=Selector fieldName=STRING  'with' 'the' ('text' textToFill=STRING | 'variable' variable=ElementType)
 		public Group getGroup() { return cGroup; }
 		
 		//'fill'
 		public Keyword getFillKeyword_0() { return cFillKeyword_0; }
 		
-		//'the'
-		public Keyword getTheKeyword_1() { return cTheKeyword_1; }
+		//element=Selector
+		public Assignment getElementAssignment_1() { return cElementAssignment_1; }
 		
-		//'text'
-		public Keyword getTextKeyword_2() { return cTextKeyword_2; }
-		
-		//'field'
-		public Keyword getFieldKeyword_3() { return cFieldKeyword_3; }
+		//Selector
+		public RuleCall getElementSelectorParserRuleCall_1_0() { return cElementSelectorParserRuleCall_1_0; }
 		
 		//fieldName=STRING
-		public Assignment getFieldNameAssignment_4() { return cFieldNameAssignment_4; }
+		public Assignment getFieldNameAssignment_2() { return cFieldNameAssignment_2; }
 		
 		//STRING
-		public RuleCall getFieldNameSTRINGTerminalRuleCall_4_0() { return cFieldNameSTRINGTerminalRuleCall_4_0; }
-		
-		//'with'
-		public Keyword getWithKeyword_5() { return cWithKeyword_5; }
-		
-		//'the'
-		public Keyword getTheKeyword_6() { return cTheKeyword_6; }
-		
-		//( 'text' textToFill=STRING | 'variable' variable=DOMELEMENT)
-		public Alternatives getAlternatives_7() { return cAlternatives_7; }
-		
-		//'text' textToFill=STRING
-		public Group getGroup_7_0() { return cGroup_7_0; }
-		
-		//'text'
-		public Keyword getTextKeyword_7_0_0() { return cTextKeyword_7_0_0; }
-		
-		//textToFill=STRING
-		public Assignment getTextToFillAssignment_7_0_1() { return cTextToFillAssignment_7_0_1; }
-		
-		//STRING
-		public RuleCall getTextToFillSTRINGTerminalRuleCall_7_0_1_0() { return cTextToFillSTRINGTerminalRuleCall_7_0_1_0; }
-		
-		//'variable' variable=DOMELEMENT
-		public Group getGroup_7_1() { return cGroup_7_1; }
-		
-		//'variable'
-		public Keyword getVariableKeyword_7_1_0() { return cVariableKeyword_7_1_0; }
-		
-		//variable=DOMELEMENT
-		public Assignment getVariableAssignment_7_1_1() { return cVariableAssignment_7_1_1; }
-		
-		//DOMELEMENT
-		public RuleCall getVariableDOMELEMENTParserRuleCall_7_1_1_0() { return cVariableDOMELEMENTParserRuleCall_7_1_1_0; }
-	}
-	public class SelectElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "www.imta.fr.browserautomation.SeleniumDsl.Select");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cSelectKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cTheKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cCheckboxKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Keyword cWithKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Keyword cValuesKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cValuesAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cValuesSTRINGTerminalRuleCall_5_0 = (RuleCall)cValuesAssignment_5.eContents().get(0);
-		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
-		private final Keyword cCommaKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
-		private final Assignment cValuesAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
-		private final RuleCall cValuesSTRINGTerminalRuleCall_6_1_0 = (RuleCall)cValuesAssignment_6_1.eContents().get(0);
-		
-		//Select:
-		//    'select' 'the' 'checkbox' 'with' 'values' values+=STRING (',' values+=STRING)*;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'select' 'the' 'checkbox' 'with' 'values' values+=STRING (',' values+=STRING)*
-		public Group getGroup() { return cGroup; }
-		
-		//'select'
-		public Keyword getSelectKeyword_0() { return cSelectKeyword_0; }
-		
-		//'the'
-		public Keyword getTheKeyword_1() { return cTheKeyword_1; }
-		
-		//'checkbox'
-		public Keyword getCheckboxKeyword_2() { return cCheckboxKeyword_2; }
+		public RuleCall getFieldNameSTRINGTerminalRuleCall_2_0() { return cFieldNameSTRINGTerminalRuleCall_2_0; }
 		
 		//'with'
 		public Keyword getWithKeyword_3() { return cWithKeyword_3; }
 		
-		//'values'
-		public Keyword getValuesKeyword_4() { return cValuesKeyword_4; }
+		//'the'
+		public Keyword getTheKeyword_4() { return cTheKeyword_4; }
 		
-		//values+=STRING
-		public Assignment getValuesAssignment_5() { return cValuesAssignment_5; }
+		//('text' textToFill=STRING | 'variable' variable=ElementType)
+		public Alternatives getAlternatives_5() { return cAlternatives_5; }
+		
+		//'text' textToFill=STRING
+		public Group getGroup_5_0() { return cGroup_5_0; }
+		
+		//'text'
+		public Keyword getTextKeyword_5_0_0() { return cTextKeyword_5_0_0; }
+		
+		//textToFill=STRING
+		public Assignment getTextToFillAssignment_5_0_1() { return cTextToFillAssignment_5_0_1; }
 		
 		//STRING
-		public RuleCall getValuesSTRINGTerminalRuleCall_5_0() { return cValuesSTRINGTerminalRuleCall_5_0; }
+		public RuleCall getTextToFillSTRINGTerminalRuleCall_5_0_1_0() { return cTextToFillSTRINGTerminalRuleCall_5_0_1_0; }
+		
+		//'variable' variable=ElementType
+		public Group getGroup_5_1() { return cGroup_5_1; }
+		
+		//'variable'
+		public Keyword getVariableKeyword_5_1_0() { return cVariableKeyword_5_1_0; }
+		
+		//variable=ElementType
+		public Assignment getVariableAssignment_5_1_1() { return cVariableAssignment_5_1_1; }
+		
+		//ElementType
+		public RuleCall getVariableElementTypeParserRuleCall_5_1_1_0() { return cVariableElementTypeParserRuleCall_5_1_1_0; }
+	}
+	public class SelectorElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "www.imta.fr.browserautomation.SeleniumDsl.Selector");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cGroup.eContents().get(0);
+		private final Keyword cTheKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
+		private final Assignment cElementTypeAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
+		private final RuleCall cElementTypeElementTypeParserRuleCall_0_1_0 = (RuleCall)cElementTypeAssignment_0_1.eContents().get(0);
+		private final Assignment cElementTypeAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cElementTypeElementTypeParserRuleCall_1_0 = (RuleCall)cElementTypeAssignment_1.eContents().get(0);
+		
+		//Selector:
+		//    ('the' elementType=ElementType)?
+		//    (elementType=ElementType)?
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//('the' elementType=ElementType)?
+		//(elementType=ElementType)?
+		public Group getGroup() { return cGroup; }
+		
+		//('the' elementType=ElementType)?
+		public Group getGroup_0() { return cGroup_0; }
+		
+		//'the'
+		public Keyword getTheKeyword_0_0() { return cTheKeyword_0_0; }
+		
+		//elementType=ElementType
+		public Assignment getElementTypeAssignment_0_1() { return cElementTypeAssignment_0_1; }
+		
+		//ElementType
+		public RuleCall getElementTypeElementTypeParserRuleCall_0_1_0() { return cElementTypeElementTypeParserRuleCall_0_1_0; }
+		
+		//(elementType=ElementType)?
+		public Assignment getElementTypeAssignment_1() { return cElementTypeAssignment_1; }
+		
+		//ElementType
+		public RuleCall getElementTypeElementTypeParserRuleCall_1_0() { return cElementTypeElementTypeParserRuleCall_1_0; }
+	}
+	public class ElementTypeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "www.imta.fr.browserautomation.SeleniumDsl.ElementType");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final Keyword cTextKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
+		private final Keyword cFieldKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
+		private final Keyword cCheckboxesKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
+		private final Keyword cComboboxKeyword_2 = (Keyword)cAlternatives.eContents().get(2);
+		private final Keyword cOptionKeyword_3 = (Keyword)cAlternatives.eContents().get(3);
+		private final Keyword cLinkKeyword_4 = (Keyword)cAlternatives.eContents().get(4);
+		private final Keyword cButtonKeyword_5 = (Keyword)cAlternatives.eContents().get(5);
+		private final Keyword cImageKeyword_6 = (Keyword)cAlternatives.eContents().get(6);
+		private final Keyword cUrlKeyword_7 = (Keyword)cAlternatives.eContents().get(7);
+		private final Group cGroup_8 = (Group)cAlternatives.eContents().get(8);
+		private final Keyword cTextKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
+		private final Keyword cLinkKeyword_8_1 = (Keyword)cGroup_8.eContents().get(1);
+		private final Keyword cTitleKeyword_9 = (Keyword)cAlternatives.eContents().get(9);
+		
+		//ElementType:
+		//    'text' 'field' |
+		//    'checkboxes' |
+		//    'combobox' |
+		//    'option' |
+		//    'link' |
+		//    'button' |
+		//    'image' |
+		//    'url' |
+		//    'text' 'link' |
+		//    'title';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'text' 'field' |
+		//'checkboxes' |
+		//'combobox' |
+		//'option' |
+		//'link' |
+		//'button' |
+		//'image' |
+		//'url' |
+		//'text' 'link' |
+		//'title'
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//'text' 'field'
+		public Group getGroup_0() { return cGroup_0; }
+		
+		//'text'
+		public Keyword getTextKeyword_0_0() { return cTextKeyword_0_0; }
+		
+		//'field'
+		public Keyword getFieldKeyword_0_1() { return cFieldKeyword_0_1; }
+		
+		//'checkboxes'
+		public Keyword getCheckboxesKeyword_1() { return cCheckboxesKeyword_1; }
+		
+		//'combobox'
+		public Keyword getComboboxKeyword_2() { return cComboboxKeyword_2; }
+		
+		//'option'
+		public Keyword getOptionKeyword_3() { return cOptionKeyword_3; }
+		
+		//'link'
+		public Keyword getLinkKeyword_4() { return cLinkKeyword_4; }
+		
+		//'button'
+		public Keyword getButtonKeyword_5() { return cButtonKeyword_5; }
+		
+		//'image'
+		public Keyword getImageKeyword_6() { return cImageKeyword_6; }
+		
+		//'url'
+		public Keyword getUrlKeyword_7() { return cUrlKeyword_7; }
+		
+		//'text' 'link'
+		public Group getGroup_8() { return cGroup_8; }
+		
+		//'text'
+		public Keyword getTextKeyword_8_0() { return cTextKeyword_8_0; }
+		
+		//'link'
+		public Keyword getLinkKeyword_8_1() { return cLinkKeyword_8_1; }
+		
+		//'title'
+		public Keyword getTitleKeyword_9() { return cTitleKeyword_9; }
+	}
+	public class SelectElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "www.imta.fr.browserautomation.SeleniumDsl.Select");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cSelectAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cCheckKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cElementTypeAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cElementTypeSelectorParserRuleCall_2_0 = (RuleCall)cElementTypeAssignment_2.eContents().get(0);
+		private final Assignment cValuesAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cValuesSTRINGTerminalRuleCall_3_0 = (RuleCall)cValuesAssignment_3.eContents().get(0);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cCommaKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Assignment cValuesAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final RuleCall cValuesSTRINGTerminalRuleCall_4_1_0 = (RuleCall)cValuesAssignment_4_1.eContents().get(0);
+		
+		//Select:
+		//    {Select} 'check' elementType=Selector values+=STRING (',' values+=STRING)* ;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{Select} 'check' elementType=Selector values+=STRING (',' values+=STRING)*
+		public Group getGroup() { return cGroup; }
+		
+		//{Select}
+		public Action getSelectAction_0() { return cSelectAction_0; }
+		
+		//'check'
+		public Keyword getCheckKeyword_1() { return cCheckKeyword_1; }
+		
+		//elementType=Selector
+		public Assignment getElementTypeAssignment_2() { return cElementTypeAssignment_2; }
+		
+		//Selector
+		public RuleCall getElementTypeSelectorParserRuleCall_2_0() { return cElementTypeSelectorParserRuleCall_2_0; }
+		
+		//values+=STRING
+		public Assignment getValuesAssignment_3() { return cValuesAssignment_3; }
+		
+		//STRING
+		public RuleCall getValuesSTRINGTerminalRuleCall_3_0() { return cValuesSTRINGTerminalRuleCall_3_0; }
 		
 		//(',' values+=STRING)*
-		public Group getGroup_6() { return cGroup_6; }
+		public Group getGroup_4() { return cGroup_4; }
 		
 		//','
-		public Keyword getCommaKeyword_6_0() { return cCommaKeyword_6_0; }
+		public Keyword getCommaKeyword_4_0() { return cCommaKeyword_4_0; }
 		
 		//values+=STRING
-		public Assignment getValuesAssignment_6_1() { return cValuesAssignment_6_1; }
+		public Assignment getValuesAssignment_4_1() { return cValuesAssignment_4_1; }
 		
 		//STRING
-		public RuleCall getValuesSTRINGTerminalRuleCall_6_1_0() { return cValuesSTRINGTerminalRuleCall_6_1_0; }
+		public RuleCall getValuesSTRINGTerminalRuleCall_4_1_0() { return cValuesSTRINGTerminalRuleCall_4_1_0; }
 	}
 	public class VerifyElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "www.imta.fr.browserautomation.SeleniumDsl.Verify");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cVerifyAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cVerifyKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cThatKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Keyword cTheKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Keyword cPageKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Keyword cContainsKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Keyword cTheKeyword_6 = (Keyword)cGroup.eContents().get(6);
-		private final Alternatives cAlternatives_7 = (Alternatives)cGroup.eContents().get(7);
-		private final Group cGroup_7_0 = (Group)cAlternatives_7.eContents().get(0);
-		private final Keyword cStringKeyword_7_0_0 = (Keyword)cGroup_7_0.eContents().get(0);
-		private final Assignment cTextToVerifyAssignment_7_0_1 = (Assignment)cGroup_7_0.eContents().get(1);
-		private final RuleCall cTextToVerifySTRINGTerminalRuleCall_7_0_1_0 = (RuleCall)cTextToVerifyAssignment_7_0_1.eContents().get(0);
-		private final Group cGroup_7_1 = (Group)cAlternatives_7.eContents().get(1);
-		private final Keyword cLinkKeyword_7_1_0 = (Keyword)cGroup_7_1.eContents().get(0);
-		private final Assignment cLinkToVerifyAssignment_7_1_1 = (Assignment)cGroup_7_1.eContents().get(1);
-		private final RuleCall cLinkToVerifySTRINGTerminalRuleCall_7_1_1_0 = (RuleCall)cLinkToVerifyAssignment_7_1_1.eContents().get(0);
-		private final Group cGroup_7_2 = (Group)cAlternatives_7.eContents().get(2);
-		private final Keyword cVariableKeyword_7_2_0 = (Keyword)cGroup_7_2.eContents().get(0);
-		private final Assignment cVariableAssignment_7_2_1 = (Assignment)cGroup_7_2.eContents().get(1);
-		private final RuleCall cVariableDOMELEMENTParserRuleCall_7_2_1_0 = (RuleCall)cVariableAssignment_7_2_1.eContents().get(0);
+		private final Keyword cVerifyKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cThatKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cTheKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cPageKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cContainsKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Keyword cTheKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Alternatives cAlternatives_6 = (Alternatives)cGroup.eContents().get(6);
+		private final Group cGroup_6_0 = (Group)cAlternatives_6.eContents().get(0);
+		private final Keyword cStringKeyword_6_0_0 = (Keyword)cGroup_6_0.eContents().get(0);
+		private final Assignment cTextToVerifyAssignment_6_0_1 = (Assignment)cGroup_6_0.eContents().get(1);
+		private final RuleCall cTextToVerifySTRINGTerminalRuleCall_6_0_1_0 = (RuleCall)cTextToVerifyAssignment_6_0_1.eContents().get(0);
+		private final Group cGroup_6_1 = (Group)cAlternatives_6.eContents().get(1);
+		private final Keyword cLinkKeyword_6_1_0 = (Keyword)cGroup_6_1.eContents().get(0);
+		private final Assignment cLinkToVerifyAssignment_6_1_1 = (Assignment)cGroup_6_1.eContents().get(1);
+		private final RuleCall cLinkToVerifySTRINGTerminalRuleCall_6_1_1_0 = (RuleCall)cLinkToVerifyAssignment_6_1_1.eContents().get(0);
+		private final Group cGroup_6_2 = (Group)cAlternatives_6.eContents().get(2);
+		private final Keyword cVariableKeyword_6_2_0 = (Keyword)cGroup_6_2.eContents().get(0);
+		private final Assignment cVariableAssignment_6_2_1 = (Assignment)cGroup_6_2.eContents().get(1);
+		private final RuleCall cVariableElementTypeParserRuleCall_6_2_1_0 = (RuleCall)cVariableAssignment_6_2_1.eContents().get(0);
 		
 		//Verify:
-		//    {Verify} 'verify' 'that' 'the' 'page' 'contains' 'the' ( 'string' textToVerify=STRING | 'link' linkToVerify=STRING | 'variable' variable=DOMELEMENT);
+		//    'verify' 'that' 'the' 'page' 'contains' 'the' ('string' textToVerify=STRING | 'link' linkToVerify=STRING | 'variable' variable=ElementType);
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{Verify} 'verify' 'that' 'the' 'page' 'contains' 'the' ( 'string' textToVerify=STRING | 'link' linkToVerify=STRING | 'variable' variable=DOMELEMENT)
+		//'verify' 'that' 'the' 'page' 'contains' 'the' ('string' textToVerify=STRING | 'link' linkToVerify=STRING | 'variable' variable=ElementType)
 		public Group getGroup() { return cGroup; }
 		
-		//{Verify}
-		public Action getVerifyAction_0() { return cVerifyAction_0; }
-		
 		//'verify'
-		public Keyword getVerifyKeyword_1() { return cVerifyKeyword_1; }
+		public Keyword getVerifyKeyword_0() { return cVerifyKeyword_0; }
 		
 		//'that'
-		public Keyword getThatKeyword_2() { return cThatKeyword_2; }
+		public Keyword getThatKeyword_1() { return cThatKeyword_1; }
 		
 		//'the'
-		public Keyword getTheKeyword_3() { return cTheKeyword_3; }
+		public Keyword getTheKeyword_2() { return cTheKeyword_2; }
 		
 		//'page'
-		public Keyword getPageKeyword_4() { return cPageKeyword_4; }
+		public Keyword getPageKeyword_3() { return cPageKeyword_3; }
 		
 		//'contains'
-		public Keyword getContainsKeyword_5() { return cContainsKeyword_5; }
+		public Keyword getContainsKeyword_4() { return cContainsKeyword_4; }
 		
 		//'the'
-		public Keyword getTheKeyword_6() { return cTheKeyword_6; }
+		public Keyword getTheKeyword_5() { return cTheKeyword_5; }
 		
-		//( 'string' textToVerify=STRING | 'link' linkToVerify=STRING | 'variable' variable=DOMELEMENT)
-		public Alternatives getAlternatives_7() { return cAlternatives_7; }
+		//('string' textToVerify=STRING | 'link' linkToVerify=STRING | 'variable' variable=ElementType)
+		public Alternatives getAlternatives_6() { return cAlternatives_6; }
 		
 		//'string' textToVerify=STRING
-		public Group getGroup_7_0() { return cGroup_7_0; }
+		public Group getGroup_6_0() { return cGroup_6_0; }
 		
 		//'string'
-		public Keyword getStringKeyword_7_0_0() { return cStringKeyword_7_0_0; }
+		public Keyword getStringKeyword_6_0_0() { return cStringKeyword_6_0_0; }
 		
 		//textToVerify=STRING
-		public Assignment getTextToVerifyAssignment_7_0_1() { return cTextToVerifyAssignment_7_0_1; }
+		public Assignment getTextToVerifyAssignment_6_0_1() { return cTextToVerifyAssignment_6_0_1; }
 		
 		//STRING
-		public RuleCall getTextToVerifySTRINGTerminalRuleCall_7_0_1_0() { return cTextToVerifySTRINGTerminalRuleCall_7_0_1_0; }
+		public RuleCall getTextToVerifySTRINGTerminalRuleCall_6_0_1_0() { return cTextToVerifySTRINGTerminalRuleCall_6_0_1_0; }
 		
 		//'link' linkToVerify=STRING
-		public Group getGroup_7_1() { return cGroup_7_1; }
+		public Group getGroup_6_1() { return cGroup_6_1; }
 		
 		//'link'
-		public Keyword getLinkKeyword_7_1_0() { return cLinkKeyword_7_1_0; }
+		public Keyword getLinkKeyword_6_1_0() { return cLinkKeyword_6_1_0; }
 		
 		//linkToVerify=STRING
-		public Assignment getLinkToVerifyAssignment_7_1_1() { return cLinkToVerifyAssignment_7_1_1; }
+		public Assignment getLinkToVerifyAssignment_6_1_1() { return cLinkToVerifyAssignment_6_1_1; }
 		
 		//STRING
-		public RuleCall getLinkToVerifySTRINGTerminalRuleCall_7_1_1_0() { return cLinkToVerifySTRINGTerminalRuleCall_7_1_1_0; }
+		public RuleCall getLinkToVerifySTRINGTerminalRuleCall_6_1_1_0() { return cLinkToVerifySTRINGTerminalRuleCall_6_1_1_0; }
 		
-		//'variable' variable=DOMELEMENT
-		public Group getGroup_7_2() { return cGroup_7_2; }
+		//'variable' variable=ElementType
+		public Group getGroup_6_2() { return cGroup_6_2; }
 		
 		//'variable'
-		public Keyword getVariableKeyword_7_2_0() { return cVariableKeyword_7_2_0; }
+		public Keyword getVariableKeyword_6_2_0() { return cVariableKeyword_6_2_0; }
 		
-		//variable=DOMELEMENT
-		public Assignment getVariableAssignment_7_2_1() { return cVariableAssignment_7_2_1; }
+		//variable=ElementType
+		public Assignment getVariableAssignment_6_2_1() { return cVariableAssignment_6_2_1; }
 		
-		//DOMELEMENT
-		public RuleCall getVariableDOMELEMENTParserRuleCall_7_2_1_0() { return cVariableDOMELEMENTParserRuleCall_7_2_1_0; }
+		//ElementType
+		public RuleCall getVariableElementTypeParserRuleCall_6_2_1_0() { return cVariableElementTypeParserRuleCall_6_2_1_0; }
 	}
 	public class ReadElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "www.imta.fr.browserautomation.SeleniumDsl.Read");
@@ -481,11 +584,11 @@ public class SeleniumDslGrammarAccess extends AbstractElementFinder.AbstractGram
 		private final Keyword cReadKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cTheKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cElementsAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cElementsDOMELEMENTParserRuleCall_2_0 = (RuleCall)cElementsAssignment_2.eContents().get(0);
+		private final RuleCall cElementsElementTypeParserRuleCall_2_0 = (RuleCall)cElementsAssignment_2.eContents().get(0);
 		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
 		private final Keyword cCommaKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
 		private final Assignment cElementsAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final RuleCall cElementsDOMELEMENTParserRuleCall_3_1_0 = (RuleCall)cElementsAssignment_3_1.eContents().get(0);
+		private final RuleCall cElementsElementTypeParserRuleCall_3_1_0 = (RuleCall)cElementsAssignment_3_1.eContents().get(0);
 		private final Keyword cOfKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		private final Keyword cTheKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		private final Keyword cLinkKeyword_6 = (Keyword)cGroup.eContents().get(6);
@@ -496,10 +599,10 @@ public class SeleniumDslGrammarAccess extends AbstractElementFinder.AbstractGram
 		private final RuleCall cNumberINTTerminalRuleCall_9_0 = (RuleCall)cNumberAssignment_9.eContents().get(0);
 		
 		//Read:
-		//    'read' 'the' elements+=DOMELEMENT (',' elements+=DOMELEMENT)* 'of' 'the' 'link' linkText=STRING 'number' number=INT;
+		//    'read' 'the' elements+=ElementType (',' elements+=ElementType)* 'of' 'the' 'link' linkText=STRING 'number' number=INT;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'read' 'the' elements+=DOMELEMENT (',' elements+=DOMELEMENT)* 'of' 'the' 'link' linkText=STRING 'number' number=INT
+		//'read' 'the' elements+=ElementType (',' elements+=ElementType)* 'of' 'the' 'link' linkText=STRING 'number' number=INT
 		public Group getGroup() { return cGroup; }
 		
 		//'read'
@@ -508,23 +611,23 @@ public class SeleniumDslGrammarAccess extends AbstractElementFinder.AbstractGram
 		//'the'
 		public Keyword getTheKeyword_1() { return cTheKeyword_1; }
 		
-		//elements+=DOMELEMENT
+		//elements+=ElementType
 		public Assignment getElementsAssignment_2() { return cElementsAssignment_2; }
 		
-		//DOMELEMENT
-		public RuleCall getElementsDOMELEMENTParserRuleCall_2_0() { return cElementsDOMELEMENTParserRuleCall_2_0; }
+		//ElementType
+		public RuleCall getElementsElementTypeParserRuleCall_2_0() { return cElementsElementTypeParserRuleCall_2_0; }
 		
-		//(',' elements+=DOMELEMENT)*
+		//(',' elements+=ElementType)*
 		public Group getGroup_3() { return cGroup_3; }
 		
 		//','
 		public Keyword getCommaKeyword_3_0() { return cCommaKeyword_3_0; }
 		
-		//elements+=DOMELEMENT
+		//elements+=ElementType
 		public Assignment getElementsAssignment_3_1() { return cElementsAssignment_3_1; }
 		
-		//DOMELEMENT
-		public RuleCall getElementsDOMELEMENTParserRuleCall_3_1_0() { return cElementsDOMELEMENTParserRuleCall_3_1_0; }
+		//ElementType
+		public RuleCall getElementsElementTypeParserRuleCall_3_1_0() { return cElementsElementTypeParserRuleCall_3_1_0; }
 		
 		//'of'
 		public Keyword getOfKeyword_4() { return cOfKeyword_4; }
@@ -581,95 +684,52 @@ public class SeleniumDslGrammarAccess extends AbstractElementFinder.AbstractGram
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "www.imta.fr.browserautomation.SeleniumDsl.Combobox");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cChooseKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cTheKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cOptionKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cOptionAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cOptionSTRINGTerminalRuleCall_3_0 = (RuleCall)cOptionAssignment_3.eContents().get(0);
-		private final Keyword cInKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Keyword cTheKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Keyword cComboboxKeyword_6 = (Keyword)cGroup.eContents().get(6);
-		private final Assignment cLabelAssignment_7 = (Assignment)cGroup.eContents().get(7);
-		private final RuleCall cLabelSTRINGTerminalRuleCall_7_0 = (RuleCall)cLabelAssignment_7.eContents().get(0);
+		private final Assignment cElementsAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cElementsSelectorParserRuleCall_1_0 = (RuleCall)cElementsAssignment_1.eContents().get(0);
+		private final Assignment cOptionAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cOptionSTRINGTerminalRuleCall_2_0 = (RuleCall)cOptionAssignment_2.eContents().get(0);
+		private final Keyword cInKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cElementsAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cElementsSelectorParserRuleCall_4_0 = (RuleCall)cElementsAssignment_4.eContents().get(0);
+		private final Assignment cLabelAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cLabelSTRINGTerminalRuleCall_5_0 = (RuleCall)cLabelAssignment_5.eContents().get(0);
 		
 		//Combobox:
-		//    'choose' 'the' 'option' option=STRING 'in' 'the' 'combobox' label=STRING;
+		//    'choose' elements+=Selector option=STRING 'in' elements+=Selector label=STRING;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'choose' 'the' 'option' option=STRING 'in' 'the' 'combobox' label=STRING
+		//'choose' elements+=Selector option=STRING 'in' elements+=Selector label=STRING
 		public Group getGroup() { return cGroup; }
 		
 		//'choose'
 		public Keyword getChooseKeyword_0() { return cChooseKeyword_0; }
 		
-		//'the'
-		public Keyword getTheKeyword_1() { return cTheKeyword_1; }
+		//elements+=Selector
+		public Assignment getElementsAssignment_1() { return cElementsAssignment_1; }
 		
-		//'option'
-		public Keyword getOptionKeyword_2() { return cOptionKeyword_2; }
+		//Selector
+		public RuleCall getElementsSelectorParserRuleCall_1_0() { return cElementsSelectorParserRuleCall_1_0; }
 		
 		//option=STRING
-		public Assignment getOptionAssignment_3() { return cOptionAssignment_3; }
+		public Assignment getOptionAssignment_2() { return cOptionAssignment_2; }
 		
 		//STRING
-		public RuleCall getOptionSTRINGTerminalRuleCall_3_0() { return cOptionSTRINGTerminalRuleCall_3_0; }
+		public RuleCall getOptionSTRINGTerminalRuleCall_2_0() { return cOptionSTRINGTerminalRuleCall_2_0; }
 		
 		//'in'
-		public Keyword getInKeyword_4() { return cInKeyword_4; }
+		public Keyword getInKeyword_3() { return cInKeyword_3; }
 		
-		//'the'
-		public Keyword getTheKeyword_5() { return cTheKeyword_5; }
+		//elements+=Selector
+		public Assignment getElementsAssignment_4() { return cElementsAssignment_4; }
 		
-		//'combobox'
-		public Keyword getComboboxKeyword_6() { return cComboboxKeyword_6; }
+		//Selector
+		public RuleCall getElementsSelectorParserRuleCall_4_0() { return cElementsSelectorParserRuleCall_4_0; }
 		
 		//label=STRING
-		public Assignment getLabelAssignment_7() { return cLabelAssignment_7; }
+		public Assignment getLabelAssignment_5() { return cLabelAssignment_5; }
 		
 		//STRING
-		public RuleCall getLabelSTRINGTerminalRuleCall_7_0() { return cLabelSTRINGTerminalRuleCall_7_0; }
-	}
-	public class DOMELEMENTElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "www.imta.fr.browserautomation.SeleniumDsl.DOMELEMENT");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Keyword cLinkKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
-		private final Keyword cButtonKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
-		private final Keyword cImageKeyword_2 = (Keyword)cAlternatives.eContents().get(2);
-		private final Keyword cUrlKeyword_3 = (Keyword)cAlternatives.eContents().get(3);
-		private final Group cGroup_4 = (Group)cAlternatives.eContents().get(4);
-		private final Keyword cTextKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final Keyword cLinkKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
-		private final Keyword cTitleKeyword_5 = (Keyword)cAlternatives.eContents().get(5);
-		
-		//DOMELEMENT:
-		//    ('link' | 'button' | 'image' | 'url' | 'text' 'link' | 'title');
-		@Override public ParserRule getRule() { return rule; }
-		
-		//('link' | 'button' | 'image' | 'url' | 'text' 'link' | 'title')
-		public Alternatives getAlternatives() { return cAlternatives; }
-		
-		//'link'
-		public Keyword getLinkKeyword_0() { return cLinkKeyword_0; }
-		
-		//'button'
-		public Keyword getButtonKeyword_1() { return cButtonKeyword_1; }
-		
-		//'image'
-		public Keyword getImageKeyword_2() { return cImageKeyword_2; }
-		
-		//'url'
-		public Keyword getUrlKeyword_3() { return cUrlKeyword_3; }
-		
-		//'text' 'link'
-		public Group getGroup_4() { return cGroup_4; }
-		
-		//'text'
-		public Keyword getTextKeyword_4_0() { return cTextKeyword_4_0; }
-		
-		//'link'
-		public Keyword getLinkKeyword_4_1() { return cLinkKeyword_4_1; }
-		
-		//'title'
-		public Keyword getTitleKeyword_5() { return cTitleKeyword_5; }
+		public RuleCall getLabelSTRINGTerminalRuleCall_5_0() { return cLabelSTRINGTerminalRuleCall_5_0; }
 	}
 	public class DynamicURLElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "www.imta.fr.browserautomation.SeleniumDsl.DynamicURL");
@@ -699,12 +759,13 @@ public class SeleniumDslGrammarAccess extends AbstractElementFinder.AbstractGram
 	private final GoToElements pGoTo;
 	private final ClickElements pClick;
 	private final FillElements pFill;
+	private final SelectorElements pSelector;
+	private final ElementTypeElements pElementType;
 	private final SelectElements pSelect;
 	private final VerifyElements pVerify;
 	private final ReadElements pRead;
 	private final UncheckElements pUncheck;
 	private final ComboboxElements pCombobox;
-	private final DOMELEMENTElements pDOMELEMENT;
 	private final DynamicURLElements pDynamicURL;
 	
 	private final Grammar grammar;
@@ -724,12 +785,13 @@ public class SeleniumDslGrammarAccess extends AbstractElementFinder.AbstractGram
 		this.pGoTo = new GoToElements();
 		this.pClick = new ClickElements();
 		this.pFill = new FillElements();
+		this.pSelector = new SelectorElements();
+		this.pElementType = new ElementTypeElements();
 		this.pSelect = new SelectElements();
 		this.pVerify = new VerifyElements();
 		this.pRead = new ReadElements();
 		this.pUncheck = new UncheckElements();
 		this.pCombobox = new ComboboxElements();
-		this.pDOMELEMENT = new DOMELEMENTElements();
 		this.pDynamicURL = new DynamicURLElements();
 	}
 	
@@ -801,7 +863,7 @@ public class SeleniumDslGrammarAccess extends AbstractElementFinder.AbstractGram
 	}
 	
 	//GoTo:
-	//    'go' 'to' 'url' (url=DynamicURL | 'URL')?;
+	//    'go' 'to' 'url' url=DynamicURL;
 	public GoToElements getGoToAccess() {
 		return pGoTo;
 	}
@@ -811,7 +873,7 @@ public class SeleniumDslGrammarAccess extends AbstractElementFinder.AbstractGram
 	}
 	
 	//Click:
-	//    {Click} 'click' 'on' 'the' ('link' linkText=STRING | 'button' buttonText=STRING | 'image' alt=STRING | 'variable' variable=DOMELEMENT);
+	//    {Click} 'click' 'on' 'the' ('link' linkText=STRING | 'button' buttonText=STRING | 'image' alt=STRING | 'variable' variable=ElementType);
 	public ClickElements getClickAccess() {
 		return pClick;
 	}
@@ -821,7 +883,7 @@ public class SeleniumDslGrammarAccess extends AbstractElementFinder.AbstractGram
 	}
 	
 	//Fill:
-	//    'fill' 'the' 'text' 'field' fieldName=STRING 'with' 'the' ( 'text' textToFill=STRING | 'variable' variable=DOMELEMENT);
+	//    'fill' element=Selector fieldName=STRING  'with' 'the' ('text' textToFill=STRING | 'variable' variable=ElementType);
 	public FillElements getFillAccess() {
 		return pFill;
 	}
@@ -830,8 +892,39 @@ public class SeleniumDslGrammarAccess extends AbstractElementFinder.AbstractGram
 		return getFillAccess().getRule();
 	}
 	
+	//Selector:
+	//    ('the' elementType=ElementType)?
+	//    (elementType=ElementType)?
+	//;
+	public SelectorElements getSelectorAccess() {
+		return pSelector;
+	}
+	
+	public ParserRule getSelectorRule() {
+		return getSelectorAccess().getRule();
+	}
+	
+	//ElementType:
+	//    'text' 'field' |
+	//    'checkboxes' |
+	//    'combobox' |
+	//    'option' |
+	//    'link' |
+	//    'button' |
+	//    'image' |
+	//    'url' |
+	//    'text' 'link' |
+	//    'title';
+	public ElementTypeElements getElementTypeAccess() {
+		return pElementType;
+	}
+	
+	public ParserRule getElementTypeRule() {
+		return getElementTypeAccess().getRule();
+	}
+	
 	//Select:
-	//    'select' 'the' 'checkbox' 'with' 'values' values+=STRING (',' values+=STRING)*;
+	//    {Select} 'check' elementType=Selector values+=STRING (',' values+=STRING)* ;
 	public SelectElements getSelectAccess() {
 		return pSelect;
 	}
@@ -841,7 +934,7 @@ public class SeleniumDslGrammarAccess extends AbstractElementFinder.AbstractGram
 	}
 	
 	//Verify:
-	//    {Verify} 'verify' 'that' 'the' 'page' 'contains' 'the' ( 'string' textToVerify=STRING | 'link' linkToVerify=STRING | 'variable' variable=DOMELEMENT);
+	//    'verify' 'that' 'the' 'page' 'contains' 'the' ('string' textToVerify=STRING | 'link' linkToVerify=STRING | 'variable' variable=ElementType);
 	public VerifyElements getVerifyAccess() {
 		return pVerify;
 	}
@@ -851,7 +944,7 @@ public class SeleniumDslGrammarAccess extends AbstractElementFinder.AbstractGram
 	}
 	
 	//Read:
-	//    'read' 'the' elements+=DOMELEMENT (',' elements+=DOMELEMENT)* 'of' 'the' 'link' linkText=STRING 'number' number=INT;
+	//    'read' 'the' elements+=ElementType (',' elements+=ElementType)* 'of' 'the' 'link' linkText=STRING 'number' number=INT;
 	public ReadElements getReadAccess() {
 		return pRead;
 	}
@@ -871,23 +964,13 @@ public class SeleniumDslGrammarAccess extends AbstractElementFinder.AbstractGram
 	}
 	
 	//Combobox:
-	//    'choose' 'the' 'option' option=STRING 'in' 'the' 'combobox' label=STRING;
+	//    'choose' elements+=Selector option=STRING 'in' elements+=Selector label=STRING;
 	public ComboboxElements getComboboxAccess() {
 		return pCombobox;
 	}
 	
 	public ParserRule getComboboxRule() {
 		return getComboboxAccess().getRule();
-	}
-	
-	//DOMELEMENT:
-	//    ('link' | 'button' | 'image' | 'url' | 'text' 'link' | 'title');
-	public DOMELEMENTElements getDOMELEMENTAccess() {
-		return pDOMELEMENT;
-	}
-	
-	public ParserRule getDOMELEMENTRule() {
-		return getDOMELEMENTAccess().getRule();
 	}
 	
 	//DynamicURL: (URL | STRING);
